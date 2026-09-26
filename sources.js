@@ -298,6 +298,106 @@ const librarySources = [
     extracted: ["UI elements","buttons","text","backgrounds","charts","icons","websites","devices","galleries","progress","loaders","transitions"],
     usedBy: []
   },
+  {
+    id: "dev-tailwind-libraries-2026",
+    name: "DEV.to — Top Free Tailwind Component Libraries 2026",
+    url: "https://dev.to/chnkc41/top-5-free-tailwind-component-libraries-in-2026-49f9",
+    type: "discovery-article",
+    technology: "Tailwind CSS ecosystem",
+    license: "Article reference only",
+    extracted: ["Ninna UI","daisyUI","shadcn/ui","Flowbite","Preline UI"],
+    usedBy: []
+  },
+  {
+    id: "daisyui-official",
+    name: "daisyUI",
+    url: "https://daisyui.com/components/",
+    type: "official-component-catalog",
+    technology: "Tailwind CSS plugin",
+    license: "MIT",
+    extracted: ["68 named component types"],
+    usedBy: []
+  },
+  {
+    id: "preline-official",
+    name: "Preline UI",
+    url: "https://preline.co/docs/components.html",
+    type: "official-component-catalog",
+    technology: "Tailwind CSS + JavaScript",
+    license: "MIT + Preline UI Fair Use; Library- uses original reimplementations and attribution only",
+    extracted: ["layout","base components","navigation","forms","overlays","tables","plugin patterns"],
+    usedBy: []
+  },
+  {
+    id: "flowbite-official",
+    name: "Flowbite React",
+    url: "https://flowbite-react.com/",
+    type: "official-component-catalog",
+    technology: "React + Tailwind CSS",
+    license: "MIT",
+    extracted: ["accordion","alert","avatar","banner","badge","breadcrumb","button","card","carousel","datepicker","dropdown","footer","forms","list-group","modal","navbar","pagination","progress","rating","sidebar","spinner","table","tabs","tooltip","timeline","toast"],
+    usedBy: []
+  },
+  {
+    id: "ninna-official",
+    name: "Ninna UI",
+    url: "https://github.com/ninna-ui/ninna-ui",
+    type: "official-component-catalog",
+    technology: "React 19 + TypeScript + Tailwind CSS v4",
+    license: "MIT",
+    extracted: ["primitives","feedback","forms","layout","overlays","navigation","data display","code block"],
+    usedBy: []
+  },
+  {
+    id: "dev-animated-ui-libraries",
+    name: "DEV.to — Top Animated UI Component Libraries for React",
+    url: "https://dev.to/codedthemes/top-animated-ui-component-libraries-for-react-1383",
+    type: "discovery-article",
+    technology: "React animation ecosystem",
+    license: "Article reference only",
+    extracted: ["Magic UI","Animate UI","Origin UI","HeroUI","React Bits"],
+    usedBy: []
+  },
+  {
+    id: "aceternity-reference",
+    name: "Aceternity UI",
+    url: "https://ui.aceternity.com/components",
+    type: "official-component-gallery",
+    technology: "React + Tailwind CSS + Motion",
+    license: "Reference-only intake; Library- uses original reimplementations rather than redistributed source",
+    extracted: ["motion-first marketing components","image effects","backgrounds","hero interactions"],
+    usedBy: []
+  },
+  {
+    id: "reactbits-reference",
+    name: "React Bits",
+    url: "https://github.com/DavidHDev/react-bits",
+    type: "official-component-gallery",
+    technology: "React + CSS/Tailwind + animation",
+    license: "MIT + Commons Clause; source code is not redistributed in Library-",
+    extracted: ["text animations","background effects","3D","interactive components"],
+    usedBy: []
+  },
+  {
+    id: "animateui-reference",
+    name: "Animate UI",
+    url: "https://github.com/imskyleen/animate-ui",
+    type: "official-component-gallery",
+    technology: "React + TypeScript + Tailwind + Motion",
+    license: "MIT + Commons Clause condition; Library- uses original reimplementations only",
+    extracted: ["animated primitives","dialogs","buttons","tabs","accordions","disclosure patterns"],
+    usedBy: []
+  },
+  {
+    id: "originui-official",
+    name: "Origin UI",
+    url: "https://github.com/shadcn/originui",
+    type: "official-component-gallery",
+    technology: "React + Tailwind CSS",
+    license: "MIT",
+    extracted: ["application UI","forms","inputs","buttons","navigation","tables","overlays"],
+    usedBy: []
+  },
 ];
 
 window.librarySources = librarySources;
