@@ -28,6 +28,38 @@ function setCat(id){state.mode='library';state.cat=id;state.filter='All';state.q
 function recent(id){state.recent=[id,...state.recent.filter(x=>x!==id)].slice(0,12);persist();header()}
 function mark(id){state.usage[id]=Number(state.usage[id]||0)+1;recent(id);persist();renderOverview();renderGrid();header()}
 function toggleFav(id){state.favorites.has(id)?state.favorites.delete(id):state.favorites.add(id);persist();renderGrid();header();if(state.active?.id===id)el.fav.textContent=state.favorites.has(id)?'♥':'♡';toast(state.favorites.has(id)?'تمت الإضافة للمفضلة':'تمت الإزالة من المفضلة')}
+
+const collectionPresets={
+  dashboard:{label:'Dashboard UI',test:s=>s.category==='cards'&&s.tags.some(t=>['dashboard','kpi','stats','chart','progress'].includes(norm(t)))||s.category==='nav'},
+  forms:{label:'Forms',test:s=>s.category==='inputs'||s.tags.some(t=>['form','validation','select','search'].includes(norm(t)))},
+  navigation:{label:'Navigation',test:s=>['nav','menus','tabs'].includes(s.category)},
+  micro:{label:'Micro-interactions',test:s=>['hover','motion','loaders'].includes(s.category)||s.tags.some(t=>['animated','hover','motion'].includes(norm(t)))},
+  popups:{label:'Popups',test:s=>s.category==='modals'||s.tags.some(t=>['popup','toast','tooltip','popover','notification'].includes(norm(t)))}
+};
+function presetItems(key){let p=collectionPresets[key];return p?samples.filter(s=>available(s)&&p.test(s)):[]}
+function renderCollectionFilters(active='dashboard'){el.filters.innerHTML=Object.entries(collectionPresets).map(([k,p])=>`<button class="filter ${active===k?'active':''}" data-collection="${k}">${p.label}</button>`).join('')}
+function showCollectionPreset(key){state.mode='collections';state.cat='all';state.q='';state.filter='All';el.search.value='';renderNav();renderCollectionFilters(key);el.title.textContent=collectionPresets[key]?.label||'المجموعات';el.eyebrow.textContent='Collections';renderGrid(presetItems(key));header();$('#library').scrollIntoView({behavior:'smooth'})}
+function animateToTrash(source,done){
+  if(!source||!source.getBoundingClientRect||!el.trashDock){done();return}
+  const from=source.getBoundingClientRect();
+  el.trashDock.classList.add('show','receiving');
+  el.trashDock.setAttribute('aria-hidden','false');
+  const to=el.trashDock.getBoundingClientRect();
+  const clone=source.cloneNode(true);
+  clone.className='delete-fly';
+  Object.assign(clone.style,{position:'fixed',zIndex:'200',pointerEvents:'none',margin:'0',left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px'});
+  document.body.appendChild(clone);
+  const dx=to.left+to.width/2-(from.left+from.width/2),dy=to.top+to.height/2-(from.top+from.height/2);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{clone.style.transform=`translate(${dx}px,${dy}px) scale(.08) rotate(-12deg)`;clone.style.opacity='0';clone.style.filter='blur(2px)'}));
+  setTimeout(()=>{clone.remove();el.trashDock.classList.remove('receiving');el.trashDock.classList.add('received');done();setTimeout(()=>{el.trashDock.classList.remove('show','received');el.trashDock.setAttribute('aria-hidden','true')},650)},720)
+}
+function deleteItem(s,source){
+  if(!s||state.trash.has(s.id)||state.purged.has(s.id))return;
+  animateToTrash(source,()=>{state.trash.add(s.id);state.recent=state.recent.filter(id=>id!==s.id);persist();if(state.active?.id===s.id)closeDrawer();state.mode='library';renderAll();toast('تم نقل العنصر إلى سلة المحذوفات')})
+}
+function restoreItem(s){if(!s)return;state.trash.delete(s.id);persist();showView('trash');toast('تمت استعادة العنصر')}
+function purgeItem(s){if(!s||!confirm('حذف هذا العنصر نهائيًا من مكتبتك المحلية؟'))return;state.trash.delete(s.id);state.purged.add(s.id);state.favorites.delete(s.id);state.recent=state.recent.filter(id=>id!==s.id);persist();showView('trash');toast('تم الحذف نهائيًا')}
+
 const defaults={color:'#ffffff',bg:'#11131a',radius:12,padding:14,font:14,shadow:16,glow:0,scale:103,speed:30};
 function baseControls(s){return {...defaults,...(s?.playground||{})}}
 function openDrawer(s){state.active=s;state.tab='HTML';state.controls=baseControls(s);$('#drawerTitle').textContent=s.name;$('#drawerId').textContent=s.id+' · '+({basic:'سهل',intermediate:'متوسط',advanced:'متقدم'}[s.complexity]||s.complexity);el.tags.innerHTML=s.tags.map(t=>`<span>${t}</span>`).join('');el.fav.textContent=state.favorites.has(s.id)?'♥':'♡';el.preview.innerHTML=s.code.html;el.preview.classList.add('live-loop');el.preview.dataset.liveCategory=s.category;updateControls();renderTabs();applyControls();el.drawer.classList.add('open');el.drawer.setAttribute('aria-hidden','false');el.backdrop.hidden=false;recent(s.id)}
