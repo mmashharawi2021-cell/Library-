@@ -27419,5 +27419,2855 @@ const samples=[
     "motionMode": "Interaction",
     "type": "card",
     "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-001",
+    "name": "The Stack: Testimonial",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-stack-testimonial"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-2\"><i></i><i></i><i></i><b>The Stack: Testimonial</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Stack: Testimonial من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-002",
+    "name": "Share Your Work",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "share-your-work"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-3\"><i></i><i></i><i></i><b>Share Your Work</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Share Your Work من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-003",
+    "name": "Orbit: Cards",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "orbit-cards"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-4 jp-final-4\"><i></i><i></i><i></i><b>Orbit: Cards</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Orbit: Cards من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-004",
+    "name": "Orbit: Social Media Showreel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "orbit-social-media-showreel"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-final-5\"><i></i><i></i><i></i><b>Orbit: Social Media Showreel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Orbit: Social Media Showreel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-005",
+    "name": "The Track: Session Complete",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-session-complete"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-final-6\"><i></i><i></i><i></i><b>The Track: Session Complete</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Session Complete من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-006",
+    "name": "Project Teaser",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "project-teaser"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-7\"><i></i><i></i><i></i><b>Project Teaser</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Project Teaser من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-007",
+    "name": "The Edit: Nested Images",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-nested-images"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-final-8\"><i></i><i></i><i></i><b>The Edit: Nested Images</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Nested Images من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-008",
+    "name": "The Stack: Livestream",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-stack-livestream"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-final-9\"><i></i><i></i><i></i><b>The Stack: Livestream</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Stack: Livestream من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-009",
+    "name": "The Track: Product Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-product-reveal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-final-10\"><i></i><i></i><i></i><b>The Track: Product Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Product Reveal من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-010",
+    "name": "The Edit: Split Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-split-reveal"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-final-11\"><i></i><i></i><i></i><b>The Edit: Split Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Split Reveal من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-011",
+    "name": "The Stack: Sale",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-stack-sale"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-12\"><i></i><i></i><i></i><b>The Stack: Sale</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Stack: Sale من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-012",
+    "name": "The Edit: Collection Teaser",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-collection-teaser"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-13\"><i></i><i></i><i></i><b>The Edit: Collection Teaser</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Collection Teaser من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-013",
+    "name": "The Edit: Brand Promo",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-brand-promo"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-14\"><i></i><i></i><i></i><b>The Edit: Brand Promo</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Brand Promo من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-014",
+    "name": "The Track: Poster",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-poster"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-15\"><i></i><i></i><i></i><b>The Track: Poster</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Poster من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-015",
+    "name": "The Track: Personal Record",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-personal-record"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-4 jp-final-16\"><i></i><i></i><i></i><b>The Track: Personal Record</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Personal Record من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-016",
+    "name": "The Harvest: Fruit Bounce",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-harvest-fruit-bounce"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-final-17\"><i></i><i></i><i></i><b>The Harvest: Fruit Bounce</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Harvest: Fruit Bounce من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-017",
+    "name": "The Track: Promo Reel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-promo-reel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-final-18\"><i></i><i></i><i></i><b>The Track: Promo Reel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Promo Reel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-018",
+    "name": "The Track: Slideshow",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-slideshow"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-19\"><i></i><i></i><i></i><b>The Track: Slideshow</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Slideshow من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-019",
+    "name": "The Edit: Duo",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-duo"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-final-20\"><i></i><i></i><i></i><b>The Edit: Duo</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Duo من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-020",
+    "name": "The Harvest: Peach Plunge",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-harvest-peach-plunge"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-final-21\"><i></i><i></i><i></i><b>The Harvest: Peach Plunge</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Harvest: Peach Plunge من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-021",
+    "name": "Rewind",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "rewind"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-final-22\"><i></i><i></i><i></i><b>Rewind</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Rewind من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-022",
+    "name": "Project Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "project-showcase"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-final-23\"><i></i><i></i><i></i><b>Project Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Project Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-023",
+    "name": "The Track: Quote",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-quote"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-0 jp-final-24\"><span>The Track: Quote</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Quote من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-025",
+    "name": "Morph: Running Character",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "morph-running-character"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-26\"><i></i><i></i><i></i><b>Morph: Running Character</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Morph: Running Character من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-026",
+    "name": "The Edit: Tagline White",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-tagline-white"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-3 jp-final-27\"><span>The Edit: Tagline White</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Tagline White من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-027",
+    "name": "The Route: Morphing Icons",
+    "category": "icons",
+    "style": "Morph",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-route-morphing-icons"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-4 jp-final-28\"><i>✦</i><b>The Route: Morphing Icons</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Route: Morphing Icons من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-028",
+    "name": "The Edit: Trio",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-trio"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-final-29\"><i></i><i></i><i></i><b>The Edit: Trio</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Trio من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-029",
+    "name": "The Edit: Product Launch",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-product-launch"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-final-30\"><i></i><i></i><i></i><b>The Edit: Product Launch</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Product Launch من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-030",
+    "name": "Mirror: Social Media Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "mirror-social-media-showcase"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-31\"><i></i><i></i><i></i><b>Mirror: Social Media Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Mirror: Social Media Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-031",
+    "name": "The Harvest: Orange Float",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-harvest-orange-float"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-final-32\"><i></i><i></i><i></i><b>The Harvest: Orange Float</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Harvest: Orange Float من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-032",
+    "name": "Animated Widget",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "animated-widget"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-final-33\"><i></i><i></i><i></i><b>Animated Widget</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Animated Widget من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-033",
+    "name": "The Track: App Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-app-showcase"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-final-34\"><i></i><i></i><i></i><b>The Track: App Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: App Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-034",
+    "name": "The Stack: Partnership",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-stack-partnership"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-final-35\"><i></i><i></i><i></i><b>The Stack: Partnership</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Stack: Partnership من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-035",
+    "name": "The Stack: We're Hiring",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-stack-we-re-hiring"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-36\"><i></i><i></i><i></i><b>The Stack: We're Hiring</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Stack: We're Hiring من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-036",
+    "name": "Folio: Social Media Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "folio-social-media-showcase"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-37\"><i></i><i></i><i></i><b>Folio: Social Media Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Folio: Social Media Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-037",
+    "name": "Overlay Poster",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "overlay-poster"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-38\"><i></i><i></i><i></i><b>Overlay Poster</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Overlay Poster من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-038",
+    "name": "Sizzle Reel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "sizzle-reel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-39\"><i></i><i></i><i></i><b>Sizzle Reel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Sizzle Reel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-039",
+    "name": "Ready For Config",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "ready-for-config"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-4 jp-final-40\"><i></i><i></i><i></i><b>Ready For Config</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Ready For Config من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-040",
+    "name": "The Stack: Release Notes",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-stack-release-notes"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-final-41\"><i></i><i></i><i></i><b>The Stack: Release Notes</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Stack: Release Notes من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-041",
+    "name": "The Track: Mobile App Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-track-mobile-app-showcase"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-final-42\"><i></i><i></i><i></i><b>The Track: Mobile App Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Track: Mobile App Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-042",
+    "name": "Social Media Showreel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "social-media-showreel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-43\"><i></i><i></i><i></i><b>Social Media Showreel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Social Media Showreel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-043",
+    "name": "The Route: Cities",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-route-cities"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-final-44\"><i></i><i></i><i></i><b>The Route: Cities</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Route: Cities من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-044",
+    "name": "The Edit: Poppy",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-poppy"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-final-45\"><i></i><i></i><i></i><b>The Edit: Poppy</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Poppy من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-046",
+    "name": "Contactless Payment Card",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "contactless-payment-card"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-11 jp-final-47\" type=\"button\"><i></i><span>Contactless Payment Card</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Contactless Payment Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-047",
+    "name": "Linear Cards",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "linear-cards"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-48\"><i></i><i></i><i></i><b>Linear Cards</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Linear Cards من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-048",
+    "name": "Revolve: Social Media Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "revolve-social-media-showcase"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-49\"><i></i><i></i><i></i><b>Revolve: Social Media Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Revolve: Social Media Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-049",
+    "name": "Frames: Mobile Showreel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "frames-mobile-showreel"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-50\"><i></i><i></i><i></i><b>Frames: Mobile Showreel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Frames: Mobile Showreel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-051",
+    "name": "The Edit: Instagram Story",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "the-edit-instagram-story"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-4 jp-final-52\"><i></i><i></i><i></i><b>The Edit: Instagram Story</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط The Edit: Instagram Story من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-052",
+    "name": "App Icons Panel",
+    "category": "icons",
+    "style": "Morph",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "app-icons-panel"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-5 jp-final-53\"><i>✦</i><b>App Icons Panel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط App Icons Panel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-053",
+    "name": "Profile: New Story",
+    "category": "icons",
+    "style": "Morph",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "profile-new-story"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-6 jp-final-54\"><i>✦</i><b>Profile: New Story</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Profile: New Story من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-054",
+    "name": "Website Promo",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "website-promo"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-55\"><i></i><i></i><i></i><b>Website Promo</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Website Promo من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-055",
+    "name": "Digital Wallet",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "digital-wallet"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-final-56\" type=\"button\"><i></i><span>Digital Wallet</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Digital Wallet من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-056",
+    "name": "Sliding Smartphones",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "sliding-smartphones"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-final-57\"><i></i><i></i><i></i><b>Sliding Smartphones</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Sliding Smartphones من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-060",
+    "name": "Card Features",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "card-features"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-61\"><i></i><i></i><i></i><b>Card Features</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Card Features من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-061",
+    "name": "Spiral Social Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "spiral-social-showcase"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-62\"><i></i><i></i><i></i><b>Spiral Social Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Spiral Social Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-062",
+    "name": "Small Waves",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "small-waves"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-63\"><i></i><i></i><i></i><b>Small Waves</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Small Waves من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-063",
+    "name": "Mobile Stories",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "mobile-stories"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-4 jp-final-64\"><i></i><i></i><i></i><b>Mobile Stories</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Mobile Stories من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-066",
+    "name": "Back Next Buttons",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "back-next-buttons"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-7 jp-final-67\" type=\"button\"><i></i><span>Back Next Buttons</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Back Next Buttons من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-067",
+    "name": "Three Mobile Screens",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "three-mobile-screens"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-final-68\"><i></i><i></i><i></i><b>Three Mobile Screens</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Three Mobile Screens من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-069",
+    "name": "Push Notification Card",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "push-notification-card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-10 jp-final-70\" type=\"button\"><i></i><span>Push Notification Card</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Push Notification Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-070",
+    "name": "Messages Feed",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "messages-feed"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-final-71\"><i></i><i></i><i></i><b>Messages Feed</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Messages Feed من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-071",
+    "name": "App Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "app-showcase"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-72\"><i></i><i></i><i></i><b>App Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط App Showcase من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-072",
+    "name": "Rotating Smartphones",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "rotating-smartphones"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-73\"><i></i><i></i><i></i><b>Rotating Smartphones</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Rotating Smartphones من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-074",
+    "name": "Article Gallery",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "article-gallery"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-75\"><i></i><i></i><i></i><b>Article Gallery</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Article Gallery من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-076",
+    "name": "Revenue App Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "revenue-app-card"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-final-77\"><i></i><i></i><i></i><b>Revenue App Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Revenue App Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-077",
+    "name": "Mobile Screen Slider",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "mobile-screen-slider"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-6 jp-final-78\" type=\"button\"><i></i><span>Mobile Screen Slider</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Mobile Screen Slider من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-078",
+    "name": "Story Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "story-card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-79\"><i></i><i></i><i></i><b>Story Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Story Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-079",
+    "name": "Text Message Bubble",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "text-message-bubble"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-8 jp-final-80\"><span>Text Message Bubble</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Text Message Bubble من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-081",
+    "name": "Animated Tweet Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "animated-tweet-card"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-final-82\"><i></i><i></i><i></i><b>Animated Tweet Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Animated Tweet Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-082",
+    "name": "Product Highlight Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "product-highlight-card"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-final-83\"><i></i><i></i><i></i><b>Product Highlight Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Product Highlight Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-083",
+    "name": "Project Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "project-reveal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-84\"><i></i><i></i><i></i><b>Project Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Project Reveal من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-084",
+    "name": "News Stack",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "news-stack"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-85\"><i></i><i></i><i></i><b>News Stack</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط News Stack من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-085",
+    "name": "Track Countdown",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "track-countdown"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-86\"><i></i><i></i><i></i><b>Track Countdown</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Track Countdown من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-086",
+    "name": "Image Carousel Parallax",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "image-carousel-parallax"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-87\"><i></i><i></i><i></i><b>Image Carousel Parallax</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Image Carousel Parallax من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-087",
+    "name": "Payment Notification Card",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "payment-notification-card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-4 jp-final-88\" type=\"button\"><i></i><span>Payment Notification Card</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Payment Notification Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-088",
+    "name": "Boarding Pass",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "boarding-pass"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-final-89\"><i></i><i></i><i></i><b>Boarding Pass</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Boarding Pass من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-089",
+    "name": "Story Blog Post",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "story-blog-post"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-final-90\"><i></i><i></i><i></i><b>Story Blog Post</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Story Blog Post من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-090",
+    "name": "Story Collage",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "story-collage"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-final-91\"><i></i><i></i><i></i><b>Story Collage</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Story Collage من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-091",
+    "name": "Interactive Social Actions",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "interactive-social-actions"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-final-92\" type=\"button\"><i></i><span>Interactive Social Actions</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Interactive Social Actions من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-092",
+    "name": "Destinations Map",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "destinations-map"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-final-93\"><i></i><i></i><i></i><b>Destinations Map</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Destinations Map من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-093",
+    "name": "Feature List",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "feature-list"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-final-94\"><i></i><i></i><i></i><b>Feature List</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Feature List من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-094",
+    "name": "Design Preview",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "design-preview"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-final-95\"><i></i><i></i><i></i><b>Design Preview</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Design Preview من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-095",
+    "name": "Flight Tracker",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "flight-tracker"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-96\"><i></i><i></i><i></i><b>Flight Tracker</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Flight Tracker من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-096",
+    "name": "Payment Notifications Stack",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "payment-notifications-stack"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-1 jp-final-97\" type=\"button\"><i></i><span>Payment Notifications Stack</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Payment Notifications Stack من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-098",
+    "name": "Charging Watch",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "charging-watch"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-load jp-3 jp-final-99\"><i></i><b>Charging Watch</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Charging Watch من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-100",
+    "name": "Pacman Loader",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "pacman-loader"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-load jp-5 jp-final-101\"><i></i><b>Pacman Loader</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Pacman Loader من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-101",
+    "name": "Bubbles Background",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "bubbles-background"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-final-102\"><i></i><i></i><i></i><b>Bubbles Background</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Bubbles Background من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-105",
+    "name": "Store Badge Generic",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "store-badge-generic"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-10 jp-final-106\" type=\"button\"><i></i><span>Store Badge Generic</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Store Badge Generic من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-106",
+    "name": "Round Logo Motion",
+    "category": "icons",
+    "style": "Morph",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "round-logo-motion"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-11 jp-final-107\"><i>✦</i><b>Round Logo Motion</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Round Logo Motion من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-107",
+    "name": "Photo Gallery Config",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "photo-gallery-config"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-final-108\"><i></i><i></i><i></i><b>Photo Gallery Config</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Photo Gallery Config من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-108",
+    "name": "Thank You Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "thank-you-card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-final-109\"><i></i><i></i><i></i><b>Thank You Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Thank You Card من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-109",
+    "name": "Save The Date",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "save-the-date"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-final-110\"><i></i><i></i><i></i><b>Save The Date</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Save The Date من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-110",
+    "name": "Mobile Showreel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "mobile-showreel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-final-111\"><i></i><i></i><i></i><b>Mobile Showreel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Mobile Showreel من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-111",
+    "name": "Profile Live",
+    "category": "icons",
+    "style": "Morph",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "profile-live"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-4 jp-final-112\"><i>✦</i><b>Profile Live</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Profile Live من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J3-112",
+    "name": "Sliding Name Badge",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "jitter",
+      "template",
+      "motion",
+      "sliding-name-badge"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-5 jp-final-113\" type=\"button\"><i></i><span>Sliding Name Badge</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إعادة تنفيذ Web أصلية لنمط Sliding Name Badge من معرض Jitter العام.",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
   }
 ];
