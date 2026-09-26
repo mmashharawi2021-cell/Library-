@@ -5,7 +5,6 @@
 ## الحالة الحالية
 - **142 عنصرًا**.
 - **12 فئة منظمة**.
-- لا توجد أي ميزة أو قسم AI داخل المشروع.
 - Live Preview + Replay + Hover / Active / Disabled states.
 - حذف لأي عنصر مع Animation إلى Trash + Undo + Restore + Permanent delete.
 - Favorites / Recent / Collections / Usage عبر LocalStorage.
