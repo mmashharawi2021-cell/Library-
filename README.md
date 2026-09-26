@@ -31,3 +31,8 @@
 - فحص مولدات HTML / CSS / React / Tailwind بعد تعديل Playground.
 
 المشروع Static ولا يحتاج Build أو Dependencies.
+
+## 95/95 Live Preview Loop
+- جميع عناصر المكتبة الـ95 تدخل الآن نظام معاينة متحركة مستمرة.
+- لكل فئة Loop مناسب: Buttons, Cards, Inputs, Navigation, Modals, Menus, Loaders, Tabs, Motion وHover.
+- الحركات الخاصة مثل Glow وGradient وOTP وFloating Label وToggle وSparkline وTask Progress محفوظة ولا تُستبدل بحركة عامة.
