@@ -398,6 +398,46 @@ const librarySources = [
     extracted: ["application UI","forms","inputs","buttons","navigation","tables","overlays"],
     usedBy: []
   },
+  {
+    id: "magicui-official",
+    name: "Magic UI",
+    url: "https://github.com/magicuidesign/magicui",
+    type: "official-open-source",
+    technology: "React + TypeScript + Tailwind + Motion",
+    license: "MIT",
+    extracted: ["marquee","animated list","border beam","shimmer button","number ticker","dock","particles","meteors","ripple","patterns","typing","blur fade","word rotate","hyper text","shine border","sparkles"],
+    usedBy: []
+  },
+  {
+    id: "motion-primitives-official",
+    name: "Motion Primitives",
+    url: "https://github.com/ibelick/motion-primitives",
+    type: "official-open-source",
+    technology: "React + Tailwind + Motion",
+    license: "MIT",
+    extracted: ["animated dialog","tabs","text effects","text loop","text morph","cursor","dock","carousel","accordion","popover","toolbar"],
+    usedBy: []
+  },
+  {
+    id: "dev-anex-ui",
+    name: "DEV.to — Accessible React Component Library",
+    url: "https://dev.to/anex_ui/i-built-an-accessible-react-component-library-from-scratch-heres-what-i-learned-4lng",
+    type: "discovery-article",
+    technology: "React + TypeScript + Tailwind",
+    license: "Article reference only",
+    extracted: ["layout primitives","feedback","forms","data display"],
+    usedBy: []
+  },
+  {
+    id: "shadcn-official",
+    name: "shadcn/ui",
+    url: "https://github.com/shadcn-ui/ui",
+    type: "official-open-source",
+    technology: "React + TypeScript + Tailwind",
+    license: "MIT",
+    extracted: ["accessible application primitives","forms","navigation","overlays","data display"],
+    usedBy: []
+  },
 ];
 
 window.librarySources = librarySources;
