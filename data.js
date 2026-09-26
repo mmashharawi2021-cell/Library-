@@ -13,7 +13,8 @@ const categories=[
       "Animated",
       "Gradient",
       "Glass",
-      "Soft"
+      "Soft",
+      "Danger"
     ]
   },
   {
@@ -154,7 +155,9 @@ const categories=[
       "Scale",
       "Pulse",
       "Rotate",
-      "Magnetic"
+      "Magnetic",
+      "Delete",
+      "Undo"
     ]
   }
 ];
@@ -2929,5 +2932,163 @@ const samples=[
       "color": "#ffffff",
       "radius": 14
     }
+  },
+  {
+    "id": "BTN-016",
+    "name": "Trash Morph",
+    "category": "buttons",
+    "style": "Danger",
+    "tags": [
+      "button",
+      "delete",
+      "trash",
+      "danger",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"delete-morph-btn\"><span>حذف</span><i><b></b></i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر حذف يتحول بصريًا إلى سلة",
+    "playground": {
+      "bg": "#c94747",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-017",
+    "name": "Hold to Delete",
+    "category": "buttons",
+    "style": "Danger",
+    "tags": [
+      "button",
+      "delete",
+      "hold",
+      "progress",
+      "danger"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hold-delete-btn\"><span>اضغط للحذف</span><i></i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر حذف مع شريط تقدم بصري",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#b43c3c",
+      "radius": 12
+    }
+  },
+  {
+    "id": "MOT-005",
+    "name": "Delete to Bin",
+    "category": "motion",
+    "style": "Delete",
+    "tags": [
+      "motion",
+      "delete",
+      "trash",
+      "bin",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"trash-drop-demo\"><div class=\"trash-item\">CARD</div><div class=\"mini-bin\"><i></i><b></b></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "عنصر يطير إلى سلة الحذف في Loop",
+    "playground": {}
+  },
+  {
+    "id": "MOT-006",
+    "name": "Undo Delete",
+    "category": "motion",
+    "style": "Undo",
+    "tags": [
+      "motion",
+      "delete",
+      "undo",
+      "snackbar",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"undo-delete-demo\"><div class=\"undo-item\">عنصر محفوظ</div><div class=\"undo-bar\"><span>تم الحذف</span><button>تراجع</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حذف مع Snackbar وتراجع",
+    "playground": {}
+  },
+  {
+    "id": "MOT-007",
+    "name": "Archive Slide",
+    "category": "motion",
+    "style": "Delete",
+    "tags": [
+      "motion",
+      "archive",
+      "slide",
+      "remove",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"archive-demo\"><div class=\"archive-item\">اسحب للأرشفة</div><div class=\"archive-bg\">أرشفة ←</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "عنصر ينزلق إلى الأرشيف",
+    "playground": {}
+  },
+  {
+    "id": "MOT-008",
+    "name": "Remove Chip",
+    "category": "motion",
+    "style": "Delete",
+    "tags": [
+      "motion",
+      "remove",
+      "chip",
+      "delete",
+      "micro"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"remove-chip-demo\"><span>Glass</span><button>×</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Chip يختفي بحركة حذف قصيرة",
+    "playground": {}
   }
 ];
