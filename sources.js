@@ -1,5 +1,15 @@
 const librarySources = [
   {
+    id: "library-original",
+    name: "Library- Original",
+    url: "https://github.com/mmashharawi2021-cell/Library-",
+    type: "internal-original",
+    technology: "Original implementation inside Library-",
+    license: "Project-owned source",
+    extracted: ["original components","original interactions","local utility patterns"],
+    usedBy: []
+  },
+  {
     id: "jitter-ui",
     name: "Jitter UI Animation Templates",
     url: "https://jitter.video/templates/ui-elements/",
