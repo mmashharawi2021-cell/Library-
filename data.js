@@ -6141,37 +6141,6 @@ const samples=[
     "addedAt": "2026-09-27"
   },
   {
-    "id": "CRD-018",
-    "name": "Alert Summary",
-    "category": "cards",
-    "style": "Feature",
-    "tags": [
-      "alert",
-      "card",
-      "feedback",
-      "status",
-      "message"
-    ],
-    "complexity": "basic",
-    "code": {
-      "html": "<article class=\"alert-summary-card\"><span>!</span><div><b>تحتاج مراجعة</b><p>يوجد عنصران غير مكتملين.</p></div></article>",
-      "css": "",
-      "js": "",
-      "react": "",
-      "tailwind": ""
-    },
-    "favorite": false,
-    "usage": 0,
-    "description": "Alert card للحالات",
-    "playground": {},
-    "technology": "HTML + CSS",
-    "dependency": "None",
-    "sourceReference": "dev-anex-ui",
-    "motionMode": "Loop",
-    "type": "component",
-    "addedAt": "2026-09-27"
-  },
-  {
     "id": "CRD-019",
     "name": "Banner Strip",
     "category": "cards",
