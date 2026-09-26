@@ -159,6 +159,39 @@ const categories=[
       "Delete",
       "Undo"
     ]
+  },
+  {
+    "id": "sections",
+    "ar": "الأقسام الجاهزة",
+    "en": "Sections & Layouts",
+    "icon": "▤",
+    "desc": "Hero وHeaders وFooters وحالات صفحات كاملة",
+    "styles": [
+      "All",
+      "Hero",
+      "Header",
+      "Footer",
+      "State",
+      "Carousel",
+      "Bento"
+    ]
+  },
+  {
+    "id": "effects",
+    "ar": "مؤثرات النص والصورة",
+    "en": "Text, Image & Background Effects",
+    "icon": "✺",
+    "desc": "Text وBackground وImage وSVG وScroll effects",
+    "styles": [
+      "All",
+      "Text",
+      "Background",
+      "Image",
+      "SVG",
+      "Scroll",
+      "Cursor",
+      "Transition"
+    ]
   }
 ];
 
@@ -189,7 +222,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-002",
@@ -219,7 +258,13 @@ const samples=[
       "color": "#ffffff",
       "radius": 12,
       "glow": 24
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-003",
@@ -247,7 +292,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-004",
@@ -276,7 +327,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-005",
@@ -304,7 +361,13 @@ const samples=[
       "bg": "#5b5cf0",
       "color": "#ffffff",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-006",
@@ -333,7 +396,13 @@ const samples=[
       "color": "#24305f",
       "radius": 14,
       "shadow": 22
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-007",
@@ -362,7 +431,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-008",
@@ -391,7 +466,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 10
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-009",
@@ -419,7 +500,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#27304a",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-010",
@@ -447,7 +534,13 @@ const samples=[
       "bg": "#e44747",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-001",
@@ -475,7 +568,13 @@ const samples=[
       "bg": "#3559e8",
       "color": "#ffffff",
       "glow": 28
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-002",
@@ -502,7 +601,13 @@ const samples=[
     "playground": {
       "bg": "#ffffff",
       "color": "#11131a"
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-003",
@@ -526,7 +631,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "تكبير صورة داخل البطاقة دون كسر الإطار",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-004",
@@ -550,7 +661,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "ميلان بصري خفيف لسطح البطاقة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-005",
@@ -574,7 +691,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حد مضيء يدور حول العنصر",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-006",
@@ -601,7 +724,13 @@ const samples=[
     "playground": {
       "bg": "#11131a",
       "color": "#ffffff"
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-007",
@@ -625,7 +754,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "إزاحة دقيقة للأيقونة دون مبالغة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-008",
@@ -649,7 +784,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "رفع البطاقة وزيادة الظل",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-009",
@@ -673,7 +814,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "إظهار Caption فوق الصورة عند المرور",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-010",
@@ -697,7 +844,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حلقة Focus تتمدد حول العنصر",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-001",
@@ -721,7 +874,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة محتوى عامة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-002",
@@ -745,7 +904,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة Glassmorphism عملية",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-003",
@@ -769,7 +934,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة KPI للداشبورد",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-004",
@@ -793,7 +964,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة ملف شخصي مختصرة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-005",
@@ -817,7 +994,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة تسعير مع CTA",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-006",
@@ -841,7 +1024,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة منتج مختصرة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-007",
@@ -865,7 +1054,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة تقدم مهمة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-008",
@@ -889,7 +1084,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "مؤشر مع Sparkline بسيط",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-009",
@@ -913,7 +1114,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة تنبيه صغيرة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-010",
@@ -937,7 +1144,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "بطاقة Feature للاستخدام التعريفي",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-001",
@@ -961,7 +1174,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حقل أساسي مع Focus واضح",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-002",
@@ -985,7 +1204,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حقل بحث بأيقونة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-003",
@@ -1009,7 +1234,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Label عائم عند التركيز أو الكتابة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-004",
@@ -1033,7 +1264,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حقل كلمة مرور مع إجراء جانبي",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-005",
@@ -1057,7 +1294,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حالة نجاح داخل الحقل",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-006",
@@ -1081,7 +1324,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حقل Soft بحدود شبه مخفية",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-007",
@@ -1108,7 +1357,13 @@ const samples=[
     "playground": {
       "bg": "#171a22",
       "color": "#ffffff"
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-008",
@@ -1132,7 +1387,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Textarea مع عداد أحرف",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-009",
@@ -1156,7 +1417,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Select نظيف للاختيارات",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-010",
@@ -1180,7 +1447,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "نموذج إدخال وإجراء في سطر واحد",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-001",
@@ -1204,7 +1477,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "شريط تنقل صغير",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-002",
@@ -1228,7 +1507,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "تنقل بحاوية Pill",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-003",
@@ -1252,7 +1537,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "شريط عائم بظل واضح",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-004",
@@ -1276,7 +1567,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "تنقل داكن",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-005",
@@ -1300,7 +1597,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "هيدر زجاجي عملي",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-006",
@@ -1324,7 +1627,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Breadcrumb واضح للصفحات المتداخلة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-007",
@@ -1348,7 +1657,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Bottom navigation للموبايل",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-008",
@@ -1372,7 +1687,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "تنقل Segmented",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-009",
@@ -1396,7 +1717,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Sidebar مصغر للأدوات",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-010",
@@ -1420,7 +1747,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "هيدر يحتوي Command/Search",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-001",
@@ -1443,7 +1776,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "نافذة تأكيد",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-002",
@@ -1466,7 +1805,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "نافذة معلومات",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-003",
@@ -1489,7 +1834,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "نافذة زجاجية",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-004",
@@ -1512,7 +1863,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "قائمة إجراءات",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MNU-001",
@@ -1535,7 +1892,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "قائمة إجراءات",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "menu",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MNU-002",
@@ -1558,7 +1921,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Context menu",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "menu",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MNU-003",
@@ -1581,7 +1950,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "قائمة اختيار",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "menu",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MNU-004",
@@ -1604,7 +1979,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "قائمة صيغ الكود",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "menu",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "LOD-001",
@@ -1627,7 +2008,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Spinner كلاسيكي",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "LOD-002",
@@ -1650,7 +2037,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "شريط تقدم",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "LOD-003",
@@ -1673,7 +2066,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Spinner ناعم",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "LOD-004",
@@ -1696,7 +2095,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "شريط تقدم متدرج",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "TAB-001",
@@ -1719,7 +2124,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Tabs ناعمة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "tabs",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "TAB-002",
@@ -1742,7 +2153,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Tabs داكنة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "tabs",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "TAB-003",
@@ -1765,7 +2182,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Tabs بخط سفلي",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "tabs",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "TAB-004",
@@ -1788,7 +2211,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "صف Accordion",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "tabs",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-001",
@@ -1811,7 +2240,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Morph بسيط",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-002",
@@ -1834,7 +2269,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "نقطة حالة نابضة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-003",
@@ -1857,7 +2298,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "دوران عند المرور",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-004",
@@ -1880,7 +2327,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "إيحاء زر مغناطيسي",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-011",
@@ -1910,7 +2363,13 @@ const samples=[
       "color": "#ffffff",
       "radius": 14,
       "glow": 10
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-012",
@@ -1939,7 +2398,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-013",
@@ -1967,7 +2432,13 @@ const samples=[
       "bg": "#3559e8",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-014",
@@ -1996,7 +2467,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-015",
@@ -2026,7 +2503,13 @@ const samples=[
       "color": "#ffffff",
       "radius": 16,
       "shadow": 22
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-011",
@@ -2055,7 +2538,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-012",
@@ -2084,7 +2573,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-013",
@@ -2113,7 +2608,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-014",
@@ -2143,7 +2644,13 @@ const samples=[
       "color": "#ffffff",
       "radius": 12,
       "glow": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "HOV-015",
@@ -2173,7 +2680,13 @@ const samples=[
       "color": "#ffffff",
       "radius": 18,
       "glow": 28
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "hover-effect",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-011",
@@ -2202,7 +2715,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-012",
@@ -2230,7 +2749,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-013",
@@ -2258,7 +2783,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-014",
@@ -2287,7 +2818,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "CRD-015",
@@ -2316,7 +2853,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 18
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-011",
@@ -2345,7 +2888,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 10
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-012",
@@ -2374,7 +2923,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-013",
@@ -2403,7 +2958,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-014",
@@ -2432,7 +2993,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "INP-015",
@@ -2461,7 +3028,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-011",
@@ -2490,7 +3063,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-012",
@@ -2520,7 +3099,13 @@ const samples=[
       "color": "#11131a",
       "radius": 18,
       "shadow": 26
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-013",
@@ -2549,7 +3134,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-014",
@@ -2578,7 +3169,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "NAV-015",
@@ -2607,7 +3204,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-005",
@@ -2636,7 +3239,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-006",
@@ -2665,7 +3274,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-007",
@@ -2695,7 +3310,13 @@ const samples=[
       "color": "#11131a",
       "radius": 14,
       "shadow": 24
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-008",
@@ -2724,7 +3345,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 10
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-009",
@@ -2754,7 +3381,13 @@ const samples=[
       "color": "#11131a",
       "radius": 16,
       "shadow": 26
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-010",
@@ -2783,7 +3416,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 16
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-011",
@@ -2813,7 +3452,13 @@ const samples=[
       "color": "#11131a",
       "radius": 16,
       "shadow": 30
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-012",
@@ -2843,7 +3488,13 @@ const samples=[
       "color": "#11131a",
       "radius": 16,
       "shadow": 28
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-013",
@@ -2873,7 +3524,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 18
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-014",
@@ -2902,7 +3559,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 20
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOD-015",
@@ -2931,7 +3594,13 @@ const samples=[
       "bg": "#11131a",
       "color": "#ffffff",
       "radius": 14
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "popup",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-016",
@@ -2960,7 +3629,13 @@ const samples=[
       "bg": "#c94747",
       "color": "#ffffff",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "BTN-017",
@@ -2989,7 +3664,13 @@ const samples=[
       "bg": "#ffffff",
       "color": "#b43c3c",
       "radius": 12
-    }
+    },
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "button",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-005",
@@ -3014,7 +3695,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "عنصر يطير إلى سلة الحذف في Loop",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-006",
@@ -3039,7 +3726,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "حذف مع Snackbar وتراجع",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-007",
@@ -3064,7 +3757,13 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "عنصر ينزلق إلى الأرشيف",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
   },
   {
     "id": "MOT-008",
@@ -3089,6 +3788,819 @@ const samples=[
     "favorite": false,
     "usage": 0,
     "description": "Chip يختفي بحركة حذف قصيرة",
-    "playground": {}
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Loop",
+    "type": "micro-interaction",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "TXT-001",
+    "name": "Split Text Reveal",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "reveal",
+      "split",
+      "typography",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"fx-text split-reveal\"><span>واجهات</span><span>تتحرك</span><span>بذكاء</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Reveal متتابع للكلمات بحركة قصيرة قابلة للـLoop",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-text",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "TXT-002",
+    "name": "Scramble Label",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "scramble",
+      "glitch",
+      "label",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"fx-text scramble-label\" data-text=\"LIBRARY\">LIBRARY</div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Scramble بصري خفيف دون مكتبة خارجية",
+    "playground": {},
+    "technology": "HTML + CSS + JavaScript",
+    "dependency": "None",
+    "sourceReference": "jitter-text",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "TXT-003",
+    "name": "Elastic Words",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "stretch",
+      "elastic",
+      "words",
+      "motion"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"fx-text elastic-words\"><span>Motion</span><span>Design</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تمدد مرن للكلمات مستوحى من motion typography",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-text",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "TXT-004",
+    "name": "Shimmer Heading",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "shimmer",
+      "gradient",
+      "heading",
+      "loop"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<h3 class=\"shimmer-heading\">واجهة أكثر وضوحًا</h3>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Shimmer خفيف لعناوين الواجهة",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-reui-2025",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "FXB-001",
+    "name": "Aurora Gradient Loop",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "gradient",
+      "aurora",
+      "loop",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"aurora-bg\"><span></span><b>Gradient Loop</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "خلفية Gradient متحركة خفيفة",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-ui",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "FXB-002",
+    "name": "Ripple Grid",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "grid",
+      "ripple",
+      "dots",
+      "loop"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"ripple-grid\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Grid من النقاط بنبض متتابع",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-ui",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "IMG-001",
+    "name": "Mask Slide Reveal",
+    "category": "effects",
+    "style": "Image",
+    "tags": [
+      "image",
+      "mask",
+      "reveal",
+      "clip-path",
+      "transition"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"mask-image\"><div class=\"mask-art\"></div><span>Mask Reveal</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "كشف صورة باستخدام clip-path وتنفيذ أصلي",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-gsap-mask",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "IMG-002",
+    "name": "Parallax Layer Card",
+    "category": "effects",
+    "style": "Image",
+    "tags": [
+      "image",
+      "parallax",
+      "layers",
+      "depth",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"parallax-image\"><i></i><b></b><span>Depth</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "طبقات Parallax خفيفة بالـCSS فقط",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-gsap-mask",
+    "motionMode": "Interaction",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SVG-001",
+    "name": "Trace Check Icon",
+    "category": "effects",
+    "style": "SVG",
+    "tags": [
+      "svg",
+      "trace",
+      "icon",
+      "stroke",
+      "success"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<svg class=\"trace-check\" viewBox=\"0 0 80 80\" aria-label=\"Success\"><circle cx=\"40\" cy=\"40\" r=\"30\"/><path d=\"M25 41 L35 51 L56 29\"/></svg>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "رسم Stroke تدريجي لأيقونة نجاح",
+    "playground": {},
+    "technology": "SVG + CSS",
+    "dependency": "None",
+    "sourceReference": "anime-official",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "FXS-001",
+    "name": "Stagger Reveal Stack",
+    "category": "effects",
+    "style": "Scroll",
+    "tags": [
+      "scroll",
+      "stagger",
+      "reveal",
+      "cards",
+      "motion"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"stagger-stack\"><span>01</span><span>02</span><span>03</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Stagger reveal بسيط يعمل عند ظهور العنصر",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "motion-official",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "FXS-002",
+    "name": "Split Page Transition",
+    "category": "effects",
+    "style": "Transition",
+    "tags": [
+      "page",
+      "transition",
+      "split",
+      "clip",
+      "entry",
+      "exit"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"split-transition\"><i></i><i></i><b>PAGE</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "محاكاة Page Transition بصفحتين تنفتحان",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-motion-guide-2026",
+    "motionMode": "Loop",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "CUR-001",
+    "name": "Cursor Halo",
+    "category": "effects",
+    "style": "Cursor",
+    "tags": [
+      "cursor",
+      "halo",
+      "pointer",
+      "hover",
+      "micro"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"cursor-halo\"><span></span><b>حرّك المؤشر</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هالة تتفاعل مع المؤشر دون مكتبات",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-001",
+    "name": "Split Reveal Hero",
+    "category": "sections",
+    "style": "Hero",
+    "tags": [
+      "hero",
+      "landing",
+      "split",
+      "reveal",
+      "cta"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<section class=\"mini-hero\"><div><small>UI REFERENCE</small><h3>ابنِ أسرع.<br>اختر أفضل.</h3><p>مكونات جاهزة قابلة للتجربة والنسخ.</p><button>استكشف</button></div><aside><i></i><b></b></aside></section>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Hero صغير بReveal متدرج وخلفية تفاعلية",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-ui",
+    "motionMode": "Loop",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-002",
+    "name": "Frosted Header",
+    "category": "sections",
+    "style": "Header",
+    "tags": [
+      "header",
+      "glass",
+      "navigation",
+      "search",
+      "responsive"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<header class=\"section-header\"><b>Library</b><nav><span>العناصر</span><span>التأثيرات</span></nav><button>⌕</button></header>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Header زجاجي مختصر ومتجاوب",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "reui-official",
+    "motionMode": "Interaction",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-003",
+    "name": "Compact Product Footer",
+    "category": "sections",
+    "style": "Footer",
+    "tags": [
+      "footer",
+      "links",
+      "compact",
+      "product",
+      "responsive"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<footer class=\"section-footer\"><b>Library</b><div><span>Components</span><span>Effects</span><span>Sources</span></div><small>© 2026</small></footer>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Footer خفيف للمواقع والأدوات",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-004",
+    "name": "Empty Search State",
+    "category": "sections",
+    "style": "State",
+    "tags": [
+      "empty",
+      "state",
+      "search",
+      "zero",
+      "feedback"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<section class=\"state-panel empty-panel\"><div>⌕</div><h3>لا توجد نتائج</h3><p>جرّب كلمة أقصر أو Tag مختلف.</p><button>مسح البحث</button></section>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Empty State جاهز لنتائج البحث",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "reui-official",
+    "motionMode": "Interaction",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-005",
+    "name": "Success State",
+    "category": "sections",
+    "style": "State",
+    "tags": [
+      "success",
+      "state",
+      "done",
+      "feedback",
+      "animated"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<section class=\"state-panel success-panel\"><div>✓</div><h3>تم بنجاح</h3><p>اكتملت العملية بدون أخطاء.</p><button>متابعة</button></section>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Success State مع حركة بسيطة",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-ui",
+    "motionMode": "Loop",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-006",
+    "name": "Error State",
+    "category": "sections",
+    "style": "State",
+    "tags": [
+      "error",
+      "state",
+      "retry",
+      "feedback",
+      "warning"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<section class=\"state-panel error-panel\"><div>!</div><h3>حدث خطأ</h3><p>تعذر إكمال الطلب. يمكنك المحاولة مرة أخرى.</p><button>إعادة المحاولة</button></section>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Error State واضح وقابل لإعادة الاستخدام",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "CAR-001",
+    "name": "Auto Snap Carousel",
+    "category": "sections",
+    "style": "Carousel",
+    "tags": [
+      "carousel",
+      "slider",
+      "cards",
+      "auto",
+      "loop"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"mini-carousel\"><div class=\"carousel-track\"><article>A</article><article>B</article><article>C</article></div><span>● ○ ○</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Carousel صغير بLoop تلقائي دون مكتبة خارجية",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-ui",
+    "motionMode": "Loop",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "SEC-007",
+    "name": "Bento Feature Grid",
+    "category": "sections",
+    "style": "Bento",
+    "tags": [
+      "bento",
+      "features",
+      "grid",
+      "dashboard",
+      "responsive"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<section class=\"bento-grid\"><article><b>112+</b><span>Elements</span></article><article><b>LIVE</b><span>Preview</span></article><article class=\"wide\"><b>Copy-ready code</b><span>HTML · React · Tailwind</span></article></section>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Bento Grid بسيط للخصائص والإحصاءات",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "reui-official",
+    "motionMode": "Interaction",
+    "type": "section",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "LOD-005",
+    "name": "Skeleton Shimmer",
+    "category": "loaders",
+    "style": "Progress",
+    "tags": [
+      "skeleton",
+      "loader",
+      "shimmer",
+      "content",
+      "placeholder"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"skeleton-card\"><i></i><span></span><span></span><span></span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Skeleton Loader خفيف للمحتوى",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-reui-2025",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "LOD-006",
+    "name": "Success Spinner",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "loader",
+      "spinner",
+      "success",
+      "complete",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"success-loader\"><i></i><b>✓</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Spinner يتحول بصريًا إلى نجاح",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-ui",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "INP-016",
+    "name": "Dropzone Upload",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "upload",
+      "dropzone",
+      "file",
+      "progress"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"dropzone\"><input type=\"file\"><div>⇧</div><b>اسحب الملف هنا</b><small>أو اضغط للاختيار</small></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Dropzone قابل للنقر ويدعم حالة رفع",
+    "playground": {},
+    "technology": "HTML + CSS + JavaScript",
+    "dependency": "None",
+    "sourceReference": "dev-reui-2025",
+    "motionMode": "Interaction",
+    "type": "form-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "NAV-016",
+    "name": "Stepper Flow",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "stepper",
+      "steps",
+      "flow",
+      "progress"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"flow-stepper\"><span class=\"done\">1<b>بيانات</b></span><i></i><span class=\"active\">2<b>مراجعة</b></span><i></i><span>3<b>إنهاء</b></span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Stepper مرتب لتدفقات النماذج",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "reui-official",
+    "motionMode": "Interaction",
+    "type": "navigation",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "CRD-016",
+    "name": "Status Badge Card",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "badge",
+      "status",
+      "dashboard",
+      "label"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card badge-card\"><div><span class=\"status-badge\">Active</span><small>Service</small></div><h4>واجهة النظام</h4><p>الحالة مستقرة وتعمل.</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Dashboard مع Badge حالة",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-reui-2025",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "CRD-017",
+    "name": "Avatar Group",
+    "category": "cards",
+    "style": "Profile",
+    "tags": [
+      "card",
+      "avatar",
+      "group",
+      "team",
+      "profile"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card avatar-group-card\"><div class=\"avatar-stack\"><i>M</i><i>A</i><i>S</i><i>+4</i></div><h4>فريق المشروع</h4><p>7 أعضاء نشطين</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Avatar Group مضغوط للمشاريع والفرق",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "dev-reui-2025",
+    "motionMode": "Interaction",
+    "type": "card",
+    "addedAt": "2026-09-27"
   }
 ];
