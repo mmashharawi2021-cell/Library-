@@ -65,7 +65,9 @@ const categories=[
       "Soft",
       "Floating",
       "Dark",
-      "Form"
+      "Form",
+      "Radio",
+      "Slider"
     ]
   },
   {
@@ -157,7 +159,8 @@ const categories=[
       "Rotate",
       "Magnetic",
       "Delete",
-      "Undo"
+      "Undo",
+      "Drag"
     ]
   },
   {
@@ -190,7 +193,8 @@ const categories=[
       "SVG",
       "Scroll",
       "Cursor",
-      "Transition"
+      "Transition",
+      "3D"
     ]
   }
 ];
@@ -4601,6 +4605,130 @@ const samples=[
     "sourceReference": "dev-reui-2025",
     "motionMode": "Interaction",
     "type": "card",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "INP-017",
+    "name": "Radio Cards",
+    "category": "inputs",
+    "style": "Radio",
+    "tags": [
+      "input",
+      "radio",
+      "cards",
+      "choice",
+      "form"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"radio-cards\"><label><input type=\"radio\" name=\"plan\" checked><span><b>Basic</b><small>خفيف وسريع</small></span></label><label><input type=\"radio\" name=\"plan\"><span><b>Pro</b><small>خيارات أكثر</small></span></label></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Radio buttons بشكل Cards سهلة للمس",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "reui-official",
+    "motionMode": "Interaction",
+    "type": "radio-group",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "INP-018",
+    "name": "Range Slider",
+    "category": "inputs",
+    "style": "Slider",
+    "tags": [
+      "input",
+      "slider",
+      "range",
+      "control",
+      "form"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"range-control\"><span>Intensity <b>62%</b></span><input type=\"range\" min=\"0\" max=\"100\" value=\"62\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Range Slider واضح مع قيمة ظاهرة",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "range-slider",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "MOT-009",
+    "name": "Drag Drop Tile",
+    "category": "motion",
+    "style": "Drag",
+    "tags": [
+      "motion",
+      "drag",
+      "drop",
+      "interaction",
+      "tile"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"drag-stage\"><button class=\"drag-tile\" type=\"button\">DRAG</button><div class=\"drop-zone\">DROP</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "عنصر قابل للسحب داخل مساحة معاينة",
+    "playground": {},
+    "technology": "HTML + CSS + JavaScript",
+    "dependency": "None",
+    "sourceReference": "library-original",
+    "motionMode": "Interaction",
+    "type": "drag-drop",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "FX3-001",
+    "name": "CSS 3D Cube",
+    "category": "effects",
+    "style": "3D",
+    "tags": [
+      "3d",
+      "css",
+      "cube",
+      "rotate",
+      "perspective"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"css3d-scene\"><div class=\"css3d-cube\"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مكعب 3D خفيف باستخدام CSS فقط دون WebGL",
+    "playground": {},
+    "technology": "HTML + CSS 3D",
+    "dependency": "None",
+    "sourceReference": "three-official",
+    "motionMode": "Loop",
+    "type": "3d-effect",
     "addedAt": "2026-09-27"
   }
 ];
