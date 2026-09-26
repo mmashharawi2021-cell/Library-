@@ -11223,5 +11223,3305 @@ const samples=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-001",
+    "name": "Gradient Background Loop",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "gradient-background-loop"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-5 jp-gradient-background-loop\"><i></i><i></i><b>Gradient Background Loop</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Gradient Background Loop في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-002",
+    "name": "Vector Animation",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "vector-animation"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-6 jp-vector-animation\"><i></i><i></i><b>Vector Animation</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Vector Animation في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-003",
+    "name": "Countdown Bold",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "countdown-bold"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-7 jp-countdown-bold\"><span>Countdown Bold</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Countdown Bold في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-004",
+    "name": "Simple Notification",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "simple-notification"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-simple-notification\" type=\"button\"><i></i><span>Simple Notification</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Simple Notification في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-005",
+    "name": "Color Ring Bounce",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "color-ring-bounce"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-9 jp-color-ring-bounce\"><i>✦</i><b>Color Ring Bounce</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Color Ring Bounce في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-006",
+    "name": "Animated Icon Morph",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "animated-icon-morph"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-10 jp-animated-icon-morph\"><i>✦</i><b>Animated Icon Morph</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Animated Icon Morph في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-008",
+    "name": "Gradient Petals",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "gradient-petals"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-0 jp-gradient-petals\"><i></i><i></i><b>Gradient Petals</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Gradient Petals في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-009",
+    "name": "Rotating Card Stack",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "rotating-card-stack"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-rotating-card-stack\"><i></i><i></i><i></i><b>Rotating Card Stack</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Rotating Card Stack في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-011",
+    "name": "Diagonal Gradient Sweep",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "diagonal-gradient-sweep"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-3 jp-diagonal-gradient-sweep\"><i></i><i></i><b>Diagonal Gradient Sweep</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Diagonal Gradient Sweep في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-012",
+    "name": "Animated Emoji Control",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "animated-emoji-control"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-4 jp-animated-emoji-control\" type=\"button\"><i></i><span>Animated Emoji Control</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Animated Emoji Control في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-013",
+    "name": "Release Notes Stack",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "release-notes-stack"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-release-notes-stack\"><i></i><i></i><i></i><b>Release Notes Stack</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Release Notes Stack في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-014",
+    "name": "Mobile App Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "mobile-app-showcase"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-mobile-app-showcase\"><i></i><i></i><i></i><b>Mobile App Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Mobile App Showcase في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-015",
+    "name": "Social Showreel Slider",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "social-showreel-slider"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-social-showreel-slider\"><i></i><i></i><i></i><b>Social Showreel Slider</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Social Showreel Slider في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-016",
+    "name": "Cities Route",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "cities-route"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-cities-route\"><i></i><i></i><i></i><b>Cities Route</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Cities Route في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-018",
+    "name": "Instruction Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "instruction-card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-instruction-card\"><i></i><i></i><i></i><b>Instruction Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Instruction Card في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-019",
+    "name": "Linear Card Stack",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "linear-card-stack"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-linear-card-stack\"><i></i><i></i><i></i><b>Linear Card Stack</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Linear Card Stack في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-020",
+    "name": "Revolving Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "revolving-showcase"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-revolving-showcase\"><i></i><i></i><i></i><b>Revolving Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Revolving Showcase في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-021",
+    "name": "Frames Mobile Gallery",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "frames-mobile-gallery"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-frames-mobile-gallery\"><i></i><i></i><i></i><b>Frames Mobile Gallery</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Frames Mobile Gallery في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-022",
+    "name": "Mobile Screen Matrix",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "mobile-screen-matrix"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-mobile-screen-matrix\"><i></i><i></i><i></i><b>Mobile Screen Matrix</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Mobile Screen Matrix في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-023",
+    "name": "Modular Bento Showreel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "modular-bento-showreel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-modular-bento-showreel\"><i></i><i></i><i></i><b>Modular Bento Showreel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Modular Bento Showreel في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-024",
+    "name": "Glide Text",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "glide-text"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-4 jp-glide-text\"><span>Glide Text</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Glide Text في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-025",
+    "name": "Dancing Dots Loader",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "loader",
+      "jitter",
+      "loop",
+      "dancing-dots-loader"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-load jp-5 jp-dancing-dots-loader\"><i></i><b>Dancing Dots Loader</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Dancing Dots Loader في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "loader",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-026",
+    "name": "Simple Dot Mark",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "simple-dot-mark"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-6 jp-simple-dot-mark\"><i>✦</i><b>Simple Dot Mark</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Simple Dot Mark في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-027",
+    "name": "Circle Cascade Mark",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "circle-cascade-mark"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-7 jp-circle-cascade-mark\"><i>✦</i><b>Circle Cascade Mark</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Circle Cascade Mark في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-028",
+    "name": "Profile Live Status",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "profile-live-status"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-profile-live-status\" type=\"button\"><i></i><span>Profile Live Status</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Profile Live Status في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-029",
+    "name": "Website Promo Panel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "website-promo-panel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-website-promo-panel\"><i></i><i></i><i></i><b>Website Promo Panel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Website Promo Panel في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-030",
+    "name": "Sliding Phone Screens",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "sliding-phone-screens"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-sliding-phone-screens\"><i></i><i></i><i></i><b>Sliding Phone Screens</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Sliding Phone Screens في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-031",
+    "name": "Cascading Web Screens",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "cascading-web-screens"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-cascading-web-screens\"><i></i><i></i><i></i><b>Cascading Web Screens</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Cascading Web Screens في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-032",
+    "name": "Cascading Phone Screens",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "cascading-phone-screens"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-cascading-phone-screens\"><i></i><i></i><i></i><b>Cascading Phone Screens</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Cascading Phone Screens في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-034",
+    "name": "Horizontal Metrics Chart",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "horizontal-metrics-chart"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-2 jp-horizontal-metrics-chart\"><i></i><i></i><i></i><i></i><b>Horizontal Metrics Chart</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Horizontal Metrics Chart في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-035",
+    "name": "Animated Mobile Gallery",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "animated-mobile-gallery"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-3 jp-animated-mobile-gallery\"><i></i><i></i><i></i><b>Animated Mobile Gallery</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Animated Mobile Gallery في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-036",
+    "name": "Small Wave Background",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "small-wave-background"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-4 jp-small-wave-background\"><i></i><i></i><b>Small Wave Background</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Small Wave Background في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-037",
+    "name": "Tablet Screen Mockup",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "tablet-screen-mockup"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-tablet-screen-mockup\"><i></i><i></i><i></i><b>Tablet Screen Mockup</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Tablet Screen Mockup في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-038",
+    "name": "Phone Screen Mockup",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "phone-screen-mockup"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-phone-screen-mockup\"><i></i><i></i><i></i><b>Phone Screen Mockup</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Phone Screen Mockup في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-039",
+    "name": "Three Screen Showcase",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "three-screen-showcase"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-three-screen-showcase\"><i></i><i></i><i></i><b>Three Screen Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Three Screen Showcase في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-040",
+    "name": "Notification List",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "notification-list"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-notification-list\" type=\"button\"><i></i><span>Notification List</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Notification List في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-041",
+    "name": "Message Notification",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "message-notification"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-9 jp-message-notification\" type=\"button\"><i></i><span>Message Notification</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Message Notification في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-042",
+    "name": "Liquid Glass Vertical Menu",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "liquid-glass-vertical-menu"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-10 jp-liquid-glass-vertical-menu\" type=\"button\"><i></i><span>Liquid Glass Vertical Menu</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Liquid Glass Vertical Menu في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-043",
+    "name": "Mobile Gallery Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "mobile-gallery-reveal"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-mobile-gallery-reveal\"><i></i><i></i><i></i><b>Mobile Gallery Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Mobile Gallery Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-044",
+    "name": "Web Gallery Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "web-gallery-reveal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-web-gallery-reveal\"><i></i><i></i><i></i><b>Web Gallery Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Web Gallery Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-045",
+    "name": "Glitch Text Reveal One",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "glitch-text-reveal-one"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-1 jp-glitch-text-reveal-one\"><span>Glitch Text Reveal One</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Glitch Text Reveal One في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-046",
+    "name": "Rotating Device Screens",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "rotating-device-screens"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-rotating-device-screens\"><i></i><i></i><i></i><b>Rotating Device Screens</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Rotating Device Screens في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-047",
+    "name": "Cursor Interaction",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "cursor-interaction"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-3 jp-cursor-interaction\" type=\"button\"><i></i><span>Cursor Interaction</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Cursor Interaction في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-048",
+    "name": "Subscribe Field",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "subscribe-field"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-4 jp-subscribe-field\" type=\"button\"><i></i><span>Subscribe Field</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Subscribe Field في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-049",
+    "name": "Article Gallery Blur",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "article-gallery-blur"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-article-gallery-blur\"><i></i><i></i><i></i><b>Article Gallery Blur</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Article Gallery Blur في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-050",
+    "name": "Radar Morph Chart",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "radar-morph-chart"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-6 jp-radar-morph-chart\"><i></i><i></i><i></i><i></i><b>Radar Morph Chart</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Radar Morph Chart في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-052",
+    "name": "Feature List Motion",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "feature-list-motion"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-feature-list-motion\" type=\"button\"><i></i><span>Feature List Motion</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Feature List Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-053",
+    "name": "Bouncy Word Cloud",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "bouncy-word-cloud"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-9 jp-bouncy-word-cloud\"><span>Bouncy Word Cloud</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Bouncy Word Cloud في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-054",
+    "name": "App List Motion",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "app-list-motion"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-10 jp-app-list-motion\" type=\"button\"><i></i><span>App List Motion</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط App List Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-055",
+    "name": "Screen Slider",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "screen-slider"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-screen-slider\"><i></i><i></i><i></i><b>Screen Slider</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Screen Slider في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-056",
+    "name": "Message Bubble",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "message-bubble"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-0 jp-message-bubble\" type=\"button\"><i></i><span>Message Bubble</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Message Bubble في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-057",
+    "name": "Card Reveal Motion",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "card-reveal-motion"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-card-reveal-motion\"><i></i><i></i><i></i><b>Card Reveal Motion</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Card Reveal Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-058",
+    "name": "Multiply Text",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "multiply-text"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-2 jp-multiply-text\"><span>Multiply Text</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Multiply Text في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-059",
+    "name": "Interactive Badge Set",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "interactive-badge-set"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-3 jp-interactive-badge-set\" type=\"button\"><i></i><span>Interactive Badge Set</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Interactive Badge Set في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-060",
+    "name": "Color Card Expansion",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "color-card-expansion"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-4 jp-color-card-expansion\"><i></i><i></i><i></i><b>Color Card Expansion</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Color Card Expansion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-061",
+    "name": "Glass Toggle",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "glass-toggle"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-5 jp-glass-toggle\" type=\"button\"><i></i><span>Glass Toggle</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Glass Toggle في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-062",
+    "name": "News Stack Blur",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "news-stack-blur"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-news-stack-blur\"><i></i><i></i><i></i><b>News Stack Blur</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط News Stack Blur في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-063",
+    "name": "Color And Text Blend",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "color-and-text-blend"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-7 jp-color-and-text-blend\"><span>Color And Text Blend</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Color And Text Blend في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-064",
+    "name": "Color Card Stack",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "color-card-stack"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-color-card-stack\"><i></i><i></i><i></i><b>Color Card Stack</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Color Card Stack في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-065",
+    "name": "Squeeze Text",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "squeeze-text"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-9 jp-squeeze-text\"><span>Squeeze Text</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Squeeze Text في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-066",
+    "name": "Image Parallax Carousel",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "image-parallax-carousel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-image-parallax-carousel\"><i></i><i></i><i></i><b>Image Parallax Carousel</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Image Parallax Carousel في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-067",
+    "name": "Payment Notification",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "payment-notification"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-11 jp-payment-notification\" type=\"button\"><i></i><span>Payment Notification</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Payment Notification في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-068",
+    "name": "Travel Boarding Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "travel-boarding-card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-travel-boarding-card\"><i></i><i></i><i></i><b>Travel Boarding Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Travel Boarding Card في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-069",
+    "name": "Cart Interaction",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "cart-interaction"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-1 jp-cart-interaction\" type=\"button\"><i></i><span>Cart Interaction</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Cart Interaction في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-070",
+    "name": "Social Icon Row",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "social-icon-row"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-2 jp-social-icon-row\"><i>✦</i><b>Social Icon Row</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Social Icon Row في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-071",
+    "name": "Like Badge",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "like-badge"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-3 jp-like-badge\"><i>✦</i><b>Like Badge</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Like Badge في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-072",
+    "name": "New Badge Pop",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "new-badge-pop"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-4 jp-new-badge-pop\"><i>✦</i><b>New Badge Pop</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط New Badge Pop في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-073",
+    "name": "Like Icon Motion",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "like-icon-motion"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-5 jp-like-icon-motion\"><i>✦</i><b>Like Icon Motion</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Like Icon Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-074",
+    "name": "Dislike Icon Motion",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "dislike-icon-motion"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-6 jp-dislike-icon-motion\"><i>✦</i><b>Dislike Icon Motion</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Dislike Icon Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-075",
+    "name": "Heart Icon Motion",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "heart-icon-motion"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-7 jp-heart-icon-motion\"><i>✦</i><b>Heart Icon Motion</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Heart Icon Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-076",
+    "name": "Weather Icon Morph",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "weather-icon-morph"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-8 jp-weather-icon-morph\"><i>✦</i><b>Weather Icon Morph</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Weather Icon Morph في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-077",
+    "name": "Negative Mask Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "negative-mask-reveal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-negative-mask-reveal\"><i></i><i></i><i></i><b>Negative Mask Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Negative Mask Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-078",
+    "name": "Kaleidoscope Intro",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "kaleidoscope-intro"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-10 jp-kaleidoscope-intro\"><i></i><i></i><b>Kaleidoscope Intro</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Kaleidoscope Intro في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-079",
+    "name": "Search Reveal",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "search-reveal"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-11 jp-search-reveal\" type=\"button\"><i></i><span>Search Reveal</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Search Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-080",
+    "name": "Purple Toggle Motion",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "purple-toggle-motion"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-0 jp-purple-toggle-motion\" type=\"button\"><i></i><span>Purple Toggle Motion</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Purple Toggle Motion في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-081",
+    "name": "Sliding Blocks",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "sliding-blocks"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-sliding-blocks\"><i></i><i></i><i></i><b>Sliding Blocks</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Sliding Blocks في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-082",
+    "name": "Feature Specs List",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "feature-specs-list"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-2 jp-feature-specs-list\" type=\"button\"><i></i><span>Feature Specs List</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Feature Specs List في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-083",
+    "name": "Sliding Title",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "sliding-title"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-3 jp-sliding-title\"><span>Sliding Title</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Sliding Title في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-084",
+    "name": "Motion Blur Reveal",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "motion-blur-reveal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-4 jp-motion-blur-reveal\"><span>Motion Blur Reveal</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Motion Blur Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-085",
+    "name": "Mode Showcase",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "mode-showcase"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-5 jp-mode-showcase\"><i></i><i></i><b>Mode Showcase</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Mode Showcase في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-086",
+    "name": "Image Mask Parallax",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "image-mask-parallax"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-image-mask-parallax\"><i></i><i></i><i></i><b>Image Mask Parallax</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Image Mask Parallax في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-087",
+    "name": "Animated Square Gallery",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "animated-square-gallery"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-7 jp-animated-square-gallery\"><i></i><i></i><i></i><b>Animated Square Gallery</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Animated Square Gallery في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-088",
+    "name": "Minimal Website Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "minimal-website-reveal"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-8 jp-minimal-website-reveal\"><i></i><i></i><i></i><b>Minimal Website Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Minimal Website Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-089",
+    "name": "Ring Scale Loop",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "ring-scale-loop"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-9 jp-ring-scale-loop\"><i>✦</i><b>Ring Scale Loop</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Ring Scale Loop في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-090",
+    "name": "Landing Blocks",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "landing-blocks"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-10 jp-landing-blocks\"><i></i><i></i><i></i><b>Landing Blocks</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Landing Blocks في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-091",
+    "name": "Blog Card Reveal",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "blog-card-reveal"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-11 jp-blog-card-reveal\"><i></i><i></i><i></i><b>Blog Card Reveal</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Blog Card Reveal في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-092",
+    "name": "Finance Card Stack",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "finance-card-stack"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-0 jp-finance-card-stack\"><i></i><i></i><i></i><b>Finance Card Stack</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Finance Card Stack في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-093",
+    "name": "Feature Sneak Peek",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "feature-sneak-peek"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-1 jp-feature-sneak-peek\"><i></i><i></i><i></i><b>Feature Sneak Peek</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Feature Sneak Peek في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-094",
+    "name": "Text Scramble Loop",
+    "category": "effects",
+    "style": "Text",
+    "tags": [
+      "text",
+      "jitter",
+      "motion",
+      "text-scramble-loop"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-text jp-2 jp-text-scramble-loop\"><span>Text Scramble Loop</span><i></i></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Text Scramble Loop في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "text-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-096",
+    "name": "Triple Toggle",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "triple-toggle"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-4 jp-triple-toggle\" type=\"button\"><i></i><span>Triple Toggle</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Triple Toggle في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-097",
+    "name": "Destination Card",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "destination-card"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-5 jp-destination-card\"><i></i><i></i><i></i><b>Destination Card</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Destination Card في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-098",
+    "name": "Gallery Scroll",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "gallery-scroll"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-gallery-scroll\"><i></i><i></i><i></i><b>Gallery Scroll</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Gallery Scroll في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-099",
+    "name": "Feature List Panel",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "feature-list-panel"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-7 jp-feature-list-panel\" type=\"button\"><i></i><span>Feature List Panel</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Feature List Panel في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-100",
+    "name": "Side Rail Menu",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "side-rail-menu"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-8 jp-side-rail-menu\" type=\"button\"><i></i><span>Side Rail Menu</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Side Rail Menu في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-101",
+    "name": "Blur Bubble Background",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "blur-bubble-background"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-9 jp-blur-bubble-background\"><i></i><i></i><b>Blur Bubble Background</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Blur Bubble Background في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-102",
+    "name": "Three Part Donut",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "three-part-donut"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-10 jp-three-part-donut\"><i></i><i></i><i></i><i></i><b>Three Part Donut</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Three Part Donut في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-103",
+    "name": "Sleep Bar Chart",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "sleep-bar-chart"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-11 jp-sleep-bar-chart\"><i></i><i></i><i></i><i></i><b>Sleep Bar Chart</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Sleep Bar Chart في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-104",
+    "name": "Multiple Bar Metrics",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "multiple-bar-metrics"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-0 jp-multiple-bar-metrics\"><i></i><i></i><i></i><i></i><b>Multiple Bar Metrics</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Multiple Bar Metrics في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-105",
+    "name": "Acquisition Line Chart",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "acquisition-line-chart"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-1 jp-acquisition-line-chart\"><i></i><i></i><i></i><i></i><b>Acquisition Line Chart</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Acquisition Line Chart في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-106",
+    "name": "Departures Board",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "departures-board"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-2 jp-departures-board\"><i></i><i></i><i></i><b>Departures Board</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Departures Board في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-107",
+    "name": "Voice Search Control",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "voice-search-control"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-3 jp-voice-search-control\" type=\"button\"><i></i><span>Voice Search Control</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Voice Search Control في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-108",
+    "name": "Five Star Lift",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "five-star-lift"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-4 jp-five-star-lift\"><i>✦</i><b>Five Star Lift</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Five Star Lift في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-109",
+    "name": "Continue Interaction",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "continue-interaction"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-5 jp-continue-interaction\" type=\"button\"><i></i><span>Continue Interaction</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Continue Interaction في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-110",
+    "name": "Before After Swipe",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "before-after-swipe"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-6 jp-before-after-swipe\"><i></i><i></i><i></i><b>Before After Swipe</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Before After Swipe في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-111",
+    "name": "Holographic Badge",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "holographic-badge"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-7 jp-holographic-badge\"><i>✦</i><b>Holographic Badge</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Holographic Badge في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-112",
+    "name": "Pixel Counter",
+    "category": "data",
+    "style": "Chart",
+    "tags": [
+      "chart",
+      "jitter",
+      "data",
+      "pixel-counter"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"jp-preset jp-chart jp-8 jp-pixel-counter\"><i></i><i></i><i></i><i></i><b>Pixel Counter</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Pixel Counter في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "chart",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-113",
+    "name": "Animated Theme Gallery",
+    "category": "media",
+    "style": "Showcase",
+    "tags": [
+      "media",
+      "jitter",
+      "motion",
+      "animated-theme-gallery"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-media jp-9 jp-animated-theme-gallery\"><i></i><i></i><i></i><b>Animated Theme Gallery</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Animated Theme Gallery في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "media-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-114",
+    "name": "Gradient Kaleidoscope",
+    "category": "effects",
+    "style": "Background",
+    "tags": [
+      "background",
+      "jitter",
+      "motion",
+      "gradient-kaleidoscope"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"jp-preset jp-bg jp-10 jp-gradient-kaleidoscope\"><i></i><i></i><b>Gradient Kaleidoscope</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Gradient Kaleidoscope في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "background-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-115",
+    "name": "Round Name Badge",
+    "category": "icons",
+    "style": "Status",
+    "tags": [
+      "icon",
+      "jitter",
+      "motion",
+      "round-name-badge"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"jp-preset jp-icon jp-11 jp-round-name-badge\"><i>✦</i><b>Round Name Badge</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Round Name Badge في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Loop",
+    "type": "icon-effect",
+    "addedAt": "2026-09-27"
+  },
+  {
+    "id": "J2-116",
+    "name": "Profile Story Ring",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "ui",
+      "jitter",
+      "interaction",
+      "profile-story-ring"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"jp-preset jp-ui jp-0 jp-profile-story-ring\" type=\"button\"><i></i><span>Profile Story Ring</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنفيذ ويب أصلي مستوحى من نمط Profile Story Ring في Jitter",
+    "playground": {},
+    "technology": "HTML + CSS",
+    "dependency": "None",
+    "sourceReference": "jitter-all-2026",
+    "motionMode": "Interaction",
+    "type": "ui-control",
+    "addedAt": "2026-09-27"
   }
 ];
