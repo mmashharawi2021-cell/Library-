@@ -436,3 +436,152 @@
   0%,100%{transform:translateY(0) scale(1)}
   50%{transform:translateY(-4px) scale(1.04)}
 }
+
+
+/* ===== Live Preview Engine v4 — preserve unique animations ===== */
+/* Buttons with their own signature motion */
+.component-card[data-live-category="buttons"] .component-preview .demo-btn.glow,
+.drawer-preview[data-live-category="buttons"] .demo-btn.glow{
+  animation:liveGlow 2.2s ease-in-out infinite
+}
+.component-card[data-live-category="buttons"] .component-preview .btn-gradient,
+.drawer-preview[data-live-category="buttons"] .btn-gradient{
+  animation:previewButtonLoop 2.8s ease-in-out infinite,gradientShift 4s ease infinite
+}
+.component-card[data-live-category="buttons"] .component-preview .btn-border-draw,
+.drawer-preview[data-live-category="buttons"] .btn-border-draw{
+  animation:previewButtonLoop 2.8s ease-in-out infinite,liveBorder 2s ease-in-out infinite
+}
+
+/* Cards: animate the information itself, not only the card shell */
+.component-card[data-live-category="cards"] .card-task .task-progress i,
+.drawer-preview[data-live-category="cards"] .card-task .task-progress i{
+  animation:previewTaskProgress 3.2s ease-in-out infinite
+}
+.component-card[data-live-category="cards"] .card-trend path,
+.drawer-preview[data-live-category="cards"] .card-trend path{
+  stroke-dasharray:220;stroke-dashoffset:220;
+  animation:previewSparkline 3s ease-in-out infinite
+}
+.component-card[data-live-category="cards"] .card-member>span,
+.drawer-preview[data-live-category="cards"] .card-member>span{
+  animation:previewOnline 2s ease-in-out infinite
+}
+.component-card[data-live-category="cards"] .card-empty>div,
+.drawer-preview[data-live-category="cards"] .card-empty>div{
+  animation:previewAddPulse 2.2s ease-in-out infinite
+}
+
+/* Inputs: stagger OTP, animate floating label and toggle knob */
+.component-card[data-live-category="inputs"] .otp-group input:nth-child(2),
+.drawer-preview[data-live-category="inputs"] .otp-group input:nth-child(2){animation-delay:.25s}
+.component-card[data-live-category="inputs"] .otp-group input:nth-child(3),
+.drawer-preview[data-live-category="inputs"] .otp-group input:nth-child(3){animation-delay:.5s}
+.component-card[data-live-category="inputs"] .otp-group input:nth-child(4),
+.drawer-preview[data-live-category="inputs"] .otp-group input:nth-child(4){animation-delay:.75s}
+.component-card[data-live-category="inputs"] .floating-field>span,
+.drawer-preview[data-live-category="inputs"] .floating-field>span{
+  animation:previewFloatingLabel 2.7s ease-in-out infinite
+}
+.component-card[data-live-category="inputs"] .toggle-control>span:after,
+.drawer-preview[data-live-category="inputs"] .toggle-control>span:after{
+  animation:previewToggleKnob 2.4s ease-in-out infinite
+}
+.component-card[data-live-category="inputs"] .validated-field>span,
+.drawer-preview[data-live-category="inputs"] .validated-field>span{
+  animation:previewValidMark 2s ease-in-out infinite
+}
+
+/* Navigation: cycle attention across labels */
+.component-card[data-live-category="nav"] .component-preview nav>span:not(.active),
+.drawer-preview[data-live-category="nav"] nav>span:not(.active){
+  animation:previewNavItem 4.2s ease-in-out infinite
+}
+.component-card[data-live-category="nav"] .component-preview nav>span:nth-of-type(2),
+.drawer-preview[data-live-category="nav"] nav>span:nth-of-type(2){animation-delay:.5s}
+.component-card[data-live-category="nav"] .component-preview nav>span:nth-of-type(3),
+.drawer-preview[data-live-category="nav"] nav>span:nth-of-type(3){animation-delay:1s}
+.component-card[data-live-category="nav"] .component-preview nav>span:nth-of-type(4),
+.drawer-preview[data-live-category="nav"] nav>span:nth-of-type(4){animation-delay:1.5s}
+.component-card[data-live-category="nav"] .step-nav i,
+.drawer-preview[data-live-category="nav"] .step-nav i{
+  background:linear-gradient(90deg,#3559e8 0 50%,#dfe2ea 50% 100%);
+  background-size:200% 100%;
+  animation:previewStepLine 3s ease-in-out infinite
+}
+
+/* Tabs: visible cycling across every option */
+.component-card[data-live-category="tabs"] .demo-tabs>span,
+.drawer-preview[data-live-category="tabs"] .demo-tabs>span{
+  animation:previewTabCycle 4.5s ease-in-out infinite
+}
+.component-card[data-live-category="tabs"] .demo-tabs>span:nth-child(2),
+.drawer-preview[data-live-category="tabs"] .demo-tabs>span:nth-child(2){animation-delay:1.5s}
+.component-card[data-live-category="tabs"] .demo-tabs>span:nth-child(3),
+.drawer-preview[data-live-category="tabs"] .demo-tabs>span:nth-child(3){animation-delay:3s}
+.component-card[data-live-category="tabs"] .underline-tabs>span,
+.drawer-preview[data-live-category="tabs"] .underline-tabs>span{
+  animation:previewUnderlineTab 3.6s ease-in-out infinite
+}
+.component-card[data-live-category="tabs"] .underline-tabs>span:nth-child(2),
+.drawer-preview[data-live-category="tabs"] .underline-tabs>span:nth-child(2){animation-delay:1.8s}
+
+/* Menus: keep dangerous rows readable while looping */
+.component-card[data-live-category="menus"] .danger-text,
+.drawer-preview[data-live-category="menus"] .danger-text{color:#c64747!important}
+
+/* Drawer live preview is slightly stronger than grid preview */
+.drawer-preview.live-loop[data-live-category]{
+  isolation:isolate
+}
+.drawer-preview.live-loop[data-live-category]::after{
+  content:"LIVE LOOP";position:absolute;top:12px;right:12px;z-index:9;
+  padding:6px 8px;border-radius:999px;background:#111;color:#fff;
+  font:700 7px/1 Tahoma,Arial,sans-serif;letter-spacing:.08em;
+  opacity:.78;pointer-events:none
+}
+
+@keyframes previewTaskProgress{
+  0%,100%{width:28%}50%{width:88%}
+}
+@keyframes previewSparkline{
+  0%,15%{stroke-dashoffset:220;opacity:.45}
+  55%,82%{stroke-dashoffset:0;opacity:1}
+  100%{stroke-dashoffset:-220;opacity:.45}
+}
+@keyframes previewOnline{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(47,157,103,0)}
+  50%{transform:scale(1.06);box-shadow:0 0 0 5px rgba(47,157,103,.10)}
+}
+@keyframes previewAddPulse{
+  0%,100%{transform:rotate(0) scale(1)}
+  50%{transform:rotate(90deg) scale(1.08)}
+}
+@keyframes previewFloatingLabel{
+  0%,18%,100%{top:14px;font-size:9px;color:#7a8090}
+  45%,68%{top:5px;font-size:7px;color:#3559e8}
+}
+@keyframes previewToggleKnob{
+  0%,18%,100%{transform:translateX(0)}
+  45%,68%{transform:translateX(-18px)}
+}
+@keyframes previewValidMark{
+  0%,100%{transform:scale(.85);opacity:.55}
+  50%{transform:scale(1.18);opacity:1}
+}
+@keyframes previewNavItem{
+  0%,72%,100%{background:transparent;color:#7a8090;transform:translateY(0)}
+  82%,92%{background:#f0f2f7;color:#111;transform:translateY(-2px)}
+}
+@keyframes previewStepLine{
+  0%,20%,100%{background-position:100% 0}
+  55%,78%{background-position:0 0}
+}
+@keyframes previewTabCycle{
+  0%,64%,100%{background:transparent;box-shadow:none;transform:translateY(0)}
+  74%,90%{background:#fff;box-shadow:0 3px 10px rgba(30,38,62,.10);transform:translateY(-2px)}
+}
+@keyframes previewUnderlineTab{
+  0%,58%,100%{border-bottom-color:transparent;color:#777}
+  68%,90%{border-bottom:2px solid #3559e8;color:#111}
+}
