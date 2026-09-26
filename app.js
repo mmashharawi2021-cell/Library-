@@ -116,7 +116,7 @@ function code(tab){
     let n='Ui'+s.id.replace(/[^a-zA-Z0-9]/g,'');
     return 'const markup = '+JSON.stringify(html)+';\nconst css = '+JSON.stringify(css)+';\n\nexport default function '+n+'(){\n  return (\n    <>\n      <style>{css}</style>\n      <div dangerouslySetInnerHTML={{__html: markup}} />\n    </>\n  );\n}';
   }
-  let tw='text-['+c.color+'] bg-['+c.bg+'] rounded-['+c.radius+'px] px-['+c.padding+'px] py-['+Math.round(c.padding*.65)+'px] text-['+c.font+'px] transition-transform duration-['+Math.round(c.speed*10)+'ms] hover:scale-['+(c.scale/100).toFixed(2)+']';
+  let tw='text-['+c.color+'] bg-['+c.bg+'] rounded-['+c.radius+'px] px-['+c.padding+'px] py-['+Math.round(c.padding*.65)+'px] text-['+c.font+'px] transition-transform duration-['+Math.round(c.speed*10)+'ms] hover:scale-['+(c.scale/100).toFixed(2)+'] active:scale-[.98] aria-disabled:opacity-45 aria-disabled:pointer-events-none';
   return 'const markup = '+JSON.stringify(s.code.html)+';\nconst structuralCss = '+JSON.stringify(portableAll(s))+';\n\nexport default function Ui'+s.id.replace(/[^a-zA-Z0-9]/g,'')+'(){\n  return (\n    <>\n      <style>{structuralCss}</style>\n      <div className="'+tw+'" dangerouslySetInnerHTML={{__html: markup}} />\n    </>\n  );\n}';
 }
 function renderTabs(){let variants=['HTML','CSS','JS','React','Tailwind'];el.tabs.innerHTML=variants.map(t=>`<button data-tab="${t}" class="${state.tab===t?'active':''}">${t}</button>`).join('');el.code.textContent=code(state.tab);if(el.copyVariant)el.copyVariant.value=state.tab;$('#copyCode').textContent='نسخ '+state.tab}
