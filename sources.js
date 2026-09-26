@@ -118,7 +118,7 @@ const librarySources = [
     license: "Article is reference only; no source code copied",
     extracted: ["SVG mask reveal","layered parallax","timeline sequencing"],
     usedBy: ["IMG-001","FXS-002"]
-  }
+  },
   {
     "id": "dev-shadcn-2026",
     "name": "DEV.to — Shadcn UI in 2026",
