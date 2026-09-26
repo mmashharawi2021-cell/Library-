@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-09-27",
+  "total_components": 971,
+  "total_categories": 15,
+  "jitter_related": 374,
+  "dev_source_pack": 416,
+  "duplicate_candidates": 0,
+  "schema_missing": 0,
+  "missing_source_records": 0,
+  "ai_features": 0,
+  "source_counts": {
+    "jitter-all-2026": 365,
+    "library-original": 117,
+    "preline-official": 85,
+    "daisyui-official": 68,
+    "ninna-official": 58,
+    "originui-official": 56,
+    "reactbits-reference": 51,
+    "aceternity-reference": 38,
+    "animateui-reference": 32,
+    "flowbite-official": 28,
+    "magicui-official": 17,
+    "shadcn-official": 13,
+    "motion-primitives-official": 10,
+    "dev-anex-ui": 8,
+    "jitter-ui": 6,
+    "dev-reui-2025": 5,
+    "reui-official": 5,
+    "jitter-text": 3,
+    "dev-gsap-mask": 2,
+    "anime-official": 1,
+    "motion-official": 1,
+    "dev-motion-guide-2026": 1,
+    "three-official": 1
+  },
+  "category_counts": {
+    "buttons": 82,
+    "hover": 15,
+    "cards": 79,
+    "inputs": 104,
+    "nav": 52,
+    "modals": 50,
+    "menus": 24,
+    "loaders": 24,
+    "tabs": 25,
+    "motion": 10,
+    "sections": 41,
+    "effects": 148,
+    "data": 62,
+    "icons": 76,
+    "media": 179
+  },
+  "validation": {
+    "syntax": [
+      "app.js",
+      "data.js",
+      "sources.js",
+      "validator.js"
+    ],
+    "runtime": [
+      "search",
+      "filters",
+      "copy",
+      "trash",
+      "restore"
+    ],
+    "copy_css": [
+      "jitter",
+      "dev-source-packs"
+    ]
+  }
+}
