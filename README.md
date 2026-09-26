@@ -3,36 +3,47 @@
 مرجع شخصي عربي RTL لعناصر تصميم الويب الأكثر استخدامًا.
 
 ## الحالة الحالية
-- **95 نموذجًا** موزعة على 10 فئات.
-- الفئات الخمس الأساسية تحتوي **15 نموذجًا لكل فئة**:
-  - Buttons
-  - Hover Effects
-  - Cards
-  - Inputs & Forms
+- **112 نموذجًا** موزعة على 10 فئات.
+- الفئات الأساسية توسعت مع Buttons وHover Effects وCards وInputs وNavigation.
+- قسم **Modals & Popups** أصبح يحتوي **15 نموذجًا** تشمل Toasts وPopovers وTooltips وDrawers وBottom Sheets وغيرها.
+- تمت إضافة أنماط حذف وحركة مثل:
+  - Trash Morph
+  - Hold to Delete
+  - Delete to Bin
+  - Undo Delete
+  - Archive Slide
+  - Remove Chip
+
+## إدارة المكتبة
+- زر حذف لكل عنصر.
+- أنيميشن انتقال العنصر إلى سلة المحذوفات.
+- سلة محذوفات محلية مع استعادة.
+- حذف نهائي محلي عند الحاجة.
+- العناصر المحذوفة تختفي من البحث والفئات والمفضلة النشطة.
+- جميع التفضيلات محفوظة عبر LocalStorage.
+
+## المعاينة والمختبر
+- Live Preview Loop لجميع العناصر.
+- Preview States: Default / Hover / Active / Disabled.
+- Playground عام + خصائص إضافية تختلف حسب نوع العنصر.
+- نسخ الصيغة مباشرة: HTML / CSS / JS / React / Tailwind.
+- حالات Hover / Active / Disabled تدخل في الكود المولّد.
+- دعم Responsive للهاتف والكمبيوتر.
+
+## البحث والمجموعات
+- بحث عربي/إنجليزي حسب الاسم والفئة والـTags والوصف.
+- مجموعات جاهزة:
+  - Dashboard UI
+  - Forms
   - Navigation
-- كل عنصر يملك Schema ثابتًا:
-  `id / name / category / tags / code / complexity / favorite / usage`
-- بحث عربي/إنجليزي للكلمات الدلالية مثل:
-  `glass / زجاجي / minimal / dark / animated / dashboard / hover`
-- فلاتر Style + مستوى التعقيد.
-- Playground مباشر يدعم:
-  اللون، الخلفية، Radius، Padding، Font Size، Shadow، Glow، Scale، Speed.
-- Playground أصبح **Component-aware** خصوصًا للحقول والنماذج.
-- HTML وCSS وReact وTailwind تعكس قيم Playground الحالية عند النسخ.
-- Favorites وRecent وCollections وUsage محفوظة عبر LocalStorage.
-- تحسينات Responsive للـSidebar وDrawer وPreview وCode Panel.
+  - Micro-interactions
+  - Popups
+- دعم مجموعات شخصية محفوظة محليًا.
 
 ## التحقق
-تم تنفيذ:
-- فحص Syntax لـ `app.js` و`data.js`.
-- فحص Schema لكل العناصر.
-- فحص عدد النماذج في الفئات الخمس.
-- فحص البحث العربي والإنجليزي.
-- فحص مولدات HTML / CSS / React / Tailwind بعد تعديل Playground.
+- `app.js`: Syntax PASS
+- `data.js`: Syntax PASS
+- جميع العناصر الـ112 اجتازت فحص Schema.
+- تم اختبار الحذف والاستعادة، البحث، المجموعات، وتوليد HTML/CSS/React/Tailwind.
 
-المشروع Static ولا يحتاج Build أو Dependencies.
-
-## 95/95 Live Preview Loop
-- جميع عناصر المكتبة الـ95 تدخل الآن نظام معاينة متحركة مستمرة.
-- لكل فئة Loop مناسب: Buttons, Cards, Inputs, Navigation, Modals, Menus, Loaders, Tabs, Motion وHover.
-- الحركات الخاصة مثل Glow وGradient وOTP وFloating Label وToggle وSparkline وTask Progress محفوظة ولا تُستبدل بحركة عامة.
+المشروع Static ولا يحتاج Build أو Dependencies، ولا يعتمد على خدمات توليد خارجية.
