@@ -195,6 +195,3 @@
 @keyframes liveShine{0%,22%,100%{left:-50%}55%,72%{left:120%}}
 @keyframes liveSpotlight{0%,100%{box-shadow:none}50%{box-shadow:0 0 0 1px #3559e8,0 18px 40px rgba(53,89,232,.25)}}
 @keyframes liveMorph{0%,100%{transform:rotate(0) scale(1);border-radius:20px}50%{transform:rotate(8deg) scale(1.08);border-radius:50%}}
-@media (prefers-reduced-motion: reduce){
-  .live-loop *,.live-loop *::before,.live-loop *::after{animation-duration:0.001ms!important;animation-iteration-count:1!important}
-}
