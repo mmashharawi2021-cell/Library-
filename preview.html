@@ -122,6 +122,22 @@
   .drawer-head{padding:10px}.drawer-head h2{font-size:14px}
   .code-panel pre{font-size:9px;padding:12px}
 }
+
+/* ===== Core expansion: 15 per major category ===== */
+.btn-magnetic,.btn-cta{display:inline-flex;align-items:center;gap:10px}
+.btn-magnetic i{width:8px;height:8px;border-radius:50%;background:#7f9cff;transition:.25s}.btn-magnetic:hover i{transform:translateX(-6px) scale(1.3)}
+.btn-split{display:inline-flex;overflow:hidden;border-radius:12px}.btn-split button{border:0;background:#111;color:#fff;padding:11px 15px}.btn-split button+button{border-right:1px solid #30323a;padding-inline:11px}
+.btn-loading{display:inline-flex;align-items:center;gap:9px}.btn-loading i{width:13px;height:13px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+.btn-ghost{border:1px solid #dfe2ea!important;background:#fff!important;color:#111!important}.btn-cta{background:linear-gradient(135deg,#5b5cf0,#3559e8)!important;color:#fff!important}.btn-cta i{font-style:normal;transition:.25s}.btn-cta:hover i{transform:translateX(-5px)}
+.hover-gradient-border{width:210px;padding:18px;border-radius:16px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(120deg,#3559e8,#8b63ff) border-box;border:1px solid transparent;transition:.3s}.hover-gradient-border:hover{transform:translateY(-3px)}
+.hover-blur{width:220px;height:135px;position:relative;overflow:hidden;border-radius:16px}.hover-blur>div{position:absolute;inset:0;background:linear-gradient(135deg,#dfe6ff,#9fb2ff);filter:blur(4px);transform:scale(1.06);transition:.35s}.hover-blur span{position:absolute;inset:auto 10px 10px;background:#111;color:#fff;padding:9px;border-radius:9px;opacity:0;transition:.3s;font-size:8px}.hover-blur:hover>div{filter:blur(0);transform:scale(1)}.hover-blur:hover span{opacity:1}
+.hover-flip{border:0;background:#111;color:#fff;border-radius:12px;padding:12px 18px;overflow:hidden;display:grid}.hover-flip span,.hover-flip b{grid-area:1/1;transition:.25s}.hover-flip b{transform:rotateX(-90deg);opacity:0}.hover-flip:hover span{transform:rotateX(90deg);opacity:0}.hover-flip:hover b{transform:none;opacity:1}
+.hover-shine{position:relative;overflow:hidden;border:0;background:#3559e8;color:#fff;border-radius:12px;padding:12px 18px}.hover-shine:before{content:"";position:absolute;top:-40%;left:-50%;width:30%;height:180%;background:rgba(255,255,255,.5);transform:rotate(20deg);transition:.45s}.hover-shine:hover:before{left:120%}
+.hover-spotlight{width:210px;padding:18px;border:1px solid #2d3342;border-radius:16px;background:#171a22;color:#fff;display:grid;gap:6px;transition:.3s}.hover-spotlight small{color:#969db0}.hover-spotlight:hover{box-shadow:0 0 0 1px #3559e8,0 18px 40px rgba(53,89,232,.25)}
+.card-compare>div{display:flex;justify-content:space-between;align-items:center}.card-compare h4{font-size:25px}.card-compare span{color:#2f9d67;font-weight:800}.card-timeline{display:flex;gap:12px}.card-timeline>i{width:10px;height:10px;margin-top:5px;border-radius:50%;background:#3559e8;box-shadow:0 0 0 5px #e9edff}.card-file{display:flex;align-items:center;gap:10px}.file-icon{width:42px;height:48px;border-radius:9px;background:#eef2ff;color:#3559e8;display:grid;place-items:center;font-size:8px;font-weight:800}.card-file button{margin-right:auto}.card-member{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:10px}.card-member .avatar{margin:0}.card-member>span{font-size:7px;color:#2f9d67;background:#edf8f1;padding:5px 7px;border-radius:99px}.card-empty{text-align:center}.card-empty>div{width:44px;height:44px;margin:0 auto 10px;border-radius:13px;background:#eef2ff;color:#3559e8;display:grid;place-items:center;font-size:22px}
+.otp-group{display:flex;gap:7px}.otp-group input{width:44px;height:48px;border:1px solid #dfe2ea;border-radius:10px;text-align:center;outline:0}.toggle-control{display:flex;align-items:center;gap:10px}.toggle-control input{display:none}.toggle-control>span{width:42px;height:24px;border-radius:99px;background:#d7dbe5;position:relative;transition:.2s}.toggle-control>span:after{content:"";position:absolute;width:18px;height:18px;right:3px;top:3px;border-radius:50%;background:#fff;transition:.2s}.toggle-control input:checked+span{background:#3559e8}.toggle-control input:checked+span:after{transform:translateX(-18px)}.date-field{display:grid;gap:6px;width:240px}.date-field>span{font-size:8px;color:#7a8090}.date-field input{height:42px;border:1px solid #dfe2ea;border-radius:12px;padding:0 10px}.tag-field{width:270px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;border:1px solid #dfe2ea;border-radius:12px;padding:7px;background:#fff}.tag-field>span{font-size:7px;background:#eef2ff;color:#3559e8;padding:5px 7px;border-radius:7px}.tag-field input{flex:1;min-width:70px;border:0;outline:0}.check-group{display:grid;gap:8px}.check-group label{display:flex;gap:8px;align-items:center}
+.mega-nav{width:330px;display:flex;align-items:center;gap:8px;border:1px solid #e2e4eb;border-radius:14px;padding:8px;background:#fff}.mega-nav b{margin-left:auto}.mega-nav span{font-size:8px;color:#777}.mega-nav button{border:0;background:#111;color:#fff;padding:7px 9px;border-radius:8px}.dock-nav{display:flex;gap:5px;background:#fff;border:1px solid #e2e4eb;border-radius:18px;padding:7px;box-shadow:0 14px 32px rgba(30,38,64,.1)}.dock-nav span{width:38px;height:38px;display:grid;place-items:center;border-radius:12px}.dock-nav .active{background:#111;color:#fff}.step-nav{display:flex;align-items:flex-start;gap:6px}.step-nav span{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#eef0f5;color:#777;position:relative}.step-nav small{position:absolute;top:47px;font-size:7px;white-space:nowrap}.step-nav i{width:45px;height:2px;background:#dfe2ea;margin-top:20px}.step-nav .done,.step-nav .active{background:#3559e8;color:#fff}.pagination-bar{display:flex;gap:5px}.pagination-bar button{width:34px;height:34px;border:1px solid #e1e4eb;border-radius:9px;background:#fff}.pagination-bar .active{background:#111;color:#fff}.command-breadcrumb{display:flex;align-items:center;gap:8px;border:1px solid #e2e4eb;border-radius:12px;padding:9px 11px;background:#fff}.command-breadcrumb i{font-style:normal;color:#bbb}.command-breadcrumb kbd{margin-right:auto;background:#f0f2f6;padding:4px 6px;border-radius:6px}
+@media(max-width:480px){.mega-nav{width:100%;overflow-x:auto}.step-nav{transform:scale(.9)}.tag-field{width:100%}.otp-group{gap:5px}.otp-group input{width:39px}}
 </style>
 </head>
 <body>
@@ -2033,6 +2049,733 @@ const samples=[
     "usage": 0,
     "description": "إيحاء زر مغناطيسي",
     "playground": {}
+  },
+  {
+    "id": "BTN-011",
+    "name": "Magnetic Dot",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "magnetic",
+      "dot",
+      "animated",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn btn-magnetic\"><span>استكشف</span><i></i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر مع نقطة تفاعلية تتحرك عند المرور",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 14,
+      "glow": 10
+    }
+  },
+  {
+    "id": "BTN-012",
+    "name": "Split Action",
+    "category": "buttons",
+    "style": "Minimal",
+    "tags": [
+      "button",
+      "split",
+      "action",
+      "menu",
+      "minimal"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"btn-split\"><button>حفظ</button><button aria-label=\"خيارات\">⌄</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر رئيسي مع إجراء ثانوي منفصل",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-013",
+    "name": "Loading State",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "loading",
+      "spinner",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-loading\"><i></i><span>جارٍ الحفظ</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر حالة تحميل مع Spinner صغير",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-014",
+    "name": "Ghost Icon",
+    "category": "buttons",
+    "style": "Outline",
+    "tags": [
+      "button",
+      "ghost",
+      "icon",
+      "minimal",
+      "outline"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn btn-ghost\">↗ <span>فتح</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر Ghost خفيف مع أيقونة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-015",
+    "name": "CTA Arrow",
+    "category": "buttons",
+    "style": "Gradient",
+    "tags": [
+      "button",
+      "cta",
+      "arrow",
+      "gradient",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-cta\"><span>ابدأ الآن</span><i>←</i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر CTA بارز بسهم متحرك",
+    "playground": {
+      "bg": "#5b5cf0",
+      "color": "#ffffff",
+      "radius": 16,
+      "shadow": 22
+    }
+  },
+  {
+    "id": "HOV-011",
+    "name": "Gradient Border",
+    "category": "hover",
+    "style": "Border",
+    "tags": [
+      "hover",
+      "gradient",
+      "border",
+      "card",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"hover-gradient-border\"><span>Gradient Border</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حد Gradient يظهر ويتحرك عند المرور",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "HOV-012",
+    "name": "Blur Reveal",
+    "category": "hover",
+    "style": "Reveal",
+    "tags": [
+      "hover",
+      "blur",
+      "reveal",
+      "image",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-blur\"><div></div><span>مشاهدة التفاصيل</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "كشف المحتوى مع إزالة Blur تدريجيًا",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "HOV-013",
+    "name": "Flip Label",
+    "category": "hover",
+    "style": "Reveal",
+    "tags": [
+      "hover",
+      "flip",
+      "label",
+      "text",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hover-flip\"><span>المزيد</span><b>فتح ↗</b></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تبديل النص بحركة Flip قصيرة",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "HOV-014",
+    "name": "Shine Sweep",
+    "category": "hover",
+    "style": "Glow",
+    "tags": [
+      "hover",
+      "shine",
+      "sweep",
+      "glow",
+      "button"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hover-shine\">Shine Sweep</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "لمعة تمر فوق العنصر عند Hover",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "radius": 12,
+      "glow": 12
+    }
+  },
+  {
+    "id": "HOV-015",
+    "name": "Spotlight Card",
+    "category": "hover",
+    "style": "Glow",
+    "tags": [
+      "hover",
+      "spotlight",
+      "card",
+      "dark",
+      "glow"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"hover-spotlight\"><b>Spotlight</b><small>واجهة داكنة تفاعلية</small></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة داكنة بتوهج موضعي عند المرور",
+    "playground": {
+      "bg": "#171a22",
+      "color": "#ffffff",
+      "radius": 18,
+      "glow": 28
+    }
+  },
+  {
+    "id": "CRD-011",
+    "name": "Stat Comparison",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "dashboard",
+      "stats",
+      "comparison",
+      "kpi"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-compare\"><small>هذا الشهر</small><div><h4>24.8K</h4><span>+12.6%</span></div><p>مقابل 22.1K الشهر السابق</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة مقارنة رقمين للداشبورد",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-012",
+    "name": "Timeline Event",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "timeline",
+      "event",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-timeline\"><i></i><div><small>10:30 AM</small><h4>تم نشر التحديث</h4><p>Library v2 جاهزة للمراجعة.</p></div></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة حدث ضمن Timeline",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-013",
+    "name": "File Card",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "file",
+      "document",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-file\"><div class=\"file-icon\">PDF</div><div><h4>design-system.pdf</h4><p>4.8 MB · اليوم</p></div><button>⋯</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة ملف قابلة لإعادة الاستخدام",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-014",
+    "name": "Team Member",
+    "category": "cards",
+    "style": "Profile",
+    "tags": [
+      "card",
+      "team",
+      "profile",
+      "member",
+      "avatar"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-member\"><div class=\"avatar\">M</div><div><h4>مهند</h4><p>UI Library Owner</p></div><span>Online</span></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة عضو فريق مع حالة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-015",
+    "name": "Empty State",
+    "category": "cards",
+    "style": "Feature",
+    "tags": [
+      "card",
+      "empty",
+      "state",
+      "feature",
+      "cta"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-empty\"><div>＋</div><h4>لا توجد عناصر بعد</h4><p>أضف أول عنصر إلى مجموعتك.</p><button>إضافة عنصر</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Empty State مع CTA",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 18
+    }
+  },
+  {
+    "id": "INP-011",
+    "name": "OTP Group",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "otp",
+      "code",
+      "form",
+      "verification"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"otp-group\"><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مجموعة حقول OTP للتحقق",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 10
+    }
+  },
+  {
+    "id": "INP-012",
+    "name": "Toggle Control",
+    "category": "inputs",
+    "style": "Soft",
+    "tags": [
+      "input",
+      "toggle",
+      "switch",
+      "settings",
+      "soft"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"toggle-control\"><input type=\"checkbox\" checked><span></span><b>تفعيل الإشعارات</b></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Toggle بسيط للإعدادات",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "INP-013",
+    "name": "Date Field",
+    "category": "inputs",
+    "style": "Minimal",
+    "tags": [
+      "input",
+      "date",
+      "calendar",
+      "form",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"date-field\"><span>التاريخ</span><input type=\"date\" value=\"2026-09-26\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل تاريخ مرتب بLabel",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "INP-014",
+    "name": "Tag Input",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "tags",
+      "chips",
+      "form",
+      "search"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<label class=\"tag-field\"><span>glass ×</span><span>dark ×</span><input placeholder=\"أضف Tag\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل Tags مع Chips داخلية",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "INP-015",
+    "name": "Checkbox Group",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "checkbox",
+      "group",
+      "form",
+      "filter"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"check-group\"><label><input type=\"checkbox\" checked> Minimal</label><label><input type=\"checkbox\"> Glass</label><label><input type=\"checkbox\" checked> Animated</label></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مجموعة Checkboxes للفلاتر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "NAV-011",
+    "name": "Mega Nav Mini",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "mega",
+      "header",
+      "menu",
+      "minimal"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<nav class=\"mega-nav\"><b>Library</b><span>Components</span><span>Patterns</span><span>Resources</span><button>ابدأ</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هيدر قريب من Mega Menu بتركيب مضغوط",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "NAV-012",
+    "name": "Dock Navigation",
+    "category": "nav",
+    "style": "Floating",
+    "tags": [
+      "nav",
+      "dock",
+      "floating",
+      "icons",
+      "desktop"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"dock-nav\"><span>⌂</span><span class=\"active\">▦</span><span>⌕</span><span>♡</span><span>⚙</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Dock عائم للأدوات السريعة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 18,
+      "shadow": 26
+    }
+  },
+  {
+    "id": "NAV-013",
+    "name": "Step Navigation",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "steps",
+      "stepper",
+      "progress",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"step-nav\"><span class=\"done\">1<small>بيانات</small></span><i></i><span class=\"active\">2<small>مراجعة</small></span><i></i><span>3<small>إنهاء</small></span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Stepper للتنقل بين مراحل العملية",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "NAV-014",
+    "name": "Pagination Bar",
+    "category": "nav",
+    "style": "Pill",
+    "tags": [
+      "nav",
+      "pagination",
+      "pages",
+      "pill",
+      "table"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"pagination-bar\"><button>‹</button><button>1</button><button class=\"active\">2</button><button>3</button><button>›</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Pagination صغيرة وواضحة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "NAV-015",
+    "name": "Command Breadcrumb",
+    "category": "nav",
+    "style": "Breadcrumb",
+    "tags": [
+      "nav",
+      "breadcrumb",
+      "command",
+      "search",
+      "header"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"command-breadcrumb\"><span>Library</span><i>/</i><b>Buttons</b><kbd>⌘ K</kbd></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Breadcrumb مع اختصار Command",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
   }
 ];
 </script><script>const storedFavs=JSON.parse(localStorage.getItem('lib-favs')||'[]');
@@ -2057,7 +2800,7 @@ function header(){let c=categories.find(x=>x.id===state.cat);el.title.textConten
 function renderAll(){renderNav();renderOverview();renderFilters();renderGrid();header()}
 function setCat(id){state.cat=id;state.filter='All';state.q='';el.search.value='';renderAll();$('#library').scrollIntoView({behavior:'smooth'});$('#sidebar').classList.remove('open')}
 function recent(id){state.recent=[id,...state.recent.filter(x=>x!==id)].slice(0,12);persist();header()}
-function mark(id){state.usage[id]=Number(state.usage[id]||0)+1;recent(id);persist();renderOverview();header()}
+function mark(id){state.usage[id]=Number(state.usage[id]||0)+1;recent(id);persist();renderOverview();renderGrid();header()}
 function toggleFav(id){state.favorites.has(id)?state.favorites.delete(id):state.favorites.add(id);persist();renderGrid();header();if(state.active?.id===id)el.fav.textContent=state.favorites.has(id)?'♥':'♡';toast(state.favorites.has(id)?'تمت الإضافة للمفضلة':'تمت الإزالة من المفضلة')}
 const defaults={color:'#ffffff',bg:'#11131a',radius:12,padding:14,font:14,shadow:16,glow:0,scale:103,speed:30};
 function baseControls(s){return {...defaults,...(s?.playground||{})}}
@@ -2065,11 +2808,27 @@ function openDrawer(s){state.active=s;state.tab='HTML';state.controls=baseContro
 function closeDrawer(){el.drawer.classList.remove('open','full');el.drawer.setAttribute('aria-hidden','true');el.backdrop.hidden=true}
 function cssRules(){let c=state.controls;return `color: ${c.color};\nbackground: ${c.bg};\nborder-radius: ${c.radius}px;\npadding: ${Math.round(c.padding*.65)}px ${c.padding}px;\nfont-size: ${c.font}px;\nbox-shadow: 0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18);\ntransition: transform ${(c.speed/100).toFixed(2)}s ease, box-shadow ${(c.speed/100).toFixed(2)}s ease;`}
 function portableCss(s){if(s.category==='buttons')return '.demo-btn{border:0;position:relative;overflow:hidden;font-weight:700;cursor:pointer}.demo-btn.liquid:before{content:"";position:absolute;left:0;right:0;top:100%;height:100%;background:#3559e8;transition:.35s}.demo-btn.liquid:hover:before{top:0}.demo-btn.liquid span{position:relative;z-index:2}.btn-icon-slide i{display:inline-block;margin-right:8px;transition:.25s}.btn-icon-slide:hover i{transform:translateX(-5px)}.btn-gradient{background:linear-gradient(120deg,#5b5cf0,#8b63ff,#3559e8)!important;background-size:200% 200%!important}.btn-glass{backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9)!important}';if(s.category==='cards')return '.demo-card{width:220px;border:1px solid #e1e4ec;background:#fff;border-radius:16px;padding:15px}.demo-card h4{margin:0 0 5px}.demo-card p,.demo-card small{color:#7a8090}.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;margin:auto;background:#e9edff}.task-progress{height:7px;background:#edf0f6;border-radius:99px;overflow:hidden}.task-progress i{display:block;width:72%;height:100%;background:#3559e8}';if(s.category==='inputs')return '.demo-input,input,textarea,select{font:inherit}.demo-input{width:240px;height:42px;border:1px solid #dfe2ea;border-radius:12px;padding:0 12px;outline:0}.input-search,.password-field,.validated-field,.select-field{width:240px;display:flex;align-items:center;border:1px solid #dfe2ea;border-radius:12px;padding:0 11px}.input-search input,.password-field input,.validated-field input,.select-field select{flex:1;height:40px;border:0;outline:0;background:transparent}';if(s.category==='nav')return '.demo-nav{width:300px;border:1px solid #e2e4eb;background:#fff;border-radius:14px;padding:8px 9px;display:flex;align-items:center;gap:5px}.demo-nav span{padding:6px 8px;border-radius:7px}.demo-nav .active{background:#111;color:#fff}.mobile-bottom{width:300px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;border:1px solid #e2e4eb;border-radius:18px;padding:7px}';if(s.category==='hover')return '.hover-link{position:relative;text-decoration:none;font-weight:700}.hover-link:after{content:"";position:absolute;right:0;bottom:-5px;width:0;height:2px;background:currentColor;transition:.3s}.hover-link:hover:after{width:100%}.hover-pop,.hover-tilt{padding:18px;border:1px solid #e1e4ec;border-radius:16px;background:#fff;transition:.3s}.hover-pop:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(30,38,64,.14)}';return ''}
+const portableExtra={"buttons":".btn-magnetic,.btn-cta{display:inline-flex;align-items:center;gap:10px}.btn-magnetic i{width:8px;height:8px;border-radius:50%;background:#7f9cff}.btn-split{display:inline-flex;overflow:hidden;border-radius:12px}.btn-split button{border:0;background:#111;color:#fff;padding:11px 15px}.btn-loading{display:inline-flex;align-items:center;gap:9px}.btn-loading i{width:13px;height:13px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}.btn-ghost{border:1px solid #dfe2ea!important;background:#fff!important;color:#111!important}.btn-cta{background:linear-gradient(135deg,#5b5cf0,#3559e8)!important;color:#fff!important}@keyframes spin{to{transform:rotate(360deg)}}","hover":".hover-gradient-border{padding:18px;border-radius:16px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(120deg,#3559e8,#8b63ff) border-box;border:1px solid transparent}.hover-blur{width:220px;height:135px;position:relative;overflow:hidden;border-radius:16px}.hover-blur>div{position:absolute;inset:0;background:linear-gradient(135deg,#dfe6ff,#9fb2ff);filter:blur(4px);transition:.35s}.hover-blur:hover>div{filter:blur(0)}.hover-flip{border:0;background:#111;color:#fff;border-radius:12px;padding:12px 18px}.hover-shine{overflow:hidden;border:0;background:#3559e8;color:#fff;border-radius:12px;padding:12px 18px}.hover-spotlight{padding:18px;border-radius:16px;background:#171a22;color:#fff}","cards":".card-compare>div{display:flex;justify-content:space-between;align-items:center}.card-timeline{display:flex;gap:12px}.card-file{display:flex;align-items:center;gap:10px}.file-icon{width:42px;height:48px;border-radius:9px;background:#eef2ff;color:#3559e8;display:grid;place-items:center}.card-member{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:10px}.card-empty{text-align:center}","inputs":".otp-group{display:flex;gap:7px}.otp-group input{width:44px;height:48px;border:1px solid #dfe2ea;border-radius:10px;text-align:center}.toggle-control{display:flex;align-items:center;gap:10px}.date-field{display:grid;gap:6px;width:240px}.tag-field{width:270px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;border:1px solid #dfe2ea;border-radius:12px;padding:7px}.check-group{display:grid;gap:8px}","nav":".mega-nav{width:330px;display:flex;align-items:center;gap:8px;border:1px solid #e2e4eb;border-radius:14px;padding:8px}.dock-nav{display:flex;gap:5px;border:1px solid #e2e4eb;border-radius:18px;padding:7px}.step-nav{display:flex;align-items:flex-start;gap:6px}.pagination-bar{display:flex;gap:5px}.command-breadcrumb{display:flex;align-items:center;gap:8px;border:1px solid #e2e4eb;border-radius:12px;padding:9px 11px}"};
+function portableAll(s){return portableCss(s)+(portableExtra[s.category]||'')}
+function controlSelector(s){let id='#ui-'+s.id.toLowerCase();if(s.category!=='inputs')return id;if(s.id==='INP-011')return id+' input';if(['INP-012','INP-015'].includes(s.id))return id;return id+' input, '+id+' textarea, '+id+' select'}
+function previewTargets(s){let root=el.preview.firstElementChild;if(!root)return[];if(s.category!=='inputs')return[root];if(s.id==='INP-011')return[...root.querySelectorAll('input')];if(['INP-012','INP-015'].includes(s.id))return[root];let nodes=[...root.querySelectorAll('input,textarea,select')];return nodes.length?nodes:[root]}
 function rootHtml(s){return s.code.html.replace(/^(\s*)<([a-zA-Z][\w-]*)(\s|>)/,(_,ws,tag,tail)=>ws+'<'+tag+' id="ui-'+s.id.toLowerCase()+'"'+tail)}
-function dynamicCss(s){let c=state.controls,id='#ui-'+s.id.toLowerCase();return `${id}{${cssRules()}}\n${id}:hover{transform:scale(${(c.scale/100).toFixed(2)});box-shadow:0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)}`}
-function code(tab){let s=state.active,c=state.controls;if(!s)return'';if(tab==='HTML')return `<style>\n${portableCss(s)}\n${dynamicCss(s)}\n</style>\n${rootHtml(s)}`;if(tab==='CSS')return portableCss(s)+'\n\n'+dynamicCss(s);if(tab==='JS')return `const element = document.querySelector('#ui-${s.id.toLowerCase()}');\n\nelement.addEventListener('click', () => {\n  console.log('${s.id} — ${s.name}');\n});`;if(tab==='React'){let n='Ui'+s.id.replace(/[^a-zA-Z0-9]/g,'');return `export default function ${n}(){\n  const style={color:'${c.color}',background:'${c.bg}',borderRadius:${c.radius},padding:'${Math.round(c.padding*.65)}px ${c.padding}px',fontSize:${c.font}};\n  return <div style={style}>${s.name}</div>;\n}`}return `<div className="text-[${c.color}] bg-[${c.bg}] rounded-[${c.radius}px] px-[${c.padding}px] py-[${Math.round(c.padding*.65)}px] text-[${c.font}px] transition-transform duration-[${Math.round(c.speed*10)}ms] hover:scale-[${(c.scale/100).toFixed(2)}]">\n  ${s.name}\n</div>`}
+function dynamicCss(s){let c=state.controls,sel=controlSelector(s);return `${sel}{${cssRules()}}\n${sel}:hover{transform:scale(${(c.scale/100).toFixed(2)});box-shadow:0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)}`}
+function code(tab){
+  let s=state.active,c=state.controls;if(!s)return'';
+  let html=rootHtml(s),css=portableAll(s)+'\n\n'+dynamicCss(s);
+  if(tab==='HTML')return '<style>\n'+css+'\n</style>\n'+html;
+  if(tab==='CSS')return css;
+  if(tab==='JS')return "const element = document.querySelector('#ui-"+s.id.toLowerCase()+"');\n\nelement.addEventListener('click', () => {\n  console.log('"+s.id+" — "+s.name+"');\n});";
+  if(tab==='React'){
+    let n='Ui'+s.id.replace(/[^a-zA-Z0-9]/g,'');
+    return 'const markup = '+JSON.stringify(html)+';\nconst css = '+JSON.stringify(css)+';\n\nexport default function '+n+'(){\n  return (\n    <>\n      <style>{css}</style>\n      <div dangerouslySetInnerHTML={{__html: markup}} />\n    </>\n  );\n}';
+  }
+  let tw='text-['+c.color+'] bg-['+c.bg+'] rounded-['+c.radius+'px] px-['+c.padding+'px] py-['+Math.round(c.padding*.65)+'px] text-['+c.font+'px] transition-transform duration-['+Math.round(c.speed*10)+'ms] hover:scale-['+(c.scale/100).toFixed(2)+']';
+  return 'const markup = '+JSON.stringify(s.code.html)+';\nconst structuralCss = '+JSON.stringify(portableAll(s))+';\n\nexport default function Ui'+s.id.replace(/[^a-zA-Z0-9]/g,'')+'(){\n  return (\n    <>\n      <style>{structuralCss}</style>\n      <div className="'+tw+'" dangerouslySetInnerHTML={{__html: markup}} />\n    </>\n  );\n}';
+}
 function renderTabs(){el.tabs.innerHTML=['HTML','CSS','JS','React','Tailwind'].map(t=>`<button data-tab="${t}" class="${state.tab===t?'active':''}">${t}</button>`).join('');el.code.textContent=code(state.tab)}
-function applyControls(){let t=el.preview.firstElementChild,c=state.controls;if(!t||!c)return;t.style.color=c.color;t.style.backgroundColor=c.bg;t.style.borderRadius=c.radius+'px';t.style.padding=`${Math.round(c.padding*.65)}px ${c.padding}px`;t.style.fontSize=c.font+'px';t.style.boxShadow=`0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`;t.style.transition=`transform ${c.speed/100}s ease, box-shadow ${c.speed/100}s ease`;t.onmouseenter=()=>{t.style.transform=`scale(${c.scale/100})`;t.style.boxShadow=`0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`};t.onmouseleave=()=>{t.style.transform='scale(1)';t.style.boxShadow=`0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`};el.code.textContent=code(state.tab)}
+function applyControls(){let targets=previewTargets(state.active),c=state.controls;if(!targets.length||!c)return;targets.forEach(t=>{t.style.color=c.color;t.style.backgroundColor=c.bg;t.style.borderRadius=c.radius+'px';t.style.padding=`${Math.round(c.padding*.65)}px ${c.padding}px`;t.style.fontSize=c.font+'px';t.style.boxShadow=`0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`;t.style.transition=`transform ${c.speed/100}s ease, box-shadow ${c.speed/100}s ease`;t.onmouseenter=()=>{t.style.transform=`scale(${c.scale/100})`;t.style.boxShadow=`0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`};t.onmouseleave=()=>{t.style.transform='scale(1)';t.style.boxShadow=`0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`}});el.code.textContent=code(state.tab)}
 function updateControls(){let m={cColor:'color',cBg:'bg',cRadius:'radius',cPadding:'padding',cFont:'font',cShadow:'shadow',cGlow:'glow',cScale:'scale',cSpeed:'speed'};Object.entries(m).forEach(([id,k])=>$('#'+id).value=state.controls[k]);$('#vRadius').textContent=state.controls.radius+'px';$('#vPadding').textContent=state.controls.padding+'px';$('#vFont').textContent=state.controls.font+'px';$('#vShadow').textContent=state.controls.shadow;$('#vGlow').textContent=state.controls.glow;$('#vScale').textContent=(state.controls.scale/100).toFixed(2)+'×';$('#vSpeed').textContent=(state.controls.speed/100).toFixed(2)+'s'}
 async function copyText(t,msg='تم نسخ الكود'){try{await navigator.clipboard.writeText(t)}catch{let a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}toast(msg)}
 function quick(s){state.active=s;state.controls=baseControls(s);copyText(code('HTML'));mark(s.id)}
