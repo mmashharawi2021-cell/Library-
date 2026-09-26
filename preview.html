@@ -3,12 +3,125 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f6f7fb"><meta name="description" content="مكتبة مهند الشخصية لمرجع تصميم الويب">
-<title>مكتبة مهند — مرجع تصميم الويب</title><style>
-:root{--bg:#f6f7fb;--surface:#fff;--surface2:#f0f2f7;--text:#141722;--muted:#747b8e;--line:#e5e7ee;--accent:#3559e8;--accent2:#8b63ff;--sidebar:258px;--shadow:0 18px 50px rgba(30,38,64,.09)}
+<title>مكتبة مهند — مرجع تصميم الويب</title><style>:root{--bg:#f6f7fb;--surface:#fff;--surface2:#f0f2f7;--text:#141722;--muted:#747b8e;--line:#e5e7ee;--accent:#3559e8;--accent2:#8b63ff;--sidebar:258px;--shadow:0 18px 50px rgba(30,38,64,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 0 0 auto;width:var(--sidebar);z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-left:1px solid var(--line);padding:18px 13px;display:flex;flex-direction:column;gap:6px}.brand{display:flex;gap:11px;align-items:center;padding:4px 8px 18px}.brand-mark{width:42px;height:42px;border-radius:14px;background:#11131a;color:#fff;display:grid;place-items:center;font-weight:800}.brand strong{display:block;font-size:14px}.brand small{display:block;font-size:9px;color:var(--muted);margin-top:4px;direction:ltr;text-align:right;letter-spacing:.08em}.side-title{font-size:10px;font-weight:700;color:var(--muted);padding:16px 10px 6px}.side-link{width:100%;display:grid;grid-template-columns:28px 1fr auto;align-items:center;border:0;border-radius:12px;background:transparent;text-align:right;padding:10px;color:#5c6375;transition:.18s}.side-link:hover,.side-link.active{background:var(--surface2);color:var(--text)}.side-link span{text-align:center;font-size:16px}.side-link b{font-size:11px}.side-link em{font-style:normal;font-size:9px;padding:3px 6px;border-radius:7px;background:#fff;border:1px solid var(--line);color:var(--muted)}.side-foot{margin-top:auto;border-top:1px solid var(--line);padding:13px 5px 0}.random{width:100%;border:0;background:#11131a;color:#fff;border-radius:12px;padding:11px 12px;display:flex;justify-content:space-between;font-size:11px}.side-foot small{display:block;font-size:8px;color:var(--muted);line-height:1.7;margin-top:8px}main{margin-right:var(--sidebar)}.topbar{height:70px;display:flex;align-items:center;gap:8px;padding:13px 26px;position:sticky;top:0;z-index:30;background:rgba(246,247,251,.86);backdrop-filter:blur(16px)}.search{flex:1;max-width:830px;margin:auto;position:relative}.search>span{position:absolute;right:14px;top:8px;font-size:21px;color:var(--muted)}.search input{width:100%;height:43px;border:1px solid var(--line);border-radius:14px;background:#fff;outline:none;padding:0 40px 0 46px;font-size:11px;box-shadow:0 5px 20px rgba(35,42,63,.03)}.search input:focus{border-color:#bdc6f4;box-shadow:0 0 0 4px #e9edff}.search kbd{position:absolute;left:11px;top:10px;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;background:var(--surface2);padding:3px 7px;color:var(--muted);font-size:9px}.suggestions{position:absolute;top:49px;right:0;left:0;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}.suggestions button{width:100%;border:0;background:#fff;padding:10px 13px;display:flex;justify-content:space-between;font-size:10px}.suggestions button:hover{background:var(--surface2)}.icon,.ghost{height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--text);padding:0 11px}.ghost{height:34px;font-size:9px;color:var(--muted)}.mobile{display:none}.hero{margin:12px 26px 38px;min-height:330px;border-radius:28px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(135deg,#fff 0%,#f8f9ff 60%,#eef2ff 100%);box-shadow:0 24px 70px rgba(27,39,76,.07);display:grid;grid-template-columns:1.1fr .9fr;position:relative}.hero:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;left:-120px;top:-160px;background:radial-gradient(circle,#dfe6ff,transparent 69%)}.hero-copy{padding:53px 50px;position:relative;z-index:2}.eyebrow{display:inline-block;font-size:9px;letter-spacing:.04em;color:var(--accent);font-weight:800;margin-bottom:8px}.hero h1{font-size:clamp(36px,4.4vw,60px);line-height:1.17;letter-spacing:-.04em;margin:0;font-style:normal}.hero h1 i{font-style:normal;color:var(--accent)}.hero p{font-size:12px;color:var(--muted);line-height:2;max-width:640px;margin:20px 0 25px}.stats{display:flex;gap:8px;flex-wrap:wrap}.stats div{min-width:100px;padding:10px 12px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.72)}.stats b{display:block;font-size:17px}.stats small{font-size:8px;color:var(--muted)}.visual{position:relative}.map{position:absolute;inset:43px 30px 43px 35px;border:1px solid #dfe4f3;border-radius:23px;background:#fafbff;overflow:hidden;box-shadow:var(--shadow);transform:perspective(850px) rotateY(-5deg) rotateX(3deg)}.grid{position:absolute;inset:0;background-image:linear-gradient(#e6e9f2 1px,transparent 1px),linear-gradient(90deg,#e6e9f2 1px,transparent 1px);background-size:23px 23px;opacity:.7}.map svg{position:absolute;inset:0;width:100%;height:100%}.map path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 4px 8px rgba(53,89,232,.25))}.pin{position:absolute;width:11px;height:11px;border:3px solid #fff;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(53,89,232,.14);animation:pulse 2.2s infinite}.p1{right:24%;top:29%}.p2{right:48%;top:53%;animation-delay:.6s}.p3{right:72%;top:64%;animation-delay:1.1s}@keyframes pulse{50%{box-shadow:0 0 0 11px rgba(53,89,232,0)}}.float{position:absolute;border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 13px;box-shadow:0 14px 34px rgba(27,37,70,.12);font-size:9px;font-weight:700;direction:ltr;animation:float 4s ease-in-out infinite}.f1{right:10px;top:62px}.f2{left:8px;bottom:67px;animation-delay:.7s}.f3{right:52px;bottom:27px;animation-delay:1.3s}@keyframes float{50%{transform:translateY(-8px)}}.section{padding:0 26px 42px}.heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:17px}.heading h2{margin:0;font-size:22px;letter-spacing:-.02em}.heading p{font-size:10px;color:var(--muted);margin:0}.category-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}.category-card{position:relative;min-height:140px;text-align:right;padding:16px;border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;transition:.2s;box-shadow:0 6px 20px rgba(31,39,64,.035)}.category-card:hover,.component-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.category-card .rank{position:absolute;left:11px;top:9px;color:#c9ccd5;font-size:24px;font-weight:800}.cat-icon{width:38px;height:38px;border-radius:11px;background:var(--surface2);display:grid;place-items:center;margin-bottom:18px;font-size:17px}.category-card strong{display:block;font-size:12px}.category-card small{font-size:8px;color:var(--muted)}.meter{height:3px;background:var(--surface2);border-radius:99px;margin-top:10px;overflow:hidden}.meter span{display:block;height:100%;background:var(--accent)}.filters{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}.filter{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:7px 10px;font-size:9px}.filter.active{background:#11131a;color:#fff;border-color:#11131a}.component-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.component-card{background:#fff;border:1px solid var(--line);border-radius:19px;overflow:hidden;transition:.2s}.component-preview{min-height:168px;padding:23px;display:grid;place-items:center;background:linear-gradient(145deg,#f7f8fb,#fff);position:relative;overflow:hidden}.component-preview:after{content:"";position:absolute;left:12px;bottom:12px;width:6px;height:6px;background:#c9cdd7;border-radius:50%;box-shadow:10px 0 #dfe2e9,20px 0 #eaebef}.component-info{padding:12px 13px 13px;border-top:1px solid var(--line)}.component-title{display:flex;justify-content:space-between;gap:8px}.component-title strong{font-size:11px}.component-title span{font-size:8px;color:var(--muted);direction:ltr}.tags{display:flex;gap:4px;flex-wrap:wrap}.tags span,.mini-tags span{background:var(--surface2);border-radius:7px;padding:4px 6px;font-size:7px;color:var(--muted)}.mini-tags{display:flex;gap:4px;margin-top:8px;overflow:hidden}.tools{display:flex;gap:5px;margin-top:9px}.tools button{height:30px;border:1px solid var(--line);background:#fff;border-radius:8px;font-size:8px;color:var(--muted);padding:0 9px}.tools .quick{margin-left:auto;background:#11131a;color:#fff;border-color:#11131a}.empty{text-align:center;padding:50px;border:1px dashed #cfd3df;border-radius:20px;background:#fff;color:var(--muted)}.empty>b{font-size:34px}.empty h3{margin:8px 0 5px;color:var(--text)}.empty p{font-size:10px}.demo-btn{border:0;border-radius:12px;padding:11px 18px;font-weight:700;transition:.3s;position:relative;overflow:hidden}.demo-btn.primary{background:#11131a;color:#fff}.demo-btn.glow{background:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(53,89,232,.28)}.demo-btn.glow:hover{transform:translateY(-2px);box-shadow:0 0 0 7px rgba(53,89,232,.1),0 12px 32px rgba(53,89,232,.34)}.demo-btn.outline{background:#fff;color:#111;border:1px solid #bfc4d0}.demo-btn.outline:hover{background:#111;color:#fff}.demo-btn.liquid{background:#111;color:#fff}.demo-btn.liquid:before{content:"";position:absolute;left:0;right:0;top:100%;height:100%;background:var(--accent);transition:.35s}.demo-btn.liquid:hover:before{top:0}.demo-btn.liquid span{position:relative;z-index:2}.demo-card{width:220px;border:1px solid #e1e4ec;background:#fff;border-radius:16px;padding:15px;box-shadow:0 12px 25px rgba(30,38,64,.07)}.demo-card .thumb{height:74px;border-radius:10px;background:linear-gradient(135deg,#dfe6ff,#f5f7ff);margin-bottom:10px}.demo-card h4{font-size:10px;margin:0 0 5px}.demo-card p{font-size:7px;color:#7a8090;margin:0;line-height:1.6}.demo-input{width:230px;height:41px;border:1px solid #dfe2ea;background:#fff;border-radius:12px;padding:0 12px;outline:0}.demo-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px #e9edff}.demo-nav{width:260px;border:1px solid #e2e4eb;background:#fff;border-radius:14px;padding:8px 9px;display:flex;align-items:center;gap:5px;box-shadow:0 8px 25px rgba(30,38,64,.06)}.demo-nav b{margin-left:auto;font-size:9px}.demo-nav span{font-size:7px;color:#7a8090;padding:5px 7px;border-radius:7px}.demo-nav .active{background:#111;color:#fff}.demo-modal{width:230px;border:1px solid #e2e5ec;background:#fff;border-radius:15px;padding:14px;box-shadow:0 18px 38px rgba(31,38,59,.14)}.demo-modal b{font-size:10px}.demo-modal p{font-size:7px;color:#7a8090;line-height:1.6}.actions{display:flex;gap:5px}.actions button{border:0;border-radius:8px;padding:7px 9px;font-size:7px}.actions button:first-child{background:#111;color:#fff}.actions button:last-child{background:#f0f2f6}.demo-menu{width:170px;border:1px solid #e1e4eb;background:#fff;border-radius:13px;padding:6px;box-shadow:0 15px 34px rgba(30,38,62,.1)}.demo-menu div{padding:8px;border-radius:8px;font-size:8px}.demo-menu div:hover{background:#f1f3f7}.loader{width:39px;height:39px;border:4px solid #e7eaf1;border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.progress{width:230px;height:8px;border-radius:99px;background:#e9ebf1;overflow:hidden}.progress span{display:block;height:100%;width:67%;background:var(--accent);border-radius:inherit;animation:prog 2.2s ease-in-out infinite}@keyframes prog{50%{width:82%}}.demo-tabs{display:flex;background:#eef0f5;padding:4px;border-radius:11px;gap:4px}.demo-tabs span{padding:8px 12px;font-size:8px;border-radius:8px}.demo-tabs .active{background:#fff;box-shadow:0 3px 10px rgba(30,38,62,.07)}.micro{width:72px;height:72px;border-radius:20px;background:#111;color:#fff;display:grid;place-items:center;font-size:25px;transition:.35s}.micro:hover{transform:rotate(8deg) scale(1.08);border-radius:50%;background:var(--accent)}.backdrop{position:fixed;inset:0;background:rgba(20,24,35,.34);backdrop-filter:blur(2px);z-index:80}.drawer{position:fixed;top:0;bottom:0;left:0;width:min(760px,100%);background:#f8f9fc;border-right:1px solid var(--line);box-shadow:20px 0 60px rgba(18,24,43,.2);z-index:90;transform:translateX(-101%);transition:.28s;display:flex;flex-direction:column}.drawer.open{transform:none}.drawer.full{width:100%}.drawer-head{height:70px;flex:0 0 auto;padding:12px 18px;border-bottom:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:space-between}.drawer-head h2{font-size:16px;margin:0}.drawer-head .eyebrow{margin-bottom:2px}.drawer-head>div:last-child{display:flex;gap:5px}.drawer-body{padding:16px;overflow:auto;display:flex;flex-direction:column;gap:12px}.panel{border:1px solid var(--line);background:#fff;border-radius:17px;overflow:hidden}.panelbar,.codebar{height:43px;padding:8px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.panelbar span,.panelbar b{font-size:9px;color:var(--muted)}.bg-switch{display:flex;gap:5px}.bg-dot{width:20px;height:20px;border:1px solid var(--line);border-radius:6px;background:#fff}.bg-dot.dark{background:#171a22}.bg-dot.grid-bg{background-image:linear-gradient(#d6d9e1 1px,transparent 1px),linear-gradient(90deg,#d6d9e1 1px,transparent 1px);background-size:5px 5px}.bg-dot.active{outline:2px solid var(--accent);outline-offset:1px}.drawer-preview{min-height:260px;display:grid;place-items:center;padding:34px;transition:.2s}.drawer-preview.dark-mode{background:#171a22}.drawer-preview.grid-mode{background-color:#fafbfc;background-image:linear-gradient(#e7e9ef 1px,transparent 1px),linear-gradient(90deg,#e7e9ef 1px,transparent 1px);background-size:18px 18px}.controls{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:13px}.controls label{display:grid;grid-template-columns:1fr auto;gap:5px;align-items:center;color:var(--muted);font-size:8px}.controls input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}.controls input[type=color]{width:38px;height:25px;border:1px solid var(--line);border-radius:7px;background:#fff;padding:2px}.codebar{gap:8px}.codebar>div{display:flex;gap:4px}.codebar button[data-tab]{border:0;background:transparent;color:var(--muted);border-radius:7px;padding:6px 8px;font-size:8px}.codebar button[data-tab].active{background:#11131a;color:#fff}.copy{height:34px;border:0;background:var(--accent);color:#fff;border-radius:9px;padding:0 11px;font-size:8px}.code-panel pre{margin:0;min-height:180px;padding:16px;overflow:auto;background:#11131a;color:#d8def4;direction:ltr;text-align:left;font:10px/1.75 Consolas,monospace}.meta{padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}.toast{position:fixed;left:18px;bottom:18px;z-index:120;background:#11131a;color:#fff;border-radius:10px;padding:10px 13px;font-size:9px;opacity:0;transform:translateY(10px);transition:.22s;pointer-events:none}.toast.show{opacity:1;transform:none}body.focus .sidebar,body.focus .hero,body.focus #overview{display:none}body.focus main{margin-right:0}
 @media(max-width:1180px){.category-grid{grid-template-columns:repeat(3,1fr)}.component-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.visual{display:none}}
 @media(max-width:820px){.sidebar{transform:translateX(105%);transition:.25s}.sidebar.open{transform:none}main{margin-right:0}.mobile{display:block}.topbar{padding:11px 13px}.hero{margin:9px 13px 28px}.hero-copy{padding:34px 23px}.section{padding:0 13px 32px}.category-grid{grid-template-columns:repeat(2,1fr)}.component-grid{grid-template-columns:1fr}.heading{align-items:flex-start;flex-direction:column}.filters{justify-content:flex-start}.controls{grid-template-columns:1fr}.drawer{width:100%}}
 @media(max-width:480px){.hero h1{font-size:34px}.category-grid{gap:8px}.category-card{min-height:124px;padding:13px}.search input{font-size:10px}.component-preview{min-height:155px}}
+
+/* ===== Library v2: structured components ===== */
+.filter-sep{width:1px;height:26px;background:var(--line);margin:0 4px}
+.filter.complexity{border-style:dashed}
+.component-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;font-size:8px;color:var(--muted)}
+.complexity-badge{padding:4px 7px;border-radius:999px;font-weight:700}
+.complexity-badge.basic{background:#edf8f1;color:#26784d}
+.complexity-badge.intermediate{background:#fff5df;color:#9a6511}
+.complexity-badge.advanced{background:#f5eefe;color:#7145a8}
+
+/* Buttons */
+.btn-gradient{background:linear-gradient(120deg,#5b5cf0,#8b63ff,#3559e8)!important;background-size:200% 200%!important;color:#fff;animation:gradientShift 4s ease infinite}
+@keyframes gradientShift{50%{background-position:100% 50%}}
+.btn-soft{background:#eef2ff!important;color:#24305f!important;border:1px solid #dce2ff!important;box-shadow:0 10px 24px rgba(67,82,140,.10)}
+.btn-icon-slide{display:inline-flex;align-items:center;gap:11px}
+.btn-icon-slide i{font-style:normal;display:inline-block;transition:.25s}
+.btn-icon-slide:hover i{transform:translateX(-5px)}
+.btn-border-draw{background:#fff!important;color:#111!important;border:1px solid #cfd4df!important;box-shadow:inset 0 0 0 0 #111;transition:.28s}
+.btn-border-draw:hover{box-shadow:inset 0 0 0 1px #111}
+.btn-glass{background:rgba(255,255,255,.66)!important;color:#26304a!important;border:1px solid rgba(255,255,255,.92)!important;backdrop-filter:blur(12px);box-shadow:0 14px 34px rgba(45,55,90,.12)}
+.btn-danger{background:#e44747!important;color:#fff!important}
+
+/* Hover effects */
+.hover-link{position:relative;text-decoration:none;color:#111;font-weight:800;padding:8px 2px}
+.hover-link:after{content:"";position:absolute;right:0;bottom:0;width:0;height:2px;background:currentColor;transition:.3s}
+.hover-link:hover:after{width:100%}
+.hover-image{width:220px;overflow:hidden;border:1px solid #e1e4ec;border-radius:16px;padding:10px;background:#fff}
+.hover-image-art{height:104px;border-radius:11px;background:linear-gradient(135deg,#dfe6ff,#bcc8ff);transition:.35s}
+.hover-image:hover .hover-image-art{transform:scale(1.08)}
+.hover-image b{display:block;margin-top:10px;font-size:10px}
+.hover-tilt,.hover-pop,.hover-orbit{width:210px;padding:18px;border:1px solid #e1e4ec;border-radius:16px;background:#fff;transition:.3s}
+.hover-tilt{display:grid;gap:5px;box-shadow:0 12px 28px rgba(30,38,64,.06);transform-style:preserve-3d}
+.hover-tilt span{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#eef2ff;color:#3559e8;font-size:9px;font-weight:800}
+.hover-tilt small,.hover-pop small{color:#858b9a}
+.hover-tilt:hover{transform:perspective(650px) rotateX(6deg) rotateY(-7deg)}
+.hover-pop:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(30,38,64,.14)}
+.hover-orbit{position:relative;overflow:hidden;padding:2px}
+.hover-orbit:before{content:"";position:absolute;inset:-120%;background:conic-gradient(transparent 0 76%,#3559e8 83%,transparent 91%);animation:orbit 2.4s linear infinite}
+.hover-orbit span{position:relative;display:block;background:#fff;border-radius:13px;padding:20px;text-align:center}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hover-slide,.hover-nudge{border:1px solid #dfe2ea;background:#fff;color:#111;padding:12px 18px;border-radius:12px;position:relative;overflow:hidden;font-weight:700}
+.hover-slide:before{content:"";position:absolute;inset:0 100% 0 0;background:#111;transition:.3s}
+.hover-slide:hover:before{right:0}
+.hover-slide:after{content:"Slide Fill";position:absolute;inset:0;display:grid;place-items:center;color:#fff;opacity:0;transition:.2s}
+.hover-slide:hover:after{opacity:1}
+.hover-nudge i{display:inline-block;margin-right:8px;font-style:normal;transition:.2s}
+.hover-nudge:hover i{transform:translateX(-5px)}
+.hover-reveal{width:220px;height:145px;border-radius:16px;position:relative;overflow:hidden;border:1px solid #e1e4ec}
+.hover-reveal>div{position:absolute;inset:0;background:linear-gradient(135deg,#dfe6ff,#c3ceff)}
+.hover-reveal span{position:absolute;right:10px;left:10px;bottom:10px;background:#111;color:#fff;padding:9px;border-radius:9px;transform:translateY(150%);transition:.3s;font-size:9px}
+.hover-reveal:hover span{transform:none}
+.hover-ring{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;transition:.25s}
+.hover-ring:hover{box-shadow:0 0 0 10px rgba(53,89,232,.14);transform:scale(1.08)}
+
+/* Cards */
+.card-glass{background:rgba(255,255,255,.64)!important;backdrop-filter:blur(11px)}
+.badge{display:inline-block;font-size:7px;padding:4px 7px;border-radius:999px;background:#eef2ff;color:#3559e8;margin-bottom:10px}
+.card-kpi h4{font-size:27px;margin:7px 0}.card-kpi small{font-size:8px}
+.card-profile{text-align:center}.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;background:#e9edff;color:#3559e8;font-weight:800}
+.demo-card button{border:0;border-radius:9px;padding:8px 10px;background:#111;color:#fff;font-size:8px}
+.card-price h4{font-size:24px}.card-price h4 span{font-size:8px;color:#7a8090}
+.card-product{display:grid;grid-template-columns:82px 1fr;gap:12px;align-items:center}.card-product .product-art{height:82px;margin:0;border-radius:11px;background:linear-gradient(135deg,#dfe6ff,#c5d0ff)}.card-product b{font-size:11px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.task-progress{height:7px;background:#edf0f6;border-radius:99px;overflow:hidden;margin:11px 0}.task-progress i{display:block;width:72%;height:100%;background:#3559e8}
+.card-trend svg{width:100%;height:48px}.card-trend path{fill:none;stroke:#3559e8;stroke-width:3;stroke-linecap:round}
+.card-alert{display:flex;align-items:center;gap:10px}.card-alert>span{flex:0 0 34px;width:34px;height:34px;border-radius:10px;background:#fff1d8;color:#b86b00;display:grid;place-items:center;font-weight:800}
+.feature-icon{width:42px;height:42px;border-radius:12px;background:#eef2ff;display:grid;place-items:center;color:#3559e8;margin-bottom:11px}.card-feature a{text-decoration:none;color:#3559e8;font-size:8px}
+
+/* Inputs */
+.input-search,.password-field,.validated-field,.select-field{width:240px;display:flex;align-items:center;border:1px solid #dfe2ea;background:#fff;border-radius:12px;padding:0 11px;gap:8px}
+.input-search input,.password-field input,.validated-field input,.select-field select{flex:1;min-width:0;height:40px;border:0;outline:0;background:transparent}
+.password-field button{border:0;background:transparent;color:#3559e8;font-size:8px}
+.validated-field span{color:#2f9d67;font-weight:800}
+.floating-field{width:240px;position:relative;display:block}.floating-field input{width:100%;height:46px;border:1px solid #dfe2ea;border-radius:12px;padding:14px 12px 0;outline:0}.floating-field span{position:absolute;right:12px;top:14px;color:#7a8090;transition:.2s;pointer-events:none;font-size:9px}.floating-field input:focus+span,.floating-field input:not(:placeholder-shown)+span{top:5px;font-size:7px;color:#3559e8}
+.input-soft{border:0!important;background:#f0f2f7!important}.input-dark{background:#171a22!important;color:#fff!important;border-color:#2b3040!important}
+.textarea-field{width:240px;display:block;border:1px solid #dfe2ea;border-radius:12px;background:#fff;padding:10px}.textarea-field textarea{width:100%;height:72px;border:0;resize:none;outline:0;background:transparent}.textarea-field span{display:block;text-align:left;color:#8a90a0;font-size:7px}
+.select-field{position:relative}.select-field select{appearance:none}.select-field>span{position:absolute;left:11px}
+.inline-form{width:270px;display:flex;gap:6px}.inline-form input{flex:1;min-width:0;border:1px solid #dfe2ea;border-radius:12px;padding:0 11px}.inline-form button{border:0;background:#111;color:#fff;border-radius:12px;padding:10px 14px}
+
+/* Navigation */
+.nav-pill{border-radius:999px!important}.nav-floating{box-shadow:0 16px 35px rgba(30,38,62,.14)!important}.nav-dark{background:#111!important;color:#fff!important;border-color:#111!important}.nav-dark span{color:#aaa!important}.nav-dark .active{background:#fff!important;color:#111!important}
+.nav-glass{background:rgba(255,255,255,.67)!important;backdrop-filter:blur(12px)}.nav-glass button{border:0;background:#3559e8;color:#fff;padding:7px 10px;border-radius:8px;font-size:7px}
+.breadcrumbs{display:flex;align-items:center;gap:8px;color:#8a90a0;font-size:9px}.breadcrumbs b{color:#111}.breadcrumbs i{font-style:normal;color:#c1c5cf}
+.mobile-bottom{width:300px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:#fff;border:1px solid #e2e4eb;border-radius:18px;padding:7px;box-shadow:0 14px 32px rgba(30,38,64,.1)}.mobile-bottom span{display:grid;place-items:center;gap:3px;padding:7px;border-radius:12px;color:#82899a}.mobile-bottom small{font-size:6px}.mobile-bottom .active{background:#111;color:#fff}
+.seg-nav{display:flex;gap:4px;background:#eef0f5;padding:4px;border-radius:12px}.seg-nav span{padding:8px 11px;border-radius:9px;font-size:8px}.seg-nav .active{background:#fff;box-shadow:0 4px 12px rgba(30,38,64,.08)}
+.mini-side{display:grid;gap:7px;padding:8px;background:#111;border-radius:16px;color:#fff}.mini-side>*{width:38px;height:38px;display:grid;place-items:center;border-radius:10px}.mini-side .active{background:#3559e8}
+.command-nav{width:330px;display:flex;align-items:center;gap:8px;border:1px solid #e2e4eb;border-radius:14px;padding:8px;background:#fff}.command-nav label{flex:1;display:flex;align-items:center;gap:6px;background:#f3f4f7;border-radius:9px;padding:7px;color:#818797;font-size:7px}.command-nav kbd{margin-right:auto}.command-nav button{border:1px solid #e1e4eb;background:#fff;border-radius:8px;padding:6px;font-size:7px}
+
+/* Supporting fixes */
+.modal-glass{background:rgba(255,255,255,.7)!important;backdrop-filter:blur(12px)}.danger-text{color:#c64747}.loader-soft{border-top-color:#111!important;border-width:3px!important;width:32px!important;height:32px!important}.progress-gradient{background:linear-gradient(90deg,#3559e8,#8a5cff)!important}.tabs-dark{background:#111!important;color:#aaa}.underline-tabs{display:flex;gap:18px;font-size:8px}.underline-tabs span{padding:8px;color:#777}.underline-tabs .active{border-bottom:2px solid #3559e8;color:#111}.accordion-row{width:230px}.accordion-row>div{display:flex;justify-content:space-between}.pulse-dot{width:18px;height:18px;border-radius:50%;background:#3559e8;box-shadow:0 0 0 0 rgba(53,89,232,.4);animation:pulse 1.6s infinite}.micro-blue{background:#3559e8!important}
+
+/* Mobile and code drawer hardening */
+.drawer-preview>*{max-width:100%}
+.codebar{min-height:43px;height:auto;flex-wrap:wrap}
+.codebar>div:first-child{max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}
+.code-panel pre{max-width:100%}
+@media(max-width:820px){
+  .drawer-body{padding:10px}
+  .drawer-preview{min-height:220px;padding:22px 12px;overflow:auto}
+  .component-preview{padding:18px 12px}
+  .demo-nav,.command-nav,.mobile-bottom{width:min(300px,100%)}
+  .input-search,.password-field,.validated-field,.select-field,.floating-field,.textarea-field{width:min(240px,100%)}
+  .inline-form{width:min(270px,100%)}
+  .demo-card,.hover-image,.hover-reveal{width:min(220px,100%)}
+  .hover-tilt,.hover-pop,.hover-orbit{width:min(210px,100%)}
+  .codebar>div:last-child{margin-right:auto}
+}
+@media(max-width:480px){
+  .tools{flex-wrap:wrap}.tools .quick{margin-left:0}
+  .filters{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;justify-content:flex-start}
+  .filter{flex:0 0 auto}
+  .component-meta{font-size:7px}
+  .drawer-head{padding:10px}.drawer-head h2{font-size:14px}
+  .code-panel pre{font-size:9px;padding:12px}
+}
 </style>
 </head>
 <body>
@@ -45,78 +158,1900 @@
     <section class="panel meta"><div id="drawerTags" class="tags"></div><button id="addCollection" class="ghost">+ حفظ في مجموعة</button></section>
   </div>
 </aside>
-<div id="toast" class="toast"></div><script>
-const categories=[
-{id:'buttons',ar:'الأزرار',en:'Buttons',icon:'◉',desc:'أزرار أساسية وتفاعلية',styles:['All','Minimal','Neon','Outline','Animated']},
-{id:'hover',ar:'تأثيرات Hover',en:'Hover Effects',icon:'↗',desc:'حركات واستجابات المؤشر',styles:['All','Glow','Border','Fill','Scale']},
-{id:'cards',ar:'البطاقات',en:'Cards',icon:'▣',desc:'بطاقات محتوى ولوحات تحكم',styles:['All','Minimal','Glass','Dashboard','Profile']},
-{id:'inputs',ar:'الحقول والنماذج',en:'Inputs & Forms',icon:'⌨',desc:'حقول ونماذج إدخال',styles:['All','Minimal','Search','Validation','Soft']},
-{id:'nav',ar:'التنقل',en:'Navigation Bars',icon:'☷',desc:'قوائم تنقل وشريط علوي',styles:['All','Minimal','Pill','Floating','Dark']},
-{id:'modals',ar:'النوافذ',en:'Modals & Popups',icon:'▢',desc:'حوارات وتنبيهات منبثقة',styles:['All','Confirm','Alert','Glass','Sheet']},
-{id:'menus',ar:'القوائم',en:'Dropdowns & Menus',icon:'⌄',desc:'قوائم واختيارات سياقية',styles:['All','Actions','Context','Select','Dropdown']},
-{id:'loaders',ar:'التحميل والتقدم',en:'Loaders & Progress',icon:'◌',desc:'مؤشرات انتظار وتقدم',styles:['All','Spinner','Progress']},
-{id:'tabs',ar:'التبويبات والأكورديون',en:'Tabs & Accordions',icon:'≡',desc:'تنظيم المحتوى التفاعلي',styles:['All','Tabs','Pill','Underline','Accordion']},
-{id:'motion',ar:'الحركات الدقيقة',en:'Micro-interactions',icon:'✦',desc:'حركات صغيرة تضيف حياة',styles:['All','Scale','Pulse','Rotate','Magnetic']}
+<div id="toast" class="toast"></div><script>const categories=[
+  {
+    "id": "buttons",
+    "ar": "الأزرار",
+    "en": "Buttons",
+    "icon": "◉",
+    "desc": "أزرار جاهزة للاستخدام اليومي",
+    "styles": [
+      "All",
+      "Minimal",
+      "Neon",
+      "Outline",
+      "Animated",
+      "Gradient",
+      "Glass",
+      "Soft"
+    ]
+  },
+  {
+    "id": "hover",
+    "ar": "تأثيرات Hover",
+    "en": "Hover Effects",
+    "icon": "↗",
+    "desc": "حركات واستجابات المؤشر",
+    "styles": [
+      "All",
+      "Glow",
+      "Border",
+      "Fill",
+      "Scale",
+      "Reveal",
+      "Lift",
+      "Tilt"
+    ]
+  },
+  {
+    "id": "cards",
+    "ar": "البطاقات",
+    "en": "Cards",
+    "icon": "▣",
+    "desc": "بطاقات محتوى ولوحات تحكم",
+    "styles": [
+      "All",
+      "Minimal",
+      "Glass",
+      "Dashboard",
+      "Profile",
+      "Product",
+      "Pricing",
+      "Feature"
+    ]
+  },
+  {
+    "id": "inputs",
+    "ar": "الحقول والنماذج",
+    "en": "Inputs & Forms",
+    "icon": "⌨",
+    "desc": "حقول ونماذج إدخال عملية",
+    "styles": [
+      "All",
+      "Minimal",
+      "Search",
+      "Validation",
+      "Soft",
+      "Floating",
+      "Dark",
+      "Form"
+    ]
+  },
+  {
+    "id": "nav",
+    "ar": "التنقل",
+    "en": "Navigation",
+    "icon": "☷",
+    "desc": "قوائم تنقل وشريط علوي",
+    "styles": [
+      "All",
+      "Minimal",
+      "Pill",
+      "Floating",
+      "Dark",
+      "Glass",
+      "Mobile",
+      "Breadcrumb"
+    ]
+  },
+  {
+    "id": "modals",
+    "ar": "النوافذ",
+    "en": "Modals & Popups",
+    "icon": "▢",
+    "desc": "حوارات وتنبيهات منبثقة",
+    "styles": [
+      "All",
+      "Confirm",
+      "Alert",
+      "Glass",
+      "Sheet"
+    ]
+  },
+  {
+    "id": "menus",
+    "ar": "القوائم",
+    "en": "Dropdowns & Menus",
+    "icon": "⌄",
+    "desc": "قوائم واختيارات سياقية",
+    "styles": [
+      "All",
+      "Actions",
+      "Context",
+      "Select",
+      "Dropdown"
+    ]
+  },
+  {
+    "id": "loaders",
+    "ar": "التحميل والتقدم",
+    "en": "Loaders & Progress",
+    "icon": "◌",
+    "desc": "مؤشرات انتظار وتقدم",
+    "styles": [
+      "All",
+      "Spinner",
+      "Progress"
+    ]
+  },
+  {
+    "id": "tabs",
+    "ar": "التبويبات والأكورديون",
+    "en": "Tabs & Accordions",
+    "icon": "≡",
+    "desc": "تنظيم المحتوى التفاعلي",
+    "styles": [
+      "All",
+      "Tabs",
+      "Pill",
+      "Underline",
+      "Accordion"
+    ]
+  },
+  {
+    "id": "motion",
+    "ar": "الحركات الدقيقة",
+    "en": "Micro-interactions",
+    "icon": "✦",
+    "desc": "حركات صغيرة تضيف حياة",
+    "styles": [
+      "All",
+      "Scale",
+      "Pulse",
+      "Rotate",
+      "Magnetic"
+    ]
+  }
 ];
-const raw=[
-['BTN-001','buttons','Solid Core','Minimal',['button','minimal','black'],`<button class="demo-btn primary">ابدأ الآن</button>`],
-['BTN-002','buttons','Electric Glow','Neon',['button','glow','blue','hover'],`<button class="demo-btn glow">استكشف المكتبة</button>`],
-['BTN-003','buttons','Clean Outline','Outline',['button','outline','minimal'],`<button class="demo-btn outline">عرض التفاصيل</button>`],
-['BTN-004','buttons','Liquid Fill','Animated',['button','fill','liquid','hover'],`<button class="demo-btn liquid"><span>مرّر المؤشر</span></button>`],
-['HOV-001','hover','Glow Lift','Glow',['hover','glow','lift','blue'],`<button class="demo-btn glow">Glow Lift</button>`],
-['HOV-002','hover','Invert Border','Border',['hover','border','invert'],`<button class="demo-btn outline">Invert Border</button>`],
-['HOV-003','hover','Liquid Sweep','Fill',['hover','fill','sweep'],`<button class="demo-btn liquid"><span>Liquid Sweep</span></button>`],
-['HOV-004','hover','Micro Scale','Scale',['hover','scale','micro'],`<div class="micro">↗</div>`],
-['CRD-001','cards','Content Card','Minimal',['card','content','minimal'],`<article class="demo-card"><div class="thumb"></div><h4>عنوان البطاقة</h4><p>وصف مختصر يوضح محتوى البطاقة بشكل واضح.</p></article>`],
-['CRD-002','cards','Glass Card','Glass',['card','glass','blur'],`<article class="demo-card" style="background:rgba(255,255,255,.62);backdrop-filter:blur(10px)"><div class="thumb"></div><h4>Glass Surface</h4><p>بطاقة زجاجية خفيفة لمناطق المحتوى البارزة.</p></article>`],
-['CRD-003','cards','KPI Card','Dashboard',['card','dashboard','kpi'],`<article class="demo-card"><small style="color:#7a8090;font-size:7px">إجمالي الزيارات</small><h4 style="font-size:24px;margin:6px 0">12,480</h4><p>+18.4% مقارنة بالشهر السابق</p></article>`],
-['CRD-004','cards','Profile Card','Profile',['card','profile','user'],`<article class="demo-card" style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:#e9edff;margin:auto auto 9px"></div><h4>مستخدم تجريبي</h4><p>UI Designer · Gaza</p></article>`],
-['INP-001','inputs','Focus Ring','Minimal',['input','focus','form'],`<input class="demo-input" placeholder="اكتب هنا...">`],
-['INP-002','inputs','Search Field','Search',['input','search','field'],`<input class="demo-input" placeholder="ابحث في المكتبة...">`],
-['INP-003','inputs','Email Field','Validation',['input','email','validation'],`<input class="demo-input" type="email" value="mohanad@example.com">`],
-['INP-004','inputs','Soft Input','Soft',['input','soft','rounded'],`<input class="demo-input" style="border:0;background:#f0f2f7" placeholder="اسم المشروع">`],
-['NAV-001','nav','Compact Nav','Minimal',['nav','navbar','minimal'],`<nav class="demo-nav"><b>Brand</b><span class="active">الرئيسية</span><span>المكتبة</span><span>حول</span></nav>`],
-['NAV-002','nav','Pill Navigation','Pill',['nav','pill','rounded'],`<nav class="demo-nav" style="border-radius:999px"><b>M</b><span>Home</span><span class="active">Library</span><span>Labs</span></nav>`],
-['NAV-003','nav','Floating Bar','Floating',['nav','floating','bar'],`<nav class="demo-nav" style="box-shadow:0 16px 35px rgba(30,38,62,.14)"><b>UI</b><span>Components</span><span class="active">Top 10</span></nav>`],
-['NAV-004','nav','Dark Nav','Dark',['nav','dark','contrast'],`<nav class="demo-nav" style="background:#111;color:#fff;border-color:#111"><b>Library</b><span style="color:#aaa">Browse</span><span class="active" style="background:#fff;color:#111">Saved</span></nav>`],
-['MOD-001','modals','Confirm Modal','Confirm',['modal','confirm','dialog'],`<div class="demo-modal"><b>تأكيد الإجراء</b><p>هل تريد تنفيذ هذا الإجراء الآن؟</p><div class="actions"><button>تأكيد</button><button>إلغاء</button></div></div>`],
-['MOD-002','modals','Info Dialog','Alert',['modal','info','alert'],`<div class="demo-modal"><b>تم الحفظ</b><p>تمت إضافة العنصر إلى مجموعتك بنجاح.</p><div class="actions"><button>حسنًا</button></div></div>`],
-['MOD-003','modals','Glass Dialog','Glass',['modal','glass','blur'],`<div class="demo-modal" style="background:rgba(255,255,255,.68);backdrop-filter:blur(12px)"><b>Glass Dialog</b><p>نموذج خفيف لواجهات مستقبلية نظيفة.</p></div>`],
-['MOD-004','modals','Action Sheet','Sheet',['modal','sheet','actions'],`<div class="demo-modal"><b>خيارات العنصر</b><p>نسخ الكود أو إضافته للمفضلة.</p><div class="actions"><button>نسخ</button><button>مفضلة</button></div></div>`],
-['MNU-001','menus','Action Menu','Actions',['menu','actions','dropdown'],`<div class="demo-menu"><div>نسخ الكود</div><div>إضافة للمفضلة</div><div>فتح في التركيز</div></div>`],
-['MNU-002','menus','Context Menu','Context',['menu','context','popup'],`<div class="demo-menu"><div>فتح</div><div>تكرار</div><div style="color:#c64747">حذف</div></div>`],
-['MNU-003','menus','Select Menu','Select',['menu','select','options'],`<div class="demo-menu"><div>Minimal ✓</div><div>Glass</div><div>Neon</div></div>`],
-['MNU-004','menus','Dropdown','Dropdown',['menu','dropdown','list'],`<div class="demo-menu"><div>HTML / CSS</div><div>React</div><div>Tailwind</div></div>`],
-['LOD-001','loaders','Classic Spinner','Spinner',['loader','spinner','loading'],`<div class="loader"></div>`],
-['LOD-002','loaders','Progress Line','Progress',['progress','bar','loading'],`<div class="progress"><span></span></div>`],
-['LOD-003','loaders','Soft Spinner','Spinner',['loader','soft','spinner'],`<div class="loader" style="border-top-color:#111;border-width:3px;width:32px;height:32px"></div>`],
-['LOD-004','loaders','Gradient Progress','Progress',['progress','gradient','bar'],`<div class="progress"><span style="background:linear-gradient(90deg,#3559e8,#8a5cff)"></span></div>`],
-['TAB-001','tabs','Soft Tabs','Tabs',['tabs','soft','switch'],`<div class="demo-tabs"><span class="active">HTML</span><span>React</span><span>Tailwind</span></div>`],
-['TAB-002','tabs','Dark Tabs','Pill',['tabs','dark','pill'],`<div class="demo-tabs" style="background:#111;color:#aaa"><span>Preview</span><span class="active">Code</span></div>`],
-['TAB-003','tabs','Underline Tabs','Underline',['tabs','underline','minimal'],`<div style="display:flex;gap:18px;font-size:9px"><span style="border-bottom:2px solid #3559e8;padding:8px">Overview</span><span style="padding:8px;color:#777">Details</span></div>`],
-['TAB-004','tabs','Accordion Row','Accordion',['accordion','row','collapse'],`<div class="demo-menu" style="width:230px"><div style="display:flex;justify-content:space-between"><b>قسم قابل للفتح</b><span>⌄</span></div></div>`],
-['MOT-001','motion','Morph Hover','Scale',['motion','hover','scale'],`<div class="micro">+</div>`],
-['MOT-002','motion','Pulse Dot','Pulse',['motion','pulse','status'],`<div style="width:18px;height:18px;border-radius:50%;background:#3559e8;box-shadow:0 0 0 0 rgba(53,89,232,.4);animation:pulse 1.6s infinite"></div>`],
-['MOT-003','motion','Rotate Tile','Rotate',['motion','rotate','hover'],`<div class="micro" style="background:#3559e8">↻</div>`],
-['MOT-004','motion','Magnetic Hint','Magnetic',['motion','magnetic','button'],`<button class="demo-btn primary">Magnetic ↗</button>`]
+
+const samples=[
+  {
+    "id": "BTN-001",
+    "name": "Solid Core",
+    "category": "buttons",
+    "style": "Minimal",
+    "tags": [
+      "button",
+      "minimal",
+      "clean",
+      "dark"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn primary\">ابدأ الآن</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر أساسي داكن للمهمات الرئيسية",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-002",
+    "name": "Electric Glow",
+    "category": "buttons",
+    "style": "Neon",
+    "tags": [
+      "button",
+      "glow",
+      "neon",
+      "blue",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn glow\">استكشف المكتبة</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر متوهج مناسب للواجهات التقنية",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "radius": 12,
+      "glow": 24
+    }
+  },
+  {
+    "id": "BTN-003",
+    "name": "Clean Outline",
+    "category": "buttons",
+    "style": "Outline",
+    "tags": [
+      "button",
+      "outline",
+      "minimal",
+      "clean"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn outline\">عرض التفاصيل</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر Outline نظيف للاستخدام الثانوي",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-004",
+    "name": "Liquid Fill",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "fill",
+      "liquid",
+      "animated",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn liquid\"><span>مرّر المؤشر</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر تعبئة متحركة من الأسفل",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-005",
+    "name": "Aurora Gradient",
+    "category": "buttons",
+    "style": "Gradient",
+    "tags": [
+      "button",
+      "gradient",
+      "animated",
+      "colorful"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-gradient\">إنشاء مشروع</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر Gradient متحرك بلمسة عصرية",
+    "playground": {
+      "bg": "#5b5cf0",
+      "color": "#ffffff",
+      "radius": 14
+    }
+  },
+  {
+    "id": "BTN-006",
+    "name": "Soft Elevation",
+    "category": "buttons",
+    "style": "Soft",
+    "tags": [
+      "button",
+      "soft",
+      "shadow",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn btn-soft\">حفظ التغييرات</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر فاتح بظل هادئ للواجهات النظيفة",
+    "playground": {
+      "bg": "#eef2ff",
+      "color": "#24305f",
+      "radius": 14,
+      "shadow": 22
+    }
+  },
+  {
+    "id": "BTN-007",
+    "name": "Icon Slide",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "icon",
+      "arrow",
+      "animated",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-icon-slide\"><span>متابعة</span><i>←</i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر يحرك الأيقونة عند المرور",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-008",
+    "name": "Border Draw",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "border",
+      "draw",
+      "animated",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn btn-border-draw\">فتح المعاينة</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حد متحرك يلتف حول الزر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 10
+    }
+  },
+  {
+    "id": "BTN-009",
+    "name": "Glass Action",
+    "category": "buttons",
+    "style": "Glass",
+    "tags": [
+      "button",
+      "glass",
+      "blur",
+      "light"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-glass\">نسخ الكود</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر زجاجي مناسب للخلفيات الغنية",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#27304a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "BTN-010",
+    "name": "Danger Confirm",
+    "category": "buttons",
+    "style": "Minimal",
+    "tags": [
+      "button",
+      "danger",
+      "red",
+      "confirm"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn btn-danger\">حذف العنصر</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر إجراء خطِر بلون واضح",
+    "playground": {
+      "bg": "#e44747",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "HOV-001",
+    "name": "Glow Lift",
+    "category": "hover",
+    "style": "Glow",
+    "tags": [
+      "hover",
+      "glow",
+      "lift",
+      "button"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn glow\">Glow Lift</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "توهج مع رفع بسيط عند المرور",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "glow": 28
+    }
+  },
+  {
+    "id": "HOV-002",
+    "name": "Underline Sweep",
+    "category": "hover",
+    "style": "Fill",
+    "tags": [
+      "hover",
+      "underline",
+      "text",
+      "sweep"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<a class=\"hover-link\" href=\"javascript:void(0)\">عرض التفاصيل</a>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "خط سفلي يتحرك عبر النص",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a"
+    }
+  },
+  {
+    "id": "HOV-003",
+    "name": "Image Zoom",
+    "category": "hover",
+    "style": "Scale",
+    "tags": [
+      "hover",
+      "image",
+      "zoom",
+      "card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"hover-image\"><div class=\"hover-image-art\"></div><b>تكبير الصورة</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تكبير صورة داخل البطاقة دون كسر الإطار",
+    "playground": {}
+  },
+  {
+    "id": "HOV-004",
+    "name": "Tilt Surface",
+    "category": "hover",
+    "style": "Tilt",
+    "tags": [
+      "hover",
+      "tilt",
+      "card",
+      "3d"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-tilt\"><span>3D</span><b>Tilt Surface</b><small>حرّك المؤشر</small></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "ميلان بصري خفيف لسطح البطاقة",
+    "playground": {}
+  },
+  {
+    "id": "HOV-005",
+    "name": "Orbit Border",
+    "category": "hover",
+    "style": "Border",
+    "tags": [
+      "hover",
+      "border",
+      "orbit",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"hover-orbit\"><span>Border Orbit</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حد مضيء يدور حول العنصر",
+    "playground": {}
+  },
+  {
+    "id": "HOV-006",
+    "name": "Slide Fill",
+    "category": "hover",
+    "style": "Fill",
+    "tags": [
+      "hover",
+      "fill",
+      "slide",
+      "button"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hover-slide\">Slide Fill</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تعبئة أفقية سريعة عند المرور",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "HOV-007",
+    "name": "Icon Nudge",
+    "category": "hover",
+    "style": "Scale",
+    "tags": [
+      "hover",
+      "icon",
+      "arrow",
+      "micro"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"hover-nudge\"><span>التالي</span><i>←</i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إزاحة دقيقة للأيقونة دون مبالغة",
+    "playground": {}
+  },
+  {
+    "id": "HOV-008",
+    "name": "Shadow Pop",
+    "category": "hover",
+    "style": "Lift",
+    "tags": [
+      "hover",
+      "shadow",
+      "lift",
+      "soft"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"hover-pop\"><b>Shadow Pop</b><small>بطاقة بسيطة</small></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "رفع البطاقة وزيادة الظل",
+    "playground": {}
+  },
+  {
+    "id": "HOV-009",
+    "name": "Caption Reveal",
+    "category": "hover",
+    "style": "Reveal",
+    "tags": [
+      "hover",
+      "reveal",
+      "caption",
+      "image"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-reveal\"><div></div><span>عرض المشروع ↗</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إظهار Caption فوق الصورة عند المرور",
+    "playground": {}
+  },
+  {
+    "id": "HOV-010",
+    "name": "Ring Scale",
+    "category": "hover",
+    "style": "Scale",
+    "tags": [
+      "hover",
+      "ring",
+      "scale",
+      "focus"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-ring\"><span>+</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حلقة Focus تتمدد حول العنصر",
+    "playground": {}
+  },
+  {
+    "id": "CRD-001",
+    "name": "Content Card",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "content",
+      "minimal",
+      "article"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card\"><div class=\"thumb\"></div><h4>عنوان البطاقة</h4><p>وصف مختصر يوضح محتوى البطاقة بشكل واضح.</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة محتوى عامة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-002",
+    "name": "Glass Card",
+    "category": "cards",
+    "style": "Glass",
+    "tags": [
+      "card",
+      "glass",
+      "blur",
+      "light"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-glass\"><span class=\"badge\">Glass</span><h4>واجهة شفافة</h4><p>بطاقة زجاجية خفيفة للمحتوى البارز.</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Glassmorphism عملية",
+    "playground": {}
+  },
+  {
+    "id": "CRD-003",
+    "name": "KPI Snapshot",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "dashboard",
+      "kpi",
+      "stats"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-kpi\"><small>إجمالي الزيارات</small><h4>12,480</h4><p>↑ 18.4% هذا الشهر</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة KPI للداشبورد",
+    "playground": {}
+  },
+  {
+    "id": "CRD-004",
+    "name": "Profile Mini",
+    "category": "cards",
+    "style": "Profile",
+    "tags": [
+      "card",
+      "profile",
+      "user",
+      "avatar"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-profile\"><div class=\"avatar\">M</div><h4>مهند المشهراوي</h4><p>GIS · UI Reference</p><button>عرض الملف</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة ملف شخصي مختصرة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-005",
+    "name": "Pricing Plan",
+    "category": "cards",
+    "style": "Pricing",
+    "tags": [
+      "card",
+      "pricing",
+      "plan",
+      "cta"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-price\"><small>PRO</small><h4>$19 <span>/mo</span></h4><p>للمشاريع التي تحتاج مكونات أكثر.</p><button>اختيار الخطة</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة تسعير مع CTA",
+    "playground": {}
+  },
+  {
+    "id": "CRD-006",
+    "name": "Product Compact",
+    "category": "cards",
+    "style": "Product",
+    "tags": [
+      "card",
+      "product",
+      "shop",
+      "price"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-product\"><div class=\"product-art\"></div><div><h4>واجهة تحكم</h4><p>Design Kit</p><b>$24</b></div></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة منتج مختصرة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-007",
+    "name": "Task Progress",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "task",
+      "progress",
+      "dashboard"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-task\"><div class=\"row\"><b>تحديث الواجهة</b><span>72%</span></div><div class=\"task-progress\"><i></i></div><p>8 من 11 مهمة مكتملة</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة تقدم مهمة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-008",
+    "name": "Trend Metric",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "chart",
+      "trend",
+      "dashboard"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<article class=\"demo-card card-trend\"><small>Conversion</small><h4>8.7%</h4><svg viewBox=\"0 0 160 42\"><path d=\"M2 35 C25 30 28 18 48 24 S80 30 94 16 S130 22 158 5\"/></svg></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مؤشر مع Sparkline بسيط",
+    "playground": {}
+  },
+  {
+    "id": "CRD-009",
+    "name": "Alert Summary",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "alert",
+      "status",
+      "warning"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-alert\"><span>!</span><div><h4>يتطلب مراجعة</h4><p>يوجد عنصران بحاجة إلى تدقيق.</p></div></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة تنبيه صغيرة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-010",
+    "name": "Feature Spotlight",
+    "category": "cards",
+    "style": "Feature",
+    "tags": [
+      "card",
+      "feature",
+      "icon",
+      "marketing"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-feature\"><div class=\"feature-icon\">✦</div><h4>بحث ذكي</h4><p>ابحث بالعربية أو الإنجليزية باستخدام الكلمات الدلالية.</p><a href=\"javascript:void(0)\">اعرف أكثر ←</a></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Feature للاستخدام التعريفي",
+    "playground": {}
+  },
+  {
+    "id": "INP-001",
+    "name": "Focus Ring",
+    "category": "inputs",
+    "style": "Minimal",
+    "tags": [
+      "input",
+      "focus",
+      "form",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<input class=\"demo-input\" placeholder=\"اكتب هنا...\">",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل أساسي مع Focus واضح",
+    "playground": {}
+  },
+  {
+    "id": "INP-002",
+    "name": "Search Field",
+    "category": "inputs",
+    "style": "Search",
+    "tags": [
+      "input",
+      "search",
+      "icon",
+      "field"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"input-search\"><span>⌕</span><input placeholder=\"ابحث في المكتبة...\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل بحث بأيقونة",
+    "playground": {}
+  },
+  {
+    "id": "INP-003",
+    "name": "Floating Label",
+    "category": "inputs",
+    "style": "Floating",
+    "tags": [
+      "input",
+      "floating",
+      "label",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"floating-field\"><input placeholder=\" \" value=\"\"><span>اسم المشروع</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Label عائم عند التركيز أو الكتابة",
+    "playground": {}
+  },
+  {
+    "id": "INP-004",
+    "name": "Password Action",
+    "category": "inputs",
+    "style": "Minimal",
+    "tags": [
+      "input",
+      "password",
+      "action",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"password-field\"><input type=\"password\" value=\"password\"><button type=\"button\">إظهار</button></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل كلمة مرور مع إجراء جانبي",
+    "playground": {}
+  },
+  {
+    "id": "INP-005",
+    "name": "Email Valid",
+    "category": "inputs",
+    "style": "Validation",
+    "tags": [
+      "input",
+      "email",
+      "validation",
+      "success"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"validated-field\"><input value=\"mohanad@example.com\"><span>✓</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حالة نجاح داخل الحقل",
+    "playground": {}
+  },
+  {
+    "id": "INP-006",
+    "name": "Soft Field",
+    "category": "inputs",
+    "style": "Soft",
+    "tags": [
+      "input",
+      "soft",
+      "rounded",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<input class=\"demo-input input-soft\" placeholder=\"اسم المشروع\">",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل Soft بحدود شبه مخفية",
+    "playground": {}
+  },
+  {
+    "id": "INP-007",
+    "name": "Dark Control",
+    "category": "inputs",
+    "style": "Dark",
+    "tags": [
+      "input",
+      "dark",
+      "form",
+      "contrast"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<input class=\"demo-input input-dark\" placeholder=\"Command...\">",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل داكن للواجهات التقنية",
+    "playground": {
+      "bg": "#171a22",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "INP-008",
+    "name": "Textarea Counter",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "textarea",
+      "counter",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"textarea-field\"><textarea placeholder=\"اكتب وصفًا مختصرًا...\"></textarea><span>0 / 180</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Textarea مع عداد أحرف",
+    "playground": {}
+  },
+  {
+    "id": "INP-009",
+    "name": "Select Control",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "select",
+      "dropdown",
+      "form"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"select-field\"><select><option>Minimal</option><option>Glass</option><option>Dashboard</option></select><span>⌄</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Select نظيف للاختيارات",
+    "playground": {}
+  },
+  {
+    "id": "INP-010",
+    "name": "Inline Form",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "form",
+      "button",
+      "newsletter"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<form class=\"inline-form\" onsubmit=\"return false\"><input placeholder=\"البريد الإلكتروني\"><button>إرسال</button></form>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نموذج إدخال وإجراء في سطر واحد",
+    "playground": {}
+  },
+  {
+    "id": "NAV-001",
+    "name": "Compact Nav",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "navbar",
+      "minimal",
+      "header"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"demo-nav\"><b>Brand</b><span class=\"active\">الرئيسية</span><span>المكتبة</span><span>حول</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط تنقل صغير",
+    "playground": {}
+  },
+  {
+    "id": "NAV-002",
+    "name": "Pill Navigation",
+    "category": "nav",
+    "style": "Pill",
+    "tags": [
+      "nav",
+      "pill",
+      "rounded",
+      "header"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-pill\"><b>M</b><span>Home</span><span class=\"active\">Library</span><span>Labs</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنقل بحاوية Pill",
+    "playground": {}
+  },
+  {
+    "id": "NAV-003",
+    "name": "Floating Bar",
+    "category": "nav",
+    "style": "Floating",
+    "tags": [
+      "nav",
+      "floating",
+      "bar",
+      "shadow"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-floating\"><b>UI</b><span>Components</span><span class=\"active\">Top 10</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط عائم بظل واضح",
+    "playground": {}
+  },
+  {
+    "id": "NAV-004",
+    "name": "Dark Navigation",
+    "category": "nav",
+    "style": "Dark",
+    "tags": [
+      "nav",
+      "dark",
+      "contrast",
+      "header"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-dark\"><b>Library</b><span>Browse</span><span class=\"active\">Saved</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنقل داكن",
+    "playground": {}
+  },
+  {
+    "id": "NAV-005",
+    "name": "Glass Header",
+    "category": "nav",
+    "style": "Glass",
+    "tags": [
+      "nav",
+      "glass",
+      "blur",
+      "header"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-glass\"><b>Studio</b><span>Home</span><span class=\"active\">Library</span><button>ابدأ</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هيدر زجاجي عملي",
+    "playground": {}
+  },
+  {
+    "id": "NAV-006",
+    "name": "Breadcrumb Trail",
+    "category": "nav",
+    "style": "Breadcrumb",
+    "tags": [
+      "nav",
+      "breadcrumb",
+      "trail",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"breadcrumbs\"><span>الرئيسية</span><i>←</i><span>المكتبة</span><i>←</i><b>Buttons</b></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Breadcrumb واضح للصفحات المتداخلة",
+    "playground": {}
+  },
+  {
+    "id": "NAV-007",
+    "name": "Mobile Bottom",
+    "category": "nav",
+    "style": "Mobile",
+    "tags": [
+      "nav",
+      "mobile",
+      "bottom",
+      "icons"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"mobile-bottom\"><span class=\"active\">⌂<small>الرئيسية</small></span><span>▣<small>المكتبة</small></span><span>♡<small>المفضلة</small></span><span>⚙<small>الإعدادات</small></span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Bottom navigation للموبايل",
+    "playground": {}
+  },
+  {
+    "id": "NAV-008",
+    "name": "Segmented Nav",
+    "category": "nav",
+    "style": "Pill",
+    "tags": [
+      "nav",
+      "tabs",
+      "segmented",
+      "pill"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"seg-nav\"><span class=\"active\">Overview</span><span>Components</span><span>Tokens</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنقل Segmented",
+    "playground": {}
+  },
+  {
+    "id": "NAV-009",
+    "name": "Sidebar Mini",
+    "category": "nav",
+    "style": "Dark",
+    "tags": [
+      "nav",
+      "sidebar",
+      "dark",
+      "icons"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"mini-side\"><b>M</b><span class=\"active\">⌂</span><span>▦</span><span>♡</span><span>⚙</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Sidebar مصغر للأدوات",
+    "playground": {}
+  },
+  {
+    "id": "NAV-010",
+    "name": "Command Header",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "command",
+      "search",
+      "header"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<nav class=\"command-nav\"><b>Library</b><label>⌕ <span>ابحث بسرعة...</span><kbd>/</kbd></label><button>⌘ K</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هيدر يحتوي Command/Search",
+    "playground": {}
+  },
+  {
+    "id": "MOD-001",
+    "name": "Confirm Modal",
+    "category": "modals",
+    "style": "Confirm",
+    "tags": [
+      "modal",
+      "confirm",
+      "dialog"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-modal\"><b>تأكيد الإجراء</b><p>هل تريد تنفيذ هذا الإجراء الآن؟</p><div class=\"actions\"><button>تأكيد</button><button>إلغاء</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نافذة تأكيد",
+    "playground": {}
+  },
+  {
+    "id": "MOD-002",
+    "name": "Info Dialog",
+    "category": "modals",
+    "style": "Alert",
+    "tags": [
+      "modal",
+      "info",
+      "alert"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-modal\"><b>تم الحفظ</b><p>تمت إضافة العنصر إلى مجموعتك بنجاح.</p><div class=\"actions\"><button>حسنًا</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نافذة معلومات",
+    "playground": {}
+  },
+  {
+    "id": "MOD-003",
+    "name": "Glass Dialog",
+    "category": "modals",
+    "style": "Glass",
+    "tags": [
+      "modal",
+      "glass",
+      "blur"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"demo-modal modal-glass\"><b>Glass Dialog</b><p>نموذج خفيف لواجهات مستقبلية نظيفة.</p></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نافذة زجاجية",
+    "playground": {}
+  },
+  {
+    "id": "MOD-004",
+    "name": "Action Sheet",
+    "category": "modals",
+    "style": "Sheet",
+    "tags": [
+      "modal",
+      "sheet",
+      "actions"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"demo-modal\"><b>خيارات العنصر</b><p>نسخ الكود أو إضافته للمفضلة.</p><div class=\"actions\"><button>نسخ</button><button>مفضلة</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة إجراءات",
+    "playground": {}
+  },
+  {
+    "id": "MNU-001",
+    "name": "Action Menu",
+    "category": "menus",
+    "style": "Actions",
+    "tags": [
+      "menu",
+      "actions",
+      "dropdown"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>نسخ الكود</div><div>إضافة للمفضلة</div><div>فتح في التركيز</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة إجراءات",
+    "playground": {}
+  },
+  {
+    "id": "MNU-002",
+    "name": "Context Menu",
+    "category": "menus",
+    "style": "Context",
+    "tags": [
+      "menu",
+      "context",
+      "popup"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>فتح</div><div>تكرار</div><div class=\"danger-text\">حذف</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Context menu",
+    "playground": {}
+  },
+  {
+    "id": "MNU-003",
+    "name": "Select Menu",
+    "category": "menus",
+    "style": "Select",
+    "tags": [
+      "menu",
+      "select",
+      "options"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>Minimal ✓</div><div>Glass</div><div>Neon</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة اختيار",
+    "playground": {}
+  },
+  {
+    "id": "MNU-004",
+    "name": "Code Dropdown",
+    "category": "menus",
+    "style": "Dropdown",
+    "tags": [
+      "menu",
+      "dropdown",
+      "code"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>HTML / CSS</div><div>React</div><div>Tailwind</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة صيغ الكود",
+    "playground": {}
+  },
+  {
+    "id": "LOD-001",
+    "name": "Classic Spinner",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "loader",
+      "spinner",
+      "loading"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"loader\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Spinner كلاسيكي",
+    "playground": {}
+  },
+  {
+    "id": "LOD-002",
+    "name": "Progress Line",
+    "category": "loaders",
+    "style": "Progress",
+    "tags": [
+      "progress",
+      "bar",
+      "loading"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"progress\"><span></span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط تقدم",
+    "playground": {}
+  },
+  {
+    "id": "LOD-003",
+    "name": "Soft Spinner",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "loader",
+      "soft",
+      "spinner"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"loader loader-soft\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Spinner ناعم",
+    "playground": {}
+  },
+  {
+    "id": "LOD-004",
+    "name": "Gradient Progress",
+    "category": "loaders",
+    "style": "Progress",
+    "tags": [
+      "progress",
+      "gradient",
+      "bar"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"progress\"><span class=\"progress-gradient\"></span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط تقدم متدرج",
+    "playground": {}
+  },
+  {
+    "id": "TAB-001",
+    "name": "Soft Tabs",
+    "category": "tabs",
+    "style": "Tabs",
+    "tags": [
+      "tabs",
+      "soft",
+      "switch"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-tabs\"><span class=\"active\">HTML</span><span>React</span><span>Tailwind</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tabs ناعمة",
+    "playground": {}
+  },
+  {
+    "id": "TAB-002",
+    "name": "Dark Tabs",
+    "category": "tabs",
+    "style": "Pill",
+    "tags": [
+      "tabs",
+      "dark",
+      "pill"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-tabs tabs-dark\"><span>Preview</span><span class=\"active\">Code</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tabs داكنة",
+    "playground": {}
+  },
+  {
+    "id": "TAB-003",
+    "name": "Underline Tabs",
+    "category": "tabs",
+    "style": "Underline",
+    "tags": [
+      "tabs",
+      "underline",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"underline-tabs\"><span class=\"active\">Overview</span><span>Details</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tabs بخط سفلي",
+    "playground": {}
+  },
+  {
+    "id": "TAB-004",
+    "name": "Accordion Row",
+    "category": "tabs",
+    "style": "Accordion",
+    "tags": [
+      "accordion",
+      "row",
+      "collapse"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu accordion-row\"><div><b>قسم قابل للفتح</b><span>⌄</span></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "صف Accordion",
+    "playground": {}
+  },
+  {
+    "id": "MOT-001",
+    "name": "Morph Hover",
+    "category": "motion",
+    "style": "Scale",
+    "tags": [
+      "motion",
+      "hover",
+      "scale"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"micro\">+</div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Morph بسيط",
+    "playground": {}
+  },
+  {
+    "id": "MOT-002",
+    "name": "Pulse Dot",
+    "category": "motion",
+    "style": "Pulse",
+    "tags": [
+      "motion",
+      "pulse",
+      "status"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"pulse-dot\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نقطة حالة نابضة",
+    "playground": {}
+  },
+  {
+    "id": "MOT-003",
+    "name": "Rotate Tile",
+    "category": "motion",
+    "style": "Rotate",
+    "tags": [
+      "motion",
+      "rotate",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"micro micro-blue\">↻</div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "دوران عند المرور",
+    "playground": {}
+  },
+  {
+    "id": "MOT-004",
+    "name": "Magnetic Hint",
+    "category": "motion",
+    "style": "Magnetic",
+    "tags": [
+      "motion",
+      "magnetic",
+      "button"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn primary\">Magnetic ↗</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إيحاء زر مغناطيسي",
+    "playground": {}
+  }
 ];
-const samples=raw.map(([id,category,name,style,tags,html])=>({id,category,name,style,tags,html}));
-</script><script>
-const state={cat:'all',filter:'All',q:'',active:null,tab:'HTML',favorites:new Set(JSON.parse(localStorage.getItem('lib-favs')||'[]')),recent:JSON.parse(localStorage.getItem('lib-recent')||'[]'),collections:JSON.parse(localStorage.getItem('lib-cols')||'{}'),usage:JSON.parse(localStorage.getItem('lib-usage')||'{}'),controls:null};
+</script><script>const storedFavs=JSON.parse(localStorage.getItem('lib-favs')||'[]');
+const storedUsage=JSON.parse(localStorage.getItem('lib-usage')||'{}');
+const state={cat:'all',filter:'All',q:'',active:null,tab:'HTML',favorites:new Set([...samples.filter(s=>s.favorite).map(s=>s.id),...storedFavs]),recent:JSON.parse(localStorage.getItem('lib-recent')||'[]'),collections:JSON.parse(localStorage.getItem('lib-cols')||'{}'),usage:{...Object.fromEntries(samples.map(s=>[s.id,Number(s.usage||0)])),...storedUsage},controls:null};
 const $=s=>document.querySelector(s),$=s=>[...document.querySelectorAll(s)];
 const el={nav:$('#categoryNav'),catGrid:$('#categoryGrid'),grid:$('#componentGrid'),filters:$('#filters'),title:$('#activeTitle'),eyebrow:$('#activeEyebrow'),search:$('#searchInput'),suggestions:$('#suggestions'),empty:$('#empty'),drawer:$('#drawer'),backdrop:$('#backdrop'),preview:$('#drawerPreview'),tags:$('#drawerTags'),fav:$('#drawerFav'),tabs:$('#codeTabs'),code:$('#codeOutput'),toast:$('#toast')};
-const synonyms={'زر':'button','ازرار':'button','أزرار':'button','button':'button','بطاقة':'card','بطاقات':'card','كرت':'card','card':'card','حقل':'input','ادخال':'input','إدخال':'input','input':'input','نموذج':'form','قائمة':'menu','قوائم':'menu','menu':'menu','تنقل':'nav','هيدر':'nav','nav':'nav','تحميل':'loader','loader':'loader','تقدم':'progress','نافذة':'modal','منبثقة':'modal','modal':'modal','تبويب':'tabs','tabs':'tabs','حركة':'motion','animation':'motion','انيميشن':'motion','هوفر':'hover','hover':'hover','أسود':'black','اسود':'black','أزرق':'blue','ازرق':'blue','زجاجي':'glass','زجاج':'glass','نيون':'neon','توهج':'glow','متوهج':'glow','بسيط':'minimal'};
-function norm(t=''){return t.toLowerCase().replace(/[ًٌٍَُِّْـ]/g,'').replace(/[^\u0000-\u007F\u0600-\u06FF]+/g,' ').trim()}
+const synonyms={'زر':'button','ازرار':'button','أزرار':'button','button':'button','buttons':'button','بطاقة':'card','بطاقات':'card','كرت':'card','card':'card','cards':'card','حقل':'input','ادخال':'input','إدخال':'input','input':'input','نموذج':'form','نماذج':'form','form':'form','قائمة':'menu','قوائم':'menu','menu':'menu','dropdown':'menu','تنقل':'nav','هيدر':'nav','navbar':'nav','navigation':'nav','nav':'nav','تحميل':'loader','loader':'loader','تقدم':'progress','progress':'progress','نافذة':'modal','منبثقة':'modal','modal':'modal','تبويب':'tabs','tabs':'tabs','اكورديون':'accordion','أكورديون':'accordion','accordion':'accordion','حركة':'animated','متحرك':'animated','متحركة':'animated','animation':'animated','animated':'animated','انيميشن':'animated','هوفر':'hover','hover':'hover','مرور':'hover','المؤشر':'hover','أسود':'dark','اسود':'dark','داكن':'dark','dark':'dark','أزرق':'blue','ازرق':'blue','blue':'blue','زجاجي':'glass','زجاج':'glass','شفاف':'glass','glass':'glass','blur':'glass','نيون':'neon','neon':'neon','توهج':'glow','متوهج':'glow','glow':'glow','بسيط':'minimal','نظيف':'minimal','minimal':'minimal','لوحة':'dashboard','لوحه':'dashboard','داشبورد':'dashboard','dashboard':'dashboard','kpi':'dashboard','متدرج':'gradient','gradient':'gradient','بحث':'search','search':'search','موبايل':'mobile','هاتف':'mobile','mobile':'mobile','سهل':'basic','basic':'basic','متوسط':'intermediate','intermediate':'intermediate','متقدم':'advanced','advanced':'advanced'};
+function norm(t=''){return String(t).toLowerCase().replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/[ًٌٍَُِّْـ]/g,'').replace(/[^\u0000-\u007F\u0600-\u06FF]+/g,' ').trim()}
 function tokens(t){return norm(t).split(/\s+/).filter(Boolean).map(x=>synonyms[x]||x)}
 function persist(){localStorage.setItem('lib-favs',JSON.stringify([...state.favorites]));localStorage.setItem('lib-recent',JSON.stringify(state.recent));localStorage.setItem('lib-cols',JSON.stringify(state.collections));localStorage.setItem('lib-usage',JSON.stringify(state.usage))}
 function use(s){return Number(state.usage[s.id]||0)}function catUse(id){return samples.filter(s=>s.category===id).reduce((a,s)=>a+use(s),0)}
 function toast(t){el.toast.textContent=t;el.toast.classList.add('show');setTimeout(()=>el.toast.classList.remove('show'),1500)}
 function renderNav(){el.nav.innerHTML=`<button class="side-link ${state.cat==='all'?'active':''}" data-cat="all"><span>⌂</span><b>كل العناصر</b><em>${samples.length}</em></button>`+categories.map(c=>`<button class="side-link ${state.cat===c.id?'active':''}" data-cat="${c.id}"><span>${c.icon}</span><b>${c.ar}</b><em>${samples.filter(s=>s.category===c.id).length}</em></button>`).join('')}
 function renderOverview(){let list=[...categories].sort((a,b)=>catUse(b.id)-catUse(a.id)),max=Math.max(1,...list.map(c=>catUse(c.id)));el.catGrid.innerHTML=list.map((c,i)=>`<button class="category-card" data-cat="${c.id}"><span class="rank">${String(i+1).padStart(2,'0')}</span><span class="cat-icon">${c.icon}</span><strong>${c.ar}</strong><small>${c.en} · ${samples.filter(s=>s.category===c.id).length} نماذج</small><div class="meter"><span style="width:${Math.max(7,catUse(c.id)/max*100)}%"></span></div></button>`).join('')}
-function renderFilters(){let c=categories.find(x=>x.id===state.cat),styles=c?c.styles:['All','Minimal','Glass','Neon','Animated','Dashboard'];el.filters.innerHTML=styles.map(s=>`<button class="filter ${state.filter===s?'active':''}" data-filter="${s}">${s==='All'?'الكل':s}</button>`).join('')}
-function score(s,ts){if(!ts.length)return 1;let c=categories.find(x=>x.id===s.category),hay=norm([s.id,s.name,s.style,...s.tags,c?.ar,c?.en].join(' '));return ts.reduce((a,t)=>a+(hay.includes(norm(t))?2:0),0)}
-function visible(){let list=[...samples];if(state.cat!=='all')list=list.filter(s=>s.category===state.cat);if(state.filter!=='All')list=list.filter(s=>s.style===state.filter||s.tags.some(t=>norm(t)===norm(state.filter)));let ts=tokens(state.q);if(ts.length)list=list.map(s=>({s,n:score(s,ts)})).filter(x=>x.n>0).sort((a,b)=>b.n-a.n).map(x=>x.s);else list.sort((a,b)=>use(b)-use(a));return list}
-function card(s){return `<article class="component-card" data-id="${s.id}"><div class="component-preview">${s.html}</div><div class="component-info"><div class="component-title"><strong>${s.name}</strong><span>${s.id}</span></div><div class="mini-tags">${s.tags.slice(0,3).map(t=>`<span>${t}</span>`).join('')}</div><div class="tools"><button data-act="fav">${state.favorites.has(s.id)?'♥':'♡'}</button><button data-act="open">معاينة</button><button class="quick" data-act="copy">نسخ الكود</button></div></div></article>`}
+function renderFilters(){let cat=categories.find(x=>x.id===state.cat),styles=cat?cat.styles:['All','Minimal','Glass','Dark','Animated','Dashboard','Hover'];let styleButtons=styles.map(s=>`<button class="filter ${state.filter===s?'active':''}" data-filter="${s}">${s==='All'?'الكل':s}</button>`).join('');let levels=[['basic','سهل'],['intermediate','متوسط'],['advanced','متقدم']].map(([k,l])=>`<button class="filter complexity ${state.filter==='complexity:'+k?'active':''}" data-filter="complexity:${k}">${l}</button>`).join('');el.filters.innerHTML=styleButtons+'<span class="filter-sep"></span>'+levels}
+function score(s,ts){if(!ts.length)return 1;let cat=categories.find(x=>x.id===s.category),idx=tokens([s.id,s.name,s.style,s.description,s.complexity,...s.tags,cat?.ar,cat?.en].join(' ')),hits=0,points=0;for(let t of ts){let exact=idx.includes(t),partial=idx.some(x=>x.includes(t)||t.includes(x));if(exact){hits++;points+=4}else if(partial){hits++;points+=2}}let need=ts.length<=2?1:Math.ceil(ts.length*.5);return hits>=need?points:0}
+function visible(){let list=[...samples];if(state.cat!=='all')list=list.filter(s=>s.category===state.cat);if(state.filter.startsWith('complexity:'))list=list.filter(s=>s.complexity===state.filter.split(':')[1]);else if(state.filter!=='All')list=list.filter(s=>s.style===state.filter||s.tags.some(t=>norm(t)===norm(state.filter)));let ts=tokens(state.q);if(ts.length)list=list.map(s=>({s,n:score(s,ts)})).filter(x=>x.n>0).sort((a,b)=>b.n-a.n||use(b.s)-use(a.s)).map(x=>x.s);else list.sort((a,b)=>use(b)-use(a)||a.name.localeCompare(b.name));return list}
+function card(s){let level={basic:'سهل',intermediate:'متوسط',advanced:'متقدم'}[s.complexity]||s.complexity;return `<article class="component-card" data-id="${s.id}"><div class="component-preview">${s.code.html}</div><div class="component-info"><div class="component-title"><strong>${s.name}</strong><span>${s.id}</span></div><div class="component-meta"><span class="complexity-badge ${s.complexity}">${level}</span><span>استخدام ${use(s)}×</span></div><div class="mini-tags">${s.tags.slice(0,4).map(t=>`<span>${t}</span>`).join('')}</div><div class="tools"><button data-act="fav">${state.favorites.has(s.id)?'♥':'♡'}</button><button data-act="open">معاينة</button><button class="quick" data-act="copy">نسخ الكود</button></div></div></article>`}
 function renderGrid(list=visible()){el.empty.hidden=!!list.length;el.grid.innerHTML=list.map(card).join('')}
 function header(){let c=categories.find(x=>x.id===state.cat);el.title.textContent=state.q?`نتائج البحث عن: ${state.q}`:c?c.ar:'كل النماذج';el.eyebrow.textContent=c?c.en:'المكتبة الكاملة';$('#componentTotal').textContent=samples.length;$('#usageTotal').textContent=Object.values(state.usage).reduce((a,n)=>a+Number(n),0);$('#favCount').textContent=state.favorites.size;$('#recentCount').textContent=state.recent.length;$('#collectionCount').textContent=Object.keys(state.collections).length;$('#clearSearch').hidden=!state.q}
 function renderAll(){renderNav();renderOverview();renderFilters();renderGrid();header()}
@@ -125,19 +2060,22 @@ function recent(id){state.recent=[id,...state.recent.filter(x=>x!==id)].slice(0,
 function mark(id){state.usage[id]=Number(state.usage[id]||0)+1;recent(id);persist();renderOverview();header()}
 function toggleFav(id){state.favorites.has(id)?state.favorites.delete(id):state.favorites.add(id);persist();renderGrid();header();if(state.active?.id===id)el.fav.textContent=state.favorites.has(id)?'♥':'♡';toast(state.favorites.has(id)?'تمت الإضافة للمفضلة':'تمت الإزالة من المفضلة')}
 const defaults={color:'#ffffff',bg:'#11131a',radius:12,padding:14,font:14,shadow:16,glow:0,scale:103,speed:30};
-function openDrawer(s){state.active=s;state.tab='HTML';state.controls={...defaults};$('#drawerTitle').textContent=s.name;$('#drawerId').textContent=s.id;el.tags.innerHTML=s.tags.map(t=>`<span>${t}</span>`).join('');el.fav.textContent=state.favorites.has(s.id)?'♥':'♡';el.preview.innerHTML=s.html;updateControls();renderTabs();applyControls();el.drawer.classList.add('open');el.drawer.setAttribute('aria-hidden','false');el.backdrop.hidden=false;recent(s.id)}
+function baseControls(s){return {...defaults,...(s?.playground||{})}}
+function openDrawer(s){state.active=s;state.tab='HTML';state.controls=baseControls(s);$('#drawerTitle').textContent=s.name;$('#drawerId').textContent=s.id+' · '+({basic:'سهل',intermediate:'متوسط',advanced:'متقدم'}[s.complexity]||s.complexity);el.tags.innerHTML=s.tags.map(t=>`<span>${t}</span>`).join('');el.fav.textContent=state.favorites.has(s.id)?'♥':'♡';el.preview.innerHTML=s.code.html;updateControls();renderTabs();applyControls();el.drawer.classList.add('open');el.drawer.setAttribute('aria-hidden','false');el.backdrop.hidden=false;recent(s.id)}
 function closeDrawer(){el.drawer.classList.remove('open','full');el.drawer.setAttribute('aria-hidden','true');el.backdrop.hidden=true}
-function cssRules(){let c=state.controls;return `color: ${c.color};\nbackground: ${c.bg};\nborder-radius: ${c.radius}px;\npadding: ${Math.round(c.padding*.65)}px ${c.padding}px;\nfont-size: ${c.font}px;\nbox-shadow: 0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18);\ntransition: transform ${(c.speed/100).toFixed(2)}s ease;`}
-function code(tab){let s=state.active,c=state.controls;if(!s)return'';if(tab==='HTML')return `<div class="ui-sample">\n  ${s.html}\n</div>`;if(tab==='CSS')return `.ui-sample > * {\n  ${cssRules().replace(/\n/g,'\n  ')}\n}\n\n.ui-sample > *:hover {\n  transform: scale(${(c.scale/100).toFixed(2)});\n  box-shadow: 0 0 ${c.glow}px ${c.bg}66;\n}`;if(tab==='JS')return `const element = document.querySelector('.ui-sample > *');\n\nelement.addEventListener('click', () => {\n  console.log('${s.id} — ${s.name}');\n});`;if(tab==='React'){let n=s.name.replace(/[^a-zA-Z0-9]/g,'')||'UiSample';return `export default function ${n}() {\n  return (\n    <div className="ui-sample">\n      <button>${s.name}</button>\n    </div>\n  );\n}`}return `<button className="px-5 py-3 rounded-xl bg-slate-950 text-white transition hover:scale-105 hover:shadow-xl">\n  ${s.name}\n</button>`}
+function cssRules(){let c=state.controls;return `color: ${c.color};\nbackground: ${c.bg};\nborder-radius: ${c.radius}px;\npadding: ${Math.round(c.padding*.65)}px ${c.padding}px;\nfont-size: ${c.font}px;\nbox-shadow: 0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18);\ntransition: transform ${(c.speed/100).toFixed(2)}s ease, box-shadow ${(c.speed/100).toFixed(2)}s ease;`}
+function portableCss(s){if(s.category==='buttons')return '.demo-btn{border:0;position:relative;overflow:hidden;font-weight:700;cursor:pointer}.demo-btn.liquid:before{content:"";position:absolute;left:0;right:0;top:100%;height:100%;background:#3559e8;transition:.35s}.demo-btn.liquid:hover:before{top:0}.demo-btn.liquid span{position:relative;z-index:2}.btn-icon-slide i{display:inline-block;margin-right:8px;transition:.25s}.btn-icon-slide:hover i{transform:translateX(-5px)}.btn-gradient{background:linear-gradient(120deg,#5b5cf0,#8b63ff,#3559e8)!important;background-size:200% 200%!important}.btn-glass{backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9)!important}';if(s.category==='cards')return '.demo-card{width:220px;border:1px solid #e1e4ec;background:#fff;border-radius:16px;padding:15px}.demo-card h4{margin:0 0 5px}.demo-card p,.demo-card small{color:#7a8090}.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;margin:auto;background:#e9edff}.task-progress{height:7px;background:#edf0f6;border-radius:99px;overflow:hidden}.task-progress i{display:block;width:72%;height:100%;background:#3559e8}';if(s.category==='inputs')return '.demo-input,input,textarea,select{font:inherit}.demo-input{width:240px;height:42px;border:1px solid #dfe2ea;border-radius:12px;padding:0 12px;outline:0}.input-search,.password-field,.validated-field,.select-field{width:240px;display:flex;align-items:center;border:1px solid #dfe2ea;border-radius:12px;padding:0 11px}.input-search input,.password-field input,.validated-field input,.select-field select{flex:1;height:40px;border:0;outline:0;background:transparent}';if(s.category==='nav')return '.demo-nav{width:300px;border:1px solid #e2e4eb;background:#fff;border-radius:14px;padding:8px 9px;display:flex;align-items:center;gap:5px}.demo-nav span{padding:6px 8px;border-radius:7px}.demo-nav .active{background:#111;color:#fff}.mobile-bottom{width:300px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;border:1px solid #e2e4eb;border-radius:18px;padding:7px}';if(s.category==='hover')return '.hover-link{position:relative;text-decoration:none;font-weight:700}.hover-link:after{content:"";position:absolute;right:0;bottom:-5px;width:0;height:2px;background:currentColor;transition:.3s}.hover-link:hover:after{width:100%}.hover-pop,.hover-tilt{padding:18px;border:1px solid #e1e4ec;border-radius:16px;background:#fff;transition:.3s}.hover-pop:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(30,38,64,.14)}';return ''}
+function rootHtml(s){return s.code.html.replace(/^(\s*)<([a-zA-Z][\w-]*)(\s|>)/,(_,ws,tag,tail)=>ws+'<'+tag+' id="ui-'+s.id.toLowerCase()+'"'+tail)}
+function dynamicCss(s){let c=state.controls,id='#ui-'+s.id.toLowerCase();return `${id}{${cssRules()}}\n${id}:hover{transform:scale(${(c.scale/100).toFixed(2)});box-shadow:0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)}`}
+function code(tab){let s=state.active,c=state.controls;if(!s)return'';if(tab==='HTML')return `<style>\n${portableCss(s)}\n${dynamicCss(s)}\n</style>\n${rootHtml(s)}`;if(tab==='CSS')return portableCss(s)+'\n\n'+dynamicCss(s);if(tab==='JS')return `const element = document.querySelector('#ui-${s.id.toLowerCase()}');\n\nelement.addEventListener('click', () => {\n  console.log('${s.id} — ${s.name}');\n});`;if(tab==='React'){let n='Ui'+s.id.replace(/[^a-zA-Z0-9]/g,'');return `export default function ${n}(){\n  const style={color:'${c.color}',background:'${c.bg}',borderRadius:${c.radius},padding:'${Math.round(c.padding*.65)}px ${c.padding}px',fontSize:${c.font}};\n  return <div style={style}>${s.name}</div>;\n}`}return `<div className="text-[${c.color}] bg-[${c.bg}] rounded-[${c.radius}px] px-[${c.padding}px] py-[${Math.round(c.padding*.65)}px] text-[${c.font}px] transition-transform duration-[${Math.round(c.speed*10)}ms] hover:scale-[${(c.scale/100).toFixed(2)}]">\n  ${s.name}\n</div>`}
 function renderTabs(){el.tabs.innerHTML=['HTML','CSS','JS','React','Tailwind'].map(t=>`<button data-tab="${t}" class="${state.tab===t?'active':''}">${t}</button>`).join('');el.code.textContent=code(state.tab)}
 function applyControls(){let t=el.preview.firstElementChild,c=state.controls;if(!t||!c)return;t.style.color=c.color;t.style.backgroundColor=c.bg;t.style.borderRadius=c.radius+'px';t.style.padding=`${Math.round(c.padding*.65)}px ${c.padding}px`;t.style.fontSize=c.font+'px';t.style.boxShadow=`0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`;t.style.transition=`transform ${c.speed/100}s ease, box-shadow ${c.speed/100}s ease`;t.onmouseenter=()=>{t.style.transform=`scale(${c.scale/100})`;t.style.boxShadow=`0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`};t.onmouseleave=()=>{t.style.transform='scale(1)';t.style.boxShadow=`0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)`};el.code.textContent=code(state.tab)}
 function updateControls(){let m={cColor:'color',cBg:'bg',cRadius:'radius',cPadding:'padding',cFont:'font',cShadow:'shadow',cGlow:'glow',cScale:'scale',cSpeed:'speed'};Object.entries(m).forEach(([id,k])=>$('#'+id).value=state.controls[k]);$('#vRadius').textContent=state.controls.radius+'px';$('#vPadding').textContent=state.controls.padding+'px';$('#vFont').textContent=state.controls.font+'px';$('#vShadow').textContent=state.controls.shadow;$('#vGlow').textContent=state.controls.glow;$('#vScale').textContent=(state.controls.scale/100).toFixed(2)+'×';$('#vSpeed').textContent=(state.controls.speed/100).toFixed(2)+'s'}
 async function copyText(t,msg='تم نسخ الكود'){try{await navigator.clipboard.writeText(t)}catch{let a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}toast(msg)}
-function quick(s){state.active=s;state.controls={...defaults};copyText(code('HTML'));mark(s.id)}
+function quick(s){state.active=s;state.controls=baseControls(s);copyText(code('HTML'));mark(s.id)}
 function showView(v){let ids=v==='favorites'?[...state.favorites]:v==='recent'?state.recent:[...new Set(Object.values(state.collections).flat())],list=ids.map(id=>samples.find(s=>s.id===id)).filter(Boolean);state.cat='all';state.q='';state.filter='All';el.search.value='';renderNav();renderFilters();el.title.textContent=v==='favorites'?'المفضلة':v==='recent'?'آخر استخدام':'المجموعات المحفوظة';el.eyebrow.textContent='مساحتي';renderGrid(list);$('#library').scrollIntoView({behavior:'smooth'})}
 function suggestions(){let q=el.search.value.trim();if(!q){el.suggestions.hidden=true;return}let ts=tokens(q),list=samples.map(s=>({s,n:score(s,ts)})).filter(x=>x.n>0).sort((a,b)=>b.n-a.n).slice(0,5);if(!list.length){el.suggestions.hidden=true;return}el.suggestions.innerHTML=list.map(({s})=>`<button data-suggest="${s.id}"><span>${s.name}</span><small>${s.id}</small></button>`).join('');el.suggestions.hidden=false}
-el.nav.addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(b)setCat(b.dataset.cat)});el.catGrid.addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(b)setCat(b.dataset.cat)});el.filters.addEventListener('click',e=>{let b=e.target.closest('[data-filter]');if(b){state.filter=b.dataset.filter;renderFilters();renderGrid()}});el.grid.addEventListener('click',e=>{let card=e.target.closest('.component-card');if(!card)return;let s=samples.find(x=>x.id===card.dataset.id),a=e.target.closest('[data-act]')?.dataset.act;if(a==='fav')toggleFav(s.id);else if(a==='copy')quick(s);else openDrawer(s)});el.search.addEventListener('input',()=>{state.q=el.search.value.trim();state.cat='all';state.filter='All';renderNav();renderFilters();renderGrid();header();suggestions()});el.search.addEventListener('focus',suggestions);el.suggestions.addEventListener('click',e=>{let b=e.target.closest('[data-suggest]');if(b){el.suggestions.hidden=true;openDrawer(samples.find(s=>s.id===b.dataset.suggest))}});document.addEventListener('click',e=>{if(!e.target.closest('.search'))el.suggestions.hidden=true});document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();el.search.focus()}if(e.key==='Escape')closeDrawer()});$('#clearSearch').addEventListener('click',()=>{el.search.value='';state.q='';renderAll()});$('#randomBtn').addEventListener('click',()=>openDrawer(samples[Math.floor(Math.random()*samples.length)]));$('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));$('#menuBtn').addEventListener('click',()=>$('#sidebar').classList.toggle('open'));$('#focusToggle').addEventListener('click',()=>document.body.classList.toggle('focus'));$('#drawerClose').addEventListener('click',closeDrawer);el.backdrop.addEventListener('click',closeDrawer);el.fav.addEventListener('click',()=>state.active&&toggleFav(state.active.id));$('#drawerFocus').addEventListener('click',()=>el.drawer.classList.toggle('full'));$('[data-bg]').forEach(b=>b.addEventListener('click',()=>{$('[data-bg]').forEach(x=>x.classList.remove('active'));b.classList.add('active');el.preview.classList.remove('dark-mode','grid-mode');if(b.dataset.bg==='dark')el.preview.classList.add('dark-mode');if(b.dataset.bg==='grid')el.preview.classList.add('grid-mode')}));el.tabs.addEventListener('click',e=>{let b=e.target.closest('[data-tab]');if(b){state.tab=b.dataset.tab;renderTabs()}});$('#copyCode').addEventListener('click',()=>{if(state.active){copyText(code(state.tab));mark(state.active.id)}});$('#copyAll').addEventListener('click',()=>{if(state.active){copyText(['HTML','CSS','JS','React','Tailwind'].map(t=>`/* ${t} */\n${code(t)}`).join('\n\n'),'تم نسخ جميع الصيغ');mark(state.active.id)}});$('#resetControls').addEventListener('click',()=>{state.controls={...defaults};updateControls();el.preview.innerHTML=state.active.html;applyControls();toast('تمت إعادة الضبط')});
+el.nav.addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(b)setCat(b.dataset.cat)});el.catGrid.addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(b)setCat(b.dataset.cat)});el.filters.addEventListener('click',e=>{let b=e.target.closest('[data-filter]');if(b){state.filter=b.dataset.filter;renderFilters();renderGrid()}});el.grid.addEventListener('click',e=>{let card=e.target.closest('.component-card');if(!card)return;let s=samples.find(x=>x.id===card.dataset.id),a=e.target.closest('[data-act]')?.dataset.act;if(a==='fav')toggleFav(s.id);else if(a==='copy')quick(s);else openDrawer(s)});el.search.addEventListener('input',()=>{state.q=el.search.value.trim();state.cat='all';state.filter='All';renderNav();renderFilters();renderGrid();header();suggestions()});el.search.addEventListener('focus',suggestions);el.suggestions.addEventListener('click',e=>{let b=e.target.closest('[data-suggest]');if(b){el.suggestions.hidden=true;openDrawer(samples.find(s=>s.id===b.dataset.suggest))}});document.addEventListener('click',e=>{if(!e.target.closest('.search'))el.suggestions.hidden=true});document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();el.search.focus()}if(e.key==='Escape')closeDrawer()});$('#clearSearch').addEventListener('click',()=>{el.search.value='';state.q='';renderAll()});$('#randomBtn').addEventListener('click',()=>openDrawer(samples[Math.floor(Math.random()*samples.length)]));$('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));$('#menuBtn').addEventListener('click',()=>$('#sidebar').classList.toggle('open'));$('#focusToggle').addEventListener('click',()=>document.body.classList.toggle('focus'));$('#drawerClose').addEventListener('click',closeDrawer);el.backdrop.addEventListener('click',closeDrawer);el.fav.addEventListener('click',()=>state.active&&toggleFav(state.active.id));$('#drawerFocus').addEventListener('click',()=>el.drawer.classList.toggle('full'));$('[data-bg]').forEach(b=>b.addEventListener('click',()=>{$('[data-bg]').forEach(x=>x.classList.remove('active'));b.classList.add('active');el.preview.classList.remove('dark-mode','grid-mode');if(b.dataset.bg==='dark')el.preview.classList.add('dark-mode');if(b.dataset.bg==='grid')el.preview.classList.add('grid-mode')}));el.tabs.addEventListener('click',e=>{let b=e.target.closest('[data-tab]');if(b){state.tab=b.dataset.tab;renderTabs()}});$('#copyCode').addEventListener('click',()=>{if(state.active){copyText(code(state.tab));mark(state.active.id)}});$('#copyAll').addEventListener('click',()=>{if(state.active){copyText(['HTML','CSS','JS','React','Tailwind'].map(t=>`/* ${t} */\n${code(t)}`).join('\n\n'),'تم نسخ جميع الصيغ');mark(state.active.id)}});$('#resetControls').addEventListener('click',()=>{if(!state.active)return;state.controls=baseControls(state.active);updateControls();el.preview.innerHTML=state.active.code.html;applyControls();toast('تمت إعادة الضبط')});
 const cmap={cColor:'color',cBg:'bg',cRadius:'radius',cPadding:'padding',cFont:'font',cShadow:'shadow',cGlow:'glow',cScale:'scale',cSpeed:'speed'};Object.keys(cmap).forEach(id=>$('#'+id).addEventListener('input',e=>{state.controls[cmap[id]]=e.target.type==='range'?Number(e.target.value):e.target.value;updateControls();applyControls()}));$('#addCollection').addEventListener('click',()=>{if(!state.active)return;let n=prompt('اسم المجموعة:','أفكار جديدة');if(!n)return;state.collections[n]=state.collections[n]||[];if(!state.collections[n].includes(state.active.id))state.collections[n].push(state.active.id);persist();header();toast(`تم الحفظ في ${n}`)});
-renderAll();
-</script>
+renderAll();</script>
 </body></html>
