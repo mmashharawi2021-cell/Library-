@@ -288,6 +288,16 @@ const librarySources = [
     ],
     "usedBy": []
   },
+  {
+    id: "jitter-all-2026",
+    name: "Jitter — All Templates 2026",
+    url: "https://jitter.video/templates/all/",
+    type: "official-template-gallery",
+    technology: "Motion design reference",
+    license: "Jitter-owned templates may be remixed/transformed; third-party/community branded assets are excluded unless terms are clear",
+    extracted: ["UI elements","buttons","text","backgrounds","charts","icons","websites","devices","galleries","progress","loaders","transitions"],
+    usedBy: []
+  },
 ];
 
 window.librarySources = librarySources;
