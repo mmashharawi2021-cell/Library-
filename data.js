@@ -1873,5 +1873,732 @@ const samples=[
     "usage": 0,
     "description": "إيحاء زر مغناطيسي",
     "playground": {}
+  },
+  {
+    "id": "BTN-011",
+    "name": "Magnetic Dot",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "magnetic",
+      "dot",
+      "animated",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn btn-magnetic\"><span>استكشف</span><i></i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر مع نقطة تفاعلية تتحرك عند المرور",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 14,
+      "glow": 10
+    }
+  },
+  {
+    "id": "BTN-012",
+    "name": "Split Action",
+    "category": "buttons",
+    "style": "Minimal",
+    "tags": [
+      "button",
+      "split",
+      "action",
+      "menu",
+      "minimal"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"btn-split\"><button>حفظ</button><button aria-label=\"خيارات\">⌄</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر رئيسي مع إجراء ثانوي منفصل",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-013",
+    "name": "Loading State",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "loading",
+      "spinner",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-loading\"><i></i><span>جارٍ الحفظ</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر حالة تحميل مع Spinner صغير",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-014",
+    "name": "Ghost Icon",
+    "category": "buttons",
+    "style": "Outline",
+    "tags": [
+      "button",
+      "ghost",
+      "icon",
+      "minimal",
+      "outline"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn btn-ghost\">↗ <span>فتح</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر Ghost خفيف مع أيقونة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-015",
+    "name": "CTA Arrow",
+    "category": "buttons",
+    "style": "Gradient",
+    "tags": [
+      "button",
+      "cta",
+      "arrow",
+      "gradient",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-cta\"><span>ابدأ الآن</span><i>←</i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر CTA بارز بسهم متحرك",
+    "playground": {
+      "bg": "#5b5cf0",
+      "color": "#ffffff",
+      "radius": 16,
+      "shadow": 22
+    }
+  },
+  {
+    "id": "HOV-011",
+    "name": "Gradient Border",
+    "category": "hover",
+    "style": "Border",
+    "tags": [
+      "hover",
+      "gradient",
+      "border",
+      "card",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"hover-gradient-border\"><span>Gradient Border</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حد Gradient يظهر ويتحرك عند المرور",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "HOV-012",
+    "name": "Blur Reveal",
+    "category": "hover",
+    "style": "Reveal",
+    "tags": [
+      "hover",
+      "blur",
+      "reveal",
+      "image",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-blur\"><div></div><span>مشاهدة التفاصيل</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "كشف المحتوى مع إزالة Blur تدريجيًا",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "HOV-013",
+    "name": "Flip Label",
+    "category": "hover",
+    "style": "Reveal",
+    "tags": [
+      "hover",
+      "flip",
+      "label",
+      "text",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hover-flip\"><span>المزيد</span><b>فتح ↗</b></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تبديل النص بحركة Flip قصيرة",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "HOV-014",
+    "name": "Shine Sweep",
+    "category": "hover",
+    "style": "Glow",
+    "tags": [
+      "hover",
+      "shine",
+      "sweep",
+      "glow",
+      "button"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hover-shine\">Shine Sweep</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "لمعة تمر فوق العنصر عند Hover",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "radius": 12,
+      "glow": 12
+    }
+  },
+  {
+    "id": "HOV-015",
+    "name": "Spotlight Card",
+    "category": "hover",
+    "style": "Glow",
+    "tags": [
+      "hover",
+      "spotlight",
+      "card",
+      "dark",
+      "glow"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"hover-spotlight\"><b>Spotlight</b><small>واجهة داكنة تفاعلية</small></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة داكنة بتوهج موضعي عند المرور",
+    "playground": {
+      "bg": "#171a22",
+      "color": "#ffffff",
+      "radius": 18,
+      "glow": 28
+    }
+  },
+  {
+    "id": "CRD-011",
+    "name": "Stat Comparison",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "dashboard",
+      "stats",
+      "comparison",
+      "kpi"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-compare\"><small>هذا الشهر</small><div><h4>24.8K</h4><span>+12.6%</span></div><p>مقابل 22.1K الشهر السابق</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة مقارنة رقمين للداشبورد",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-012",
+    "name": "Timeline Event",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "timeline",
+      "event",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-timeline\"><i></i><div><small>10:30 AM</small><h4>تم نشر التحديث</h4><p>Library v2 جاهزة للمراجعة.</p></div></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة حدث ضمن Timeline",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-013",
+    "name": "File Card",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "file",
+      "document",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-file\"><div class=\"file-icon\">PDF</div><div><h4>design-system.pdf</h4><p>4.8 MB · اليوم</p></div><button>⋯</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة ملف قابلة لإعادة الاستخدام",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-014",
+    "name": "Team Member",
+    "category": "cards",
+    "style": "Profile",
+    "tags": [
+      "card",
+      "team",
+      "profile",
+      "member",
+      "avatar"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-member\"><div class=\"avatar\">M</div><div><h4>مهند</h4><p>UI Library Owner</p></div><span>Online</span></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة عضو فريق مع حالة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "CRD-015",
+    "name": "Empty State",
+    "category": "cards",
+    "style": "Feature",
+    "tags": [
+      "card",
+      "empty",
+      "state",
+      "feature",
+      "cta"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-empty\"><div>＋</div><h4>لا توجد عناصر بعد</h4><p>أضف أول عنصر إلى مجموعتك.</p><button>إضافة عنصر</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Empty State مع CTA",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 18
+    }
+  },
+  {
+    "id": "INP-011",
+    "name": "OTP Group",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "otp",
+      "code",
+      "form",
+      "verification"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"otp-group\"><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مجموعة حقول OTP للتحقق",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 10
+    }
+  },
+  {
+    "id": "INP-012",
+    "name": "Toggle Control",
+    "category": "inputs",
+    "style": "Soft",
+    "tags": [
+      "input",
+      "toggle",
+      "switch",
+      "settings",
+      "soft"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"toggle-control\"><input type=\"checkbox\" checked><span></span><b>تفعيل الإشعارات</b></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Toggle بسيط للإعدادات",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "INP-013",
+    "name": "Date Field",
+    "category": "inputs",
+    "style": "Minimal",
+    "tags": [
+      "input",
+      "date",
+      "calendar",
+      "form",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"date-field\"><span>التاريخ</span><input type=\"date\" value=\"2026-09-26\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل تاريخ مرتب بLabel",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "INP-014",
+    "name": "Tag Input",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "tags",
+      "chips",
+      "form",
+      "search"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<label class=\"tag-field\"><span>glass ×</span><span>dark ×</span><input placeholder=\"أضف Tag\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل Tags مع Chips داخلية",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "INP-015",
+    "name": "Checkbox Group",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "checkbox",
+      "group",
+      "form",
+      "filter"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"check-group\"><label><input type=\"checkbox\" checked> Minimal</label><label><input type=\"checkbox\"> Glass</label><label><input type=\"checkbox\" checked> Animated</label></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مجموعة Checkboxes للفلاتر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "NAV-011",
+    "name": "Mega Nav Mini",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "mega",
+      "header",
+      "menu",
+      "minimal"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<nav class=\"mega-nav\"><b>Library</b><span>Components</span><span>Patterns</span><span>Resources</span><button>ابدأ</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هيدر قريب من Mega Menu بتركيب مضغوط",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "NAV-012",
+    "name": "Dock Navigation",
+    "category": "nav",
+    "style": "Floating",
+    "tags": [
+      "nav",
+      "dock",
+      "floating",
+      "icons",
+      "desktop"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"dock-nav\"><span>⌂</span><span class=\"active\">▦</span><span>⌕</span><span>♡</span><span>⚙</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Dock عائم للأدوات السريعة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 18,
+      "shadow": 26
+    }
+  },
+  {
+    "id": "NAV-013",
+    "name": "Step Navigation",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "steps",
+      "stepper",
+      "progress",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"step-nav\"><span class=\"done\">1<small>بيانات</small></span><i></i><span class=\"active\">2<small>مراجعة</small></span><i></i><span>3<small>إنهاء</small></span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Stepper للتنقل بين مراحل العملية",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "NAV-014",
+    "name": "Pagination Bar",
+    "category": "nav",
+    "style": "Pill",
+    "tags": [
+      "nav",
+      "pagination",
+      "pages",
+      "pill",
+      "table"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"pagination-bar\"><button>‹</button><button>1</button><button class=\"active\">2</button><button>3</button><button>›</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Pagination صغيرة وواضحة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "NAV-015",
+    "name": "Command Breadcrumb",
+    "category": "nav",
+    "style": "Breadcrumb",
+    "tags": [
+      "nav",
+      "breadcrumb",
+      "command",
+      "search",
+      "header"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"command-breadcrumb\"><span>Library</span><i>/</i><b>Buttons</b><kbd>⌘ K</kbd></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Breadcrumb مع اختصار Command",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
   }
 ];
