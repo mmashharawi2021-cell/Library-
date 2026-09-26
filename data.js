@@ -1,55 +1,1877 @@
 const categories=[
-{id:'buttons',ar:'الأزرار',en:'Buttons',icon:'◉',desc:'أزرار أساسية وتفاعلية',styles:['All','Minimal','Neon','Outline','Animated']},
-{id:'hover',ar:'تأثيرات Hover',en:'Hover Effects',icon:'↗',desc:'حركات واستجابات المؤشر',styles:['All','Glow','Border','Fill','Scale']},
-{id:'cards',ar:'البطاقات',en:'Cards',icon:'▣',desc:'بطاقات محتوى ولوحات تحكم',styles:['All','Minimal','Glass','Dashboard','Profile']},
-{id:'inputs',ar:'الحقول والنماذج',en:'Inputs & Forms',icon:'⌨',desc:'حقول ونماذج إدخال',styles:['All','Minimal','Search','Validation','Soft']},
-{id:'nav',ar:'التنقل',en:'Navigation Bars',icon:'☷',desc:'قوائم تنقل وشريط علوي',styles:['All','Minimal','Pill','Floating','Dark']},
-{id:'modals',ar:'النوافذ',en:'Modals & Popups',icon:'▢',desc:'حوارات وتنبيهات منبثقة',styles:['All','Confirm','Alert','Glass','Sheet']},
-{id:'menus',ar:'القوائم',en:'Dropdowns & Menus',icon:'⌄',desc:'قوائم واختيارات سياقية',styles:['All','Actions','Context','Select','Dropdown']},
-{id:'loaders',ar:'التحميل والتقدم',en:'Loaders & Progress',icon:'◌',desc:'مؤشرات انتظار وتقدم',styles:['All','Spinner','Progress']},
-{id:'tabs',ar:'التبويبات والأكورديون',en:'Tabs & Accordions',icon:'≡',desc:'تنظيم المحتوى التفاعلي',styles:['All','Tabs','Pill','Underline','Accordion']},
-{id:'motion',ar:'الحركات الدقيقة',en:'Micro-interactions',icon:'✦',desc:'حركات صغيرة تضيف حياة',styles:['All','Scale','Pulse','Rotate','Magnetic']}
+  {
+    "id": "buttons",
+    "ar": "الأزرار",
+    "en": "Buttons",
+    "icon": "◉",
+    "desc": "أزرار جاهزة للاستخدام اليومي",
+    "styles": [
+      "All",
+      "Minimal",
+      "Neon",
+      "Outline",
+      "Animated",
+      "Gradient",
+      "Glass",
+      "Soft"
+    ]
+  },
+  {
+    "id": "hover",
+    "ar": "تأثيرات Hover",
+    "en": "Hover Effects",
+    "icon": "↗",
+    "desc": "حركات واستجابات المؤشر",
+    "styles": [
+      "All",
+      "Glow",
+      "Border",
+      "Fill",
+      "Scale",
+      "Reveal",
+      "Lift",
+      "Tilt"
+    ]
+  },
+  {
+    "id": "cards",
+    "ar": "البطاقات",
+    "en": "Cards",
+    "icon": "▣",
+    "desc": "بطاقات محتوى ولوحات تحكم",
+    "styles": [
+      "All",
+      "Minimal",
+      "Glass",
+      "Dashboard",
+      "Profile",
+      "Product",
+      "Pricing",
+      "Feature"
+    ]
+  },
+  {
+    "id": "inputs",
+    "ar": "الحقول والنماذج",
+    "en": "Inputs & Forms",
+    "icon": "⌨",
+    "desc": "حقول ونماذج إدخال عملية",
+    "styles": [
+      "All",
+      "Minimal",
+      "Search",
+      "Validation",
+      "Soft",
+      "Floating",
+      "Dark",
+      "Form"
+    ]
+  },
+  {
+    "id": "nav",
+    "ar": "التنقل",
+    "en": "Navigation",
+    "icon": "☷",
+    "desc": "قوائم تنقل وشريط علوي",
+    "styles": [
+      "All",
+      "Minimal",
+      "Pill",
+      "Floating",
+      "Dark",
+      "Glass",
+      "Mobile",
+      "Breadcrumb"
+    ]
+  },
+  {
+    "id": "modals",
+    "ar": "النوافذ",
+    "en": "Modals & Popups",
+    "icon": "▢",
+    "desc": "حوارات وتنبيهات منبثقة",
+    "styles": [
+      "All",
+      "Confirm",
+      "Alert",
+      "Glass",
+      "Sheet"
+    ]
+  },
+  {
+    "id": "menus",
+    "ar": "القوائم",
+    "en": "Dropdowns & Menus",
+    "icon": "⌄",
+    "desc": "قوائم واختيارات سياقية",
+    "styles": [
+      "All",
+      "Actions",
+      "Context",
+      "Select",
+      "Dropdown"
+    ]
+  },
+  {
+    "id": "loaders",
+    "ar": "التحميل والتقدم",
+    "en": "Loaders & Progress",
+    "icon": "◌",
+    "desc": "مؤشرات انتظار وتقدم",
+    "styles": [
+      "All",
+      "Spinner",
+      "Progress"
+    ]
+  },
+  {
+    "id": "tabs",
+    "ar": "التبويبات والأكورديون",
+    "en": "Tabs & Accordions",
+    "icon": "≡",
+    "desc": "تنظيم المحتوى التفاعلي",
+    "styles": [
+      "All",
+      "Tabs",
+      "Pill",
+      "Underline",
+      "Accordion"
+    ]
+  },
+  {
+    "id": "motion",
+    "ar": "الحركات الدقيقة",
+    "en": "Micro-interactions",
+    "icon": "✦",
+    "desc": "حركات صغيرة تضيف حياة",
+    "styles": [
+      "All",
+      "Scale",
+      "Pulse",
+      "Rotate",
+      "Magnetic"
+    ]
+  }
 ];
-const raw=[
-['BTN-001','buttons','Solid Core','Minimal',['button','minimal','black'],`<button class="demo-btn primary">ابدأ الآن</button>`],
-['BTN-002','buttons','Electric Glow','Neon',['button','glow','blue','hover'],`<button class="demo-btn glow">استكشف المكتبة</button>`],
-['BTN-003','buttons','Clean Outline','Outline',['button','outline','minimal'],`<button class="demo-btn outline">عرض التفاصيل</button>`],
-['BTN-004','buttons','Liquid Fill','Animated',['button','fill','liquid','hover'],`<button class="demo-btn liquid"><span>مرّر المؤشر</span></button>`],
-['HOV-001','hover','Glow Lift','Glow',['hover','glow','lift','blue'],`<button class="demo-btn glow">Glow Lift</button>`],
-['HOV-002','hover','Invert Border','Border',['hover','border','invert'],`<button class="demo-btn outline">Invert Border</button>`],
-['HOV-003','hover','Liquid Sweep','Fill',['hover','fill','sweep'],`<button class="demo-btn liquid"><span>Liquid Sweep</span></button>`],
-['HOV-004','hover','Micro Scale','Scale',['hover','scale','micro'],`<div class="micro">↗</div>`],
-['CRD-001','cards','Content Card','Minimal',['card','content','minimal'],`<article class="demo-card"><div class="thumb"></div><h4>عنوان البطاقة</h4><p>وصف مختصر يوضح محتوى البطاقة بشكل واضح.</p></article>`],
-['CRD-002','cards','Glass Card','Glass',['card','glass','blur'],`<article class="demo-card" style="background:rgba(255,255,255,.62);backdrop-filter:blur(10px)"><div class="thumb"></div><h4>Glass Surface</h4><p>بطاقة زجاجية خفيفة لمناطق المحتوى البارزة.</p></article>`],
-['CRD-003','cards','KPI Card','Dashboard',['card','dashboard','kpi'],`<article class="demo-card"><small style="color:#7a8090;font-size:7px">إجمالي الزيارات</small><h4 style="font-size:24px;margin:6px 0">12,480</h4><p>+18.4% مقارنة بالشهر السابق</p></article>`],
-['CRD-004','cards','Profile Card','Profile',['card','profile','user'],`<article class="demo-card" style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:#e9edff;margin:auto auto 9px"></div><h4>مستخدم تجريبي</h4><p>UI Designer · Gaza</p></article>`],
-['INP-001','inputs','Focus Ring','Minimal',['input','focus','form'],`<input class="demo-input" placeholder="اكتب هنا...">`],
-['INP-002','inputs','Search Field','Search',['input','search','field'],`<input class="demo-input" placeholder="ابحث في المكتبة...">`],
-['INP-003','inputs','Email Field','Validation',['input','email','validation'],`<input class="demo-input" type="email" value="mohanad@example.com">`],
-['INP-004','inputs','Soft Input','Soft',['input','soft','rounded'],`<input class="demo-input" style="border:0;background:#f0f2f7" placeholder="اسم المشروع">`],
-['NAV-001','nav','Compact Nav','Minimal',['nav','navbar','minimal'],`<nav class="demo-nav"><b>Brand</b><span class="active">الرئيسية</span><span>المكتبة</span><span>حول</span></nav>`],
-['NAV-002','nav','Pill Navigation','Pill',['nav','pill','rounded'],`<nav class="demo-nav" style="border-radius:999px"><b>M</b><span>Home</span><span class="active">Library</span><span>Labs</span></nav>`],
-['NAV-003','nav','Floating Bar','Floating',['nav','floating','bar'],`<nav class="demo-nav" style="box-shadow:0 16px 35px rgba(30,38,62,.14)"><b>UI</b><span>Components</span><span class="active">Top 10</span></nav>`],
-['NAV-004','nav','Dark Nav','Dark',['nav','dark','contrast'],`<nav class="demo-nav" style="background:#111;color:#fff;border-color:#111"><b>Library</b><span style="color:#aaa">Browse</span><span class="active" style="background:#fff;color:#111">Saved</span></nav>`],
-['MOD-001','modals','Confirm Modal','Confirm',['modal','confirm','dialog'],`<div class="demo-modal"><b>تأكيد الإجراء</b><p>هل تريد تنفيذ هذا الإجراء الآن؟</p><div class="actions"><button>تأكيد</button><button>إلغاء</button></div></div>`],
-['MOD-002','modals','Info Dialog','Alert',['modal','info','alert'],`<div class="demo-modal"><b>تم الحفظ</b><p>تمت إضافة العنصر إلى مجموعتك بنجاح.</p><div class="actions"><button>حسنًا</button></div></div>`],
-['MOD-003','modals','Glass Dialog','Glass',['modal','glass','blur'],`<div class="demo-modal" style="background:rgba(255,255,255,.68);backdrop-filter:blur(12px)"><b>Glass Dialog</b><p>نموذج خفيف لواجهات مستقبلية نظيفة.</p></div>`],
-['MOD-004','modals','Action Sheet','Sheet',['modal','sheet','actions'],`<div class="demo-modal"><b>خيارات العنصر</b><p>نسخ الكود أو إضافته للمفضلة.</p><div class="actions"><button>نسخ</button><button>مفضلة</button></div></div>`],
-['MNU-001','menus','Action Menu','Actions',['menu','actions','dropdown'],`<div class="demo-menu"><div>نسخ الكود</div><div>إضافة للمفضلة</div><div>فتح في التركيز</div></div>`],
-['MNU-002','menus','Context Menu','Context',['menu','context','popup'],`<div class="demo-menu"><div>فتح</div><div>تكرار</div><div style="color:#c64747">حذف</div></div>`],
-['MNU-003','menus','Select Menu','Select',['menu','select','options'],`<div class="demo-menu"><div>Minimal ✓</div><div>Glass</div><div>Neon</div></div>`],
-['MNU-004','menus','Dropdown','Dropdown',['menu','dropdown','list'],`<div class="demo-menu"><div>HTML / CSS</div><div>React</div><div>Tailwind</div></div>`],
-['LOD-001','loaders','Classic Spinner','Spinner',['loader','spinner','loading'],`<div class="loader"></div>`],
-['LOD-002','loaders','Progress Line','Progress',['progress','bar','loading'],`<div class="progress"><span></span></div>`],
-['LOD-003','loaders','Soft Spinner','Spinner',['loader','soft','spinner'],`<div class="loader" style="border-top-color:#111;border-width:3px;width:32px;height:32px"></div>`],
-['LOD-004','loaders','Gradient Progress','Progress',['progress','gradient','bar'],`<div class="progress"><span style="background:linear-gradient(90deg,#3559e8,#8a5cff)"></span></div>`],
-['TAB-001','tabs','Soft Tabs','Tabs',['tabs','soft','switch'],`<div class="demo-tabs"><span class="active">HTML</span><span>React</span><span>Tailwind</span></div>`],
-['TAB-002','tabs','Dark Tabs','Pill',['tabs','dark','pill'],`<div class="demo-tabs" style="background:#111;color:#aaa"><span>Preview</span><span class="active">Code</span></div>`],
-['TAB-003','tabs','Underline Tabs','Underline',['tabs','underline','minimal'],`<div style="display:flex;gap:18px;font-size:9px"><span style="border-bottom:2px solid #3559e8;padding:8px">Overview</span><span style="padding:8px;color:#777">Details</span></div>`],
-['TAB-004','tabs','Accordion Row','Accordion',['accordion','row','collapse'],`<div class="demo-menu" style="width:230px"><div style="display:flex;justify-content:space-between"><b>قسم قابل للفتح</b><span>⌄</span></div></div>`],
-['MOT-001','motion','Morph Hover','Scale',['motion','hover','scale'],`<div class="micro">+</div>`],
-['MOT-002','motion','Pulse Dot','Pulse',['motion','pulse','status'],`<div style="width:18px;height:18px;border-radius:50%;background:#3559e8;box-shadow:0 0 0 0 rgba(53,89,232,.4);animation:pulse 1.6s infinite"></div>`],
-['MOT-003','motion','Rotate Tile','Rotate',['motion','rotate','hover'],`<div class="micro" style="background:#3559e8">↻</div>`],
-['MOT-004','motion','Magnetic Hint','Magnetic',['motion','magnetic','button'],`<button class="demo-btn primary">Magnetic ↗</button>`]
+
+const samples=[
+  {
+    "id": "BTN-001",
+    "name": "Solid Core",
+    "category": "buttons",
+    "style": "Minimal",
+    "tags": [
+      "button",
+      "minimal",
+      "clean",
+      "dark"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn primary\">ابدأ الآن</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر أساسي داكن للمهمات الرئيسية",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-002",
+    "name": "Electric Glow",
+    "category": "buttons",
+    "style": "Neon",
+    "tags": [
+      "button",
+      "glow",
+      "neon",
+      "blue",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn glow\">استكشف المكتبة</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر متوهج مناسب للواجهات التقنية",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "radius": 12,
+      "glow": 24
+    }
+  },
+  {
+    "id": "BTN-003",
+    "name": "Clean Outline",
+    "category": "buttons",
+    "style": "Outline",
+    "tags": [
+      "button",
+      "outline",
+      "minimal",
+      "clean"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn outline\">عرض التفاصيل</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر Outline نظيف للاستخدام الثانوي",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-004",
+    "name": "Liquid Fill",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "fill",
+      "liquid",
+      "animated",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn liquid\"><span>مرّر المؤشر</span></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر تعبئة متحركة من الأسفل",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-005",
+    "name": "Aurora Gradient",
+    "category": "buttons",
+    "style": "Gradient",
+    "tags": [
+      "button",
+      "gradient",
+      "animated",
+      "colorful"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-gradient\">إنشاء مشروع</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر Gradient متحرك بلمسة عصرية",
+    "playground": {
+      "bg": "#5b5cf0",
+      "color": "#ffffff",
+      "radius": 14
+    }
+  },
+  {
+    "id": "BTN-006",
+    "name": "Soft Elevation",
+    "category": "buttons",
+    "style": "Soft",
+    "tags": [
+      "button",
+      "soft",
+      "shadow",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn btn-soft\">حفظ التغييرات</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر فاتح بظل هادئ للواجهات النظيفة",
+    "playground": {
+      "bg": "#eef2ff",
+      "color": "#24305f",
+      "radius": 14,
+      "shadow": 22
+    }
+  },
+  {
+    "id": "BTN-007",
+    "name": "Icon Slide",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "icon",
+      "arrow",
+      "animated",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-icon-slide\"><span>متابعة</span><i>←</i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر يحرك الأيقونة عند المرور",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "BTN-008",
+    "name": "Border Draw",
+    "category": "buttons",
+    "style": "Animated",
+    "tags": [
+      "button",
+      "border",
+      "draw",
+      "animated",
+      "hover"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn btn-border-draw\">فتح المعاينة</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حد متحرك يلتف حول الزر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 10
+    }
+  },
+  {
+    "id": "BTN-009",
+    "name": "Glass Action",
+    "category": "buttons",
+    "style": "Glass",
+    "tags": [
+      "button",
+      "glass",
+      "blur",
+      "light"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn btn-glass\">نسخ الكود</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر زجاجي مناسب للخلفيات الغنية",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#27304a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "BTN-010",
+    "name": "Danger Confirm",
+    "category": "buttons",
+    "style": "Minimal",
+    "tags": [
+      "button",
+      "danger",
+      "red",
+      "confirm"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"demo-btn btn-danger\">حذف العنصر</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "زر إجراء خطِر بلون واضح",
+    "playground": {
+      "bg": "#e44747",
+      "color": "#ffffff",
+      "radius": 12
+    }
+  },
+  {
+    "id": "HOV-001",
+    "name": "Glow Lift",
+    "category": "hover",
+    "style": "Glow",
+    "tags": [
+      "hover",
+      "glow",
+      "lift",
+      "button"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"demo-btn glow\">Glow Lift</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "توهج مع رفع بسيط عند المرور",
+    "playground": {
+      "bg": "#3559e8",
+      "color": "#ffffff",
+      "glow": 28
+    }
+  },
+  {
+    "id": "HOV-002",
+    "name": "Underline Sweep",
+    "category": "hover",
+    "style": "Fill",
+    "tags": [
+      "hover",
+      "underline",
+      "text",
+      "sweep"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<a class=\"hover-link\" href=\"javascript:void(0)\">عرض التفاصيل</a>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "خط سفلي يتحرك عبر النص",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a"
+    }
+  },
+  {
+    "id": "HOV-003",
+    "name": "Image Zoom",
+    "category": "hover",
+    "style": "Scale",
+    "tags": [
+      "hover",
+      "image",
+      "zoom",
+      "card"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"hover-image\"><div class=\"hover-image-art\"></div><b>تكبير الصورة</b></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تكبير صورة داخل البطاقة دون كسر الإطار",
+    "playground": {}
+  },
+  {
+    "id": "HOV-004",
+    "name": "Tilt Surface",
+    "category": "hover",
+    "style": "Tilt",
+    "tags": [
+      "hover",
+      "tilt",
+      "card",
+      "3d"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-tilt\"><span>3D</span><b>Tilt Surface</b><small>حرّك المؤشر</small></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "ميلان بصري خفيف لسطح البطاقة",
+    "playground": {}
+  },
+  {
+    "id": "HOV-005",
+    "name": "Orbit Border",
+    "category": "hover",
+    "style": "Border",
+    "tags": [
+      "hover",
+      "border",
+      "orbit",
+      "animated"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"hover-orbit\"><span>Border Orbit</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حد مضيء يدور حول العنصر",
+    "playground": {}
+  },
+  {
+    "id": "HOV-006",
+    "name": "Slide Fill",
+    "category": "hover",
+    "style": "Fill",
+    "tags": [
+      "hover",
+      "fill",
+      "slide",
+      "button"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<button class=\"hover-slide\">Slide Fill</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تعبئة أفقية سريعة عند المرور",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "HOV-007",
+    "name": "Icon Nudge",
+    "category": "hover",
+    "style": "Scale",
+    "tags": [
+      "hover",
+      "icon",
+      "arrow",
+      "micro"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<button class=\"hover-nudge\"><span>التالي</span><i>←</i></button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إزاحة دقيقة للأيقونة دون مبالغة",
+    "playground": {}
+  },
+  {
+    "id": "HOV-008",
+    "name": "Shadow Pop",
+    "category": "hover",
+    "style": "Lift",
+    "tags": [
+      "hover",
+      "shadow",
+      "lift",
+      "soft"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"hover-pop\"><b>Shadow Pop</b><small>بطاقة بسيطة</small></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "رفع البطاقة وزيادة الظل",
+    "playground": {}
+  },
+  {
+    "id": "HOV-009",
+    "name": "Caption Reveal",
+    "category": "hover",
+    "style": "Reveal",
+    "tags": [
+      "hover",
+      "reveal",
+      "caption",
+      "image"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-reveal\"><div></div><span>عرض المشروع ↗</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إظهار Caption فوق الصورة عند المرور",
+    "playground": {}
+  },
+  {
+    "id": "HOV-010",
+    "name": "Ring Scale",
+    "category": "hover",
+    "style": "Scale",
+    "tags": [
+      "hover",
+      "ring",
+      "scale",
+      "focus"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"hover-ring\"><span>+</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حلقة Focus تتمدد حول العنصر",
+    "playground": {}
+  },
+  {
+    "id": "CRD-001",
+    "name": "Content Card",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "content",
+      "minimal",
+      "article"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card\"><div class=\"thumb\"></div><h4>عنوان البطاقة</h4><p>وصف مختصر يوضح محتوى البطاقة بشكل واضح.</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة محتوى عامة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-002",
+    "name": "Glass Card",
+    "category": "cards",
+    "style": "Glass",
+    "tags": [
+      "card",
+      "glass",
+      "blur",
+      "light"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-glass\"><span class=\"badge\">Glass</span><h4>واجهة شفافة</h4><p>بطاقة زجاجية خفيفة للمحتوى البارز.</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Glassmorphism عملية",
+    "playground": {}
+  },
+  {
+    "id": "CRD-003",
+    "name": "KPI Snapshot",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "dashboard",
+      "kpi",
+      "stats"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-kpi\"><small>إجمالي الزيارات</small><h4>12,480</h4><p>↑ 18.4% هذا الشهر</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة KPI للداشبورد",
+    "playground": {}
+  },
+  {
+    "id": "CRD-004",
+    "name": "Profile Mini",
+    "category": "cards",
+    "style": "Profile",
+    "tags": [
+      "card",
+      "profile",
+      "user",
+      "avatar"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-profile\"><div class=\"avatar\">M</div><h4>مهند المشهراوي</h4><p>GIS · UI Reference</p><button>عرض الملف</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة ملف شخصي مختصرة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-005",
+    "name": "Pricing Plan",
+    "category": "cards",
+    "style": "Pricing",
+    "tags": [
+      "card",
+      "pricing",
+      "plan",
+      "cta"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-price\"><small>PRO</small><h4>$19 <span>/mo</span></h4><p>للمشاريع التي تحتاج مكونات أكثر.</p><button>اختيار الخطة</button></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة تسعير مع CTA",
+    "playground": {}
+  },
+  {
+    "id": "CRD-006",
+    "name": "Product Compact",
+    "category": "cards",
+    "style": "Product",
+    "tags": [
+      "card",
+      "product",
+      "shop",
+      "price"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-product\"><div class=\"product-art\"></div><div><h4>واجهة تحكم</h4><p>Design Kit</p><b>$24</b></div></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة منتج مختصرة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-007",
+    "name": "Task Progress",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "task",
+      "progress",
+      "dashboard"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-task\"><div class=\"row\"><b>تحديث الواجهة</b><span>72%</span></div><div class=\"task-progress\"><i></i></div><p>8 من 11 مهمة مكتملة</p></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة تقدم مهمة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-008",
+    "name": "Trend Metric",
+    "category": "cards",
+    "style": "Dashboard",
+    "tags": [
+      "card",
+      "chart",
+      "trend",
+      "dashboard"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<article class=\"demo-card card-trend\"><small>Conversion</small><h4>8.7%</h4><svg viewBox=\"0 0 160 42\"><path d=\"M2 35 C25 30 28 18 48 24 S80 30 94 16 S130 22 158 5\"/></svg></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "مؤشر مع Sparkline بسيط",
+    "playground": {}
+  },
+  {
+    "id": "CRD-009",
+    "name": "Alert Summary",
+    "category": "cards",
+    "style": "Minimal",
+    "tags": [
+      "card",
+      "alert",
+      "status",
+      "warning"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<article class=\"demo-card card-alert\"><span>!</span><div><h4>يتطلب مراجعة</h4><p>يوجد عنصران بحاجة إلى تدقيق.</p></div></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة تنبيه صغيرة",
+    "playground": {}
+  },
+  {
+    "id": "CRD-010",
+    "name": "Feature Spotlight",
+    "category": "cards",
+    "style": "Feature",
+    "tags": [
+      "card",
+      "feature",
+      "icon",
+      "marketing"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<article class=\"demo-card card-feature\"><div class=\"feature-icon\">✦</div><h4>بحث ذكي</h4><p>ابحث بالعربية أو الإنجليزية باستخدام الكلمات الدلالية.</p><a href=\"javascript:void(0)\">اعرف أكثر ←</a></article>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "بطاقة Feature للاستخدام التعريفي",
+    "playground": {}
+  },
+  {
+    "id": "INP-001",
+    "name": "Focus Ring",
+    "category": "inputs",
+    "style": "Minimal",
+    "tags": [
+      "input",
+      "focus",
+      "form",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<input class=\"demo-input\" placeholder=\"اكتب هنا...\">",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل أساسي مع Focus واضح",
+    "playground": {}
+  },
+  {
+    "id": "INP-002",
+    "name": "Search Field",
+    "category": "inputs",
+    "style": "Search",
+    "tags": [
+      "input",
+      "search",
+      "icon",
+      "field"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"input-search\"><span>⌕</span><input placeholder=\"ابحث في المكتبة...\"></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل بحث بأيقونة",
+    "playground": {}
+  },
+  {
+    "id": "INP-003",
+    "name": "Floating Label",
+    "category": "inputs",
+    "style": "Floating",
+    "tags": [
+      "input",
+      "floating",
+      "label",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"floating-field\"><input placeholder=\" \" value=\"\"><span>اسم المشروع</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Label عائم عند التركيز أو الكتابة",
+    "playground": {}
+  },
+  {
+    "id": "INP-004",
+    "name": "Password Action",
+    "category": "inputs",
+    "style": "Minimal",
+    "tags": [
+      "input",
+      "password",
+      "action",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"password-field\"><input type=\"password\" value=\"password\"><button type=\"button\">إظهار</button></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل كلمة مرور مع إجراء جانبي",
+    "playground": {}
+  },
+  {
+    "id": "INP-005",
+    "name": "Email Valid",
+    "category": "inputs",
+    "style": "Validation",
+    "tags": [
+      "input",
+      "email",
+      "validation",
+      "success"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"validated-field\"><input value=\"mohanad@example.com\"><span>✓</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حالة نجاح داخل الحقل",
+    "playground": {}
+  },
+  {
+    "id": "INP-006",
+    "name": "Soft Field",
+    "category": "inputs",
+    "style": "Soft",
+    "tags": [
+      "input",
+      "soft",
+      "rounded",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<input class=\"demo-input input-soft\" placeholder=\"اسم المشروع\">",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل Soft بحدود شبه مخفية",
+    "playground": {}
+  },
+  {
+    "id": "INP-007",
+    "name": "Dark Control",
+    "category": "inputs",
+    "style": "Dark",
+    "tags": [
+      "input",
+      "dark",
+      "form",
+      "contrast"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<input class=\"demo-input input-dark\" placeholder=\"Command...\">",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "حقل داكن للواجهات التقنية",
+    "playground": {
+      "bg": "#171a22",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "INP-008",
+    "name": "Textarea Counter",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "textarea",
+      "counter",
+      "form"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<label class=\"textarea-field\"><textarea placeholder=\"اكتب وصفًا مختصرًا...\"></textarea><span>0 / 180</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Textarea مع عداد أحرف",
+    "playground": {}
+  },
+  {
+    "id": "INP-009",
+    "name": "Select Control",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "select",
+      "dropdown",
+      "form"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<label class=\"select-field\"><select><option>Minimal</option><option>Glass</option><option>Dashboard</option></select><span>⌄</span></label>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Select نظيف للاختيارات",
+    "playground": {}
+  },
+  {
+    "id": "INP-010",
+    "name": "Inline Form",
+    "category": "inputs",
+    "style": "Form",
+    "tags": [
+      "input",
+      "form",
+      "button",
+      "newsletter"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<form class=\"inline-form\" onsubmit=\"return false\"><input placeholder=\"البريد الإلكتروني\"><button>إرسال</button></form>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نموذج إدخال وإجراء في سطر واحد",
+    "playground": {}
+  },
+  {
+    "id": "NAV-001",
+    "name": "Compact Nav",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "navbar",
+      "minimal",
+      "header"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"demo-nav\"><b>Brand</b><span class=\"active\">الرئيسية</span><span>المكتبة</span><span>حول</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط تنقل صغير",
+    "playground": {}
+  },
+  {
+    "id": "NAV-002",
+    "name": "Pill Navigation",
+    "category": "nav",
+    "style": "Pill",
+    "tags": [
+      "nav",
+      "pill",
+      "rounded",
+      "header"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-pill\"><b>M</b><span>Home</span><span class=\"active\">Library</span><span>Labs</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنقل بحاوية Pill",
+    "playground": {}
+  },
+  {
+    "id": "NAV-003",
+    "name": "Floating Bar",
+    "category": "nav",
+    "style": "Floating",
+    "tags": [
+      "nav",
+      "floating",
+      "bar",
+      "shadow"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-floating\"><b>UI</b><span>Components</span><span class=\"active\">Top 10</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط عائم بظل واضح",
+    "playground": {}
+  },
+  {
+    "id": "NAV-004",
+    "name": "Dark Navigation",
+    "category": "nav",
+    "style": "Dark",
+    "tags": [
+      "nav",
+      "dark",
+      "contrast",
+      "header"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-dark\"><b>Library</b><span>Browse</span><span class=\"active\">Saved</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنقل داكن",
+    "playground": {}
+  },
+  {
+    "id": "NAV-005",
+    "name": "Glass Header",
+    "category": "nav",
+    "style": "Glass",
+    "tags": [
+      "nav",
+      "glass",
+      "blur",
+      "header"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"demo-nav nav-glass\"><b>Studio</b><span>Home</span><span class=\"active\">Library</span><button>ابدأ</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هيدر زجاجي عملي",
+    "playground": {}
+  },
+  {
+    "id": "NAV-006",
+    "name": "Breadcrumb Trail",
+    "category": "nav",
+    "style": "Breadcrumb",
+    "tags": [
+      "nav",
+      "breadcrumb",
+      "trail",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"breadcrumbs\"><span>الرئيسية</span><i>←</i><span>المكتبة</span><i>←</i><b>Buttons</b></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Breadcrumb واضح للصفحات المتداخلة",
+    "playground": {}
+  },
+  {
+    "id": "NAV-007",
+    "name": "Mobile Bottom",
+    "category": "nav",
+    "style": "Mobile",
+    "tags": [
+      "nav",
+      "mobile",
+      "bottom",
+      "icons"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"mobile-bottom\"><span class=\"active\">⌂<small>الرئيسية</small></span><span>▣<small>المكتبة</small></span><span>♡<small>المفضلة</small></span><span>⚙<small>الإعدادات</small></span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Bottom navigation للموبايل",
+    "playground": {}
+  },
+  {
+    "id": "NAV-008",
+    "name": "Segmented Nav",
+    "category": "nav",
+    "style": "Pill",
+    "tags": [
+      "nav",
+      "tabs",
+      "segmented",
+      "pill"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<nav class=\"seg-nav\"><span class=\"active\">Overview</span><span>Components</span><span>Tokens</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تنقل Segmented",
+    "playground": {}
+  },
+  {
+    "id": "NAV-009",
+    "name": "Sidebar Mini",
+    "category": "nav",
+    "style": "Dark",
+    "tags": [
+      "nav",
+      "sidebar",
+      "dark",
+      "icons"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<nav class=\"mini-side\"><b>M</b><span class=\"active\">⌂</span><span>▦</span><span>♡</span><span>⚙</span></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Sidebar مصغر للأدوات",
+    "playground": {}
+  },
+  {
+    "id": "NAV-010",
+    "name": "Command Header",
+    "category": "nav",
+    "style": "Minimal",
+    "tags": [
+      "nav",
+      "command",
+      "search",
+      "header"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<nav class=\"command-nav\"><b>Library</b><label>⌕ <span>ابحث بسرعة...</span><kbd>/</kbd></label><button>⌘ K</button></nav>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "هيدر يحتوي Command/Search",
+    "playground": {}
+  },
+  {
+    "id": "MOD-001",
+    "name": "Confirm Modal",
+    "category": "modals",
+    "style": "Confirm",
+    "tags": [
+      "modal",
+      "confirm",
+      "dialog"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-modal\"><b>تأكيد الإجراء</b><p>هل تريد تنفيذ هذا الإجراء الآن؟</p><div class=\"actions\"><button>تأكيد</button><button>إلغاء</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نافذة تأكيد",
+    "playground": {}
+  },
+  {
+    "id": "MOD-002",
+    "name": "Info Dialog",
+    "category": "modals",
+    "style": "Alert",
+    "tags": [
+      "modal",
+      "info",
+      "alert"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-modal\"><b>تم الحفظ</b><p>تمت إضافة العنصر إلى مجموعتك بنجاح.</p><div class=\"actions\"><button>حسنًا</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نافذة معلومات",
+    "playground": {}
+  },
+  {
+    "id": "MOD-003",
+    "name": "Glass Dialog",
+    "category": "modals",
+    "style": "Glass",
+    "tags": [
+      "modal",
+      "glass",
+      "blur"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"demo-modal modal-glass\"><b>Glass Dialog</b><p>نموذج خفيف لواجهات مستقبلية نظيفة.</p></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نافذة زجاجية",
+    "playground": {}
+  },
+  {
+    "id": "MOD-004",
+    "name": "Action Sheet",
+    "category": "modals",
+    "style": "Sheet",
+    "tags": [
+      "modal",
+      "sheet",
+      "actions"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"demo-modal\"><b>خيارات العنصر</b><p>نسخ الكود أو إضافته للمفضلة.</p><div class=\"actions\"><button>نسخ</button><button>مفضلة</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة إجراءات",
+    "playground": {}
+  },
+  {
+    "id": "MNU-001",
+    "name": "Action Menu",
+    "category": "menus",
+    "style": "Actions",
+    "tags": [
+      "menu",
+      "actions",
+      "dropdown"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>نسخ الكود</div><div>إضافة للمفضلة</div><div>فتح في التركيز</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة إجراءات",
+    "playground": {}
+  },
+  {
+    "id": "MNU-002",
+    "name": "Context Menu",
+    "category": "menus",
+    "style": "Context",
+    "tags": [
+      "menu",
+      "context",
+      "popup"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>فتح</div><div>تكرار</div><div class=\"danger-text\">حذف</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Context menu",
+    "playground": {}
+  },
+  {
+    "id": "MNU-003",
+    "name": "Select Menu",
+    "category": "menus",
+    "style": "Select",
+    "tags": [
+      "menu",
+      "select",
+      "options"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>Minimal ✓</div><div>Glass</div><div>Neon</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة اختيار",
+    "playground": {}
+  },
+  {
+    "id": "MNU-004",
+    "name": "Code Dropdown",
+    "category": "menus",
+    "style": "Dropdown",
+    "tags": [
+      "menu",
+      "dropdown",
+      "code"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu\"><div>HTML / CSS</div><div>React</div><div>Tailwind</div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "قائمة صيغ الكود",
+    "playground": {}
+  },
+  {
+    "id": "LOD-001",
+    "name": "Classic Spinner",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "loader",
+      "spinner",
+      "loading"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"loader\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Spinner كلاسيكي",
+    "playground": {}
+  },
+  {
+    "id": "LOD-002",
+    "name": "Progress Line",
+    "category": "loaders",
+    "style": "Progress",
+    "tags": [
+      "progress",
+      "bar",
+      "loading"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"progress\"><span></span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط تقدم",
+    "playground": {}
+  },
+  {
+    "id": "LOD-003",
+    "name": "Soft Spinner",
+    "category": "loaders",
+    "style": "Spinner",
+    "tags": [
+      "loader",
+      "soft",
+      "spinner"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"loader loader-soft\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Spinner ناعم",
+    "playground": {}
+  },
+  {
+    "id": "LOD-004",
+    "name": "Gradient Progress",
+    "category": "loaders",
+    "style": "Progress",
+    "tags": [
+      "progress",
+      "gradient",
+      "bar"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"progress\"><span class=\"progress-gradient\"></span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "شريط تقدم متدرج",
+    "playground": {}
+  },
+  {
+    "id": "TAB-001",
+    "name": "Soft Tabs",
+    "category": "tabs",
+    "style": "Tabs",
+    "tags": [
+      "tabs",
+      "soft",
+      "switch"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-tabs\"><span class=\"active\">HTML</span><span>React</span><span>Tailwind</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tabs ناعمة",
+    "playground": {}
+  },
+  {
+    "id": "TAB-002",
+    "name": "Dark Tabs",
+    "category": "tabs",
+    "style": "Pill",
+    "tags": [
+      "tabs",
+      "dark",
+      "pill"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-tabs tabs-dark\"><span>Preview</span><span class=\"active\">Code</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tabs داكنة",
+    "playground": {}
+  },
+  {
+    "id": "TAB-003",
+    "name": "Underline Tabs",
+    "category": "tabs",
+    "style": "Underline",
+    "tags": [
+      "tabs",
+      "underline",
+      "minimal"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"underline-tabs\"><span class=\"active\">Overview</span><span>Details</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tabs بخط سفلي",
+    "playground": {}
+  },
+  {
+    "id": "TAB-004",
+    "name": "Accordion Row",
+    "category": "tabs",
+    "style": "Accordion",
+    "tags": [
+      "accordion",
+      "row",
+      "collapse"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"demo-menu accordion-row\"><div><b>قسم قابل للفتح</b><span>⌄</span></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "صف Accordion",
+    "playground": {}
+  },
+  {
+    "id": "MOT-001",
+    "name": "Morph Hover",
+    "category": "motion",
+    "style": "Scale",
+    "tags": [
+      "motion",
+      "hover",
+      "scale"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"micro\">+</div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Morph بسيط",
+    "playground": {}
+  },
+  {
+    "id": "MOT-002",
+    "name": "Pulse Dot",
+    "category": "motion",
+    "style": "Pulse",
+    "tags": [
+      "motion",
+      "pulse",
+      "status"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"pulse-dot\"></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "نقطة حالة نابضة",
+    "playground": {}
+  },
+  {
+    "id": "MOT-003",
+    "name": "Rotate Tile",
+    "category": "motion",
+    "style": "Rotate",
+    "tags": [
+      "motion",
+      "rotate",
+      "hover"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"micro micro-blue\">↻</div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "دوران عند المرور",
+    "playground": {}
+  },
+  {
+    "id": "MOT-004",
+    "name": "Magnetic Hint",
+    "category": "motion",
+    "style": "Magnetic",
+    "tags": [
+      "motion",
+      "magnetic",
+      "button"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<button class=\"demo-btn primary\">Magnetic ↗</button>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "إيحاء زر مغناطيسي",
+    "playground": {}
+  }
 ];
-const samples=raw.map(([id,category,name,style,tags,html])=>({id,category,name,style,tags,html}));
