@@ -258,3 +258,181 @@
 .live-loop .hover-gradient-border.auto-active{transform:translateY(-6px);box-shadow:0 18px 36px rgba(30,38,64,.14)}
 .live-loop .hover-spotlight.auto-active{box-shadow:0 0 0 1px #3559e8,0 18px 40px rgba(53,89,232,.25)}
 .live-loop .hover-ring.auto-active{transform:scale(1.08);box-shadow:0 0 0 10px rgba(53,89,232,.14)}
+
+
+/* ===== Live Preview Engine v3 — 95/95 continuous loops ===== */
+.component-card.live-loop[data-live-category] .component-preview::before{
+  content:"LIVE";position:absolute;top:10px;right:10px;z-index:8;
+  font:700 7px/1 Tahoma,Arial,sans-serif;letter-spacing:.08em;
+  padding:5px 7px;border-radius:999px;background:#111;color:#fff;
+  box-shadow:0 0 0 4px rgba(17,17,17,.06)
+}
+
+/* Buttons: simulate a repeated hover/press even for static buttons */
+.component-card[data-live-category="buttons"] .component-preview> *,
+.drawer-preview[data-live-category="buttons"]> *{
+  animation:previewButtonLoop 2.8s ease-in-out infinite
+}
+
+/* Cards: repeated lift + depth preview */
+.component-card[data-live-category="cards"] .component-preview> *,
+.drawer-preview[data-live-category="cards"]> *{
+  animation:previewCardLoop 3.2s ease-in-out infinite
+}
+.component-card[data-live-category="cards"] .component-preview .thumb,
+.drawer-preview[data-live-category="cards"] .thumb,
+.component-card[data-live-category="cards"] .component-preview .product-art,
+.drawer-preview[data-live-category="cards"] .product-art{
+  animation:previewSurfaceLoop 3.2s ease-in-out infinite
+}
+
+/* Inputs: automatic focus-state preview without stealing real focus */
+.component-card[data-live-category="inputs"] .component-preview input:not([type="checkbox"]),
+.component-card[data-live-category="inputs"] .component-preview textarea,
+.component-card[data-live-category="inputs"] .component-preview select,
+.drawer-preview[data-live-category="inputs"] input:not([type="checkbox"]),
+.drawer-preview[data-live-category="inputs"] textarea,
+.drawer-preview[data-live-category="inputs"] select{
+  animation:previewInputFocus 2.7s ease-in-out infinite
+}
+.component-card[data-live-category="inputs"] .toggle-control>span,
+.drawer-preview[data-live-category="inputs"] .toggle-control>span{
+  animation:previewToggle 2.4s ease-in-out infinite
+}
+.component-card[data-live-category="inputs"] .tag-field>span,
+.drawer-preview[data-live-category="inputs"] .tag-field>span{
+  animation:previewChip 2.4s ease-in-out infinite
+}
+.component-card[data-live-category="inputs"] .check-group label,
+.drawer-preview[data-live-category="inputs"] .check-group label{
+  animation:previewCheck 2.8s ease-in-out infinite
+}
+.component-card[data-live-category="inputs"] .check-group label:nth-child(2),
+.drawer-preview[data-live-category="inputs"] .check-group label:nth-child(2){animation-delay:.35s}
+.component-card[data-live-category="inputs"] .check-group label:nth-child(3),
+.drawer-preview[data-live-category="inputs"] .check-group label:nth-child(3){animation-delay:.7s}
+
+/* Navigation: active state breath + full bar movement */
+.component-card[data-live-category="nav"] .component-preview> *,
+.drawer-preview[data-live-category="nav"]> *{
+  animation:previewNavLoop 3s ease-in-out infinite
+}
+.component-card[data-live-category="nav"] .component-preview .active,
+.drawer-preview[data-live-category="nav"] .active,
+.component-card[data-live-category="nav"] .component-preview .done,
+.drawer-preview[data-live-category="nav"] .done{
+  animation:previewActiveLoop 1.8s ease-in-out infinite
+}
+
+/* Modals: open / settle / close preview */
+.component-card[data-live-category="modals"] .component-preview> *,
+.drawer-preview[data-live-category="modals"]> *{
+  animation:previewModalLoop 3.4s ease-in-out infinite
+}
+
+/* Menus: move highlight through menu rows */
+.component-card[data-live-category="menus"] .demo-menu>div,
+.drawer-preview[data-live-category="menus"] .demo-menu>div{
+  animation:previewMenuRow 3s ease-in-out infinite
+}
+.component-card[data-live-category="menus"] .demo-menu>div:nth-child(2),
+.drawer-preview[data-live-category="menus"] .demo-menu>div:nth-child(2){animation-delay:.5s}
+.component-card[data-live-category="menus"] .demo-menu>div:nth-child(3),
+.drawer-preview[data-live-category="menus"] .demo-menu>div:nth-child(3){animation-delay:1s}
+.component-card[data-live-category="menus"] .demo-menu>div:nth-child(4),
+.drawer-preview[data-live-category="menus"] .demo-menu>div:nth-child(4){animation-delay:1.5s}
+
+/* Tabs & accordion */
+.component-card[data-live-category="tabs"] .demo-tabs,
+.drawer-preview[data-live-category="tabs"] .demo-tabs,
+.component-card[data-live-category="tabs"] .underline-tabs,
+.drawer-preview[data-live-category="tabs"] .underline-tabs{
+  animation:previewTabsLoop 2.8s ease-in-out infinite
+}
+.component-card[data-live-category="tabs"] .active,
+.drawer-preview[data-live-category="tabs"] .active{
+  animation:previewTabActive 1.8s ease-in-out infinite
+}
+.component-card[data-live-category="tabs"] .accordion-row span,
+.drawer-preview[data-live-category="tabs"] .accordion-row span{
+  display:inline-block;animation:previewChevron 2s ease-in-out infinite
+}
+
+/* Loaders + motion already have their own continuous animations; keep a subtle wrapper pulse */
+.component-card[data-live-category="loaders"] .component-preview> *,
+.drawer-preview[data-live-category="loaders"]> *,
+.component-card[data-live-category="motion"] .component-preview> *,
+.drawer-preview[data-live-category="motion"]> *{
+  animation-play-state:running!important
+}
+
+/* Hover category always loops, including any item without a dedicated selector */
+.component-card[data-live-category="hover"] .component-preview> *,
+.drawer-preview[data-live-category="hover"]> *{
+  animation-play-state:running
+}
+.component-card[data-live-category="hover"] .component-preview> *:not(.hover-link):not(.hover-image):not(.hover-tilt):not(.hover-pop):not(.hover-slide):not(.hover-nudge):not(.hover-reveal):not(.hover-ring):not(.hover-gradient-border):not(.hover-blur):not(.hover-flip):not(.hover-shine):not(.hover-spotlight):not(.hover-orbit),
+.drawer-preview[data-live-category="hover"]> *:not(.hover-link):not(.hover-image):not(.hover-tilt):not(.hover-pop):not(.hover-slide):not(.hover-nudge):not(.hover-reveal):not(.hover-ring):not(.hover-gradient-border):not(.hover-blur):not(.hover-flip):not(.hover-shine):not(.hover-spotlight):not(.hover-orbit){
+  animation:previewHoverFallback 2.6s ease-in-out infinite
+}
+
+@keyframes previewButtonLoop{
+  0%,18%,100%{transform:translateY(0) scale(1);filter:brightness(1)}
+  45%,62%{transform:translateY(-3px) scale(1.035);filter:brightness(1.03)}
+}
+@keyframes previewCardLoop{
+  0%,16%,100%{transform:translateY(0) scale(1);box-shadow:0 12px 25px rgba(30,38,64,.07)}
+  48%,66%{transform:translateY(-6px) scale(1.018);box-shadow:0 22px 38px rgba(30,38,64,.14)}
+}
+@keyframes previewSurfaceLoop{
+  0%,100%{filter:saturate(1);transform:scale(1)}
+  50%{filter:saturate(1.16);transform:scale(1.025)}
+}
+@keyframes previewInputFocus{
+  0%,18%,100%{border-color:#dfe2ea;box-shadow:0 0 0 0 rgba(53,89,232,0);transform:translateY(0)}
+  45%,66%{border-color:#3559e8;box-shadow:0 0 0 4px rgba(53,89,232,.12);transform:translateY(-1px)}
+}
+@keyframes previewToggle{
+  0%,18%,100%{background:#d7dbe5;box-shadow:none}
+  45%,68%{background:#3559e8;box-shadow:0 0 0 4px rgba(53,89,232,.10)}
+}
+@keyframes previewChip{
+  0%,100%{transform:translateY(0);background:#eef2ff}
+  50%{transform:translateY(-2px);background:#e1e7ff}
+}
+@keyframes previewCheck{
+  0%,100%{transform:translateX(0);opacity:.78}
+  50%{transform:translateX(-3px);opacity:1}
+}
+@keyframes previewNavLoop{
+  0%,18%,100%{transform:translateY(0);box-shadow:0 8px 25px rgba(30,38,64,.06)}
+  48%,66%{transform:translateY(-4px);box-shadow:0 16px 34px rgba(30,38,64,.13)}
+}
+@keyframes previewActiveLoop{
+  0%,100%{filter:brightness(1);transform:scale(1)}
+  50%{filter:brightness(1.12);transform:scale(1.05)}
+}
+@keyframes previewModalLoop{
+  0%,12%,100%{transform:translateY(12px) scale(.97);opacity:.78}
+  34%,72%{transform:translateY(0) scale(1);opacity:1}
+}
+@keyframes previewMenuRow{
+  0%,16%,100%{background:transparent;transform:translateX(0)}
+  42%,60%{background:#f1f3f7;transform:translateX(-4px)}
+}
+@keyframes previewTabsLoop{
+  0%,100%{transform:translateY(0);box-shadow:none}
+  50%{transform:translateY(-3px);box-shadow:0 10px 24px rgba(30,38,64,.10)}
+}
+@keyframes previewTabActive{
+  0%,100%{transform:scale(1);filter:brightness(1)}
+  50%{transform:scale(1.045);filter:brightness(1.05)}
+}
+@keyframes previewChevron{
+  0%,25%,100%{transform:rotate(0)}
+  50%,72%{transform:rotate(180deg)}
+}
+@keyframes previewHoverFallback{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-4px) scale(1.04)}
+}
