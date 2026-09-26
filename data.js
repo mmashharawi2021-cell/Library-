@@ -95,7 +95,12 @@ const categories=[
       "Confirm",
       "Alert",
       "Glass",
-      "Sheet"
+      "Sheet",
+      "Toast",
+      "Popover",
+      "Tooltip",
+      "Drawer",
+      "Notice"
     ]
   },
   {
@@ -2599,6 +2604,330 @@ const samples=[
       "bg": "#ffffff",
       "color": "#11131a",
       "radius": 12
+    }
+  },
+  {
+    "id": "MOD-005",
+    "name": "Success Toast",
+    "category": "modals",
+    "style": "Toast",
+    "tags": [
+      "popup",
+      "toast",
+      "success",
+      "notification",
+      "animated"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"ui-toast success\"><span>✓</span><div><b>تم الحفظ</b><small>تم تحديث العنصر بنجاح.</small></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Toast نجاح خفيف يظهر ويختفي",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "MOD-006",
+    "name": "Error Toast",
+    "category": "modals",
+    "style": "Toast",
+    "tags": [
+      "popup",
+      "toast",
+      "error",
+      "danger",
+      "notification"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"ui-toast error\"><span>!</span><div><b>تعذر التنفيذ</b><small>تحقق من البيانات وحاول مجددًا.</small></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Toast خطأ واضح",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14
+    }
+  },
+  {
+    "id": "MOD-007",
+    "name": "Action Popover",
+    "category": "modals",
+    "style": "Popover",
+    "tags": [
+      "popup",
+      "popover",
+      "actions",
+      "menu",
+      "floating"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"ui-popover\"><small>إجراءات سريعة</small><button>نسخ الرابط</button><button>إضافة للمفضلة</button><button class=\"danger-text\">حذف</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Popover لإجراءات عنصر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 14,
+      "shadow": 24
+    }
+  },
+  {
+    "id": "MOD-008",
+    "name": "Help Tooltip",
+    "category": "modals",
+    "style": "Tooltip",
+    "tags": [
+      "popup",
+      "tooltip",
+      "help",
+      "hover",
+      "hint"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"tooltip-demo\"><button>?</button><span>هذا الخيار يغير شكل المعاينة فقط.</span></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Tooltip توضيحي",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 10
+    }
+  },
+  {
+    "id": "MOD-009",
+    "name": "Notification Popup",
+    "category": "modals",
+    "style": "Notice",
+    "tags": [
+      "popup",
+      "notification",
+      "bell",
+      "notice",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"notify-popup\"><div class=\"notify-icon\">●</div><div><b>تحديث جديد</b><p>تمت إضافة 5 مكونات للمكتبة.</p></div><button>×</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Popup إشعار مختصر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16,
+      "shadow": 26
+    }
+  },
+  {
+    "id": "MOD-010",
+    "name": "Cookie Notice",
+    "category": "modals",
+    "style": "Notice",
+    "tags": [
+      "popup",
+      "cookie",
+      "notice",
+      "consent",
+      "banner"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"cookie-popup\"><div><b>إعدادات محلية</b><p>يتم حفظ تفضيلات المكتبة على جهازك فقط.</p></div><div><button>موافق</button><button>لاحقًا</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Notice موافقة/تنبيه",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16
+    }
+  },
+  {
+    "id": "MOD-011",
+    "name": "Command Palette",
+    "category": "modals",
+    "style": "Popover",
+    "tags": [
+      "popup",
+      "command",
+      "search",
+      "palette",
+      "keyboard"
+    ],
+    "complexity": "advanced",
+    "code": {
+      "html": "<div class=\"command-popup\"><label>⌕ <input placeholder=\"ابحث عن أمر...\"><kbd>ESC</kbd></label><div><span>فتح المفضلة</span><kbd>F</kbd></div><div><span>عنصر عشوائي</span><kbd>R</kbd></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Command Palette مصغرة",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16,
+      "shadow": 30
+    }
+  },
+  {
+    "id": "MOD-012",
+    "name": "Side Drawer",
+    "category": "modals",
+    "style": "Drawer",
+    "tags": [
+      "popup",
+      "drawer",
+      "side",
+      "panel",
+      "navigation"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"mini-drawer\"><header><b>تفاصيل العنصر</b><button>×</button></header><p>لوحة جانبية لمحتوى إضافي دون مغادرة الصفحة.</p><button class=\"drawer-action\">متابعة</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Drawer جانبي مصغر",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 16,
+      "shadow": 28
+    }
+  },
+  {
+    "id": "MOD-013",
+    "name": "Delete Confirm",
+    "category": "modals",
+    "style": "Confirm",
+    "tags": [
+      "popup",
+      "delete",
+      "trash",
+      "confirm",
+      "danger",
+      "animated"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"delete-confirm\"><div class=\"trash-illustration\">⌫</div><b>حذف العنصر؟</b><p>سيتم نقله إلى سلة المحذوفات ويمكنك استعادته لاحقًا.</p><div><button class=\"danger-btn\">نقل للسلة</button><button>إلغاء</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "تأكيد حذف مع فكرة سلة المحذوفات",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 18
+    }
+  },
+  {
+    "id": "MOD-014",
+    "name": "Bottom Sheet",
+    "category": "modals",
+    "style": "Sheet",
+    "tags": [
+      "popup",
+      "bottom",
+      "sheet",
+      "mobile",
+      "actions"
+    ],
+    "complexity": "intermediate",
+    "code": {
+      "html": "<div class=\"bottom-sheet-demo\"><i></i><b>خيارات المشاركة</b><div><button>نسخ</button><button>حفظ</button><button>إغلاق</button></div></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Bottom Sheet للموبايل",
+    "playground": {
+      "bg": "#ffffff",
+      "color": "#11131a",
+      "radius": 20
+    }
+  },
+  {
+    "id": "MOD-015",
+    "name": "Update Banner",
+    "category": "modals",
+    "style": "Notice",
+    "tags": [
+      "popup",
+      "banner",
+      "update",
+      "notice",
+      "inline"
+    ],
+    "complexity": "basic",
+    "code": {
+      "html": "<div class=\"update-banner\"><span>✦</span><div><b>نسخة جديدة</b><small>تم تحديث المكتبة الآن.</small></div><button>عرض</button></div>",
+      "css": "",
+      "js": "",
+      "react": "",
+      "tailwind": ""
+    },
+    "favorite": false,
+    "usage": 0,
+    "description": "Banner تحديث خفيف",
+    "playground": {
+      "bg": "#11131a",
+      "color": "#ffffff",
+      "radius": 14
     }
   }
 ];
