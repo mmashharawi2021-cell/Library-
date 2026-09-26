@@ -33,7 +33,7 @@ function portableAll(s){return portableCss(s)+(portableExtra[s.category]||'')}
 function controlSelector(s){let id='#ui-'+s.id.toLowerCase();if(s.category!=='inputs')return id;if(s.id==='INP-011')return id+' input';if(['INP-012','INP-015'].includes(s.id))return id;return id+' input, '+id+' textarea, '+id+' select'}
 function previewTargets(s){let root=el.preview.firstElementChild;if(!root)return[];if(s.category!=='inputs')return[root];if(s.id==='INP-011')return[...root.querySelectorAll('input')];if(['INP-012','INP-015'].includes(s.id))return[root];let nodes=[...root.querySelectorAll('input,textarea,select')];return nodes.length?nodes:[root]}
 function rootHtml(s){return s.code.html.replace(/^(\s*)<([a-zA-Z][\w-]*)(\s|>)/,(_,ws,tag,tail)=>ws+'<'+tag+' id="ui-'+s.id.toLowerCase()+'"'+tail)}
-function dynamicCss(s){let c=state.controls,sel=controlSelector(s);return `${sel}{${cssRules()}}\n${sel}:hover{transform:scale(${(c.scale/100).toFixed(2)});box-shadow:0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)}`}{${cssRules()}}\n${id}:hover{transform:scale(${(c.scale/100).toFixed(2)});box-shadow:0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)}`}
+function dynamicCss(s){let c=state.controls,sel=controlSelector(s);return `${sel}{${cssRules()}}\n${sel}:hover{transform:scale(${(c.scale/100).toFixed(2)});box-shadow:0 0 ${c.glow}px ${c.bg}88,0 ${Math.round(c.shadow/2)}px ${c.shadow}px rgba(20,25,40,.18)}`}
 function code(tab){
   let s=state.active,c=state.controls;if(!s)return'';
   let html=rootHtml(s),css=portableAll(s)+'\n\n'+dynamicCss(s);
