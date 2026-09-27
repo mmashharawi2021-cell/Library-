@@ -70,7 +70,13 @@
       "virtual grid"
     ],
     "duplicate_candidates": 0,
-    "schema": "971/971"
+    "schema": "971/971",
+    "engine3": [
+      "syntax",
+      "registry-lazy-load",
+      "initial-runtime",
+      "full-counts"
+    ]
   },
   "engine": {
     "version": "2.0.0",
@@ -87,5 +93,30 @@
     "renderer": "incremental-virtual-grid",
     "viewport_animation_pausing": true,
     "content_visibility": true
+  },
+  "engine_version": "3.0.0",
+  "initial_loaded_components": 181,
+  "lazy_components": 790,
+  "pack_counts": {
+    "core": 181,
+    "jitter": 374,
+    "foundations": 239,
+    "motion": 121,
+    "origin": 56
+  },
+  "engine3": {
+    "lazy_packs": true,
+    "virtual_batch": 48,
+    "search_worker": true,
+    "component_routes": true,
+    "pack_manager": true,
+    "related_components": true,
+    "variants": true,
+    "import_pipeline": true,
+    "performance_dashboard": true,
+    "pwa": true,
+    "offline_cache": true,
+    "backup_export_import": true,
+    "command_palette": true
   }
 }
