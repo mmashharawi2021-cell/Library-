@@ -3,12 +3,14 @@
 مرجع شخصي عربي RTL للمكونات والحركات والمؤثرات القابلة للمعاينة والتجربة والنسخ.
 
 ## الحالة الحالية
-- **971 Component**
+- **971 Component / Variant**
 - **15 Category**
 - **5 Source Packs**
 - **0 Duplicate IDs**
 - **0 عناصر مفقودة بين Search Index والـPacks**
 - **0 عناصر ناقصة من الكتالوج**
+- **554 Normalized Structural Signatures**
+- **969 اسمًا فريدًا** مع حالتي تشابه أسماء فقط وبدون Duplicate IDs
 
 ## Library Engine 3.0
 
@@ -101,6 +103,18 @@ catalog/
 - Missing in Index: **0**
 - Missing in Packs: **0**
 - Initial HTML loads only Core pack: PASS
+
+### Quality Audit
+- كل **971** عنصرًا لديه Live HTML Preview.
+- **971** HTML payload مختلفة حرفيًا.
+- بعد تطبيع النصوص والـvariants: **554** بنية/توقيعًا هيكليًا.
+- عناصر DEV-derived: **416** variant موزعة على **337** بنية مطبّعة.
+- Jitter-generated: **339** variant مبنية على **6** قوالب حركة أساسية.
+- ملفات الـPacks تخزن HTML، بينما CSS / JS / React / Tailwind يتم توليدها وقت المعاينة والنسخ عبر `app.js`.
+- لا توجد Schema errors أو عناصر بلا HTML.
+- تشابه الأسماء فقط: `MED-004 / JIT-067` و `MED-006 / JIT-046`.
+
+يمكن مشاهدة ملخص الـQuality Audit داخل **Performance Dashboard**، ويتم تحميل ملف التدقيق عند فتح اللوحة فقط دون زيادة الحمل الأولي.
 
 ## المعاينة الرسمية
 https://mmashharawi2021-cell.github.io/Library-/
