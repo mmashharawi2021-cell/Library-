@@ -2,154 +2,105 @@
 
 مرجع شخصي عربي RTL للمكونات والحركات والمؤثرات القابلة للمعاينة والتجربة والنسخ.
 
-## الكتالوج
+## الحالة الحالية
 - **971 Component**
 - **15 Category**
 - **5 Source Packs**
-- **0 duplicate candidates**
-- **0 missing schema**
-- **0 missing source records**
+- **0 Duplicate IDs**
+- **0 عناصر مفقودة بين Search Index والـPacks**
+- **0 عناصر ناقصة من الكتالوج**
 
 ## Library Engine 3.0
 
-### True Lazy Packs
-الصفحة لا تحمّل 971 عنصرًا عند البداية.
+### Lazy Source Packs
+عند فتح الموقع لا يتم تحميل 971 عنصرًا كاملًا.
 
-الحالة الابتدائية:
-- Core: **181** عنصرًا محمّلًا.
-- Full catalog index: **971** عنصرًا معروفًا للبحث والعدادات.
-- Jitter / Foundations / Motion / Origin يتم تحميلها عند الحاجة.
-- التصفح في All Packs يحمّل الـPack التالي تلقائيًا عند الوصول للنهاية.
+التحميل الأولي:
+- Core: **181**
 
-### Packs
-- Core: 181
-- Jitter: 374
-- Foundations: 239
-- Motion: 121
-- Origin: 56
+Lazy Packs:
+- Jitter: **374**
+- Foundations: **239**
+- Motion: **121**
+- Origin: **56**
+
+يتم تحميل Pack عند:
+- اختياره من Source Pack Filter
+- الوصول إليه من البحث
+- فتح Component برابط مباشر
+- الوصول إلى عنصر محفوظ في Favorites / Recent / Trash
+- الضغط على Load داخل Pack Manager
+- النزول لنهاية All Packs
 
 ### Virtual Rendering
-- دفعة العرض: **48 Card**
-- Infinite / sentinel loading.
-- `content-visibility` وCSS containment.
-- Live animations تتوقف خارج الـViewport.
-
-### Global Search Worker
-- `catalog/search-index.js`: فهرس Metadata خفيف لكل الـ971 عنصرًا.
-- `catalog/search-worker.js`: بحث خارج Main Thread.
-- البحث يعرف Component غير محمّل ثم يحمّل Pack الخاص به فقط.
+- Grid Batch: **48 عنصرًا**
+- العناصر الإضافية تدخل تدريجيًا عند الاقتراب من نهاية الشبكة.
+- Animations خارج الـViewport تتوقف.
+- CSS content-visibility/containment مستخدم لتقليل كلفة DOM.
 
 ### Component Routes
-كل Component له URL مستقل:
-`#/component/<ID>`
+كل Component يمكن فتحه مباشرة:
+`#/component/<COMPONENT_ID>`
 
-فتح الرابط مباشرة:
-1. يقرأ الـID من الفهرس.
-2. يحدد الـPack.
-3. يحمل Pack المطلوب.
-4. يفتح العنصر كصفحة كاملة.
+الرابط يقوم بتحميل Pack المطلوب تلقائيًا إذا لم يكن محملًا.
 
-### Pack Manager
-- حالة Loaded / Lazy.
-- عدد العناصر في كل Pack.
-- تحميل Pack منفرد.
-- Load All Packs.
-- Import Component Pack.
+### Source Pack Manager
+Pack Manager يعرض:
+- العدد الكلي
+- العناصر المحملة حاليًا
+- Packs التي ما زالت Lazy
+- حالة كل Pack
+- تحميل Pack منفرد
+- Load All Packs
 
-### Component Inspector
-داخل Drawer:
-- Technology
-- Dependency
-- Motion Mode
-- Type
-- Added date
-- Source
-- License
-- Pack
-- Engine version
+### Search Engine
+- Search Index مستقل عن ملفات الـComponents.
+- Web Worker: `catalog/search-worker.js`
+- البحث يعمل عبر كل **971 Metadata Record** دون تحميل كل HTML/CSS.
+- أول Pack مناسب يمكن تحميله عند الحاجة.
 
-### Variants
-Preview variants:
-- Default
-- Dark
-- Glass
-- Compact
-- Outline
+### إضافات Engine 3
+- Command Palette: Ctrl/Cmd + K
+- Related Components
+- Preview Variants
+- Performance Dashboard
+- Backup Export / Import
+- Local Component Pack Import
+- PWA + Offline Cache
+- Service Worker cache version: **library-engine-3-v2**
 
-### Related Components
-تُحسب من:
-- Category
-- Tags
-- Source
-- Pack
+## البنية
 
-وتحمّل Pack الخاص بالعنصر المرتبط عند الحاجة.
-
-### Command Palette
-`Ctrl/Cmd + K`
-- فتح أي Component من كامل الـ971.
-- Pack Manager.
-- Performance Dashboard.
-- Export Backup.
-- Global Random Component.
-
-### Backup
-Export / Import:
-- Favorites
-- Recent
-- Collections
-- Usage
-- Trash
-- Purged
-- Local imported packs
-
-### Import Pipeline
-`catalog/import-pipeline.js`
-- Schema validation.
-- Normalization.
-- Duplicate guard.
-- Runtime registration.
-- Local persistence.
-
-### Performance Dashboard
-يعرض:
-- Full catalog size.
-- Loaded component data.
-- DOM cards.
-- Active animation loops.
-- Transferred KB.
-- JS heap عند توفره.
-- Packs المتبقية.
-- Worker / Service Worker state.
-
-### PWA / Offline
-- `manifest.webmanifest`
-- `sw.js`
-- Core shell cached offline.
-- Lazy-loaded Packs يتم تخزينها عند أول تحميل.
-
-## ملفات Engine 3
-- `catalog/categories.js`
-- `catalog/search-index.js`
-- `catalog/registry.js`
-- `catalog/bootstrap.js`
-- `catalog/import-pipeline.js`
-- `catalog/search-worker.js`
-- `catalog/packs/core.js`
-- `catalog/packs/jitter.js`
-- `catalog/packs/foundations.js`
-- `catalog/packs/motion.js`
-- `catalog/packs/origin.js`
-- `engine3.js`
+```
+catalog/
+  categories.js
+  search-index.js
+  search-worker.js
+  registry.js
+  bootstrap.js
+  import-pipeline.js
+  packs/
+    core.js
+    jitter.js
+    foundations.js
+    motion.js
+    origin.js
+```
 
 ## Validation
-- JavaScript syntax: PASS
-- Registry initial load: **181 / 971**
-- Lazy Jitter load: PASS
-- Direct Origin component load: PASS
-- Full catalog counts without payload load: PASS
-- Runtime initialization: PASS
-- Search / Copy / Trash / Restore from previous engine remain supported.
+- app.js: PASS
+- engine3.js: PASS
+- registry.js: PASS
+- bootstrap.js: PASS
+- import-pipeline.js: PASS
+- search-worker.js: PASS
+- service worker: PASS
+- Search Index: **971**
+- Pack Sum: **971**
+- Duplicate IDs: **0**
+- Missing in Index: **0**
+- Missing in Packs: **0**
+- Initial HTML loads only Core pack: PASS
 
 ## المعاينة الرسمية
 https://mmashharawi2021-cell.github.io/Library-/
