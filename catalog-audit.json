@@ -53,20 +53,39 @@
   "validation": {
     "syntax": [
       "app.js",
-      "data.js",
       "sources.js",
-      "validator.js"
+      "validator.js",
+      "catalog/categories.js",
+      "catalog/registry.js",
+      "catalog/bootstrap.js",
+      "all pack files"
     ],
     "runtime": [
+      "registry assembly",
+      "source pack filter",
       "search",
-      "filters",
       "copy",
       "trash",
-      "restore"
+      "restore",
+      "virtual grid"
     ],
-    "copy_css": [
-      "jitter",
-      "dev-source-packs"
-    ]
+    "duplicate_candidates": 0,
+    "schema": "971/971"
+  },
+  "engine": {
+    "version": "2.0.0",
+    "data_file_mode": "compatibility-shim",
+    "source_packs": {
+      "core": 181,
+      "jitter": 374,
+      "foundations": 239,
+      "motion": 121,
+      "origin": 56
+    },
+    "initial_render_batch": 48,
+    "initial_dom_cards": 48,
+    "renderer": "incremental-virtual-grid",
+    "viewport_animation_pausing": true,
+    "content_visibility": true
   }
 }
