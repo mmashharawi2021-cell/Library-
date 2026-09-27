@@ -1,5 +1,5 @@
 const categories=window.LibraryCategories||[];
-const samples=[
+const samples=window.LibraryRegistry?.all||[
   ...(window.LibraryPackCore||[]),
   ...(window.LibraryPackJitter||[]),
   ...(window.LibraryPackFoundations||[]),
@@ -11,7 +11,7 @@ window.LibraryCatalog={
   generatedAt:"2026-09-27",
   total:samples.length,
   categories:categories.length,
-  packs:{
+  packs:window.LibraryRegistry?.stats().packs||{
     core:(window.LibraryPackCore||[]).length,
     jitter:(window.LibraryPackJitter||[]).length,
     foundations:(window.LibraryPackFoundations||[]).length,
