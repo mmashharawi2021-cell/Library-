@@ -1,7 +1,7 @@
-const CACHE="library-engine-3-v1";
+const CACHE="library-engine-3-v2";
 const CORE=[
   "./","./index.html","./styles.css","./sources.js","./validator.js","./app.js","./engine3.js",
-  "./catalog/categories.js","./catalog/search-index.js","./catalog/registry.js","./catalog/bootstrap.js",
+  "./catalog/categories.js","./catalog/search-index.js","./catalog/search-worker.js","./catalog/registry.js","./catalog/bootstrap.js",
   "./catalog/import-pipeline.js","./catalog/packs/core.js","./manifest.webmanifest"
 ];
 self.addEventListener("install",event=>{
