@@ -276,7 +276,7 @@
         <p><b>Exact unique HTML:</b> ${q.exact_unique_html}</p>
         <p><b>Normalized structural signatures:</b> ${q.normalized_structural_signatures}</p>
         <p><b>DEV-derived variants:</b> ${q.dev_variants} · ${q.dev_structural_signatures} structures</p>
-        <p><b>Jitter generated variants:</b> ${q.jitter_generated_variants} · ${q.jitter_base_signatures} base structures</p>
+        <p><b>Jitter quality:</b> ${q.jitter_generated_variants} upgraded · ${q.jitter_semantic_template_types||0} semantic types · ${q.jitter_base_signatures} DOM structures</p>
         <p><b>Name collisions:</b> ${q.name_collisions}</p>
         <p><b>Portable code:</b> generated at runtime for HTML / CSS / JS / React / Tailwind</p>`;
     }else if(box){
