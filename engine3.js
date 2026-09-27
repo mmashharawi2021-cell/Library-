@@ -276,6 +276,13 @@
   }
 
   function bind(){
+    qs("#packFilter")?.addEventListener("change",async e=>{
+      const id=e.target.value||"all";
+      e.stopImmediatePropagation();
+      state.mode="library";state.pack=id;resetGridWindow();
+      if(id!=="all"&&!registry.loadedPacks.has(id))await registry.loadPack(id);
+      renderNav();renderOverview();renderFilters();renderGrid();header();syncPackFilter();
+    },true);
     qs("#commandBtn")?.addEventListener("click",()=>openModal("commandPalette"));
     qs("#randomBtn")?.addEventListener("click",async e=>{e.preventDefault();e.stopImmediatePropagation();await openGlobalRandom()},{capture:true});
     qs("#packManagerBtn")?.addEventListener("click",()=>openModal("packManager"));
