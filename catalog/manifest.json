@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-09-27",
+  "total": 971,
+  "categories": 15,
+  "batch_size": 48,
+  "packs": [
+    {
+      "id": "core",
+      "label": "Core",
+      "path": "catalog/packs/core.js",
+      "count": 181
+    },
+    {
+      "id": "jitter",
+      "label": "Jitter",
+      "path": "catalog/packs/jitter.js",
+      "count": 374
+    },
+    {
+      "id": "foundations",
+      "label": "Foundations",
+      "path": "catalog/packs/foundations.js",
+      "count": 239
+    },
+    {
+      "id": "motion",
+      "label": "Motion",
+      "path": "catalog/packs/motion.js",
+      "count": 121
+    },
+    {
+      "id": "origin",
+      "label": "Origin",
+      "path": "catalog/packs/origin.js",
+      "count": 56
+    }
+  ],
+  "architecture": {
+    "catalog": "modular-source-packs",
+    "renderer": "incremental-virtual-grid",
+    "animation": "viewport-paused",
+    "persistence": "localStorage",
+    "build": "static-no-build"
+  }
+}
