@@ -53,47 +53,23 @@
   "validation": {
     "syntax": [
       "app.js",
+      "engine3.js",
       "sources.js",
       "validator.js",
-      "catalog/categories.js",
+      "sw.js",
       "catalog/registry.js",
       "catalog/bootstrap.js",
-      "all pack files"
+      "catalog/import-pipeline.js",
+      "catalog/search-worker.js"
     ],
-    "runtime": [
-      "registry assembly",
-      "source pack filter",
-      "search",
-      "copy",
-      "trash",
-      "restore",
-      "virtual grid"
-    ],
-    "duplicate_candidates": 0,
-    "schema": "971/971",
-    "engine3": [
-      "syntax",
-      "registry-lazy-load",
-      "initial-runtime",
-      "full-counts"
-    ]
+    "search_index": 971,
+    "pack_sum": 971,
+    "duplicate_ids": 0,
+    "missing_in_index": 0,
+    "missing_in_packs": 0,
+    "initial_core_only": true
   },
-  "engine": {
-    "version": "2.0.0",
-    "data_file_mode": "compatibility-shim",
-    "source_packs": {
-      "core": 181,
-      "jitter": 374,
-      "foundations": 239,
-      "motion": 121,
-      "origin": 56
-    },
-    "initial_render_batch": 48,
-    "initial_dom_cards": 48,
-    "renderer": "incremental-virtual-grid",
-    "viewport_animation_pausing": true,
-    "content_visibility": true
-  },
+  "engine": "3.0.0",
   "engine_version": "3.0.0",
   "initial_loaded_components": 181,
   "lazy_components": 790,
@@ -118,5 +94,21 @@
     "offline_cache": true,
     "backup_export_import": true,
     "command_palette": true
+  },
+  "lazy_loading": true,
+  "virtual_rendering": {
+    "batch_size": 48,
+    "intersection_loading": true,
+    "viewport_animation_pause": true
+  },
+  "component_routes": "#/component/<ID>",
+  "search": {
+    "metadata_records": 971,
+    "web_worker": true
+  },
+  "pack_manager": true,
+  "pwa": {
+    "enabled": true,
+    "cache": "library-engine-3-v2"
   }
 }
