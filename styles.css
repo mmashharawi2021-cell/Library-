@@ -993,3 +993,12 @@ button.jp-preset.jp-ui i{width:9px;height:9px;border-radius:50%;background:var(-
 .grid-sentinel b{font-size:18px;color:#3559e8}.grid-sentinel span{font-size:8px}.grid-sentinel small{margin-top:6px;padding:6px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:7px}
 .grid-sentinel:hover{border-color:#8ea0f2;transform:translateY(-2px);box-shadow:0 12px 26px rgba(30,38,64,.07)}
 @media(max-width:820px){.library-heading{align-items:flex-start}.library-engine-tools{width:100%;justify-content:flex-start}.pack-filter{flex:1}.pack-filter select{width:100%;min-width:0}}
+
+
+/* Source pack badges */
+.pack-badge{text-transform:uppercase;font:700 6px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;padding:4px 6px;border-radius:999px;border:1px solid var(--line);background:#f8f9fb;color:#737b8c}
+.pack-badge.pack-jitter{background:#fff5e8;color:#a56412;border-color:#f1dfc0}
+.pack-badge.pack-foundations{background:#edf4ff;color:#315faa;border-color:#d8e6fb}
+.pack-badge.pack-motion{background:#f5edff;color:#7042b3;border-color:#e6d7fb}
+.pack-badge.pack-origin{background:#eef8f3;color:#32775a;border-color:#d9ebdf}
+.pack-badge.pack-core{background:#f2f3f6;color:#555d6e}
