@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "generated_at": "2026-09-27",
   "total": 971,
   "categories": 15,
@@ -41,6 +41,9 @@
     "renderer": "incremental-virtual-grid",
     "animation": "viewport-paused",
     "persistence": "localStorage",
-    "build": "static-no-build"
+    "build": "static-no-build",
+    "packs": "lazy-load-on-demand",
+    "routing": "#/component/:id",
+    "pack_manager": true
   }
 }
