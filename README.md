@@ -1,86 +1,155 @@
-# مكتبة مهند — Library Engine 2.0
+# مكتبة مهند — Library Engine 3.0
 
-مرجع شخصي عربي RTL للمكونات والحركات والمؤثرات، مبني الآن على معمارية Packs قابلة للتوسع.
+مرجع شخصي عربي RTL للمكونات والحركات والمؤثرات القابلة للمعاينة والتجربة والنسخ.
 
-## الحالة الحالية
-- **971 عنصرًا**
-- **15 فئة**
+## الكتالوج
+- **971 Component**
+- **15 Category**
 - **5 Source Packs**
 - **0 duplicate candidates**
-- **0 عناصر ناقصة Schema**
-- **0 مصادر مفقودة**
+- **0 missing schema**
+- **0 missing source records**
 
-## Library Engine 2.0
-تم استبدال ملف البيانات الأحادي بمعمارية Modular Catalog:
+## Library Engine 3.0
 
+### True Lazy Packs
+الصفحة لا تحمّل 971 عنصرًا عند البداية.
+
+الحالة الابتدائية:
+- Core: **181** عنصرًا محمّلًا.
+- Full catalog index: **971** عنصرًا معروفًا للبحث والعدادات.
+- Jitter / Foundations / Motion / Origin يتم تحميلها عند الحاجة.
+- التصفح في All Packs يحمّل الـPack التالي تلقائيًا عند الوصول للنهاية.
+
+### Packs
+- Core: 181
+- Jitter: 374
+- Foundations: 239
+- Motion: 121
+- Origin: 56
+
+### Virtual Rendering
+- دفعة العرض: **48 Card**
+- Infinite / sentinel loading.
+- `content-visibility` وCSS containment.
+- Live animations تتوقف خارج الـViewport.
+
+### Global Search Worker
+- `catalog/search-index.js`: فهرس Metadata خفيف لكل الـ971 عنصرًا.
+- `catalog/search-worker.js`: بحث خارج Main Thread.
+- البحث يعرف Component غير محمّل ثم يحمّل Pack الخاص به فقط.
+
+### Component Routes
+كل Component له URL مستقل:
+`#/component/<ID>`
+
+فتح الرابط مباشرة:
+1. يقرأ الـID من الفهرس.
+2. يحدد الـPack.
+3. يحمل Pack المطلوب.
+4. يفتح العنصر كصفحة كاملة.
+
+### Pack Manager
+- حالة Loaded / Lazy.
+- عدد العناصر في كل Pack.
+- تحميل Pack منفرد.
+- Load All Packs.
+- Import Component Pack.
+
+### Component Inspector
+داخل Drawer:
+- Technology
+- Dependency
+- Motion Mode
+- Type
+- Added date
+- Source
+- License
+- Pack
+- Engine version
+
+### Variants
+Preview variants:
+- Default
+- Dark
+- Glass
+- Compact
+- Outline
+
+### Related Components
+تُحسب من:
+- Category
+- Tags
+- Source
+- Pack
+
+وتحمّل Pack الخاص بالعنصر المرتبط عند الحاجة.
+
+### Command Palette
+`Ctrl/Cmd + K`
+- فتح أي Component من كامل الـ971.
+- Pack Manager.
+- Performance Dashboard.
+- Export Backup.
+- Global Random Component.
+
+### Backup
+Export / Import:
+- Favorites
+- Recent
+- Collections
+- Usage
+- Trash
+- Purged
+- Local imported packs
+
+### Import Pipeline
+`catalog/import-pipeline.js`
+- Schema validation.
+- Normalization.
+- Duplicate guard.
+- Runtime registration.
+- Local persistence.
+
+### Performance Dashboard
+يعرض:
+- Full catalog size.
+- Loaded component data.
+- DOM cards.
+- Active animation loops.
+- Transferred KB.
+- JS heap عند توفره.
+- Packs المتبقية.
+- Worker / Service Worker state.
+
+### PWA / Offline
+- `manifest.webmanifest`
+- `sw.js`
+- Core shell cached offline.
+- Lazy-loaded Packs يتم تخزينها عند أول تحميل.
+
+## ملفات Engine 3
 - `catalog/categories.js`
+- `catalog/search-index.js`
 - `catalog/registry.js`
 - `catalog/bootstrap.js`
-- `catalog/manifest.json`
+- `catalog/import-pipeline.js`
+- `catalog/search-worker.js`
 - `catalog/packs/core.js`
 - `catalog/packs/jitter.js`
 - `catalog/packs/foundations.js`
 - `catalog/packs/motion.js`
 - `catalog/packs/origin.js`
-
-### أحجام الـPacks
-- Core: **181**
-- Jitter: **374**
-- Foundations: **239**
-- Motion: **121**
-- Origin: **56**
-
-`data.js` أصبح Compatibility Shim صغيرًا فقط، ولم يعد يحمل الـ971 عنصرًا داخله.
-
-## Virtual Rendering
-الشبكة لا تبني كل العناصر في DOM مرة واحدة:
-
-- Initial batch: **48 عنصرًا**
-- يتم تحميل 48 عنصرًا إضافيًا عند الاقتراب من نهاية الشبكة
-- زر Load More يعمل كـfallback
-- Animations خارج الـViewport تتوقف
-- `content-visibility` وCSS containment مفعّلان
-
-Runtime validation:
-- Registry total: **971**
-- Initial DOM cards: **48**
-- Initial render counter: **48 / 971**
-
-## Source Pack Filter
-يمكن فلترة المكتبة مباشرة حسب:
-- All Packs
-- Core
-- Jitter
-- Foundations
-- Motion
-- Origin
-
-البحث، Tags، Top 10، أرقام الفئات، والإلهام العشوائي تحترم الـPack النشط.
-
-## الوظائف
-- Live Preview + Replay
-- Hover / Active / Disabled
-- Playground حسب نوع العنصر
-- HTML / CSS / JS / React / Tailwind
-- Trash animation + Undo + Restore + Permanent Delete
-- Favorites / Recent / Collections / Usage عبر LocalStorage
-- بحث عربي/إنجليزي
-- New / Loop / Interactive / Most Used / Complexity / Tags
-- Source Pack badges لكل Component
+- `engine3.js`
 
 ## Validation
-- app.js: PASS
-- catalog files: PASS
-- sources.js: PASS
-- validator.js: PASS
-- Registry assembly: PASS
-- Search: PASS
-- Copy: PASS
-- Trash / Restore: PASS
-- Pack filtering: PASS
-- Virtual grid: PASS
-- Duplicate candidates: **0**
-- Schema: **971/971**
+- JavaScript syntax: PASS
+- Registry initial load: **181 / 971**
+- Lazy Jitter load: PASS
+- Direct Origin component load: PASS
+- Full catalog counts without payload load: PASS
+- Runtime initialization: PASS
+- Search / Copy / Trash / Restore from previous engine remain supported.
 
 ## المعاينة الرسمية
 https://mmashharawi2021-cell.github.io/Library-/
