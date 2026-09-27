@@ -174,6 +174,7 @@
   const baseOpenDrawer=openDrawer;
   openDrawer=function(s,opts={}){
     if(!s)return;
+    document.body.classList.remove("component-route");el?.drawer?.classList.remove("route-page");
     baseOpenDrawer(s);
     applyVariant("default");
     const src=sourceMap[s.sourceReference],pack=packOf(s);
@@ -189,6 +190,7 @@
   const baseCloseDrawer=closeDrawer;
   closeDrawer=function(){
     baseCloseDrawer();
+    document.body.classList.remove("component-route");el?.drawer?.classList.remove("route-page");
     if(location.hash.startsWith("#/component/"))history.pushState({},"",location.pathname+location.search);
   };
 
@@ -201,6 +203,7 @@
   async function routeFromHash(){
     const m=location.hash.match(/^#\/component\/(.+)$/);if(!m)return;
     await openComponentById(decodeURIComponent(m[1]),false);
+    document.body.classList.add("component-route");el?.drawer?.classList.add("route-page");
   }
 
   function startWorker(){
