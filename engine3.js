@@ -263,10 +263,31 @@
       </div>`;
   }
 
+
+  async function ensureIdsLoaded(ids){
+    const packs=[...new Set((ids||[]).map(id=>registry.metaFor(id)?.pack).filter(Boolean))];
+    for(const p of packs)if(!registry.loadedPacks.has(p))await registry.loadPack(p);
+  }
+  async function openGlobalRandom(){
+    const pool=registry.index.filter(x=>!state.trash.has(x.id)&&!state.purged.has(x.id));
+    if(!pool.length)return;
+    const meta=pool[Math.floor(Math.random()*pool.length)];
+    await openComponentById(meta.id);
+  }
+
   function bind(){
     qs("#commandBtn")?.addEventListener("click",()=>openModal("commandPalette"));
+    qs("#randomBtn")?.addEventListener("click",async e=>{e.preventDefault();e.stopImmediatePropagation();await openGlobalRandom()},{capture:true});
     qs("#packManagerBtn")?.addEventListener("click",()=>openModal("packManager"));
     qs("#perfBtn")?.addEventListener("click",()=>openModal("perfPanel"));
+
+    document.addEventListener("click",async e=>{
+      const view=e.target.closest("[data-view]");if(!view)return;
+      const type=view.dataset.view;if(!["favorites","recent","trash"].includes(type))return;
+      e.preventDefault();e.stopImmediatePropagation();
+      const ids=type==="favorites"?[...state.favorites]:type==="recent"?state.recent:[...state.trash];
+      await ensureIdsLoaded(ids);showView(type);
+    },true);
     document.addEventListener("click",async e=>{
       const close=e.target.closest("[data-engine-close]");if(close){closeModal(close.dataset.engineClose);return}
       if(e.target.classList.contains("engine-modal")){closeModal(e.target.id);return}
