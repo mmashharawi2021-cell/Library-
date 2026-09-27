@@ -3,7 +3,7 @@
   const registry=globalThis.LibraryRegistry;
   if(!registry)return;
 
-  const E={worker:null,workerQuery:"",pendingRoute:null};
+  const E={worker:null,workerQuery:"",pendingRoute:null,audit:null};
   const qs=s=>document.querySelector(s);
   const qsa=s=>[...document.querySelectorAll(s)];
   const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
@@ -239,7 +239,13 @@
     },90);
   }
 
-  function renderPerformance(){
+  async function loadCatalogAudit(){
+    if(E.audit)return E.audit;
+    E.audit=fetch("catalog-audit.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null);
+    return E.audit;
+  }
+
+  async function renderPerformance(){
     const stats=registry.stats();
     const resources=performance.getEntriesByType?.("resource")||[];
     const transferred=resources.reduce((n,r)=>n+(r.transferSize||0),0);
@@ -260,7 +266,22 @@
         <p><b>Lazy packs remaining:</b> ${registry.unloadedPacks().length}</p>
         <p><b>Worker:</b> ${E.worker?'Active':'Fallback'}</p>
         <p><b>Service Worker:</b> ${navigator.serviceWorker?.controller?'Controlling':'Ready on next load / unavailable'}</p>
-      </div>`;
+      </div>
+      <div id="qualityAudit" class="perf-table"><p><b>Catalog audit:</b> Loading...</p></div>`;
+    const audit=await loadCatalogAudit();
+    const box=qs("#qualityAudit"),q=audit?.quality_audit;
+    if(box&&q){
+      box.innerHTML=`
+        <p><b>Live HTML previews:</b> ${q.live_html_previews} / ${audit.total_components}</p>
+        <p><b>Exact unique HTML:</b> ${q.exact_unique_html}</p>
+        <p><b>Normalized structural signatures:</b> ${q.normalized_structural_signatures}</p>
+        <p><b>DEV-derived variants:</b> ${q.dev_variants} · ${q.dev_structural_signatures} structures</p>
+        <p><b>Jitter generated variants:</b> ${q.jitter_generated_variants} · ${q.jitter_base_signatures} base structures</p>
+        <p><b>Name collisions:</b> ${q.name_collisions}</p>
+        <p><b>Portable code:</b> generated at runtime for HTML / CSS / JS / React / Tailwind</p>`;
+    }else if(box){
+      box.innerHTML='<p><b>Catalog audit:</b> unavailable</p>';
+    }
   }
 
 
