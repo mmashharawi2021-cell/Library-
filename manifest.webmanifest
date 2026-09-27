@@ -1,0 +1,12 @@
+{
+  "name": "مكتبة مهند — Web UI Reference",
+  "short_name": "مكتبة مهند",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#f6f7fb",
+  "lang": "ar",
+  "dir": "rtl",
+  "description": "مرجع شخصي لمكونات وحركات ومؤثرات واجهات الويب"
+}
