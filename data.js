@@ -1,6 +1,6 @@
-/* Library Engine 2.0 compatibility shim.
-   The live app now loads catalog/categories.js + catalog/packs/* + catalog/registry.js.
-   This file intentionally contains no component payload. */
-const categories=window.LibraryCategories||[];
-const samples=window.LibraryRegistry?.all||[];
-window.LibraryLegacyData={version:"2.0.0",total:samples.length};
+/* Library Engine 3.0 legacy compatibility shim.
+   The live app uses catalog/search-index.js + lazy Source Packs.
+   No component payload is stored here. */
+const categories=globalThis.LibraryCategories||[];
+const samples=globalThis.LibraryRegistry?.loadedItems||[];
+globalThis.LibraryLegacyData={version:"3.0.0",loaded:samples.length,total:globalThis.LibraryRegistry?.stats?.().total||samples.length};
