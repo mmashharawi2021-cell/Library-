@@ -9,7 +9,7 @@
 - **0 Duplicate IDs**
 - **0 عناصر مفقودة بين Search Index والـPacks**
 - **0 عناصر ناقصة من الكتالوج**
-- **554 Normalized Structural Signatures**
+- **580 Normalized Structural Signatures**
 - **969 اسمًا فريدًا** مع حالتي تشابه أسماء فقط وبدون Duplicate IDs
 
 ## Library Engine 3.0
@@ -104,12 +104,19 @@ catalog/
 - Missing in Packs: **0**
 - Initial HTML loads only Core pack: PASS
 
+### Jitter Quality Upgrade
+- تمت ترقية **339/339** من عناصر Jitter المولدة.
+- لم تعد تعتمد على 6 قوالب عامة فقط؛ أصبحت موزعة على **31 نوعًا دلاليًا**.
+- أمثلة الأنواع: Before/After، Gallery، Card Stack، Mask، 3D Flip، Pixel Grid، Toggle، Floating Menu، Notifications، Progress، Text Trail، Glitch، Rings، Loaders، Stars، Radial/Bar/Counter Charts.
+- أضيفت تفاعلات فعلية للـToggle وMenu وProgress وBefore/After وNotification Stack.
+- CSS الخاص بهذه العناصر يدخل أيضًا في الكود المنسوخ، وليس في المعاينة فقط.
+
 ### Quality Audit
 - كل **971** عنصرًا لديه Live HTML Preview.
 - **971** HTML payload مختلفة حرفيًا.
-- بعد تطبيع النصوص والـvariants: **554** بنية/توقيعًا هيكليًا.
+- بعد تطبيع النصوص والـvariants: **580** بنية/توقيعًا هيكليًا.
 - عناصر DEV-derived: **416** variant موزعة على **337** بنية مطبّعة.
-- Jitter-generated: **339** variant مبنية على **6** قوالب حركة أساسية.
+- Jitter-generated: **339** variant تمت ترقيتها إلى **31** نوعًا دلاليًا تمثل حاليًا **25** بنية DOM مطبّعة.
 - ملفات الـPacks تخزن HTML، بينما CSS / JS / React / Tailwind يتم توليدها وقت المعاينة والنسخ عبر `app.js`.
 - لا توجد Schema errors أو عناصر بلا HTML.
 - تشابه الأسماء فقط: `MED-004 / JIT-067` و `MED-006 / JIT-046`.
