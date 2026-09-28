@@ -2050,11 +2050,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Text Rotate</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><header><small>Component</small><i></i></header><h4>Text Rotate</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2071,7 +2072,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-DSY-062",
@@ -2288,11 +2289,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Validator</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Validator</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2309,7 +2311,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-PRL-001",
@@ -2458,11 +2460,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Typography</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><header><small>Component</small><i></i></header><h4>Typography</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2479,7 +2482,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-PRL-006",
@@ -2628,11 +2631,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Custom Scrollbar</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-10\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Custom Scrollbar</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-metrics\"><b>24</b><small>+8%</small></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2649,7 +2653,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 4
+    "qualityVariant": 10
   },
   {
     "id": "DEV-PRL-011",
@@ -2934,11 +2938,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Cards</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-11\"><i class=\"dqv-corner c1\"></i><i class=\"dqv-corner c2\"></i><i class=\"dqv-corner c3\"></i><i class=\"dqv-corner c4\"></i><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Cards</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2955,7 +2960,7 @@ window.LibraryPackFoundations=[
     "type": "card",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 5
+    "qualityVariant": 11
   },
   {
     "id": "DEV-PRL-020",
@@ -3546,11 +3551,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><header><small>Component</small><i></i></header><h4>Marquee</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-12\"><mark class=\"dqv-badge\">NEW</mark><header class=\"dqv-head\"><small>UI</small><i></i></header><header><small>Component</small><i></i></header><h4>Marquee</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-progress-mini\"><i></i></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -3567,7 +3573,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 6
+    "qualityVariant": 12
   },
   {
     "id": "DEV-PRL-038",
@@ -4838,11 +4844,12 @@ window.LibraryPackFoundations=[
       "inputs",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-1\"><b>Advanced Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><b>Advanced Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -4859,7 +4866,7 @@ window.LibraryPackFoundations=[
     "type": "form-control",
     "addedAt": "2026-09-27",
     "qualityTemplate": "input-special",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-PRL-076",
@@ -5552,11 +5559,12 @@ window.LibraryPackFoundations=[
       "inputs",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-flw dq-input dq-special dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
+      "html": "<label class=\"devpack pack-flw dq-input dq-special dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -5573,7 +5581,7 @@ window.LibraryPackFoundations=[
     "type": "form-control",
     "addedAt": "2026-09-27",
     "qualityTemplate": "input-special",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-FLW-012",
@@ -6062,11 +6070,12 @@ window.LibraryPackFoundations=[
       "inputs",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-flw dq-input dq-special dqv-3\"><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
+      "html": "<label class=\"devpack pack-flw dq-input dq-special dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6083,7 +6092,7 @@ window.LibraryPackFoundations=[
     "type": "form-control",
     "addedAt": "2026-09-27",
     "qualityTemplate": "input-special",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-FLW-027",
@@ -6912,11 +6921,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Text Area</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><header><small>Component</small><i></i></header><h4>Text Area</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -6933,7 +6943,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-NIN-024",
@@ -7014,11 +7024,12 @@ window.LibraryPackFoundations=[
       "inputs",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Number Input</b><div><i>#</i><input value=\"42\"></div><section class=\"dqv-meta\"><span></span><span></span></section></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-10\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Number Input</b><div><i>#</i><input value=\"42\"></div><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-metrics\"><b>24</b><small>+8%</small></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -7035,7 +7046,7 @@ window.LibraryPackFoundations=[
     "type": "form-control",
     "addedAt": "2026-09-27",
     "qualityTemplate": "input-special",
-    "qualityVariant": 4
+    "qualityVariant": 10
   },
   {
     "id": "DEV-NIN-027",
@@ -7082,11 +7093,12 @@ window.LibraryPackFoundations=[
       "inputs",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Date Input</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-11\"><i class=\"dqv-corner c1\"></i><i class=\"dqv-corner c2\"></i><i class=\"dqv-corner c3\"></i><i class=\"dqv-corner c4\"></i><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Date Input</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -7103,7 +7115,7 @@ window.LibraryPackFoundations=[
     "type": "form-control",
     "addedAt": "2026-09-27",
     "qualityTemplate": "input-special",
-    "qualityVariant": 5
+    "qualityVariant": 11
   },
   {
     "id": "DEV-NIN-029",
@@ -7116,11 +7128,12 @@ window.LibraryPackFoundations=[
       "inputs",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><b>Time Input</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-12\"><mark class=\"dqv-badge\">NEW</mark><header class=\"dqv-head\"><small>UI</small><i></i></header><b>Time Input</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-progress-mini\"><i></i></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -7137,7 +7150,7 @@ window.LibraryPackFoundations=[
     "type": "form-control",
     "addedAt": "2026-09-27",
     "qualityTemplate": "input-special",
-    "qualityVariant": 6
+    "qualityVariant": 12
   },
   {
     "id": "DEV-NIN-030",
@@ -7320,11 +7333,12 @@ window.LibraryPackFoundations=[
       "sections",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-1\"><header><b>Container</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><header><b>Container</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -7341,7 +7355,7 @@ window.LibraryPackFoundations=[
     "type": "layout",
     "addedAt": "2026-09-27",
     "qualityTemplate": "section-layout",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-NIN-036",
@@ -7354,11 +7368,12 @@ window.LibraryPackFoundations=[
       "sections",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Center</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Center</b><small>Layout</small></header><main><aside></aside><div></div></main><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -7375,7 +7390,7 @@ window.LibraryPackFoundations=[
     "type": "layout",
     "addedAt": "2026-09-27",
     "qualityTemplate": "section-layout",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-NIN-037",
@@ -7490,11 +7505,12 @@ window.LibraryPackFoundations=[
       "sections",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-3\"><header><b>Wrap</b><small>Layout</small></header><main><aside></aside><div></div></main><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><header><b>Wrap</b><small>Layout</small></header><main><aside></aside><div></div></main><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -7511,7 +7527,7 @@ window.LibraryPackFoundations=[
     "type": "layout",
     "addedAt": "2026-09-27",
     "qualityTemplate": "section-layout",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-NIN-041",
@@ -7864,11 +7880,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -7885,7 +7902,7 @@ window.LibraryPackFoundations=[
     "type": "card",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-NIN-052",
@@ -8034,11 +8051,12 @@ window.LibraryPackFoundations=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Tree</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><header><small>Component</small><i></i></header><h4>Tree</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -8055,7 +8073,7 @@ window.LibraryPackFoundations=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-content",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-NIN-057",
