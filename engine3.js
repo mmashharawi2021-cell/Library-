@@ -161,6 +161,11 @@
   function renderRelated(item){
     const grid=qs("#relatedGrid");if(!grid)return;
     qs("#relatedPack").textContent=packLabel(packOf(item));
+    if(!registry.isMetadataReady?.()){
+      grid.innerHTML='<div class="related-loading">تحميل الاقتراحات المرتبطة...</div>';
+      registry.ensureMetadata?.().then(()=>renderRelated(item)).catch(()=>{grid.innerHTML='<div class="related-loading">تعذر تحميل الاقتراحات</div>'});
+      return;
+    }
     grid.innerHTML=relatedMeta(item).map(x=>`<button data-related-id="${esc(x.id)}"><b>${esc(x.name)}</b><span>${esc(x.category)} · ${esc(x.id)}</span></button>`).join("");
   }
 
@@ -207,7 +212,8 @@
   }
 
   function startWorker(){
-    if(!("Worker" in window))return;
+    if(E.worker)return E.worker;
+    if(!("Worker" in window))return null;
     try{
       E.worker=new Worker("catalog/search-worker.js");
       E.worker.onmessage=async e=>{
@@ -216,7 +222,7 @@
         const box=el?.suggestions;
         if(box&&E.workerQuery){
           box.innerHTML=results.slice(0,7).map(r=>{
-            const m=registry.metaFor(r.id);return `<button data-engine-suggest="${esc(r.id)}"><span>${esc(m?.name||r.id)}</span><small>${esc(packLabel(r.pack))} · ${esc(r.id)}</small></button>`;
+            return `<button data-engine-suggest="${esc(r.id)}"><span>${esc(r.name||r.id)}</span><small>${esc(packLabel(r.pack))} · ${esc(r.id)}</small></button>`;
           }).join("");
           box.hidden=!results.length;
         }
@@ -226,10 +232,14 @@
           if(state.q===E.workerQuery){resetGridWindow();renderNav();renderOverview();renderFilters();renderGrid();header()}
         }
       };
-    }catch(err){console.warn("Search worker unavailable",err)}
+    }catch(err){console.warn("Search worker unavailable",err);return null}
+    return E.worker;
   }
   let searchTimer=0;
   function workerSearch(){
+    const q=el.search.value.trim();
+    if(!q)return;
+    if(!E.worker)startWorker();
     if(!E.worker)return;
     clearTimeout(searchTimer);
     searchTimer=setTimeout(()=>{
@@ -304,7 +314,7 @@
       if(id!=="all"&&!registry.loadedPacks.has(id))await registry.loadPack(id);
       renderNav();renderOverview();renderFilters();renderGrid();header();syncPackFilter();
     },true);
-    qs("#commandBtn")?.addEventListener("click",()=>openModal("commandPalette"));
+    qs("#commandBtn")?.addEventListener("click",async()=>{await registry.ensureMetadata?.();openModal("commandPalette")});
     qs("#randomBtn")?.addEventListener("click",async e=>{e.preventDefault();e.stopImmediatePropagation();await openGlobalRandom()},{capture:true});
     qs("#packManagerBtn")?.addEventListener("click",()=>openModal("packManager"));
     qs("#perfBtn")?.addEventListener("click",()=>openModal("perfPanel"));
@@ -335,8 +345,8 @@
     qs("#importPackBtn")?.addEventListener("click",()=>qs("#importPackFile")?.click());
     qs("#importBackupFile")?.addEventListener("change",async e=>{if(e.target.files[0])try{await importBackup(e.target.files[0])}catch(err){alert("Backup غير صالح")}});
     qs("#importPackFile")?.addEventListener("change",async e=>{if(e.target.files[0])try{await importComponentPack(e.target.files[0])}catch(err){console.error(err);alert("Component Pack غير صالح")}});
-    document.addEventListener("keydown",e=>{
-      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openModal("commandPalette")}
+    document.addEventListener("keydown",async e=>{
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();await registry.ensureMetadata?.();openModal("commandPalette")}
       if(e.key==="Escape"){qsa(".engine-modal").forEach(m=>{if(!m.hidden)closeModal(m.id)})}
     });
     window.addEventListener("popstate",routeFromHash);
@@ -351,7 +361,6 @@
   restoreLocalPack();
   ensureEngineUI();
   bind();
-  startWorker();
   registerPWA();
   syncPackFilter();
   routeFromHash();
