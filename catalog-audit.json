@@ -165,5 +165,17 @@
     "schema_invalid": 0,
     "empty_html": 0,
     "note": "DEV quality pass rebuilt all 416 DEV-derived entries from 17 broad DOM shapes into 75 semantic component types and 286 real DOM structures. The stricter library-wide metric is 674 semantic structural signatures; this supersedes the older 707 metric that counted more class-level variation."
+  },
+  "code_health": {
+    "reviewed_at": "2026-09-28",
+    "javascript_syntax": "PASS",
+    "duplicate_html_ids": 0,
+    "dead_function_candidates": 0,
+    "legacy_preview_observer_removed": true,
+    "permanent_preview_interval_removed": true,
+    "on_demand_interaction_ticker": true,
+    "stale_preview_page_removed": true,
+    "unused_data_shim_removed": true,
+    "stale_preview_paused_css_removed": true
   }
 }
