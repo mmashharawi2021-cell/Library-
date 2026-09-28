@@ -1,10 +1,10 @@
 (function(){
   const manifest={
-    core:{id:"core",label:"Core",file:"catalog/packs/core.js",global:"LibraryPackCore"},
-    jitter:{id:"jitter",label:"Jitter",file:"catalog/packs/jitter.js",global:"LibraryPackJitter"},
-    foundations:{id:"foundations",label:"Foundations",file:"catalog/packs/foundations.js",global:"LibraryPackFoundations"},
-    motion:{id:"motion",label:"Motion",file:"catalog/packs/motion.js",global:"LibraryPackMotion"},
-    origin:{id:"origin",label:"Origin",file:"catalog/packs/origin.js",global:"LibraryPackOrigin"}
+    core:{id:"core",label:"Core",file:"catalog/packs/core.js",global:"LibraryPackCore",style:null},
+    jitter:{id:"jitter",label:"Jitter",file:"catalog/packs/jitter.js",global:"LibraryPackJitter",style:"styles/jitter.css"},
+    foundations:{id:"foundations",label:"Foundations",file:"catalog/packs/foundations.js",global:"LibraryPackFoundations",style:"styles/dev.css"},
+    motion:{id:"motion",label:"Motion",file:"catalog/packs/motion.js",global:"LibraryPackMotion",style:"styles/dev.css"},
+    origin:{id:"origin",label:"Origin",file:"catalog/packs/origin.js",global:"LibraryPackOrigin",style:"styles/dev.css"}
   };
   const index=[...(globalThis.LibrarySearchIndex||globalThis.LibraryManifestIndex||[])];
   const indexById=new Map(index.map(x=>[x.id,x]));
@@ -41,6 +41,19 @@
       document.head.appendChild(script);
     });
   }
+  const styleLoading=new Map();
+  function ensureStyle(href){
+    if(!href)return Promise.resolve();
+    if(styleLoading.has(href))return styleLoading.get(href);
+    const existing=document.querySelector('link[data-library-style="'+href+'"]');
+    if(existing){const p=Promise.resolve(existing);styleLoading.set(href,p);return p}
+    const task=new Promise((resolve,reject)=>{
+      const link=document.createElement("link");link.rel="stylesheet";link.href=href;link.dataset.libraryStyle=href;
+      link.onload=()=>resolve(link);link.onerror=()=>{styleLoading.delete(href);reject(new Error("Failed to load "+href))};
+      document.head.appendChild(link);
+    });
+    styleLoading.set(href,task);return task;
+  }
   function injectMetadataScript(){
     return new Promise((resolve,reject)=>{
       if(globalThis.LibrarySearchIndex?.length){resolve();return}
@@ -74,10 +87,10 @@
     if(packId==="all"){await Promise.all(Object.keys(manifest).map(loadPack));return loadedItems}
     if(runtimePacks.has(packId))return runtimePacks.get(packId);
     if(loadedPacks.has(packId))return loadedItems.filter(x=>packOf(x)===packId);
-    if(registerExisting(packId))return loadedItems.filter(x=>packOf(x)===packId);
+    if(registerExisting(packId)){await ensureStyle(meta?.style);return loadedItems.filter(x=>packOf(x)===packId);}
     if(loading.has(packId))return loading.get(packId);
     const meta=manifest[packId];if(!meta)throw new Error("Unknown pack: "+packId);
-    const task=injectScript(meta.file).then(()=>{
+    const task=Promise.all([injectScript(meta.file),ensureStyle(meta.style)]).then(()=>{
       if(!registerExisting(packId))throw new Error("Pack loaded without payload: "+packId);
       loading.delete(packId);
       dispatchEvent(new CustomEvent("library:pack-loaded",{detail:{packId,count:count(packId)}}));
