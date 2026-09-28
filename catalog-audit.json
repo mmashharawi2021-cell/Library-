@@ -96,7 +96,10 @@
     "command_palette": true,
     "quality_upgrade": true,
     "jitter_semantic_templates": 31,
-    "structural_signatures": 580
+    "structural_signatures": 707,
+    "quality_pass": 2,
+    "jitter_dom_structures": 139,
+    "jitter_layout_variants": 8
   },
   "lazy_loading": true,
   "virtual_rendering": {
@@ -118,13 +121,24 @@
     "scope": "all 971 catalog payloads",
     "live_html_previews": 971,
     "exact_unique_html": 971,
-    "normalized_structural_signatures": 580,
+    "normalized_structural_signatures": 707,
     "dev_variants": 416,
     "dev_structural_signatures": 337,
     "jitter_generated_variants": 339,
     "jitter_semantic_template_types": 31,
-    "jitter_base_signatures": 25,
+    "jitter_dom_structures": 139,
+    "jitter_layout_variants": 8,
     "jitter_quality_upgraded": 339,
+    "jitter_layout_distribution": {
+      "1": 60,
+      "2": 54,
+      "3": 47,
+      "4": 41,
+      "5": 39,
+      "6": 34,
+      "7": 33,
+      "8": 31
+    },
     "runtime_code_generation": true,
     "runtime_formats": [
       "HTML",
@@ -153,6 +167,6 @@
     ],
     "schema_invalid": 0,
     "empty_html": 0,
-    "note": "All 339 generated Jitter entries were upgraded from six broad visual presets into 31 semantic component template types, currently representing 25 normalized DOM structures. Portable CSS/JS/React/Tailwind output is generated at runtime."
+    "note": "Pass 2 upgraded all 339 generated Jitter components with up to eight real layout structures per semantic component type. The catalog now has 707 normalized structural signatures and Jitter alone represents 139 normalized DOM structures."
   }
 }
