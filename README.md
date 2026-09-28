@@ -69,7 +69,7 @@ Pack Manager يعرض:
 - Backup Export / Import
 - Local Component Pack Import
 - PWA + Offline Cache
-- Service Worker cache version: **library-engine-3-v11**
+- Service Worker cache version: **library-engine-3-v12**
 
 ## البنية
 
@@ -138,6 +138,24 @@ styles.css    # compatibility imports only
 - Service Worker لم يعد يسبق بتحميل الملفات الثقيلة الاختيارية.
 - حجم ملفات المشروع في مسار التحميل الأولي أصبح نحو **465 KB** غير مضغوط بدل قرابة **986 KB** قبل هذه المرحلة — انخفاض يقارب **53%**.
 - الملفات المؤجلة حاليًا تمثل نحو **578 KB** وتُحمّل فقط عند الحاجة.
+
+### Runtime Performance + UX Audit
+- أضيف مراقب محلي لـ **FCP / LCP / CLS / INP / TTFB / Long Tasks / DOM Nodes / Grid Render Time** داخل Performance Dashboard.
+- Grid Batch أصبح متكيفًا مع الجهاز بدل 48 بطاقة ثابتة:
+  - جوال صغير: **12** بطاقة.
+  - جوال/تابلت: **12–18** حسب الذاكرة.
+  - أجهزة متوسطة: **18–24**.
+  - شاشات واسعة: **30**.
+- التحميل التلقائي يتوقف عند **36 بطاقة على الجوال** و**60 على سطح المكتب**؛ الاستمرار يبقى متاحًا بزر تحميل المزيد.
+- الدفعات الجديدة تُضاف بـ **incremental append** بدل إعادة إنشاء جميع البطاقات السابقة.
+- أضيف `content-visibility:auto` للبطاقات لتجنب رسم العناصر البعيدة عن الشاشة.
+- أحداث Hover/Press للبطاقات أصبحت **Event Delegation واحدًا** على الـGrid بدل listeners منفصلة لكل بطاقة.
+- تفاعلات محتوى الـPreview نفسها لا تُربط إلا عند تشغيل المعاينة فعليًا.
+- البحث المحلي أصبح Debounced لمدة **120ms** بدل إعادة الرسم مع كل ضغطة حرف.
+- أول Grid Render أصبح بعد أول animation frame للسماح للـHero والهيكل بالظهور أولًا.
+- أهداف اللمس على الجوال رُفعت إلى **44px** للعناصر الأساسية.
+- الـRuntime monitor لا يرسل أي بيانات؛ القياسات تبقى داخل المتصفح.
+- الحجم الأولي الحالي لملفات المشروع يقارب **474 KB** غير مضغوط، مع بقاء الملفات الثقيلة الاختيارية Lazy.
 
 ## Validation
 - core/state.js: PASS
