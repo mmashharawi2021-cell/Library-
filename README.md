@@ -56,8 +56,8 @@ Pack Manager يعرض:
 - Load All Packs
 
 ### Search Engine
-- Search Index مستقل عن ملفات الـComponents.
-- Web Worker: `catalog/search-worker.js`
+- Search Index الكامل مستقل عن ملفات الـComponents ويُحمّل Lazy؛ البداية تستخدم Manifest Index خفيفًا.
+- Web Worker: `catalog/search-worker.js` — يبدأ عند أول بحث فقط
 - البحث يعمل عبر كل **971 Metadata Record** دون تحميل كل HTML/CSS.
 - أول Pack مناسب يمكن تحميله عند الحاجة.
 
@@ -69,7 +69,7 @@ Pack Manager يعرض:
 - Backup Export / Import
 - Local Component Pack Import
 - PWA + Offline Cache
-- Service Worker cache version: **library-engine-3-v9**
+- Service Worker cache version: **library-engine-3-v11**
 
 ## البنية
 
@@ -126,6 +126,18 @@ styles.css    # compatibility imports only
 - توليد HTML/CSS/JS/React/Tailwind: `ui/code-export.js`.
 - CSS انقسم إلى **5 طبقات** مع الحفاظ على ترتيب الـcascade الأصلي.
 - `styles.css` بقي فقط كملف توافق صغير، بينما الموقع يحمل الطبقات مباشرة.
+
+### Performance Pass
+- تم استبدال تحميل `catalog/search-index.js` الكامل (**416 KB**) عند البداية بـ `catalog/manifest-index.js` خفيف (**53 KB**) يحفظ فقط `id / pack / category`.
+- Search Worker أصبح **Lazy** ولا يبدأ إلا عند أول بحث فعلي.
+- metadata الكامل يُحمّل إلى الـmain thread فقط عند فتح **Command Palette** أو **Related Components**.
+- `ui/code-export.js` (**89 KB**) أصبح Lazy ولا يدخل إلا عند فتح تبويب الكود أو النسخ.
+- مكتبة الخطوط: `fonts/fonts.js` + `styles/fonts.css` أصبحت Lazy ولا تُحمّل إلا عند الضغط على **الخطوط**.
+- CSS الخاص بـ Jitter وDEV أصبح مرتبطًا بتحميل الـPack نفسه: `styles/jitter.css` و`styles/dev.css`.
+- CSS الأولي يستخدم `styles/engine-core.css` فقط.
+- Service Worker لم يعد يسبق بتحميل الملفات الثقيلة الاختيارية.
+- حجم ملفات المشروع في مسار التحميل الأولي أصبح نحو **465 KB** غير مضغوط بدل قرابة **986 KB** قبل هذه المرحلة — انخفاض يقارب **53%**.
+- الملفات المؤجلة حاليًا تمثل نحو **578 KB** وتُحمّل فقط عند الحاجة.
 
 ## Validation
 - core/state.js: PASS
