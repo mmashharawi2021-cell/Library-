@@ -17,19 +17,24 @@
   const runtimePacks=new Map();
 
   function registerItems(items,packId){
+    const accepted=[];
     for(const item of items||[]){
       if(byId.has(item.id))continue;
       item.__pack=packId;
+      const verdict=globalThis.LibraryVisualDedupe?.accept?.(item,packId);
+      if(verdict&&verdict.keep===false)continue;
       byId.set(item.id,item);
       loadedItems.push(item);
+      accepted.push(item);
     }
+    return accepted;
   }
   function registerExisting(packId){
     const meta=manifest[packId],items=meta?globalThis[meta.global]:null;
-    if(!Array.isArray(items))return false;
-    registerItems(items,packId);
+    if(!Array.isArray(items))return null;
+    const accepted=registerItems(items,packId);
     loadedPacks.add(packId);
-    return true;
+    return accepted;
   }
   function injectScript(src){
     return new Promise((resolve,reject)=>{
@@ -87,14 +92,24 @@
     if(packId==="all"){await Promise.all(Object.keys(manifest).map(loadPack));return loadedItems}
     if(runtimePacks.has(packId))return runtimePacks.get(packId);
     if(loadedPacks.has(packId))return loadedItems.filter(x=>packOf(x)===packId);
-    if(registerExisting(packId)){await ensureStyle(meta?.style);return loadedItems.filter(x=>packOf(x)===packId);}
     if(loading.has(packId))return loading.get(packId);
     const meta=manifest[packId];if(!meta)throw new Error("Unknown pack: "+packId);
+
+    const existing=globalThis[meta.global];
+    if(Array.isArray(existing)){
+      await ensureStyle(meta.style);
+      const accepted=registerExisting(packId)||[];
+      dispatchEvent(new CustomEvent("library:pack-loaded",{detail:{packId,count:accepted.length,deduped:(existing.length-accepted.length)}}));
+      return accepted;
+    }
+
     const task=Promise.all([injectScript(meta.file),ensureStyle(meta.style)]).then(()=>{
-      if(!registerExisting(packId))throw new Error("Pack loaded without payload: "+packId);
+      const source=globalThis[meta.global];
+      if(!Array.isArray(source))throw new Error("Pack loaded without payload: "+packId);
+      const accepted=registerExisting(packId)||[];
       loading.delete(packId);
-      dispatchEvent(new CustomEvent("library:pack-loaded",{detail:{packId,count:count(packId)}}));
-      return loadedItems.filter(x=>packOf(x)===packId);
+      dispatchEvent(new CustomEvent("library:pack-loaded",{detail:{packId,count:accepted.length,deduped:(source.length-accepted.length)}}));
+      return accepted;
     }).catch(err=>{loading.delete(packId);throw err});
     loading.set(packId,task);return task;
   }
@@ -109,26 +124,30 @@
     if(byId.get(id)?.__pack)return byId.get(id).__pack;
     return indexById.get(id)?.pack||"core";
   }
+  function isHidden(id){return !!globalThis.LibraryVisualDedupe?.isHidden?.(id)}
+  function visibleIndex(){return index.filter(x=>!isHidden(x.id))}
   function count(packId){
-    if(packId==="all")return index.length;
-    return index.filter(x=>x.pack===packId).length;
+    const list=visibleIndex();
+    if(packId==="all")return list.length;
+    return list.filter(x=>x.pack===packId).length;
   }
-  function metaFor(id){return indexById.get(id)||null}
-  function searchMeta(){return index}
+  function metaFor(id){return isHidden(id)?null:(indexById.get(id)||null)}
+  function searchMeta(){return visibleIndex()}
   function unloadedPacks(){return Object.keys(manifest).filter(x=>!loadedPacks.has(x))}
   function registerRuntime(items,packId="local"){
     const clean=Array.isArray(items)?items:[];
-    runtimePacks.set(packId,clean);loadedPacks.add(packId);registerItems(clean,packId);
-    clean.forEach(item=>{
+    const accepted=registerItems(clean,packId);
+    runtimePacks.set(packId,accepted);loadedPacks.add(packId);
+    accepted.forEach(item=>{
       if(indexById.has(item.id))return;
       const meta={id:item.id,name:item.name,category:item.category,style:item.style,tags:item.tags||[],complexity:item.complexity||"basic",description:item.description||"",technology:item.technology||"HTML + CSS",dependency:item.dependency||"None",sourceReference:item.sourceReference||"import-local",motionMode:item.motionMode||"Interaction",type:item.type||"component",addedAt:item.addedAt||new Date().toISOString().slice(0,10),pack:packId};
       index.push(meta);indexById.set(meta.id,meta);
     });
-    dispatchEvent(new CustomEvent("library:pack-loaded",{detail:{packId,count:clean.length,runtime:true}}));
-    return clean;
+    dispatchEvent(new CustomEvent("library:pack-loaded",{detail:{packId,count:accepted.length,deduped:clean.length-accepted.length,runtime:true}}));
+    return accepted;
   }
   function stats(){
-    return {total:index.length,loaded:loadedItems.length,categories:(globalThis.LibraryCategories||[]).length,packs:Object.fromEntries([...Object.keys(manifest),...runtimePacks.keys()].map(id=>[id,{count:count(id)||runtimePacks.get(id)?.length||0,loaded:loadedPacks.has(id)}]))};
+    return {total:visibleIndex().length,loaded:loadedItems.length,deduped:globalThis.LibraryVisualDedupe?.hiddenIds?.size||0,categories:(globalThis.LibraryCategories||[]).length,packs:Object.fromEntries([...Object.keys(manifest),...runtimePacks.keys()].map(id=>[id,{count:count(id)||runtimePacks.get(id)?.length||0,loaded:loadedPacks.has(id)}]))};
   }
 
   registerExisting("core");
@@ -136,6 +155,7 @@
     version:"3.0.0",manifest,index,loadedItems,all:loadedItems,byId,loadedPacks,
     loadPack,ensureComponent,find:id=>byId.get(id)||null,metaFor,packOf,count,
     itemsInPack:id=>id==="all"?loadedItems:loadedItems.filter(x=>packOf(x)===id),
-    searchMeta,unloadedPacks,registerRuntime,stats,ensureMetadata,isMetadataReady:()=>metadataReady
+    searchMeta,unloadedPacks,registerRuntime,stats,ensureMetadata,isMetadataReady:()=>metadataReady,
+    isHidden,visibleIndex,dedupeReport:()=>globalThis.LibraryVisualDedupe?.report?.()||{removed:0,duplicates:[]}
   };
 })();
