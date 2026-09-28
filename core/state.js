@@ -18,8 +18,8 @@ function packOf(s){
   if(/^DEV-ORG-/.test(s.id))return'origin';
   return'core';
 }
-function catalogMeta(){return globalThis.LibraryRegistry?.index||samples}
-function metaAvailable(s){return !state.trash.has(s.id)&&!state.purged.has(s.id)}
+function catalogMeta(){return globalThis.LibraryRegistry?.searchMeta?.()||globalThis.LibraryRegistry?.index||samples}
+function metaAvailable(s){return !globalThis.LibraryRegistry?.isHidden?.(s.id)&&!state.trash.has(s.id)&&!state.purged.has(s.id)}
 function packCount(id){return catalogMeta().filter(s=>metaAvailable(s)&&(id==='all'||packOf(s)===id)).length}
 function syncPackFilter(){
   if(!el.packFilter)return;
@@ -28,6 +28,6 @@ function syncPackFilter(){
   el.packFilter.value=state.pack;
 }
 
-function available(s){return !state.trash.has(s.id)&&!state.purged.has(s.id)}
+function available(s){return !globalThis.LibraryRegistry?.isHidden?.(s.id)&&!state.trash.has(s.id)&&!state.purged.has(s.id)}
 function use(s){return Number(state.usage[s.id]||0)}
 function catUse(id){return samples.filter(s=>s.category===id&&available(s)&&(state.pack==='all'||packOf(s)===state.pack)).reduce((a,s)=>a+use(s),0)}
