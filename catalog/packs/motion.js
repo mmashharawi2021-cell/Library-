@@ -792,11 +792,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-1\"><i></i><article><small>INTERACTIVE</small><b>Spotlight</b></article></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><i></i><article><small>INTERACTIVE</small><b>Spotlight</b></article></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -813,7 +814,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-light",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-ACT-025",
@@ -1506,11 +1507,12 @@ window.LibraryPackMotion=[
       "icons",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-1\"><strong>Decrypted Text</strong><span></span><small>Typography motion</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><strong>Decrypted Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1527,7 +1529,7 @@ window.LibraryPackMotion=[
     "type": "primitive",
     "addedAt": "2026-09-27",
     "qualityTemplate": "icon-typography",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-RBT-008",
@@ -1574,11 +1576,12 @@ window.LibraryPackMotion=[
       "icons",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Rotating Text</strong><span></span><small>Typography motion</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Rotating Text</strong><span></span><small>Typography motion</small><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1595,7 +1598,7 @@ window.LibraryPackMotion=[
     "type": "primitive",
     "addedAt": "2026-09-27",
     "qualityTemplate": "icon-typography",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-RBT-010",
@@ -1608,11 +1611,12 @@ window.LibraryPackMotion=[
       "icons",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-3\"><strong>Scrambled Text</strong><span></span><small>Typography motion</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><strong>Scrambled Text</strong><span></span><small>Typography motion</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1629,7 +1633,7 @@ window.LibraryPackMotion=[
     "type": "primitive",
     "addedAt": "2026-09-27",
     "qualityTemplate": "icon-typography",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-RBT-011",
@@ -1676,11 +1680,12 @@ window.LibraryPackMotion=[
       "icons",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>ASCII Text</strong><span></span><small>Typography motion</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-10\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>ASCII Text</strong><span></span><small>Typography motion</small><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-metrics\"><b>24</b><small>+8%</small></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1697,7 +1702,7 @@ window.LibraryPackMotion=[
     "type": "primitive",
     "addedAt": "2026-09-27",
     "qualityTemplate": "icon-typography",
-    "qualityVariant": 4
+    "qualityVariant": 10
   },
   {
     "id": "DEV-RBT-013",
@@ -1710,11 +1715,12 @@ window.LibraryPackMotion=[
       "icons",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Glitch Text</strong><span></span><small>Typography motion</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-11\"><i class=\"dqv-corner c1\"></i><i class=\"dqv-corner c2\"></i><i class=\"dqv-corner c3\"></i><i class=\"dqv-corner c4\"></i><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Glitch Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1731,7 +1737,7 @@ window.LibraryPackMotion=[
     "type": "primitive",
     "addedAt": "2026-09-27",
     "qualityTemplate": "icon-typography",
-    "qualityVariant": 5
+    "qualityVariant": 11
   },
   {
     "id": "DEV-RBT-014",
@@ -1744,11 +1750,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-1\"><strong>Scroll Reveal</strong><span></span><small>Motion typography</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><strong>Scroll Reveal</strong><span></span><small>Motion typography</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1765,7 +1772,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-text",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-RBT-015",
@@ -1778,11 +1785,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Scroll Float</strong><span></span><small>Motion typography</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Scroll Float</strong><span></span><small>Motion typography</small><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1799,7 +1807,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-text",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-RBT-016",
@@ -1812,11 +1820,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-3\"><strong>Scroll Velocity</strong><span></span><small>Motion typography</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><strong>Scroll Velocity</strong><span></span><small>Motion typography</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1833,7 +1842,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-text",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-RBT-017",
@@ -1948,11 +1957,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-light dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><article><small>INTERACTIVE</small><b>Spotlight Card</b></article></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-light dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><article><small>INTERACTIVE</small><b>Spotlight Card</b></article><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1969,7 +1979,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-light",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-RBT-021",
@@ -2288,11 +2298,12 @@ window.LibraryPackMotion=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-1\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Pixel Card</h4><p>Visual card pattern</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Pixel Card</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2309,7 +2320,7 @@ window.LibraryPackMotion=[
     "type": "card",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-visual",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-RBT-031",
@@ -2322,11 +2333,12 @@ window.LibraryPackMotion=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Magic Bento</h4><p>Visual card pattern</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Magic Bento</h4><p>Visual card pattern</p><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2343,7 +2355,7 @@ window.LibraryPackMotion=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-visual",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-RBT-032",
@@ -2390,11 +2402,12 @@ window.LibraryPackMotion=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-3\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Glass Surface</h4><p>Visual card pattern</p><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Glass Surface</h4><p>Visual card pattern</p><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2411,7 +2424,7 @@ window.LibraryPackMotion=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-visual",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-RBT-034",
@@ -2560,11 +2573,12 @@ window.LibraryPackMotion=[
       "cards",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Ballpit</h4><p>Visual card pattern</p><section class=\"dqv-meta\"><span></span><span></span></section></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-10\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Ballpit</h4><p>Visual card pattern</p><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-metrics\"><b>24</b><small>+8%</small></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2581,7 +2595,7 @@ window.LibraryPackMotion=[
     "type": "component",
     "addedAt": "2026-09-27",
     "qualityTemplate": "card-visual",
-    "qualityVariant": 4
+    "qualityVariant": 10
   },
   {
     "id": "DEV-RBT-039",
@@ -2594,11 +2608,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-1\"><i></i><i></i><i></i><span></span><b>Dither</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-7\"><section class=\"dqv-status\"><i></i><small>LIVE</small></section><i></i><i></i><i></i><span></span><b>Dither</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2615,7 +2630,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-background",
-    "qualityVariant": 1
+    "qualityVariant": 7
   },
   {
     "id": "DEV-RBT-040",
@@ -2628,11 +2643,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><span></span><b>Particles</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-8\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><span></span><b>Particles</b><nav class=\"dqv-actions\"><span></span><button type=\"button\">•••</button></nav></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2649,7 +2665,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-background",
-    "qualityVariant": 2
+    "qualityVariant": 8
   },
   {
     "id": "DEV-RBT-041",
@@ -2696,11 +2712,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-3\"><i></i><i></i><i></i><span></span><b>Iridescence</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-9\"><ol class=\"dqv-timeline\"><li></li><li></li><li></li></ol><i></i><i></i><i></i><span></span><b>Iridescence</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2717,7 +2734,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-background",
-    "qualityVariant": 3
+    "qualityVariant": 9
   },
   {
     "id": "DEV-RBT-043",
@@ -2730,11 +2747,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Orb</b><section class=\"dqv-meta\"><span></span><span></span></section></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-10\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Orb</b><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-metrics\"><b>24</b><small>+8%</small></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2751,7 +2769,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-background",
-    "qualityVariant": 4
+    "qualityVariant": 10
   },
   {
     "id": "DEV-RBT-044",
@@ -2764,11 +2782,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Letter Glitch</strong><span></span><small>Motion typography</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-10\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Letter Glitch</strong><span></span><small>Motion typography</small><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-metrics\"><b>24</b><small>+8%</small></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2785,7 +2804,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-text",
-    "qualityVariant": 4
+    "qualityVariant": 10
   },
   {
     "id": "DEV-RBT-045",
@@ -2866,11 +2885,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Squares</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-11\"><i class=\"dqv-corner c1\"></i><i class=\"dqv-corner c2\"></i><i class=\"dqv-corner c3\"></i><i class=\"dqv-corner c4\"></i><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Squares</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2887,7 +2907,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-background",
-    "qualityVariant": 5
+    "qualityVariant": 11
   },
   {
     "id": "DEV-RBT-048",
@@ -2900,11 +2920,12 @@ window.LibraryPackMotion=[
       "effects",
       "devto",
       "source-pack",
-      "dev-quality-pass"
+      "dev-quality-pass",
+      "dev-quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><i></i><i></i><i></i><span></span><b>Beams</b><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-12\"><mark class=\"dqv-badge\">NEW</mark><header class=\"dqv-head\"><small>UI</small><i></i></header><i></i><i></i><i></i><span></span><b>Beams</b><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section><section class=\"dqv-progress-mini\"><i></i></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2921,7 +2942,7 @@ window.LibraryPackMotion=[
     "type": "effect",
     "addedAt": "2026-09-27",
     "qualityTemplate": "effect-background",
-    "qualityVariant": 6
+    "qualityVariant": 12
   },
   {
     "id": "DEV-RBT-049",
