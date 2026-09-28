@@ -21,8 +21,16 @@
     for(const item of items||[]){
       if(byId.has(item.id))continue;
       item.__pack=packId;
+
+      const quality=globalThis.LibraryQualityGate?.prepare?.(item,packId);
+      if(quality&&quality.keep===false)continue;
+
+      const meta=indexById.get(item.id);
+      if(meta&&meta.category!==item.category)meta.category=item.category;
+
       const verdict=globalThis.LibraryVisualDedupe?.accept?.(item,packId);
       if(verdict&&verdict.keep===false)continue;
+
       byId.set(item.id,item);
       loadedItems.push(item);
       accepted.push(item);
@@ -124,7 +132,10 @@
     if(byId.get(id)?.__pack)return byId.get(id).__pack;
     return indexById.get(id)?.pack||"core";
   }
-  function isHidden(id){return !!globalThis.LibraryVisualDedupe?.isHidden?.(id)}
+  function isHidden(id){
+    return !!globalThis.LibraryQualityGate?.isHidden?.(id)||
+      !!globalThis.LibraryVisualDedupe?.isHidden?.(id)
+  }
   function visibleIndex(){return index.filter(x=>!isHidden(x.id))}
   function count(packId){
     const list=visibleIndex();
@@ -147,7 +158,9 @@
     return accepted;
   }
   function stats(){
-    return {total:visibleIndex().length,loaded:loadedItems.length,deduped:globalThis.LibraryVisualDedupe?.hiddenIds?.size||0,categories:(globalThis.LibraryCategories||[]).length,packs:Object.fromEntries([...Object.keys(manifest),...runtimePacks.keys()].map(id=>[id,{count:count(id)||runtimePacks.get(id)?.length||0,loaded:loadedPacks.has(id)}]))};
+    const qualityRemoved=globalThis.LibraryQualityGate?.hiddenIds?.size||0;
+    const visualRemoved=globalThis.LibraryVisualDedupe?.hiddenIds?.size||0;
+    return {total:visibleIndex().length,loaded:loadedItems.length,deduped:qualityRemoved+visualRemoved,qualityRemoved,visualRemoved,categories:(globalThis.LibraryCategories||[]).length,packs:Object.fromEntries([...Object.keys(manifest),...runtimePacks.keys()].map(id=>[id,{count:count(id)||runtimePacks.get(id)?.length||0,loaded:loadedPacks.has(id)}]))};
   }
 
   registerExisting("core");
@@ -156,6 +169,10 @@
     loadPack,ensureComponent,find:id=>byId.get(id)||null,metaFor,packOf,count,
     itemsInPack:id=>id==="all"?loadedItems:loadedItems.filter(x=>packOf(x)===id),
     searchMeta,unloadedPacks,registerRuntime,stats,ensureMetadata,isMetadataReady:()=>metadataReady,
-    isHidden,visibleIndex,dedupeReport:()=>globalThis.LibraryVisualDedupe?.report?.()||{removed:0,duplicates:[]}
+    isHidden,visibleIndex,
+    dedupeReport:()=>({
+      quality:globalThis.LibraryQualityGate?.report?.()||{removed:0},
+      visual:globalThis.LibraryVisualDedupe?.report?.()||{removed:0,duplicates:[]}
+    })
   };
 })();
