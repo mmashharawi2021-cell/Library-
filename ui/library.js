@@ -12,6 +12,16 @@ function renderInitial(){
     renderOverview();renderFilters();renderGrid();
     requestAnimationFrame(()=>globalThis.LibraryPerformance?.recordRender?.('startup',performance.now()-started,document.querySelectorAll('.component-card').length));
   });
+
+  const hydrateUniqueCatalog=async()=>{
+    try{
+      await globalThis.LibraryRegistry?.loadPack?.('all');
+      resetGridWindow();renderNav();renderOverview();renderFilters();renderGrid();header();syncPackFilter();
+      dispatchEvent(new CustomEvent('library:visual-dedupe-complete',{detail:globalThis.LibraryRegistry?.dedupeReport?.()}));
+    }catch(err){console.warn('Visual dedupe hydration failed',err)}
+  };
+  if('requestIdleCallback' in window)requestIdleCallback(hydrateUniqueCatalog,{timeout:900});
+  else setTimeout(hydrateUniqueCatalog,120);
 }
 function setCat(id){state.mode='library';state.cat=id;state.filter='All';state.q='';el.search.value='';$$('[data-view]').forEach(b=>b.classList.remove('active'));renderAll();$('#library').scrollIntoView({behavior:'smooth'});$('#sidebar').classList.remove('open')}
 function recent(id){state.recent=[id,...state.recent.filter(x=>x!==id)].slice(0,12);persist();header()}
