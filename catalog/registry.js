@@ -6,8 +6,10 @@
     motion:{id:"motion",label:"Motion",file:"catalog/packs/motion.js",global:"LibraryPackMotion"},
     origin:{id:"origin",label:"Origin",file:"catalog/packs/origin.js",global:"LibraryPackOrigin"}
   };
-  const index=globalThis.LibrarySearchIndex||[];
+  const index=[...(globalThis.LibrarySearchIndex||globalThis.LibraryManifestIndex||[])];
   const indexById=new Map(index.map(x=>[x.id,x]));
+  let metadataReady=Array.isArray(globalThis.LibrarySearchIndex)&&globalThis.LibrarySearchIndex.length>0;
+  let metadataLoading=null;
   const loadedItems=[];
   const byId=new Map();
   const loadedPacks=new Set();
@@ -38,6 +40,35 @@
       script.onload=resolve;script.onerror=()=>reject(new Error("Failed to load "+src));
       document.head.appendChild(script);
     });
+  }
+  function injectMetadataScript(){
+    return new Promise((resolve,reject)=>{
+      if(globalThis.LibrarySearchIndex?.length){resolve();return}
+      const existing=document.querySelector('script[data-library-metadata]');
+      if(existing){existing.addEventListener('load',resolve,{once:true});existing.addEventListener('error',reject,{once:true});return}
+      const script=document.createElement("script");
+      script.src="catalog/search-index.js";script.async=true;script.dataset.libraryMetadata="1";
+      script.onload=resolve;script.onerror=()=>reject(new Error("Failed to load catalog metadata"));
+      document.head.appendChild(script);
+    });
+  }
+  function hydrateMetadata(full){
+    if(!Array.isArray(full)||!full.length)return index;
+    const runtime=index.filter(x=>!manifest[x.pack]);
+    index.splice(0,index.length,...full);
+    for(const meta of runtime)if(!index.some(x=>x.id===meta.id))index.push(meta);
+    indexById.clear();for(const meta of index)indexById.set(meta.id,meta);
+    metadataReady=true;
+    dispatchEvent(new CustomEvent("library:metadata-loaded",{detail:{count:index.length}}));
+    return index;
+  }
+  function ensureMetadata(){
+    if(metadataReady)return Promise.resolve(index);
+    if(metadataLoading)return metadataLoading;
+    metadataLoading=injectMetadataScript()
+      .then(()=>hydrateMetadata(globalThis.LibrarySearchIndex||[]))
+      .finally(()=>{metadataLoading=null});
+    return metadataLoading;
   }
   async function loadPack(packId){
     if(packId==="all"){await Promise.all(Object.keys(manifest).map(loadPack));return loadedItems}
@@ -92,6 +123,6 @@
     version:"3.0.0",manifest,index,loadedItems,all:loadedItems,byId,loadedPacks,
     loadPack,ensureComponent,find:id=>byId.get(id)||null,metaFor,packOf,count,
     itemsInPack:id=>id==="all"?loadedItems:loadedItems.filter(x=>packOf(x)===id),
-    searchMeta,unloadedPacks,registerRuntime,stats
+    searchMeta,unloadedPacks,registerRuntime,stats,ensureMetadata,isMetadataReady:()=>metadataReady
   };
 })();
