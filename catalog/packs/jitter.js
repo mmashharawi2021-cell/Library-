@@ -1095,11 +1095,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "snappy-text-stretch",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-0 jq-fx jq-text-split\"><span>Snappy</span><span>Text</span><span>Stretch</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-0 jq-fx jq-text-split qv-1\"><span>Snappy</span><span>Text</span><span>Stretch</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1115,7 +1116,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-002",
@@ -1128,11 +1130,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blur-swirl",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-1 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Blur Swirl</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-1 jq-fx jq-blobs qv-1\"><i></i><i></i><i></i><b>Blur Swirl</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1148,7 +1151,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-003",
@@ -1161,11 +1165,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "morph-inflating-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split\"><span>Morph</span><span>Inflating</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Morph</span><span>Inflating</span><span>Text</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1181,7 +1186,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-004",
@@ -1194,11 +1200,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "dithering-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-gridfx\"><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Dithering Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-gridfx qv-1\"><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Dithering Effect</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1214,7 +1221,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-grid"
+    "qualityTemplate": "fx-grid",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-005",
@@ -1227,11 +1235,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blurry-text-spin",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split\"><span>Blurry</span><span>Text</span><span>Spin</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split qv-3\"><span>Blurry</span><span>Text</span><span>Spin</span><i></i><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1247,7 +1256,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-006",
@@ -1260,11 +1270,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "image-stretch-transition",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Image Stretch Transition</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Image Stretch Transition</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1280,7 +1291,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-007",
@@ -1293,11 +1305,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "card-flip",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-flip\"><div class=\"jq-flip-card\"><span class=\"front\"></span><span class=\"back\"></span></div><b>Card Flip</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-flip qv-1\"><div class=\"jq-flip-card\"><span class=\"front\"></span><span class=\"back\"></span></div><b>Card Flip</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1313,7 +1326,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-flip"
+    "qualityTemplate": "media-flip",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-008",
@@ -1326,11 +1340,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "stretched-type-repeater",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-trail\"><span>Stretched Type Repeater</span><span aria-hidden=\"true\">Stretched Type Repeater</span><span aria-hidden=\"true\">Stretched Type Repeater</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-trail qv-1\"><span>Stretched Type Repeater</span><span aria-hidden=\"true\">Stretched Type Repeater</span><span aria-hidden=\"true\">Stretched Type Repeater</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1346,7 +1361,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-trail"
+    "qualityTemplate": "fx-text-trail",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-009",
@@ -1359,11 +1375,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-haze",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Haze</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-blobs qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><b>Gradients Haze</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1379,7 +1396,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-010",
@@ -1392,11 +1410,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gooey-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gooey Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs qv-3\"><i></i><i></i><i></i><b>Gooey Effect</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1412,7 +1431,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-011",
@@ -1425,11 +1445,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-halftone-poster",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-10 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Halftone Poster</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-10 jq-data jq-counter qv-1\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Halftone Poster</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1445,7 +1466,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-012",
@@ -1458,11 +1480,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blur-text-scroller",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-11 jq-fx jq-text-split\"><span>Blur</span><span>Text</span><span>Scroller</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-11 jq-fx jq-text-split qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Blur</span><span>Text</span><span>Scroller</span><i></i><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1478,7 +1501,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-013",
@@ -1491,11 +1515,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "color-pills-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-0 jq-ui jq-pills\"><span>01</span><span>02</span><span>03</span><b>Color Pills Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-0 jq-ui jq-pills qv-1\"><span>01</span><span>02</span><span>03</span><b>Color Pills Reveal</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1511,7 +1536,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-pills"
+    "qualityTemplate": "ui-pills",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-014",
@@ -1524,11 +1550,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-frosted-glass",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Frosted Glass</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-counter qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Frosted Glass</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1544,7 +1571,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-015",
@@ -1557,11 +1585,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "type-trail",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-trail\"><span>Type Trail</span><span aria-hidden=\"true\">Type Trail</span><span aria-hidden=\"true\">Type Trail</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-trail qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Type Trail</span><span aria-hidden=\"true\">Type Trail</span><span aria-hidden=\"true\">Type Trail</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1577,7 +1606,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-trail"
+    "qualityTemplate": "fx-text-trail",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-016",
@@ -1590,11 +1620,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "pixelated-slideshow",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Pixelated Slideshow</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-stack qv-1\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Pixelated Slideshow</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1610,7 +1641,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-017",
@@ -1623,11 +1655,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "morph-dots-to-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split\"><span>Morph</span><span>Dots</span><span>To</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Morph</span><span>Dots</span><span>To</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1643,7 +1676,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-018",
@@ -1656,11 +1690,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blend-modes-circle-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-rings\"><span></span><span></span><span></span><b>Blend Modes Circle Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-rings qv-1\"><span></span><span></span><span></span><b>Blend Modes Circle Stack</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1676,7 +1711,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-rings"
+    "qualityTemplate": "fx-rings",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-019",
@@ -1689,11 +1725,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "grainy-color-clamp",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers\"><span></span><span></span><span></span><b>Grainy Color Clamp</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers qv-1\"><span></span><span></span><span></span><b>Grainy Color Clamp</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1709,7 +1746,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-020",
@@ -1722,11 +1760,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "color-cards-cascade",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Cards Cascade</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-stack qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Cards Cascade</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1742,7 +1781,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-021",
@@ -1755,11 +1795,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "inward-echo-loop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers\"><span></span><span></span><span></span><b>Inward Echo Loop</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Inward Echo Loop</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1775,7 +1816,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-022",
@@ -1788,11 +1830,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blend-modes-color-blocks",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-layers\"><span></span><span></span><span></span><b>Blend Modes Color Blocks</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-layers qv-3\"><span></span><span></span><span></span><b>Blend Modes Color Blocks</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1808,7 +1851,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-023",
@@ -1821,11 +1865,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "bold-color-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-layers\"><span></span><span></span><span></span><b>Bold Color List</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-layers qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Bold Color List</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1841,7 +1886,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-024",
@@ -1854,11 +1900,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "pixelated-mask",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Pixelated Mask</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask qv-1\"><div class=\"jq-mask-shape\"><span></span></div><b>Pixelated Mask</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1874,7 +1921,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-025",
@@ -1887,11 +1935,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "luma-dot-background",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-gridfx\"><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Luma Dot Background</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-gridfx qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Luma Dot Background</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1907,7 +1956,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-grid"
+    "qualityTemplate": "fx-grid",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-026",
@@ -1920,11 +1970,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "morphing-icons",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-1 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Morphing Icons</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-1 jq-icon jq-morph qv-1\"><div><i>◆</i><span>●</span></div><b>Morphing Icons</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1940,7 +1991,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-027",
@@ -1953,11 +2005,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blend-modes-gradient-orbs",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-2 jq-fx jq-rings\"><span></span><span></span><span></span><b>Blend Modes Gradient Orbs</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-2 jq-fx jq-rings qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Blend Modes Gradient Orbs</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1973,7 +2026,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-rings"
+    "qualityTemplate": "fx-rings",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-028",
@@ -1986,11 +2040,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "crt-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-layers\"><span></span><span></span><span></span><b>CRT Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-layers qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>CRT Effect</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2006,7 +2061,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-029",
@@ -2019,11 +2075,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "color-ring-bounce-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-ringicon\"><div><i></i><span>●</span></div><b>Color Ring Bounce Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-ringicon qv-1\"><div><i></i><span>●</span></div><b>Color Ring Bounce Reveal</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2039,7 +2096,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-ring"
+    "qualityTemplate": "icon-ring",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-030",
@@ -2052,11 +2110,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "3d-rotation",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-flip\"><div class=\"jq-flip-card\"><span class=\"front\"></span><span class=\"back\"></span></div><b>3D Rotation</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-flip qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-flip-card\"><span class=\"front\"></span><span class=\"back\"></span></div><b>3D Rotation</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2072,7 +2131,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-flip"
+    "qualityTemplate": "media-flip",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-031",
@@ -2085,11 +2145,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "color-keying-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers\"><span></span><span></span><span></span><b>Color Keying Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Color Keying Effect</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2105,7 +2166,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-032",
@@ -2118,11 +2180,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blend-modes-collage-shuffle",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Blend Modes Collage Shuffle</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid qv-1\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Blend Modes Collage Shuffle</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2138,7 +2201,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-033",
@@ -2151,11 +2215,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "threshold-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers\"><span></span><span></span><span></span><b>Threshold Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers qv-7\"><span></span><span></span><span></span><b>Threshold Effect</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2171,7 +2236,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-034",
@@ -2184,11 +2250,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "fluted-glass-background",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Fluted Glass Background</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><b>Fluted Glass Background</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2204,7 +2271,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-035",
@@ -2217,11 +2285,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "circular-loader",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-10 jq-load jq-ring\"><div class=\"jq-spinner\"><i></i></div><b>Circular Loader</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-10 jq-load jq-ring qv-1\"><div class=\"jq-spinner\"><i></i></div><b>Circular Loader</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2237,7 +2306,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-ring"
+    "qualityTemplate": "loader-ring",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-036",
@@ -2250,11 +2320,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "morph-video-mask",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Morph Video Mask</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-mask-shape\"><span></span></div><b>Morph Video Mask</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2270,7 +2341,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-037",
@@ -2283,11 +2355,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-petals",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Petals</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Gradients Petals</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2303,7 +2376,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-038",
@@ -2316,11 +2390,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "rotating-cards",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Rotating Cards</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack qv-3\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Rotating Cards</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2336,7 +2411,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-039",
@@ -2349,11 +2425,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "text-extrusion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split\"><span>Text</span><span>Extrusion</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Text</span><span>Extrusion</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2369,7 +2446,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-040",
@@ -2382,11 +2460,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "sliding-web-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Web Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Web Screens</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2402,7 +2481,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-041",
@@ -2415,11 +2495,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blend-modes-type-blend",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split\"><span>Blend</span><span>Modes</span><span>Type</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split qv-7\"><span>Blend</span><span>Modes</span><span>Type</span><i></i><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2435,7 +2516,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-042",
@@ -2448,11 +2530,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-diagonal-sweep",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Diagonal Sweep</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-blobs qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Gradients Diagonal Sweep</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2468,7 +2551,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-043",
@@ -2481,11 +2565,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "animated-emoji-button",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-6 jq-ui jq-action\" type=\"button\"><i></i><span>Animated Emoji Button</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-6 jq-ui jq-action qv-1\" type=\"button\"><i></i><span>Animated Emoji Button</span><b>↗</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -2501,7 +2586,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-044",
@@ -2514,11 +2600,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-repeater",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-7 jq-fx jq-layers\"><span></span><span></span><span></span><b>Animated Repeater</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-7 jq-fx jq-layers qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Animated Repeater</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2534,7 +2621,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-045",
@@ -2547,11 +2635,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-cards",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Animated Cards</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-stack qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Animated Cards</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2567,7 +2656,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-046",
@@ -2580,11 +2670,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "before-after-slider",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-compare\"><div class=\"jq-before\"></div><div class=\"jq-after\"></div><span class=\"jq-handle\"></span><b>Before After Slider</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-compare qv-1\"><div class=\"jq-before\"></div><div class=\"jq-after\"></div><span class=\"jq-handle\"></span><b>Before After Slider</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2600,7 +2691,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-compare"
+    "qualityTemplate": "media-compare",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-047",
@@ -2613,11 +2705,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-mobile-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Mobile Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Mobile Screens</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2633,7 +2726,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-048",
@@ -2646,11 +2740,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "morph-shape-to-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-11 jq-fx jq-text-split\"><span>Morph</span><span>Shape</span><span>To</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-11 jq-fx jq-text-split qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Morph</span><span>Shape</span><span>To</span><i></i><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2666,7 +2761,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-049",
@@ -2679,11 +2775,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-vertical-sweep",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Vertical Sweep</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs qv-7\"><i></i><i></i><i></i><b>Gradients Vertical Sweep</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2699,7 +2796,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-050",
@@ -2712,11 +2810,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-bold-poster",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Bold Poster</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-counter qv-3\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Bold Poster</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2732,7 +2831,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-051",
@@ -2745,11 +2845,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "mobile-screens-grid",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Mobile Screens Grid</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-grid qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Mobile Screens Grid</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2765,7 +2866,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-052",
@@ -2778,11 +2880,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "elastic-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-3 jq-fx jq-text-split\"><span>Elastic</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-3 jq-fx jq-text-split qv-1\"><span>Elastic</span><span>Text</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2798,7 +2901,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-053",
@@ -2811,11 +2915,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "dancing-dots",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Dancing Dots</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>◆</i><span>●</span></div><b>Dancing Dots</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2831,7 +2936,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-054",
@@ -2844,11 +2950,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "slideshow-loop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Slideshow Loop</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-stack qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Slideshow Loop</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2864,7 +2971,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-055",
@@ -2877,11 +2985,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "circle-cascade",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-ringicon\"><div><i></i><span>●</span></div><b>Circle Cascade</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-ringicon qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i></i><span>●</span></div><b>Circle Cascade</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2897,7 +3006,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-ring"
+    "qualityTemplate": "icon-ring",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-056",
@@ -2910,11 +3020,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "cascading-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Screens</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2930,7 +3041,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-057",
@@ -2943,11 +3055,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "cascading-mobile-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Mobile Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Mobile Screens</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2963,7 +3076,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-058",
@@ -2976,11 +3090,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-web-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Web Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-grid qv-3\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Web Gallery</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2996,7 +3111,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-059",
@@ -3009,11 +3125,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "tilted-text-snap",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-10 jq-fx jq-text-split\"><span>Tilted</span><span>Text</span><span>Snap</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-10 jq-fx jq-text-split qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Tilted</span><span>Text</span><span>Snap</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3029,7 +3146,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-060",
@@ -3042,11 +3160,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "web-screens-grid",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Web Screens Grid</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-grid qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Web Screens Grid</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3062,7 +3181,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-061",
@@ -3075,11 +3195,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "rotating-mobile-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rotating Mobile Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rotating Mobile Screens</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3095,7 +3216,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-062",
@@ -3108,11 +3230,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-photo-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Photo Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-grid qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Photo Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3128,7 +3251,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-063",
@@ -3141,11 +3265,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "push-notifications-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-2 jq-ui jq-notify\"><span><i></i><b>Push Notifications List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-2 jq-ui jq-notify qv-1\"><span><i></i><b>Push Notifications List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3161,7 +3286,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-064",
@@ -3174,11 +3300,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "push-notification",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-3 jq-ui jq-notify\"><span><i></i><b>Push Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-3 jq-ui jq-notify qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span><i></i><b>Push Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3194,7 +3321,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-065",
@@ -3207,11 +3335,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "grid-chart-split",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-4 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Grid Chart Split</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-4 jq-data jq-bars-chart qv-1\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Grid Chart Split</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3227,7 +3356,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-066",
@@ -3240,11 +3370,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "liquid-glass-menu-vertical",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-5 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Liquid Glass Menu Vertical</b></div>",
+      "html": "<div class=\"jp-preset jp-5 jq-ui jq-menu qv-1\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Liquid Glass Menu Vertical</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3260,7 +3391,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-067",
@@ -3273,11 +3405,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "mobile-gallery-grid",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Mobile Gallery Grid</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-grid qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Mobile Gallery Grid</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3293,7 +3426,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-068",
@@ -3306,11 +3440,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "web-gallery-grid",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Web Gallery Grid</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid qv-7\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Web Gallery Grid</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3326,7 +3461,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-069",
@@ -3339,11 +3475,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "mobile-screens-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Mobile Screens Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-mask qv-3\"><div class=\"jq-mask-shape\"><span></span></div><b>Mobile Screens Reveal</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3359,7 +3496,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-070",
@@ -3372,11 +3510,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-bento",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Bento</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Gradients Bento</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3392,7 +3531,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-071",
@@ -3405,11 +3545,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "glitch-text-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-10 jq-fx jq-text-glitch\"><span data-text=\"Glitch Text Reveal\">Glitch Text Reveal</span><i></i><b></b></div>",
+      "html": "<div class=\"jp-preset jp-text jp-10 jq-fx jq-text-glitch qv-1\"><span data-text=\"Glitch Text Reveal\">Glitch Text Reveal</span><i></i><b></b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3425,7 +3566,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-glitch"
+    "qualityTemplate": "fx-text-glitch",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-072",
@@ -3438,11 +3580,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-web-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Web Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Web Screens</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3458,7 +3601,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-073",
@@ -3471,11 +3615,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "animated-text-messages",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-0 jq-ui jq-notify\"><span><i></i><b>Animated Text Messages</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-0 jq-ui jq-notify qv-3\"><span><i></i><b>Animated Text Messages</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3491,7 +3636,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-074",
@@ -3504,11 +3650,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "morph-line-to-radar-chart",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-radial\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Morph Line To Radar Chart</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-radial qv-1\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Morph Line To Radar Chart</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3524,7 +3671,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-radial"
+    "qualityTemplate": "data-radial",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-075",
@@ -3537,11 +3685,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "animated-progress-bar",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-2 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Animated Progress Bar</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-2 jq-data jq-bars-chart qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i></i><i></i><i></i><i></i><i></i></div><b>Animated Progress Bar</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3557,7 +3706,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-076",
@@ -3570,11 +3720,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "bold-text-snap",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-3 jq-fx jq-text-split\"><span>Bold</span><span>Text</span><span>Snap</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-3 jq-fx jq-text-split qv-3\"><span>Bold</span><span>Text</span><span>Snap</span><i></i><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3590,7 +3741,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-077",
@@ -3603,11 +3755,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "animated-ui-kit",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-action\" type=\"button\"><i></i><span>Animated UI Kit</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-action qv-2\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><i></i><span>Animated UI Kit</span><b>↗</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -3623,7 +3776,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-078",
@@ -3636,11 +3790,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "bouncy-words",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-5 jq-fx jq-text-split\"><span>Bouncy</span><span>Words</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-5 jq-fx jq-text-split qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Bouncy</span><span>Words</span><i></i><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3656,7 +3811,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-079",
@@ -3669,11 +3825,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "card-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Card Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-mask qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-mask-shape\"><span></span></div><b>Card Reveal</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3689,7 +3846,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-080",
@@ -3702,11 +3860,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "morph-lines-to-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-split\"><span>Morph</span><span>Lines</span><span>To</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-split qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Morph</span><span>Lines</span><span>To</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3722,7 +3881,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-081",
@@ -3735,11 +3895,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "sliding-squares",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers\"><span></span><span></span><span></span><b>Sliding Squares</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers qv-1\"><span></span><span></span><span></span><b>Sliding Squares</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3755,7 +3916,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-082",
@@ -3768,11 +3930,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "interactive-badges",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-9 jq-ui jq-pills\"><span>01</span><span>02</span><span>03</span><b>Interactive Badges</b></div>",
+      "html": "<div class=\"jp-preset jp-9 jq-ui jq-pills qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>01</span><span>02</span><span>03</span><b>Interactive Badges</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3788,7 +3951,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-pills"
+    "qualityTemplate": "ui-pills",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-083",
@@ -3801,11 +3965,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "color-cards-expand",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Cards Expand</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-stack qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Cards Expand</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3821,7 +3986,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-084",
@@ -3834,11 +4000,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "on-off-toggle",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-11 jq-ui jq-toggle\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>On Off Toggle</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-11 jq-ui jq-toggle qv-1\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>On Off Toggle</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -3854,7 +4021,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-toggle"
+    "qualityTemplate": "ui-toggle",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-085",
@@ -3867,11 +4035,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-morphing-shapes",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Morphing Shapes</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs qv-1\"><i></i><i></i><i></i><b>Gradients Morphing Shapes</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3887,7 +4056,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-086",
@@ -3900,11 +4070,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "color-cards-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Cards Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack qv-7\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Cards Stack</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3920,7 +4091,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-087",
@@ -3933,11 +4105,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "bar-chart-skyline",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-2 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Bar Chart Skyline</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-2 jq-data jq-bars-chart qv-3\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Bar Chart Skyline</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3953,7 +4126,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-088",
@@ -3966,11 +4140,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "floating-action-menu",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-3 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Floating Action Menu</b></div>",
+      "html": "<div class=\"jp-preset jp-3 jq-ui jq-menu qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Floating Action Menu</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3986,7 +4161,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-089",
@@ -3999,11 +4175,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "bouncy-icons",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Bouncy Icons</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph qv-3\"><div><i>◆</i><span>●</span></div><b>Bouncy Icons</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4019,7 +4196,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-090",
@@ -4032,11 +4210,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-progress-ring",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-5 jq-data jq-radial\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Counter Progress Ring</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-5 jq-data jq-radial qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Counter Progress Ring</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4052,7 +4231,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-radial"
+    "qualityTemplate": "data-radial",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-091",
@@ -4065,11 +4245,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "halftone-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers\"><span></span><span></span><span></span><b>Halftone Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Halftone Effect</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4085,7 +4266,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-092",
@@ -4098,11 +4280,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "cascading-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-split\"><span>Cascading</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-split qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Cascading</span><span>Text</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4118,7 +4301,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-093",
@@ -4131,11 +4315,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradients-animated-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradients Animated List</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-blobs qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><b>Gradients Animated List</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4151,7 +4336,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-094",
@@ -4164,11 +4350,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "interactive-button-trace",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-9 jq-ui jq-action\" type=\"button\"><i></i><span>Interactive Button Trace</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-9 jq-ui jq-action qv-3\" type=\"button\"><i></i><span>Interactive Button Trace</span><b>↗</b><em class=\"qv-state\">Motion</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -4184,7 +4371,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-095",
@@ -4197,11 +4385,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "rotate-and-scale",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-10 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Rotate And Scale</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-10 jq-icon jq-morph qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>◆</i><span>●</span></div><b>Rotate And Scale</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4217,7 +4406,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-096",
@@ -4230,11 +4420,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "animated-feature-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-11 jq-ui jq-notify\"><span><i></i><b>Animated Feature List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-11 jq-ui jq-notify qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span><i></i><b>Animated Feature List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4250,7 +4441,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-097",
@@ -4263,11 +4455,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "sliding-text-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-0 jq-fx jq-text-split\"><span>Sliding</span><span>Text</span><span>Reveal</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-0 jq-fx jq-text-split qv-7\"><span>Sliding</span><span>Text</span><span>Reveal</span><i></i><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4283,7 +4476,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-098",
@@ -4296,11 +4490,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "video-title-slide",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-1 jq-fx jq-text-split\"><span>Video</span><span>Title</span><span>Slide</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-1 jq-fx jq-text-split qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Video</span><span>Title</span><span>Slide</span><i></i><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4316,7 +4511,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-099",
@@ -4329,11 +4525,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "negative-mask-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Negative Mask Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-mask qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-mask-shape\"><span></span></div><b>Negative Mask Effect</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4349,7 +4546,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-100",
@@ -4362,11 +4560,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-glitch",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-3 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Glitch</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-3 jq-data jq-counter qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Glitch</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4382,7 +4581,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-101",
@@ -4395,11 +4595,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "liquid-glass-toggle",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-toggle\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>Liquid Glass Toggle</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-toggle qv-2\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><span class=\"jq-track\"><i></i></span><b>Liquid Glass Toggle</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -4415,7 +4616,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-toggle"
+    "qualityTemplate": "ui-toggle",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-102",
@@ -4428,11 +4630,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "looped-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-5 jq-fx jq-text-split\"><span>Looped</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-5 jq-fx jq-text-split qv-1\"><span>Looped</span><span>Text</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4448,7 +4651,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-103",
@@ -4461,11 +4665,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "geometric-morph",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers\"><span></span><span></span><span></span><b>Geometric Morph</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers qv-3\"><span></span><span></span><span></span><b>Geometric Morph</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4481,7 +4686,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-104",
@@ -4494,11 +4700,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "animated-slider",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-7 jq-ui jq-progress\" type=\"button\"><span class=\"jq-progress-bar\"><i></i></span><b>Animated Slider</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-7 jq-ui jq-progress qv-1\" type=\"button\"><span class=\"jq-progress-bar\"><i></i></span><b>Animated Slider</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -4514,7 +4721,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-progress"
+    "qualityTemplate": "ui-progress",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-105",
@@ -4527,11 +4735,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "animated-arrow",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-8 jq-icon jq-arrows\"><div><i>⌄</i><i>⌄</i><i>⌄</i></div><b>Animated Arrow</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-8 jq-icon jq-arrows qv-1\"><div><i>⌄</i><i>⌄</i><i>⌄</i></div><b>Animated Arrow</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4547,7 +4756,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-arrows"
+    "qualityTemplate": "icon-arrows",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-106",
@@ -4560,11 +4770,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "loading-spinner-infinite",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-9 jq-load jq-ring\"><div class=\"jq-spinner\"><i></i></div><b>Loading Spinner Infinite</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-9 jq-load jq-ring qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-spinner\"><i></i></div><b>Loading Spinner Infinite</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4580,7 +4791,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-ring"
+    "qualityTemplate": "loader-ring",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-107",
@@ -4593,11 +4805,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "loading-spinner-success",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-10 jq-load jq-success\"><div class=\"jq-check\">✓</div><b>Loading Spinner Success</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-10 jq-load jq-success qv-1\"><div class=\"jq-check\">✓</div><b>Loading Spinner Success</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4613,7 +4826,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-success"
+    "qualityTemplate": "loader-success",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-108",
@@ -4626,11 +4840,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "progress-donut",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-11 jq-data jq-radial\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Progress Donut</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-11 jq-data jq-radial qv-3\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Progress Donut</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4646,7 +4861,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-radial"
+    "qualityTemplate": "data-radial",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-109",
@@ -4659,11 +4875,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "splitting-cube-loop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Splitting Cube Loop</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Splitting Cube Loop</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4679,7 +4896,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-110",
@@ -4692,11 +4910,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "loading-bars",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-1 jq-load jq-bars\"><div><i></i><i></i><i></i><i></i></div><b>Loading Bars</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-1 jq-load jq-bars qv-1\"><div><i></i><i></i><i></i><i></i></div><b>Loading Bars</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4712,7 +4931,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-bars"
+    "qualityTemplate": "loader-bars",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-111",
@@ -4725,11 +4945,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "perspective-tunnel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-2 jq-fx jq-layers\"><span></span><span></span><span></span><b>Perspective Tunnel</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-2 jq-fx jq-layers qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Perspective Tunnel</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4745,7 +4966,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-112",
@@ -4758,11 +4980,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "pixel-dissolve-transition",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-pixel\"><div class=\"jq-pixels\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Pixel Dissolve Transition</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-pixel qv-1\"><div class=\"jq-pixels\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Pixel Dissolve Transition</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4778,7 +5001,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-pixel"
+    "qualityTemplate": "media-pixel",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-113",
@@ -4791,11 +5015,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-blur",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-4 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Blur</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-4 jq-data jq-counter qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Blur</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4811,7 +5036,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-114",
@@ -4824,11 +5050,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-color-palette",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-layers\"><span></span><span></span><span></span><b>Animated Color Palette</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-layers qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Animated Color Palette</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4844,7 +5071,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-115",
@@ -4857,11 +5085,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "blur-bubbles",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Blur Bubbles</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-blobs qv-3\"><i></i><i></i><i></i><b>Blur Bubbles</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4877,7 +5106,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-116",
@@ -4890,11 +5120,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "highlight-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-7 jq-fx jq-layers\"><span></span><span></span><span></span><b>Highlight Effect</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-7 jq-fx jq-layers qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Highlight Effect</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4910,7 +5141,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-117",
@@ -4923,11 +5155,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "five-stars-pop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-8 jq-icon jq-stars\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><b>Five Stars Pop</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-8 jq-icon jq-stars qv-1\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><b>Five Stars Pop</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4943,7 +5176,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-stars"
+    "qualityTemplate": "icon-stars",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-118",
@@ -4956,11 +5190,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "five-stars-move-up",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-9 jq-icon jq-stars\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><b>Five Stars Move Up</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-9 jq-icon jq-stars qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><b>Five Stars Move Up</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4976,7 +5211,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-stars"
+    "qualityTemplate": "icon-stars",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-119",
@@ -4989,11 +5225,12 @@ window.LibraryPackJitter=[
       "jitter",
       "animated",
       "continue-button-interaction",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-10 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Continue Button Interaction</b></div>",
+      "html": "<div class=\"jp-preset jp-10 jq-ui jq-menu qv-3\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Continue Button Interaction</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5009,7 +5246,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-120",
@@ -5022,11 +5260,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "glitchy-text-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-11 jq-fx jq-text-glitch\"><span data-text=\"Glitchy Text Reveal\">Glitchy Text Reveal</span><i></i><b></b></div>",
+      "html": "<div class=\"jp-preset jp-text jp-11 jq-fx jq-text-glitch qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span data-text=\"Glitchy Text Reveal\">Glitchy Text Reveal</span><i></i><b></b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5042,7 +5281,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-glitch"
+    "qualityTemplate": "fx-text-glitch",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-121",
@@ -5055,11 +5295,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "counter-pixel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-0 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Pixel</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-0 jq-data jq-counter qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Counter Pixel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5075,7 +5316,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 6
   },
   {
     "id": "JIT-122",
@@ -5088,11 +5330,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "text-mirror-effect",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-1 jq-fx jq-text-split\"><span>Text</span><span>Mirror</span><span>Effect</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-1 jq-fx jq-text-split qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Text</span><span>Mirror</span><span>Effect</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5108,7 +5351,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-123",
@@ -5121,11 +5365,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "kaleidoscope",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-2 jq-fx jq-layers\"><span></span><span></span><span></span><b>Kaleidoscope</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-2 jq-fx jq-layers qv-7\"><span></span><span></span><span></span><b>Kaleidoscope</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5141,7 +5386,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 7
   },
   {
     "id": "JIT-124",
@@ -5154,11 +5400,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-grid qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Gallery</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5174,7 +5421,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-125",
@@ -5187,11 +5435,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "moving-lines",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-4 jq-fx jq-layers\"><span></span><span></span><span></span><b>Moving Lines</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-4 jq-fx jq-layers qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Moving Lines</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5207,7 +5456,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 8
   },
   {
     "id": "JIT-126",
@@ -5220,11 +5470,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "animated-stripes",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-layers\"><span></span><span></span><span></span><b>Animated Stripes</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-layers qv-1\"><span></span><span></span><span></span><b>Animated Stripes</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5240,7 +5491,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 1
   },
   {
     "id": "JIT-127",
@@ -5253,11 +5505,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "chevrons-moving-down",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-arrows\"><div><i>⌄</i><i>⌄</i><i>⌄</i></div><b>Chevrons Moving Down</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-arrows qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>⌄</i><i>⌄</i><i>⌄</i></div><b>Chevrons Moving Down</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5273,7 +5526,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-arrows"
+    "qualityTemplate": "icon-arrows",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-128",
@@ -5286,11 +5540,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "chevrons-moving-up",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-arrows\"><div><i>⌄</i><i>⌄</i><i>⌄</i></div><b>Chevrons Moving Up</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-arrows qv-3\"><div><i>⌄</i><i>⌄</i><i>⌄</i></div><b>Chevrons Moving Up</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5306,7 +5561,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-arrows"
+    "qualityTemplate": "icon-arrows",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-129",
@@ -5319,11 +5575,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "rotating-squares",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers\"><span></span><span></span><span></span><b>Rotating Squares</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-8 jq-fx jq-layers qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Rotating Squares</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5339,7 +5596,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 2
   },
   {
     "id": "JIT-130",
@@ -5352,11 +5610,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "big-waves",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-layers\"><span></span><span></span><span></span><b>Big Waves</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-layers qv-3\"><span></span><span></span><span></span><b>Big Waves</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5372,7 +5631,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-131",
@@ -5385,11 +5645,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "moving-dots",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-gridfx\"><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Moving Dots</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-gridfx qv-3\"><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Moving Dots</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5405,7 +5666,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-grid"
+    "qualityTemplate": "fx-grid",
+    "qualityVariant": 3
   },
   {
     "id": "JIT-132",
@@ -5418,11 +5680,12 @@ window.LibraryPackJitter=[
       "jitter",
       "micro",
       "rotating-crosses",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-11 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Rotating Crosses</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-11 jq-icon jq-morph qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Rotating Crosses</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5438,7 +5701,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 5
   },
   {
     "id": "JIT-133",
@@ -5451,11 +5715,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "gradient-noisy-blur",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradient Noisy Blur</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><b>Gradient Noisy Blur</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5471,7 +5736,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 4
   },
   {
     "id": "JIT-134",
@@ -5484,11 +5750,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "bouncy-period",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-1 jq-fx jq-layers\"><span></span><span></span><span></span><b>Bouncy Period</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-1 jq-fx jq-layers qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Bouncy Period</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5504,7 +5771,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 4
   },
   {
     "id": "J2-001",
@@ -5516,11 +5784,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "gradient-background-loop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradient Background Loop</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-blobs qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Gradient Background Loop</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5536,7 +5805,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 5
   },
   {
     "id": "J2-002",
@@ -5548,11 +5818,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "vector-animation",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers\"><span></span><span></span><span></span><b>Vector Animation</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-6 jq-fx jq-layers qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Vector Animation</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5568,7 +5839,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 5
   },
   {
     "id": "J2-003",
@@ -5580,11 +5852,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "countdown-bold",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-7 jq-fx jq-layers\"><span></span><span></span><span></span><b>Countdown Bold</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-7 jq-fx jq-layers qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Countdown Bold</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5600,7 +5873,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 6
   },
   {
     "id": "J2-004",
@@ -5612,11 +5886,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "simple-notification",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-8 jq-ui jq-notify\"><span><i></i><b>Simple Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-8 jq-ui jq-notify qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span><i></i><b>Simple Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5632,7 +5907,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 5
   },
   {
     "id": "J2-005",
@@ -5644,11 +5920,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "color-ring-bounce",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-9 jq-icon jq-ringicon\"><div><i></i><span>●</span></div><b>Color Ring Bounce</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-9 jq-icon jq-ringicon qv-3\"><div><i></i><span>●</span></div><b>Color Ring Bounce</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5664,7 +5941,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-ring"
+    "qualityTemplate": "icon-ring",
+    "qualityVariant": 3
   },
   {
     "id": "J2-006",
@@ -5676,11 +5954,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "animated-icon-morph",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-10 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Animated Icon Morph</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-10 jq-icon jq-morph qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Animated Icon Morph</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5696,7 +5975,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 6
   },
   {
     "id": "J2-008",
@@ -5708,11 +5988,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "gradient-petals",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradient Petals</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-blobs qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Gradient Petals</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5728,7 +6009,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 6
   },
   {
     "id": "J2-009",
@@ -5740,11 +6022,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "rotating-card-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Rotating Card Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Rotating Card Stack</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5760,7 +6043,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 8
   },
   {
     "id": "J2-011",
@@ -5772,11 +6056,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "diagonal-gradient-sweep",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Diagonal Gradient Sweep</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-blobs qv-7\"><i></i><i></i><i></i><b>Diagonal Gradient Sweep</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5792,7 +6077,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 7
   },
   {
     "id": "J2-012",
@@ -5804,11 +6090,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "animated-emoji-control",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-action\" type=\"button\"><i></i><span>Animated Emoji Control</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-action qv-4\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><i></i><span>Animated Emoji Control</span><b>↗</b><em class=\"qv-state\">Motion</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -5824,7 +6111,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 4
   },
   {
     "id": "J2-013",
@@ -5836,11 +6124,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "release-notes-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Release Notes Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-stack qv-1\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Release Notes Stack</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5856,7 +6145,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 1
   },
   {
     "id": "J2-014",
@@ -5868,11 +6158,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "mobile-app-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile App Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile App Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5888,7 +6179,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J2-015",
@@ -5900,11 +6192,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "social-showreel-slider",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Social Showreel Slider</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Social Showreel Slider</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5920,7 +6213,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J2-016",
@@ -5932,11 +6226,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "cities-route",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cities Route</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cities Route</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5952,7 +6247,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J2-018",
@@ -5964,11 +6260,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "instruction-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Instruction Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Instruction Card</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5984,7 +6281,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J2-019",
@@ -5996,11 +6294,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "linear-card-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Linear Card Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-stack qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Linear Card Stack</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6016,7 +6315,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 2
   },
   {
     "id": "J2-020",
@@ -6028,11 +6328,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "revolving-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Revolving Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Revolving Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6048,7 +6349,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J2-021",
@@ -6060,11 +6362,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "frames-mobile-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Frames Mobile Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-grid qv-1\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Frames Mobile Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6080,7 +6383,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 1
   },
   {
     "id": "J2-022",
@@ -6092,11 +6396,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "mobile-screen-matrix",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile Screen Matrix</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile Screen Matrix</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6112,7 +6417,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J2-023",
@@ -6124,11 +6430,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "modular-bento-showreel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Modular Bento Showreel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Modular Bento Showreel</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6144,7 +6451,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J2-024",
@@ -6156,11 +6464,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "glide-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split\"><span>Glide</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-4 jq-fx jq-text-split qv-3\"><span>Glide</span><span>Text</span><i></i><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6176,7 +6485,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 3
   },
   {
     "id": "J2-025",
@@ -6188,11 +6498,12 @@ window.LibraryPackJitter=[
       "jitter",
       "loop",
       "dancing-dots-loader",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-5 jq-load jq-dots\"><div><i></i><i></i><i></i></div><b>Dancing Dots Loader</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-5 jq-load jq-dots qv-1\"><div><i></i><i></i><i></i></div><b>Dancing Dots Loader</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6208,7 +6519,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-dots"
+    "qualityTemplate": "loader-dots",
+    "qualityVariant": 1
   },
   {
     "id": "J2-026",
@@ -6220,11 +6532,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "simple-dot-mark",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Simple Dot Mark</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-morph qv-7\"><div><i>◆</i><span>●</span></div><b>Simple Dot Mark</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6240,7 +6553,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 7
   },
   {
     "id": "J2-027",
@@ -6252,11 +6566,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "circle-cascade-mark",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-ringicon\"><div><i></i><span>●</span></div><b>Circle Cascade Mark</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-ringicon qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i></i><span>●</span></div><b>Circle Cascade Mark</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6272,7 +6587,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-ring"
+    "qualityTemplate": "icon-ring",
+    "qualityVariant": 4
   },
   {
     "id": "J2-028",
@@ -6284,11 +6600,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "profile-live-status",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-8 jq-ui jq-action\" type=\"button\"><i></i><span>Profile Live Status</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-8 jq-ui jq-action qv-5\" type=\"button\"><small class=\"qv-dots\"><i></i><i></i><i></i></small><i></i><span>Profile Live Status</span><b>↗</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -6304,7 +6621,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 5
   },
   {
     "id": "J2-029",
@@ -6316,11 +6634,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "website-promo-panel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Website Promo Panel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Website Promo Panel</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6336,7 +6655,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J2-030",
@@ -6348,11 +6668,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "sliding-phone-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Phone Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Phone Screens</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6368,7 +6689,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J2-031",
@@ -6380,11 +6702,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "cascading-web-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Web Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Web Screens</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6400,7 +6723,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J2-032",
@@ -6412,11 +6736,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "cascading-phone-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Phone Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Cascading Phone Screens</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6432,7 +6757,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J2-034",
@@ -6444,11 +6770,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "horizontal-metrics-chart",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-2 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Horizontal Metrics Chart</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-2 jq-data jq-bars-chart qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i></i><i></i><i></i><i></i><i></i></div><b>Horizontal Metrics Chart</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6464,7 +6791,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 4
   },
   {
     "id": "J2-035",
@@ -6476,11 +6804,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "animated-mobile-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Mobile Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-grid qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Mobile Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6496,7 +6825,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 2
   },
   {
     "id": "J2-036",
@@ -6508,11 +6838,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "small-wave-background",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-4 jq-fx jq-layers\"><span></span><span></span><span></span><b>Small Wave Background</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-4 jq-fx jq-layers qv-7\"><span></span><span></span><span></span><b>Small Wave Background</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6528,7 +6859,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 7
   },
   {
     "id": "J2-037",
@@ -6540,11 +6872,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "tablet-screen-mockup",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Tablet Screen Mockup</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Tablet Screen Mockup</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6560,7 +6893,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J2-038",
@@ -6572,11 +6906,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "phone-screen-mockup",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Phone Screen Mockup</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Phone Screen Mockup</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6592,7 +6927,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J2-039",
@@ -6604,11 +6940,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "three-screen-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Three Screen Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Three Screen Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6624,7 +6961,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J2-040",
@@ -6636,11 +6974,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "notification-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-8 jq-ui jq-notify\"><span><i></i><b>Notification List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-8 jq-ui jq-notify qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span><i></i><b>Notification List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6656,7 +6995,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 6
   },
   {
     "id": "J2-041",
@@ -6668,11 +7008,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "message-notification",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-9 jq-ui jq-notify\"><span><i></i><b>Message Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-9 jq-ui jq-notify qv-7\"><span><i></i><b>Message Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6688,7 +7029,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 7
   },
   {
     "id": "J2-042",
@@ -6700,11 +7042,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "liquid-glass-vertical-menu",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-10 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Liquid Glass Vertical Menu</b></div>",
+      "html": "<div class=\"jp-preset jp-10 jq-ui jq-menu qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Liquid Glass Vertical Menu</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6720,7 +7063,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 4
   },
   {
     "id": "J2-043",
@@ -6732,11 +7076,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "mobile-gallery-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Mobile Gallery Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-grid qv-3\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Mobile Gallery Reveal</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6752,7 +7097,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 3
   },
   {
     "id": "J2-044",
@@ -6764,11 +7110,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "web-gallery-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Web Gallery Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-grid qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Web Gallery Reveal</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6784,7 +7131,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 4
   },
   {
     "id": "J2-045",
@@ -6796,11 +7144,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "glitch-text-reveal-one",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-1 jq-fx jq-text-glitch\"><span data-text=\"Glitch Text Reveal One\">Glitch Text Reveal One</span><i></i><b></b></div>",
+      "html": "<div class=\"jp-preset jp-text jp-1 jq-fx jq-text-glitch qv-3\"><span data-text=\"Glitch Text Reveal One\">Glitch Text Reveal One</span><i></i><b></b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6816,7 +7165,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-glitch"
+    "qualityTemplate": "fx-text-glitch",
+    "qualityVariant": 3
   },
   {
     "id": "J2-046",
@@ -6828,11 +7178,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "rotating-device-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rotating Device Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rotating Device Screens</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6848,7 +7199,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J2-047",
@@ -6860,11 +7212,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "cursor-interaction",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-3 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Cursor Interaction</b></div>",
+      "html": "<div class=\"jp-preset jp-3 jq-ui jq-menu qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Cursor Interaction</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6880,7 +7233,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 5
   },
   {
     "id": "J2-048",
@@ -6892,11 +7246,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "subscribe-field",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-action\" type=\"button\"><i></i><span>Subscribe Field</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-action qv-6\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><small class=\"qv-dots\"><i></i><i></i><i></i></small><i></i><span>Subscribe Field</span><b>↗</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -6912,7 +7267,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 6
   },
   {
     "id": "J2-049",
@@ -6924,11 +7280,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "article-gallery-blur",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Article Gallery Blur</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-grid qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Article Gallery Blur</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6944,7 +7301,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 5
   },
   {
     "id": "J2-050",
@@ -6956,11 +7314,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "radar-morph-chart",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-6 jq-data jq-radial\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Radar Morph Chart</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-6 jq-data jq-radial qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Radar Morph Chart</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6976,7 +7335,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-radial"
+    "qualityTemplate": "data-radial",
+    "qualityVariant": 4
   },
   {
     "id": "J2-052",
@@ -6988,11 +7348,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "feature-list-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-8 jq-ui jq-notify\"><span><i></i><b>Feature List Motion</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-8 jq-ui jq-notify qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span><i></i><b>Feature List Motion</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7008,7 +7369,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 8
   },
   {
     "id": "J2-053",
@@ -7020,11 +7382,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "bouncy-word-cloud",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-9 jq-fx jq-text-split\"><span>Bouncy</span><span>Word</span><span>Cloud</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-9 jq-fx jq-text-split qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Bouncy</span><span>Word</span><span>Cloud</span><i></i><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7040,7 +7403,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 4
   },
   {
     "id": "J2-054",
@@ -7052,11 +7416,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "app-list-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-10 jq-ui jq-notify\"><span><i></i><b>App List Motion</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-10 jq-ui jq-notify qv-1\"><span><i></i><b>App List Motion</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7072,7 +7437,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 1
   },
   {
     "id": "J2-055",
@@ -7084,11 +7450,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "screen-slider",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Screen Slider</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Screen Slider</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7104,7 +7471,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J2-056",
@@ -7116,11 +7484,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "message-bubble",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-0 jq-ui jq-notify\"><span><i></i><b>Message Bubble</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-0 jq-ui jq-notify qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span><i></i><b>Message Bubble</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7136,7 +7505,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 2
   },
   {
     "id": "J2-057",
@@ -7148,11 +7518,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "card-reveal-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Card Reveal Motion</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-mask qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-mask-shape\"><span></span></div><b>Card Reveal Motion</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7168,7 +7539,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 6
   },
   {
     "id": "J2-058",
@@ -7180,11 +7552,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "multiply-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split\"><span>Multiply</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Multiply</span><span>Text</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7200,7 +7573,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 5
   },
   {
     "id": "J2-059",
@@ -7212,11 +7586,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "interactive-badge-set",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-3 jq-ui jq-pills\"><span>01</span><span>02</span><span>03</span><b>Interactive Badge Set</b></div>",
+      "html": "<div class=\"jp-preset jp-3 jq-ui jq-pills qv-3\"><span>01</span><span>02</span><span>03</span><b>Interactive Badge Set</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7232,7 +7607,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-pills"
+    "qualityTemplate": "ui-pills",
+    "qualityVariant": 3
   },
   {
     "id": "J2-060",
@@ -7244,11 +7620,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "color-card-expansion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Color Card Expansion</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Color Card Expansion</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7264,7 +7641,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J2-061",
@@ -7276,11 +7654,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "glass-toggle",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-5 jq-ui jq-toggle\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>Glass Toggle</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-5 jq-ui jq-toggle qv-3\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>Glass Toggle</b><em class=\"qv-state\">Motion</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -7296,7 +7675,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-toggle"
+    "qualityTemplate": "ui-toggle",
+    "qualityVariant": 3
   },
   {
     "id": "J2-062",
@@ -7308,11 +7688,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "news-stack-blur",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>News Stack Blur</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-stack qv-3\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>News Stack Blur</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7328,7 +7709,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 3
   },
   {
     "id": "J2-063",
@@ -7340,11 +7722,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "color-and-text-blend",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-split\"><span>Color</span><span>And</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-7 jq-fx jq-text-split qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Color</span><span>And</span><span>Text</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7360,7 +7743,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 6
   },
   {
     "id": "J2-064",
@@ -7372,11 +7756,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "color-card-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Card Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-stack qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Color Card Stack</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7392,7 +7777,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 4
   },
   {
     "id": "J2-065",
@@ -7404,11 +7790,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "squeeze-text",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-9 jq-fx jq-text-split\"><span>Squeeze</span><span>Text</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-9 jq-fx jq-text-split qv-7\"><span>Squeeze</span><span>Text</span><i></i><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7424,7 +7811,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 7
   },
   {
     "id": "J2-066",
@@ -7436,11 +7824,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "image-parallax-carousel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Image Parallax Carousel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-stack qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Image Parallax Carousel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7456,7 +7845,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 5
   },
   {
     "id": "J2-067",
@@ -7468,11 +7858,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "payment-notification",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-11 jq-ui jq-notify\"><span><i></i><b>Payment Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-11 jq-ui jq-notify qv-3\"><span><i></i><b>Payment Notification</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7488,7 +7879,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 3
   },
   {
     "id": "J2-068",
@@ -7500,11 +7892,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "travel-boarding-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Travel Boarding Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Travel Boarding Card</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7520,7 +7913,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J2-069",
@@ -7532,11 +7926,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "cart-interaction",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-1 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Cart Interaction</b></div>",
+      "html": "<div class=\"jp-preset jp-1 jq-ui jq-menu qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Cart Interaction</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7552,7 +7947,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 6
   },
   {
     "id": "J2-070",
@@ -7564,11 +7960,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "social-icon-row",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-2 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Social Icon Row</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-2 jq-icon jq-morph qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Social Icon Row</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7584,7 +7981,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 8
   },
   {
     "id": "J2-071",
@@ -7596,11 +7994,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "like-badge",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-3 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Like Badge</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-3 jq-icon jq-morph qv-1\"><div><i>◆</i><span>●</span></div><b>Like Badge</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7616,7 +8015,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 1
   },
   {
     "id": "J2-072",
@@ -7628,11 +8028,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "new-badge-pop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>New Badge Pop</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>◆</i><span>●</span></div><b>New Badge Pop</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7648,7 +8049,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 2
   },
   {
     "id": "J2-073",
@@ -7660,11 +8062,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "like-icon-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-5 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Like Icon Motion</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-5 jq-icon jq-morph qv-3\"><div><i>◆</i><span>●</span></div><b>Like Icon Motion</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7680,7 +8083,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 3
   },
   {
     "id": "J2-074",
@@ -7692,11 +8096,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "dislike-icon-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Dislike Icon Motion</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-morph qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>◆</i><span>●</span></div><b>Dislike Icon Motion</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7712,7 +8117,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 4
   },
   {
     "id": "J2-075",
@@ -7724,11 +8130,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "heart-icon-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Heart Icon Motion</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-morph qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Heart Icon Motion</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7744,7 +8151,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 5
   },
   {
     "id": "J2-076",
@@ -7756,11 +8164,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "weather-icon-morph",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-8 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Weather Icon Morph</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-8 jq-icon jq-morph qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Weather Icon Morph</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7776,7 +8185,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 6
   },
   {
     "id": "J2-077",
@@ -7788,11 +8198,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "negative-mask-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Negative Mask Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-mask qv-7\"><div class=\"jq-mask-shape\"><span></span></div><b>Negative Mask Reveal</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7808,7 +8219,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 7
   },
   {
     "id": "J2-078",
@@ -7820,11 +8232,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "kaleidoscope-intro",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-layers\"><span></span><span></span><span></span><b>Kaleidoscope Intro</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-layers qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span></span><span></span><span></span><b>Kaleidoscope Intro</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7840,7 +8253,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 8
   },
   {
     "id": "J2-079",
@@ -7852,11 +8266,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "search-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-11 jq-ui jq-action\" type=\"button\"><i></i><span>Search Reveal</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-11 jq-ui jq-action qv-7\" type=\"button\"><i></i><span>Search Reveal</span><b>↗</b><small class=\"qv-meta-mini\"><b>01</b><b>02</b></small></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -7872,7 +8287,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 7
   },
   {
     "id": "J2-080",
@@ -7884,11 +8300,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "purple-toggle-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-0 jq-ui jq-toggle\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>Purple Toggle Motion</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-0 jq-ui jq-toggle qv-4\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><span class=\"jq-track\"><i></i></span><b>Purple Toggle Motion</b><em class=\"qv-state\">Motion</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -7904,7 +8321,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-toggle"
+    "qualityTemplate": "ui-toggle",
+    "qualityVariant": 4
   },
   {
     "id": "J2-081",
@@ -7916,11 +8334,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "sliding-blocks",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Blocks</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Blocks</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7936,7 +8355,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J2-082",
@@ -7948,11 +8368,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "feature-specs-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-2 jq-ui jq-notify\"><span><i></i><b>Feature Specs List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-2 jq-ui jq-notify qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span><i></i><b>Feature Specs List</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7968,7 +8389,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 4
   },
   {
     "id": "J2-083",
@@ -7980,11 +8402,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "sliding-title",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-3 jq-fx jq-text-split\"><span>Sliding</span><span>Title</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-3 jq-fx jq-text-split qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>Sliding</span><span>Title</span><i></i><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8000,7 +8423,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 8
   },
   {
     "id": "J2-084",
@@ -8012,11 +8436,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "motion-blur-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-4 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Motion Blur Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-4 jq-fx jq-blobs qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Motion Blur Reveal</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8032,7 +8457,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 8
   },
   {
     "id": "J2-085",
@@ -8044,11 +8470,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "mode-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-layers\"><span></span><span></span><span></span><b>Mode Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-5 jq-fx jq-layers qv-1\"><span></span><span></span><span></span><b>Mode Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8064,7 +8491,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 1
   },
   {
     "id": "J2-086",
@@ -8076,11 +8504,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "image-mask-parallax",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Image Mask Parallax</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-mask qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-mask-shape\"><span></span></div><b>Image Mask Parallax</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8096,7 +8525,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 8
   },
   {
     "id": "J2-087",
@@ -8108,11 +8538,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "animated-square-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Square Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Square Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8128,7 +8559,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 6
   },
   {
     "id": "J2-088",
@@ -8140,11 +8572,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "minimal-website-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Minimal Website Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-mask qv-1\"><div class=\"jq-mask-shape\"><span></span></div><b>Minimal Website Reveal</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8160,7 +8593,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 1
   },
   {
     "id": "J2-089",
@@ -8172,11 +8606,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "ring-scale-loop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-9 jq-icon jq-ringicon\"><div><i></i><span>●</span></div><b>Ring Scale Loop</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-9 jq-icon jq-ringicon qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i></i><span>●</span></div><b>Ring Scale Loop</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8192,7 +8627,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-ring"
+    "qualityTemplate": "icon-ring",
+    "qualityVariant": 5
   },
   {
     "id": "J2-090",
@@ -8204,11 +8640,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "landing-blocks",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Landing Blocks</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Landing Blocks</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8224,7 +8661,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J2-091",
@@ -8236,11 +8674,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "blog-card-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Blog Card Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-mask-shape\"><span></span></div><b>Blog Card Reveal</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8256,7 +8695,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 2
   },
   {
     "id": "J2-092",
@@ -8268,11 +8708,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "finance-card-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Finance Card Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Finance Card Stack</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8288,7 +8729,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 6
   },
   {
     "id": "J2-093",
@@ -8300,11 +8742,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "feature-sneak-peek",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Feature Sneak Peek</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Feature Sneak Peek</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8320,7 +8763,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J2-094",
@@ -8332,11 +8776,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "text-scramble-loop",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split\"><span>Text</span><span>Scramble</span><span>Loop</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-2 jq-fx jq-text-split qv-1\"><span>Text</span><span>Scramble</span><span>Loop</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8352,7 +8797,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 1
   },
   {
     "id": "J2-096",
@@ -8364,11 +8810,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "triple-toggle",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-toggle\" type=\"button\"><span class=\"jq-track\"><i></i></span><b>Triple Toggle</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-4 jq-ui jq-toggle qv-5\" type=\"button\"><small class=\"qv-dots\"><i></i><i></i><i></i></small><span class=\"jq-track\"><i></i></span><b>Triple Toggle</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -8384,7 +8831,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-toggle"
+    "qualityTemplate": "ui-toggle",
+    "qualityVariant": 5
   },
   {
     "id": "J2-097",
@@ -8396,11 +8844,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "destination-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Destination Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Destination Card</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8416,7 +8865,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J2-098",
@@ -8428,11 +8878,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "gallery-scroll",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Gallery Scroll</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-grid qv-7\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Gallery Scroll</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8448,7 +8899,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 7
   },
   {
     "id": "J2-099",
@@ -8460,11 +8912,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "feature-list-panel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-7 jq-ui jq-notify\"><span><i></i><b>Feature List Panel</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-7 jq-ui jq-notify qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span><i></i><b>Feature List Panel</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8480,7 +8933,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 5
   },
   {
     "id": "J2-100",
@@ -8492,11 +8946,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "side-rail-menu",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-8 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Side Rail Menu</b></div>",
+      "html": "<div class=\"jp-preset jp-8 jq-ui jq-menu qv-7\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Side Rail Menu</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8512,7 +8967,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 7
   },
   {
     "id": "J2-101",
@@ -8524,11 +8980,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "blur-bubble-background",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Blur Bubble Background</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-9 jq-fx jq-blobs qv-1\"><i></i><i></i><i></i><b>Blur Bubble Background</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8544,7 +9001,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 1
   },
   {
     "id": "J2-102",
@@ -8556,11 +9014,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "three-part-donut",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-10 jq-data jq-radial\"><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Three Part Donut</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-10 jq-data jq-radial qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><svg viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"24\"></circle><circle class=\"value\" cx=\"32\" cy=\"32\" r=\"24\"></circle></svg><strong>72%</strong><b>Three Part Donut</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8576,7 +9035,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-radial"
+    "qualityTemplate": "data-radial",
+    "qualityVariant": 5
   },
   {
     "id": "J2-103",
@@ -8588,11 +9048,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "sleep-bar-chart",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-11 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Sleep Bar Chart</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-11 jq-data jq-bars-chart qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i></i><i></i><i></i><i></i><i></i></div><b>Sleep Bar Chart</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8608,7 +9069,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 5
   },
   {
     "id": "J2-104",
@@ -8620,11 +9082,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "multiple-bar-metrics",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-0 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Multiple Bar Metrics</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-0 jq-data jq-bars-chart qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i></i><i></i><i></i><i></i><i></i></div><b>Multiple Bar Metrics</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8640,7 +9103,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 6
   },
   {
     "id": "J2-105",
@@ -8652,11 +9116,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "acquisition-line-chart",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-bars-chart\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Acquisition Line Chart</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-1 jq-data jq-bars-chart qv-7\"><div><i></i><i></i><i></i><i></i><i></i></div><b>Acquisition Line Chart</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8672,7 +9137,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-bars"
+    "qualityTemplate": "data-bars",
+    "qualityVariant": 7
   },
   {
     "id": "J2-106",
@@ -8684,11 +9150,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "departures-board",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Departures Board</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Departures Board</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8704,7 +9171,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J2-107",
@@ -8716,11 +9184,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "voice-search-control",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-3 jq-ui jq-action\" type=\"button\"><i></i><span>Voice Search Control</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-3 jq-ui jq-action qv-8\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><small class=\"qv-dots\"><i></i><i></i><i></i></small><i></i><span>Voice Search Control</span><b>↗</b><small class=\"qv-meta-mini\"><b>01</b><b>02</b></small><em class=\"qv-state\">Active</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -8736,7 +9205,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 8
   },
   {
     "id": "J2-108",
@@ -8748,11 +9218,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "five-star-lift",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-stars\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><b>Five Star Lift</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-stars qv-3\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><b>Five Star Lift</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8768,7 +9239,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-stars"
+    "qualityTemplate": "icon-stars",
+    "qualityVariant": 3
   },
   {
     "id": "J2-109",
@@ -8780,11 +9252,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "continue-interaction",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-5 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Continue Interaction</b></div>",
+      "html": "<div class=\"jp-preset jp-5 jq-ui jq-menu qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Continue Interaction</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8800,7 +9273,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 8
   },
   {
     "id": "J2-110",
@@ -8812,11 +9286,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "before-after-swipe",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-compare\"><div class=\"jq-before\"></div><div class=\"jq-after\"></div><span class=\"jq-handle\"></span><b>Before After Swipe</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-compare qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-before\"></div><div class=\"jq-after\"></div><span class=\"jq-handle\"></span><b>Before After Swipe</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8832,7 +9307,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-compare"
+    "qualityTemplate": "media-compare",
+    "qualityVariant": 2
   },
   {
     "id": "J2-111",
@@ -8844,11 +9320,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "holographic-badge",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Holographic Badge</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-7 jq-icon jq-morph qv-7\"><div><i>◆</i><span>●</span></div><b>Holographic Badge</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8864,7 +9341,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 7
   },
   {
     "id": "J2-112",
@@ -8876,11 +9354,12 @@ window.LibraryPackJitter=[
       "jitter",
       "data",
       "pixel-counter",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-chart jp-8 jq-data jq-counter\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Pixel Counter</b></div>",
+      "html": "<div class=\"jp-preset jp-chart jp-8 jq-data jq-counter qv-7\"><strong>24.8K</strong><svg viewBox=\"0 0 90 28\"><polyline points=\"2,22 18,16 31,19 47,8 62,12 78,4 88,7\"></polyline></svg><small>+8.4%</small><b>Pixel Counter</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8896,7 +9375,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "chart",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "data-counter"
+    "qualityTemplate": "data-counter",
+    "qualityVariant": 7
   },
   {
     "id": "J2-113",
@@ -8908,11 +9388,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "animated-theme-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Theme Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-grid qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Animated Theme Gallery</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8928,7 +9409,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 8
   },
   {
     "id": "J2-114",
@@ -8940,11 +9422,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "gradient-kaleidoscope",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-blobs\"><i></i><i></i><i></i><b>Gradient Kaleidoscope</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-10 jq-fx jq-blobs qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><b>Gradient Kaleidoscope</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8960,7 +9443,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "background-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-blobs"
+    "qualityTemplate": "fx-blobs",
+    "qualityVariant": 2
   },
   {
     "id": "J2-115",
@@ -8972,11 +9456,12 @@ window.LibraryPackJitter=[
       "jitter",
       "motion",
       "round-name-badge",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-11 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Round Name Badge</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-11 jq-icon jq-morph qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Round Name Badge</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -8992,7 +9477,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 8
   },
   {
     "id": "J2-116",
@@ -9004,11 +9490,12 @@ window.LibraryPackJitter=[
       "jitter",
       "interaction",
       "profile-story-ring",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-0 jq-ui jq-action\" type=\"button\"><i></i><span>Profile Story Ring</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-0 jq-ui jq-action qv-1\" type=\"button\"><i></i><span>Profile Story Ring</span><b>↗</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -9024,7 +9511,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 1
   },
   {
     "id": "J3-001",
@@ -9036,11 +9524,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-stack-testimonial",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Testimonial</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-stack qv-7\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Testimonial</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9056,7 +9545,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 7
   },
   {
     "id": "J3-002",
@@ -9068,11 +9558,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "share-your-work",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Share Your Work</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Share Your Work</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9088,7 +9579,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-003",
@@ -9100,11 +9592,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "orbit-cards",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Orbit: Cards</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-stack qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Orbit: Cards</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9120,7 +9613,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 8
   },
   {
     "id": "J3-004",
@@ -9132,11 +9626,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "orbit-social-media-showreel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Orbit: Social Media Showreel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Orbit: Social Media Showreel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9152,7 +9647,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-005",
@@ -9164,11 +9660,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-session-complete",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Session Complete</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Session Complete</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9184,7 +9681,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-006",
@@ -9196,11 +9694,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "project-teaser",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Project Teaser</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Project Teaser</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9216,7 +9715,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-007",
@@ -9228,11 +9728,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-nested-images",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Nested Images</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Nested Images</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9248,7 +9749,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-008",
@@ -9260,11 +9762,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-stack-livestream",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Livestream</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-stack qv-1\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Livestream</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9280,7 +9783,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 1
   },
   {
     "id": "J3-009",
@@ -9292,11 +9796,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-product-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>The Track: Product Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-mask qv-3\"><div class=\"jq-mask-shape\"><span></span></div><b>The Track: Product Reveal</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9312,7 +9817,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 3
   },
   {
     "id": "J3-010",
@@ -9324,11 +9830,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-split-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>The Edit: Split Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-mask qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-mask-shape\"><span></span></div><b>The Edit: Split Reveal</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9344,7 +9851,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 4
   },
   {
     "id": "J3-011",
@@ -9356,11 +9864,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-stack-sale",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Sale</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Sale</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9376,7 +9885,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 2
   },
   {
     "id": "J3-012",
@@ -9388,11 +9898,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-collection-teaser",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Collection Teaser</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Collection Teaser</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9408,7 +9919,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-013",
@@ -9420,11 +9932,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-brand-promo",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Brand Promo</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Brand Promo</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9440,7 +9953,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-014",
@@ -9452,11 +9966,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-poster",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Poster</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Poster</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9472,7 +9987,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-015",
@@ -9484,11 +10000,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-personal-record",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Personal Record</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Personal Record</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9504,7 +10021,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-016",
@@ -9516,11 +10034,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-harvest-fruit-bounce",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Harvest: Fruit Bounce</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Harvest: Fruit Bounce</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9536,7 +10055,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-017",
@@ -9548,11 +10068,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-promo-reel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Promo Reel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Promo Reel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9568,7 +10089,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-018",
@@ -9580,11 +10102,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-slideshow",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Track: Slideshow</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-stack qv-3\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Track: Slideshow</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9600,7 +10123,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 3
   },
   {
     "id": "J3-019",
@@ -9612,11 +10136,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-duo",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Duo</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Duo</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9632,7 +10157,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-020",
@@ -9644,11 +10170,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-harvest-peach-plunge",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Harvest: Peach Plunge</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Harvest: Peach Plunge</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9664,7 +10191,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-021",
@@ -9676,11 +10204,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "rewind",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rewind</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rewind</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9696,7 +10225,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-022",
@@ -9708,11 +10238,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "project-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Project Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Project Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9728,7 +10259,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-023",
@@ -9740,11 +10272,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-quote",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-layers\"><span></span><span></span><span></span><b>The Track: Quote</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-0 jq-fx jq-layers qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>The Track: Quote</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9760,7 +10293,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 2
   },
   {
     "id": "J3-025",
@@ -9772,11 +10306,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "morph-running-character",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Morph: Running Character</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-mask qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-mask-shape\"><span></span></div><b>Morph: Running Character</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9792,7 +10327,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 5
   },
   {
     "id": "J3-026",
@@ -9804,11 +10340,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-tagline-white",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-layers\"><span></span><span></span><span></span><b>The Edit: Tagline White</b></div>",
+      "html": "<div class=\"jp-preset jp-bg jp-3 jq-fx jq-layers qv-3\"><span></span><span></span><span></span><b>The Edit: Tagline White</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9824,7 +10361,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-layers"
+    "qualityTemplate": "fx-layers",
+    "qualityVariant": 3
   },
   {
     "id": "J3-027",
@@ -9836,11 +10374,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-route-morphing-icons",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>The Route: Morphing Icons</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph qv-1\"><div><i>◆</i><span>●</span></div><b>The Route: Morphing Icons</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9856,7 +10395,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 1
   },
   {
     "id": "J3-028",
@@ -9868,11 +10408,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-trio",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Trio</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Trio</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9888,7 +10429,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-029",
@@ -9900,11 +10442,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-product-launch",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Product Launch</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Product Launch</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9920,7 +10463,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-030",
@@ -9932,11 +10476,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "mirror-social-media-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mirror: Social Media Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mirror: Social Media Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9952,7 +10497,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-031",
@@ -9964,11 +10510,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-harvest-orange-float",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Harvest: Orange Float</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Harvest: Orange Float</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -9984,7 +10531,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-032",
@@ -9996,11 +10544,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "animated-widget",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Widget</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Widget</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10016,7 +10565,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-033",
@@ -10028,11 +10578,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-app-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: App Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: App Showcase</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10048,7 +10599,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-034",
@@ -10060,11 +10612,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-stack-partnership",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Partnership</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-stack qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Partnership</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10080,7 +10633,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 4
   },
   {
     "id": "J3-035",
@@ -10092,11 +10646,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-stack-we-re-hiring",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: We&#39;re Hiring</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: We&#39;re Hiring</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10112,7 +10667,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 5
   },
   {
     "id": "J3-036",
@@ -10124,11 +10680,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "folio-social-media-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Folio: Social Media Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Folio: Social Media Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10144,7 +10701,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-037",
@@ -10156,11 +10714,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "overlay-poster",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Overlay Poster</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Overlay Poster</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10176,7 +10735,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-038",
@@ -10188,11 +10748,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "sizzle-reel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sizzle Reel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sizzle Reel</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10208,7 +10769,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-039",
@@ -10220,11 +10782,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "ready-for-config",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Ready For Config</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Ready For Config</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10240,7 +10803,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-040",
@@ -10252,11 +10816,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-stack-release-notes",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Release Notes</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-stack qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>The Stack: Release Notes</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10272,7 +10837,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 6
   },
   {
     "id": "J3-041",
@@ -10284,11 +10850,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-track-mobile-app-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Mobile App Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Track: Mobile App Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10304,7 +10871,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-042",
@@ -10316,11 +10884,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "social-media-showreel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Social Media Showreel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Social Media Showreel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10336,7 +10905,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-043",
@@ -10348,11 +10918,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-route-cities",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Route: Cities</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Route: Cities</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10368,7 +10939,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-044",
@@ -10380,11 +10952,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-poppy",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Poppy</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Poppy</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10400,7 +10973,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-046",
@@ -10412,11 +10986,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "contactless-payment-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-11 jq-ui jq-action\" type=\"button\"><i></i><span>Contactless Payment Card</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-11 jq-ui jq-action qv-2\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><i></i><span>Contactless Payment Card</span><b>↗</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -10432,7 +11007,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 2
   },
   {
     "id": "J3-047",
@@ -10444,11 +11020,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "linear-cards",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Linear Cards</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-stack qv-7\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Linear Cards</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10464,7 +11041,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 7
   },
   {
     "id": "J3-048",
@@ -10476,11 +11054,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "revolve-social-media-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Revolve: Social Media Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Revolve: Social Media Showcase</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10496,7 +11075,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-049",
@@ -10508,11 +11088,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "frames-mobile-showreel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Frames: Mobile Showreel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Frames: Mobile Showreel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10528,7 +11109,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-051",
@@ -10540,11 +11122,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "the-edit-instagram-story",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Instagram Story</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>The Edit: Instagram Story</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10560,7 +11143,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-052",
@@ -10572,11 +11156,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "app-icons-panel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-5 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>App Icons Panel</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-5 jq-icon jq-morph qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>◆</i><span>●</span></div><b>App Icons Panel</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10592,7 +11177,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 2
   },
   {
     "id": "J3-053",
@@ -10604,11 +11190,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "profile-new-story",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Profile: New Story</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-6 jq-icon jq-morph qv-3\"><div><i>◆</i><span>●</span></div><b>Profile: New Story</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10624,7 +11211,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 3
   },
   {
     "id": "J3-054",
@@ -10636,11 +11224,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "website-promo",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Website Promo</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Website Promo</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10656,7 +11245,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-055",
@@ -10668,11 +11258,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "digital-wallet",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-8 jq-ui jq-action\" type=\"button\"><i></i><span>Digital Wallet</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-8 jq-ui jq-action qv-3\" type=\"button\"><i></i><span>Digital Wallet</span><b>↗</b><em class=\"qv-state\">Motion</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -10688,7 +11279,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 3
   },
   {
     "id": "J3-056",
@@ -10700,11 +11292,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "sliding-smartphones",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Smartphones</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Sliding Smartphones</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10720,7 +11313,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-060",
@@ -10732,11 +11326,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "card-features",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Card Features</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Card Features</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10752,7 +11347,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-061",
@@ -10764,11 +11360,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "spiral-social-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Spiral Social Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Spiral Social Showcase</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10784,7 +11381,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-062",
@@ -10796,11 +11394,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "small-waves",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Small Waves</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Small Waves</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10816,7 +11415,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-063",
@@ -10828,11 +11428,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "mobile-stories",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile Stories</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-4 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile Stories</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10848,7 +11449,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-066",
@@ -10860,11 +11462,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "back-next-buttons",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-7 jq-ui jq-action\" type=\"button\"><i></i><span>Back Next Buttons</span><b>↗</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-7 jq-ui jq-action qv-4\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><i></i><span>Back Next Buttons</span><b>↗</b><em class=\"qv-state\">Motion</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -10880,7 +11483,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-action"
+    "qualityTemplate": "ui-action",
+    "qualityVariant": 4
   },
   {
     "id": "J3-067",
@@ -10892,11 +11496,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "three-mobile-screens",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Three Mobile Screens</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-8 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Three Mobile Screens</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10912,7 +11517,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-069",
@@ -10924,11 +11530,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "push-notification-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-10 jq-ui jq-notify\"><span><i></i><b>Push Notification Card</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-10 jq-ui jq-notify qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span><i></i><b>Push Notification Card</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10944,7 +11551,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 6
   },
   {
     "id": "J3-070",
@@ -10956,11 +11564,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "messages-feed",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Messages Feed</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Messages Feed</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -10976,7 +11585,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-071",
@@ -10988,11 +11598,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "app-showcase",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>App Showcase</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>App Showcase</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11008,7 +11619,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-072",
@@ -11020,11 +11632,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "rotating-smartphones",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rotating Smartphones</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Rotating Smartphones</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11040,7 +11653,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-074",
@@ -11052,11 +11666,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "article-gallery",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Article Gallery</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-grid qv-1\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Article Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11072,7 +11687,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 1
   },
   {
     "id": "J3-076",
@@ -11084,11 +11700,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "revenue-app-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Revenue App Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Revenue App Card</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11104,7 +11721,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-077",
@@ -11116,11 +11734,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "mobile-screen-slider",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"jp-preset jp-ui jp-6 jq-ui jq-progress\" type=\"button\"><span class=\"jq-progress-bar\"><i></i></span><b>Mobile Screen Slider</b></button>",
+      "html": "<button class=\"jp-preset jp-ui jp-6 jq-ui jq-progress qv-2\" type=\"button\"><small class=\"qv-kicker\">LIVE</small><span class=\"jq-progress-bar\"><i></i></span><b>Mobile Screen Slider</b></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -11136,7 +11755,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-progress"
+    "qualityTemplate": "ui-progress",
+    "qualityVariant": 2
   },
   {
     "id": "J3-078",
@@ -11148,11 +11768,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "story-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Story Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Story Card</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11168,7 +11789,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-079",
@@ -11180,11 +11802,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "text-message-bubble",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-text jp-8 jq-fx jq-text-split\"><span>Text</span><span>Message</span><span>Bubble</span><i></i></div>",
+      "html": "<div class=\"jp-preset jp-text jp-8 jq-fx jq-text-split qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>Text</span><span>Message</span><span>Bubble</span><i></i></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11200,7 +11823,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "text-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "fx-text-split"
+    "qualityTemplate": "fx-text-split",
+    "qualityVariant": 2
   },
   {
     "id": "J3-081",
@@ -11212,11 +11836,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "animated-tweet-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Tweet Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Animated Tweet Card</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11232,7 +11857,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-082",
@@ -11244,11 +11870,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "product-highlight-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Product Highlight Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Product Highlight Card</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11264,7 +11891,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-083",
@@ -11276,11 +11904,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "project-reveal",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-mask\"><div class=\"jq-mask-shape\"><span></span></div><b>Project Reveal</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-mask qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-mask-shape\"><span></span></div><b>Project Reveal</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11296,7 +11925,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-mask"
+    "qualityTemplate": "media-mask",
+    "qualityVariant": 6
   },
   {
     "id": "J3-084",
@@ -11308,11 +11938,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "news-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>News Stack</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-stack qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>News Stack</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11328,7 +11959,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 8
   },
   {
     "id": "J3-085",
@@ -11340,11 +11972,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "track-countdown",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Track Countdown</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Track Countdown</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11360,7 +11993,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-086",
@@ -11372,11 +12006,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "image-carousel-parallax",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-stack\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Image Carousel Parallax</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-stack qv-1\"><div class=\"jq-card c1\"></div><div class=\"jq-card c2\"></div><div class=\"jq-card c3\"></div><b>Image Carousel Parallax</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11392,7 +12027,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-stack"
+    "qualityTemplate": "media-stack",
+    "qualityVariant": 1
   },
   {
     "id": "J3-087",
@@ -11404,11 +12040,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "payment-notification-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-4 jq-ui jq-notify\"><span><i></i><b>Payment Notification Card</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-4 jq-ui jq-notify qv-7\"><span><i></i><b>Payment Notification Card</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11424,7 +12061,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 7
   },
   {
     "id": "J3-088",
@@ -11436,11 +12074,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "boarding-pass",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Boarding Pass</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-5 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Boarding Pass</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11456,7 +12095,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-089",
@@ -11468,11 +12108,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "story-blog-post",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Story Blog Post</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Story Blog Post</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11488,7 +12129,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-090",
@@ -11500,11 +12142,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "story-collage",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Story Collage</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-7 jq-media jq-grid qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Story Collage</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11520,7 +12163,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 2
   },
   {
     "id": "J3-091",
@@ -11532,11 +12176,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "interactive-social-actions",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-8 jq-ui jq-menu\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Interactive Social Actions</b></div>",
+      "html": "<div class=\"jp-preset jp-8 jq-ui jq-menu qv-1\"><button type=\"button\">+</button><span>•</span><span>•</span><span>•</span><b>Interactive Social Actions</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11552,7 +12197,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-menu"
+    "qualityTemplate": "ui-menu",
+    "qualityVariant": 1
   },
   {
     "id": "J3-092",
@@ -11564,11 +12210,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "destinations-map",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Destinations Map</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-9 jq-media jq-frames qv-1\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Destinations Map</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11584,7 +12231,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 1
   },
   {
     "id": "J3-093",
@@ -11596,11 +12244,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "feature-list",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Feature List</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-10 jq-media jq-frames qv-2\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Feature List</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11616,7 +12265,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 2
   },
   {
     "id": "J3-094",
@@ -11628,11 +12278,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "design-preview",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Design Preview</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-11 jq-media jq-frames qv-3\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Design Preview</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11648,7 +12299,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 3
   },
   {
     "id": "J3-095",
@@ -11660,11 +12312,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "flight-tracker",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Flight Tracker</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-frames qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Flight Tracker</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11680,7 +12333,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 4
   },
   {
     "id": "J3-096",
@@ -11692,11 +12346,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "payment-notifications-stack",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-1 jq-ui jq-notify\"><span><i></i><b>Payment Notifications Stack</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span></div>",
+      "html": "<div class=\"jp-preset jp-1 jq-ui jq-notify qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span><i></i><b>Payment Notifications Stack</b></span><span><i></i><small>New</small></span><span><i></i><small>Live</small></span><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11712,7 +12367,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-stack"
+    "qualityTemplate": "ui-stack",
+    "qualityVariant": 8
   },
   {
     "id": "J3-098",
@@ -11724,11 +12380,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "charging-watch",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-3 jq-load jq-ring\"><div class=\"jq-spinner\"><i></i></div><b>Charging Watch</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-3 jq-load jq-ring qv-3\"><div class=\"jq-spinner\"><i></i></div><b>Charging Watch</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11744,7 +12401,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-ring"
+    "qualityTemplate": "loader-ring",
+    "qualityVariant": 3
   },
   {
     "id": "J3-100",
@@ -11756,11 +12414,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "pacman-loader",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-load jp-5 jq-load jq-ring\"><div class=\"jq-spinner\"><i></i></div><b>Pacman Loader</b></div>",
+      "html": "<div class=\"jp-preset jp-load jp-5 jq-load jq-ring qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div class=\"jq-spinner\"><i></i></div><b>Pacman Loader</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11776,7 +12435,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "loader",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "loader-ring"
+    "qualityTemplate": "loader-ring",
+    "qualityVariant": 4
   },
   {
     "id": "J3-101",
@@ -11788,11 +12448,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "bubbles-background",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Bubbles Background</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-6 jq-media jq-frames qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Bubbles Background</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11808,7 +12469,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 5
   },
   {
     "id": "J3-105",
@@ -11820,11 +12482,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "store-badge-generic",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-10 jq-ui jq-pills\"><span>01</span><span>02</span><span>03</span><b>Store Badge Generic</b></div>",
+      "html": "<div class=\"jp-preset jp-10 jq-ui jq-pills qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><span>01</span><span>02</span><span>03</span><b>Store Badge Generic</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11840,7 +12503,8 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-pills"
+    "qualityTemplate": "ui-pills",
+    "qualityVariant": 4
   },
   {
     "id": "J3-106",
@@ -11852,11 +12516,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "round-logo-motion",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-11 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Round Logo Motion</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-11 jq-icon jq-morph qv-4\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><div><i>◆</i><span>●</span></div><b>Round Logo Motion</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11872,7 +12537,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 4
   },
   {
     "id": "J3-107",
@@ -11884,11 +12550,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "photo-gallery-config",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-grid\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Photo Gallery Config</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-0 jq-media jq-grid qv-3\"><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><div class=\"jq-cell\"></div><b>Photo Gallery Config</b><footer class=\"qv-foot\"><small>Motion</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11904,7 +12571,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-grid"
+    "qualityTemplate": "media-grid",
+    "qualityVariant": 3
   },
   {
     "id": "J3-108",
@@ -11916,11 +12584,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "thank-you-card",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Thank You Card</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-1 jq-media jq-frames qv-6\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Thank You Card</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11936,7 +12605,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 6
   },
   {
     "id": "J3-109",
@@ -11948,11 +12618,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "save-the-date",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Save The Date</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-2 jq-media jq-frames qv-7\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Save The Date</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -11968,7 +12639,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 7
   },
   {
     "id": "J3-110",
@@ -11980,11 +12652,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "mobile-showreel",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames\"><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile Showreel</b></div>",
+      "html": "<div class=\"jp-preset jp-media jp-3 jq-media jq-frames qv-8\"><header class=\"qv-head\"><small>LIVE</small><i></i></header><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div class=\"jq-frame\"><span></span><small>01</small></div><div class=\"jq-frame\"><span></span><small>02</small></div><b>Mobile Showreel</b><section class=\"qv-meta\"><small>Preview</small><span></span><span></span></section><footer class=\"qv-foot\"><small>Active</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -12000,7 +12673,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "media-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "media-frames"
+    "qualityTemplate": "media-frames",
+    "qualityVariant": 8
   },
   {
     "id": "J3-111",
@@ -12012,11 +12686,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "profile-live",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph\"><div><i>◆</i><span>●</span></div><b>Profile Live</b></div>",
+      "html": "<div class=\"jp-preset jp-icon jp-4 jq-icon jq-morph qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><div><i>◆</i><span>●</span></div><b>Profile Live</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -12032,7 +12707,8 @@ window.LibraryPackJitter=[
     "motionMode": "Loop",
     "type": "icon-effect",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "icon-morph"
+    "qualityTemplate": "icon-morph",
+    "qualityVariant": 5
   },
   {
     "id": "J3-112",
@@ -12044,11 +12720,12 @@ window.LibraryPackJitter=[
       "template",
       "motion",
       "sliding-name-badge",
-      "quality-upgraded"
+      "quality-upgraded",
+      "quality-pass2"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"jp-preset jp-5 jq-ui jq-pills\"><span>01</span><span>02</span><span>03</span><b>Sliding Name Badge</b></div>",
+      "html": "<div class=\"jp-preset jp-5 jq-ui jq-pills qv-5\"><aside class=\"qv-rail\"><i></i><i></i><i></i></aside><span>01</span><span>02</span><span>03</span><b>Sliding Name Badge</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -12064,6 +12741,7 @@ window.LibraryPackJitter=[
     "motionMode": "Interaction",
     "type": "ui-control",
     "addedAt": "2026-09-27",
-    "qualityTemplate": "ui-pills"
+    "qualityTemplate": "ui-pills",
+    "qualityVariant": 5
   }
 ];
