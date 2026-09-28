@@ -30,7 +30,7 @@ self.onmessage=e=>{
   if(filters.pack&&filters.pack!=="all")list=list.filter(r=>r.pack===filters.pack);
   if(filters.category&&filters.category!=="all")list=list.filter(r=>r.category===filters.category);
   if(filters.motionMode)list=list.filter(r=>r.motionMode===filters.motionMode);
-  const results=list.map(r=>({id:r.id,pack:r.pack,score:tokens.length?score(r,tokens,nq):1}))
+  const results=list.map(r=>({id:r.id,pack:r.pack,name:r.name,category:r.category,score:tokens.length?score(r,tokens,nq):1}))
     .filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,limit);
   self.postMessage({type:"results",q,results,total:results.length});
 };
