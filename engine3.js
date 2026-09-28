@@ -275,7 +275,7 @@
         <p><b>Live HTML previews:</b> ${q.live_html_previews} / ${audit.total_components}</p>
         <p><b>Exact unique HTML:</b> ${q.exact_unique_html}</p>
         <p><b>Normalized structural signatures:</b> ${q.normalized_structural_signatures}</p>
-        <p><b>DEV-derived variants:</b> ${q.dev_variants} · ${q.dev_structural_signatures} structures</p>
+        <p><b>DEV quality:</b> ${q.dev_components||q.dev_variants||0} upgraded · ${q.dev_semantic_template_types||0} semantic types · ${q.dev_dom_structures||q.dev_structural_signatures||0} DOM structures · ${q.dev_layout_variants||1} layout variants</p>
         <p><b>Jitter quality:</b> ${q.jitter_generated_variants} upgraded · ${q.jitter_semantic_template_types||0} semantic types · ${q.jitter_dom_structures||q.jitter_base_signatures||0} DOM structures · ${q.jitter_layout_variants||1} layout variants</p>
         <p><b>Name collisions:</b> ${q.name_collisions}</p>
         <p><b>Portable code:</b> generated at runtime for HTML / CSS / JS / React / Tailwind</p>`;
