@@ -9,7 +9,7 @@
 - **0 Duplicate IDs**
 - **0 عناصر مفقودة بين Search Index والـPacks**
 - **0 عناصر ناقصة من الكتالوج**
-- **707 Normalized Structural Signatures**
+- **674 Strict Semantic Structural Signatures**
 - **969 اسمًا فريدًا** مع حالتي تشابه أسماء فقط وبدون Duplicate IDs
 
 ## Library Engine 3.0
@@ -115,14 +115,23 @@ catalog/
 - تمت ترقية **339/339** من عناصر Jitter مرة ثانية.
 - لكل نوع دلالي أصبح هناك حتى **8 Layout Variants** حقيقية بدل بنية واحدة متكررة.
 - Jitter أصبح يمثل **139 بنية DOM** مطبّعة.
-- إجمالي المكتبة ارتفع من **580** إلى **707 بنية مميزة** بدون زيادة عدد العناصر فوق 971.
+- ملاحظة القياس: تم استبدال رقم 707 بمقياس أكثر صرامة لا يحتسب اختلافات classes كتنوع مستقل؛ النتيجة الحالية **674 بنية دلالية حقيقية**.
 - الـ8 أشكال تشمل: Clean، Header، Caption، Header+Caption، Side Rail، Status Rail، Metadata، Framed.
 - كل هذه الفروقات تدخل في المعاينة وفي CSS المنسوخ أيضًا.
+
+### DEV Components Quality Pass
+- تمت ترقية **416/416** عنصرًا من حزم DEV.
+- قبل الترقية كانت العناصر موزعة فعليًا على نحو **17 بنية عامة** فقط.
+- بعد الترقية: **75 نوعًا دلاليًا** و**286 بنية DOM حقيقية**.
+- أضيفت حتى **12 Layout Variants** للمجموعات الأكبر.
+- شملت الترقية Accordion، Tabs، Alerts، Skeletons، Cards، Chat، File/User Cards، Breadcrumbs، Pagination، Steps، Sidebar، Dock، Tables، Calendar، KPI، Activity Feed، Carousel، Device Mockups، OTP، File Upload، Select/Combobox، Password، Validation، Hero/Grid/Pricing، Toast/Drawer/Popover، Command/Context Menus، وتأثيرات الخلفية والنص والإضاءة.
+- التفاعلات الفعلية تشمل Accordion/Tabs، Switch، Dropdown، Password reveal، Carousel وToast.
+- CSS الجديد يدخل في المعاينة وفي الكود المنسوخ.
 
 ### Quality Audit
 - كل **971** عنصرًا لديه Live HTML Preview.
 - **971** HTML payload مختلفة حرفيًا.
-- بعد تطبيع النصوص والـvariants: **707** بنية/توقيعًا هيكليًا.
+- وفق المقياس الصارم الجديد: **674** بنية/توقيعًا دلاليًا حقيقيًا.
 - عناصر DEV-derived: **416** variant موزعة على **337** بنية مطبّعة.
 - Jitter-generated: **339** variant موزعة على **31** نوعًا دلاليًا و**139** بنية DOM مطبّعة.
 - ملفات الـPacks تخزن HTML، بينما CSS / JS / React / Tailwind يتم توليدها وقت المعاينة والنسخ عبر `app.js`.
