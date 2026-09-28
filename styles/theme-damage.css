@@ -224,6 +224,15 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 }
 
 /* Library cards — shell only, preview content itself remains intact */
+.component-preview-stage,.drawer-preview{
+  --accent:#3559e8;
+  --accent2:#8b63ff;
+  --text:#141722;
+  --muted:#747b8e;
+  --surface:#fff;
+  --surface2:#f0f2f7;
+}
+/* Preview content keeps its own visual identity while the surrounding app uses the new theme. */
 .component-card{
   background:rgba(255,255,255,.78);
   border-color:rgba(79,96,127,.13);
@@ -290,11 +299,19 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   border-radius:12px;
 }
 
-/* Selects + form controls */
-input:not([type="range"]):not([type="color"]),textarea,select{
+/* Selects + form controls — shell/editor only */
+.search input,
+.pack-filter select,
+.copy-actions select,
+.playground-panel input:not([type="range"]):not([type="color"]),
+.playground-panel textarea,
+.playground-panel select,
+.engine-dialog input,
+.engine-dialog select,
+.engine-dialog textarea{
   color:#333;
   background:#fff;
-  border-color:#ccc;
+  border:1px solid #ccc;
   border-radius:4px;
 }
 .pack-filter select,.copy-actions select{
@@ -305,7 +322,15 @@ input:not([type="range"]):not([type="color"]),textarea,select{
 }
 .controls input[type=range]{accent-color:var(--damage-accent)}
 .controls input[type=color]{border-color:#ccc;border-radius:4px}
-input:not([type="range"]):not([type="color"]):focus,textarea:focus,select:focus{
+.search input:focus,
+.pack-filter select:focus,
+.copy-actions select:focus,
+.playground-panel input:focus,
+.playground-panel textarea:focus,
+.playground-panel select:focus,
+.engine-dialog input:focus,
+.engine-dialog select:focus,
+.engine-dialog textarea:focus{
   border-color:var(--damage-accent);
   outline:none;
   box-shadow:0 0 0 3px rgba(0,204,102,.10);
