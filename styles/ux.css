@@ -114,3 +114,25 @@
 @media(prefers-reduced-motion:reduce){
   .component-preview-stage *, .component-preview-stage *::before,.component-preview-stage *::after,.drawer-preview *, .drawer-preview *::before,.drawer-preview *::after{animation:none!important;transition:none!important}
 }
+
+
+/* RUNTIME PERFORMANCE PASS */
+.component-grid{contain:layout style}
+.component-card{content-visibility:auto;contain-intrinsic-size:420px}
+.component-card.preview-active,.component-card:focus-within{content-visibility:visible}
+.component-preview-stage{isolation:isolate}
+.perf-vitals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:10px 0}
+.perf-vital{border:1px solid #e4e7ee;border-radius:12px;background:#fff;padding:10px;display:grid;gap:3px}
+.perf-vital b{font-size:15px}.perf-vital span{font-size:7px;color:#7d8492}.perf-vital small{font-size:6px;font-weight:800;text-transform:uppercase}
+.perf-vital.good small{color:#16855d}.perf-vital.mid small{color:#b47719}.perf-vital.bad small{color:#c54b4b}
+.related-loading{padding:14px;color:#858b97;font-size:8px;text-align:center}
+@media(max-width:820px){
+  .component-card{contain-intrinsic-size:390px}
+  .card-actions button,.side-link,.filter,.drawer-section-tabs button,.preview-states button,.copy-actions button,.meta-actions button{min-height:44px}
+  .preview-gesture,.drawer-section-tabs,.sidebar{backdrop-filter:none!important}
+  .perf-vitals{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .component-card{contain-intrinsic-size:370px}
+}
+
