@@ -1166,3 +1166,9 @@ body.component-route{overflow:hidden}body.component-route .drawer.route-page{wid
 @media(max-width:1100px){.fonts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.fonts-library{padding-top:18px}.fonts-hero{align-items:stretch;flex-direction:column;padding:18px}.fonts-hero h2{font-size:26px}.fonts-hero-actions{justify-content:space-between}.fonts-toolbar,.font-sample-editor{grid-template-columns:1fr}.fonts-grid{grid-template-columns:1fr}.fonts-summary{align-items:flex-start;flex-direction:column}.font-preview-ar{font-size:19px}.font-preview-en{font-size:17px}}
 
+
+
+/* FONT LIVE FAMILY LABEL */
+.font-preview{position:relative}
+.font-live-name{position:absolute;top:8px;left:10px;font-family:Arial,sans-serif!important;font-size:7px!important;letter-spacing:.02em;color:#9aa0ab;background:rgba(255,255,255,.76);backdrop-filter:blur(6px);border:1px solid #eef0f4;border-radius:999px;padding:3px 6px}
+
