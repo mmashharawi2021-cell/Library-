@@ -135,7 +135,7 @@
   "pack_manager": true,
   "pwa": {
     "enabled": true,
-    "cache": "library-engine-3-v12"
+    "cache": "library-engine-3-v14"
   },
   "quality_audit": {
     "scope": "all 971 catalog payloads",
@@ -203,7 +203,7 @@
     "editor_module": "ui/editor.js",
     "code_export_module": "ui/code-export.js",
     "performance_pass": true,
-    "service_worker_cache": "library-engine-3-v12",
+    "service_worker_cache": "library-engine-3-v14",
     "runtime_performance_audit": true
   },
   "architecture": {
@@ -291,5 +291,36 @@
     "search_debounce_ms": 120,
     "staged_initial_render": true,
     "mobile_min_touch_target_px": 44
+  },
+  "ui_theme": {
+    "active": "damage-platform",
+    "file": "styles/theme-damage.css",
+    "background": "#eff8ff",
+    "primary_translucent": "#eff8ff1f",
+    "text": "#4f607f",
+    "accent": "#00cc66",
+    "font_stack": [
+      "Tajawal",
+      "Kanun",
+      "Tahoma",
+      "Arial",
+      "sans-serif"
+    ],
+    "input": {
+      "background": "#ffffff",
+      "border": "#cccccc",
+      "radius_px": 4
+    },
+    "primary_action": {
+      "radius_px": 10,
+      "padding": "6px 12px"
+    },
+    "secondary_action": {
+      "background": "transparent",
+      "radius_px": 6,
+      "padding": "4px 12px"
+    },
+    "preview_isolation": true,
+    "responsive": true
   }
 }
