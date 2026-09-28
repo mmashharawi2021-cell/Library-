@@ -9,11 +9,12 @@ window.LibraryPackFoundations=[
       "accordion",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-tabs variant-0 accordion\"><button class=\"active\">Accordion</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-tabs dq-accordion dqv-1\"><button class=\"dq-acc-head active\" type=\"button\"><span>Accordion</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -28,7 +29,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-002",
@@ -40,11 +43,12 @@ window.LibraryPackFoundations=[
       "alert",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-loaders variant-1 alert\"><i></i><b>Alert</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-feedback dq-alert dqv-1\"><i>!</i><div><b>Alert</b><small>Actionable feedback message</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -59,7 +63,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-alert",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-003",
@@ -71,11 +77,12 @@ window.LibraryPackFoundations=[
       "aura",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-2 aura\"><small>daisyUI</small><h4>Aura</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-visual-card dqv-1\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Aura</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -90,7 +97,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-004",
@@ -102,11 +111,12 @@ window.LibraryPackFoundations=[
       "avatar",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-icons variant-3 avatar\"><i>✦</i><b>Avatar</b><small>daisyUI</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-icon dq-avatar-icon dqv-1\"><div class=\"dq-avatar\"><span></span></div><b>Avatar</b><small>Online</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -121,7 +131,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-avatar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-005",
@@ -133,11 +145,12 @@ window.LibraryPackFoundations=[
       "badge",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-icons variant-4 badge\"><i>✦</i><b>Badge</b><small>daisyUI</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-icon dq-badge dqv-1\"><span><i></i>Badge</span><small>NEW</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -152,7 +165,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-badge",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-006",
@@ -164,11 +179,12 @@ window.LibraryPackFoundations=[
       "breadcrumbs",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-dsy kind-nav variant-5 breadcrumbs\"><b>Breadcrumbs</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-dsy dq-nav dq-breadcrumb dqv-1\"><a>Home</a><i>/</i><a>Library</a><i>/</i><b>Breadcrumbs</b></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -183,7 +199,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-breadcrumb",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-007",
@@ -195,11 +213,12 @@ window.LibraryPackFoundations=[
       "button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"devpack pack-dsy kind-buttons variant-6 button\" type=\"button\"><i></i><span>daisyUI · Button</span></button>",
+      "html": "<button class=\"devpack pack-dsy dq-button dq-action-btn dqv-1\" type=\"button\"><span>Button</span><i>→</i></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -214,7 +233,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-action",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-008",
@@ -226,11 +247,12 @@ window.LibraryPackFoundations=[
       "calendar",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-7 calendar\"><header><b>Calendar</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-calendar dqv-1\"><header><button>‹</button><b>September</b><button>›</button></header><div class=\"dq-days\"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span class=\"active\">8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -245,7 +267,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-calendar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-009",
@@ -257,11 +281,12 @@ window.LibraryPackFoundations=[
       "card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-0 card\"><small>daisyUI</small><h4>Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -276,7 +301,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-010",
@@ -288,11 +315,12 @@ window.LibraryPackFoundations=[
       "carousel",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-media variant-1 carousel\"><i></i><i></i><b>Carousel</b></div>",
+      "html": "<div class=\"devpack pack-dsy dq-media dq-carousel dqv-1\"><div class=\"dq-slides\"><article></article><article class=\"active\"></article><article></article></div><footer><button>‹</button><span><i></i><i class=\"active\"></i><i></i></span><button>›</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -307,7 +335,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-carousel",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-011",
@@ -319,11 +349,12 @@ window.LibraryPackFoundations=[
       "chat-bubble",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-2 chat-bubble\"><small>daisyUI</small><h4>Chat Bubble</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-chat dqv-1\"><div class=\"dq-avatar\"></div><div><b>Chat Bubble</b><p>Reusable message content</p><small>09:41</small></div></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -338,7 +369,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-chat",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-012",
@@ -350,11 +383,12 @@ window.LibraryPackFoundations=[
       "checkbox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-3 checkbox\"><b>Checkbox</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-dsy dq-input dq-choice dqv-1\"><legend>Checkbox</legend><label><input type=\"checkbox\" checked><span>Primary option</span></label><label><input type=\"checkbox\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -369,7 +403,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-013",
@@ -381,11 +417,12 @@ window.LibraryPackFoundations=[
       "collapse",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-tabs variant-4 collapse\"><button class=\"active\">Collapse</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-tabs dq-accordion dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button class=\"dq-acc-head active\" type=\"button\"><span>Collapse</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -400,7 +437,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-014",
@@ -412,11 +451,12 @@ window.LibraryPackFoundations=[
       "countdown",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-5 countdown\"><header><b>Countdown</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-stat dqv-1\"><small>Countdown</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -431,7 +471,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-015",
@@ -443,11 +485,12 @@ window.LibraryPackFoundations=[
       "diff",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-6 diff\"><small>daisyUI</small><h4>Diff</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Diff</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -462,7 +505,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-016",
@@ -474,11 +519,12 @@ window.LibraryPackFoundations=[
       "divider",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-dsy kind-sections variant-7 divider\"><header>Divider</header><main><b>daisyUI</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-dsy dq-section dq-divider dqv-1\"><i></i><b>Divider</b><i></i></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -493,7 +539,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-divider",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-017",
@@ -505,11 +553,12 @@ window.LibraryPackFoundations=[
       "dock",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-dsy kind-nav variant-0 dock\"><b>Dock</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-dsy dq-nav dq-dock dqv-1\"><button>⌂</button><button>⌕</button><button class=\"active\">◆</button><button>♡</button><button>⚙</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -524,7 +573,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-dock",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-018",
@@ -536,11 +587,12 @@ window.LibraryPackFoundations=[
       "drawer-sidebar",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-modals variant-1 drawer-sidebar\"><small>daisyUI</small><b>Drawer Sidebar</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-overlay dq-drawer dqv-1\"><header><b>Drawer Sidebar</b><button>×</button></header><div><span></span><span></span><span></span></div><footer><button>Cancel</button><button>Save</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -555,7 +607,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-drawer",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-019",
@@ -567,11 +621,12 @@ window.LibraryPackFoundations=[
       "dropdown",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-menus variant-2 dropdown\"><b>Dropdown</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-dsy dq-menu dq-dropdown dqv-1\"><button class=\"dq-trigger\">Dropdown<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -586,7 +641,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-020",
@@ -598,11 +655,12 @@ window.LibraryPackFoundations=[
       "fab-speed-dial",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-dsy kind-buttons variant-3 fab-speed-dial\" type=\"button\"><i></i><span>daisyUI · FAB Speed Dial</span></button>",
+      "html": "<div class=\"devpack pack-dsy dq-button dq-btn-group dqv-1\"><button class=\"active\">FAB Speed Dial</button><button>+</button><button>⋮</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -617,7 +675,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-group",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-021",
@@ -629,11 +689,12 @@ window.LibraryPackFoundations=[
       "fieldset",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-4 fieldset\"><b>Fieldset</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-field dqv-1\"><b>Fieldset</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -648,7 +709,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-022",
@@ -660,11 +723,12 @@ window.LibraryPackFoundations=[
       "file-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-5 file-input\"><b>File Input</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-file-input dqv-1\"><input type=\"file\"><i>⇧</i><b>File Input</b><small>Drop file or browse</small><span><em></em></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -679,7 +743,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-file",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-023",
@@ -691,11 +757,12 @@ window.LibraryPackFoundations=[
       "filter",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-6 filter\"><small>daisyUI</small><h4>Filter</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Filter</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -710,7 +777,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-DSY-024",
@@ -722,11 +791,12 @@ window.LibraryPackFoundations=[
       "footer",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-dsy kind-sections variant-7 footer\"><header>Footer</header><main><b>daisyUI</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<footer class=\"devpack pack-dsy dq-section dq-footer dqv-1\"><b>Footer</b><div><a>Product</a><a>Resources</a><a>Company</a></div><small>© 2026</small></footer>",
       "css": "",
       "js": "",
       "react": "",
@@ -741,7 +811,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-footer",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-025",
@@ -753,11 +825,12 @@ window.LibraryPackFoundations=[
       "hero",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-dsy kind-sections variant-0 hero\"><header>Hero</header><main><b>daisyUI</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-dsy dq-section dq-hero dqv-1\"><div><small>NEW RELEASE</small><h3>Hero</h3><p>Reusable hero layout for product interfaces.</p><button>Explore</button></div><aside><i></i><i></i></aside></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -772,7 +845,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-hero",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-026",
@@ -784,11 +859,12 @@ window.LibraryPackFoundations=[
       "hover-3d-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-1 hover-3d-card\"><small>daisyUI</small><h4>Hover 3D Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-visual-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Hover 3D Card</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -803,7 +879,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-027",
@@ -815,11 +893,12 @@ window.LibraryPackFoundations=[
       "hover-gallery",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-media variant-2 hover-gallery\"><i></i><i></i><b>Hover Gallery</b></div>",
+      "html": "<div class=\"devpack pack-dsy dq-media dq-gallery dqv-1\"><i></i><i></i><i></i><i></i><b>Hover Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -834,7 +913,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-gallery",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-028",
@@ -846,11 +927,12 @@ window.LibraryPackFoundations=[
       "indicator",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-3 indicator\"><small>daisyUI</small><h4>Indicator</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Indicator</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -865,7 +947,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-DSY-029",
@@ -877,11 +961,12 @@ window.LibraryPackFoundations=[
       "text-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-4 text-input\"><b>Text Input</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-field dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Text Input</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -896,7 +981,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-030",
@@ -908,11 +995,12 @@ window.LibraryPackFoundations=[
       "join-group",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-5 join-group\"><small>daisyUI</small><h4>Join Group</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Join Group</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -927,7 +1015,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-DSY-031",
@@ -939,11 +1029,12 @@ window.LibraryPackFoundations=[
       "kbd",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-icons variant-6 kbd\"><i>✦</i><b>Kbd</b><small>daisyUI</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-icon dq-key dqv-1\"><kbd>⌘</kbd><kbd>K</kbd><b>Kbd</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -958,7 +1049,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-key",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-032",
@@ -970,11 +1063,12 @@ window.LibraryPackFoundations=[
       "label",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-icons variant-7 label\"><i>✦</i><b>Label</b><small>daisyUI</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-icon dq-badge dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><span><i></i>Label</span><small>NEW</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -989,7 +1083,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-badge",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-033",
@@ -1001,11 +1097,12 @@ window.LibraryPackFoundations=[
       "link",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-icons variant-0 link\"><i>✦</i><b>Link</b><small>daisyUI</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-icon dq-glyph dqv-1\"><i>✦</i><b>Link</b><small>Icon pattern</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1020,7 +1117,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-glyph",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-034",
@@ -1032,11 +1131,12 @@ window.LibraryPackFoundations=[
       "list",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-1 list\"><small>daisyUI</small><h4>List</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-list dqv-1\"><header><b>List</b><small>3 items</small></header><ul><li><i></i><span>Primary item</span></li><li><i></i><span>Secondary item</span></li><li><i></i><span>Another item</span></li></ul></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1051,7 +1151,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-list",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-035",
@@ -1063,11 +1165,12 @@ window.LibraryPackFoundations=[
       "loading",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-loaders variant-2 loading\"><i></i><b>Loading</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-feedback dq-loading dqv-1\"><i></i><div><b>Loading</b><span><em></em></span></div><small>72%</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1082,7 +1185,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-loading",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-036",
@@ -1094,11 +1199,12 @@ window.LibraryPackFoundations=[
       "mask",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-3 mask\"><small>daisyUI</small><h4>Mask</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><header><small>Component</small><i></i></header><h4>Mask</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1113,7 +1219,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-DSY-037",
@@ -1125,11 +1233,12 @@ window.LibraryPackFoundations=[
       "megamenu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-menus variant-4 megamenu\"><b>Megamenu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-dsy dq-menu dq-mega dqv-1\"><header>Megamenu</header><div><section><b>Product</b><span>Overview</span><span>Components</span></section><section><b>Resources</b><span>Docs</span><span>Guides</span></section></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1144,7 +1253,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-mega",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-038",
@@ -1156,11 +1267,12 @@ window.LibraryPackFoundations=[
       "menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-menus variant-5 menu\"><b>Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-dsy dq-menu dq-dropdown dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button class=\"dq-trigger\">Menu<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1175,7 +1287,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-039",
@@ -1187,11 +1301,12 @@ window.LibraryPackFoundations=[
       "browser-mockup",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-media variant-6 browser-mockup\"><i></i><i></i><b>Browser Mockup</b></div>",
+      "html": "<div class=\"devpack pack-dsy dq-media dq-device dqv-1\"><header><i></i><i></i><i></i></header><main><div></div><span>Browser Mockup</span></main></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1206,7 +1321,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-device",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-040",
@@ -1218,11 +1335,12 @@ window.LibraryPackFoundations=[
       "code-mockup",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-media variant-7 code-mockup\"><i></i><i></i><b>Code Mockup</b></div>",
+      "html": "<div class=\"devpack pack-dsy dq-media dq-device dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><i></i><i></i><i></i></header><main><div></div><span>Code Mockup</span></main></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1237,7 +1355,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-device",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-041",
@@ -1249,11 +1369,12 @@ window.LibraryPackFoundations=[
       "phone-mockup",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-media variant-0 phone-mockup\"><i></i><i></i><b>Phone Mockup</b></div>",
+      "html": "<div class=\"devpack pack-dsy dq-media dq-device dqv-3\"><header><i></i><i></i><i></i></header><main><div></div><span>Phone Mockup</span></main><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1268,7 +1389,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-device",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-DSY-042",
@@ -1280,11 +1403,12 @@ window.LibraryPackFoundations=[
       "window-mockup",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-media variant-1 window-mockup\"><i></i><i></i><b>Window Mockup</b></div>",
+      "html": "<div class=\"devpack pack-dsy dq-media dq-device dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><i></i><i></i><i></i></header><main><div></div><span>Window Mockup</span></main><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1299,7 +1423,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-device",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-DSY-043",
@@ -1311,11 +1437,12 @@ window.LibraryPackFoundations=[
       "modal",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-modals variant-2 modal\"><small>daisyUI</small><b>Modal</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-overlay dq-dialog dqv-1\"><header><b>Modal</b><button>×</button></header><p>Contextual dialog content goes here.</p><footer><button>Cancel</button><button>Continue</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1330,7 +1457,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-dialog",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-044",
@@ -1342,11 +1471,12 @@ window.LibraryPackFoundations=[
       "navbar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-dsy kind-nav variant-3 navbar\"><b>Navbar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-dsy dq-nav dq-navbar dqv-1\"><b>Navbar</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -1361,7 +1491,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-045",
@@ -1373,11 +1505,12 @@ window.LibraryPackFoundations=[
       "otp",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-4 otp\"><b>OTP</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<div class=\"devpack pack-dsy dq-input dq-otp dqv-1\"><b>OTP</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1392,7 +1525,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-046",
@@ -1404,11 +1539,12 @@ window.LibraryPackFoundations=[
       "pagination",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-dsy kind-nav variant-5 pagination\"><b>Pagination</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-dsy dq-nav dq-pagination dqv-1\"><button>‹</button><button class=\"active\">1</button><button>2</button><button>3</button><button>›</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -1423,7 +1559,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-pagination",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-047",
@@ -1435,11 +1573,12 @@ window.LibraryPackFoundations=[
       "progress",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-6 progress\"><header><b>Progress</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-progress dqv-1\"><div class=\"dq-ring\"><i></i><strong>72%</strong></div><div><b>Progress</b><small>+8.4% this week</small></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1454,7 +1593,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-progress",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-048",
@@ -1466,11 +1607,12 @@ window.LibraryPackFoundations=[
       "radial-progress",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-7 radial-progress\"><header><b>Radial Progress</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-progress dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-ring\"><i></i><strong>72%</strong></div><div><b>Radial Progress</b><small>+8.4% this week</small></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1485,7 +1627,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-progress",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-049",
@@ -1497,11 +1641,12 @@ window.LibraryPackFoundations=[
       "radio",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-0 radio\"><b>Radio</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-dsy dq-input dq-choice dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><legend>Radio</legend><label><input type=\"radio\" checked><span>Primary option</span></label><label><input type=\"radio\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -1516,7 +1661,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-050",
@@ -1528,11 +1675,12 @@ window.LibraryPackFoundations=[
       "range-slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-1 range-slider\"><b>Range Slider</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-range dqv-1\"><b>Range Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -1547,7 +1695,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-051",
@@ -1559,11 +1709,12 @@ window.LibraryPackFoundations=[
       "rating",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-icons variant-2 rating\"><i>✦</i><b>Rating</b><small>daisyUI</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-icon dq-rating dqv-1\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>☆</i></div><b>Rating</b><small>4.8</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1578,7 +1729,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-rating",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-052",
@@ -1590,11 +1743,12 @@ window.LibraryPackFoundations=[
       "select",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-3 select\"><b>Select</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-select dqv-1\"><b>Select</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -1609,7 +1763,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-053",
@@ -1621,11 +1777,12 @@ window.LibraryPackFoundations=[
       "skeleton",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-loaders variant-4 skeleton\"><i></i><b>Skeleton</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-feedback dq-skeleton dqv-1\"><i></i><span></span><span></span><b></b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1640,7 +1797,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-skeleton",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-054",
@@ -1652,11 +1811,12 @@ window.LibraryPackFoundations=[
       "stack",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-dsy kind-sections variant-5 stack\"><header>Stack</header><main><b>daisyUI</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-dsy dq-section dq-layout dqv-1\"><header><b>Stack</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -1671,7 +1831,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-055",
@@ -1683,11 +1845,12 @@ window.LibraryPackFoundations=[
       "stat",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-6 stat\"><header><b>Stat</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-stat dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><small>Stat</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1702,7 +1865,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-056",
@@ -1714,11 +1879,12 @@ window.LibraryPackFoundations=[
       "status",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-7 status\"><header><b>Status</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-stat dqv-3\"><small>Status</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1733,7 +1899,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-DSY-057",
@@ -1745,11 +1913,12 @@ window.LibraryPackFoundations=[
       "steps",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<nav class=\"devpack pack-dsy kind-nav variant-0 steps\"><b>Steps</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-dsy dq-nav dq-steps dqv-1\"><span class=\"done\"><i>1</i><b>Start</b></span><span class=\"active\"><i>2</i><b>Steps</b></span><span><i>3</i><b>Done</b></span></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -1764,7 +1933,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-steps",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-058",
@@ -1776,11 +1947,12 @@ window.LibraryPackFoundations=[
       "swap",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"devpack pack-dsy kind-buttons variant-1 swap\" type=\"button\"><i></i><span>daisyUI · Swap</span></button>",
+      "html": "<button class=\"devpack pack-dsy dq-button dq-icon-btn dqv-1\" type=\"button\"><i>↗</i><span>Swap</span></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -1795,7 +1967,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-icon",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-059",
@@ -1807,11 +1981,12 @@ window.LibraryPackFoundations=[
       "tabs",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-tabs variant-2 tabs\"><button class=\"active\">Tabs</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-tabs dq-tabbar dqv-1\"><div class=\"dq-tablist\"><button class=\"active\">Tabs</button><button>Preview</button><button>Code</button></div><div class=\"dq-tabpanel\">Active panel</div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1826,7 +2001,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-tabs",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-060",
@@ -1838,11 +2015,12 @@ window.LibraryPackFoundations=[
       "table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-data variant-3 table\"><header><b>Table</b><span>72%</span></header><i></i><i></i><i></i><small>daisyUI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-dsy dq-data dq-table dqv-1\"><header><b>Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1857,7 +2035,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-061",
@@ -1869,11 +2049,12 @@ window.LibraryPackFoundations=[
       "text-rotate",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-4 text-rotate\"><small>daisyUI</small><h4>Text Rotate</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Text Rotate</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1888,7 +2069,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-062",
@@ -1900,11 +2083,12 @@ window.LibraryPackFoundations=[
       "textarea",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-5 textarea\"><b>Textarea</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-textarea dqv-1\"><b>Textarea</b><textarea placeholder=\"Write something...\"></textarea><small>24 / 140</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -1919,7 +2103,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-textarea",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-063",
@@ -1931,11 +2117,12 @@ window.LibraryPackFoundations=[
       "theme-controller",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-dsy kind-buttons variant-6 theme-controller\" type=\"button\"><i></i><span>daisyUI · Theme Controller</span></button>",
+      "html": "<button class=\"devpack pack-dsy dq-button dq-action-btn dqv-2\" type=\"button\"><small class=\"dqv-kicker\">LIVE</small><span>Theme Controller</span><i>→</i></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -1950,7 +2137,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-action",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-DSY-064",
@@ -1962,11 +2151,12 @@ window.LibraryPackFoundations=[
       "timeline",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-dsy kind-inputs variant-7 timeline\"><b>Timeline</b><input placeholder=\"daisyUI field\"><small>daisyUI reference</small></label>",
+      "html": "<label class=\"devpack pack-dsy dq-input dq-special dqv-1\"><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -1981,7 +2171,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-065",
@@ -1993,11 +2185,12 @@ window.LibraryPackFoundations=[
       "toast",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-modals variant-0 toast\"><small>daisyUI</small><b>Toast</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-overlay dq-toast dqv-1\"><i>✓</i><div><b>Toast</b><small>Operation completed successfully</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2012,7 +2205,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-066",
@@ -2024,11 +2219,12 @@ window.LibraryPackFoundations=[
       "toggle",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-1 toggle\"><small>daisyUI</small><h4>Toggle</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-switch-card dqv-1\"><div><b>Toggle</b><small>Preference setting</small></div><button class=\"dq-switch\" type=\"button\"><i></i></button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2043,7 +2239,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-switch",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-067",
@@ -2055,11 +2253,12 @@ window.LibraryPackFoundations=[
       "tooltip",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-dsy kind-modals variant-2 tooltip\"><small>daisyUI</small><b>Tooltip</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-dsy dq-overlay dq-tooltip dqv-1\"><button>Hover me</button><span>Tooltip</span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2074,7 +2273,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-tooltip",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-DSY-068",
@@ -2086,11 +2287,12 @@ window.LibraryPackFoundations=[
       "validator",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-dsy kind-cards variant-3 validator\"><small>daisyUI</small><h4>Validator</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-dsy dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Validator</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2105,7 +2307,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "daisyui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-001",
@@ -2117,11 +2321,12 @@ window.LibraryPackFoundations=[
       "container",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<section class=\"devpack pack-prl kind-sections variant-0 container\"><header>Container</header><main><b>Preline</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-prl dq-section dq-layout dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Container</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2136,7 +2341,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-002",
@@ -2148,11 +2355,12 @@ window.LibraryPackFoundations=[
       "columns",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-prl kind-sections variant-1 columns\"><header>Columns</header><main><b>Preline</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-prl dq-section dq-grid dqv-1\"><header><b>Columns</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2167,7 +2375,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-003",
@@ -2179,11 +2389,12 @@ window.LibraryPackFoundations=[
       "grid",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-prl kind-sections variant-2 grid\"><header>Grid</header><main><b>Preline</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-prl dq-section dq-grid dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Grid</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2198,7 +2409,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-004",
@@ -2210,11 +2423,12 @@ window.LibraryPackFoundations=[
       "layout-splitter",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-prl kind-sections variant-3 layout-splitter\"><header>Layout Splitter</header><main><b>Preline</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-prl dq-section dq-layout dqv-3\"><header><b>Layout Splitter</b><small>Layout</small></header><main><aside></aside><div></div></main><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2229,7 +2443,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-005",
@@ -2241,11 +2457,12 @@ window.LibraryPackFoundations=[
       "typography",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-4 typography\"><small>Preline</small><h4>Typography</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Typography</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2260,7 +2477,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-006",
@@ -2272,11 +2491,12 @@ window.LibraryPackFoundations=[
       "images",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-media variant-5 images\"><i></i><i></i><b>Images</b></div>",
+      "html": "<div class=\"devpack pack-prl dq-media dq-gallery dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><i></i><b>Images</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2291,7 +2511,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-gallery",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-007",
@@ -2303,11 +2525,12 @@ window.LibraryPackFoundations=[
       "links",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-6 links\"><small>Preline</small><h4>Links</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-list dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Links</b><small>3 items</small></header><ul><li><i></i><span>Primary item</span></li><li><i></i><span>Secondary item</span></li><li><i></i><span>Another item</span></li></ul></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2322,7 +2545,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-list",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-008",
@@ -2334,11 +2559,12 @@ window.LibraryPackFoundations=[
       "dividers",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<section class=\"devpack pack-prl kind-sections variant-7 dividers\"><header>Dividers</header><main><b>Preline</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-prl dq-section dq-divider dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><b>Dividers</b><i></i></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2353,7 +2579,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-divider",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-009",
@@ -2365,11 +2593,12 @@ window.LibraryPackFoundations=[
       "kbd",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-0 kbd\"><i>✦</i><b>KBD</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-key dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><kbd>⌘</kbd><kbd>K</kbd><b>KBD</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2384,7 +2613,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-key",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-010",
@@ -2396,11 +2627,12 @@ window.LibraryPackFoundations=[
       "custom-scrollbar",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-1 custom-scrollbar\"><small>Preline</small><h4>Custom Scrollbar</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Custom Scrollbar</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2415,7 +2647,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-011",
@@ -2427,11 +2661,12 @@ window.LibraryPackFoundations=[
       "accordion",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-tabs variant-2 accordion\"><button class=\"active\">Accordion</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-tabs dq-accordion dqv-3\"><button class=\"dq-acc-head active\" type=\"button\"><span>Accordion</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2446,7 +2681,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-012",
@@ -2458,11 +2695,12 @@ window.LibraryPackFoundations=[
       "alerts",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-loaders variant-3 alerts\"><i></i><b>Alerts</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-feedback dq-alert dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i>!</i><div><b>Alerts</b><small>Actionable feedback message</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2477,7 +2715,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-alert",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-013",
@@ -2489,11 +2729,12 @@ window.LibraryPackFoundations=[
       "avatar",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-4 avatar\"><i>✦</i><b>Avatar</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-avatar-icon dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-avatar\"><span></span></div><b>Avatar</b><small>Online</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2508,7 +2749,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-avatar",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-014",
@@ -2520,11 +2763,12 @@ window.LibraryPackFoundations=[
       "avatar-group",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-5 avatar-group\"><i>✦</i><b>Avatar Group</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-avatar-icon dqv-3\"><div class=\"dq-avatar\"><span></span></div><b>Avatar Group</b><small>Online</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2539,7 +2783,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-avatar",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-015",
@@ -2551,11 +2797,12 @@ window.LibraryPackFoundations=[
       "badge",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-6 badge\"><i>✦</i><b>Badge</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-badge dqv-3\"><span><i></i>Badge</span><small>NEW</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2570,7 +2817,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-badge",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-016",
@@ -2582,11 +2831,12 @@ window.LibraryPackFoundations=[
       "blockquote",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-7 blockquote\"><i>✦</i><b>Blockquote</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-glyph dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i>✦</i><b>Blockquote</b><small>Icon pattern</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2601,7 +2851,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-glyph",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-017",
@@ -2613,11 +2865,12 @@ window.LibraryPackFoundations=[
       "buttons",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-prl kind-buttons variant-0 buttons\" type=\"button\"><i></i><span>Preline · Buttons</span></button>",
+      "html": "<button class=\"devpack pack-prl dq-button dq-action-btn dqv-3\" type=\"button\"><span>Buttons</span><i>→</i><em class=\"dqv-state\">Ready</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -2632,7 +2885,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-action",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-018",
@@ -2644,11 +2899,12 @@ window.LibraryPackFoundations=[
       "button-group",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-prl kind-buttons variant-1 button-group\" type=\"button\"><i></i><span>Preline · Button Group</span></button>",
+      "html": "<div class=\"devpack pack-prl dq-button dq-btn-group dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button class=\"active\">Button Group</button><button>+</button><button>⋮</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2663,7 +2919,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-group",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-019",
@@ -2675,11 +2933,12 @@ window.LibraryPackFoundations=[
       "cards",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-2 cards\"><small>Preline</small><h4>Cards</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Cards</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2694,7 +2953,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-PRL-020",
@@ -2706,11 +2967,12 @@ window.LibraryPackFoundations=[
       "chat-bubbles",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-3 chat-bubbles\"><small>Preline</small><h4>Chat Bubbles</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-chat dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-avatar\"></div><div><b>Chat Bubbles</b><p>Reusable message content</p><small>09:41</small></div></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2725,7 +2987,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-chat",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-021",
@@ -2737,11 +3001,12 @@ window.LibraryPackFoundations=[
       "carousel",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-media variant-4 carousel\"><i></i><i></i><b>Carousel</b></div>",
+      "html": "<div class=\"devpack pack-prl dq-media dq-carousel dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-slides\"><article></article><article class=\"active\"></article><article></article></div><footer><button>‹</button><span><i></i><i class=\"active\"></i><i></i></span><button>›</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2756,7 +3021,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-carousel",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-022",
@@ -2768,11 +3035,12 @@ window.LibraryPackFoundations=[
       "collapse",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-tabs variant-5 collapse\"><button class=\"active\">Collapse</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-tabs dq-accordion dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><button class=\"dq-acc-head active\" type=\"button\"><span>Collapse</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2787,7 +3055,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-023",
@@ -2799,11 +3069,12 @@ window.LibraryPackFoundations=[
       "datepicker",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-6 datepicker\"><b>Datepicker</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -2818,7 +3089,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-024",
@@ -2830,11 +3103,12 @@ window.LibraryPackFoundations=[
       "devices",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-media variant-7 devices\"><i></i><i></i><b>Devices</b></div>",
+      "html": "<div class=\"devpack pack-prl dq-media dq-device dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><i></i><i></i><i></i></header><main><div></div><span>Devices</span></main></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2849,7 +3123,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-device",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-PRL-025",
@@ -2861,11 +3137,12 @@ window.LibraryPackFoundations=[
       "lists",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-0 lists\"><small>Preline</small><h4>Lists</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-list dqv-3\"><header><b>Lists</b><small>3 items</small></header><ul><li><i></i><span>Primary item</span></li><li><i></i><span>Secondary item</span></li><li><i></i><span>Another item</span></li></ul><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2880,7 +3157,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-list",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-026",
@@ -2892,11 +3171,12 @@ window.LibraryPackFoundations=[
       "list-group",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-menus variant-1 list-group\"><b>List Group</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-prl dq-menu dq-listmenu dqv-1\"><b>List Group</b><span><i>▾</i>Workspace</span><span class=\"child\">Components</span><span class=\"child\">Pages</span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2911,7 +3191,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-list",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-027",
@@ -2923,11 +3205,12 @@ window.LibraryPackFoundations=[
       "legend-indicator",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-2 legend-indicator\"><small>Preline</small><h4>Legend Indicator</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-list dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Legend Indicator</b><small>3 items</small></header><ul><li><i></i><span>Primary item</span></li><li><i></i><span>Secondary item</span></li><li><i></i><span>Another item</span></li></ul><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2942,7 +3225,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-list",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-028",
@@ -2954,11 +3239,12 @@ window.LibraryPackFoundations=[
       "progress",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-data variant-3 progress\"><header><b>Progress</b><span>72%</span></header><i></i><i></i><i></i><small>Preline data pattern</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-data dq-progress dqv-3\"><div class=\"dq-ring\"><i></i><strong>72%</strong></div><div><b>Progress</b><small>+8.4% this week</small></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2973,7 +3259,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-progress",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-029",
@@ -2985,11 +3273,12 @@ window.LibraryPackFoundations=[
       "file-uploading-progress",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-4 file-uploading-progress\"><b>File Uploading Progress</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-file-input dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><input type=\"file\"><i>⇧</i><b>File Uploading Progress</b><small>Drop file or browse</small><span><em></em></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3004,7 +3293,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-file",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-030",
@@ -3016,11 +3307,12 @@ window.LibraryPackFoundations=[
       "ratings",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-5 ratings\"><i>✦</i><b>Ratings</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-rating dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div><i>★</i><i>★</i><i>★</i><i>★</i><i>☆</i></div><b>Ratings</b><small>4.8</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3035,7 +3327,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-rating",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-031",
@@ -3047,11 +3341,12 @@ window.LibraryPackFoundations=[
       "skeleton",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-loaders variant-6 skeleton\"><i></i><b>Skeleton</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-feedback dq-skeleton dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><span></span><span></span><b></b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3066,7 +3361,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-skeleton",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-032",
@@ -3078,11 +3375,12 @@ window.LibraryPackFoundations=[
       "spinners",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-7 spinners\"><b>Spinners</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<div class=\"devpack pack-prl dq-input dq-otp dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Spinners</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3097,7 +3395,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-033",
@@ -3109,11 +3409,12 @@ window.LibraryPackFoundations=[
       "styled-icons",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-icons variant-0 styled-icons\"><i>✦</i><b>Styled Icons</b><small>Preline</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-icon dq-glyph dqv-3\"><i>✦</i><b>Styled Icons</b><small>Icon pattern</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3128,7 +3429,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-glyph",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-034",
@@ -3140,11 +3443,12 @@ window.LibraryPackFoundations=[
       "toasts",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-modals variant-1 toasts\"><small>Preline</small><b>Toasts</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-overlay dq-toast dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i>✓</i><div><b>Toasts</b><small>Operation completed successfully</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3159,7 +3463,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-035",
@@ -3171,11 +3477,12 @@ window.LibraryPackFoundations=[
       "timeline",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-2 timeline\"><b>Timeline</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-3\"><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3190,7 +3497,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-036",
@@ -3202,11 +3511,12 @@ window.LibraryPackFoundations=[
       "tree-view",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-menus variant-3 tree-view\"><b>Tree View</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-prl dq-menu dq-listmenu dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Tree View</b><span><i>▾</i>Workspace</span><span class=\"child\">Components</span><span class=\"child\">Pages</span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3221,7 +3531,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-list",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-037",
@@ -3233,11 +3545,12 @@ window.LibraryPackFoundations=[
       "marquee",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-4 marquee\"><small>Preline</small><h4>Marquee</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><header><small>Component</small><i></i></header><h4>Marquee</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -3252,7 +3565,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-PRL-038",
@@ -3264,11 +3579,12 @@ window.LibraryPackFoundations=[
       "navbar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-5 navbar\"><b>Navbar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-navbar dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Navbar</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3283,7 +3599,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-039",
@@ -3295,11 +3613,12 @@ window.LibraryPackFoundations=[
       "mega-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-menus variant-6 mega-menu\"><b>Mega Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-prl dq-menu dq-mega dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header>Mega Menu</header><div><section><b>Product</b><span>Overview</span><span>Components</span></section><section><b>Resources</b><span>Docs</span><span>Guides</span></section></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3314,7 +3633,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-mega",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-040",
@@ -3326,11 +3647,12 @@ window.LibraryPackFoundations=[
       "navs",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-7 navs\"><b>Navs</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-navbar dqv-3\"><b>Navs</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3345,7 +3667,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-041",
@@ -3357,11 +3681,12 @@ window.LibraryPackFoundations=[
       "tabs",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-tabs variant-0 tabs\"><button class=\"active\">Tabs</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-tabs dq-tabbar dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-tablist\"><button class=\"active\">Tabs</button><button>Preview</button><button>Code</button></div><div class=\"dq-tabpanel\">Active panel</div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3376,7 +3701,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-tabs",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-042",
@@ -3388,11 +3715,12 @@ window.LibraryPackFoundations=[
       "sidebar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-1 sidebar\"><b>Sidebar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-sidebar dqv-1\"><header><i>M</i><b>Sidebar</b></header><a class=\"active\">Overview</a><a>Components</a><a>Settings</a></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3407,7 +3735,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-sidebar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-043",
@@ -3419,11 +3749,12 @@ window.LibraryPackFoundations=[
       "scrollspy",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-2 scrollspy\"><b>Scrollspy</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-navbar dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Scrollspy</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button><section class=\"dqv-meta\"><span></span><span></span></section></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3438,7 +3769,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-044",
@@ -3450,11 +3783,12 @@ window.LibraryPackFoundations=[
       "breadcrumb",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-3 breadcrumb\"><b>Breadcrumb</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-breadcrumb dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><a>Home</a><i>/</i><a>Library</a><i>/</i><b>Breadcrumb</b></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3469,7 +3803,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-breadcrumb",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-045",
@@ -3481,11 +3817,12 @@ window.LibraryPackFoundations=[
       "pagination",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-4 pagination\"><b>Pagination</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-pagination dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button>‹</button><button class=\"active\">1</button><button>2</button><button>3</button><button>›</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3500,7 +3837,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-pagination",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-046",
@@ -3512,11 +3851,12 @@ window.LibraryPackFoundations=[
       "stepper",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-prl kind-nav variant-5 stepper\"><b>Stepper</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-prl dq-nav dq-steps dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><span class=\"done\"><i>1</i><b>Start</b></span><span class=\"active\"><i>2</i><b>Stepper</b></span><span><i>3</i><b>Done</b></span></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3531,7 +3871,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-steps",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-047",
@@ -3543,11 +3885,12 @@ window.LibraryPackFoundations=[
       "input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-6 input\"><b>Input</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-field dqv-3\"><b>Input</b><input placeholder=\"Enter value\"><small>Helper text</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3562,7 +3905,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-048",
@@ -3574,11 +3919,12 @@ window.LibraryPackFoundations=[
       "input-group",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-7 input-group\"><b>Input Group</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-field dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Input Group</b><input placeholder=\"Enter value\"><small>Helper text</small><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3593,7 +3939,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-049",
@@ -3605,11 +3953,12 @@ window.LibraryPackFoundations=[
       "textarea",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-0 textarea\"><b>Textarea</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-textarea dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Textarea</b><textarea placeholder=\"Write something...\"></textarea><small>24 / 140</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3624,7 +3973,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-textarea",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-050",
@@ -3636,11 +3987,12 @@ window.LibraryPackFoundations=[
       "file-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-1 file-input\"><b>File Input</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-file-input dqv-3\"><input type=\"file\"><i>⇧</i><b>File Input</b><small>Drop file or browse</small><span><em></em></span><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3655,7 +4007,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-file",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-051",
@@ -3667,11 +4021,12 @@ window.LibraryPackFoundations=[
       "checkbox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-2 checkbox\"><b>Checkbox</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-prl dq-input dq-choice dqv-3\"><legend>Checkbox</legend><label><input type=\"checkbox\" checked><span>Primary option</span></label><label><input type=\"checkbox\"><span>Secondary option</span></label><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -3686,7 +4041,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-052",
@@ -3698,11 +4055,12 @@ window.LibraryPackFoundations=[
       "radio",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-3 radio\"><b>Radio</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-prl dq-input dq-choice dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><legend>Radio</legend><label><input type=\"radio\" checked><span>Primary option</span></label><label><input type=\"radio\"><span>Secondary option</span></label><section class=\"dqv-meta\"><span></span><span></span></section></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -3717,7 +4075,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-053",
@@ -3729,11 +4089,12 @@ window.LibraryPackFoundations=[
       "switch",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-4 switch\"><small>Preline</small><h4>Switch</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-switch-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div><b>Switch</b><small>Preference setting</small></div><button class=\"dq-switch\" type=\"button\"><i></i></button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -3748,7 +4109,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-switch",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-054",
@@ -3760,11 +4123,12 @@ window.LibraryPackFoundations=[
       "select",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-5 select\"><b>Select</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-select dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Select</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3779,7 +4143,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-055",
@@ -3791,11 +4157,12 @@ window.LibraryPackFoundations=[
       "range-slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-6 range-slider\"><b>Range Slider</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-range dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Range Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3810,7 +4177,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-056",
@@ -3822,11 +4191,12 @@ window.LibraryPackFoundations=[
       "color-picker",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-7 color-picker\"><b>Color Picker</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Color Picker</b><div><i>◉</i><input value=\"42\"></div><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3841,7 +4211,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-057",
@@ -3853,11 +4225,12 @@ window.LibraryPackFoundations=[
       "timepicker",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-0 timepicker\"><b>TimePicker</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>TimePicker</b><div><i>◷</i><input value=\"12:30\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3872,7 +4245,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-PRL-058",
@@ -3884,11 +4259,12 @@ window.LibraryPackFoundations=[
       "advanced-select",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-1 advanced-select\"><b>Advanced Select</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-select dqv-3\"><b>Advanced Select</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3903,7 +4279,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-059",
@@ -3915,11 +4293,12 @@ window.LibraryPackFoundations=[
       "combobox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-2 combobox\"><b>ComboBox</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-select dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>ComboBox</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3934,7 +4313,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-060",
@@ -3946,11 +4327,12 @@ window.LibraryPackFoundations=[
       "searchbox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-3 searchbox\"><b>SearchBox</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-search dqv-1\"><span>⌕</span><input placeholder=\"SearchBox\"><kbd>⌘K</kbd></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3965,7 +4347,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-search",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-061",
@@ -3977,11 +4361,12 @@ window.LibraryPackFoundations=[
       "input-number",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-4 input-number\"><b>Input Number</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><b>Input Number</b><div><i>#</i><input value=\"42\"></div><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3996,7 +4381,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-PRL-062",
@@ -4008,11 +4395,12 @@ window.LibraryPackFoundations=[
       "strong-password",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-5 strong-password\"><b>Strong Password</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-password dqv-1\"><b>Strong Password</b><div><input type=\"password\" value=\"password\"><button type=\"button\">◉</button></div><span><i></i><i></i><i></i><i></i></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -4027,7 +4415,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-password",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-063",
@@ -4039,11 +4429,12 @@ window.LibraryPackFoundations=[
       "toggle-password",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-6 toggle-password\"><b>Toggle Password</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-password dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Toggle Password</b><div><input type=\"password\" value=\"password\"><button type=\"button\">◉</button></div><span><i></i><i></i><i></i><i></i></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -4058,7 +4449,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-password",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-064",
@@ -4070,11 +4463,12 @@ window.LibraryPackFoundations=[
       "toggle-count",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-7 toggle-count\"><small>Preline</small><h4>Toggle Count</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-switch-card dqv-3\"><div><b>Toggle Count</b><small>Preference setting</small></div><button class=\"dq-switch\" type=\"button\"><i></i></button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4089,7 +4483,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-switch",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-065",
@@ -4101,11 +4497,12 @@ window.LibraryPackFoundations=[
       "copy-markup",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-0 copy-markup\"><small>Preline</small><h4>Copy Markup</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-code dqv-1\"><header><b>Copy Markup</b><button>Copy</button></header><pre><code>&lt;component /&gt;</code></pre></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4120,7 +4517,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-code",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-066",
@@ -4132,11 +4531,12 @@ window.LibraryPackFoundations=[
       "pin-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-1 pin-input\"><b>PIN Input</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<div class=\"devpack pack-prl dq-input dq-otp dqv-3\"><b>PIN Input</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4151,7 +4551,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-067",
@@ -4163,11 +4565,12 @@ window.LibraryPackFoundations=[
       "dropdown",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-menus variant-2 dropdown\"><b>Dropdown</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-prl dq-menu dq-dropdown dqv-3\"><button class=\"dq-trigger\">Dropdown<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4182,7 +4585,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-068",
@@ -4194,11 +4599,12 @@ window.LibraryPackFoundations=[
       "context-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-menus variant-3 context-menu\"><b>Context Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-prl dq-menu dq-context dqv-1\"><header><i></i><b>Context Menu</b></header><button>Open</button><button>Duplicate</button><button class=\"danger\">Delete</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4213,7 +4619,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-context",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-069",
@@ -4225,11 +4633,12 @@ window.LibraryPackFoundations=[
       "modal",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-modals variant-4 modal\"><small>Preline</small><b>Modal</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-overlay dq-dialog dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Modal</b><button>×</button></header><p>Contextual dialog content goes here.</p><footer><button>Cancel</button><button>Continue</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4244,7 +4653,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-dialog",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-070",
@@ -4256,11 +4667,12 @@ window.LibraryPackFoundations=[
       "offcanvas-drawer",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-modals variant-5 offcanvas-drawer\"><small>Preline</small><b>Offcanvas Drawer</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-overlay dq-drawer dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Offcanvas Drawer</b><button>×</button></header><div><span></span><span></span><span></span></div><footer><button>Cancel</button><button>Save</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4275,7 +4687,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-drawer",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-071",
@@ -4287,11 +4701,12 @@ window.LibraryPackFoundations=[
       "popover",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-modals variant-6 popover\"><small>Preline</small><b>Popover</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-overlay dq-popover dqv-1\"><button>•••</button><aside><b>Popover</b><span>First action</span><span>Second action</span></aside></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4306,7 +4721,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-popover",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-072",
@@ -4318,11 +4735,12 @@ window.LibraryPackFoundations=[
       "tooltip",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-modals variant-7 tooltip\"><small>Preline</small><b>Tooltip</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-overlay dq-tooltip dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button>Hover me</button><span>Tooltip</span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4337,7 +4755,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-tooltip",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-073",
@@ -4349,11 +4769,12 @@ window.LibraryPackFoundations=[
       "tables",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-data variant-0 tables\"><header><b>Tables</b><span>72%</span></header><i></i><i></i><i></i><small>Preline data pattern</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-data dq-table dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Tables</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4368,7 +4789,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-074",
@@ -4380,11 +4803,12 @@ window.LibraryPackFoundations=[
       "advanced-range-slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-1 advanced-range-slider\"><b>Advanced Range Slider</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-range dqv-3\"><b>Advanced Range Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -4399,7 +4823,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-075",
@@ -4411,11 +4837,12 @@ window.LibraryPackFoundations=[
       "advanced-datepicker",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-2 advanced-datepicker\"><b>Advanced Datepicker</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-special dqv-1\"><b>Advanced Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -4430,7 +4857,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-076",
@@ -4442,11 +4871,12 @@ window.LibraryPackFoundations=[
       "charts",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-data variant-3 charts\"><header><b>Charts</b><span>72%</span></header><i></i><i></i><i></i><small>Preline data pattern</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-data dq-chart dqv-1\"><header><b>Charts</b><small>Last 7 days</small></header><div><i></i><i></i><i></i><i></i><i></i></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4461,7 +4891,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-chart",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-077",
@@ -4473,11 +4905,12 @@ window.LibraryPackFoundations=[
       "clipboard",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-4 clipboard\"><small>Preline</small><h4>Clipboard</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-code dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Clipboard</b><button>Copy</button></header><pre><code>&lt;component /&gt;</code></pre></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4492,7 +4925,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-code",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-078",
@@ -4504,11 +4939,12 @@ window.LibraryPackFoundations=[
       "confetti-animation",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-5 confetti-animation\"><small>Preline</small><h4>Confetti Animation</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Confetti Animation</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4523,7 +4959,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-PRL-079",
@@ -4535,11 +4973,12 @@ window.LibraryPackFoundations=[
       "datamaps",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-data variant-6 datamaps\"><header><b>Datamaps</b><span>72%</span></header><i></i><i></i><i></i><small>Preline data pattern</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-data dq-chart dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Datamaps</b><small>Last 7 days</small></header><div><i></i><i></i><i></i><i></i><i></i></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4554,7 +4993,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-chart",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-080",
@@ -4566,11 +5007,12 @@ window.LibraryPackFoundations=[
       "datatables",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-data variant-7 datatables\"><header><b>Datatables</b><span>72%</span></header><i></i><i></i><i></i><small>Preline data pattern</small></div>",
+      "html": "<div class=\"devpack pack-prl dq-data dq-table dqv-3\"><header><b>Datatables</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4585,7 +5027,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-081",
@@ -4597,11 +5041,12 @@ window.LibraryPackFoundations=[
       "drag-and-drop",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-0 drag-and-drop\"><small>Preline</small><h4>Drag and Drop</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Drag and Drop</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4616,7 +5061,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-PRL-082",
@@ -4628,11 +5075,12 @@ window.LibraryPackFoundations=[
       "file-upload",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-prl kind-inputs variant-1 file-upload\"><b>File Upload</b><input placeholder=\"Preline field\"><small>Preline reference</small></label>",
+      "html": "<label class=\"devpack pack-prl dq-input dq-file-input dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><input type=\"file\"><i>⇧</i><b>File Upload</b><small>Drop file or browse</small><span><em></em></span><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -4647,7 +5095,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-file",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-PRL-083",
@@ -4659,11 +5109,12 @@ window.LibraryPackFoundations=[
       "maps",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-2 maps\"><small>Preline</small><h4>Maps</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Maps</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4678,7 +5129,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-084",
@@ -4690,11 +5143,12 @@ window.LibraryPackFoundations=[
       "toast-notifications",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-prl kind-modals variant-3 toast-notifications\"><small>Preline</small><b>Toast Notifications</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-prl dq-overlay dq-toast dqv-3\"><i>✓</i><div><b>Toast Notifications</b><small>Operation completed successfully</small></div><button>×</button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4709,7 +5163,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-PRL-085",
@@ -4721,11 +5177,12 @@ window.LibraryPackFoundations=[
       "wysiwyg-editor",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<article class=\"devpack pack-prl kind-cards variant-4 wysiwyg-editor\"><small>Preline</small><h4>WYSIWYG Editor</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-prl dq-card dq-code dqv-3\"><header><b>WYSIWYG Editor</b><button>Copy</button></header><pre><code>&lt;component /&gt;</code></pre><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4740,7 +5197,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "preline-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-code",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-001",
@@ -4752,11 +5211,12 @@ window.LibraryPackFoundations=[
       "accordion",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-tabs variant-0 accordion\"><button class=\"active\">Accordion</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-flw dq-tabs dq-accordion dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><button class=\"dq-acc-head active\" type=\"button\"><span>Accordion</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4771,7 +5231,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-FLW-002",
@@ -4783,11 +5245,12 @@ window.LibraryPackFoundations=[
       "alert",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-loaders variant-1 alert\"><i></i><b>Alert</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-flw dq-feedback dq-alert dqv-3\"><i>!</i><div><b>Alert</b><small>Actionable feedback message</small></div><button>×</button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4802,7 +5265,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-alert",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-003",
@@ -4814,11 +5279,12 @@ window.LibraryPackFoundations=[
       "avatar",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-icons variant-2 avatar\"><i>✦</i><b>Avatar</b><small>Flowbite</small></div>",
+      "html": "<div class=\"devpack pack-flw dq-icon dq-avatar-icon dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-avatar\"><span></span></div><b>Avatar</b><small>Online</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4833,7 +5299,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-avatar",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-004",
@@ -4845,11 +5313,12 @@ window.LibraryPackFoundations=[
       "banner",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-flw kind-cards variant-3 banner\"><small>Flowbite</small><h4>Banner</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-flw dq-card dq-content-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Banner</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -4864,7 +5333,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-005",
@@ -4876,11 +5347,12 @@ window.LibraryPackFoundations=[
       "badge",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-icons variant-4 badge\"><i>✦</i><b>Badge</b><small>Flowbite</small></div>",
+      "html": "<div class=\"devpack pack-flw dq-icon dq-badge dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><span><i></i>Badge</span><small>NEW</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4895,7 +5367,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-badge",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-006",
@@ -4907,11 +5381,12 @@ window.LibraryPackFoundations=[
       "breadcrumb",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-flw kind-nav variant-5 breadcrumb\"><b>Breadcrumb</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-flw dq-nav dq-breadcrumb dqv-3\"><a>Home</a><i>/</i><a>Library</a><i>/</i><b>Breadcrumb</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -4926,7 +5401,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-breadcrumb",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-007",
@@ -4938,11 +5415,12 @@ window.LibraryPackFoundations=[
       "button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"devpack pack-flw kind-buttons variant-6 button\" type=\"button\"><i></i><span>Flowbite · Button</span></button>",
+      "html": "<button class=\"devpack pack-flw dq-button dq-action-btn dqv-4\" type=\"button\"><small class=\"dqv-kicker\">PRO</small><span>Button</span><i>→</i><em class=\"dqv-state\">Active</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -4957,7 +5435,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-action",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-008",
@@ -4969,11 +5449,12 @@ window.LibraryPackFoundations=[
       "button-group",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"devpack pack-flw kind-buttons variant-7 button-group\" type=\"button\"><i></i><span>Flowbite · Button Group</span></button>",
+      "html": "<div class=\"devpack pack-flw dq-button dq-btn-group dqv-3\"><button class=\"active\">Button Group</button><button>+</button><button>⋮</button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -4988,7 +5469,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-group",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-009",
@@ -5000,11 +5483,12 @@ window.LibraryPackFoundations=[
       "card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-flw kind-cards variant-0 card\"><small>Flowbite</small><h4>Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-flw dq-card dq-content-card dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -5019,7 +5503,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-FLW-010",
@@ -5031,11 +5517,12 @@ window.LibraryPackFoundations=[
       "carousel",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-media variant-1 carousel\"><i></i><i></i><b>Carousel</b></div>",
+      "html": "<div class=\"devpack pack-flw dq-media dq-carousel dqv-3\"><div class=\"dq-slides\"><article></article><article class=\"active\"></article><article></article></div><footer><button>‹</button><span><i></i><i class=\"active\"></i><i></i></span><button>›</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5050,7 +5537,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-carousel",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-011",
@@ -5062,11 +5551,12 @@ window.LibraryPackFoundations=[
       "datepicker",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-flw kind-inputs variant-2 datepicker\"><b>Datepicker</b><input placeholder=\"Flowbite field\"><small>Flowbite reference</small></label>",
+      "html": "<label class=\"devpack pack-flw dq-input dq-special dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Datepicker</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -5081,7 +5571,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-FLW-012",
@@ -5093,11 +5585,12 @@ window.LibraryPackFoundations=[
       "dropdown",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-menus variant-3 dropdown\"><b>Dropdown</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-flw dq-menu dq-dropdown dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><button class=\"dq-trigger\">Dropdown<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5112,7 +5605,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-013",
@@ -5124,11 +5619,12 @@ window.LibraryPackFoundations=[
       "footer",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-flw kind-sections variant-4 footer\"><header>Footer</header><main><b>Flowbite</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<footer class=\"devpack pack-flw dq-section dq-footer dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Footer</b><div><a>Product</a><a>Resources</a><a>Company</a></div><small>© 2026</small></footer>",
       "css": "",
       "js": "",
       "react": "",
@@ -5143,7 +5639,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-footer",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-FLW-014",
@@ -5155,11 +5653,12 @@ window.LibraryPackFoundations=[
       "forms",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-flw kind-inputs variant-5 forms\"><b>Forms</b><input placeholder=\"Flowbite field\"><small>Flowbite reference</small></label>",
+      "html": "<label class=\"devpack pack-flw dq-input dq-validation dqv-1\"><b>Forms</b><input value=\"mohanad@example.com\"><span>✓ Looks good</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -5174,7 +5673,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-validation",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-FLW-015",
@@ -5186,11 +5687,12 @@ window.LibraryPackFoundations=[
       "list-group",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-menus variant-6 list-group\"><b>List Group</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-flw dq-menu dq-listmenu dqv-3\"><b>List Group</b><span><i>▾</i>Workspace</span><span class=\"child\">Components</span><span class=\"child\">Pages</span><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5205,7 +5707,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-list",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-016",
@@ -5217,11 +5721,12 @@ window.LibraryPackFoundations=[
       "modal",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-modals variant-7 modal\"><small>Flowbite</small><b>Modal</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-flw dq-overlay dq-dialog dqv-3\"><header><b>Modal</b><button>×</button></header><p>Contextual dialog content goes here.</p><footer><button>Cancel</button><button>Continue</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5236,7 +5741,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-dialog",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-017",
@@ -5248,11 +5755,12 @@ window.LibraryPackFoundations=[
       "navbar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-flw kind-nav variant-0 navbar\"><b>Navbar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-flw dq-nav dq-navbar dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Navbar</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -5267,7 +5775,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-FLW-018",
@@ -5279,11 +5789,12 @@ window.LibraryPackFoundations=[
       "pagination",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-flw kind-nav variant-1 pagination\"><b>Pagination</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-flw dq-nav dq-pagination dqv-3\"><button>‹</button><button class=\"active\">1</button><button>2</button><button>3</button><button>›</button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -5298,7 +5809,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-pagination",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-019",
@@ -5310,11 +5823,12 @@ window.LibraryPackFoundations=[
       "progress-bar",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-data variant-2 progress-bar\"><header><b>Progress Bar</b><span>72%</span></header><i></i><i></i><i></i><small>Flowbite data pattern</small></div>",
+      "html": "<div class=\"devpack pack-flw dq-data dq-progress dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-ring\"><i></i><strong>72%</strong></div><div><b>Progress Bar</b><small>+8.4% this week</small></div><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5329,7 +5843,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-progress",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-020",
@@ -5341,11 +5857,12 @@ window.LibraryPackFoundations=[
       "rating",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-icons variant-3 rating\"><i>✦</i><b>Rating</b><small>Flowbite</small></div>",
+      "html": "<div class=\"devpack pack-flw dq-icon dq-rating dqv-3\"><div><i>★</i><i>★</i><i>★</i><i>★</i><i>☆</i></div><b>Rating</b><small>4.8</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5360,7 +5877,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-rating",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-021",
@@ -5372,11 +5891,12 @@ window.LibraryPackFoundations=[
       "sidebar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-flw kind-nav variant-4 sidebar\"><b>Sidebar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-flw dq-nav dq-sidebar dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><i>M</i><b>Sidebar</b></header><a class=\"active\">Overview</a><a>Components</a><a>Settings</a></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -5391,7 +5911,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-sidebar",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-FLW-022",
@@ -5403,11 +5925,12 @@ window.LibraryPackFoundations=[
       "spinner",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-flw kind-inputs variant-5 spinner\"><b>Spinner</b><input placeholder=\"Flowbite field\"><small>Flowbite reference</small></label>",
+      "html": "<div class=\"devpack pack-flw dq-input dq-otp dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Spinner</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5422,7 +5945,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-023",
@@ -5434,11 +5959,12 @@ window.LibraryPackFoundations=[
       "table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-data variant-6 table\"><header><b>Table</b><span>72%</span></header><i></i><i></i><i></i><small>Flowbite data pattern</small></div>",
+      "html": "<div class=\"devpack pack-flw dq-data dq-table dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5453,7 +5979,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-024",
@@ -5465,11 +5993,12 @@ window.LibraryPackFoundations=[
       "tabs",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-tabs variant-7 tabs\"><button class=\"active\">Tabs</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-flw dq-tabs dq-tabbar dqv-3\"><div class=\"dq-tablist\"><button class=\"active\">Tabs</button><button>Preview</button><button>Code</button></div><div class=\"dq-tabpanel\">Active panel</div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5484,7 +6013,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-tabs",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-025",
@@ -5496,11 +6027,12 @@ window.LibraryPackFoundations=[
       "tooltip",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-modals variant-0 tooltip\"><small>Flowbite</small><b>Tooltip</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-flw dq-overlay dq-tooltip dqv-3\"><button>Hover me</button><span>Tooltip</span><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5515,7 +6047,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-tooltip",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-026",
@@ -5527,11 +6061,12 @@ window.LibraryPackFoundations=[
       "timeline",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-flw kind-inputs variant-1 timeline\"><b>Timeline</b><input placeholder=\"Flowbite field\"><small>Flowbite reference</small></label>",
+      "html": "<label class=\"devpack pack-flw dq-input dq-special dqv-3\"><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -5546,7 +6081,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-FLW-027",
@@ -5558,11 +6095,12 @@ window.LibraryPackFoundations=[
       "toast",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-flw kind-modals variant-2 toast\"><small>Flowbite</small><b>Toast</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-flw dq-overlay dq-toast dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i>✓</i><div><b>Toast</b><small>Operation completed successfully</small></div><button>×</button><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5577,7 +6115,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-FLW-028",
@@ -5589,11 +6129,12 @@ window.LibraryPackFoundations=[
       "sticky-banner",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-flw kind-cards variant-3 sticky-banner\"><small>Flowbite</small><h4>Sticky Banner</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-flw dq-card dq-content-card dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><header><small>Component</small><i></i></header><h4>Sticky Banner</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -5608,7 +6149,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "flowbite-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-NIN-001",
@@ -5620,11 +6163,12 @@ window.LibraryPackFoundations=[
       "button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"devpack pack-nin kind-buttons variant-0 button\" type=\"button\"><i></i><span>Ninna · Button</span></button>",
+      "html": "<button class=\"devpack pack-nin dq-button dq-action-btn dqv-5\" type=\"button\"><small class=\"dqv-dots\"><i></i><i></i><i></i></small><span>Button</span><i>→</i></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -5639,7 +6183,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-action",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-002",
@@ -5651,11 +6197,12 @@ window.LibraryPackFoundations=[
       "badge",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-1 badge\"><i>✦</i><b>Badge</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-badge dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><span><i></i>Badge</span><small>NEW</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5670,7 +6217,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-badge",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-003",
@@ -5682,11 +6231,12 @@ window.LibraryPackFoundations=[
       "avatar",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-2 avatar\"><i>✦</i><b>Avatar</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-avatar-icon dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-avatar\"><span></span></div><b>Avatar</b><small>Online</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5701,7 +6251,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-avatar",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-004",
@@ -5713,11 +6265,12 @@ window.LibraryPackFoundations=[
       "text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-3 text\"><i>✦</i><b>Text</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-typefx dqv-1\"><strong>Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5732,7 +6285,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-NIN-005",
@@ -5744,11 +6299,12 @@ window.LibraryPackFoundations=[
       "heading",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-4 heading\"><i>✦</i><b>Heading</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-typefx dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Heading</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5763,7 +6319,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-006",
@@ -5775,11 +6333,12 @@ window.LibraryPackFoundations=[
       "link",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-5 link\"><i>✦</i><b>Link</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-glyph dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i>✦</i><b>Link</b><small>Icon pattern</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5794,7 +6353,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-glyph",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-007",
@@ -5806,11 +6367,12 @@ window.LibraryPackFoundations=[
       "code",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-6 code\"><i>✦</i><b>Code</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-key dqv-3\"><kbd>⌘</kbd><kbd>K</kbd><b>Code</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5825,7 +6387,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-key",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-008",
@@ -5837,11 +6401,12 @@ window.LibraryPackFoundations=[
       "kbd",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-icons variant-7 kbd\"><i>✦</i><b>Kbd</b><small>Ninna</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-icon dq-key dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><kbd>⌘</kbd><kbd>K</kbd><b>Kbd</b><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5856,7 +6421,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-key",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-009",
@@ -5868,11 +6435,12 @@ window.LibraryPackFoundations=[
       "divider",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-0 divider\"><header>Divider</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-divider dqv-3\"><i></i><b>Divider</b><i></i><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -5887,7 +6455,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-divider",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-010",
@@ -5899,11 +6469,12 @@ window.LibraryPackFoundations=[
       "alert",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-loaders variant-1 alert\"><i></i><b>Alert</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-feedback dq-alert dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i>!</i><div><b>Alert</b><small>Actionable feedback message</small></div><button>×</button><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5918,7 +6489,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-alert",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-011",
@@ -5930,11 +6503,12 @@ window.LibraryPackFoundations=[
       "toast",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-modals variant-2 toast\"><small>Ninna</small><b>Toast</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-overlay dq-toast dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i>✓</i><div><b>Toast</b><small>Operation completed successfully</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5949,7 +6523,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-012",
@@ -5961,11 +6537,12 @@ window.LibraryPackFoundations=[
       "progress",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-data variant-3 progress\"><header><b>Progress</b><span>72%</span></header><i></i><i></i><i></i><small>Ninna data pattern</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-data dq-progress dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-ring\"><i></i><strong>72%</strong></div><div><b>Progress</b><small>+8.4% this week</small></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -5980,7 +6557,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-progress",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-013",
@@ -5992,11 +6571,12 @@ window.LibraryPackFoundations=[
       "loading",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-loaders variant-4 loading\"><i></i><b>Loading</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-feedback dq-loading dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><div><b>Loading</b><span><em></em></span></div><small>72%</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6011,7 +6591,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-loading",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-014",
@@ -6023,11 +6605,12 @@ window.LibraryPackFoundations=[
       "skeleton",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-loaders variant-5 skeleton\"><i></i><b>Skeleton</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-feedback dq-skeleton dqv-3\"><i></i><span></span><span></span><b></b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6042,7 +6625,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-skeleton",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-015",
@@ -6054,11 +6639,12 @@ window.LibraryPackFoundations=[
       "empty-state",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-data variant-6 empty-state\"><header><b>Empty State</b><span>72%</span></header><i></i><i></i><i></i><small>Ninna data pattern</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-data dq-stat dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><small>Empty State</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6073,7 +6659,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-016",
@@ -6085,11 +6673,12 @@ window.LibraryPackFoundations=[
       "input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-7 input\"><b>Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-field dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Input</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6104,7 +6693,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-017",
@@ -6116,11 +6707,12 @@ window.LibraryPackFoundations=[
       "select",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-0 select\"><b>Select</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-select dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Select</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6135,7 +6727,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-018",
@@ -6147,11 +6741,12 @@ window.LibraryPackFoundations=[
       "checkbox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-1 checkbox\"><b>Checkbox</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-nin dq-input dq-choice dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><legend>Checkbox</legend><label><input type=\"checkbox\" checked><span>Primary option</span></label><label><input type=\"checkbox\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -6166,7 +6761,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-019",
@@ -6178,11 +6775,12 @@ window.LibraryPackFoundations=[
       "switch",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-nin kind-cards variant-2 switch\"><small>Ninna</small><h4>Switch</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-switch-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div><b>Switch</b><small>Preference setting</small></div><button class=\"dq-switch\" type=\"button\"><i></i></button><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -6197,7 +6795,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-switch",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-020",
@@ -6209,11 +6809,12 @@ window.LibraryPackFoundations=[
       "radio-group",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-3 radio-group\"><b>Radio Group</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-nin dq-input dq-choice dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><legend>Radio Group</legend><label><input type=\"radio\" checked><span>Primary option</span></label><label><input type=\"radio\"><span>Secondary option</span></label><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -6228,7 +6829,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-NIN-021",
@@ -6240,11 +6843,12 @@ window.LibraryPackFoundations=[
       "slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-4 slider\"><b>Slider</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-range dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6259,7 +6863,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-022",
@@ -6271,11 +6877,12 @@ window.LibraryPackFoundations=[
       "file-upload",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-5 file-upload\"><b>File Upload</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-file-input dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><input type=\"file\"><i>⇧</i><b>File Upload</b><small>Drop file or browse</small><span><em></em></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6290,7 +6897,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-file",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-023",
@@ -6302,11 +6911,12 @@ window.LibraryPackFoundations=[
       "text-area",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-nin kind-cards variant-6 text-area\"><small>Ninna</small><h4>Text Area</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Text Area</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -6321,7 +6931,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-NIN-024",
@@ -6333,11 +6945,12 @@ window.LibraryPackFoundations=[
       "form-field",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-7 form-field\"><b>Form Field</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-validation dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Form Field</b><input value=\"mohanad@example.com\"><span>✓ Looks good</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6352,7 +6965,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-validation",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-025",
@@ -6364,11 +6979,12 @@ window.LibraryPackFoundations=[
       "password-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-0 password-input\"><b>Password Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-password dqv-3\"><b>Password Input</b><div><input type=\"password\" value=\"password\"><button type=\"button\">◉</button></div><span><i></i><i></i><i></i><i></i></span><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6383,7 +6999,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-password",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-026",
@@ -6395,11 +7013,12 @@ window.LibraryPackFoundations=[
       "number-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-1 number-input\"><b>Number Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Number Input</b><div><i>#</i><input value=\"42\"></div><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6414,7 +7033,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-027",
@@ -6426,11 +7047,12 @@ window.LibraryPackFoundations=[
       "search-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-2 search-input\"><b>Search Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-search dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><span>⌕</span><input placeholder=\"Search Input\"><kbd>⌘K</kbd></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6445,7 +7067,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-search",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-028",
@@ -6457,11 +7081,12 @@ window.LibraryPackFoundations=[
       "date-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-3 date-input\"><b>Date Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><b>Date Input</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6476,7 +7101,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-029",
@@ -6488,11 +7115,12 @@ window.LibraryPackFoundations=[
       "time-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-4 time-input\"><b>Time Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><b>Time Input</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6507,7 +7135,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-NIN-030",
@@ -6519,11 +7149,12 @@ window.LibraryPackFoundations=[
       "color-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-5 color-input\"><b>Color Input</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-1\"><b>Color Input</b><div><i>◉</i><input value=\"42\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -6538,7 +7169,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-NIN-031",
@@ -6550,11 +7183,12 @@ window.LibraryPackFoundations=[
       "box",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-6 box\"><header>Box</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Box</b><small>Layout</small></header><main><aside></aside><div></div></main><section class=\"dqv-meta\"><span></span><span></span></section></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6569,7 +7203,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-032",
@@ -6581,11 +7217,12 @@ window.LibraryPackFoundations=[
       "stack",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-7 stack\"><header>Stack</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Stack</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6600,7 +7237,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-033",
@@ -6612,11 +7251,12 @@ window.LibraryPackFoundations=[
       "flex",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-0 flex\"><header>Flex</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><header><b>Flex</b><small>Layout</small></header><main><aside></aside><div></div></main><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6631,7 +7271,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-NIN-034",
@@ -6643,11 +7285,12 @@ window.LibraryPackFoundations=[
       "grid",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-1 grid\"><header>Grid</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-grid dqv-3\"><header><b>Grid</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6662,7 +7305,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-035",
@@ -6674,11 +7319,12 @@ window.LibraryPackFoundations=[
       "container",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-2 container\"><header>Container</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-1\"><header><b>Container</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6693,7 +7339,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-NIN-036",
@@ -6705,11 +7353,12 @@ window.LibraryPackFoundations=[
       "center",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-3 center\"><header>Center</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Center</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6724,7 +7373,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-037",
@@ -6736,11 +7387,12 @@ window.LibraryPackFoundations=[
       "simple-grid",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-4 simple-grid\"><header>Simple Grid</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-grid dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Simple Grid</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div><section class=\"dqv-meta\"><span></span><span></span></section></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6755,7 +7407,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-038",
@@ -6767,11 +7421,12 @@ window.LibraryPackFoundations=[
       "aspect-ratio",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-5 aspect-ratio\"><header>Aspect Ratio</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-divider dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><b>Aspect Ratio</b><i></i><section class=\"dqv-meta\"><span></span><span></span></section></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6786,7 +7441,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-divider",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-039",
@@ -6798,11 +7455,12 @@ window.LibraryPackFoundations=[
       "spacer",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-6 spacer\"><header>Spacer</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-divider dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><b>Spacer</b><i></i></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6817,7 +7475,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-divider",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-040",
@@ -6829,11 +7489,12 @@ window.LibraryPackFoundations=[
       "wrap",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-nin kind-sections variant-7 wrap\"><header>Wrap</header><main><b>Ninna</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-nin dq-section dq-layout dqv-3\"><header><b>Wrap</b><small>Layout</small></header><main><aside></aside><div></div></main><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -6848,7 +7509,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-041",
@@ -6860,11 +7523,12 @@ window.LibraryPackFoundations=[
       "modal",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-modals variant-0 modal\"><small>Ninna</small><b>Modal</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-overlay dq-dialog dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Modal</b><button>×</button></header><p>Contextual dialog content goes here.</p><footer><button>Cancel</button><button>Continue</button></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6879,7 +7543,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-dialog",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-042",
@@ -6891,11 +7557,12 @@ window.LibraryPackFoundations=[
       "drawer",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-modals variant-1 drawer\"><small>Ninna</small><b>Drawer</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-overlay dq-drawer dqv-3\"><header><b>Drawer</b><button>×</button></header><div><span></span><span></span><span></span></div><footer><button>Cancel</button><button>Save</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6910,7 +7577,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-drawer",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-043",
@@ -6922,11 +7591,12 @@ window.LibraryPackFoundations=[
       "popover",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-modals variant-2 popover\"><small>Ninna</small><b>Popover</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-overlay dq-popover dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button>•••</button><aside><b>Popover</b><span>First action</span><span>Second action</span></aside></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6941,7 +7611,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-popover",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-044",
@@ -6953,11 +7625,12 @@ window.LibraryPackFoundations=[
       "tooltip",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-modals variant-3 tooltip\"><small>Ninna</small><b>Tooltip</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-overlay dq-tooltip dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><button>Hover me</button><span>Tooltip</span><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -6972,7 +7645,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-tooltip",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-045",
@@ -6984,11 +7659,12 @@ window.LibraryPackFoundations=[
       "dropdown-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-menus variant-4 dropdown-menu\"><b>Dropdown Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-nin dq-menu dq-dropdown dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><button class=\"dq-trigger\">Dropdown Menu<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7003,7 +7679,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-046",
@@ -7015,11 +7693,12 @@ window.LibraryPackFoundations=[
       "tabs",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-tabs variant-5 tabs\"><button class=\"active\">Tabs</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-tabs dq-tabbar dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-tablist\"><button class=\"active\">Tabs</button><button>Preview</button><button>Code</button></div><div class=\"dq-tabpanel\">Active panel</div><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7034,7 +7713,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-tabs",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-047",
@@ -7046,11 +7727,12 @@ window.LibraryPackFoundations=[
       "accordion",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-tabs variant-6 accordion\"><button class=\"active\">Accordion</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-nin dq-tabs dq-accordion dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><button class=\"dq-acc-head active\" type=\"button\"><span>Accordion</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7065,7 +7747,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-NIN-048",
@@ -7077,11 +7761,12 @@ window.LibraryPackFoundations=[
       "breadcrumbs",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-nin kind-nav variant-7 breadcrumbs\"><b>Breadcrumbs</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-nin dq-nav dq-breadcrumb dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><a>Home</a><i>/</i><a>Library</a><i>/</i><b>Breadcrumbs</b><section class=\"dqv-meta\"><span></span><span></span></section></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -7096,7 +7781,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-breadcrumb",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-049",
@@ -7108,11 +7795,12 @@ window.LibraryPackFoundations=[
       "pagination",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-nin kind-nav variant-0 pagination\"><b>Pagination</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-nin dq-nav dq-pagination dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><button>‹</button><button class=\"active\">1</button><button>2</button><button>3</button><button>›</button><section class=\"dqv-meta\"><span></span><span></span></section></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -7127,7 +7815,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-pagination",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-NIN-050",
@@ -7139,11 +7829,12 @@ window.LibraryPackFoundations=[
       "stepper",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<nav class=\"devpack pack-nin kind-nav variant-1 stepper\"><b>Stepper</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-nin dq-nav dq-steps dqv-3\"><span class=\"done\"><i>1</i><b>Start</b></span><span class=\"active\"><i>2</i><b>Stepper</b></span><span><i>3</i><b>Done</b></span><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -7158,7 +7849,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-steps",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-051",
@@ -7170,11 +7863,12 @@ window.LibraryPackFoundations=[
       "card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-nin kind-cards variant-2 card\"><small>Ninna</small><h4>Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -7189,7 +7883,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-052",
@@ -7201,11 +7897,12 @@ window.LibraryPackFoundations=[
       "stat",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-data variant-3 stat\"><header><b>Stat</b><span>72%</span></header><i></i><i></i><i></i><small>Ninna data pattern</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-data dq-stat dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><small>Stat</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7220,7 +7917,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-053",
@@ -7232,11 +7931,12 @@ window.LibraryPackFoundations=[
       "table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-data variant-4 table\"><header><b>Table</b><span>72%</span></header><i></i><i></i><i></i><small>Ninna data pattern</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-data dq-table dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7251,7 +7951,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-NIN-054",
@@ -7263,11 +7965,12 @@ window.LibraryPackFoundations=[
       "data-table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-data variant-5 data-table\"><header><b>Data Table</b><span>72%</span></header><i></i><i></i><i></i><small>Ninna data pattern</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-data dq-table dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><header><b>Data Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7282,7 +7985,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-NIN-055",
@@ -7294,11 +7999,12 @@ window.LibraryPackFoundations=[
       "timeline",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-nin kind-inputs variant-6 timeline\"><b>Timeline</b><input placeholder=\"Ninna field\"><small>Ninna reference</small></label>",
+      "html": "<label class=\"devpack pack-nin dq-input dq-special dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -7313,7 +8019,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-056",
@@ -7325,11 +8033,12 @@ window.LibraryPackFoundations=[
       "tree",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-nin kind-cards variant-7 tree\"><small>Ninna</small><h4>Tree</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Tree</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -7344,7 +8053,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-NIN-057",
@@ -7356,11 +8067,12 @@ window.LibraryPackFoundations=[
       "calendar",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-nin kind-data variant-0 calendar\"><header><b>Calendar</b><span>72%</span></header><i></i><i></i><i></i><small>Ninna data pattern</small></div>",
+      "html": "<div class=\"devpack pack-nin dq-data dq-calendar dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><button>‹</button><b>September</b><button>›</button></header><div class=\"dq-days\"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span class=\"active\">8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -7375,7 +8087,9 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-calendar",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-NIN-058",
@@ -7387,11 +8101,12 @@ window.LibraryPackFoundations=[
       "code-block",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-nin kind-cards variant-1 code-block\"><small>Ninna</small><h4>Code Block</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-nin dq-card dq-code dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Code Block</b><button>Copy</button></header><pre><code>&lt;component /&gt;</code></pre><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -7406,6 +8121,8 @@ window.LibraryPackFoundations=[
     "sourceReference": "ninna-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-code",
+    "qualityVariant": 4
   }
 ];
