@@ -81,9 +81,9 @@ function bindCardPreviewInteractions(scope=document){
       card.addEventListener('mouseenter',()=>setCardPreviewActive(card,true));
       card.addEventListener('mouseleave',stop);
     }else{
-      trigger.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,input,select,textarea'))return;setCardPreviewActive(card,true)});
-      trigger.addEventListener('pointerup',()=>{clearTimeout(stopTimer);stopTimer=setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),1500)});
-      trigger.addEventListener('pointercancel',stop);
+      card.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,input,select,textarea'))return;setCardPreviewActive(card,true)});
+      card.addEventListener('pointerup',e=>{if(e.target.closest('button,a,input,select,textarea'))return;clearTimeout(stopTimer);stopTimer=setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),1500)});
+      card.addEventListener('pointercancel',stop);
     }
     trigger.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setCardPreviewActive(card,true);clearTimeout(stopTimer);stopTimer=setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),1800)}});
   });
