@@ -52,8 +52,17 @@
   },
   "validation": {
     "syntax": [
+      "core/state.js",
+      "core/search.js",
+      "ui/library.js",
+      "ui/cards.js",
+      "ui/preview.js",
+      "ui/actions.js",
+      "ui/editor.js",
+      "ui/code-export.js",
       "app.js",
       "engine3.js",
+      "fonts/fonts.js",
       "sources.js",
       "validator.js",
       "sw.js",
@@ -109,7 +118,8 @@
   "virtual_rendering": {
     "batch_size": 48,
     "intersection_loading": true,
-    "viewport_animation_pause": true
+    "viewport_animation_pause": false,
+    "interaction_only_animation": true
   },
   "component_routes": "#/component/<ID>",
   "search": {
@@ -119,12 +129,11 @@
   "pack_manager": true,
   "pwa": {
     "enabled": true,
-    "cache": "library-engine-3-v2"
+    "cache": "library-engine-3-v9"
   },
   "quality_audit": {
     "scope": "all 971 catalog payloads",
     "metric_definition": "strict semantic structural signature: text values, generic variant classes, source pack classes, and layout-number classes are normalized before comparison",
-    "live_html_previews": 971,
     "exact_unique_html": 971,
     "normalized_structural_signatures": 674,
     "dev_components": 416,
@@ -164,7 +173,9 @@
     ],
     "schema_invalid": 0,
     "empty_html": 0,
-    "note": "DEV quality pass rebuilt all 416 DEV-derived entries from 17 broad DOM shapes into 75 semantic component types and 286 real DOM structures. The stricter library-wide metric is 674 semantic structural signatures; this supersedes the older 707 metric that counted more class-level variation."
+    "note": "DEV quality pass rebuilt all 416 DEV-derived entries from 17 broad DOM shapes into 75 semantic component types and 286 real DOM structures. The stricter library-wide metric is 674 semantic structural signatures; this supersedes the older 707 metric that counted more class-level variation.",
+    "html_previews": 971,
+    "code_generation_module": "ui/code-export.js"
   },
   "code_health": {
     "reviewed_at": "2026-09-28",
@@ -176,6 +187,41 @@
     "on_demand_interaction_ticker": true,
     "stale_preview_page_removed": true,
     "unused_data_shim_removed": true,
-    "stale_preview_paused_css_removed": true
+    "stale_preview_paused_css_removed": true,
+    "architecture_refactor": true,
+    "app_js_bytes_before": 142869,
+    "app_js_bytes_after": 6288,
+    "css_layers": 5,
+    "search_module": "core/search.js",
+    "preview_module": "ui/preview.js",
+    "editor_module": "ui/editor.js",
+    "code_export_module": "ui/code-export.js"
+  },
+  "architecture": {
+    "core": [
+      "core/state.js",
+      "core/search.js"
+    ],
+    "ui": [
+      "ui/library.js",
+      "ui/cards.js",
+      "ui/preview.js",
+      "ui/actions.js",
+      "ui/editor.js",
+      "ui/code-export.js"
+    ],
+    "fonts": [
+      "fonts/fonts.js"
+    ],
+    "styles": [
+      "styles/base.css",
+      "styles/components.css",
+      "styles/engine.css",
+      "styles/fonts.css",
+      "styles/ux.css"
+    ],
+    "entrypoint": "app.js",
+    "engine": "engine3.js",
+    "compatibility_stylesheet": "styles.css"
   }
 }
