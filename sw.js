@@ -1,8 +1,33 @@
-const CACHE="library-engine-3-v7";
+const CACHE="library-engine-3-v8";
 const CORE=[
-  "./","./index.html","./styles.css","./sources.js","./validator.js","./app.js","./engine3.js","./fonts.js",
-  "./catalog/categories.js","./catalog/search-index.js","./catalog/search-worker.js","./catalog/registry.js","./catalog/bootstrap.js",
-  "./catalog/import-pipeline.js","./catalog/packs/core.js","./manifest.webmanifest"
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./styles/base.css",
+  "./styles/components.css",
+  "./styles/engine.css",
+  "./styles/fonts.css",
+  "./styles/ux.css",
+  "./sources.js",
+  "./validator.js",
+  "./core/state.js",
+  "./ui/library.js",
+  "./ui/cards.js",
+  "./ui/preview.js",
+  "./ui/actions.js",
+  "./ui/editor.js",
+  "./ui/code-export.js",
+  "./app.js",
+  "./engine3.js",
+  "./fonts.js",
+  "./catalog/categories.js",
+  "./catalog/search-index.js",
+  "./catalog/search-worker.js",
+  "./catalog/registry.js",
+  "./catalog/bootstrap.js",
+  "./catalog/import-pipeline.js",
+  "./catalog/packs/core.js",
+  "./manifest.webmanifest"
 ];
 self.addEventListener("install",event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
