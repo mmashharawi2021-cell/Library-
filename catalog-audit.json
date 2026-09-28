@@ -135,7 +135,7 @@
   "pack_manager": true,
   "pwa": {
     "enabled": true,
-    "cache": "library-engine-3-v11"
+    "cache": "library-engine-3-v12"
   },
   "quality_audit": {
     "scope": "all 971 catalog payloads",
@@ -203,7 +203,8 @@
     "editor_module": "ui/editor.js",
     "code_export_module": "ui/code-export.js",
     "performance_pass": true,
-    "service_worker_cache": "library-engine-3-v11"
+    "service_worker_cache": "library-engine-3-v12",
+    "runtime_performance_audit": true
   },
   "architecture": {
     "core": [
@@ -257,5 +258,38 @@
     },
     "service_worker_precaches_heavy_optional_assets": false,
     "engine_core_css_bytes": 8482
+  },
+  "runtime_performance": {
+    "completed": true,
+    "instrumentation": "core/runtime-performance.js",
+    "metrics": [
+      "TTFB",
+      "FCP",
+      "LCP",
+      "CLS",
+      "INP",
+      "Long Tasks",
+      "DOM Nodes",
+      "Grid Render Time"
+    ],
+    "telemetry": false,
+    "startup_source_bytes": 474186,
+    "adaptive_grid_batch": {
+      "mobile_small": 12,
+      "mobile_tablet": "12-18",
+      "medium": "18-24",
+      "wide": 30
+    },
+    "automatic_scroll_cap": {
+      "mobile": 36,
+      "desktop": 60
+    },
+    "incremental_append": true,
+    "offscreen_content_visibility": true,
+    "card_event_delegation": true,
+    "preview_internal_binding": "on interaction only",
+    "search_debounce_ms": 120,
+    "staged_initial_render": true,
+    "mobile_min_touch_target_px": 44
   }
 }
