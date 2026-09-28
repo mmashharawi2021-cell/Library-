@@ -1,4 +1,4 @@
-const CACHE="library-engine-3-v8";
+const CACHE="library-engine-3-v9";
 const CORE=[
   "./",
   "./index.html",
@@ -10,7 +10,7 @@ const CORE=[
   "./styles/ux.css",
   "./sources.js",
   "./validator.js",
-  "./core/state.js",
+  "./core/state.js","./core/search.js",
   "./ui/library.js",
   "./ui/cards.js",
   "./ui/preview.js",
