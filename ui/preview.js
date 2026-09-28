@@ -2,31 +2,50 @@
 function resetCardPreview(card){
   if(!card||card.dataset.trashed)return;
   const s=samples.find(x=>x.id===card.dataset.id),stage=card.querySelector('.component-preview-stage');if(!s||!stage)return;
-  stage.innerHTML=s.code.html;bindInteractivePreviews(stage);
+  stage.innerHTML=s.code.html;
 }
 function setCardPreviewActive(card,on,{reset=false}={}){
   if(!card||card.dataset.trashed)return;
   card.classList.toggle('preview-active',!!on);
   card.classList.toggle('preview-idle',!on);
-  if(on){void card.offsetWidth;runLivePreviewTick(card)}
+  if(on){const stage=card.querySelector('.component-preview-stage');if(stage)bindInteractivePreviews(stage);void card.offsetWidth;runLivePreviewTick(card)}
   else if(reset)resetCardPreview(card);
   syncInteractionPreviewTimer();
 }
 function bindCardPreviewInteractions(scope=document){
-  scope.querySelectorAll?.('.component-card:not(.trashed-card)').forEach(card=>{
-    if(card.dataset.previewBound)return;card.dataset.previewBound='1';
-    const trigger=card.querySelector('[data-preview-trigger]');if(!trigger)return;
-    let stopTimer=null;
-    const stop=()=>{clearTimeout(stopTimer);stopTimer=setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),260)};
-    if(matchMedia('(hover:hover) and (pointer:fine)').matches){
-      card.addEventListener('mouseenter',()=>setCardPreviewActive(card,true));
-      card.addEventListener('mouseleave',stop);
-    }else{
-      card.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,input,select,textarea'))return;setCardPreviewActive(card,true)});
-      card.addEventListener('pointerup',e=>{if(e.target.closest('button,a,input,select,textarea'))return;clearTimeout(stopTimer);stopTimer=setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),1500)});
-      card.addEventListener('pointercancel',stop);
-    }
-    trigger.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setCardPreviewActive(card,true);clearTimeout(stopTimer);stopTimer=setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),1800)}});
+  const root=scope?.id==='componentGrid'?scope:scope?.querySelector?.('#componentGrid');
+  if(!root||root.dataset.previewDelegateBound)return;
+  root.dataset.previewDelegateBound='1';
+  const timers=new WeakMap();
+  const stop=(card,delay=260)=>{
+    clearTimeout(timers.get(card));
+    timers.set(card,setTimeout(()=>setCardPreviewActive(card,false,{reset:true}),delay));
+  };
+  const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(fine){
+    root.addEventListener('mouseover',e=>{
+      const card=e.target.closest('.component-card:not(.trashed-card)');if(!card||!root.contains(card)||card.contains(e.relatedTarget))return;
+      clearTimeout(timers.get(card));setCardPreviewActive(card,true);
+    });
+    root.addEventListener('mouseout',e=>{
+      const card=e.target.closest('.component-card:not(.trashed-card)');if(!card||!root.contains(card)||card.contains(e.relatedTarget))return;
+      stop(card,260);
+    });
+  }else{
+    root.addEventListener('pointerdown',e=>{
+      const card=e.target.closest('.component-card:not(.trashed-card)');if(!card||e.target.closest('button,a,input,select,textarea'))return;
+      clearTimeout(timers.get(card));setCardPreviewActive(card,true);
+    });
+    root.addEventListener('pointerup',e=>{
+      const card=e.target.closest('.component-card:not(.trashed-card)');if(!card||e.target.closest('button,a,input,select,textarea'))return;
+      stop(card,1500);
+    });
+    root.addEventListener('pointercancel',e=>{const card=e.target.closest('.component-card:not(.trashed-card)');if(card)stop(card,260)});
+  }
+  root.addEventListener('keydown',e=>{
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    const trigger=e.target.closest('[data-preview-trigger]'),card=trigger?.closest('.component-card:not(.trashed-card)');if(!card)return;
+    e.preventDefault();clearTimeout(timers.get(card));setCardPreviewActive(card,true);stop(card,1800);
   });
 }
 
