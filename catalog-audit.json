@@ -124,12 +124,18 @@
   "component_routes": "#/component/<ID>",
   "search": {
     "metadata_records": 971,
-    "web_worker": true
+    "startup_manifest": "catalog/manifest-index.js",
+    "startup_manifest_bytes": 53423,
+    "full_index": "catalog/search-index.js",
+    "full_index_bytes": 416230,
+    "full_index_lazy": true,
+    "web_worker": true,
+    "worker_lazy": true
   },
   "pack_manager": true,
   "pwa": {
     "enabled": true,
-    "cache": "library-engine-3-v9"
+    "cache": "library-engine-3-v11"
   },
   "quality_audit": {
     "scope": "all 971 catalog payloads",
@@ -195,7 +201,9 @@
     "search_module": "core/search.js",
     "preview_module": "ui/preview.js",
     "editor_module": "ui/editor.js",
-    "code_export_module": "ui/code-export.js"
+    "code_export_module": "ui/code-export.js",
+    "performance_pass": true,
+    "service_worker_cache": "library-engine-3-v11"
   },
   "architecture": {
     "core": [
@@ -223,5 +231,31 @@
     "entrypoint": "app.js",
     "engine": "engine3.js",
     "compatibility_stylesheet": "styles.css"
+  },
+  "performance_pass": {
+    "completed": true,
+    "startup_source_bytes_before_approx": 985752,
+    "startup_source_bytes_after": 465397,
+    "startup_reduction_percent": 52.8,
+    "deferred_source_bytes": 578127,
+    "deferred_assets": {
+      "catalog/search-index.js": 416230,
+      "ui/code-export.js": 89072,
+      "fonts/fonts.js": 18658,
+      "styles/fonts.css": 4781,
+      "styles/jitter.css": 17140,
+      "styles/dev.css": 30331,
+      "catalog/search-worker.js": 1915
+    },
+    "lazy_triggers": {
+      "search_worker": "first non-empty search",
+      "full_metadata": "Command Palette or Related Components info tab",
+      "code_export": "code tab or copy action",
+      "fonts": "fonts section",
+      "jitter_css": "Jitter pack load",
+      "dev_css": "Foundations, Motion or Origin pack load"
+    },
+    "service_worker_precaches_heavy_optional_assets": false,
+    "engine_core_css_bytes": 8482
   }
 }
