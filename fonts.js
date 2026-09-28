@@ -611,7 +611,7 @@ let filtered=fonts.slice(),limit=PAGE,active=false;
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const familyParam=name=>encodeURIComponent(name).replace(/%20/g,"+");
 function familyStack(font){
-  return font.arabic?`"${font.name}","Noto Sans Arabic",sans-serif`:`"${font.name}",Inter,"Noto Sans Arabic",sans-serif`;
+  return font.arabic?`'${font.name}','Noto Sans Arabic',sans-serif`:`'${font.name}',Inter,'Noto Sans Arabic',sans-serif`;
 }
 function loadBatch(list){
   const names=[...new Set(list.map(x=>x.name).filter(x=>!loaded.has(x)))];
@@ -666,10 +666,11 @@ function card(font,index){
   const stack=familyStack(font),arabicText=esc(document.querySelector("#fontArabicSample")?.value||AR_SAMPLE),englishText=esc(document.querySelector("#fontEnglishSample")?.value||EN_SAMPLE);
   return `<article class="font-card" data-font-id="${font.id}">
     <header><span class="font-rank">${String(index+1).padStart(2,"0")}</span><div><b>${esc(font.name)}</b><small>${font.arabic?"Arabic + Latin":"Latin · Arabic fallback"}</small></div><span class="font-support ${font.arabic?"yes":"fallback"}">${font.arabic?"عربي":"Aa"}</span></header>
-    <div class="font-preview" style="font-family:${stack}">
+    <div class="font-preview" style="font-family:${stack}" data-font-family="${esc(font.name)}">
       <p class="font-preview-ar" dir="rtl">${arabicText}</p>
       <p class="font-preview-en" dir="ltr">${englishText}</p>
       <div class="font-scale"><span>Aa</span><span>Aa</span><span>Aa</span></div>
+      <small class="font-live-name">${esc(font.name)}</small>
     </div>
     <footer><code>font-family: '${esc(font.name)}';</code><button data-copy-font="${esc(font.id)}" type="button">نسخ CSS</button></footer>
   </article>`;
