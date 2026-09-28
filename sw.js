@@ -1,6 +1,6 @@
-const CACHE="library-engine-3-v2";
+const CACHE="library-engine-3-v3";
 const CORE=[
-  "./","./index.html","./styles.css","./sources.js","./validator.js","./app.js","./engine3.js",
+  "./","./index.html","./styles.css","./sources.js","./validator.js","./app.js","./engine3.js","./fonts.js",
   "./catalog/categories.js","./catalog/search-index.js","./catalog/search-worker.js","./catalog/registry.js","./catalog/bootstrap.js",
   "./catalog/import-pipeline.js","./catalog/packs/core.js","./manifest.webmanifest"
 ];
