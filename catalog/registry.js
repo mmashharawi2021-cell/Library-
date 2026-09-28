@@ -89,7 +89,7 @@
     return metadataLoading;
   }
   async function loadPack(packId){
-    if(packId==="all"){await Promise.all(Object.keys(manifest).map(loadPack));return loadedItems}
+    if(packId==="all"){for(const id of Object.keys(manifest))await loadPack(id);return loadedItems}
     if(runtimePacks.has(packId))return runtimePacks.get(packId);
     if(loadedPacks.has(packId))return loadedItems.filter(x=>packOf(x)===packId);
     if(loading.has(packId))return loading.get(packId);
