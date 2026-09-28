@@ -260,22 +260,43 @@
     const stats=registry.stats();
     const resources=performance.getEntriesByType?.("resource")||[];
     const transferred=resources.reduce((n,r)=>n+(r.transferSize||0),0);
-    const active=qsa(".component-card.preview-active,.drawer-preview.preview-active").length;
-    const cards=qsa(".component-card").length;
+    const snap=globalThis.LibraryPerformance?.snapshot?.()||{};
+    const vitals=snap.vitals||{},last=snap.lastRender||{};
+    const active=snap.activePreviews??qsa(".component-card.preview-active,.drawer-preview.preview-active").length;
+    const cards=snap.cards??qsa(".component-card").length;
+    const domNodes=snap.domNodes??document.getElementsByTagName("*").length;
     const mem=performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+" MB":"غير متاح";
+    const fmt=(v,suffix=" ms")=>Number.isFinite(v)?v.toFixed(v<10?2:0)+suffix:"—";
+    const grade=(v,good,mid,lower=false)=>{
+      if(!Number.isFinite(v))return["—","mid"];
+      const ok=lower?v<=good:v>=good,average=lower?v<=mid:v>=mid;
+      return ok?["جيد","good"]:average?["متوسط","mid"]:["ضعيف","bad"];
+    };
+    const vitalCard=(label,value,display,good,mid)=>{const [name,cls]=grade(value,good,mid,true);return `<div class="perf-vital ${cls}"><span>${label}</span><b>${display}</b><small>${name}</small></div>`};
     const content=qs("#perfContent");if(!content)return;
     content.innerHTML=`
       <div class="engine-kpis perf-kpis">
         <div><b>${stats.total}</b><span>Catalog</span></div>
         <div><b>${stats.loaded}</b><span>Loaded Data</span></div>
         <div><b>${cards}</b><span>DOM Cards</span></div>
-        <div><b>${active}</b><span>Active Loops</span></div>
+        <div><b>${active}</b><span>Active Previews</span></div>
+      </div>
+      <div class="perf-vitals">
+        ${vitalCard("FCP",vitals.fcp,fmt(vitals.fcp),1800,3000)}
+        ${vitalCard("LCP",vitals.lcp,fmt(vitals.lcp),2500,4000)}
+        ${vitalCard("INP",vitals.inp,fmt(vitals.inp),200,500)}
+        ${vitalCard("CLS",vitals.cls,Number.isFinite(vitals.cls)?vitals.cls.toFixed(3):"—",0.1,0.25)}
       </div>
       <div class="perf-table">
+        <p><b>TTFB:</b> ${fmt(vitals.ttfb)}</p>
+        <p><b>Last grid render:</b> ${fmt(last.duration)} ${last.count?"· "+last.count+" cards":""}</p>
+        <p><b>DOM nodes:</b> ${domNodes}</p>
+        <p><b>Long tasks:</b> ${snap.longTasks?.count||0} · max ${fmt(snap.longTasks?.max)}</p>
         <p><b>Transferred:</b> ${(transferred/1024).toFixed(1)} KB</p>
         <p><b>JS Heap:</b> ${mem}</p>
         <p><b>Lazy packs remaining:</b> ${registry.unloadedPacks().length}</p>
-        <p><b>Worker:</b> ${E.worker?'Active':'Fallback'}</p>
+        <p><b>Search Worker:</b> ${E.worker?'Active':'Lazy / not started'}</p>
+        <p><b>Full metadata:</b> ${registry.isMetadataReady?.()?'Loaded':'Lazy / not loaded'}</p>
         <p><b>Service Worker:</b> ${navigator.serviceWorker?.controller?'Controlling':'Ready on next load / unavailable'}</p>
       </div>
       <div id="qualityAudit" class="perf-table"><p><b>Catalog audit:</b> Loading...</p></div>`;
@@ -283,18 +304,17 @@
     const box=qs("#qualityAudit"),q=audit?.quality_audit;
     if(box&&q){
       box.innerHTML=`
-        <p><b>Live HTML previews:</b> ${q.live_html_previews} / ${audit.total_components}</p>
+        <p><b>HTML previews:</b> ${q.html_previews||q.live_html_previews||0} / ${audit.total_components}</p>
         <p><b>Exact unique HTML:</b> ${q.exact_unique_html}</p>
         <p><b>Normalized structural signatures:</b> ${q.normalized_structural_signatures}</p>
         <p><b>DEV quality:</b> ${q.dev_components||q.dev_variants||0} upgraded · ${q.dev_semantic_template_types||0} semantic types · ${q.dev_dom_structures||q.dev_structural_signatures||0} DOM structures · ${q.dev_layout_variants||1} layout variants</p>
         <p><b>Jitter quality:</b> ${q.jitter_generated_variants} upgraded · ${q.jitter_semantic_template_types||0} semantic types · ${q.jitter_dom_structures||q.jitter_base_signatures||0} DOM structures · ${q.jitter_layout_variants||1} layout variants</p>
         <p><b>Name collisions:</b> ${q.name_collisions}</p>
-        <p><b>Portable code:</b> generated at runtime for HTML / CSS / JS / React / Tailwind</p>`;
+        <p><b>Portable code:</b> generated lazily for HTML / CSS / JS / React / Tailwind</p>`;
     }else if(box){
       box.innerHTML='<p><b>Catalog audit:</b> unavailable</p>';
     }
   }
-
 
   async function ensureIdsLoaded(ids){
     const packs=[...new Set((ids||[]).map(id=>registry.metaFor(id)?.pack).filter(Boolean))];
