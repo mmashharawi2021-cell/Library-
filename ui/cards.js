@@ -36,7 +36,7 @@ function gridTotal(list){return state.mode==='library'&&state.pack==='all'?catal
 function gridSentinelHtml(shown,total,hasMore,hasUnloaded){return shown<total&&hasMore||hasUnloaded?`<button id="gridSentinel" class="grid-sentinel" type="button"><b>${shown}</b><span>من ${total}</span><small>${hasMore?'تحميل المزيد':'تحميل Pack التالي'}</small></button>`:''}
 function finishGridRender(start,count,mode='full'){
   if(el.renderCount)el.renderCount.textContent=`${count} / ${gridTotal(gridCurrentList)}`;
-  bindInteractivePreviews(el.grid);bindCardPreviewInteractions(el.grid);observeGridSentinel();
+  bindCardPreviewInteractions(el.grid);observeGridSentinel();
   const done=()=>globalThis.LibraryPerformance?.recordRender?.('grid',performance.now()-start,count,{mode,batch:gridBatch});
   requestAnimationFrame(done);
 }
