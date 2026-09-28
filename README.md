@@ -69,7 +69,7 @@ Pack Manager يعرض:
 - Backup Export / Import
 - Local Component Pack Import
 - PWA + Offline Cache
-- Service Worker cache version: **library-engine-3-v12**
+- Service Worker cache version: **library-engine-3-v14**
 
 ## البنية
 
@@ -156,6 +156,18 @@ styles.css    # compatibility imports only
 - أهداف اللمس على الجوال رُفعت إلى **44px** للعناصر الأساسية.
 - الـRuntime monitor لا يرسل أي بيانات؛ القياسات تبقى داخل المتصفح.
 - الحجم الأولي الحالي لملفات المشروع يقارب **474 KB** غير مضغوط، مع بقاء الملفات الثقيلة الاختيارية Lazy.
+
+### Damage Platform UI Theme
+- تم اعتماد هوية واجهة جديدة مستوحاة من Design System المستخرج من منصة حصر الأضرار.
+- Background: `#eff8ff`.
+- Text: `#4f607f`.
+- Accent: `#00cc66`.
+- Font stack: `Tajawal, Kanun, Tahoma, Arial, sans-serif`.
+- Inputs: خلفية بيضاء، border `#ccc`، radius `4px`.
+- Secondary actions: شفافة مع hover بلون أزرق فاتح شفاف.
+- تم تحديث Sidebar / Topbar / Hero / Categories / Filters / Library Cards / Drawer / Engine Modals / Mobile layout.
+- تم عزل معاينات الـComponents عن متغيرات Theme حتى لا تفقد هويتها وألوانها الأصلية.
+- الملف: `styles/theme-damage.css`.
 
 ## Validation
 - core/state.js: PASS
