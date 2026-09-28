@@ -9,11 +9,12 @@ window.LibraryPackOrigin=[
       "button-with-icon",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"devpack pack-org kind-buttons variant-0 button-with-icon\" type=\"button\"><i></i><span>Origin UI · Button With Icon</span></button>",
+      "html": "<button class=\"devpack pack-org dq-button dq-icon-btn dqv-1\" type=\"button\"><i>↗</i><span>Button With Icon</span></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -28,7 +29,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-icon",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-002",
@@ -40,11 +43,12 @@ window.LibraryPackOrigin=[
       "loading-button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-org kind-buttons variant-1 loading-button\" type=\"button\"><i></i><span>Origin UI · Loading Button</span></button>",
+      "html": "<button class=\"devpack pack-org dq-button dq-loading-btn dqv-1\" type=\"button\"><i></i><span>Loading Button</span></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -59,7 +63,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-loading",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-003",
@@ -71,11 +77,12 @@ window.LibraryPackOrigin=[
       "split-button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-org kind-buttons variant-2 split-button\" type=\"button\"><i></i><span>Origin UI · Split Button</span></button>",
+      "html": "<div class=\"devpack pack-org dq-button dq-split-btn dqv-1\"><button>Split Button</button><button>⌄</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -90,7 +97,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-split",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-004",
@@ -102,11 +111,12 @@ window.LibraryPackOrigin=[
       "copy-button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<button class=\"devpack pack-org kind-buttons variant-3 copy-button\" type=\"button\"><i></i><span>Origin UI · Copy Button</span></button>",
+      "html": "<button class=\"devpack pack-org dq-button dq-icon-btn dqv-2\" type=\"button\"><small class=\"dqv-kicker\">LIVE</small><i>↗</i><span>Copy Button</span></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -121,7 +131,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-icon",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-005",
@@ -133,11 +145,12 @@ window.LibraryPackOrigin=[
       "icon-button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<button class=\"devpack pack-org kind-buttons variant-4 icon-button\" type=\"button\"><i></i><span>Origin UI · Icon Button</span></button>",
+      "html": "<button class=\"devpack pack-org dq-button dq-icon-btn dqv-3\" type=\"button\"><i>↗</i><span>Icon Button</span><em class=\"dqv-state\">Ready</em></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -152,7 +165,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-icon",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ORG-006",
@@ -164,11 +179,12 @@ window.LibraryPackOrigin=[
       "search-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-5 search-input\"><b>Search Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-search dqv-1\"><span>⌕</span><input placeholder=\"Search Input\"><kbd>⌘K</kbd></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -183,7 +199,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-search",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-007",
@@ -195,11 +213,12 @@ window.LibraryPackOrigin=[
       "password-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-6 password-input\"><b>Password Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-password dqv-1\"><b>Password Input</b><div><input type=\"password\" value=\"password\"><button type=\"button\">◉</button></div><span><i></i><i></i><i></i><i></i></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -214,7 +233,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-password",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-008",
@@ -226,11 +247,12 @@ window.LibraryPackOrigin=[
       "floating-label-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-7 floating-label-input\"><b>Floating Label Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-field dqv-1\"><b>Floating Label Input</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -245,7 +267,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-009",
@@ -257,11 +281,12 @@ window.LibraryPackOrigin=[
       "inline-edit-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-0 inline-edit-input\"><b>Inline Edit Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-field dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Inline Edit Input</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -276,7 +301,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-010",
@@ -288,11 +315,12 @@ window.LibraryPackOrigin=[
       "otp-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-1 otp-input\"><b>OTP Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<div class=\"devpack pack-org dq-input dq-otp dqv-1\"><b>OTP Input</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -307,7 +335,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-011",
@@ -319,11 +349,12 @@ window.LibraryPackOrigin=[
       "tag-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-2 tag-input\"><b>Tag Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-field dqv-3\"><b>Tag Input</b><input placeholder=\"Enter value\"><small>Helper text</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -338,7 +369,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ORG-012",
@@ -350,11 +383,12 @@ window.LibraryPackOrigin=[
       "file-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-3 file-input\"><b>File Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-file-input dqv-1\"><input type=\"file\"><i>⇧</i><b>File Input</b><small>Drop file or browse</small><span><em></em></span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -369,7 +403,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-file",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-013",
@@ -381,11 +417,12 @@ window.LibraryPackOrigin=[
       "select-with-search",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-4 select-with-search\"><b>Select With Search</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-select dqv-1\"><b>Select With Search</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -400,7 +437,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-014",
@@ -412,11 +451,12 @@ window.LibraryPackOrigin=[
       "multi-select",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-5 multi-select\"><b>Multi Select</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-select dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Multi Select</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -431,7 +471,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-015",
@@ -443,11 +485,12 @@ window.LibraryPackOrigin=[
       "checkbox-card",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-6 checkbox-card\"><b>Checkbox Card</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-org dq-input dq-choice dqv-1\"><legend>Checkbox Card</legend><label><input type=\"checkbox\" checked><span>Primary option</span></label><label><input type=\"checkbox\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -462,7 +505,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-016",
@@ -474,11 +519,12 @@ window.LibraryPackOrigin=[
       "radio-card",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-7 radio-card\"><b>Radio Card</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-org dq-input dq-choice dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><legend>Radio Card</legend><label><input type=\"radio\" checked><span>Primary option</span></label><label><input type=\"radio\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -493,7 +539,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-017",
@@ -505,11 +553,12 @@ window.LibraryPackOrigin=[
       "switch-row",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-org kind-cards variant-0 switch-row\"><small>Origin UI</small><h4>Switch Row</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-org dq-card dq-switch-card dqv-1\"><div><b>Switch Row</b><small>Preference setting</small></div><button class=\"dq-switch\" type=\"button\"><i></i></button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -524,7 +573,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-switch",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-018",
@@ -536,11 +587,12 @@ window.LibraryPackOrigin=[
       "range-slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-1 range-slider\"><b>Range Slider</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-range dqv-1\"><b>Range Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -555,7 +607,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-019",
@@ -567,11 +621,12 @@ window.LibraryPackOrigin=[
       "date-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-2 date-input\"><b>Date Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-special dqv-1\"><b>Date Input</b><div><i>◫</i><input value=\"2026-09-28\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -586,7 +641,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-020",
@@ -598,11 +655,12 @@ window.LibraryPackOrigin=[
       "time-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-3 time-input\"><b>Time Input</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-special dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Time Input</b><div><i>◷</i><input value=\"12:30\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -617,7 +675,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-021",
@@ -629,11 +689,12 @@ window.LibraryPackOrigin=[
       "textarea-counter",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-4 textarea-counter\"><b>Textarea Counter</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-textarea dqv-1\"><b>Textarea Counter</b><textarea placeholder=\"Write something...\"></textarea><small>24 / 140</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -648,7 +709,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-textarea",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-022",
@@ -660,11 +723,12 @@ window.LibraryPackOrigin=[
       "form-validation",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-5 form-validation\"><b>Form Validation</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-validation dqv-1\"><b>Form Validation</b><input value=\"mohanad@example.com\"><span>✓ Looks good</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -679,7 +743,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-validation",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-023",
@@ -691,11 +757,12 @@ window.LibraryPackOrigin=[
       "command-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-menus variant-6 command-menu\"><b>Command Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-org dq-menu dq-command dqv-1\"><label>⌕<input placeholder=\"Command Menu\"><kbd>⌘K</kbd></label><button class=\"active\">Open component <small>↵</small></button><button>Search library</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -710,7 +777,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-command",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-024",
@@ -722,11 +791,12 @@ window.LibraryPackOrigin=[
       "context-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-menus variant-7 context-menu\"><b>Context Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-org dq-menu dq-context dqv-1\"><header><i></i><b>Context Menu</b></header><button>Open</button><button>Duplicate</button><button class=\"danger\">Delete</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -741,7 +811,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-context",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-025",
@@ -753,11 +825,12 @@ window.LibraryPackOrigin=[
       "dropdown-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-menus variant-0 dropdown-menu\"><b>Dropdown Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-org dq-menu dq-dropdown dqv-1\"><button class=\"dq-trigger\">Dropdown Menu<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -772,7 +845,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-026",
@@ -784,11 +859,12 @@ window.LibraryPackOrigin=[
       "action-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-menus variant-1 action-menu\"><b>Action Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-org dq-menu dq-context dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><i></i><b>Action Menu</b></header><button>Open</button><button>Duplicate</button><button class=\"danger\">Delete</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -803,7 +879,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-context",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-027",
@@ -815,11 +893,12 @@ window.LibraryPackOrigin=[
       "profile-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-menus variant-2 profile-menu\"><b>Profile Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-org dq-menu dq-context dqv-3\"><header><i></i><b>Profile Menu</b></header><button>Open</button><button>Duplicate</button><button class=\"danger\">Delete</button><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -834,7 +913,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-context",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ORG-028",
@@ -846,11 +927,12 @@ window.LibraryPackOrigin=[
       "pagination",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-org kind-nav variant-3 pagination\"><b>Pagination</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-org dq-nav dq-pagination dqv-1\"><button>‹</button><button class=\"active\">1</button><button>2</button><button>3</button><button>›</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -865,7 +947,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-pagination",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-029",
@@ -877,11 +961,12 @@ window.LibraryPackOrigin=[
       "breadcrumb",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<nav class=\"devpack pack-org kind-nav variant-4 breadcrumb\"><b>Breadcrumb</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-org dq-nav dq-breadcrumb dqv-1\"><a>Home</a><i>/</i><a>Library</a><i>/</i><b>Breadcrumb</b></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -896,7 +981,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-breadcrumb",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-030",
@@ -908,11 +995,12 @@ window.LibraryPackOrigin=[
       "stepper",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-org kind-nav variant-5 stepper\"><b>Stepper</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-org dq-nav dq-steps dqv-1\"><span class=\"done\"><i>1</i><b>Start</b></span><span class=\"active\"><i>2</i><b>Stepper</b></span><span><i>3</i><b>Done</b></span></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -927,7 +1015,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-steps",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-031",
@@ -939,11 +1029,12 @@ window.LibraryPackOrigin=[
       "sidebar-navigation",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-org kind-nav variant-6 sidebar-navigation\"><b>Sidebar Navigation</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-org dq-nav dq-sidebar dqv-1\"><header><i>M</i><b>Sidebar Navigation</b></header><a class=\"active\">Overview</a><a>Components</a><a>Settings</a></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -958,7 +1049,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-sidebar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-032",
@@ -970,11 +1063,12 @@ window.LibraryPackOrigin=[
       "top-navigation",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-org kind-nav variant-7 top-navigation\"><b>Top Navigation</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-org dq-nav dq-navbar dqv-1\"><b>Top Navigation</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -989,7 +1083,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-033",
@@ -1001,11 +1097,12 @@ window.LibraryPackOrigin=[
       "tabs",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-tabs variant-0 tabs\"><button class=\"active\">Tabs</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-org dq-tabs dq-tabbar dqv-1\"><div class=\"dq-tablist\"><button class=\"active\">Tabs</button><button>Preview</button><button>Code</button></div><div class=\"dq-tabpanel\">Active panel</div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1020,7 +1117,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-tabs",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-034",
@@ -1032,11 +1131,12 @@ window.LibraryPackOrigin=[
       "segmented-control",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-tabs variant-1 segmented-control\"><button class=\"active\">Segmented Control</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-org dq-tabs dq-segmented dqv-1\"><button class=\"active\">Overview</button><button>Details</button><button>Activity</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1051,7 +1151,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-segmented",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-035",
@@ -1063,11 +1165,12 @@ window.LibraryPackOrigin=[
       "accordion",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-tabs variant-2 accordion\"><button class=\"active\">Accordion</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-org dq-tabs dq-accordion dqv-1\"><button class=\"dq-acc-head active\" type=\"button\"><span>Accordion</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1082,7 +1185,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-036",
@@ -1094,11 +1199,12 @@ window.LibraryPackOrigin=[
       "collapsible",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-tabs variant-3 collapsible\"><button class=\"active\">Collapsible</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-org dq-tabs dq-accordion dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button class=\"dq-acc-head active\" type=\"button\"><span>Collapsible</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1113,7 +1219,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-037",
@@ -1125,11 +1233,12 @@ window.LibraryPackOrigin=[
       "dialog",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-4 dialog\"><small>Origin UI</small><b>Dialog</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-dialog dqv-1\"><header><b>Dialog</b><button>×</button></header><p>Contextual dialog content goes here.</p><footer><button>Cancel</button><button>Continue</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1144,7 +1253,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-dialog",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-038",
@@ -1156,11 +1267,12 @@ window.LibraryPackOrigin=[
       "alert-dialog",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-5 alert-dialog\"><small>Origin UI</small><b>Alert Dialog</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-dialog dq-alert-dialog dqv-1\"><i>!</i><h4>Alert Dialog</h4><p>This action requires confirmation.</p><footer><button>Cancel</button><button>Confirm</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1175,7 +1287,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-alert",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-039",
@@ -1187,11 +1301,12 @@ window.LibraryPackOrigin=[
       "drawer",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-6 drawer\"><small>Origin UI</small><b>Drawer</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-drawer dqv-1\"><header><b>Drawer</b><button>×</button></header><div><span></span><span></span><span></span></div><footer><button>Cancel</button><button>Save</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1206,7 +1321,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-drawer",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-040",
@@ -1218,11 +1335,12 @@ window.LibraryPackOrigin=[
       "popover",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-7 popover\"><small>Origin UI</small><b>Popover</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-popover dqv-1\"><button>•••</button><aside><b>Popover</b><span>First action</span><span>Second action</span></aside></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1237,7 +1355,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-popover",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-041",
@@ -1249,11 +1369,12 @@ window.LibraryPackOrigin=[
       "tooltip",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-0 tooltip\"><small>Origin UI</small><b>Tooltip</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-tooltip dqv-1\"><button>Hover me</button><span>Tooltip</span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1268,7 +1389,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-tooltip",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-042",
@@ -1280,11 +1403,12 @@ window.LibraryPackOrigin=[
       "toast",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-1 toast\"><small>Origin UI</small><b>Toast</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-toast dqv-1\"><i>✓</i><div><b>Toast</b><small>Operation completed successfully</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1299,7 +1423,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-043",
@@ -1311,11 +1437,12 @@ window.LibraryPackOrigin=[
       "notification",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-modals variant-2 notification\"><small>Origin UI</small><b>Notification</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-org dq-overlay dq-toast dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i>✓</i><div><b>Notification</b><small>Operation completed successfully</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1330,7 +1457,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-044",
@@ -1342,11 +1471,12 @@ window.LibraryPackOrigin=[
       "data-table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-3 data-table\"><header><b>Data Table</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-table dqv-1\"><header><b>Data Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1361,7 +1491,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-045",
@@ -1373,11 +1505,12 @@ window.LibraryPackOrigin=[
       "sortable-table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-4 sortable-table\"><header><b>Sortable Table</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-table dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Sortable Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1392,7 +1525,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-046",
@@ -1404,11 +1539,12 @@ window.LibraryPackOrigin=[
       "filter-table",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-5 filter-table\"><header><b>Filter Table</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-table dqv-3\"><header><b>Filter Table</b><input placeholder=\"Filter\"></header><div class=\"dq-row head\"><span>Name</span><span>Status</span><span>Value</span></div><div class=\"dq-row\"><span>Alpha</span><span>Active</span><span>84</span></div><div class=\"dq-row\"><span>Beta</span><span>Review</span><span>61</span></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1423,7 +1559,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-table",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ORG-047",
@@ -1435,11 +1573,12 @@ window.LibraryPackOrigin=[
       "stat-card",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-6 stat-card\"><header><b>Stat Card</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-stat dqv-1\"><small>Stat Card</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1454,7 +1593,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-048",
@@ -1466,11 +1607,12 @@ window.LibraryPackOrigin=[
       "kpi-card",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-7 kpi-card\"><header><b>KPI Card</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-stat dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><small>KPI Card</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1485,7 +1627,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ORG-049",
@@ -1497,11 +1641,12 @@ window.LibraryPackOrigin=[
       "timeline",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-org kind-inputs variant-0 timeline\"><b>Timeline</b><input placeholder=\"Origin UI field\"><small>Origin UI reference</small></label>",
+      "html": "<label class=\"devpack pack-org dq-input dq-special dqv-3\"><b>Timeline</b><div><i>◷</i><input value=\"12:30\"></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -1516,7 +1661,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ORG-050",
@@ -1528,11 +1675,12 @@ window.LibraryPackOrigin=[
       "calendar",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-1 calendar\"><header><b>Calendar</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-calendar dqv-1\"><header><button>‹</button><b>September</b><button>›</button></header><div class=\"dq-days\"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span class=\"active\">8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1547,7 +1695,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-calendar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-051",
@@ -1559,11 +1709,12 @@ window.LibraryPackOrigin=[
       "activity-feed",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-2 activity-feed\"><header><b>Activity Feed</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-feed dqv-1\"><b>Activity Feed</b><span><i></i><em>Created component</em><small>now</small></span><span><i></i><em>Updated library</em><small>2m</small></span><span><i></i><em>Published changes</em><small>5m</small></span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1578,7 +1729,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-feed",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-052",
@@ -1590,11 +1743,12 @@ window.LibraryPackOrigin=[
       "empty-state",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-org kind-data variant-3 empty-state\"><header><b>Empty State</b><span>72%</span></header><i></i><i></i><i></i><small>Origin UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-org dq-data dq-stat dqv-3\"><small>Empty State</small><strong>24.8K</strong><span>+12.4%</span><svg viewBox=\"0 0 90 28\"><polyline points=\"2,23 18,18 30,20 45,8 60,12 75,5 88,7\"></polyline></svg><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1609,7 +1763,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-stat",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ORG-053",
@@ -1621,11 +1777,12 @@ window.LibraryPackOrigin=[
       "file-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-org kind-cards variant-4 file-card\"><small>Origin UI</small><h4>File Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-org dq-card dq-file dqv-1\"><i>DOC</i><div><b>File Card</b><small>2.4 MB · Updated now</small></div><button>⋮</button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1640,7 +1797,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-file",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-054",
@@ -1652,11 +1811,12 @@ window.LibraryPackOrigin=[
       "user-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-org kind-cards variant-5 user-card\"><small>Origin UI</small><h4>User Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-org dq-card dq-profile dqv-1\"><div class=\"dq-avatar\"></div><div><b>User Card</b><small>Product Designer</small></div><button>Follow</button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1671,7 +1831,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-profile",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-055",
@@ -1683,11 +1845,12 @@ window.LibraryPackOrigin=[
       "pricing-card",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-org kind-sections variant-6 pricing-card\"><header>Pricing Card</header><main><b>Origin UI</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-org dq-section dq-pricing dqv-1\"><small>PRO</small><h3>$24</h3><b>Pricing Card</b><ul><li>Unlimited components</li><li>Export code</li><li>Priority updates</li></ul><button>Choose plan</button></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -1702,7 +1865,9 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-pricing",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ORG-056",
@@ -1714,11 +1879,12 @@ window.LibraryPackOrigin=[
       "feature-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-org kind-cards variant-7 feature-card\"><small>Origin UI</small><h4>Feature Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-org dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Feature Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1733,6 +1899,8 @@ window.LibraryPackOrigin=[
     "sourceReference": "originui-official",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 1
   }
 ];
