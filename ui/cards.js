@@ -18,26 +18,69 @@ function card(s){let level={basic:'سهل',intermediate:'متوسط',advanced:'�
 </article>`}
 function trashCard(s){return `<article class="component-card trashed-card" data-id="${s.id}" data-trashed="1"><div class="component-preview">${s.code.html}</div><div class="component-info"><div class="component-title"><strong>${s.name}</strong><span>${s.id}</span></div><div class="mini-tags">${s.tags.slice(0,4).map(t=>`<span>${t}</span>`).join('')}</div><div class="tools trash-tools"><button class="restore-tool" data-act="restore">↶ استعادة</button><button class="permanent-tool" data-act="purge">حذف نهائي</button></div></div></article>`}
 
-const GRID_BATCH=48;
-let gridLimit=GRID_BATCH;
+function gridBatchSize(){
+  const width=window.innerWidth||1200,mem=Number(navigator.deviceMemory||8);
+  if(width<=600)return 12;
+  if(width<=960)return mem<=4?12:18;
+  if(mem<=4)return 18;
+  if(width<=1400)return 24;
+  return 30;
+}
+function autoGridLimit(){return window.innerWidth<=600?36:60}
+let gridBatch=gridBatchSize();
+let gridLimit=gridBatch;
 let gridCurrentList=[];
 let gridSentinelObserver=null;
-function resetGridWindow(){gridLimit=GRID_BATCH}
+function resetGridWindow(){gridBatch=gridBatchSize();gridLimit=gridBatch}
+function gridTotal(list){return state.mode==='library'&&state.pack==='all'?catalogMeta().filter(metaAvailable).length:list.length}
+function gridSentinelHtml(shown,total,hasMore,hasUnloaded){return shown<total&&hasMore||hasUnloaded?`<button id="gridSentinel" class="grid-sentinel" type="button"><b>${shown}</b><span>من ${total}</span><small>${hasMore?'تحميل المزيد':'تحميل Pack التالي'}</small></button>`:''}
+function finishGridRender(start,count,mode='full'){
+  if(el.renderCount)el.renderCount.textContent=`${count} / ${gridTotal(gridCurrentList)}`;
+  bindInteractivePreviews(el.grid);bindCardPreviewInteractions(el.grid);observeGridSentinel();
+  const done=()=>globalThis.LibraryPerformance?.recordRender?.('grid',performance.now()-start,count,{mode,batch:gridBatch});
+  requestAnimationFrame(done);
+}
+function appendGridBatch(){
+  const startTime=performance.now(),start=el.grid.querySelectorAll('.component-card').length;
+  const end=Math.min(gridCurrentList.length,start+gridBatch);
+  if(end<=start)return false;
+  $('#gridSentinel')?.remove();
+  const html=gridCurrentList.slice(start,end).map(s=>state.mode==='trash'?trashCard(s):card(s)).join('');
+  el.grid.insertAdjacentHTML('beforeend',html);
+  gridLimit=end;
+  const hasUnloaded=state.mode==='library'&&state.pack==='all'&&(globalThis.LibraryRegistry?.unloadedPacks?.().length||0)>0;
+  el.grid.insertAdjacentHTML('beforeend',gridSentinelHtml(end,gridTotal(gridCurrentList),end<gridCurrentList.length,hasUnloaded));
+  finishGridRender(startTime,end,'append');
+  return true;
+}
 function observeGridSentinel(){
   gridSentinelObserver?.disconnect?.();
-  const sentinel=$('#gridSentinel');
-  if(!sentinel)return;
+  const sentinel=$('#gridSentinel');if(!sentinel)return;
+  let loading=false;
   const load=async()=>{
-    if(gridLimit<gridCurrentList.length){gridLimit=Math.min(gridCurrentList.length,gridLimit+GRID_BATCH);renderGrid(gridCurrentList);return}
-    if(state.mode==='library'&&state.pack==='all'){
-      const next=globalThis.LibraryRegistry?.unloadedPacks?.()[0];
-      if(next){await globalThis.LibraryRegistry.loadPack(next);gridLimit+=GRID_BATCH;renderNav();renderOverview();renderFilters();renderGrid(visible());header();}
-    }
+    if(loading)return;loading=true;
+    try{
+      if(gridLimit<gridCurrentList.length){appendGridBatch();return}
+      if(state.mode==='library'&&state.pack==='all'){
+        const next=globalThis.LibraryRegistry?.unloadedPacks?.()[0];
+        if(next){
+          await globalThis.LibraryRegistry.loadPack(next);
+          gridLimit=Math.min(gridLimit+gridBatch,Math.max(gridBatch,visible().length));
+          renderNav();renderOverview();renderFilters();renderGrid(visible());header();
+        }
+      }
+    }finally{loading=false}
   };
   sentinel.addEventListener('click',load,{once:true});
-  if(!('IntersectionObserver' in window))return;
-  gridSentinelObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))load()},{rootMargin:'450px 0px',threshold:.01});
+  if(!('IntersectionObserver' in window)||gridLimit>=autoGridLimit())return;
+  gridSentinelObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){gridSentinelObserver?.disconnect();load()}},{rootMargin:window.innerWidth<=600?'180px 0px':'260px 0px',threshold:.01});
   gridSentinelObserver.observe(sentinel);
 }
 
-function renderGrid(list=visible()){gridCurrentList=list;el.empty.hidden=!!list.length;const shown=list.slice(0,gridLimit),hasUnloaded=state.mode==='library'&&state.pack==='all'&&(globalThis.LibraryRegistry?.unloadedPacks?.().length||0)>0,total=state.mode==='library'&&state.pack==='all'?catalogMeta().filter(metaAvailable).length:list.length;el.grid.innerHTML=shown.map(s=>state.mode==='trash'?trashCard(s):card(s)).join('')+((shown.length<list.length||hasUnloaded)?`<button id="gridSentinel" class="grid-sentinel" type="button"><b>${shown.length}</b><span>من ${total}</span><small>${shown.length<list.length?'تحميل المزيد':'تحميل Pack التالي'}</small></button>`:'');if(el.renderCount)el.renderCount.textContent=`${shown.length} / ${total}`;bindInteractivePreviews(el.grid);bindCardPreviewInteractions(el.grid);observeGridSentinel()}
+function renderGrid(list=visible()){
+  const start=performance.now();
+  gridCurrentList=list;el.empty.hidden=!!list.length;
+  const shown=list.slice(0,gridLimit),hasUnloaded=state.mode==='library'&&state.pack==='all'&&(globalThis.LibraryRegistry?.unloadedPacks?.().length||0)>0,total=gridTotal(list);
+  el.grid.innerHTML=shown.map(s=>state.mode==='trash'?trashCard(s):card(s)).join('')+gridSentinelHtml(shown.length,total,shown.length<list.length,hasUnloaded);
+  finishGridRender(start,shown.length,'full');
+}
