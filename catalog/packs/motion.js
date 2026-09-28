@@ -9,11 +9,12 @@ window.LibraryPackMotion=[
       "background-beams",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-0 background-beams\"><i></i><i></i><b>Background Beams</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-background dqv-1\"><i></i><i></i><i></i><span></span><b>Background Beams</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -28,7 +29,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-002",
@@ -40,11 +43,12 @@ window.LibraryPackMotion=[
       "background-boxes",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-act kind-sections variant-1 background-boxes\"><header>Background Boxes</header><main><b>Aceternity</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-act dq-section dq-layout dqv-1\"><header><b>Background Boxes</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -59,7 +63,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-003",
@@ -71,11 +77,12 @@ window.LibraryPackMotion=[
       "background-gradient",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-2 background-gradient\"><i></i><i></i><b>Background Gradient</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-background dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><span></span><b>Background Gradient</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -90,7 +97,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-004",
@@ -102,11 +111,12 @@ window.LibraryPackMotion=[
       "bento-grid",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-act kind-sections variant-3 bento-grid\"><header>Bento Grid</header><main><b>Aceternity</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-act dq-section dq-grid dqv-1\"><header><b>Bento Grid</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -121,7 +131,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-005",
@@ -133,11 +145,12 @@ window.LibraryPackMotion=[
       "card-spotlight",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-4 card-spotlight\"><i></i><i></i><b>Card Spotlight</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-1\"><i></i><article><small>INTERACTIVE</small><b>Card Spotlight</b></article></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -152,7 +165,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-006",
@@ -164,11 +179,12 @@ window.LibraryPackMotion=[
       "card-hover-effect",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-5 card-hover-effect\"><small>Aceternity</small><h4>Card Hover Effect</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-visual-card dqv-1\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Card Hover Effect</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -183,7 +199,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-007",
@@ -195,11 +213,12 @@ window.LibraryPackMotion=[
       "compare-slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-act kind-inputs variant-6 compare-slider\"><b>Compare Slider</b><input placeholder=\"Aceternity field\"><small>Aceternity reference</small></label>",
+      "html": "<label class=\"devpack pack-act dq-input dq-range dqv-1\"><b>Compare Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -214,7 +233,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-008",
@@ -226,11 +247,12 @@ window.LibraryPackMotion=[
       "container-scroll",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<section class=\"devpack pack-act kind-sections variant-7 container-scroll\"><header>Container Scroll</header><main><b>Aceternity</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-act dq-section dq-layout dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Container Scroll</b><small>Layout</small></header><main><aside></aside><div></div></main></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -245,7 +267,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-009",
@@ -257,11 +281,12 @@ window.LibraryPackMotion=[
       "evervault-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-0 evervault-card\"><small>Aceternity</small><h4>Evervault Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-visual-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Evervault Card</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -276,7 +301,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-010",
@@ -288,11 +315,12 @@ window.LibraryPackMotion=[
       "floating-dock",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-act kind-nav variant-1 floating-dock\"><b>Floating Dock</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-act dq-nav dq-dock dqv-1\"><button>⌂</button><button>⌕</button><button class=\"active\">◆</button><button>♡</button><button>⚙</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -307,7 +335,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-dock",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-011",
@@ -319,11 +349,12 @@ window.LibraryPackMotion=[
       "floating-navbar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-act kind-nav variant-2 floating-navbar\"><b>Floating Navbar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-act dq-nav dq-navbar dqv-1\"><b>Floating Navbar</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -338,7 +369,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-012",
@@ -350,11 +383,12 @@ window.LibraryPackMotion=[
       "focus-cards",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-3 focus-cards\"><i></i><i></i><b>Focus Cards</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><article><small>INTERACTIVE</small><b>Focus Cards</b></article></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -369,7 +403,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-013",
@@ -381,11 +417,12 @@ window.LibraryPackMotion=[
       "glare-card",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-4 glare-card\"><i></i><i></i><b>Glare Card</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-3\"><i></i><article><small>INTERACTIVE</small><b>Glare Card</b></article><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -400,7 +437,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ACT-014",
@@ -412,11 +451,12 @@ window.LibraryPackMotion=[
       "glowing-stars",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-5 glowing-stars\"><i></i><i></i><b>Glowing Stars</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><article><small>INTERACTIVE</small><b>Glowing Stars</b></article><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -431,7 +471,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-ACT-015",
@@ -443,11 +485,12 @@ window.LibraryPackMotion=[
       "hero-highlight",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<section class=\"devpack pack-act kind-sections variant-6 hero-highlight\"><header>Hero Highlight</header><main><b>Aceternity</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-act dq-section dq-hero dqv-1\"><div><small>NEW RELEASE</small><h3>Hero Highlight</h3><p>Reusable hero layout for product interfaces.</p><button>Explore</button></div><aside><i></i><i></i></aside></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -462,7 +505,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-hero",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-016",
@@ -474,11 +519,12 @@ window.LibraryPackMotion=[
       "hero-parallax",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-media variant-7 hero-parallax\"><i></i><i></i><b>Hero Parallax</b></div>",
+      "html": "<div class=\"devpack pack-act dq-media dq-motion-media dqv-1\"><i></i><i></i><i></i><b>Hero Parallax</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -493,7 +539,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-motion",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-017",
@@ -505,11 +553,12 @@ window.LibraryPackMotion=[
       "infinite-moving-cards",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-0 infinite-moving-cards\"><small>Aceternity</small><h4>Infinite Moving Cards</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-content-card dqv-1\"><header><small>Component</small><i></i></header><h4>Infinite Moving Cards</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -524,7 +573,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-018",
@@ -536,11 +587,12 @@ window.LibraryPackMotion=[
       "lamp-effect",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-1 lamp-effect\"><i></i><i></i><b>Lamp Effect</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><article><small>INTERACTIVE</small><b>Lamp Effect</b></article></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -555,7 +607,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-ACT-019",
@@ -567,11 +621,12 @@ window.LibraryPackMotion=[
       "lens",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-2 lens\"><i></i><i></i><b>Lens</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><i></i><article><small>INTERACTIVE</small><b>Lens</b></article><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -586,7 +641,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-ACT-020",
@@ -598,11 +655,12 @@ window.LibraryPackMotion=[
       "link-preview",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-3 link-preview\"><small>Aceternity</small><h4>Link Preview</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-content-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><small>Component</small><i></i></header><h4>Link Preview</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -617,7 +675,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-021",
@@ -629,11 +689,12 @@ window.LibraryPackMotion=[
       "moving-border",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-4 moving-border\"><i></i><i></i><b>Moving Border</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-interaction dqv-1\"><button><i></i><span>Moving Border</span></button><small>Move pointer</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -648,7 +709,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-interaction",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-022",
@@ -660,11 +723,12 @@ window.LibraryPackMotion=[
       "parallax-scroll",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-media variant-5 parallax-scroll\"><i></i><i></i><b>Parallax Scroll</b></div>",
+      "html": "<div class=\"devpack pack-act dq-media dq-motion-media dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><b>Parallax Scroll</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -679,7 +743,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-motion",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-023",
@@ -691,11 +757,12 @@ window.LibraryPackMotion=[
       "placeholders-and-vanish-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-act kind-inputs variant-6 placeholders-and-vanish-input\"><b>Placeholders And Vanish Input</b><input placeholder=\"Aceternity field\"><small>Aceternity reference</small></label>",
+      "html": "<label class=\"devpack pack-act dq-input dq-field dqv-1\"><b>Placeholders And Vanish Input</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -710,7 +777,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-024",
@@ -722,11 +791,12 @@ window.LibraryPackMotion=[
       "spotlight",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-7 spotlight\"><i></i><i></i><b>Spotlight</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-light dqv-1\"><i></i><article><small>INTERACTIVE</small><b>Spotlight</b></article></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -741,7 +811,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-025",
@@ -753,11 +825,12 @@ window.LibraryPackMotion=[
       "sticky-scroll-reveal",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-0 sticky-scroll-reveal\"><i></i><i></i><b>Sticky Scroll Reveal</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-text-effect dqv-1\"><strong>Sticky Scroll Reveal</strong><span></span><small>Motion typography</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -772,7 +845,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-026",
@@ -784,11 +859,12 @@ window.LibraryPackMotion=[
       "text-generate-effect",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-1 text-generate-effect\"><i></i><i></i><b>Text Generate Effect</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-text-effect dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Text Generate Effect</strong><span></span><small>Motion typography</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -803,7 +879,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ACT-027",
@@ -815,11 +893,12 @@ window.LibraryPackMotion=[
       "text-hover-effect",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-2 text-hover-effect\"><i></i><i></i><b>Text Hover Effect</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-text-effect dqv-3\"><strong>Text Hover Effect</strong><span></span><small>Motion typography</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -834,7 +913,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ACT-028",
@@ -846,11 +927,12 @@ window.LibraryPackMotion=[
       "tracing-beam",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-3 tracing-beam\"><i></i><i></i><b>Tracing Beam</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-motion dqv-1\"><span></span><span></span><span></span><b>Tracing Beam</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -865,7 +947,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-motion",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-029",
@@ -877,11 +961,12 @@ window.LibraryPackMotion=[
       "typewriter-effect",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-4 typewriter-effect\"><i></i><i></i><b>Typewriter Effect</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-text-effect dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Typewriter Effect</strong><span></span><small>Motion typography</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -896,7 +981,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-ACT-030",
@@ -908,11 +995,12 @@ window.LibraryPackMotion=[
       "wavy-background",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-effects variant-5 wavy-background\"><i></i><i></i><b>Wavy Background</b></div>",
+      "html": "<div class=\"devpack pack-act dq-effect dq-background dqv-3\"><i></i><i></i><i></i><span></span><b>Wavy Background</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -927,7 +1015,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ACT-031",
@@ -939,11 +1029,12 @@ window.LibraryPackMotion=[
       "3d-card-effect",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-6 3d-card-effect\"><small>Aceternity</small><h4>3D Card Effect</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-visual-card dqv-3\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>3D Card Effect</h4><p>Visual card pattern</p><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -958,7 +1049,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ACT-032",
@@ -970,11 +1063,12 @@ window.LibraryPackMotion=[
       "3d-pin",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-act kind-inputs variant-7 3d-pin\"><b>3D Pin</b><input placeholder=\"Aceternity field\"><small>Aceternity reference</small></label>",
+      "html": "<div class=\"devpack pack-act dq-input dq-otp dqv-1\"><b>3D Pin</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -989,7 +1083,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-033",
@@ -1001,11 +1097,12 @@ window.LibraryPackMotion=[
       "canvas-reveal",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-0 canvas-reveal\"><small>Aceternity</small><h4>Canvas Reveal</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-visual-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Canvas Reveal</h4><p>Visual card pattern</p><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1020,7 +1117,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-ACT-034",
@@ -1032,11 +1131,12 @@ window.LibraryPackMotion=[
       "colorful-text",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-act kind-inputs variant-1 colorful-text\"><b>Colorful Text</b><input placeholder=\"Aceternity field\"><small>Aceternity reference</small></label>",
+      "html": "<label class=\"devpack pack-act dq-input dq-special dqv-1\"><b>Colorful Text</b><div><i>◉</i><input value=\"42\"></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -1051,7 +1151,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-special",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ACT-035",
@@ -1063,11 +1165,12 @@ window.LibraryPackMotion=[
       "comet-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-act kind-cards variant-2 comet-card\"><small>Aceternity</small><h4>Comet Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-act dq-card dq-visual-card dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Comet Card</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1082,7 +1185,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-ACT-036",
@@ -1094,11 +1199,12 @@ window.LibraryPackMotion=[
       "image-generation-loader",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-media variant-3 image-generation-loader\"><i></i><i></i><b>Image Generation Loader</b></div>",
+      "html": "<div class=\"devpack pack-act dq-media dq-motion-media dqv-3\"><i></i><i></i><i></i><b>Image Generation Loader</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1113,7 +1219,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-motion",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ACT-037",
@@ -1125,11 +1233,12 @@ window.LibraryPackMotion=[
       "chromatic-image",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-act kind-media variant-4 chromatic-image\"><i></i><i></i><b>Chromatic Image</b></div>",
+      "html": "<div class=\"devpack pack-act dq-media dq-motion-media dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><b>Chromatic Image</b><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1144,7 +1253,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-motion",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-ACT-038",
@@ -1156,11 +1267,12 @@ window.LibraryPackMotion=[
       "text-flipping-board",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-act kind-inputs variant-5 text-flipping-board\"><b>Text Flipping Board</b><input placeholder=\"Aceternity field\"><small>Aceternity reference</small></label>",
+      "html": "<div class=\"devpack pack-act dq-input dq-otp dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Text Flipping Board</b><div><input maxlength=\"1\" value=\"4\"><input maxlength=\"1\" value=\"8\"><input maxlength=\"1\"><input maxlength=\"1\"></div><small>Enter verification code</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1175,7 +1287,9 @@ window.LibraryPackMotion=[
     "sourceReference": "aceternity-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-otp",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-001",
@@ -1187,11 +1301,12 @@ window.LibraryPackMotion=[
       "blur-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-0 blur-text\"><i>✦</i><b>Blur Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-1\"><strong>Blur Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1206,7 +1321,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-002",
@@ -1218,11 +1335,12 @@ window.LibraryPackMotion=[
       "split-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-1 split-text\"><i>✦</i><b>Split Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Split Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1237,7 +1355,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-003",
@@ -1249,11 +1369,12 @@ window.LibraryPackMotion=[
       "circular-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-2 circular-text\"><i>✦</i><b>Circular Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-3\"><strong>Circular Text</strong><span></span><small>Typography motion</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1268,7 +1389,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-004",
@@ -1280,11 +1403,12 @@ window.LibraryPackMotion=[
       "shiny-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-3 shiny-text\"><i>✦</i><b>Shiny Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Shiny Text</strong><span></span><small>Typography motion</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1299,7 +1423,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-005",
@@ -1311,11 +1437,12 @@ window.LibraryPackMotion=[
       "gradient-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-4 gradient-text\"><i>✦</i><b>Gradient Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Gradient Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1330,7 +1457,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-RBT-006",
@@ -1342,11 +1471,12 @@ window.LibraryPackMotion=[
       "fuzzy-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-5 fuzzy-text\"><i>✦</i><b>Fuzzy Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><strong>Fuzzy Text</strong><span></span><small>Typography motion</small><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1361,7 +1491,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-RBT-007",
@@ -1373,11 +1505,12 @@ window.LibraryPackMotion=[
       "decrypted-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-6 decrypted-text\"><i>✦</i><b>Decrypted Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-1\"><strong>Decrypted Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1392,7 +1525,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-008",
@@ -1404,11 +1539,12 @@ window.LibraryPackMotion=[
       "true-focus",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-7 true-focus\"><i></i><i></i><b>True Focus</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>True Focus</strong><span></span><small>Motion typography</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1423,7 +1559,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-RBT-009",
@@ -1435,11 +1573,12 @@ window.LibraryPackMotion=[
       "rotating-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-0 rotating-text\"><i>✦</i><b>Rotating Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Rotating Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1454,7 +1593,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-010",
@@ -1466,11 +1607,12 @@ window.LibraryPackMotion=[
       "scrambled-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-1 scrambled-text\"><i>✦</i><b>Scrambled Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-3\"><strong>Scrambled Text</strong><span></span><small>Typography motion</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1485,7 +1627,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-011",
@@ -1497,11 +1641,12 @@ window.LibraryPackMotion=[
       "variable-proximity",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-2 variable-proximity\"><i></i><i></i><b>Variable Proximity</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><strong>Variable Proximity</strong><span></span><small>Motion typography</small><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1516,7 +1661,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-RBT-012",
@@ -1528,11 +1675,12 @@ window.LibraryPackMotion=[
       "ascii-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-3 ascii-text\"><i>✦</i><b>ASCII Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>ASCII Text</strong><span></span><small>Typography motion</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1547,7 +1695,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-013",
@@ -1559,11 +1709,12 @@ window.LibraryPackMotion=[
       "glitch-text",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-icons variant-4 glitch-text\"><i>✦</i><b>Glitch Text</b><small>React Bits</small></div>",
+      "html": "<div class=\"devpack pack-rbt dq-icon dq-typefx dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Glitch Text</strong><span></span><small>Typography motion</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1578,7 +1729,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-typography",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-RBT-014",
@@ -1590,11 +1743,12 @@ window.LibraryPackMotion=[
       "scroll-reveal",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-5 scroll-reveal\"><i></i><i></i><b>Scroll Reveal</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-1\"><strong>Scroll Reveal</strong><span></span><small>Motion typography</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1609,7 +1763,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-015",
@@ -1621,11 +1777,12 @@ window.LibraryPackMotion=[
       "scroll-float",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-6 scroll-float\"><i></i><i></i><b>Scroll Float</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><strong>Scroll Float</strong><span></span><small>Motion typography</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1640,7 +1797,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-016",
@@ -1652,11 +1811,12 @@ window.LibraryPackMotion=[
       "scroll-velocity",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-7 scroll-velocity\"><i></i><i></i><b>Scroll Velocity</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-3\"><strong>Scroll Velocity</strong><span></span><small>Motion typography</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1671,7 +1831,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-017",
@@ -1683,11 +1845,12 @@ window.LibraryPackMotion=[
       "pixel-trail",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-0 pixel-trail\"><i></i><i></i><b>Pixel Trail</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-motion dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><span></span><span></span><span></span><b>Pixel Trail</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1702,7 +1865,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-motion",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-018",
@@ -1714,11 +1879,12 @@ window.LibraryPackMotion=[
       "magnet",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-1 magnet\"><i></i><i></i><b>Magnet</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-interaction dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button><i></i><span>Magnet</span></button><small>Move pointer</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1733,7 +1899,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-interaction",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-019",
@@ -1745,11 +1913,12 @@ window.LibraryPackMotion=[
       "star-border",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-2 star-border\"><i></i><i></i><b>Star Border</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-interaction dqv-3\"><button><i></i><span>Star Border</span></button><small>Move pointer</small><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1764,7 +1933,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-interaction",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-020",
@@ -1776,11 +1947,12 @@ window.LibraryPackMotion=[
       "spotlight-card",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-3 spotlight-card\"><i></i><i></i><b>Spotlight Card</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-light dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><article><small>INTERACTIVE</small><b>Spotlight Card</b></article></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1795,7 +1967,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-light",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-021",
@@ -1807,11 +1981,12 @@ window.LibraryPackMotion=[
       "tilted-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-4 tilted-card\"><small>React Bits</small><h4>Tilted Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Tilted Card</h4><p>Visual card pattern</p><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1826,7 +2001,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-RBT-022",
@@ -1838,11 +2015,12 @@ window.LibraryPackMotion=[
       "dock",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<nav class=\"devpack pack-rbt kind-nav variant-5 dock\"><b>Dock</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-rbt dq-nav dq-dock dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><button>⌂</button><button>⌕</button><button class=\"active\">◆</button><button>♡</button><button>⚙</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -1857,7 +2035,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-dock",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-023",
@@ -1869,11 +2049,12 @@ window.LibraryPackMotion=[
       "animated-list",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-6 animated-list\"><small>React Bits</small><h4>Animated List</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-list dqv-1\"><header><b>Animated List</b><small>3 items</small></header><ul><li><i></i><span>Primary item</span></li><li><i></i><span>Secondary item</span></li><li><i></i><span>Another item</span></li></ul></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -1888,7 +2069,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-list",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-024",
@@ -1900,11 +2083,12 @@ window.LibraryPackMotion=[
       "masonry",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-media variant-7 masonry\"><i></i><i></i><b>Masonry</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-media dq-gallery dqv-1\"><i></i><i></i><i></i><i></i><b>Masonry</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -1919,7 +2103,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-gallery",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-025",
@@ -1931,11 +2117,12 @@ window.LibraryPackMotion=[
       "stack",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<section class=\"devpack pack-rbt kind-sections variant-0 stack\"><header>Stack</header><main><b>React Bits</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-rbt dq-section dq-layout dqv-3\"><header><b>Stack</b><small>Layout</small></header><main><aside></aside><div></div></main><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -1950,7 +2137,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-layout",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-026",
@@ -1962,11 +2151,12 @@ window.LibraryPackMotion=[
       "chroma-grid",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-rbt kind-sections variant-1 chroma-grid\"><header>Chroma Grid</header><main><b>React Bits</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-rbt dq-section dq-grid dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><header><b>Chroma Grid</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -1981,7 +2171,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-027",
@@ -1993,11 +2185,12 @@ window.LibraryPackMotion=[
       "bounce-cards",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-2 bounce-cards\"><small>React Bits</small><h4>Bounce Cards</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-content-card dqv-3\"><header><small>Component</small><i></i></header><h4>Bounce Cards</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2012,7 +2205,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-028",
@@ -2024,11 +2219,12 @@ window.LibraryPackMotion=[
       "folder",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-media variant-3 folder\"><i></i><i></i><b>Folder</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-media dq-folder dqv-1\"><div><i></i><span>12 files</span></div><b>Folder</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2043,7 +2239,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-folder",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-029",
@@ -2055,11 +2253,12 @@ window.LibraryPackMotion=[
       "profile-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-4 profile-card\"><small>React Bits</small><h4>Profile Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-file dqv-1\"><i>DOC</i><div><b>Profile Card</b><small>2.4 MB · Updated now</small></div><button>⋮</button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2074,7 +2273,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-file",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-030",
@@ -2086,11 +2287,12 @@ window.LibraryPackMotion=[
       "pixel-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-5 pixel-card\"><small>React Bits</small><h4>Pixel Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-1\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Pixel Card</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2105,7 +2307,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-031",
@@ -2117,11 +2321,12 @@ window.LibraryPackMotion=[
       "magic-bento",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-6 magic-bento\"><small>React Bits</small><h4>Magic Bento</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Magic Bento</h4><p>Visual card pattern</p></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2136,7 +2341,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-032",
@@ -2148,11 +2355,12 @@ window.LibraryPackMotion=[
       "carousel",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-media variant-7 carousel\"><i></i><i></i><b>Carousel</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-media dq-carousel dqv-1\"><div class=\"dq-slides\"><article></article><article class=\"active\"></article><article></article></div><footer><button>‹</button><span><i></i><i class=\"active\"></i><i></i></span><button>›</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2167,7 +2375,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-carousel",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-033",
@@ -2179,11 +2389,12 @@ window.LibraryPackMotion=[
       "glass-surface",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-0 glass-surface\"><small>React Bits</small><h4>Glass Surface</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-3\"><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Glass Surface</h4><p>Visual card pattern</p><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2198,7 +2409,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-034",
@@ -2210,11 +2423,12 @@ window.LibraryPackMotion=[
       "circular-gallery",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-media variant-1 circular-gallery\"><i></i><i></i><b>Circular Gallery</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-media dq-gallery dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><i></i><b>Circular Gallery</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2229,7 +2443,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-gallery",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-035",
@@ -2241,11 +2457,12 @@ window.LibraryPackMotion=[
       "threads",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-2 threads\"><i></i><i></i><b>Threads</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Threads</b><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2260,7 +2477,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-036",
@@ -2272,11 +2491,12 @@ window.LibraryPackMotion=[
       "waves",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-3 waves\"><i></i><i></i><b>Waves</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Waves</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2291,7 +2511,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-RBT-037",
@@ -2303,11 +2525,12 @@ window.LibraryPackMotion=[
       "lightning",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-4 lightning\"><i></i><i></i><b>Lightning</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><i></i><i></i><i></i><span></span><b>Lightning</b><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2322,7 +2545,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-RBT-038",
@@ -2334,11 +2559,12 @@ window.LibraryPackMotion=[
       "ballpit",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-rbt kind-cards variant-5 ballpit\"><small>React Bits</small><h4>Ballpit</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-rbt dq-card dq-visual-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><div class=\"dq-art\"><i></i><i></i><i></i></div><small>Interactive</small><h4>Ballpit</h4><p>Visual card pattern</p><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2353,7 +2579,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-visual",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-039",
@@ -2365,11 +2593,12 @@ window.LibraryPackMotion=[
       "dither",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-6 dither\"><i></i><i></i><b>Dither</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-1\"><i></i><i></i><i></i><span></span><b>Dither</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2384,7 +2613,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-040",
@@ -2396,11 +2627,12 @@ window.LibraryPackMotion=[
       "particles",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-7 particles\"><i></i><i></i><b>Particles</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><span></span><b>Particles</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2415,7 +2647,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-041",
@@ -2427,11 +2661,12 @@ window.LibraryPackMotion=[
       "grid-distortion",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-rbt kind-sections variant-0 grid-distortion\"><header>Grid Distortion</header><main><b>React Bits</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-rbt dq-section dq-grid dqv-3\"><header><b>Grid Distortion</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2446,7 +2681,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-042",
@@ -2458,11 +2695,12 @@ window.LibraryPackMotion=[
       "iridescence",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-1 iridescence\"><i></i><i></i><b>Iridescence</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-3\"><i></i><i></i><i></i><span></span><b>Iridescence</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2477,7 +2715,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-043",
@@ -2489,11 +2729,12 @@ window.LibraryPackMotion=[
       "orb",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-2 orb\"><i></i><i></i><b>Orb</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Orb</b><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2508,7 +2749,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-044",
@@ -2520,11 +2763,12 @@ window.LibraryPackMotion=[
       "letter-glitch",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-3 letter-glitch\"><i></i><i></i><b>Letter Glitch</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-text-effect dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><strong>Letter Glitch</strong><span></span><small>Motion typography</small><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2539,7 +2783,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-text",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-045",
@@ -2551,11 +2797,12 @@ window.LibraryPackMotion=[
       "dot-grid",
       "sections",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<section class=\"devpack pack-rbt kind-sections variant-4 dot-grid\"><header>Dot Grid</header><main><b>React Bits</b><span>Reusable layout block</span></main><footer>01 · 02 · 03</footer></section>",
+      "html": "<section class=\"devpack pack-rbt dq-section dq-grid dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><b>Dot Grid</b><small>Responsive layout</small></header><div><i></i><i></i><i></i><i></i></div><section class=\"dqv-meta\"><span></span><span></span></section></section>",
       "css": "",
       "js": "",
       "react": "",
@@ -2570,7 +2817,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Interaction",
     "type": "layout",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "section-grid",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-RBT-046",
@@ -2582,11 +2831,12 @@ window.LibraryPackMotion=[
       "liquid-chrome",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-5 liquid-chrome\"><i></i><i></i><b>Liquid Chrome</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-motion dqv-3\"><span></span><span></span><span></span><b>Liquid Chrome</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2601,7 +2851,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-motion",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-RBT-047",
@@ -2613,11 +2865,12 @@ window.LibraryPackMotion=[
       "squares",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-6 squares\"><i></i><i></i><b>Squares</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><i></i><i></i><i></i><span></span><b>Squares</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2632,7 +2885,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-RBT-048",
@@ -2644,11 +2899,12 @@ window.LibraryPackMotion=[
       "beams",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-7 beams\"><i></i><i></i><b>Beams</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-6\"><header class=\"dqv-head\"><small>UI</small><i></i></header><i></i><i></i><i></i><span></span><b>Beams</b><footer class=\"dqv-foot\"><small>Component</small><i></i></footer><section class=\"dqv-meta\"><span></span><span></span></section></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2663,7 +2919,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 6
   },
   {
     "id": "DEV-RBT-049",
@@ -2675,11 +2933,12 @@ window.LibraryPackMotion=[
       "silk",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-0 silk\"><i></i><i></i><b>Silk</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-1\"><i></i><i></i><i></i><span></span><b>Silk</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2694,7 +2953,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-RBT-050",
@@ -2706,11 +2967,12 @@ window.LibraryPackMotion=[
       "prism",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-1 prism\"><i></i><i></i><b>Prism</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><i></i><i></i><i></i><span></span><b>Prism</b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2725,7 +2987,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-RBT-051",
@@ -2737,11 +3001,12 @@ window.LibraryPackMotion=[
       "dark-veil",
       "effects",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-rbt kind-effects variant-2 dark-veil\"><i></i><i></i><b>Dark Veil</b></div>",
+      "html": "<div class=\"devpack pack-rbt dq-effect dq-background dqv-3\"><i></i><i></i><i></i><span></span><b>Dark Veil</b><footer class=\"dqv-foot\"><small>Ready</small><i></i></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2756,7 +3021,9 @@ window.LibraryPackMotion=[
     "sourceReference": "reactbits-reference",
     "motionMode": "Loop",
     "type": "effect",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "effect-background",
+    "qualityVariant": 3
   },
   {
     "id": "DEV-ANM-001",
@@ -2768,11 +3035,12 @@ window.LibraryPackMotion=[
       "animated-button",
       "buttons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<button class=\"devpack pack-anm kind-buttons variant-0 animated-button\" type=\"button\"><i></i><span>Animate UI · Animated Button</span></button>",
+      "html": "<button class=\"devpack pack-anm dq-button dq-action-btn dqv-1\" type=\"button\"><span>Animated Button</span><i>→</i></button>",
       "css": "",
       "js": "",
       "react": "",
@@ -2787,7 +3055,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "button",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "button-action",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-002",
@@ -2799,11 +3069,12 @@ window.LibraryPackMotion=[
       "animated-badge",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-icons variant-1 animated-badge\"><i>✦</i><b>Animated Badge</b><small>Animate UI</small></div>",
+      "html": "<div class=\"devpack pack-anm dq-icon dq-badge dqv-1\"><span><i></i>Animated Badge</span><small>NEW</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2818,7 +3089,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-badge",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-003",
@@ -2830,11 +3103,12 @@ window.LibraryPackMotion=[
       "animated-checkbox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-2 animated-checkbox\"><b>Animated Checkbox</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-anm dq-input dq-choice dqv-1\"><legend>Animated Checkbox</legend><label><input type=\"checkbox\" checked><span>Primary option</span></label><label><input type=\"checkbox\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -2849,7 +3123,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-004",
@@ -2861,11 +3137,12 @@ window.LibraryPackMotion=[
       "animated-radio-group",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-3 animated-radio-group\"><b>Animated Radio Group</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<fieldset class=\"devpack pack-anm dq-input dq-choice dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><legend>Animated Radio Group</legend><label><input type=\"radio\" checked><span>Primary option</span></label><label><input type=\"radio\"><span>Secondary option</span></label></fieldset>",
       "css": "",
       "js": "",
       "react": "",
@@ -2880,7 +3157,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-choice",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ANM-005",
@@ -2892,11 +3171,12 @@ window.LibraryPackMotion=[
       "animated-switch",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-anm kind-cards variant-4 animated-switch\"><small>Animate UI</small><h4>Animated Switch</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-anm dq-card dq-switch-card dqv-1\"><div><b>Animated Switch</b><small>Preference setting</small></div><button class=\"dq-switch\" type=\"button\"><i></i></button></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -2911,7 +3191,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-switch",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-006",
@@ -2923,11 +3205,12 @@ window.LibraryPackMotion=[
       "animated-tabs",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-tabs variant-5 animated-tabs\"><button class=\"active\">Animated Tabs</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-tabs dq-tabbar dqv-1\"><div class=\"dq-tablist\"><button class=\"active\">Animated Tabs</button><button>Preview</button><button>Code</button></div><div class=\"dq-tabpanel\">Active panel</div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2942,7 +3225,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-tabs",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-007",
@@ -2954,11 +3239,12 @@ window.LibraryPackMotion=[
       "animated-accordion",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-tabs variant-6 animated-accordion\"><button class=\"active\">Animated Accordion</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-tabs dq-accordion dqv-1\"><button class=\"dq-acc-head active\" type=\"button\"><span>Animated Accordion</span><i>+</i></button><div class=\"dq-acc-panel\">Reusable disclosure content</div><button class=\"dq-acc-head\" type=\"button\"><span>Second item</span><i>+</i></button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -2973,7 +3259,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-accordion",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-008",
@@ -2985,11 +3273,12 @@ window.LibraryPackMotion=[
       "animated-dialog",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-modals variant-7 animated-dialog\"><small>Animate UI</small><b>Animated Dialog</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-overlay dq-dialog dqv-1\"><header><b>Animated Dialog</b><button>×</button></header><p>Contextual dialog content goes here.</p><footer><button>Cancel</button><button>Continue</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3004,7 +3293,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-dialog",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-009",
@@ -3016,11 +3307,12 @@ window.LibraryPackMotion=[
       "animated-drawer",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-modals variant-0 animated-drawer\"><small>Animate UI</small><b>Animated Drawer</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-overlay dq-drawer dqv-1\"><header><b>Animated Drawer</b><button>×</button></header><div><span></span><span></span><span></span></div><footer><button>Cancel</button><button>Save</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3035,7 +3327,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-drawer",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-010",
@@ -3047,11 +3341,12 @@ window.LibraryPackMotion=[
       "animated-popover",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-modals variant-1 animated-popover\"><small>Animate UI</small><b>Animated Popover</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-overlay dq-popover dqv-1\"><button>•••</button><aside><b>Animated Popover</b><span>First action</span><span>Second action</span></aside></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3066,7 +3361,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-popover",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-011",
@@ -3078,11 +3375,12 @@ window.LibraryPackMotion=[
       "animated-tooltip",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-modals variant-2 animated-tooltip\"><small>Animate UI</small><b>Animated Tooltip</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-overlay dq-tooltip dqv-1\"><button>Hover me</button><span>Animated Tooltip</span></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3097,7 +3395,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-tooltip",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-012",
@@ -3109,11 +3409,12 @@ window.LibraryPackMotion=[
       "animated-dropdown",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-menus variant-3 animated-dropdown\"><b>Animated Dropdown</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-anm dq-menu dq-dropdown dqv-1\"><button class=\"dq-trigger\">Animated Dropdown<i>⌄</i></button><div class=\"dq-options\"><span class=\"active\">First option</span><span>Second option</span><span>Third option</span></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3128,7 +3429,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-dropdown",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-013",
@@ -3140,11 +3443,12 @@ window.LibraryPackMotion=[
       "animated-context-menu",
       "menus",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-menus variant-4 animated-context-menu\"><b>Animated Context Menu</b><span>الخيار الأول</span><span>الخيار الثاني</span><span>الخيار الثالث</span></div>",
+      "html": "<div class=\"devpack pack-anm dq-menu dq-context dqv-1\"><header><i></i><b>Animated Context Menu</b></header><button>Open</button><button>Duplicate</button><button class=\"danger\">Delete</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3159,7 +3463,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "menu",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "menu-context",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-014",
@@ -3171,11 +3477,12 @@ window.LibraryPackMotion=[
       "animated-select",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-5 animated-select\"><b>Animated Select</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<label class=\"devpack pack-anm dq-input dq-select dqv-1\"><b>Animated Select</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3190,7 +3497,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-015",
@@ -3202,11 +3511,12 @@ window.LibraryPackMotion=[
       "animated-combobox",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-6 animated-combobox\"><b>Animated Combobox</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<label class=\"devpack pack-anm dq-input dq-select dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Animated Combobox</b><div><input placeholder=\"Search options\"><button>⌄</button></div><span><i></i>Selected value</span></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3221,7 +3531,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-select",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ANM-016",
@@ -3233,11 +3545,12 @@ window.LibraryPackMotion=[
       "animated-command",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<article class=\"devpack pack-anm kind-cards variant-7 animated-command\"><small>Animate UI</small><h4>Animated Command</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-anm dq-card dq-content-card dqv-4\"><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Animated Command</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer><section class=\"dqv-meta\"><span></span><span></span></section></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -3252,7 +3565,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "component",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 4
   },
   {
     "id": "DEV-ANM-017",
@@ -3264,11 +3579,12 @@ window.LibraryPackMotion=[
       "animated-progress",
       "data",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-data variant-0 animated-progress\"><header><b>Animated Progress</b><span>72%</span></header><i></i><i></i><i></i><small>Animate UI data pattern</small></div>",
+      "html": "<div class=\"devpack pack-anm dq-data dq-progress dqv-1\"><div class=\"dq-ring\"><i></i><strong>72%</strong></div><div><b>Animated Progress</b><small>+8.4% this week</small></div></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3283,7 +3599,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "data-display",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "data-progress",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-018",
@@ -3295,11 +3613,12 @@ window.LibraryPackMotion=[
       "animated-skeleton",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-loaders variant-1 animated-skeleton\"><i></i><b>Animated Skeleton</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-anm dq-feedback dq-skeleton dqv-1\"><i></i><span></span><span></span><b></b></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3314,7 +3633,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-skeleton",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-019",
@@ -3326,11 +3647,12 @@ window.LibraryPackMotion=[
       "animated-avatar",
       "icons",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-icons variant-2 animated-avatar\"><i>✦</i><b>Animated Avatar</b><small>Animate UI</small></div>",
+      "html": "<div class=\"devpack pack-anm dq-icon dq-avatar-icon dqv-1\"><div class=\"dq-avatar\"><span></span></div><b>Animated Avatar</b><small>Online</small></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3345,7 +3667,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "primitive",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "icon-avatar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-020",
@@ -3357,11 +3681,12 @@ window.LibraryPackMotion=[
       "animated-card",
       "cards",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<article class=\"devpack pack-anm kind-cards variant-3 animated-card\"><small>Animate UI</small><h4>Animated Card</h4><p>Reusable component pattern.</p></article>",
+      "html": "<article class=\"devpack pack-anm dq-card dq-content-card dqv-5\"><header class=\"dqv-head\"><small>UI</small><i></i></header><aside class=\"dqv-rail\"><i></i><i></i><i></i></aside><header><small>Component</small><i></i></header><h4>Animated Card</h4><p>Reusable content pattern for interfaces.</p><footer><span>Details</span><button>↗</button></footer></article>",
       "css": "",
       "js": "",
       "react": "",
@@ -3376,7 +3701,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "card",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "card-content",
+    "qualityVariant": 5
   },
   {
     "id": "DEV-ANM-021",
@@ -3388,11 +3715,12 @@ window.LibraryPackMotion=[
       "animated-carousel",
       "media",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-media variant-4 animated-carousel\"><i></i><i></i><b>Animated Carousel</b></div>",
+      "html": "<div class=\"devpack pack-anm dq-media dq-carousel dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><div class=\"dq-slides\"><article></article><article class=\"active\"></article><article></article></div><footer><button>‹</button><span><i></i><i class=\"active\"></i><i></i></span><button>›</button></footer></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3407,7 +3735,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "media",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "media-carousel",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ANM-022",
@@ -3419,11 +3749,12 @@ window.LibraryPackMotion=[
       "animated-pagination",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<nav class=\"devpack pack-anm kind-nav variant-5 animated-pagination\"><b>Animated Pagination</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-anm dq-nav dq-pagination dqv-1\"><button>‹</button><button class=\"active\">1</button><button>2</button><button>3</button><button>›</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3438,7 +3769,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-pagination",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-023",
@@ -3450,11 +3783,12 @@ window.LibraryPackMotion=[
       "animated-breadcrumb",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-anm kind-nav variant-6 animated-breadcrumb\"><b>Animated Breadcrumb</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-anm dq-nav dq-breadcrumb dqv-1\"><a>Home</a><i>/</i><a>Library</a><i>/</i><b>Animated Breadcrumb</b></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3469,7 +3803,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-breadcrumb",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-024",
@@ -3481,11 +3817,12 @@ window.LibraryPackMotion=[
       "animated-stepper",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-anm kind-nav variant-7 animated-stepper\"><b>Animated Stepper</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-anm dq-nav dq-steps dqv-1\"><span class=\"done\"><i>1</i><b>Start</b></span><span class=\"active\"><i>2</i><b>Animated Stepper</b></span><span><i>3</i><b>Done</b></span></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3500,7 +3837,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-steps",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-025",
@@ -3512,11 +3851,12 @@ window.LibraryPackMotion=[
       "animated-sidebar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<nav class=\"devpack pack-anm kind-nav variant-0 animated-sidebar\"><b>Animated Sidebar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-anm dq-nav dq-sidebar dqv-1\"><header><i>M</i><b>Animated Sidebar</b></header><a class=\"active\">Overview</a><a>Components</a><a>Settings</a></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3531,7 +3871,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-sidebar",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-026",
@@ -3543,11 +3885,12 @@ window.LibraryPackMotion=[
       "animated-navbar",
       "nav",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<nav class=\"devpack pack-anm kind-nav variant-1 animated-navbar\"><b>Animated Navbar</b><span>الرئيسية</span><span>العناصر</span><span>الإعدادات</span></nav>",
+      "html": "<nav class=\"devpack pack-anm dq-nav dq-navbar dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Animated Navbar</b><div><a class=\"active\">Home</a><a>Library</a><a>About</a></div><button>Start</button></nav>",
       "css": "",
       "js": "",
       "react": "",
@@ -3562,7 +3905,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "navigation",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "nav-navbar",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ANM-027",
@@ -3574,11 +3919,12 @@ window.LibraryPackMotion=[
       "animated-toast",
       "modals",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-modals variant-2 animated-toast\"><small>Animate UI</small><b>Animated Toast</b><p>Contextual overlay pattern.</p><button>متابعة</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-overlay dq-toast dqv-1\"><i>✓</i><div><b>Animated Toast</b><small>Operation completed successfully</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3593,7 +3939,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "overlay",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "overlay-toast",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-028",
@@ -3605,11 +3953,12 @@ window.LibraryPackMotion=[
       "animated-alert",
       "loaders",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-loaders variant-3 animated-alert\"><i></i><b>Animated Alert</b><small>Processing...</small></div>",
+      "html": "<div class=\"devpack pack-anm dq-feedback dq-alert dqv-1\"><i>!</i><div><b>Animated Alert</b><small>Actionable feedback message</small></div><button>×</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3624,7 +3973,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Loop",
     "type": "feedback",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "feedback-alert",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-029",
@@ -3636,11 +3987,12 @@ window.LibraryPackMotion=[
       "animated-input",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "advanced",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-4 animated-input\"><b>Animated Input</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<label class=\"devpack pack-anm dq-input dq-field dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Animated Input</b><input placeholder=\"Enter value\"><small>Helper text</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3655,7 +4007,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-field",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ANM-030",
@@ -3667,11 +4021,12 @@ window.LibraryPackMotion=[
       "animated-textarea",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-5 animated-textarea\"><b>Animated Textarea</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<label class=\"devpack pack-anm dq-input dq-textarea dqv-1\"><b>Animated Textarea</b><textarea placeholder=\"Write something...\"></textarea><small>24 / 140</small></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3686,7 +4041,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-textarea",
+    "qualityVariant": 1
   },
   {
     "id": "DEV-ANM-031",
@@ -3698,11 +4055,12 @@ window.LibraryPackMotion=[
       "animated-slider",
       "inputs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "intermediate",
     "code": {
-      "html": "<label class=\"devpack pack-anm kind-inputs variant-6 animated-slider\"><b>Animated Slider</b><input placeholder=\"Animate UI field\"><small>Animate UI reference</small></label>",
+      "html": "<label class=\"devpack pack-anm dq-input dq-range dqv-2\"><header class=\"dqv-head\"><small>LIVE</small><i></i></header><b>Animated Slider</b><input type=\"range\" min=\"0\" max=\"100\" value=\"64\"><div><small>0</small><strong>64</strong><small>100</small></div></label>",
       "css": "",
       "js": "",
       "react": "",
@@ -3717,7 +4075,9 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "form-control",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "input-range",
+    "qualityVariant": 2
   },
   {
     "id": "DEV-ANM-032",
@@ -3729,11 +4089,12 @@ window.LibraryPackMotion=[
       "animated-toggle-group",
       "tabs",
       "devto",
-      "source-pack"
+      "source-pack",
+      "dev-quality-pass"
     ],
     "complexity": "basic",
     "code": {
-      "html": "<div class=\"devpack pack-anm kind-tabs variant-7 animated-toggle-group\"><button class=\"active\">Animated Toggle Group</button><button>Option B</button><button>Option C</button></div>",
+      "html": "<div class=\"devpack pack-anm dq-tabs dq-segmented dqv-1\"><button class=\"active\">Overview</button><button>Details</button><button>Activity</button></div>",
       "css": "",
       "js": "",
       "react": "",
@@ -3748,6 +4109,8 @@ window.LibraryPackMotion=[
     "sourceReference": "animateui-reference",
     "motionMode": "Interaction",
     "type": "disclosure",
-    "addedAt": "2026-09-27"
+    "addedAt": "2026-09-27",
+    "qualityTemplate": "tabs-segmented",
+    "qualityVariant": 1
   }
 ];
