@@ -58,13 +58,13 @@
     const body=qs(".drawer-body");if(!body)return;
     if(!qs("#engineVariants")){
       const variants=document.createElement("section");
-      variants.id="engineVariants";variants.className="panel engine-variants";
+      variants.id="engineVariants";variants.className="panel engine-variants";variants.dataset.detailSection="edit";
       variants.innerHTML='<div class="panelbar"><b>Variants</b><small>Preview only</small></div><div class="variant-buttons"><button data-variant="default" class="active">Default</button><button data-variant="dark">Dark</button><button data-variant="glass">Glass</button><button data-variant="compact">Compact</button><button data-variant="outline">Outline</button></div>';
       const preview=body.querySelector(".preview-panel");preview?.after(variants);
     }
     if(!qs("#relatedComponents")){
       const related=document.createElement("section");
-      related.id="relatedComponents";related.className="panel related-panel";
+      related.id="relatedComponents";related.className="panel related-panel";related.dataset.detailSection="info";
       related.innerHTML='<div class="panelbar"><b>Related Components</b><small id="relatedPack"></small></div><div id="relatedGrid" class="related-grid"></div>';
       body.appendChild(related);
     }
@@ -175,7 +175,7 @@
   openDrawer=function(s,opts={}){
     if(!s)return;
     document.body.classList.remove("component-route");el?.drawer?.classList.remove("route-page");
-    baseOpenDrawer(s);
+    baseOpenDrawer(s,opts);
     applyVariant("default");
     const src=sourceMap[s.sourceReference],pack=packOf(s);
     if(el?.metaDetails){
