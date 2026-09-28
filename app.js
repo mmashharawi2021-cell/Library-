@@ -39,7 +39,6 @@ function renderOverview(){let scoped=samples.filter(s=>available(s)&&(state.pack
 function renderFilters(){let cat=categories.find(x=>x.id===state.cat),styles=cat?cat.styles:['All','Minimal','Glass','Dark','Animated','Dashboard','Hover'],base=samples.filter(s=>available(s)&&(state.pack==='all'||packOf(s)===state.pack)&&(state.cat==='all'||s.category===state.cat)),tagCounts={};base.forEach(s=>(s.tags||[]).forEach(t=>tagCounts[norm(t)]=(tagCounts[norm(t)]||0)+1));let topTags=Object.entries(tagCounts).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([t])=>t);let styleButtons=styles.map(s=>`<button class="filter ${state.filter===s?'active':''}" data-filter="${s}">${s==='All'?'الكل':s}</button>`).join('');let levels=[['basic','سهل'],['intermediate','متوسط'],['advanced','متقدم']].map(([k,l])=>`<button class="filter complexity ${state.filter==='complexity:'+k?'active':''}" data-filter="complexity:${k}">${l}</button>`).join('');let smart=[['special:new','الجديد'],['special:loop','Loop'],['special:interaction','Interactive'],['sort:used','الأكثر استخدامًا']].map(([k,l])=>`<button class="filter smart ${state.filter===k?'active':''}" data-filter="${k}">${l}</button>`).join('');let tags=topTags.map(t=>`<button class="filter tag-filter ${state.filter==='tag:'+t?'active':''}" data-filter="tag:${t}">#${t}</button>`).join('');el.filters.innerHTML=styleButtons+'<span class="filter-sep"></span>'+levels+'<span class="filter-sep"></span>'+smart+(tags?'<span class="filter-sep"></span>'+tags:'')}
 function score(s,ts){if(!ts.length)return 1;let cat=categories.find(x=>x.id===s.category),src=sourceById[s.sourceReference],name=tokens(s.name),tags=s.tags.map(t=>synonyms[norm(t)]||norm(t)),style=tokens(s.style),category=tokens([s.category,cat?.ar,cat?.en].join(' ')),desc=tokens(s.description||''),meta=tokens([s.technology,s.dependency,s.sourceReference,src?.name,s.motionMode,s.type].join(' ')),points=0,hits=0;for(let t of ts){let hit=false;if(name.some(x=>x===t||x.includes(t))){points+=7;hit=true}if(tags.some(x=>x===t||x.includes(t))){points+=6;hit=true}if(style.some(x=>x===t||x.includes(t))){points+=5;hit=true}if(category.some(x=>x===t||x.includes(t))){points+=4;hit=true}if(meta.some(x=>x===t||x.includes(t))){points+=4;hit=true}if(desc.some(x=>x===t||x.includes(t))){points+=2;hit=true}if(norm(s.id).includes(t)){points+=1;hit=true}if(hit)hits++}let need=ts.length<=2?1:Math.ceil(ts.length*.5);if(hits<need)return 0;if(state.q&&norm(s.name).includes(norm(state.q)))points+=8;return points}
 function visible(){let list=samples.filter(available);if(state.pack!=='all')list=list.filter(s=>packOf(s)===state.pack);if(state.cat!=='all')list=list.filter(s=>s.category===state.cat);if(state.filter.startsWith('complexity:'))list=list.filter(s=>s.complexity===state.filter.split(':')[1]);else if(state.filter.startsWith('tag:'))list=list.filter(s=>s.tags.some(t=>norm(t)===state.filter.slice(4)));else if(state.filter==='special:new')list=list.filter(s=>s.addedAt==='2026-09-27').sort((a,b)=>b.id.localeCompare(a.id));else if(state.filter==='special:loop')list=list.filter(s=>s.motionMode==='Loop');else if(state.filter==='special:interaction')list=list.filter(s=>s.motionMode==='Interaction');else if(state.filter==='sort:used')list.sort((a,b)=>use(b)-use(a));else if(state.filter!=='All')list=list.filter(s=>s.style===state.filter||s.tags.some(t=>norm(t)===norm(state.filter)));let ts=tokens(state.q);if(ts.length)list=list.map(s=>({s,n:score(s,ts)})).filter(x=>x.n>0).sort((a,b)=>b.n-a.n||use(b.s)-use(a.s)).map(x=>x.s);else if(state.filter!=='sort:used'&&state.filter!=='special:new')list.sort((a,b)=>use(b)-use(a)||a.name.localeCompare(b.name));return list}
-function isLiveAnimation(){return true}
 function card(s){let level={basic:'سهل',intermediate:'متوسط',advanced:'متقدم'}[s.complexity]||s.complexity;return `<article class="component-card live-loop preview-idle" data-live-category="${s.category}" data-id="${s.id}">
   <div class="component-preview" data-preview-trigger="1" role="button" tabindex="0" aria-label="تشغيل معاينة ${s.name}">
     <div class="component-preview-stage">${s.code.html}</div>
@@ -70,6 +69,7 @@ function setCardPreviewActive(card,on,{reset=false}={}){
   card.classList.toggle('preview-idle',!on);
   if(on){void card.offsetWidth;runLivePreviewTick(card)}
   else if(reset)resetCardPreview(card);
+  syncInteractionPreviewTimer();
 }
 function bindCardPreviewInteractions(scope=document){
   scope.querySelectorAll?.('.component-card:not(.trashed-card)').forEach(card=>{
@@ -326,6 +326,7 @@ let drawerPreviewTimer=null;
 function setDrawerPreviewActive(on,autoStop=0){
   clearTimeout(drawerPreviewTimer);el.preview.classList.toggle('preview-active',!!on);el.preview.classList.toggle('preview-idle',!on);
   if(on){void el.preview.offsetWidth;runLivePreviewTick(el.preview);if(autoStop)drawerPreviewTimer=setTimeout(()=>setDrawerPreviewActive(false),autoStop)}
+  syncInteractionPreviewTimer();
 }
 function replayActivePreview(){
   if(!state.active)return;
@@ -455,60 +456,51 @@ el.typeControls?.addEventListener('input',e=>{let input=e.target.closest('[data-
 const cmap={cColor:'color',cBg:'bg',cRadius:'radius',cPadding:'padding',cFont:'font',cShadow:'shadow',cGlow:'glow',cScale:'scale',cSpeed:'speed'};Object.keys(cmap).forEach(id=>$('#'+id).addEventListener('input',e=>{state.controls[cmap[id]]=e.target.type==='range'?Number(e.target.value):e.target.value;updateControls();applyControls()}));$('#addCollection').addEventListener('click',()=>{if(!state.active)return;let n=prompt('اسم المجموعة:','أفكار جديدة');if(!n)return;state.collections[n]=state.collections[n]||[];if(!state.collections[n].includes(state.active.id))state.collections[n].push(state.active.id);persist();header();toast(`تم الحفظ في ${n}`)});
 $('#drawerDelete')?.addEventListener('click',()=>{if(state.active)deleteItem(state.active,el.preview)});
 
-let liveObserver=null;
-function observeLivePreviews(){
-  const nodes=[...document.querySelectorAll('.component-card.live-loop')];
-  if(!('IntersectionObserver' in window)){
-    nodes.forEach(n=>n.classList.remove('preview-paused'));
-    return;
-  }
-  if(liveObserver)liveObserver.disconnect();
-  liveObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>entry.target.classList.toggle('preview-paused',!entry.isIntersecting));
-  },{rootMargin:'180px 0px',threshold:.01});
-  nodes.forEach(n=>liveObserver.observe(n));
+let interactionPreviewTick=0;
+let interactionPreviewTimer=null;
+function syncInteractionPreviewTimer(){
+  const hasActive=!!document.querySelector('.component-card.preview-active,.drawer-preview.preview-active');
+  if(hasActive&&!interactionPreviewTimer)interactionPreviewTimer=setInterval(()=>runLivePreviewTick(),1200);
+  else if(!hasActive&&interactionPreviewTimer){clearInterval(interactionPreviewTimer);interactionPreviewTimer=null}
 }
-
-let livePreviewTick=0;
 function cycleClass(nodes,className,index){
   nodes.forEach(n=>n.classList.remove(className));
   if(nodes.length)nodes[index%nodes.length].classList.add(className);
 }
 function runLivePreviewTick(target=null){
-  livePreviewTick++;
+  interactionPreviewTick++;
   const scopes=target?[target]:[...document.querySelectorAll('.component-card.preview-active,.drawer-preview.preview-active')];
   scopes.forEach(scope=>{
     const root=scope.classList.contains('drawer-preview')?scope:scope.querySelector('.component-preview');
     if(!root)return;
 
     const buttons=[...root.querySelectorAll('.demo-btn,.hover-slide,.hover-nudge,.hover-shine,.hover-flip,.btn-split button')];
-    buttons.forEach((b,i)=>b.classList.toggle('auto-active',(livePreviewTick+i)%2===0));
+    buttons.forEach((b,i)=>b.classList.toggle('auto-active',(interactionPreviewTick+i)%2===0));
 
     const fields=[...root.querySelectorAll('input:not([type="checkbox"]),textarea,select')];
-    cycleClass(fields,'auto-focus',livePreviewTick);
+    cycleClass(fields,'auto-focus',interactionPreviewTick);
 
     root.querySelectorAll('.toggle-control input[type="checkbox"]').forEach(cb=>{
-      cb.checked=livePreviewTick%2===0;
+      cb.checked=interactionPreviewTick%2===0;
     });
     root.querySelectorAll('.check-group input[type="checkbox"]').forEach((cb,i)=>{
-      cb.checked=(livePreviewTick+i)%2===0;
+      cb.checked=(interactionPreviewTick+i)%2===0;
     });
 
     const navItems=[...root.querySelectorAll('.demo-nav span,.mobile-bottom span,.seg-nav span,.mini-side span,.dock-nav span,.pagination-bar button,.mega-nav span,.step-nav span,.command-breadcrumb span,.breadcrumbs span')];
-    cycleClass(navItems,'auto-active',livePreviewTick);
+    cycleClass(navItems,'auto-active',interactionPreviewTick);
 
     const tabItems=[...root.querySelectorAll('.demo-tabs span,.underline-tabs span,.accordion-row>div')];
-    cycleClass(tabItems,'auto-active',livePreviewTick);
+    cycleClass(tabItems,'auto-active',interactionPreviewTick);
 
     const menuItems=[...root.querySelectorAll('.demo-menu>div')];
-    cycleClass(menuItems,'auto-active',livePreviewTick);
+    cycleClass(menuItems,'auto-active',interactionPreviewTick);
 
-    root.querySelectorAll('.demo-modal').forEach(m=>m.classList.toggle('auto-pop',livePreviewTick%2===0));
+    root.querySelectorAll('.demo-modal').forEach(m=>m.classList.toggle('auto-pop',interactionPreviewTick%2===0));
     root.querySelectorAll('.hover-image,.hover-tilt,.hover-pop,.hover-gradient-border,.hover-spotlight,.hover-ring').forEach((n,i)=>{
-      n.classList.toggle('auto-active',(livePreviewTick+i)%2===0);
+      n.classList.toggle('auto-active',(interactionPreviewTick+i)%2===0);
     });
   });
 }
-setInterval(runLivePreviewTick,1200);
 
 renderAll();
