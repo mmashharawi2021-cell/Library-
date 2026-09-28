@@ -9,7 +9,7 @@
 - **0 Duplicate IDs**
 - **0 عناصر مفقودة بين Search Index والـPacks**
 - **0 عناصر ناقصة من الكتالوج**
-- **580 Normalized Structural Signatures**
+- **707 Normalized Structural Signatures**
 - **969 اسمًا فريدًا** مع حالتي تشابه أسماء فقط وبدون Duplicate IDs
 
 ## Library Engine 3.0
@@ -111,12 +111,20 @@ catalog/
 - أضيفت تفاعلات فعلية للـToggle وMenu وProgress وBefore/After وNotification Stack.
 - CSS الخاص بهذه العناصر يدخل أيضًا في الكود المنسوخ، وليس في المعاينة فقط.
 
+### Quality Upgrade — Pass 2
+- تمت ترقية **339/339** من عناصر Jitter مرة ثانية.
+- لكل نوع دلالي أصبح هناك حتى **8 Layout Variants** حقيقية بدل بنية واحدة متكررة.
+- Jitter أصبح يمثل **139 بنية DOM** مطبّعة.
+- إجمالي المكتبة ارتفع من **580** إلى **707 بنية مميزة** بدون زيادة عدد العناصر فوق 971.
+- الـ8 أشكال تشمل: Clean، Header، Caption، Header+Caption، Side Rail، Status Rail، Metadata، Framed.
+- كل هذه الفروقات تدخل في المعاينة وفي CSS المنسوخ أيضًا.
+
 ### Quality Audit
 - كل **971** عنصرًا لديه Live HTML Preview.
 - **971** HTML payload مختلفة حرفيًا.
-- بعد تطبيع النصوص والـvariants: **580** بنية/توقيعًا هيكليًا.
+- بعد تطبيع النصوص والـvariants: **707** بنية/توقيعًا هيكليًا.
 - عناصر DEV-derived: **416** variant موزعة على **337** بنية مطبّعة.
-- Jitter-generated: **339** variant تمت ترقيتها إلى **31** نوعًا دلاليًا تمثل حاليًا **25** بنية DOM مطبّعة.
+- Jitter-generated: **339** variant موزعة على **31** نوعًا دلاليًا و**139** بنية DOM مطبّعة.
 - ملفات الـPacks تخزن HTML، بينما CSS / JS / React / Tailwind يتم توليدها وقت المعاينة والنسخ عبر `app.js`.
 - لا توجد Schema errors أو عناصر بلا HTML.
 - تشابه الأسماء فقط: `MED-004 / JIT-067` و `MED-006 / JIT-046`.
