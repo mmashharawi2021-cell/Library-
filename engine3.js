@@ -249,7 +249,7 @@
     const stats=registry.stats();
     const resources=performance.getEntriesByType?.("resource")||[];
     const transferred=resources.reduce((n,r)=>n+(r.transferSize||0),0);
-    const active=qsa(".live-loop:not(.preview-paused)").length;
+    const active=qsa(".component-card.preview-active,.drawer-preview.preview-active").length;
     const cards=qsa(".component-card").length;
     const mem=performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+" MB":"غير متاح";
     const content=qs("#perfContent");if(!content)return;
