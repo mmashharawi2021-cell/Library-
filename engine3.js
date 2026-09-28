@@ -186,7 +186,8 @@
     if(el?.metaDetails){
       el.metaDetails.insertAdjacentHTML("beforeend",`<span><b>Pack</b>${esc(packLabel(pack))}</span><span><b>Engine</b>3.0</span>${src?.license?`<span><b>License</b>${esc(src.license)}</span>`:''}`);
     }
-    renderRelated(s);
+    const relatedGrid=qs("#relatedGrid");if(relatedGrid)relatedGrid.innerHTML='<div class="related-loading">افتح تبويب المعلومات لعرض العناصر المرتبطة</div>';
+    if(opts.detailTab==='info')renderRelated(s);
     if(opts.route!==false){
       const next="#/component/"+encodeURIComponent(s.id);
       if(location.hash!==next)history.pushState({component:s.id},"",next);
@@ -337,6 +338,7 @@
       const cmd=e.target.closest("[data-command]");if(cmd){const list=qs("#commandResults")?._commands||[];list.find(x=>x.id===cmd.dataset.command)?.run();closeModal("commandPalette")}
     },true);
     qs("#commandInput")?.addEventListener("input",e=>renderCommands(e.target.value));
+    qs("#drawerSectionTabs")?.addEventListener("click",e=>{const b=e.target.closest("[data-detail-tab]");if(b?.dataset.detailTab==="info"&&state.active)renderRelated(state.active)});
     el.search?.addEventListener("input",workerSearch);
     el.suggestions?.addEventListener("click",e=>{if(e.target.closest("[data-engine-suggest]"))e.stopImmediatePropagation()},true);
     qs("#loadAllPacks")?.addEventListener("click",async()=>{for(const id of Object.keys(registry.manifest))await loadPack(id);renderPackManager()});
