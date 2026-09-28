@@ -32,7 +32,9 @@
     };
   }
   function duplicateMeta(item){
-    const idx=globalThis.LibraryRegistry?.index||[];
+    const visual=globalThis.LibraryVisualDedupe?.findDuplicate?.(item,item.__pack||"local");
+    if(visual)return [{id:visual.keepId,score:visual.score,visual:true}];
+    const idx=globalThis.LibraryRegistry?.searchMeta?.()||globalThis.LibraryRegistry?.index||[];
     const n=norm(item.name),tags=new Set((item.tags||[]).map(norm));
     return idx.map(r=>{
       let score=0;if(norm(r.name)===n)score+=.65;if(r.category===item.category)score+=.15;
