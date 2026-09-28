@@ -37,7 +37,7 @@ Lazy Packs:
 ### Virtual Rendering
 - Grid Batch: **48 عنصرًا**
 - العناصر الإضافية تدخل تدريجيًا عند الاقتراب من نهاية الشبكة.
-- Animations خارج الـViewport تتوقف.
+- Animations متوقفة افتراضيًا وتعمل فقط عند Hover / Press أو داخل معاينة نشطة.
 - CSS content-visibility/containment مستخدم لتقليل كلفة DOM.
 
 ### Component Routes
@@ -69,11 +69,33 @@ Pack Manager يعرض:
 - Backup Export / Import
 - Local Component Pack Import
 - PWA + Offline Cache
-- Service Worker cache version: **library-engine-3-v2**
+- Service Worker cache version: **library-engine-3-v9**
 
 ## البنية
 
 ```
+core/
+  state.js
+  search.js
+
+ui/
+  library.js
+  cards.js
+  preview.js
+  actions.js
+  editor.js
+  code-export.js
+
+fonts/
+  fonts.js
+
+styles/
+  base.css
+  components.css
+  engine.css
+  fonts.css
+  ux.css
+
 catalog/
   categories.js
   search-index.js
@@ -87,9 +109,33 @@ catalog/
     foundations.js
     motion.js
     origin.js
+
+app.js        # event wiring + startup only
+engine3.js    # Engine 3 extensions
+styles.css    # compatibility imports only
 ```
 
+### Architecture Refactor
+- `app.js` انخفض من نحو **143 KB** إلى نحو **6 KB** وأصبح مسؤولًا عن ربط الأحداث والتشغيل فقط.
+- الحالة والتخزين: `core/state.js`.
+- البحث والترتيب والاقتراحات: `core/search.js`.
+- البطاقات والـvirtual grid: `ui/cards.js`.
+- Hover/Press والمعاينات التفاعلية: `ui/preview.js`.
+- المجموعات والحذف والاستعادة: `ui/actions.js`.
+- الـDrawer والـPlayground: `ui/editor.js`.
+- توليد HTML/CSS/JS/React/Tailwind: `ui/code-export.js`.
+- CSS انقسم إلى **5 طبقات** مع الحفاظ على ترتيب الـcascade الأصلي.
+- `styles.css` بقي فقط كملف توافق صغير، بينما الموقع يحمل الطبقات مباشرة.
+
 ## Validation
+- core/state.js: PASS
+- core/search.js: PASS
+- ui/library.js: PASS
+- ui/cards.js: PASS
+- ui/preview.js: PASS
+- ui/actions.js: PASS
+- ui/editor.js: PASS
+- ui/code-export.js: PASS
 - app.js: PASS
 - engine3.js: PASS
 - registry.js: PASS
@@ -129,12 +175,12 @@ catalog/
 - CSS الجديد يدخل في المعاينة وفي الكود المنسوخ.
 
 ### Quality Audit
-- كل **971** عنصرًا لديه Live HTML Preview.
+- كل **971** عنصرًا لديه HTML Preview قابل للتشغيل عند الطلب.
 - **971** HTML payload مختلفة حرفيًا.
 - وفق المقياس الصارم الجديد: **674** بنية/توقيعًا دلاليًا حقيقيًا.
 - عناصر DEV-derived: **416** variant موزعة على **337** بنية مطبّعة.
 - Jitter-generated: **339** variant موزعة على **31** نوعًا دلاليًا و**139** بنية DOM مطبّعة.
-- ملفات الـPacks تخزن HTML، بينما CSS / JS / React / Tailwind يتم توليدها وقت المعاينة والنسخ عبر `app.js`.
+- ملفات الـPacks تخزن HTML، بينما CSS / JS / React / Tailwind يتم توليدها وقت المعاينة والنسخ عبر `ui/code-export.js`.
 - لا توجد Schema errors أو عناصر بلا HTML.
 - تشابه الأسماء فقط: `MED-004 / JIT-067` و `MED-006 / JIT-046`.
 
