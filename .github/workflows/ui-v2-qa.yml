@@ -1,0 +1,93 @@
+name: UI V2 Live QA
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages deployment
+        run: sleep 45
+      - name: Install browser driver
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install puppeteer-core@24 --no-audit --no-fund
+      - name: Run live QA
+        run: |
+          cat > qa.cjs <<'NODE'
+          const puppeteer=require('puppeteer-core');
+          const assert=require('assert');
+          const BASE='https://mmashharawi2021-cell.github.io/Library-/?qa=20261002-3';
+          (async()=>{
+            const browser=await puppeteer.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+            const sizes=[
+              {name:'mobile',width:390,height:844},
+              {name:'tablet',width:768,height:1024},
+              {name:'desktop',width:1440,height:900}
+            ];
+            for(const s of sizes){
+              const page=await browser.newPage();
+              await page.setViewport({width:s.width,height:s.height});
+              const errors=[];
+              page.on('pageerror',e=>errors.push(e.message));
+              page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+              await page.goto(BASE,{waitUntil:'networkidle0',timeout:60000});
+              await page.waitForSelector('.card',{timeout:20000});
+              const home=await page.evaluate(()=>({
+                cards:document.querySelectorAll('.card').length,
+                demos:document.querySelectorAll('.card .ui-demo').length,
+                fallback:document.querySelectorAll('.fallback-demo').length,
+                overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,
+                title:document.title
+              }));
+              assert.equal(home.cards,81, s.name+': expected 81 cards');
+              assert.equal(home.demos,81, s.name+': expected 81 demos');
+              assert.equal(home.fallback,0, s.name+': fallback preview exists');
+              assert.equal(home.overflow,false, s.name+': horizontal overflow');
+              assert.equal(errors.length,0,s.name+': JS errors '+errors.join(' | '));
+
+              await page.focus('#search');
+              await page.keyboard.type('الخلفية الداكنة');
+              await page.waitForTimeout(250);
+              const search=await page.evaluate(()=>({
+                count:document.querySelectorAll('.card').length,
+                slugs:[...document.querySelectorAll('.card')].map(a=>a.getAttribute('href'))
+              }));
+              assert(search.count>=1,s.name+': Arabic search returned nothing');
+              assert(search.slugs.some(x=>x.includes('scrim')),s.name+': search did not find scrim');
+
+              await page.goto(BASE,{waitUntil:'networkidle0'});
+              await page.waitForSelector('[data-cat="macos"]');
+              await page.click('[data-cat="macos"]');
+              await page.waitForTimeout(200);
+              assert.equal(await page.$$eval('.card',x=>x.length),32,s.name+': macOS filter');
+
+              await page.goto('https://mmashharawi2021-cell.github.io/Library-/#/element/data-table',{waitUntil:'networkidle0'});
+              await page.waitForSelector('.detail h1');
+              assert((await page.$eval('.detail h1',e=>e.textContent)).includes('جدول البيانات'),s.name+': detail route');
+              await page.close();
+            }
+
+            const page=await browser.newPage();
+            await page.setViewport({width:1280,height:900});
+            await page.goto('https://mmashharawi2021-cell.github.io/Library-/#/styles',{waitUntil:'networkidle0'});
+            await page.waitForSelector('.style-card');
+            assert.equal(await page.$$eval('.style-card',x=>x.length),14,'styles count');
+            await page.goto('https://mmashharawi2021-cell.github.io/Library-/#/compare',{waitUntil:'networkidle0'});
+            await page.waitForSelector('.compare');
+            assert.equal(await page.$$eval('.compare',x=>x.length),18,'comparisons count');
+            await page.goto('https://mmashharawi2021-cell.github.io/Library-/#/translate',{waitUntil:'networkidle0'});
+            await page.waitForSelector('.translation tbody tr');
+            assert.equal(await page.$$eval('.translation tbody tr',x=>x.length),63,'translation count');
+
+            const direct=await page.goto('https://mmashharawi2021-cell.github.io/Library-/element/data-table/',{waitUntil:'networkidle0'});
+            assert(direct && direct.status()===200,'direct SEO page HTTP status');
+            await page.waitForSelector('.detail h1');
+            console.log('QA_OK: 3 viewports; 81 demos; search; filters; detail; 14 styles; 18 comparisons; 63 translations; direct URL');
+            await browser.close();
+          })().catch(e=>{console.error('QA_FAIL',e);process.exit(1)});
+          NODE
+          node qa.cjs
