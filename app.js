@@ -145,7 +145,7 @@ function demo(e,large=false){
   }
 }
 
-function card(e){return `<a class="card" href="#/element/${e.slug}"><div class="demo">${demo(e)}</div><div class="cardbody"><div class="meta">${e.new?'<span class="badge new">جديد</span>':''}<span class="badge">${e.category==='web'?'Web':'macOS'}</span></div><h3>${esc(e.ar)}</h3><div class="en">${esc(e.en)}</div><code class="code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
+function card(e){return `<article class="card"><div class="demo">${demo(e)}</div><div class="cardbody"><div class="meta">${e.new?'<span class="badge new">جديد</span>':''}<span class="badge">${e.category==='web'?'Web':'macOS'}</span></div><h3><a class="card-title-link" href="#/element/${e.slug}">${esc(e.ar)}</a></h3><div class="en">${esc(e.en)}</div><code class="code">${esc(e.code)}</code><p>${esc(e.description)}</p><a class="open-link" href="#/element/${e.slug}">فتح التفاصيل ←</a></div></article>`}
 function searchMatches(e,q){if(!q)return true;const hay=norm([e.ar,e.en,e.code,e.description,...(e.aliases||[])].join(' '));return norm(q).split(' ').filter(Boolean).every(x=>hay.includes(x))}
 function bindGlossary(){
   const box=document.querySelector('#glossary'); if(!box)return;
