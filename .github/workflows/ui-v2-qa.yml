@@ -37,13 +37,16 @@ jobs:
               await page.goto(BASE,{waitUntil:'networkidle0',timeout:60000});
               await page.waitForSelector('.card',{timeout:20000});
               const home=await page.evaluate(()=>({
-                cards:document.querySelectorAll('.card').length,
-                demos:document.querySelectorAll('.card .ui-demo').length,
+                cards:document.querySelectorAll('#cards > .card').length,
+                dataLen:window.UI_AR_DATA?.entries?.length,
+                demos:document.querySelectorAll('#cards > .card .ui-demo').length,
                 fallback:document.querySelectorAll('.fallback-demo').length,
                 overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,
                 title:document.title
               }));
-              assert.equal(home.cards,81, s.name+': expected 81 cards');
+              console.log(s.name, JSON.stringify(home));
+              assert.equal(home.dataLen,81, s.name+': live data length');
+              assert.equal(home.cards,81, s.name+': expected 81 index cards');
               assert.equal(home.demos,81, s.name+': expected 81 demos');
               assert.equal(home.fallback,0, s.name+': fallback preview exists');
               assert.equal(home.overflow,false, s.name+': horizontal overflow');
@@ -54,7 +57,7 @@ jobs:
               await page.waitForTimeout(250);
               const search=await page.evaluate(()=>({
                 count:document.querySelectorAll('.card').length,
-                slugs:[...document.querySelectorAll('.card')].map(a=>a.getAttribute('href'))
+                slugs:[...document.querySelectorAll('#cards > .card')].map(a=>a.getAttribute('href'))
               }));
               assert(search.count>=1,s.name+': Arabic search returned nothing');
               assert(search.slugs.some(x=>x.includes('scrim')),s.name+': search did not find scrim');
@@ -63,7 +66,7 @@ jobs:
               await page.waitForSelector('[data-cat="macos"]');
               await page.click('[data-cat="macos"]');
               await page.waitForTimeout(200);
-              assert.equal(await page.$$eval('.card',x=>x.length),32,s.name+': macOS filter');
+              assert.equal(await page.$eval('#cards > .card',x=>x.length),32,s.name+': macOS filter');
 
               await page.goto('https://mmashharawi2021-cell.github.io/Library-/#/element/data-table',{waitUntil:'networkidle0'});
               await page.waitForSelector('.detail h1');
