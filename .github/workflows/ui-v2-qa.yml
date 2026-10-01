@@ -57,7 +57,7 @@ jobs:
               await page.waitForTimeout(250);
               const search=await page.evaluate(()=>({
                 count:document.querySelectorAll('.card').length,
-                slugs:[...document.querySelectorAll('#cards > .card')].map(a=>a.getAttribute('href'))
+                slugs:[...document.querySelectorAll('#cards > .card .card-title-link')].map(a=>a.getAttribute('href'))
               }));
               assert(search.count>=1,s.name+': Arabic search returned nothing');
               assert(search.slugs.some(x=>x.includes('scrim')),s.name+': search did not find scrim');
