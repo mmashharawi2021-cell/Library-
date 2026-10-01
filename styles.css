@@ -1,7 +1,0 @@
-/* Compatibility entrypoint. The live app loads the split stylesheets directly. */
-@import url("./styles/base.css");
-@import url("./styles/components.css");
-@import url("./styles/engine.css");
-@import url("./styles/fonts.css");
-@import url("./styles/ux.css");
-@import url("./styles/theme-damage.css");
