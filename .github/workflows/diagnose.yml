@@ -1,0 +1,26 @@
+name: Diagnose Live Site
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Pages
+        run: sleep 15
+      - name: Check assets
+        run: |
+          set -x
+          curl -I -L https://mmashharawi2021-cell.github.io/Library-/
+          curl -I -L https://mmashharawi2021-cell.github.io/Library-/data.js
+          curl -I -L https://mmashharawi2021-cell.github.io/Library-/app.js
+      - name: Render with Chrome
+        run: |
+          google-chrome --headless --no-sandbox --disable-gpu --enable-logging=stderr --v=1             --virtual-time-budget=8000             --dump-dom https://mmashharawi2021-cell.github.io/Library-/             > rendered.html 2> chrome.log || true
+          echo "=== CHROME ERRORS ==="
+          grep -Ei "error|uncaught|syntax|exception|failed" chrome.log | tail -100 || true
+          echo "=== APP CONTENT CHECK ==="
+          grep -o "ما اسم عنصر الواجهة هذا؟" rendered.html | head || true
+          wc -c rendered.html
