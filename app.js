@@ -43,7 +43,7 @@ function setMeta(title,desc,urlPath=''){
   canonical.href=absolute;
 }
 
-const nav=(active='elements')=>`<div class="topline">قاموس بصري عربي لعناصر الواجهة — الاسم العربي + المصطلح العالمي + رمز التنفيذ</div>
+const nav=(active='elements')=>`<div class="topline">قاموس بصري عربي لعناصر الواجهة — الاسم العربي + المصطلح العالمي + رمز التنفيذ · <a href="#/sponsorship">دعم المشروع</a></div>
 <header><div class="shell nav">
 <a class="brand" href="#/">ما اسم هذا العنصر؟ <small>UI بالعربي</small></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي">
@@ -52,7 +52,7 @@ const nav=(active='elements')=>`<div class="topline">قاموس بصري عرب�
 <a class="${active==='compare'?'active':''}" href="#/compare">المتشابهات</a>
 <a class="${active==='translate'?'active':''}" href="#/translate">الترجمة</a>
 </nav></div></header>`;
-const footer=()=>`<footer class="footer"><div class="shell"><b>ما اسم هذا العنصر؟</b><p>قاموس بصري عربي مستقل لمصطلحات UI. نحافظ على الاسم الإنجليزي واسم الـAPI حتى لا تضيع الدقة التقنية عند الترجمة.</p><div class="links"><a href="#/compare">العناصر المتشابهة</a><a href="#/methodology">المنهجية</a><a href="#/guide/appkit-swiftui">AppKit أم SwiftUI؟</a><a href="#/guide/swift-electron">Swift أم Electron؟</a><a href="feed.xml">RSS</a></div></div></footer><div id="glossary" class="glossary" role="status"></div>`;
+const footer=()=>`<footer class="footer"><div class="shell"><b>ما اسم هذا العنصر؟</b><p>قاموس بصري عربي مستقل لمصطلحات UI. نحافظ على الاسم الإنجليزي واسم الـAPI حتى لا تضيع الدقة التقنية عند الترجمة.</p><div class="links"><a href="#/compare">العناصر المتشابهة</a><a href="#/methodology">المنهجية</a><a href="#/guide/appkit-swiftui">AppKit أم SwiftUI؟</a><a href="#/guide/swift-electron">Swift أم Electron؟</a><a href="#/sponsorship">الدعم والرعاية</a><a href="feed.xml">RSS</a></div><div class="shipnote">مصطلحات جديدة تُراجع وتُضاف باستمرار.</div></div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function demo(e,large=false){
   const s=e.slug;
