@@ -6,13 +6,21 @@
 <meta name="description" content="قاموس بصري عربي احترافي لعناصر واجهة المستخدم ومصطلحاتها البرمجية." />
 <meta name="theme-color" content="#f7f6f2" />
 <title>ما اسم هذا العنصر؟ — قاموس UI بالعربي</title>
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=20261002-2" />
 <link rel="alternate" type="application/rss+xml" title="قاموس UI بالعربي" href="feed.xml" />
 </head>
 <body>
 <a class="skip" href="#main">تجاوز إلى المحتوى</a>
 <div id="app"></div>
-<script src="data.js"></script>
-<script src="app.js"></script>
+<script src="data.js?v=20261002-2"></script>
+<script src="app.js?v=20261002-2"></script>
+<script>
+setTimeout(function(){
+  var root=document.getElementById('app');
+  if(root && !root.innerHTML.trim()){
+    root.innerHTML='<main style="max-width:720px;margin:80px auto;padding:24px;text-align:center;font-family:system-ui"><h1>تعذر تحميل الواجهة</h1><p>جرّب تحديث الصفحة مرة واحدة. تم تجهيز الموقع لتجاوز النسخ المخزنة مؤقتًا تلقائيًا.</p><button onclick="location.reload(true)" style="padding:10px 16px;border:1px solid #ccc;border-radius:10px;background:#fff">تحديث الصفحة</button></main>';
+  }
+},2500);
+</script>
 </body>
 </html>
