@@ -1,26 +1,41 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="description" content="قاموس بصري عربي احترافي لعناصر واجهة المستخدم ومصطلحاتها البرمجية." />
-<meta name="theme-color" content="#f7f6f2" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="قاموس بصري عربي احترافي لعناصر واجهة المستخدم: الاسم العربي، المصطلح الإنجليزي، رمز التنفيذ، التشريح وPrompt جاهز.">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_PS">
+<meta property="og:title" content="ما اسم هذا العنصر؟ — قاموس UI بالعربي">
+<meta property="og:description" content="صف عنصر الواجهة بطريقتك واحصل على الاسم العربي والإنجليزي ورمز التنفيذ.">
+<meta property="og:url" content="https://mmashharawi2021-cell.github.io/Library-/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://mmashharawi2021-cell.github.io/Library-/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=20261002-3">
+<link rel="alternate" type="application/rss+xml" title="قاموس UI بالعربي" href="feed.xml">
 <title>ما اسم هذا العنصر؟ — قاموس UI بالعربي</title>
-<link rel="stylesheet" href="styles.css?v=20261002-2" />
-<link rel="alternate" type="application/rss+xml" title="قاموس UI بالعربي" href="feed.xml" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"ما اسم هذا العنصر؟ — UI بالعربي","url":"https://mmashharawi2021-cell.github.io/Library-/","inLanguage":"ar","description":"قاموس بصري عربي لعناصر واجهة المستخدم ومصطلحاتها البرمجية."}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">تجاوز إلى المحتوى</a>
-<div id="app"></div>
-<script src="data.js?v=20261002-2"></script>
-<script src="app.js?v=20261002-2"></script>
+<div id="app"><main style="max-width:760px;margin:80px auto;padding:24px;text-align:center;font-family:system-ui"><h1>جارٍ تحميل قاموس UI بالعربي…</h1><p>إذا بقيت هذه الرسالة، حدّث الصفحة مرة واحدة.</p></main></div>
+<noscript><main style="max-width:760px;margin:80px auto;padding:24px;font-family:system-ui"><h1>ما اسم هذا العنصر؟</h1><p>يحتاج القاموس التفاعلي إلى JavaScript لعرض البحث والمعاينات. يمكنك أيضًا زيارة الصفحات المباشرة المفهرسة لكل عنصر.</p></main></noscript>
+<script src="data.js?v=20261002-3"></script>
+<script src="app.js?v=20261002-3"></script>
 <script>
 setTimeout(function(){
   var root=document.getElementById('app');
-  if(root && !root.innerHTML.trim()){
-    root.innerHTML='<main style="max-width:720px;margin:80px auto;padding:24px;text-align:center;font-family:system-ui"><h1>تعذر تحميل الواجهة</h1><p>جرّب تحديث الصفحة مرة واحدة. تم تجهيز الموقع لتجاوز النسخ المخزنة مؤقتًا تلقائيًا.</p><button onclick="location.reload(true)" style="padding:10px 16px;border:1px solid #ccc;border-radius:10px;background:#fff">تحديث الصفحة</button></main>';
+  if(root && /جارٍ تحميل/.test(root.textContent)){
+    root.innerHTML='<main style="max-width:720px;margin:80px auto;padding:24px;text-align:center;font-family:system-ui"><h1>تعذر تحميل الواجهة</h1><p>تحقق من الاتصال ثم حدّث الصفحة. ملفات الموقع مزودة بإصدار لكسر الكاش القديم.</p><button onclick="location.reload()" style="padding:10px 16px;border:1px solid #ccc;border-radius:10px;background:#fff">تحديث الصفحة</button></main>';
   }
-},2500);
+},3500);
 </script>
 </body>
 </html>
