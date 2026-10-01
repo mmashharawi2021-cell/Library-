@@ -58,7 +58,7 @@ jobs:
 
               await page.focus('#search');
               await page.keyboard.type('الخلفية الداكنة');
-              await page.waitForTimeout(250);
+              await new Promise(r=>setTimeout(r,250));
               const search=await page.evaluate(()=>({
                 count:document.querySelectorAll('.card').length,
                 slugs:[...document.querySelectorAll('#cards > .card .card-title-link')].map(a=>a.getAttribute('href'))
@@ -69,8 +69,8 @@ jobs:
               await page.goto(BASE,{waitUntil:'networkidle0'});
               await page.waitForSelector('[data-cat="macos"]');
               await page.click('[data-cat="macos"]');
-              await page.waitForTimeout(200);
-              assert.equal(await page.$eval('#cards > .card',x=>x.length),32,s.name+': macOS filter');
+              await new Promise(r=>setTimeout(r,200));
+              assert.equal(await page.$$eval('#cards > .card',x=>x.length),32,s.name+': macOS filter');
 
               await page.goto('https://mmashharawi2021-cell.github.io/Library-/#/element/data-table',{waitUntil:'networkidle0'});
               await page.waitForSelector('.detail h1');
