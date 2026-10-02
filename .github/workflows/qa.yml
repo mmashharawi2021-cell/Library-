@@ -49,12 +49,12 @@ jobs:
           await page.goto(site,{waitUntil:'networkidle0'});
           await page.type('#search','الخلفية الداكنة خلف النافذة');
           await new Promise(r=>setTimeout(r,150));
-          let slugs=await page.$eval('#cards > .card',els=>els.map(e=>e.getAttribute('href')));
+          let slugs=await page.$$eval('#cards > .card',els=>els.map(e=>e.getAttribute('href')));
           assert(slugs.some(x=>x?.includes('scrim')),`search did not find scrim: ${slugs}`);
 
           await page.click('[data-cat="macos"]');
           await page.waitForSelector('.card');
-          let count=await page.$eval('#cards > .card',els=>els.length);
+          let count=await page.$$eval('#cards > .card',els=>els.length);
           assert(count===32,`macOS filter count ${count}`);
 
           await page.goto(site+'element/scrim/',{waitUntil:'networkidle0'});
