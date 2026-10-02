@@ -52,6 +52,8 @@ jobs:
           let slugs=await page.$$eval('#cards > .card',els=>els.map(e=>e.getAttribute('href')));
           assert(slugs.some(x=>x?.includes('scrim')),`search did not find scrim: ${slugs}`);
 
+          await page.goto(site,{waitUntil:'networkidle0'});
+          await page.waitForSelector('[data-cat="macos"]');
           await page.click('[data-cat="macos"]');
           await page.waitForSelector('.card');
           let count=await page.$$eval('#cards > .card',els=>els.length);
