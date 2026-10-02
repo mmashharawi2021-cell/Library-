@@ -50,7 +50,7 @@ const nav=(active='elements')=>`<div class="referencebar"><a href="https://namet
 </div></header>`;
 const footer=()=>`<footer class="footer"><div class="shell footgrid"><div><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري العربي لعناصر واجهة المستخدم.</p><small>مشروع مستقل مبني من الصفر. المرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. لا ننقل كوده أو أصوله أو نصوصه حرفيًا.</small></div><div class="footmeta"><b>مصطلحات جديدة باستمرار</b><a href="/Library-/feed.xml">متابعة عبر RSS</a></div><nav class="footlinks"><a href="#/compare">المتشابهات</a><a href="#/methodology">المنهجية</a><a href="#/translate">جدول الترجمة</a><a href="#/saved">المحفوظات</a><a href="#/submit">اقترح عنصرًا</a></nav></div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
-function demo(function demo(e,large=false){
+function demo(e,large=false){
   const s=e.slug;
   const cls=`ui-demo ${large?'large':''} demo-${s}`;
   const wrap=x=>`<div class="${cls}" aria-label="معاينة توضيحية لـ ${esc(e.ar)}">${x}</div>`;
