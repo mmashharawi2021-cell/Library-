@@ -43,7 +43,7 @@ function setMeta(title,desc,urlPath=''){
   canonical.href=absolute;
 }
 
-const nav=(active='elements')=>`<div class="source-strip"><span class="source-dot"></span><b>REFERENCE</b><span>المصدر المرجعي</span><a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a></div>
+const nav=(active='elements')=>`<div class="source-strip"><div class="shell source-inner"><span class="source-dot"></span><b>REFERENCE</b><span>المصدر المرجعي</span><a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a></div></div>
 <header class="sitehead"><div class="shell headrow">
 <a class="brand" href="#/"><strong>ui بالعربي</strong><small>قاموس الواجهة</small></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="#/">العناصر</a><a class="${active==='styles'?'active':''}" href="#/styles">الأنماط</a></nav>
