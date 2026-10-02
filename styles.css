@@ -36,3 +36,44 @@ html[data-theme="light"]{--bg:#f5f5f3;--panel:#fff;--preview:#ececea;--preview2:
 }
 @media(max-width:360px){.headsearch{width:92px}.hero h1{font-size:28px}.entries-grid{gap-inline:6px}.entry-head h3{font-size:8px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important}}
+
+/* Screenshot parity pass v4 */
+.source-strip{height:34px;display:block}
+.source-inner{height:100%;display:flex;align-items:center;justify-content:flex-start;gap:7px;direction:ltr}
+.source-inner>span:nth-of-type(2){direction:rtl}
+.sitehead{height:58px}
+.headrow{direction:ltr}
+.brand{direction:ltr}
+.brand strong{direction:rtl;unicode-bidi:plaintext}
+.navlinks{direction:ltr}
+.navlinks a{direction:rtl}
+.headtools{direction:ltr}
+.newweek{direction:ltr}
+.newweek>div{direction:ltr}
+.newweek a{direction:rtl}
+.catalog-toolbar{direction:ltr}
+.filter-tabs,.sort-tabs{direction:ltr}
+.catalog-toolbar button{direction:rtl}
+.entries-grid{direction:ltr}
+.entry-card{direction:rtl}
+.entry-body{direction:rtl;text-align:right}
+.entry-code{direction:ltr;text-align:left}
+.entry-preview .demo-data-table{transform:scale(.57)!important}
+.entry-preview .demo-bottom-navigation{transform:scale(.97)!important}
+.entry-preview .demo-timeline{transform:scale(.72)!important}
+.entry-preview .demo-presence-indicator{transform:scale(1.05)!important}
+.entry-preview .demo-message-bubble{transform:scale(.92)!important}
+.entry-preview .demo-steps{transform:scale(.58)!important}
+.entry-preview .demo-avatar-group{transform:scale(.82)!important}
+.entry-preview .demo-multi-select{transform:scale(.58)!important}
+@media(max-width:700px){
+ .source-strip{height:30px}
+ .sitehead{height:54px}
+ .hero{padding-top:70px;padding-bottom:78px}
+ .newweek{margin-bottom:24px}
+ .hero h1{font-size:35px;max-width:390px;margin-bottom:15px}
+ .hero-copy{font-size:10.5px;max-width:350px}
+ .hero-search{margin-top:28px}
+ .hero-help{margin-top:17px;gap:7px}
+ .catalog-toolbar{margin-bottom:14px}
+}
