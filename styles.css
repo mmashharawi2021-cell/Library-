@@ -146,3 +146,22 @@ html{-webkit-text-size-adjust:100%}
 .nt-avatars{display:flex;align-items:center;direction:ltr}.nt-avatars span{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;margin-left:-5px;border:2px solid #1a1b1f;color:#fff;font:700 5px system-ui}.nt-avatars .a1{background:#ee5b6f}.nt-avatars .a2{background:#7164d9}.nt-avatars .a3{background:#3aa4c9}.nt-avatars .a4{background:#6a5f95}.nt-avatars .more{background:#484b54}
 .nt-multiselect{width:44%;min-width:98px;background:#1e2025;border:1px solid #34373e;border-radius:6px;padding:5px;color:#cfd1d6;font:4.5px system-ui;box-shadow:0 8px 20px #0006}.nt-selecttop{height:14px;border:1px solid #363a43;border-radius:4px;display:flex;align-items:center;justify-content:space-between;padding:0 4px;margin-bottom:3px}.nt-selecttop b{font-size:4.5px}.nt-multiselect label{display:flex;align-items:center;gap:4px;padding:2px 1px}.nt-multiselect label i{width:7px;height:7px;border:1px solid #4a4e57;border-radius:2px;display:grid;place-items:center;font-style:normal;font-size:4px}.nt-multiselect label i.check{background:#2f83f7;border-color:#2f83f7;color:#fff}
 @media(max-width:700px){.hero{padding-bottom:26px}}
+
+/* Screenshot parity pass v7 */
+.brandbadge{width:11px;height:11px;border-radius:50%;display:grid;place-items:center;background:#7c45ff;color:white;font:700 6px/1 system-ui;font-style:normal;margin-left:-3px;align-self:flex-start;margin-top:8px}
+.entry-body{direction:ltr;text-align:left;min-height:74px}
+.entry-head{direction:ltr}
+.entry-head h3{direction:rtl;unicode-bidi:plaintext;text-align:left;flex:1}
+.entry-head>small{margin-left:auto;margin-right:0}
+.entry-body p{direction:rtl;unicode-bidi:plaintext;text-align:left}
+.catalog{padding-bottom:84px}
+@media(max-width:700px){
+ .brandbadge{width:6px;height:6px;font-size:3.5px;margin-left:-2px;margin-top:5px}
+ .hero{padding-bottom:48px}
+ .entry-body{min-height:47px;padding-top:6px}
+ .entry-head h3{font-size:6px}
+ .entry-head h3 span{font-size:5.5px}
+ .entry-code{font-size:4.6px;margin-top:4px}
+ .entry-body p{font-size:5.3px;line-height:1.48;margin-top:4px;-webkit-line-clamp:3}
+ .entries-grid{row-gap:22px}
+}
