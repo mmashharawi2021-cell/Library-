@@ -1,0 +1,39 @@
+name: Visual QA Snapshot
+on:
+  push:
+    branches: ["main"]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Pages
+        run: sleep 12
+      - name: Install Puppeteer
+        run: npm install --no-save puppeteer-core@24
+      - name: Capture mobile homepage
+        run: |
+          cat > capture.mjs <<'JS'
+          import puppeteer from 'puppeteer-core';
+          const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+          const page=await browser.newPage();
+          await page.setViewport({width:393,height:900,deviceScaleFactor:2});
+          await page.goto('https://mmashharawi2021-cell.github.io/Library-/?visualqa=5',{waitUntil:'networkidle0',timeout:60000});
+          await page.screenshot({path:'mobile-home-v4.png',fullPage:true});
+          console.log(await page.evaluate(()=>({
+            width:innerWidth,
+            cards:document.querySelectorAll('.entry-card').length,
+            cols:getComputedStyle(document.querySelector('.entries-grid')).gridTemplateColumns,
+            bg:getComputedStyle(document.body).backgroundColor,
+            heroTop:document.querySelector('.hero').getBoundingClientRect().top,
+            toolbarTop:document.querySelector('.catalog-toolbar').getBoundingClientRect().top,
+            firstCard:document.querySelector('.entry-card h3')?.textContent
+          })));
+          await browser.close();
+          JS
+          node capture.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visual-qa-v4
+          path: mobile-home-v4.png
