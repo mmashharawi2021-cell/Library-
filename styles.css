@@ -171,3 +171,14 @@ html{-webkit-text-size-adjust:100%}
 @media(max-width:700px){
  .hero{padding-top:28px;padding-bottom:19px}
 }
+
+/* Screenshot parity pass v9 — measured header and row cadence */
+@media(max-width:700px){
+ .source-strip{height:6px}
+ .source-inner{font-size:3px;gap:3px}
+ .source-inner b{font-size:2.6px}
+ .source-dot{width:2px;height:2px}
+ .sitehead{height:22px}
+ .hero{padding-top:40px}
+ .entries-grid{row-gap:8px}
+}
