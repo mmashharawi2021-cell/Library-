@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>UI بالعربي</title><link>https://mmashharawi2021-cell.github.io/Library-/</link><description>مصطلحات وعناصر واجهة المستخدم بالعربية</description></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>UI بالعربي</title>
+<link>https://mmashharawi2021-cell.github.io/Library-/</link>
+<description>مصطلحات وعناصر واجهة المستخدم بالعربية</description>
+<item><title>Data Table — جدول البيانات</title><link>https://mmashharawi2021-cell.github.io/Library-/web/data-table/</link></item>
+<item><title>Bottom Navigation — التنقل السفلي</title><link>https://mmashharawi2021-cell.github.io/Library-/web/bottom-navigation/</link></item>
+<item><title>Timeline — الخط الزمني</title><link>https://mmashharawi2021-cell.github.io/Library-/web/timeline/</link></item>
+</channel></rss>
