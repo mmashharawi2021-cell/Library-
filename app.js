@@ -324,21 +324,21 @@ function detail(slug){
 function styleSpecimen(s,large=false){
  const L=large?' large':'';
  switch(s.slug){
-  case 'skeuomorphism': return \`<div class="style-visual style-skeuomorphism\${L}"><div class="sk-book"><div class="sk-tabs"><span>اليوم</span><span>الأرشيف</span></div><b>ملاحظات الرحلة</b><i></i><i></i><i></i><small>12 أكتوبر</small></div></div>\`;
-  case 'neumorphism': return \`<div class="style-visual style-neumorphism\${L}"><div class="neo-player"><span class="neo-label">Night Drive</span><b>lo-fi</b><div class="neo-track"><i></i></div><div class="neo-controls"><span>‹</span><span class="pressed">Ⅱ</span><span>›</span></div></div></div>\`;
-  case 'glassmorphism': return \`<div class="style-visual style-glassmorphism\${L}"><div class="glass-orb g1"></div><div class="glass-orb g2"></div><div class="glass-panel"><small>الطقس</small><b>24°</b><span>سماء صافية</span><div><i>الاثنين 24°</i><i>الثلاثاء 22°</i><i>الأربعاء 20°</i></div></div></div>\`;
-  case 'liquid-glass': return \`<div class="style-visual style-liquid-glass\${L}"><div class="lg-wall"></div><div class="lg-bar"><span>⌂<small>الرئيسية</small></span><span>⌕<small>بحث</small></span><span class="on">●<small>تشغيل</small></span><span>◎<small>حسابي</small></span></div><div class="lg-pill">وضع التركيز</div></div>\`;
-  case 'web-brutalism': return \`<div class="style-visual style-web-brutalism\${L}"><div class="wb-page"><b>صفحة مروان الشخصية</b><span>آخر تحديث: الثلاثاء</span><hr><u>مقالات</u> · <u>الأرشيف</u> · <u>سجل الزوار</u><table><tbody><tr><td>notes.txt</td><td>2 KB</td></tr><tr><td>photos.zip</td><td>14 MB</td></tr></tbody></table><input value="إرسال"></div></div>\`;
-  case 'neobrutalism': return \`<div class="style-visual style-neobrutalism\${L}"><div class="nb-card"><span>نسخة 2.0</span><b>SHIP<br>LOUD.</b><p>كتلة واحدة. حافتان. بلا تمويه.</p><i>جرّبها →</i></div></div>\`;
-  case 'y2k': return \`<div class="style-visual style-y2k\${L}"><div class="y2k-player"><div class="chrome-title">NEODRIVE</div><div class="y2k-screen"><span>01 · CYBER SUNSET</span><b>3:47</b></div><div class="y2k-controls"><i>◀</i><i>●</i><i>▶</i></div></div></div>\`;
-  case 'frutiger-aero': return \`<div class="style-visual style-frutiger-aero\${L}"><div class="fa-sky"><span class="fa-cloud c1"></span><span class="fa-cloud c2"></span></div><div class="fa-grass"></div><div class="fa-bubble"><small>صباح الخير</small><b>23°C</b><span>هواء نقي اليوم</span></div></div>\`;
-  case 'flat-design': return \`<div class="style-visual style-flat-design\${L}"><div class="flat-shell"><div class="flat-top"><b>لوحة اليوم</b><span>4 مهام</span></div><div class="flat-tiles"><i class="blue">✉</i><i class="yellow">★</i><i class="green">✓</i><i class="red">♥</i></div><div class="flat-line"></div></div></div>\`;
-  case 'minimalism': return \`<div class="style-visual style-minimalism\${L}"><div class="min-page"><small>ATELIER 01</small><b>أقل،<br>لكن أدق.</b><p>قطعة واحدة مصممة لتدوم.</p><span>استكشف المجموعة</span></div></div>\`;
-  case 'claymorphism': return \`<div class="style-visual style-claymorphism\${L}"><div class="clay-card"><span class="clay-fire">✦</span><small>سلسلة الصباح</small><b>12 يومًا</b><div class="clay-action">تم اليوم ✓</div><i>+2</i></div></div>\`;
-  case 'vernacular-web': return \`<div class="style-visual style-vernacular-web\${L}"><div class="vw-page"><div>✦ ☆ ✦</div><b>مرحبًا بصفحتي!</b><marquee>UNDER CONSTRUCTION</marquee><p>هذه الصفحة عن الصور والخرائط والموسيقى.</p><u>وقّع سجل الزوار</u><small>الزائر رقم 001337</small></div></div>\`;
-  case 'aqua': return \`<div class="style-visual style-aqua\${L}"><div class="aqua-window"><div class="aqua-title"><i></i><i></i><i></i><b>حفظ باسم</b></div><label>الاسم <span>تصميم-aqua.psd</span></label><label>المكان <span>Documents</span></label><div class="aqua-actions"><em>إلغاء</em><strong>حفظ</strong></div></div></div>\`;
-  case 'windows-aero': return \`<div class="style-visual style-windows-aero\${L}"><div class="aero-window"><div class="aero-title"><span>نسخ الملفات</span><i>×</i></div><div class="aero-body"><b>جارٍ نسخ 3 عناصر…</b><div class="aero-progress"><i></i></div><small>42% مكتمل · 12 MB/s</small><em>إلغاء</em></div></div></div>\`;
-  default:return \`<div class="style-visual generic-style\${L}"><b>\${esc(s.ar)}</b></div>\`;
+  case 'skeuomorphism': return `<div class="style-visual style-skeuomorphism${L}"><div class="sk-book"><div class="sk-tabs"><span>اليوم</span><span>الأرشيف</span></div><b>ملاحظات الرحلة</b><i></i><i></i><i></i><small>12 أكتوبر</small></div></div>`;
+  case 'neumorphism': return `<div class="style-visual style-neumorphism${L}"><div class="neo-player"><span class="neo-label">Night Drive</span><b>lo-fi</b><div class="neo-track"><i></i></div><div class="neo-controls"><span>‹</span><span class="pressed">Ⅱ</span><span>›</span></div></div></div>`;
+  case 'glassmorphism': return `<div class="style-visual style-glassmorphism${L}"><div class="glass-orb g1"></div><div class="glass-orb g2"></div><div class="glass-panel"><small>الطقس</small><b>24°</b><span>سماء صافية</span><div><i>الاثنين 24°</i><i>الثلاثاء 22°</i><i>الأربعاء 20°</i></div></div></div>`;
+  case 'liquid-glass': return `<div class="style-visual style-liquid-glass${L}"><div class="lg-wall"></div><div class="lg-bar"><span>⌂<small>الرئيسية</small></span><span>⌕<small>بحث</small></span><span class="on">●<small>تشغيل</small></span><span>◎<small>حسابي</small></span></div><div class="lg-pill">وضع التركيز</div></div>`;
+  case 'web-brutalism': return `<div class="style-visual style-web-brutalism${L}"><div class="wb-page"><b>صفحة مروان الشخصية</b><span>آخر تحديث: الثلاثاء</span><hr><u>مقالات</u> · <u>الأرشيف</u> · <u>سجل الزوار</u><table><tbody><tr><td>notes.txt</td><td>2 KB</td></tr><tr><td>photos.zip</td><td>14 MB</td></tr></tbody></table><input value="إرسال"></div></div>`;
+  case 'neobrutalism': return `<div class="style-visual style-neobrutalism${L}"><div class="nb-card"><span>نسخة 2.0</span><b>SHIP<br>LOUD.</b><p>كتلة واحدة. حافتان. بلا تمويه.</p><i>جرّبها →</i></div></div>`;
+  case 'y2k': return `<div class="style-visual style-y2k${L}"><div class="y2k-player"><div class="chrome-title">NEODRIVE</div><div class="y2k-screen"><span>01 · CYBER SUNSET</span><b>3:47</b></div><div class="y2k-controls"><i>◀</i><i>●</i><i>▶</i></div></div></div>`;
+  case 'frutiger-aero': return `<div class="style-visual style-frutiger-aero${L}"><div class="fa-sky"><span class="fa-cloud c1"></span><span class="fa-cloud c2"></span></div><div class="fa-grass"></div><div class="fa-bubble"><small>صباح الخير</small><b>23°C</b><span>هواء نقي اليوم</span></div></div>`;
+  case 'flat-design': return `<div class="style-visual style-flat-design${L}"><div class="flat-shell"><div class="flat-top"><b>لوحة اليوم</b><span>4 مهام</span></div><div class="flat-tiles"><i class="blue">✉</i><i class="yellow">★</i><i class="green">✓</i><i class="red">♥</i></div><div class="flat-line"></div></div></div>`;
+  case 'minimalism': return `<div class="style-visual style-minimalism${L}"><div class="min-page"><small>ATELIER 01</small><b>أقل،<br>لكن أدق.</b><p>قطعة واحدة مصممة لتدوم.</p><span>استكشف المجموعة</span></div></div>`;
+  case 'claymorphism': return `<div class="style-visual style-claymorphism${L}"><div class="clay-card"><span class="clay-fire">✦</span><small>سلسلة الصباح</small><b>12 يومًا</b><div class="clay-action">تم اليوم ✓</div><i>+2</i></div></div>`;
+  case 'vernacular-web': return `<div class="style-visual style-vernacular-web${L}"><div class="vw-page"><div>✦ ☆ ✦</div><b>مرحبًا بصفحتي!</b><marquee>UNDER CONSTRUCTION</marquee><p>هذه الصفحة عن الصور والخرائط والموسيقى.</p><u>وقّع سجل الزوار</u><small>الزائر رقم 001337</small></div></div>`;
+  case 'aqua': return `<div class="style-visual style-aqua${L}"><div class="aqua-window"><div class="aqua-title"><i></i><i></i><i></i><b>حفظ باسم</b></div><label>الاسم <span>تصميم-aqua.psd</span></label><label>المكان <span>Documents</span></label><div class="aqua-actions"><em>إلغاء</em><strong>حفظ</strong></div></div></div>`;
+  case 'windows-aero': return `<div class="style-visual style-windows-aero${L}"><div class="aero-window"><div class="aero-title"><span>نسخ الملفات</span><i>×</i></div><div class="aero-body"><b>جارٍ نسخ 3 عناصر…</b><div class="aero-progress"><i></i></div><small>42% مكتمل · 12 MB/s</small><em>إلغاء</em></div></div></div>`;
+  default:return `<div class="style-visual generic-style${L}"><b>${esc(s.ar)}</b></div>`;
  }
 }
 
@@ -351,13 +351,13 @@ function styles(){
   {label:'لمعان كروم وفقاعات أوائل الألفية',slug:'y2k'},
   {label:'أزرار زجاجية تبدو كقطرات ماء',slug:'liquid-glass'}
  ];
- app.innerHTML=nav('styles')+\`<main id="main">
+ app.innerHTML=nav('styles')+`<main id="main">
    <section class="styles-hero shell">
      <div class="styles-kicker">سمِّ هذا المظهر</div>
      <h1>ما اسم هذا الأسلوب؟</h1>
      <p>أطلس بصري للأنماط. تعرّف على الاسم المتداول للمظهر، الإشارات التي تصنع هويته، وما الذي يفرقه عن أقرب أسلوب مشابه.</p>
      <div class="styles-describe">صفه بطريقتك…</div>
-     <div class="styles-examples">\${examples.map(x=>\`<button type="button" data-style-example="\${esc(x.label)}" data-style-slug="\${x.slug}">“\${esc(x.label)}”</button>\`).join('')}</div>
+     <div class="styles-examples">${examples.map(x=>`<button type="button" data-style-example="${esc(x.label)}" data-style-slug="${x.slug}">“${esc(x.label)}”</button>`).join('')}</div>
      <label class="styles-searchbox">
        <span>⌕</span>
        <input id="stylesearch" autocomplete="off" placeholder="مثال: زجاج ضبابي فوق خلفية ملونة…">
@@ -374,7 +374,7 @@ function styles(){
        <a href="#/">تبحث عن عنصر تحكم، لا عن مظهر؟ تصفّح عناصر UI ←</a>
      </div>
    </section>
- </main>\`+footer();
+ </main>`+footer();
 
  const input=document.querySelector('#stylesearch');
  let forced='';
@@ -384,16 +384,16 @@ function styles(){
      ?D.styles.filter(s=>s.slug===forced)
      :D.styles.filter(s=>!q||norm([s.ar,s.en,s.status,s.desc,...(s.aliases||[]),...(s.called||[]),...(s.signals||[])].join(' ')).includes(q));
    const grid=document.querySelector('#stylegrid');
-   grid.innerHTML=list.map(s=>\`<a class="atlas-card" href="#/style/\${s.slug}">
-     <div class="atlas-preview">\${styleSpecimen(s)}</div>
+   grid.innerHTML=list.map(s=>`<a class="atlas-card" href="#/style/${s.slug}">
+     <div class="atlas-preview">${styleSpecimen(s)}</div>
      <div class="atlas-copy">
-       <div class="atlas-status">\${esc(s.status)}</div>
-       <h3>\${esc(s.ar)}</h3>
-       <div class="atlas-en" dir="ltr">\${esc(s.en)}</div>
-       <p>\${esc(s.desc)}</p>
-       <div class="atlas-signals">\${s.signals.slice(0,3).map(x=>\`<span>\${esc(x)}</span>\`).join('')}</div>
+       <div class="atlas-status">${esc(s.status)}</div>
+       <h3>${esc(s.ar)}</h3>
+       <div class="atlas-en" dir="ltr">${esc(s.en)}</div>
+       <p>${esc(s.desc)}</p>
+       <div class="atlas-signals">${s.signals.slice(0,3).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
      </div>
-   </a>\`).join('');
+   </a>`).join('');
    document.querySelector('#styleempty').hidden=list.length!==0;
  };
  draw();
@@ -415,77 +415,77 @@ function styles(){
 function styleDetail(slug){
  const s=D.styles.find(x=>x.slug===slug);
  if(!s)return notFound();
- setMeta(\`\${s.ar} — \${s.en}\`,s.desc,\`styles/\${s.slug}/\`);
+ setMeta(`${s.ar} — ${s.en}`,s.desc,`styles/${s.slug}/`);
  const confused=D.styles.find(x=>x.en===s.confused);
  const idx=D.styles.indexOf(s);
  const related=[confused,...Array.from({length:5},(_,i)=>D.styles[(idx+i+1)%D.styles.length])]
    .filter((x,i,a)=>x&&x!==s&&a.indexOf(x)===i).slice(0,4);
 
- app.innerHTML=nav('styles')+\`<main id="main" class="shell style-detail-shell">
+ app.innerHTML=nav('styles')+`<main id="main" class="shell style-detail-shell">
    <article class="style-detail">
-     <nav class="style-crumbs"><a href="#/styles">الأنماط</a><span>/</span><span dir="ltr">\${esc(s.en)}</span></nav>
+     <nav class="style-crumbs"><a href="#/styles">الأنماط</a><span>/</span><span dir="ltr">${esc(s.en)}</span></nav>
 
      <section class="style-detail-visual">
-       \${styleSpecimen(s,true)}
+       ${styleSpecimen(s,true)}
      </section>
 
      <header class="style-detail-head">
-       <h1>\${esc(s.ar)}</h1>
-       <div class="style-detail-en" dir="ltr">\${esc(s.en)}</div>
-       <span class="style-status-badge">\${esc(s.status)}</span>
-       <p class="style-origin-summary">\${esc(s.origin)}</p>
-       <p class="style-aliases"><b>يُسمى أيضًا</b> \${(s.aliases||[]).map(esc).join('، ')}</p>
-       <p class="style-lead">\${esc(s.desc)}</p>
-       <p class="style-scope"><b>النطاق:</b> \${esc(s.scope)}</p>
+       <h1>${esc(s.ar)}</h1>
+       <div class="style-detail-en" dir="ltr">${esc(s.en)}</div>
+       <span class="style-status-badge">${esc(s.status)}</span>
+       <p class="style-origin-summary">${esc(s.origin)}</p>
+       <p class="style-aliases"><b>يُسمى أيضًا</b> ${(s.aliases||[]).map(esc).join('، ')}</p>
+       <p class="style-lead">${esc(s.desc)}</p>
+       <p class="style-scope"><b>النطاق:</b> ${esc(s.scope)}</p>
      </header>
 
      <section class="style-section style-called">
        <h2>إذا كنت تسميه…</h2>
-       <div class="style-called-list">\${(s.called||[]).map(x=>\`<span>“\${esc(x)}”</span>\`).join('')}</div>
-       <p>…فأنت تقصد <b>\${esc(s.ar)}</b> <span dir="ltr">(\${esc(s.en)})</span>.</p>
+       <div class="style-called-list">${(s.called||[]).map(x=>`<span>“${esc(x)}”</span>`).join('')}</div>
+       <p>…فأنت تقصد <b>${esc(s.ar)}</b> <span dir="ltr">(${esc(s.en)})</span>.</p>
      </section>
 
      <section class="style-section">
        <h2>ما الذي يجعله هذا الأسلوب؟ — الإشارات المحدِّدة</h2>
        <div class="style-signal-list">
-         \${(s.signalDetails||[]).map((x,i)=>\`<div class="style-signal">
-           <i>\${i+1}</i>
-           <div><small>\${esc(x.group)}</small><b>\${esc(x.title)}</b><p>\${esc(x.desc)}</p></div>
-         </div>\`).join('')}
+         ${(s.signalDetails||[]).map((x,i)=>`<div class="style-signal">
+           <i>${i+1}</i>
+           <div><small>${esc(x.group)}</small><b>${esc(x.title)}</b><p>${esc(x.desc)}</p></div>
+         </div>`).join('')}
        </div>
      </section>
 
      <section class="style-section">
        <h2>Style Brief — جاهز لوكيل البرمجة</h2>
        <div class="style-brief prompt">
-         <button class="copybtn" type="button" data-copy="\${encodeURIComponent(s.brief)}">نسخ</button>
-         <p>\${esc(s.brief)}</p>
+         <button class="copybtn" type="button" data-copy="${encodeURIComponent(s.brief)}">نسخ</button>
+         <p>${esc(s.brief)}</p>
        </div>
      </section>
 
-     \${confused?\`<section class="style-section">
-       <h2>غالبًا يختلط مع <a href="#/style/\${confused.slug}">\${esc(confused.ar)}</a></h2>
+     ${confused?`<section class="style-section">
+       <h2>غالبًا يختلط مع <a href="#/style/${confused.slug}">${esc(confused.ar)}</a></h2>
        <p class="style-section-intro">نفس نوع الواجهة، لكن بأسلوبين مختلفين. الفرق في المادة والضوء والهندسة، لا في اللون وحده.</p>
        <div class="style-versus">
-         <a class="style-vs-card" href="#/style/\${s.slug}">
-           <div>\${styleSpecimen(s)}</div><b>\${esc(s.ar)}</b><span dir="ltr">\${esc(s.en)}</span>
+         <a class="style-vs-card" href="#/style/${s.slug}">
+           <div>${styleSpecimen(s)}</div><b>${esc(s.ar)}</b><span dir="ltr">${esc(s.en)}</span>
          </a>
-         <a class="style-vs-card" href="#/style/\${confused.slug}">
-           <div>\${styleSpecimen(confused)}</div><b>\${esc(confused.ar)}</b><span dir="ltr">\${esc(confused.en)}</span>
+         <a class="style-vs-card" href="#/style/${confused.slug}">
+           <div>${styleSpecimen(confused)}</div><b>${esc(confused.ar)}</b><span dir="ltr">${esc(confused.en)}</span>
          </a>
        </div>
        <div class="style-vs-copy">
-         <p><b>\${esc(s.ar)}:</b> \${esc(s.signals.slice(0,2).join('، '))}.</p>
-         <p><b>\${esc(confused.ar)}:</b> \${esc(confused.signals.slice(0,2).join('، '))}.</p>
+         <p><b>${esc(s.ar)}:</b> ${esc(s.signals.slice(0,2).join('، '))}.</p>
+         <p><b>${esc(confused.ar)}:</b> ${esc(confused.signals.slice(0,2).join('، '))}.</p>
        </div>
-     </section>\`:''}
+     </section>`:''}
 
      <section class="style-section">
        <h2>Full Style DNA</h2>
        <div class="style-dna">
-         \${(s.signalDetails||[]).map(x=>\`<div class="dna-row"><span>\${esc(x.group)}</span><em>محدِّد</em><b>\${esc(x.title)}</b><p>\${esc(x.desc)}</p></div>\`).join('')}
-         <div class="dna-row"><span>إشارة داعمة</span><em>داعم</em><b>ما الذي يعزز الأسلوب؟</b><p>\${esc(s.supporting)}</p></div>
-         <div class="dna-row avoid"><span>تجنّب</span><em>تجنّب</em><b>ما الذي يخرجه من هويته؟</b><p>\${esc(s.avoid)}</p></div>
+         ${(s.signalDetails||[]).map(x=>`<div class="dna-row"><span>${esc(x.group)}</span><em>محدِّد</em><b>${esc(x.title)}</b><p>${esc(x.desc)}</p></div>`).join('')}
+         <div class="dna-row"><span>إشارة داعمة</span><em>داعم</em><b>ما الذي يعزز الأسلوب؟</b><p>${esc(s.supporting)}</p></div>
+         <div class="dna-row avoid"><span>تجنّب</span><em>تجنّب</em><b>ما الذي يخرجه من هويته؟</b><p>${esc(s.avoid)}</p></div>
        </div>
      </section>
 
@@ -494,31 +494,31 @@ function styleDetail(slug){
        <p class="style-section-intro">الـBrief أعلاه محايد للأطر؛ هذه مقابض عملية عندما تناسب التقنية المستخدمة.</p>
        <div class="tablewrap">
          <table class="style-code-table">
-           <tbody>\${(s.codeRows||[]).map(r=>\`<tr><td>\${esc(r.stack)}</td><td><code dir="ltr">\${esc(r.symbol)}</code></td><td>\${esc(r.note)}</td></tr>\`).join('')}</tbody>
+           <tbody>${(s.codeRows||[]).map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody>
          </table>
        </div>
      </section>
 
      <section class="style-section">
        <h2>الإتاحة وسوء الاستخدام</h2>
-       <ul class="style-access">\${(s.accessibility||[]).map(x=>\`<li>\${esc(x)}</li>\`).join('')}</ul>
+       <ul class="style-access">${(s.accessibility||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
      </section>
 
      <section class="style-section">
        <h2>الأصل والسياق</h2>
-       <p class="style-origin-long">\${esc(s.origin)}</p>
+       <p class="style-origin-long">${esc(s.origin)}</p>
      </section>
 
      <section class="style-section">
        <h2>راجع أيضًا</h2>
-       <div class="style-related">\${related.map(r=>\`<a href="#/style/\${r.slug}">
-         <div>\${styleSpecimen(r)}</div><b>\${esc(r.ar)}</b><span dir="ltr">\${esc(r.en)}</span>
-       </a>\`).join('')}</div>
+       <div class="style-related">${related.map(r=>`<a href="#/style/${r.slug}">
+         <div>${styleSpecimen(r)}</div><b>${esc(r.ar)}</b><span dir="ltr">${esc(r.en)}</span>
+       </a>`).join('')}</div>
      </section>
 
      <p class="detail-source-note">المرجع البصري والوظيفي: <a href="https://namethatui.com/styles" target="_blank" rel="noopener">Name That UI — Styles ↗</a>. الشرح العربي والمعاينات في هذه المنصة مكتوبة ومبنية للمشروع العربي.</p>
    </article>
- </main>\`+footer();
+ </main>`+footer();
  bindCopy();bindChrome();bindGlossary();
 }
 
