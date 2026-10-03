@@ -175,6 +175,72 @@ jobs:
           assert(detailErrors.length===0,`Detail page errors: ${detailErrors.join(' | ')}`);
           await detailPage.close();
           console.log('LIVE DETAIL QA PASSED — all 81 element pages rendered with complete structure.');
+
+          for(const width of [393,1440]){
+            const stylePage=await browser.newPage();
+            await stylePage.setViewport({width,height:1000,deviceScaleFactor:1});
+            const styleErrors=[];
+            stylePage.on('pageerror',e=>styleErrors.push(String(e)));
+            await stylePage.goto(site+'?styleqa=18#/styles',{waitUntil:'networkidle0',timeout:60000});
+            await stylePage.waitForSelector('.atlas-grid > .atlas-card');
+            const atlas=await stylePage.evaluate(()=>({
+              cards:document.querySelectorAll('.atlas-grid > .atlas-card').length,
+              visuals:document.querySelectorAll('.atlas-grid .style-visual').length,
+              uniqueMarkup:new Set([...document.querySelectorAll('.atlas-preview')].map(x=>x.innerHTML)).size,
+              empty:[...document.querySelectorAll('.atlas-preview')].filter(x=>!x.innerHTML.trim()).length,
+              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+            }));
+            assert(atlas.cards===14,`Styles atlas expected 14 cards, got ${atlas.cards} at ${width}px`);
+            assert(atlas.visuals===14,`Styles atlas expected 14 visuals, got ${atlas.visuals}`);
+            assert(atlas.uniqueMarkup===14,`Expected 14 unique style specimens, got ${atlas.uniqueMarkup}`);
+            assert(atlas.empty===0,`Empty style specimens: ${atlas.empty}`);
+            assert(atlas.overflow<=2,`Styles atlas horizontal overflow ${atlas.overflow}px at ${width}px`);
+
+            if(width===393){
+              await stylePage.click('[data-style-slug="neumorphism"]');
+              await stylePage.waitForFunction(()=>document.querySelectorAll('.atlas-grid > .atlas-card').length===1);
+              const forced=await stylePage.$eval('.atlas-grid > .atlas-card',els=>els.length);
+              assert(forced===1,`Style example filter expected 1 card, got ${forced}`);
+              await stylePage.evaluate(()=>{location.hash='#/styles'});
+              await stylePage.waitForFunction(()=>document.querySelectorAll('.atlas-grid > .atlas-card').length===14);
+            }
+
+            const styleSlugs=await stylePage.evaluate(()=>window.UI_AR_DATA.styles.map(s=>s.slug));
+            for(const slug of styleSlugs){
+              await stylePage.evaluate(s=>{location.hash='#/style/'+s},slug);
+              await stylePage.waitForFunction(s=>{
+                const d=document.querySelector('.style-detail');
+                return location.hash==='#/style/'+s &&
+                  !!d &&
+                  !!d.querySelector('.style-detail-visual .style-visual') &&
+                  !!d.querySelector('.style-signal') &&
+                  !!d.querySelector('.style-brief') &&
+                  !!d.querySelector('.style-dna .dna-row') &&
+                  !!d.querySelector('.style-code-table tr') &&
+                  !!d.querySelector('.style-access li') &&
+                  !!d.querySelector('.style-related a');
+              },{timeout:10000},slug);
+              const check=await stylePage.evaluate(()=>({
+                h1:document.querySelector('.style-detail h1')?.textContent?.trim(),
+                signals:document.querySelectorAll('.style-signal').length,
+                dna:document.querySelectorAll('.style-dna .dna-row').length,
+                codeRows:document.querySelectorAll('.style-code-table tr').length,
+                access:document.querySelectorAll('.style-access li').length,
+                related:document.querySelectorAll('.style-related a').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(!!check.h1,`Missing style title for ${slug}`);
+              assert(check.signals>=3,`Expected >=3 signals for ${slug}, got ${check.signals}`);
+              assert(check.dna>=5,`Expected >=5 DNA rows for ${slug}, got ${check.dna}`);
+              assert(check.codeRows>=1,`Missing style code rows for ${slug}`);
+              assert(check.access>=3,`Expected accessibility guidance for ${slug}`);
+              assert(check.related>=1,`Missing related styles for ${slug}`);
+              assert(check.overflow<=2,`Style detail horizontal overflow ${check.overflow}px for ${slug} at ${width}px`);
+            }
+            assert(styleErrors.length===0,`Style page errors at ${width}px: ${styleErrors.join(' | ')}`);
+            await stylePage.close();
+          }
+          console.log('LIVE STYLES QA PASSED — atlas + all 14 style pages valid at mobile and desktop widths.');
           await browser.close();
           JS
           node card-qa.mjs
