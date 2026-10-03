@@ -330,7 +330,6 @@ function detail(slug){
        </div>
      </section>
 
-     <p class="detail-source-note">المرجع الوظيفي والبصري: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. النصوص العربية والمعاينات هنا مكتوبة ومبنية للمشروع العربي.</p>
    </article>
  </main>`+footer();
  bindCopy();
