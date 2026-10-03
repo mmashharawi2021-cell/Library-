@@ -836,3 +836,12 @@ html{-webkit-text-size-adjust:100%}
     transform:scale(.74);
   }
 }
+
+/* v16: prevent nested-link DOM breakage while preserving reference visuals */
+.entry-preview .docs aside span{padding:2px 6px;border-inline-start:2px solid transparent}
+.entry-preview .docs aside span.on{font-weight:700;border-color:var(--demo-blue);color:#fff}
+.entry-preview .site-ref nav span{font-size:4px;color:#9297a1}
+.entry-preview .visual-card .story-link{color:#9dbcf8}
+.entry-preview .drawer-demo aside span{font-size:4px;color:#9ba0aa}
+.entry-preview .crumb-demo span{color:#9fbef5;text-decoration:underline}
+.entry-preview .hover-trigger{color:#8eb7ff;font-size:4.5px;text-decoration:underline}
