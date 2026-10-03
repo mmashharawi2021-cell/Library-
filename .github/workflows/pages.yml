@@ -141,7 +141,6 @@ jobs:
             await page.close();
           }
 
-          await browser.close();
           console.log('LIVE CARD QA PASSED — 81 unique cards, no fallbacks, filters correct.');
 
           const detailPage=await browser.newPage();
@@ -176,5 +175,6 @@ jobs:
           assert(detailErrors.length===0,`Detail page errors: ${detailErrors.join(' | ')}`);
           await detailPage.close();
           console.log('LIVE DETAIL QA PASSED — all 81 element pages rendered with complete structure.');
+          await browser.close();
           JS
           node card-qa.mjs
