@@ -1,35 +1,133 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Syntax check
         run: node --check app.js
+
       - name: Build
         run: node scripts/build-static.mjs
+
       - name: Validate catalog
-        run: node -e "const d=JSON.parse(require('fs').readFileSync('dist/build-report.json','utf8')); console.log(d)"
-        continue-on-error: true
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync('dist/build-report.json','utf8'));
+          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63};
+          for(const [k,v] of Object.entries(expected)){
+            if(r[k]!==v) throw new Error(`${k}: expected ${v}, got ${r[k]}`);
+          }
+          console.log('Catalog validation passed', r);
+          NODE
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Install live QA browser driver
+        run: npm install --no-save puppeteer-core@24
+
+      - name: Live QA — all 81 cards
+        env:
+          SITE: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          cat > card-qa.mjs <<'JS'
+          import puppeteer from 'puppeteer-core';
+
+          const browser=await puppeteer.launch({
+            headless:true,
+            executablePath:'/usr/bin/google-chrome',
+            args:['--no-sandbox']
+          });
+          const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
+          const site=process.env.SITE || 'https://mmashharawi2021-cell.github.io/Library-/';
+
+          for(const width of [393,1440]){
+            const page=await browser.newPage();
+            await page.setViewport({width,height:1000,deviceScaleFactor:1});
+            const errors=[];
+            page.on('pageerror',e=>errors.push(String(e)));
+            await page.goto(site+'?cardqa=16',{waitUntil:'networkidle0',timeout:60000});
+            await page.waitForSelector('#cards > .entry-card');
+
+            const result=await page.evaluate(()=>{
+              const cards=[...document.querySelectorAll('#cards > .entry-card')];
+              const previews=cards.map(c=>c.querySelector(':scope > .entry-preview'));
+              const demos=previews.map(p=>p?.querySelector('.ui-demo'));
+              const missing=cards.map((c,i)=>{
+                const p=previews[i],d=demos[i];
+                return (p&&d)?null:{i,href:c.getAttribute('href')};
+              }).filter(Boolean);
+              const demoClasses=demos.filter(Boolean).map(el=>[...el.classList].find(c=>c.startsWith('demo-'))).filter(Boolean);
+              const empty=previews.map((p,i)=>p && p.innerHTML.trim()?null:i).filter(x=>x!==null);
+              return {
+                cards:cards.length,
+                previews:previews.filter(Boolean).length,
+                demos:demos.filter(Boolean).length,
+                uniqueDemoClasses:new Set(demoClasses).size,
+                uniqueMarkup:new Set(previews.filter(Boolean).map(p=>p.innerHTML)).size,
+                fallbacks:document.querySelectorAll('#cards > .entry-card .fallback-demo').length,
+                missing,
+                empty,
+                pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              };
+            });
+
+            assert(result.cards===81,`Expected 81 cards, got ${result.cards} at ${width}px`);
+            assert(result.previews===81,`Missing card previews: ${JSON.stringify(result.missing)}`);
+            assert(result.demos===81,`Missing demo roots: ${JSON.stringify(result.missing)}`);
+            assert(result.uniqueDemoClasses===81,`Expected 81 unique demo classes, got ${result.uniqueDemoClasses}`);
+            assert(result.uniqueMarkup===81,`Expected 81 unique preview markups, got ${result.uniqueMarkup}`);
+            assert(result.fallbacks===0,`Fallback demos found: ${result.fallbacks}`);
+            assert(result.empty.length===0,`Empty previews: ${result.empty.join(',')}`);
+            assert(result.pageOverflow<=2,`Horizontal page overflow: ${result.pageOverflow}px at ${width}px`);
+            assert(errors.length===0,`Page errors at ${width}px: ${errors.join(' | ')}`);
+
+            if(width===393){
+              await page.click('[data-cat="web"]');
+              await page.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===49);
+              const webCount=await page.$$eval('#cards > .entry-card',els=>els.length);
+              assert(webCount===49,`Web filter expected 49, got ${webCount}`);
+
+              await page.click('[data-cat="macos"]');
+              await page.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===32);
+              const macCount=await page.$$eval('#cards > .entry-card',els=>els.length);
+              assert(macCount===32,`macOS filter expected 32, got ${macCount}`);
+            }
+
+            await page.close();
+          }
+
+          await browser.close();
+          console.log('LIVE CARD QA PASSED — 81 unique cards, no fallbacks, filters correct.');
+          JS
+          node card-qa.mjs
