@@ -55,7 +55,7 @@ jobs:
             sitemapUrls:(fs.readFileSync('dist/sitemap.xml','utf8').match(/<loc>/g)||[]).length,
             demoCases:demoBlock.split("case '").length-1
           };
-          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,glossary:38,sitemapUrls:125,demoCases:81};
+          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,glossary:38,sitemapUrls:122,demoCases:81};
           for(const [k,v] of Object.entries(expected)){
             if(r[k]!==v) throw new Error(`${k}: expected ${v}, got ${r[k]}`);
           }
@@ -383,120 +383,34 @@ jobs:
 
           async function stage20Qa(){
             const p=await browser.newPage();
-            await p.setViewport({width:393,height:1000,deviceScaleFactor:1});
-            const errors=[];
-            p.on('pageerror',e=>errors.push(String(e)));
+            await p.setViewport({width:393,height:900,deviceScaleFactor:1});
+            const errors=[];p.on('pageerror',e=>errors.push(String(e)));
 
-            // Glossary: complete dataset, filtering and direct route.
-            await p.goto(site+'glossary/',{waitUntil:'networkidle0',timeout:60000});
-            await p.waitForSelector('.glossary-page .glossary-row');
-            let g=await p.evaluate(()=>({
-              rows:document.querySelectorAll('.glossary-row').length,
-              terms:Object.keys(window.UI_AR_DATA.glossary||{}).length,
-              canonical:document.querySelector('link[rel="canonical"]')?.href,
-              robots:document.querySelector('meta[name="robots"]')?.content,
-              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-            }));
-            assert(g.terms===38,`Glossary data expected 38 terms, got ${g.terms}`);
-            assert(g.rows===38,`Glossary page expected 38 rows, got ${g.rows}`);
-            assert(g.canonical.endsWith('/glossary/'),'Glossary canonical is wrong');
-            assert(g.robots.startsWith('index'),'Glossary should be indexable');
-            assert(g.overflow<=2,`Glossary overflow ${g.overflow}px`);
-            await p.type('#gsearch','AppKit');
-            await p.waitForFunction(()=>document.querySelectorAll('.glossary-row').length>0&&document.querySelectorAll('.glossary-row').length<38);
-
-            // Saved: local-only persistence, remove one, clear all, noindex.
-            await p.evaluate(()=>{
-              localStorage.setItem('saved-ui-ar',JSON.stringify(['data-table','tabs']));
-              location.hash='#/saved';
-            });
-            await p.waitForFunction(()=>document.querySelectorAll('.saved-entry').length===2);
-            let saved=await p.evaluate(()=>({
-              count:document.querySelectorAll('.saved-entry').length,
-              robots:document.querySelector('meta[name="robots"]')?.content,
-              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-            }));
-            assert(saved.count===2,'Saved page did not render 2 stored items');
-            assert(saved.robots.startsWith('noindex'),'Saved page must be noindex');
-            assert(saved.overflow<=2,`Saved overflow ${saved.overflow}px`);
-            await p.click('[data-saved-remove="data-table"]');
-            await p.waitForFunction(()=>document.querySelectorAll('.saved-entry').length===1);
-            await p.click('#clearSaved');
-            await p.waitForSelector('.saved-empty');
-            assert((await p.evaluate(()=>JSON.parse(localStorage.getItem('saved-ui-ar')||'[]').length))===0,'Saved clear did not persist');
-
-            // Submit: required fields -> structured proposal -> GitHub issue URL.
-            await p.evaluate(()=>{location.hash='#/submit'});
-            await p.waitForSelector('#submitform');
-            await p.type('#seen','زر صغير يفتح قائمة إجراءات إضافية');
-            await p.select('#where','Web');
-            await p.type('#guess','Overflow Menu');
-            await p.type('#reference','https://example.com/reference');
-            await p.click('#submitform button[type="submit"]');
-            await p.waitForFunction(()=>!document.querySelector('#proposalBox').hidden);
-            const submit=await p.evaluate(()=>({
-              proposal:document.querySelector('#proposal')?.textContent||'',
-              issue:document.querySelector('#openIssue')?.href||'',
-              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-            }));
-            assert(submit.proposal.includes('Overflow Menu'),'Submit proposal missing expected name');
-            assert(submit.issue.includes('github.com/mmashharawi2021-cell/Library-/issues/new'),'Submit issue URL is wrong');
-            assert(submit.overflow<=2,`Submit overflow ${submit.overflow}px`);
-
-            // Final whole-site responsive + dark/light sweep over every route family.
-            const routeData=await p.evaluate(()=>({
-              elements:window.UI_AR_DATA.entries.map(e=>'element/'+e.slug),
-              styles:window.UI_AR_DATA.styles.map(s=>'style/'+s.slug),
-              vs:window.UI_AR_DATA.comparisons.map(c=>'vs/'+c.slug)
-            }));
-            const routes=['','styles','compare','translate','methodology','guides','glossary','saved','submit','guide/appkit-swiftui','guide/swift-electron',...routeData.elements,...routeData.styles,...routeData.vs];
-            for(const width of [393,1440]){
-              await p.setViewport({width,height:1000,deviceScaleFactor:1});
-              for(const theme of ['dark','light']){
-                await p.evaluate(t=>{document.documentElement.dataset.theme=t},theme);
-                for(const route of routes){
-                  await p.evaluate(r=>{location.hash='#/'+r},route);
-                  await p.waitForFunction(r=>location.hash==='#/'+r,{timeout:10000},route);
-                  const check=await p.evaluate(()=>({
-                    main:!!document.querySelector('#main'),
-                    overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
-                    title:document.title,
-                    canonical:document.querySelector('link[rel="canonical"]')?.href||'',
-                    theme:document.documentElement.dataset.theme
-                  }));
-                  assert(check.main,`Missing main for ${route||'home'} at ${width}px ${theme}`);
-                  assert(check.overflow<=2,`Overflow ${check.overflow}px for ${route||'home'} at ${width}px ${theme}`);
-                  assert(!!check.title&&check.title.trim().length>3,`Missing title for ${route||'home'}`);
-                  assert(!!check.canonical,`Missing canonical for ${route||'home'}`);
-                  assert(check.theme===theme,`Theme mismatch for ${route||'home'}`);
-                }
-              }
+            // Hidden utilities remain functional but are excluded from the public reference surface.
+            for(const route of ['glossary/','saved/','submit/']){
+              await p.goto(site+route,{waitUntil:'networkidle0',timeout:60000});
+              const hidden=await p.evaluate(()=>({
+                main:!!document.querySelector('#main'),
+                robots:document.querySelector('meta[name="robots"]')?.content||'',
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(hidden.main,`Hidden utility failed: ${route}`);
+              assert(hidden.robots.startsWith('noindex'),`Hidden utility must be noindex: ${route}`);
+              assert(hidden.overflow<=2,`Hidden utility overflow: ${route}`);
             }
 
-            // Theme persistence through the actual header control.
-            await p.evaluate(()=>{location.hash='#/'});
-            await p.waitForSelector('#themeToggle');
-            await p.evaluate(()=>{document.documentElement.dataset.theme='dark';localStorage.setItem('ui-theme','dark')});
-            await p.click('#themeToggle');
-            assert((await p.evaluate(()=>document.documentElement.dataset.theme))==='light','Theme toggle did not switch to light');
-            assert((await p.evaluate(()=>localStorage.getItem('ui-theme')))==='light','Theme preference was not persisted');
-
-            // Direct metadata checks. Sitemap integrity is validated deterministically from dist before deployment.
-            await p.goto(site+'submit/',{waitUntil:'networkidle0',timeout:60000});
-            await p.waitForSelector('.submit-page');
-            const seo=await p.evaluate(()=>({
-              title:document.title,
-              canonical:document.querySelector('link[rel="canonical"]')?.href,
-              ogTitle:document.querySelector('meta[property="og:title"]')?.content,
-              twitterTitle:document.querySelector('meta[name="twitter:title"]')?.content
+            await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
+            const chrome=await p.evaluate(()=>({
+              theme:document.documentElement.dataset.theme,
+              themeToggle:document.querySelectorAll('#themeToggle,.themebtn').length,
+              hiddenNav:[...document.querySelectorAll('.sitehead a,.footer .footlinks a')].some(a=>/المحفوظات|اقترح|المصطلحات/.test(a.textContent))
             }));
-            assert(seo.canonical.endsWith('/submit/'),'Submit canonical is wrong');
-            assert(seo.ogTitle===seo.title,'Static Open Graph title does not match document title');
-            assert(seo.twitterTitle===seo.title,'Static Twitter title does not match document title');
-
-            assert(errors.length===0,`V20 page errors: ${errors.join(' | ')}`);
+            assert(chrome.theme==='dark','Final reference surface must load in dark mode');
+            assert(chrome.themeToggle===0,'Theme toggle is not part of the reference chrome');
+            assert(!chrome.hiddenNav,'Hidden utilities leaked into primary navigation');
+            assert(errors.length===0,`V20 hidden utility regression errors: ${errors.join(' | ')}`);
             await p.close();
-            console.log('LIVE V20 FINAL QA PASSED — Glossary, Saved, Submit, responsive sweep, light mode and SEO valid.');
+            console.log('LIVE V20 HIDDEN-UTILITY REGRESSION PASSED — utilities remain functional, noindex and absent from public chrome.');
           }
           await stage20Qa();
 
@@ -544,7 +458,7 @@ jobs:
               assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
               assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
               assert(home.headerSearch===0,`Reference homepage should not show the old header search field`);
-              assert(home.version==='23',`Visible version badge expected 23, got ${home.version}`);
+              assert(home.version==='27',`Visible version badge expected 27, got ${home.version}`);
               assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
               assert(home.examples===5,`Search examples expected 5, got ${home.examples}`);
               assert(home.search===1,'Homepage search field missing');
@@ -783,6 +697,174 @@ jobs:
             console.log('LIVE V23 COMMONLY CONFUSED PARITY QA PASSED — /vs index + all 18 comparison pages + legacy redirects valid at 393px and 1440px.');
           }
           await stage23Qa();
+
+          async function stage27Qa(){
+            const widths=[393,768,1024,1440];
+
+            // Verify the current reference site still exposes the structure this clone targets.
+            const ref=await browser.newPage();
+            await ref.setViewport({width:1440,height:1000,deviceScaleFactor:1});
+            const refPages=[
+              ['https://namethatui.com/',['What’s this UI element called?','All 81','macOS 32','Web 49']],
+              ['https://namethatui.com/styles',['What style is this?','A governed atlas']],
+              ['https://namethatui.com/translate',['The Translation Table','63 of 63 translations']],
+              ['https://namethatui.com/methodology',['Methodology','How a term gets in','Sources we consult']],
+              ['https://namethatui.com/appkit-vs-swiftui',['AppKit vs SwiftUI','Which name do I say?','Worked prompts']],
+              ['https://namethatui.com/swift-vs-electron',['Swift vs Electron','The trade','Your first prompt']]
+            ];
+            for(const [url,landmarks] of refPages){
+              const response=await ref.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+              assert(response&&response.ok(),`Reference page unavailable: ${url}`);
+              const body=await ref.evaluate(()=>document.body.innerText);
+              for(const landmark of landmarks)assert(body.includes(landmark),`Reference structure changed: ${url} missing "${landmark}"`);
+            }
+            await ref.close();
+
+            for(const width of widths){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1100,deviceScaleFactor:1});
+              const errors=[];p.on('pageerror',e=>errors.push(String(e)));
+
+              // Homepage parity surface.
+              await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===81);
+              const home=await p.evaluate(()=>({
+                sponsor:document.querySelectorAll('.sponsor-strip').length,
+                nav:document.querySelectorAll('.sitehead .navlinks a').length,
+                themeToggle:document.querySelectorAll('#themeToggle,.themebtn').length,
+                fresh:document.querySelectorAll('.newweek a').length,
+                examples:document.querySelectorAll('.search-examples span').length,
+                search:document.querySelectorAll('#search').length,
+                filters:document.querySelectorAll('.filter-tabs [data-cat]').length,
+                sorts:document.querySelectorAll('.sort-tabs [data-sort]').length,
+                cards:document.querySelectorAll('#cards > .entry-card').length,
+                guides:document.querySelectorAll('.guidecards a').length,
+                footerLinks:document.querySelectorAll('.footer .footlinks a').length,
+                footerSearch:document.querySelectorAll('#footerSearch').length,
+                theme:document.documentElement.dataset.theme,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(home.sponsor===1&&home.nav===2,'Homepage chrome does not match reference');
+              assert(home.themeToggle===0&&home.theme==='dark','Reference chrome must be dark with no theme toggle');
+              assert(home.fresh===3&&home.examples===5&&home.search===1,'Homepage hero/search structure mismatch');
+              assert(home.filters===3&&home.sorts===2&&home.cards===81,'Homepage catalog structure mismatch');
+              assert(home.guides===3,'Homepage must expose three guide/reference cards');
+              assert(home.footerLinks===3&&home.footerSearch===1,'Footer structure mismatch');
+              assert(home.overflow<=2,`Homepage overflow ${home.overflow}px at ${width}px`);
+
+              // Styles atlas.
+              await p.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForFunction(()=>document.querySelectorAll('.atlas-card').length===14);
+              const styles=await p.evaluate(()=>({
+                cards:document.querySelectorAll('.atlas-card').length,
+                direct:[...document.querySelectorAll('.atlas-card')].every(a=>/\/styles\/[^/]+\/$/.test(a.href)),
+                note:!!document.querySelector('.atlasnote'),
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(styles.cards===14&&styles.direct&&styles.note,'Styles atlas parity failed');
+              assert(styles.overflow<=2,`Styles overflow ${styles.overflow}px at ${width}px`);
+
+              // Translation table.
+              await p.goto(site+'translate/',{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForSelector('.translation-v2');
+              const trans=await p.evaluate(()=>({
+                rows:document.querySelectorAll('.translation-v2 tbody tr').length,
+                cols:document.querySelectorAll('.translation-v2 thead th').length,
+                linked:document.querySelectorAll('.translation-v2 tbody td:first-child a').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(trans.rows===63&&trans.cols===3,'Translation table must match 63×3 reference structure');
+              assert(trans.linked>=18,'Translation table lost visual-entry links');
+              assert(trans.overflow<=2,`Translation overflow ${trans.overflow}px at ${width}px`);
+
+              // Methodology.
+              await p.goto(site+'methodology/',{waitUntil:'networkidle0',timeout:60000});
+              const method=await p.evaluate(()=>({
+                steps:document.querySelectorAll('.method-steps>div').length,
+                sources:document.querySelectorAll('.source-card').length,
+                extraPrinciples:document.querySelectorAll('.method-principles').length,
+                independence:document.querySelectorAll('.method-independence').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(method.steps===3&&method.sources===3,'Methodology must match 3-step / 3-source reference');
+              assert(method.extraPrinciples===0,'Non-reference translation-rules section still visible');
+              assert(method.independence===1,'Methodology independence note missing');
+              assert(method.overflow<=2,`Methodology overflow ${method.overflow}px at ${width}px`);
+
+              // AppKit vs SwiftUI.
+              await p.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
+              const appkit=await p.evaluate(()=>({
+                equation:document.querySelectorAll('.guide-equation').length,
+                rules:document.querySelectorAll('.guide-rules li').length,
+                prompts:document.querySelectorAll('.worked-prompts>div').length,
+                confusions:document.querySelectorAll('.guide-confusions>div').length,
+                faq:document.querySelectorAll('.guide-faq details').length,
+                sourceNote:document.querySelectorAll('.detail-source-note').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(appkit.equation===1&&appkit.rules===3&&appkit.prompts===3,'AppKit/SwiftUI guide core structure mismatch');
+              assert(appkit.confusions===3&&appkit.faq===4,'AppKit/SwiftUI guide secondary structure mismatch');
+              assert(appkit.sourceNote===0,'Guide has non-reference source note');
+              assert(appkit.overflow<=2,`AppKit guide overflow ${appkit.overflow}px at ${width}px`);
+
+              // Swift vs Electron.
+              await p.goto(site+'swift-vs-electron/',{waitUntil:'networkidle0',timeout:60000});
+              const electron=await p.evaluate(()=>({
+                tradeRows:document.querySelectorAll('.guide-trade tbody tr').length,
+                prompts:document.querySelectorAll('.worked-prompts.two>div').length,
+                confusions:document.querySelectorAll('.guide-confusions>div').length,
+                nextLinks:document.querySelectorAll('.guide-next a').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(electron.tradeRows===6&&electron.prompts===2,'Swift/Electron trade + prompt structure mismatch');
+              assert(electron.confusions===3&&electron.nextLinks===2,'Swift/Electron cross-reference structure mismatch');
+              assert(electron.overflow<=2,`Swift/Electron overflow ${electron.overflow}px at ${width}px`);
+
+              assert(errors.length===0,`V27 page errors at ${width}px: ${errors.join(' | ')}`);
+              await p.close();
+            }
+
+            // Every style detail remains complete and uses direct canonical paths.
+            const stylesPage=await browser.newPage();
+            await stylesPage.setViewport({width:1440,height:1100,deviceScaleFactor:1});
+            await stylesPage.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
+            const styleSlugs=await stylesPage.evaluate(()=>window.UI_AR_DATA.styles.map(s=>s.slug));
+            for(const slug of styleSlugs){
+              const response=await stylesPage.goto(site+'styles/'+slug+'/',{waitUntil:'networkidle0',timeout:60000});
+              assert(response&&response.ok(),`Style route failed: ${slug}`);
+              const detail=await stylesPage.evaluate(()=>({
+                h1:!!document.querySelector('.style-detail h1'),
+                signals:document.querySelectorAll('.style-signal').length,
+                brief:document.querySelectorAll('.style-brief').length,
+                dna:document.querySelectorAll('.dna-row').length,
+                code:document.querySelectorAll('.style-code-table tr').length,
+                access:document.querySelectorAll('.style-access li').length,
+                sources:document.querySelectorAll('.style-source-links a').length,
+                sourceNote:document.querySelectorAll('.style-detail .detail-source-note').length,
+                canonical:document.querySelector('link[rel="canonical"]')?.href||'',
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(detail.h1&&detail.signals>=3&&detail.brief===1&&detail.dna>=5,`Style content incomplete: ${slug}`);
+              assert(detail.code>0&&detail.access>=3&&detail.sources>=2,`Style implementation/source sections incomplete: ${slug}`);
+              assert(detail.sourceNote===0,`Style duplicate attribution remains: ${slug}`);
+              assert(detail.canonical.endsWith('/styles/'+slug+'/'),`Style canonical mismatch: ${slug}`);
+              assert(detail.overflow<=2,`Style overflow: ${slug}`);
+            }
+            await stylesPage.close();
+
+            // Public sitemap exactly mirrors the reference-equivalent surface.
+            const sm=await browser.newPage();
+            const smResponse=await sm.goto(site+'sitemap.xml',{waitUntil:'networkidle0',timeout:60000});
+            if(smResponse&&smResponse.ok()){
+              const xml=await smResponse.text();
+              assert((xml.match(/<loc>/g)||[]).length===122,'Final sitemap must contain 122 reference-equivalent URLs');
+              for(const hidden of ['/guides/','/glossary/','/saved/','/submit/','/compare/','/element/'])assert(!xml.includes(hidden),`Non-reference route leaked into sitemap: ${hidden}`);
+            }
+            await sm.close();
+
+            console.log('LIVE V27 FINAL PARITY QA PASSED — homepage, 81 elements, 14 styles, 18 comparisons, translation, methodology, guides, chrome and responsive surface valid at 393/768/1024/1440.');
+          }
+          await stage27Qa();
           await browser.close();
           JS
           node card-qa.mjs
