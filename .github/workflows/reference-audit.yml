@@ -33,7 +33,7 @@ jobs:
             const links=[...document.querySelectorAll('a[href]')].filter(a=>{
               try{
                 const u=new URL(a.href,location.origin);
-                return u.origin===location.origin && (/^\\/web\\//.test(u.pathname)||/^\\/macos\\//.test(u.pathname));
+                return u.origin===location.origin && (u.pathname.startsWith('/web/')||u.pathname.startsWith('/macos/'));
               }catch{return false}
             });
             const groups=new Map();
