@@ -852,7 +852,7 @@ function guide(kind){
   bindCopy();bindChrome();bindGlossary();
 }
 function glossaryPage(){
-  setMeta('قاموس المصطلحات — UI بالعربي','تعريفات عربية سريعة للمفاهيم التقنية المتكررة في تصميم وبرمجة واجهات المستخدم.','glossary/');
+  setMeta('قاموس المصطلحات — UI بالعربي','تعريفات عربية سريعة للمفاهيم التقنية المتكررة في تصميم وبرمجة واجهات المستخدم.','glossary/',false);
   const all=Object.entries(D.glossary||{});
   app.innerHTML=nav('')+`<main id="main" class="shell glossary-page"><section class="glossary-hero"><div class="sectionlabel">GLOSSARY</div><h1>قاموس المصطلحات</h1><p>تعريفات قصيرة للمفاهيم التي تظهر عبر القاموس. العربية أولًا، والمصطلح الإنجليزي ملاصق عندما يمنع الغموض.</p><label class="glossary-search"><span>⌕</span><input id="gsearch" inputmode="search" autocomplete="off" placeholder="ابحث: ARIA أو AppKit أو RTL…"><kbd>⌘K</kbd></label></section><section id="glist" class="glossary-list"></section></main>`+footer();
   const input=document.querySelector('#gsearch');
@@ -878,7 +878,7 @@ function saved(){
   bindChrome();bindGlossary();
 }
 function submitTerm(){
-  setMeta('اقترح عنصرًا — UI بالعربي','اقترح عنصر واجهة جديدًا للقاموس عبر نموذج منظم يجهز GitHub Issue للمراجعة.','submit/');
+  setMeta('اقترح عنصرًا — UI بالعربي','اقترح عنصر واجهة جديدًا للقاموس عبر نموذج منظم يجهز GitHub Issue للمراجعة.','submit/',false);
   app.innerHTML=nav('')+`<main id="main" class="shell submit-page"><article class="submit-shell"><header class="submit-hero"><div class="sectionlabel">SUBMIT</div><h1>ما العنصر الذي ينقص القاموس؟</h1><p>صف ما تراه حتى لو لم تعرف الاسم. سنحوّل الوصف إلى اقتراح منظم يمكنك نسخه أو فتحه مباشرةً كـ GitHub Issue للمراجعة.</p></header><form id="submitform" class="submitform"><div class="submit-field submit-wide"><label for="seen">صف العنصر <span>مطلوب</span></label><textarea id="seen" name="seen" required placeholder="مثال: زر صغير بثلاث نقاط يفتح إجراءات إضافية"></textarea><small>صف الشكل، مكانه، وماذا يحدث عند التفاعل معه.</small></div><div class="submit-field"><label for="where">أين يظهر؟ <span>مطلوب</span></label><select id="where" name="where" required><option value="">اختر المنصة</option><option>Web</option><option>macOS</option><option>iOS / iPadOS</option><option>Android</option><option>Desktop / Other</option></select></div><div class="submit-field"><label for="guess">الاسم الذي تتوقعه</label><input id="guess" name="guess" placeholder="اختياري — عربي أو إنجليزي"></div><div class="submit-field submit-wide"><label for="reference">رابط أو مرجع بصري</label><input id="reference" name="reference" inputmode="url" placeholder="https://…"></div><div class="submit-field submit-wide"><label for="notes">ملاحظات إضافية</label><textarea id="notes" name="notes" placeholder="ما الذي يجعله مختلفًا عن عنصر موجود؟"></textarea></div><div class="submit-actions"><button type="submit">جهّز الاقتراح</button><button type="reset" class="secondary">إعادة تعيين</button></div></form><section id="proposalBox" class="proposal-box" hidden><div class="proposal-head"><div><b>الاقتراح جاهز</b><span>راجعه قبل الإرسال.</span></div><div><button id="copyProposal" type="button">نسخ النص</button><a id="openIssue" target="_blank" rel="noopener">فتح GitHub Issue ↗</a></div></div><pre id="proposal"></pre></section></article></main>`+footer();
   const f=document.querySelector('#submitform');
   const proposal=document.querySelector('#proposal');
