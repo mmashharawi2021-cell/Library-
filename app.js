@@ -64,11 +64,11 @@ const footer=()=>`<footer class="footer"><div class="shell footgrid">
 function bindChrome(){
  const t=document.querySelector('#themeToggle');
  if(t){
-   t.textContent=document.documentElement.dataset.theme==='light'?'◑':'◔';
+   t.textContent=document.documentElement.dataset.theme==='light'?'☀':'☾';
    t.onclick=()=>{
      const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
      document.documentElement.dataset.theme=next;
-     t.textContent=next==='light'?'◑':'◔';
+     t.textContent=next==='light'?'☀':'☾';
      try{localStorage.setItem('ui-theme',next)}catch{}
    };
  }
@@ -242,10 +242,11 @@ function bindDetailActions(e){
  };
 }
 function bindDemos(root=document){
- if(!root||root.dataset?.demoBound)return;
- if(root.dataset)root.dataset.demoBound='1';
+ if(!root)return;
+ const firstBind=!root.dataset?.demoBound;
+ if(firstBind&&root.dataset)root.dataset.demoBound='1';
 
- root.addEventListener('click',ev=>{
+ if(firstBind)root.addEventListener('click',ev=>{
    const t=ev.target;
    if(t.closest('.tabs-demo button')){const btn=t.closest('button'),box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');box.querySelector('section b').textContent=btn.textContent.trim()==='التحليلات'?'مؤشرات التحليلات':'النشاط الأسبوعي'}
    const tg=t.closest('.toggle-group button');if(tg){tg.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));tg.classList.add('on')}
