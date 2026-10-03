@@ -49,7 +49,7 @@ const nav=(active='elements')=>`<div class="source-strip"><div class="shell sour
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="#/">العناصر</a><a class="${active==='styles'?'active':''}" href="#/styles">الأنماط</a></nav>
 <div class="headtools"><label class="headsearch"><span>⌕</span><input id="headerSearch" placeholder="صف العنصر…" aria-label="بحث سريع"><kbd>⌘K</kbd></label><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر">◐</button></div>
 </div></header>`;
-const footer=()=>`<footer class="footer"><div class="shell footgrid"><div><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري العربي لعناصر واجهة المستخدم.</p><small>المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات هنا أصلية.</small></div><nav class="footlinks"><a href="#/compare">المتشابهات</a><a href="#/methodology">المنهجية</a><a href="#/translate">جدول الترجمة</a><a href="#/saved">المحفوظات</a><a href="#/submit">اقترح عنصرًا</a><a href="/Library-/feed.xml">RSS</a></nav></div></footer><div id="glossary" class="glossary" role="status"></div>`;
+const footer=()=>`<footer class="footer"><div class="shell footgrid"><div><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري العربي لعناصر واجهة المستخدم.</p><small>المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات هنا أصلية.</small></div><nav class="footlinks"><a href="#/guides">الأدلة</a><a href="#/compare">المتشابهات</a><a href="#/methodology">المنهجية</a><a href="#/translate">جدول الترجمة</a><a href="#/saved">المحفوظات</a><a href="#/submit">اقترح عنصرًا</a><a href="/Library-/feed.xml">RSS</a></nav></div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function bindChrome(){
  const t=document.querySelector('#themeToggle');
@@ -522,11 +522,247 @@ function styleDetail(slug){
  bindCopy();bindChrome();bindGlossary();
 }
 
-function compare(){setMeta('العناصر التي يكثر الخلط بينها — UI بالعربي','مقارنات عملية بين عناصر واجهة متشابهة بصريًا لكن مختلفة في الوظيفة والسلوك.','compare/');app.innerHTML=nav('compare')+`<main id="main" class="shell"><section class="hero"><div class="eyebrow">Commonly Confused</div><h1>عناصر تبدو متشابهة، لكن الفرق حاسم.</h1><p>كل مقارنة تبدأ بالفرق الذي يمكنك ملاحظته مباشرة في البكسلات أو السلوك.</p></section><div class="compare-list">${D.comparisons.map(c=>`<article class="compare"><h3>${esc(c.title)}</h3><p>${esc(c.answer)}</p></article>`).join('')}</div></main>`+footer();bindChrome();bindGlossary()}
-function translate(){setMeta('جدول الترجمة — AppKit وSwiftUI','جدول عربي searchable يربط العنصر المرئي باسمه في AppKit وSwiftUI.','translate/');app.innerHTML=nav('translate')+`<main id="main" class="shell"><section class="hero"><div class="eyebrow">الاسم البصري · AppKit · SwiftUI</div><h1>جدول الترجمة</h1><p>ابحث عن الشيء الذي تراه، ثم خذ الاسم المناسب للتقنية التي يستخدمها مشروع macOS.</p><div class="searchwrap"><input id="tsearch" class="search" inputmode="search" placeholder="جرّب: segmented أو NSPopUpButton أو تنبيه"></div></section><div id="ttable"></div></main>`+footer();const draw=()=>{const q=norm(document.querySelector('#tsearch').value);const rows=D.translations.filter(r=>!q||norm(Object.values(r).join(' ')).includes(q));document.querySelector('#ttable').innerHTML=`<div class="tablewrap"><table class="translation"><thead><tr><th>العنصر</th><th>AppKit</th><th>SwiftUI</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.thing)}</td><td><code>${esc(r.appkit)}</code></td><td><code>${esc(r.swiftui)}</code></td></tr>`).join('')}</tbody></table></div><p class="tablecount">${rows.length} من ${D.translations.length} ترجمة</p>`};draw();document.querySelector('#tsearch').oninput=draw;bindChrome();bindGlossary()}
-function methodology(){setMeta('المنهجية — UI بالعربي','كيف نتحقق من أسماء عناصر الواجهة ومصطلحاتها عبر المنصة والدلالة البرمجية والإتاحة.','methodology/');app.innerHTML=nav('')+`<main id="main" class="shell"><article class="guide"><div class="eyebrow">شاهد · تحقق · سمِّ</div><h1>المنهجية</h1><p class="lead">نبدأ من الشيء المرئي الذي يصعب وصفه، ثم نثبت اسمه من توثيق المنصة والدلالة البرمجية ومعايير الإتاحة قبل إدراجه.</p><h2>كيف يدخل المصطلح؟</h2><ol><li><b>ابدأ بالبكسلات:</b> يجب أن يشير الاسم إلى شيء يراه المستخدم فعلًا.</li><li><b>تحقق من المنصة:</b> راجع اسم النمط في دليل التصميم، ورمز API في التوثيق، والدور الدلالي عند وجوده.</li><li><b>اجعل الفرق مرئيًا:</b> المثال والتشريح يجب أن يفرقا العنصر عن أقرب بدائل له.</li></ol><h2>المصادر المرجعية</h2><div class="anatomy"><div class="part"><b>Apple</b><p>Human Interface Guidelines وDeveloper Documentation لأسماء AppKit وSwiftUI وUIKit.</p></div><div class="part"><b>الويب المتاح</b><p>WAI-ARIA وARIA APG وWCAG للدور والسلوك والوصول.</p></div><div class="part"><b>منصة الويب</b><p>WHATWG HTML وMDN للأسماء الدلالية وواجهات المتصفح.</p></div><div class="part"><b>لغة المستخدم</b><p>عبارات البحث تساعد على العثور، لكنها لا تستبدل الاسم القياسي.</p></div></div><h2>عندما تختلف الأسماء</h2><p>نُبقي المنصة ملاصقة للمصطلح ونظهر الاسم البديل المفيد بدل الادعاء بوجود اسم عالمي واحد.</p></article></main>`+footer();bindChrome();bindGlossary()}
-function guide(kind){let title,body,path;if(kind==='appkit-swiftui'){title='AppKit أم SwiftUI؟';path='appkit-vs-swiftui/';body=`<p class="lead">العنصر نفسه على شاشة Mac قد يملك اسمين صحيحين لأن AppKit وSwiftUI واجهتان برمجيتان مختلفتان.</p><h2>ثلاث قواعد</h2><ol><li><b>طابق المشروع:</b> إذا كانت الواجهات SwiftUI فاستخدم أسماء SwiftUI؛ إذا كانت NS* فاستخدم AppKit.</li><li><b>في المشاريع المختلطة، سمِّ الطبقة:</b> قل “SwiftUI view داخل NSWindow” مثلًا.</li><li><b>عند الشك اذكر الاسمين:</b> مثال MenuBarExtra / NSStatusItem.</li></ol><h2>لا تخلطها مع</h2><div class="callout">UIKit للـiPhone وiPad، وMac Catalyst لتطبيقات iPad على Mac، وElectron واجهة ويب داخل تطبيق سطح مكتب.</div><p><a class="chip active" href="#/translate">افتح جدول الترجمة الكامل (${D.translations.length} مصطلحًا)</a></p>`}else{title='Swift أم Electron؟';path='swift-vs-electron/';body=`<p class="lead">هذا قرار مبكر يحدد مفردات الواجهة. Swift يستخدم تقنيات Apple الأصلية، بينما Electron يشغّل واجهة ويب داخل Chromium مع Node.js.</p><h2>الفرق العملي</h2><div class="tablewrap"><table class="translation"><tr><th>Swift</th><th>Electron</th></tr><tr><td>واجهة Mac أصلية وAppKit/SwiftUI</td><td>HTML/CSS/JS داخل BrowserWindow</td></tr><tr><td>مصطلحات NSWindow وMenuBarExtra</td><td>مصطلحات DOM وCSS وTray</td></tr><tr><td>مناسب لتجربة Mac أصلية</td><td>مناسب لمشاركة كود ويب عبر المنصات</td></tr></table></div><h2>قاعدة عملية</h2><p>اختر العالم التقني أولًا ثم استخدم مصطلحاته الدقيقة في الـPrompt، ولا تخلط API من عالم بآخر.</p>`}setMeta(title,body.replace(/<[^>]+>/g,' ').slice(0,155),path);app.innerHTML=nav('')+`<main id="main" class="shell"><article class="guide"><div class="crumbs"><a href="#/">الفهرس</a><span>/</span><span>دليل</span></div><h1>${title}</h1>${body}</article></main>`+footer();bindChrome();bindGlossary()}
-
+const comparisonEntries={
+ "popover-vs-tooltip": [
+  "popover-dropdown-tooltip",
+  "hover-card"
+ ],
+ "modal-vs-popover": [
+  "modal-drawer-sheet",
+  "popover-dropdown-tooltip"
+ ],
+ "dropdown-select-combobox": [
+  "popover-dropdown-tooltip",
+  "multi-select",
+  "combobox"
+ ],
+ "tabs-vs-segmented": [
+  "tabs",
+  "segmented-control"
+ ],
+ "accordion-vs-tabs": [
+  "accordion",
+  "tabs"
+ ],
+ "toast-vs-alert": [
+  "toast",
+  "alert-callout-banner"
+ ],
+ "tooltip-vs-hover-card": [
+  "popover-dropdown-tooltip",
+  "hover-card"
+ ],
+ "context-vs-dropdown": [
+  "context-menu",
+  "popover-dropdown-tooltip"
+ ],
+ "carousel-vs-marquee": [
+  "carousel",
+  "marquee"
+ ],
+ "lightbox-vs-modal": [
+  "lightbox",
+  "modal-drawer-sheet"
+ ],
+ "masonry-vs-bento": [
+  "masonry",
+  "bento-grid"
+ ],
+ "sidebar-vs-drawer": [
+  "sidebar-macos",
+  "hamburger-menu"
+ ],
+ "hamburger-vs-kebab": [
+  "hamburger-menu",
+  "three-dots"
+ ],
+ "easing-vs-spring": [
+  "easing",
+  "spring-animation"
+ ],
+ "stepper-vs-slider": [
+  "stepper-macos",
+  "slider-macos"
+ ],
+ "sheet-vs-alert-mac": [
+  "sheet-macos",
+  "alert-macos"
+ ],
+ "empty-vs-skeleton": [
+  "empty-state",
+  "skeleton-spinner"
+ ],
+ "toolbar-vs-menu-bar": [
+  "toolbar-macos",
+  "menu-bar"
+ ]
+};
+const comparisonRules={
+ "popover-vs-tooltip": [
+  "وجود أزرار أو حقول داخل الطبقة يرجّح Popover.",
+  "Tooltip شرح قصير غير تفاعلي.",
+  "إذا احتاج المستخدم لاتخاذ إجراء داخل الطبقة، لا تسمّها Tooltip."
+ ],
+ "modal-vs-popover": [
+  "Modal يعزل بقية الواجهة.",
+  "Popover محلي ومثبت بعنصر أو نقطة مرجعية.",
+  "إذا تعذر متابعة العمل في بقية الصفحة فأنت أقرب إلى Modal."
+ ],
+ "dropdown-select-combobox": [
+  "Dropdown للأوامر والإجراءات.",
+  "Select يختار قيمة من قائمة ثابتة.",
+  "Combobox يسمح بالكتابة أو البحث داخل الخيارات."
+ ],
+ "tabs-vs-segmented": [
+  "Tabs تبدّل بين لوحات نظيرة.",
+  "Segmented Control غالبًا يغيّر عرض المحتوى نفسه أو مرشحه.",
+  "في الويب ترتبط Tabs عادةً بـ tablist semantics."
+ ],
+ "accordion-vs-tabs": [
+  "Accordion عمودي ويمكن أن يكشف أكثر من قسم.",
+  "Tabs تعرض لوحة مرتبطة بالتبويب النشط.",
+  "Accordion أنسب عندما تريد إبقاء بنية الأقسام ظاهرة."
+ ],
+ "toast-vs-alert": [
+  "Toast قصير وعابر ولا يوقف التدفق عادةً.",
+  "Alert يبقى في السياق حتى يُفهم أو يعالج.",
+  "لا تستخدم Toast لخطأ يحتاج قرارًا أو إصلاحًا طويلًا."
+ ],
+ "tooltip-vs-hover-card": [
+  "Tooltip شرح قصير لعنصر موجود.",
+  "Hover Card معاينة غنية لكيان أو رابط.",
+  "كلما زاد المحتوى والحجم ابتعدت عن Tooltip."
+ ],
+ "context-vs-dropdown": [
+  "Context Menu يظهر بسبب السياق غالبًا بنقرة ثانوية.",
+  "Dropdown يخرج من trigger ظاهر ومحدد.",
+  "التشابه بصري؛ الفارق في سبب الظهور والسياق."
+ ],
+ "carousel-vs-marquee": [
+  "Carousel يتوقف على شرائح قابلة للتنقل.",
+  "Marquee يتحرك تلقائيًا كتيار متكرر.",
+  "وجود شريحة حالية وأسهم أو نقاط مؤشر قوي على Carousel."
+ ],
+ "lightbox-vs-modal": [
+  "Lightbox متخصص في عرض الوسائط بحجم أكبر.",
+  "Modal أوسع للمهام والنماذج والقرارات.",
+  "Lightbox نوع متخصص من تجربة Modal."
+ ],
+ "masonry-vs-bento": [
+  "Masonry يتعامل مع ارتفاعات غير متوقعة ولا يحافظ على صفوف أفقية.",
+  "Bento شبكة مصممة عمدًا بمحاذاة مشتركة.",
+  "المحتوى الديناميكي يميل إلى Masonry؛ التسويق واللوحات إلى Bento."
+ ],
+ "sidebar-vs-drawer": [
+  "Sidebar جزء ثابت من التخطيط الواسع.",
+  "Drawer طبقة مؤقتة تظهر عند الطلب.",
+  "قد يتحول Sidebar إلى Drawer على الهاتف."
+ ],
+ "hamburger-vs-kebab": [
+  "Hamburger غالبًا يفتح التنقل الرئيسي.",
+  "Kebab/Three Dots يفتح إجراءات إضافية.",
+  "ثلاثة خطوط = تنقل؛ ثلاث نقاط = مزيد من الإجراءات غالبًا."
+ ],
+ "easing-vs-spring": [
+  "Easing يوزع السرعة داخل مدة زمنية معروفة.",
+  "Spring يحاكي الصلابة والتخميد والسرعة.",
+  "الارتداد وتجاوز الهدف مؤشر قوي على Spring."
+ ],
+ "stepper-vs-slider": [
+  "Stepper يزيد أو ينقص بخطوات منفصلة ودقيقة.",
+  "Slider يسمح بالسحب السريع عبر مدى كامل.",
+  "القيمة الدقيقة الصغيرة → Stepper؛ التقريبية السريعة → Slider."
+ ],
+ "sheet-vs-alert-mac": [
+  "Sheet مرتبطة بنافذة أو مستند محدد.",
+  "Alert قرار أو تحذير أصغر وأكثر عمومية.",
+  "إذا كانت المهمة تخص نافذة واحدة فكر في Sheet."
+ ],
+ "empty-vs-skeleton": [
+  "Skeleton يعني أن المحتوى قادم.",
+  "Empty State يعني أن لا محتوى موجود الآن.",
+  "الحالة الفارغة تحتاج إرشادًا أو CTA؛ الهيكل التحميلي لا يحتاج ذلك."
+ ],
+ "toolbar-vs-menu-bar": [
+  "Menu Bar أعلى الشاشة للتطبيق الحالي.",
+  "Toolbar داخل نافذة ويجمع أدواتها.",
+  "الموقع داخل النظام يحسم كثيرًا من الالتباس."
+ ]
+};
+function comparisonItems(c){
+  return (comparisonEntries[c.slug]||[]).map(bySlug).filter(Boolean);
+}
+function comparisonCard(e){
+  return `<a class="vs-entry" href="#/element/${e.slug}"><div class="vs-entry-preview">${demo(e)}</div><div class="vs-entry-copy"><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><small>${e.category==='web'?'Web':'macOS'}</small></div></a>`;
+}
+function compare(){
+  setMeta('العناصر التي يكثر الخلط بينها — UI بالعربي','مقارنات عملية بين عناصر واجهة متشابهة بصريًا لكن مختلفة في الوظيفة والسلوك.','compare/');
+  app.innerHTML=nav('compare')+`<main id="main"><section class="compare-hero shell"><div class="compare-kicker">Commonly Confused</div><h1>تبدو متشابهة.<br>لكن الفرق حاسم.</h1><p>مقارنات قصيرة تبدأ من الشيء الذي يمكنك ملاحظته مباشرة: المكان، السلوك، نطاق التأثير، والدلالة.</p></section><section class="shell confused-grid">${D.comparisons.map((c,i)=>{const items=comparisonItems(c).slice(0,2);return `<a class="confused-card" href="#/vs/${c.slug}"><div class="confused-number">${String(i+1).padStart(2,'0')}</div><h2>${esc(c.title)}</h2><p>${esc(c.answer)}</p><div class="confused-mini">${items.map(e=>`<div><span>${esc(e.ar)}</span><small dir="ltr">${esc(e.en)}</small></div>`).join('')}</div><span class="confused-open">افتح المقارنة ←</span></a>`}).join('')}</section></main>`+footer();
+  bindChrome();bindGlossary();
+}
+function compareDetail(slug){
+  const c=D.comparisons.find(x=>x.slug===slug);
+  if(!c)return notFound();
+  const items=comparisonItems(c);
+  const rules=comparisonRules[c.slug]||[c.answer];
+  setMeta(`${c.title} — UI بالعربي`,c.answer,`vs/${c.slug}/`);
+  app.innerHTML=nav('compare')+`<main id="main" class="shell vs-shell"><article class="vs-detail"><nav class="vs-crumbs"><a href="#/compare">المتشابهات</a><span>/</span><span>${esc(c.title)}</span></nav><header class="vs-head"><div class="compare-kicker">COMMONLY CONFUSED</div><h1>${esc(c.title)}</h1><p>${esc(c.answer)}</p></header><section class="vs-showcase">${items.map(comparisonCard).join('')}</section><section class="vs-section"><h2>كيف تفرّق بينها؟</h2><ul class="vs-rules">${rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="vs-section"><h2>القرار السريع</h2><div class="vs-decision">${items.map((e,i)=>`<div><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><p>${esc(rules[Math.min(i,rules.length-1)]||c.answer)}</p><a href="#/element/${e.slug}">افتح الإدخال الكامل ←</a></div>`).join('')}</div></section><p class="detail-source-note">المرجع البنيوي للمقارنات: <a href="https://namethatui.com/vs" target="_blank" rel="noopener">Name That UI — Commonly Confused ↗</a>. الشرح العربي هنا مكتوب للمشروع العربي.</p></article></main>`+footer();
+  bindDemos(document.querySelector('.vs-showcase'));bindChrome();bindGlossary();
+}
+function translationEntry(r){
+  const q=norm(r.thing);
+  return D.entries.find(e=>{
+    const hay=norm(`${e.ar} ${e.en} ${(e.aliases||[]).join(' ')}`);
+    return hay.includes(q)||q.includes(norm(e.ar))||q.includes(norm(e.en));
+  });
+}
+function translate(){
+  setMeta('جدول الترجمة — AppKit وSwiftUI','جدول عربي قابل للبحث يربط الشيء المرئي باسمه في AppKit وSwiftUI.','translate/');
+  app.innerHTML=nav('translate')+`<main id="main" class="shell translate-page"><section class="translate-hero"><div class="translate-kicker">الاسم البسيط · AppKit · SwiftUI</div><h1>جدول الترجمة</h1><p>العنصر نفسه على Mac قد يملك اسمين حقيقيين، واحدًا في AppKit وآخر في SwiftUI. ابدأ بما تراه ثم خذ العمود الذي يتحدث به مشروعك.</p><p class="translate-note">غير متأكد من الطبقة؟ <a href="#/guide/appkit-swiftui">اقرأ AppKit أم SwiftUI أولًا ←</a></p><label class="translate-search"><span>⌕</span><input id="tsearch" inputmode="search" autocomplete="off" placeholder="فلتر — جرّب segmented أو NSPopUpButton أو تنبيه"><kbd>⌘K</kbd></label></section><section id="ttable"></section></main>`+footer();
+  const input=document.querySelector('#tsearch');
+  const draw=()=>{
+    const q=norm(input.value);
+    const rows=D.translations.filter(r=>!q||norm(Object.values(r).join(' ')).includes(q));
+    document.querySelector('#ttable').innerHTML=`<div class="translation-wrap"><table class="translation-v2"><thead><tr><th>العنصر</th><th>AppKit</th><th>SwiftUI</th></tr></thead><tbody>${rows.map(r=>{const e=translationEntry(r);return `<tr><td>${e?`<a href="#/element/${e.slug}">${esc(r.thing)}</a>`:esc(r.thing)}</td><td><code dir="ltr">${esc(r.appkit)}</code></td><td><code dir="ltr">${esc(r.swiftui)}</code></td></tr>`}).join('')}</tbody></table></div><p class="translation-count">${rows.length} من ${D.translations.length} ترجمة · العناصر المسطّرة مرتبطة بمدخل بصري عند توفر تطابق.</p>`;
+  };
+  draw();input.oninput=draw;
+  addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();input.focus()}},{once:true});
+  bindChrome();bindGlossary();
+}
+function methodology(){
+  setMeta('المنهجية — UI بالعربي','كيف نتحقق من أسماء عناصر الواجهة ومصطلحاتها ومقابلاتها العربية.','methodology/');
+  const sources=[
+    {title:'Apple platforms',body:'أسماء المكونات وسلوك المنصة والرموز الدقيقة في AppKit وSwiftUI وUIKit.',links:[['Human Interface Guidelines','https://developer.apple.com/design/human-interface-guidelines/'],['Developer Documentation','https://developer.apple.com/documentation/']]},
+    {title:'Accessible web patterns',body:'الأدوار والخصائص والتفاعل بلوحة المفاتيح ومتطلبات الإتاحة.',links:[['WAI-ARIA','https://www.w3.org/TR/wai-aria/'],['ARIA APG','https://www.w3.org/WAI/ARIA/apg/'],['WCAG','https://www.w3.org/WAI/standards-guidelines/wcag/']]},
+    {title:'The web platform',body:'الدلالات الأصلية وسلوك HTML وواجهات المتصفح وسياق التنفيذ.',links:[['WHATWG HTML','https://html.spec.whatwg.org/'],['MDN Web Docs','https://developer.mozilla.org/']]},
+    {title:'التعريب والمصطلح العربي',body:'نوازن بين المصطلح التقني الشائع وإرشادات المنصات العربية، مع إبقاء الإنجليزية ملاصقة عندما تمنع الغموض.',links:[['Microsoft Style Guide','https://learn.microsoft.com/globalization/reference/microsoft-style-guides'],['Material Design','https://m3.material.io/']]}
+  ];
+  app.innerHTML=nav('methodology')+`<main id="main" class="shell methodology-page"><article class="methodology"><div class="method-kicker">شاهد · تحقق · سمِّ</div><h1>المنهجية</h1><p class="method-lead">نبدأ من شيء يراه المستخدم ولا يعرف كيف يسميه. نحدد البكسل أولًا، ثم نتحقق من المصطلح في توثيق المنصة، ومعايير الإتاحة، والـAPI الذي يشحن فعلًا قبل إدخاله إلى القاموس.</p><section class="method-section"><h2>كيف يدخل المصطلح؟</h2><div class="method-steps"><div><i>1</i><b>ابدأ بالبكسلات</b><p>يجب أن يشير المصطلح إلى شيء مرئي فعلًا ويصعب وصفه، لا إلى اسم يبدو مفيدًا فقط.</p></div><div><i>2</i><b>تحقق من المنصة</b><p>نقارن الاسم الظاهر في دليل التصميم، والاسم البرمجي في التوثيق، والدور الدلالي أو السلوك عند وجود معيار له.</p></div><div><i>3</i><b>اجعل الفرق مرئيًا</b><p>المعاينة والتشريح والوصف يجب أن تجعل العنصر مميزًا عن أقرب البدائل دون حاجة لمفردات مسبقة.</p></div></div></section><section class="method-section"><h2>المصادر التي نرجع إليها</h2><p class="method-intro">المصدر يتغير حسب نوع الادعاء: دليل التصميم يسمي النمط، المواصفة تحدد الدلالة، وتوثيق الإطار يعطينا الرمز الدقيق.</p><div class="source-cards">${sources.map(s=>`<div class="source-card"><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p><div>${s.links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(n)} ↗</a>`).join('')}</div></div>`).join('')}</div></section><section class="method-section"><h2>ماذا تعلّمنا لغة البحث الحقيقية؟</h2><p>التوثيق الرسمي يخبرنا ما اسم الشيء. لكن عبارات المستخدمين تكشف كيف يصفونه قبل أن يعرفوا الاسم. نستخدم هذه اللغة لتحسين البحث والوصف البسيط، لكنها لا تتغلب على معيار أو اسم منصة موثّق.</p><div class="method-query-examples"><span>“الثلاث نقاط التي تفتح خيارات”</span><span>“الطبقة السوداء خلف النافذة”</span><span>“النص الرمادي الذي يختفي عند الكتابة”</span></div></section><section class="method-section"><h2>عندما تختلف الأسماء</h2><p>قد يبدو العنصر نفسه متشابهًا على الويب وmacOS أو يملك اسمين في AppKit وSwiftUI. لذلك نبقي المنصة والإطار ملاصقين للمصطلح، ونظهر الأسماء البديلة المفيدة بدل الادعاء بوجود اسم عالمي واحد.</p><a class="method-cta" href="#/translate">افتح جدول AppKit ↔ SwiftUI ←</a></section><section class="method-section"><h2>قواعد التعريب</h2><div class="method-principles"><div><b>العربي أولًا</b><p>العنوان العربي هو المدخل الأساسي، والإنجليزي يبقى ملاصقًا له عندما يكون أدق تقنيًا.</p></div><div><b>الشائع قبل الحرفي</b><p>لا نترجم كلمة بكلمة إذا كان المجتمع العربي يستخدم مصطلحًا تقنيًا معروفًا وأكثر وضوحًا.</p></div><div><b>لا نختلق اسمًا قياسيًا</b><p>عندما لا يوجد تعريب مستقر، نوضح الوصف ونُبقي المصطلح الإنجليزي بدل تقديم ترجمة مخترعة كمعيار.</p></div></div></section><p class="detail-source-note">الهيكل البحثي مستند إلى منهجية Name That UI الحالية، مع إضافة قواعد التعريب الخاصة بالمنصة العربية. <a href="https://namethatui.com/methodology" target="_blank" rel="noopener">المرجع ↗</a></p></article></main>`+footer();
+  bindChrome();bindGlossary();
+}
+function guideHub(){
+  setMeta('الأدلة — UI بالعربي','أدلة عملية لاختيار عالم المصطلحات الصحيح قبل تسمية العنصر.','guides/');
+  const cards=[
+    {href:'#/guide/appkit-swiftui',k:'macOS',title:'AppKit أم SwiftUI؟',desc:'العنصر نفسه قد يملك اسمين صحيحين. حدّد طبقة مشروعك أولًا.'},
+    {href:'#/guide/swift-electron',k:'Architecture',title:'Swift أم Electron؟',desc:'تطبيق Mac أصلي أم واجهة ويب داخل Chromium؟ القرار يغيّر القاموس كله.'},
+    {href:'#/translate',k:'Reference',title:'جدول الترجمة',desc:`${D.translations.length} عنصرًا: الاسم البسيط → AppKit → SwiftUI، مع بحث فوري.`}
+  ];
+  app.innerHTML=nav('guides')+`<main id="main" class="shell guides-page"><section class="guides-hero"><div class="guides-kicker">GUIDES</div><h1>القرارات التي تسبق الأسماء.</h1><p>قبل أن تختار المصطلح، حدّد العالم التقني الذي تنتمي إليه الواجهة. هذه الأدلة تمنع خلط AppKit وSwiftUI والويب في Prompt واحد.</p></section><section class="guide-hub-grid">${cards.map(c=>`<a href="${c.href}" class="guide-hub-card"><small>${esc(c.k)}</small><h2>${esc(c.title)}</h2><p>${esc(c.desc)}</p><span>افتح الدليل ←</span></a>`).join('')}</section><section class="guide-method-link"><b>كيف نقرر الاسم أصلًا؟</b><p>راجع قواعد المصادر، المنصات، الإتاحة، والتعريب.</p><a href="#/methodology">اقرأ المنهجية ←</a></section></main>`+footer();
+  bindChrome();bindGlossary();
+}
+function guide(kind){
+  let title,subtitle,body,path;
+  if(kind==='appkit-swiftui'){
+    title='AppKit أم SwiftUI؟';subtitle='نفس عنصر Mac، اسمان حقيقيان — أيهما تستخدم في الـPrompt؟';path='appkit-vs-swiftui/';
+    body=`<section class="guide-prose"><p class="lead">AppKit وSwiftUI ليسا اسمين لنفس الـAPI. قد يعرضان عنصرًا متشابهًا، لكن لكل طبقة مفرداتها ورموزها.</p><h2>القاعدة العملية</h2><div class="guide-choices"><div><b>مشروع AppKit</b><p>إذا كان الكود مليئًا بـ <code>NSWindow</code> و<code>NSView</code> و<code>NSButton</code>، استخدم أسماء AppKit.</p></div><div><b>مشروع SwiftUI</b><p>إذا كانت الواجهة مبنية من <code>View</code> و<code>Button</code> وmodifiers، استخدم أسماء SwiftUI.</p></div></div><h2>المشاريع المختلطة</h2><p>سمِّ الطبقة التي تريد تعديلها. مثال: “SwiftUI view داخل NSWindow” أدق من قول “عدّل نافذة الماك” فقط.</p><h2>ليست كل تطبيقات Mac واحدة</h2><div class="guide-forks"><div><b>Mac Catalyst</b><p>تطبيق iPad يعمل على Mac ويستخدم UIKit، وليس AppKit.</p></div><div><b>Electron</b><p>واجهة ويب داخل Chromium + Node؛ مفرداتها الأساسية من عالم الويب.</p></div></div><h2>الأسئلة الشائعة</h2><div class="guide-faq"><details open><summary>هل SwiftUI استبدلت AppKit؟</summary><p>لا. SwiftUI مناسبة لكثير من الشاشات الجديدة، بينما AppKit ما زالت ضرورية لسلوكيات Mac متخصصة.</p></details><details><summary>هل يمكن استخدامهما معًا؟</summary><p>نعم. تطبيقات كثيرة تمزج بينهما، لذلك تحديد الطبقة في الطلب مهم.</p></details><details><summary>هل كل SwiftUI Control مجرد AppKit Control تحت الغطاء؟</summary><p>لا تعتمد على ذلك؛ عامل كل API كواجهة مستقلة حتى لو تشابه الشكل.</p></details></div><p><a class="guide-table-link" href="#/translate">افتح جدول الترجمة الكامل (${D.translations.length}) ←</a></p></section>`;
+  }else{
+    title='Swift أم Electron؟';subtitle='Native app أم web-in-a-shell — أول مفترق يحدد مفردات الواجهة.';path='swift-vs-electron/';
+    body=`<section class="guide-prose"><p class="lead">القرار هنا ليس مجرد لغة برمجة؛ إنه يحدد مجموعة المكونات والـAPIs التي يجب أن تسميها في التصميم والـPrompt.</p><div class="arch-compare"><div><small>NATIVE MAC</small><h2>Swift / AppKit / SwiftUI</h2><p>نوافذ وقوائم وأشرطة أدوات وسلوك Mac الأصلي.</p><code>NSWindow · NSToolbar · MenuBarExtra</code></div><div><small>WEB IN A SHELL</small><h2>Electron</h2><p>HTML/CSS/JS داخل BrowserWindow مع APIs سطح مكتب حولها.</p><code>DOM · CSS · BrowserWindow · Tray</code></div></div><h2>كيف تعرف عالم المشروع؟</h2><ul><li>وجود <code>package.json</code> وElectron → استخدم مفردات الويب للمحتوى.</li><li>وجود Xcode وSwiftUI/AppKit → استخدم أسماء Apple الدقيقة.</li><li>لا تطلب <code>NSToolbar</code> داخل واجهة Electron إذا كنت تقصد شريط أدوات HTML.</li></ul><h2>قاعدة عملية</h2><p>اختر التقنية أولًا، ثم اكتب الـPrompt بمفرداتها الصحيحة. الاسم الدقيق يقلل محاولات التخمين من الوكيل البرمجي.</p></section>`;
+  }
+  setMeta(title,subtitle,path);
+  app.innerHTML=nav('guides')+`<main id="main" class="shell guide-v2"><nav class="guide-crumbs"><a href="#/guides">الأدلة</a><span>/</span><span>${esc(title)}</span></nav><header><div class="guides-kicker">GUIDE</div><h1>${esc(title)}</h1><p>${esc(subtitle)}</p></header>${body}<p class="detail-source-note">بنية الدليل مستندة إلى قسم Guides في Name That UI، مع شرح عربي أصلي للمشروع.</p></main>`+footer();
+  bindChrome();bindGlossary();
+}
 function saved(){setMeta('المحفوظات — UI بالعربي','العناصر التي حفظتها محليًا في متصفحك.','saved/');const ids=JSON.parse(localStorage.getItem('saved-ui-ar')||'[]');const list=ids.map(bySlug).filter(Boolean);app.innerHTML=nav('')+`<main id="main" class="shell"><section class="guide"><div class="sectionlabel">المحفوظات</div><h1>العناصر المحفوظة</h1><p class="lead">تُحفظ هذه القائمة على جهازك فقط.</p><div class="grid">${list.length?list.map(card).join(''):'<div class="emptysearch">لا توجد عناصر محفوظة بعد.</div>'}</div></section></main>`+footer();bindDemos(document.querySelector('.grid'));bindChrome();bindGlossary()}
 function submitTerm(){setMeta('اقترح عنصرًا — UI بالعربي','نموذج محلي لصياغة اقتراح عنصر جديد.','submit/');app.innerHTML=nav('')+`<main id="main" class="shell"><article class="guide"><div class="sectionlabel">اقترح عنصرًا</div><h1>ما العنصر الذي ينقص القاموس؟</h1><p class="lead">اكتب ما تراه حتى لو لم تعرف الاسم. النموذج لا يرسل بيانات إلى خادم؛ سيُنشئ لك نصًا منظمًا فقط.</p><form id="submitform" class="submitform"><label>صف العنصر<textarea name="seen" required placeholder="مثال: زر صغير بثلاث نقاط يفتح إجراءات إضافية"></textarea></label><label>أين يظهر؟<input name="where" placeholder="Web / macOS / تطبيقات الهاتف…"></label><label>ما الاسم الذي تتوقعه؟<input name="guess"></label><button>أنشئ نص الاقتراح</button><pre id="proposal"></pre></form></article></main>`+footer();const f=document.querySelector('#submitform');f.onsubmit=e=>{e.preventDefault();const fd=new FormData(f);document.querySelector('#proposal').textContent=`وصف العنصر: ${fd.get('seen')}\nالمنصة/المكان: ${fd.get('where')}\nالاسم المتوقع: ${fd.get('guess')}`};bindChrome();bindGlossary()}
 function notFound(){setMeta('الصفحة غير موجودة — UI بالعربي','تعذر العثور على الصفحة المطلوبة.','404.html');app.innerHTML=nav('')+`<main id="main" class="shell"><section class="hero"><h1>الصفحة غير موجودة</h1><p><a class="chip active" href="#/">العودة إلى الفهرس</a></p></section></main>`+footer()}
@@ -540,11 +776,11 @@ function routeFromLocation(){
   if(seg[0]==='element'&&seg[1]) return `/element/${seg[1]}`;
   if(seg[0]==='styles'&&seg[1]) return `/style/${seg[1]}`;
   if(seg[0]==='styles') return '/styles';
-  if(['compare','translate','methodology'].includes(seg[0])) return `/${seg[0]}`;
+  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(['compare','translate','methodology','guides'].includes(seg[0])) return `/${seg[0]}`;
   if(seg[0]==='appkit-vs-swiftui') return '/guide/appkit-swiftui';
   if(seg[0]==='swift-vs-electron') return '/guide/swift-electron';
   return '/404';
 }
-function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home();if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
+function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home();if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
 addEventListener('hashchange',router);router();
 })();
