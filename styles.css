@@ -188,3 +188,10 @@ html{-webkit-text-size-adjust:100%}
  .hero-search{margin-top:11px}
  .hero{padding-bottom:26px}
 }
+
+/* Screenshot parity pass v11 — measured from user screenshots */
+@media(max-width:700px){
+  .hero{padding-top:51px;padding-bottom:66px}
+  .hero-search{height:15px}
+  .entry-body{min-height:56px}
+}
