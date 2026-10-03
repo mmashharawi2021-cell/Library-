@@ -48,23 +48,51 @@ function setMeta(title,desc,urlPath='',indexable=true){
   canonical.href=absolute;
 }
 
-const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span>راعي الموقع</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">اسمك هنا · $500/شهر ↗</a></div></div>
+const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span class="sponsor-dot" aria-hidden="true"></span><b>SPONSOR</b><i></i><span>ضع اسمك هنا وصورتك على كل صفحة مصطلح</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">كن الراعي</a><span>· $500/mo</span></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="${BASE}"><strong>ui بالعربي</strong><i class="brandbadge">27</i><small>قاموس الواجهة</small></a>
+<a class="brand" href="${BASE}"><strong>ui بالعربي</strong><i class="brandbadge">28</i></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="${BASE}">العناصر</a><a class="${active==='styles'?'active':''}" href="${BASE}styles/">الأنماط</a></nav>
+<div class="headtools"><label class="headsearch"><span>⌕</span><input id="headerSearch" inputmode="search" autocomplete="off" placeholder="صف العنصر…" aria-label="بحث سريع"><kbd>⌘K</kbd></label><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر" title="تبديل المظهر">◔</button></div>
 </div></header>`;
 const footer=()=>`<footer class="footer"><div class="shell footgrid">
-<div class="footer-brandblock"><a class="footbrand" href="${BASE}">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p><div class="footer-support"><span>مدعوم بواسطة</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">كن داعمًا ↗</a></div><div class="footer-rss"><span>مصطلحات جديدة تُضاف باستمرار</span><a href="${BASE}feed.xml">تابع عبر RSS</a></div></div>
-<nav class="footlinks"><a href="${BASE}vs/">العناصر المتشابهة</a><a href="${BASE}methodology/">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية ↗</a></nav>
+<div class="footer-brandblock"><a class="footbrand" href="${BASE}">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p></div>
+<div class="footer-shipping"><small>مصطلحات جديدة تُضاف باستمرار</small><nav class="footlinks"><a href="${BASE}feed.xml">تابع عبر RSS</a><a href="${BASE}vs/">العناصر المتشابهة</a><a href="${BASE}methodology/">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية</a></nav></div>
 <div class="footer-search"><b>بحث</b><label><span>⌕</span><input id="footerSearch" inputmode="search" autocomplete="off" placeholder="صف عنصر الواجهة الذي تفكر فيه"></label></div>
-<div class="footer-attribution">المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص العربية والمعاينات أصلية لهذا المشروع.</div>
+<div class="footer-attribution">المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. النصوص العربية والكود والمعاينات هنا مبنية لهذا المشروع.</div>
 </div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function bindChrome(){
  const t=document.querySelector('#themeToggle');
- if(t)t.onclick=()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('ui-theme',next)}catch{}};
+ if(t){
+   t.textContent=document.documentElement.dataset.theme==='light'?'◑':'◔';
+   t.onclick=()=>{
+     const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+     document.documentElement.dataset.theme=next;
+     t.textContent=next==='light'?'◑':'◔';
+     try{localStorage.setItem('ui-theme',next)}catch{}
+   };
+ }
+ const go=q=>{
+   state.q=(q||'').trim();
+   const target=BASE+(state.q?'?q='+encodeURIComponent(state.q):'');
+   if(location.pathname!==BASE||location.hash){location.href=target;return}
+   const hero=document.querySelector('#search');
+   if(hero){hero.value=state.q;hero.dispatchEvent(new Event('input',{bubbles:true}));hero.focus()}
+ };
+ const hs=document.querySelector('#headerSearch');
+ if(hs){
+   hs.value=state.q;
+   hs.onkeydown=e=>{if(e.key==='Enter')go(hs.value)};
+   hs.oninput=()=>{const hero=document.querySelector('#search');if(hero){hero.value=hs.value;hero.dispatchEvent(new Event('input',{bubbles:true}))}};
+ }
  const fs=document.querySelector('#footerSearch');
- if(fs)fs.onkeydown=e=>{if(e.key==='Enter'){state.q=fs.value.trim();location.href=BASE+(state.q?'?q='+encodeURIComponent(state.q):'')}};
+ if(fs)fs.onkeydown=e=>{if(e.key==='Enter')go(fs.value)};
+ document.onkeydown=e=>{
+   if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){
+     e.preventDefault();
+     (document.querySelector('#search')||document.querySelector('#headerSearch'))?.focus();
+   }
+ };
 }
 function demo(e,large=false){
   const s=e.slug;
@@ -159,7 +187,7 @@ function demo(e,large=false){
 
 const entryPath=e=>`${e.category}/${e.slug}/`;
 const entryHref=e=>`${BASE}${entryPath(e)}`;
-function card(e){return `<a class="entry-card" href="${entryHref(e)}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3>${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
+function card(e){return `<a class="entry-card" data-slug="${esc(e.slug)}" href="${entryHref(e)}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3>${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
 function searchMatches(e,q){if(!q)return true;const hay=norm([e.ar,e.en,e.code,e.description,...(e.aliases||[])].join(' '));return norm(q).split(' ').filter(Boolean).every(x=>hay.includes(x))}
 function bindGlossary(){
   const box=document.querySelector('#glossary');if(!box)return;
@@ -213,8 +241,68 @@ function bindDetailActions(e){
    copyUrl(share,'تم نسخ الرابط');
  };
 }
-function bindDemos(root=document){if(!root||root.dataset?.demoBound)return;if(root.dataset)root.dataset.demoBound='1';root.addEventListener('click',ev=>{const t=ev.target;if(t.closest('.tabs-demo button')){const btn=t.closest('button'),box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');box.querySelector('section b').textContent=btn.textContent.trim()==='التحليلات'?'مؤشرات التحليلات':'النشاط الأسبوعي'}const tg=t.closest('.toggle-group button');if(tg){tg.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));tg.classList.add('on')}const bd=t.closest('.bottomtabs > *');if(bd){bd.parentElement.querySelectorAll(':scope > *').forEach(x=>x.classList.remove('active'));bd.classList.add('active')}const hm=t.closest('.hamb');if(hm)hm.closest('.drawer-demo').classList.toggle('open');const lb=t.closest('.lightbox .thumb,.lightbox .photo button');if(lb)lb.closest('.lightbox').classList.toggle('open');const day=t.closest('.calendar .week i');if(day)day.classList.toggle('sel');const ck=t.closest('.checklist label');if(ck)ck.classList.toggle('checked');const ov=t.closest('.overflow-demo button');if(ov)ov.closest('.overflow-demo').classList.toggle('menuopen');const sw=t.closest('.switch');if(sw)sw.classList.toggle('on')})}
+function bindDemos(root=document){
+ if(!root||root.dataset?.demoBound)return;
+ if(root.dataset)root.dataset.demoBound='1';
 
+ root.addEventListener('click',ev=>{
+   const t=ev.target;
+   if(t.closest('.tabs-demo button')){const btn=t.closest('button'),box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');box.querySelector('section b').textContent=btn.textContent.trim()==='التحليلات'?'مؤشرات التحليلات':'النشاط الأسبوعي'}
+   const tg=t.closest('.toggle-group button');if(tg){tg.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));tg.classList.add('on')}
+   const bd=t.closest('.bottomtabs > *,.nt-tabs > *');if(bd){bd.parentElement.querySelectorAll(':scope > *').forEach(x=>x.classList.remove('active','on'));bd.classList.add('active','on')}
+   const hm=t.closest('.hamb');if(hm)hm.closest('.drawer-demo').classList.toggle('open');
+   const lb=t.closest('.lightbox .thumb,.lightbox .photo button');if(lb)lb.closest('.lightbox').classList.toggle('open');
+   const day=t.closest('.calendar .week i');if(day)day.classList.toggle('sel');
+   const ck=t.closest('.checklist label,.nt-multiselect label');if(ck)ck.classList.toggle('checked');
+   const ov=t.closest('.overflow-demo button');if(ov)ov.closest('.overflow-demo').classList.toggle('menuopen');
+   const sw=t.closest('.switch');if(sw)sw.classList.toggle('on');
+   const step=t.closest('.segmented button');if(step){step.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));step.classList.add('on')}
+ });
+
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+
+ // Text scramble: churn briefly, settle, then repeat.
+ root.querySelectorAll('.scramble b').forEach(el=>{
+   if(el.dataset.motionBound)return;el.dataset.motionBound='1';
+   const final='THAT UI',chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#?!*';
+   let frame=0;
+   const run=()=>{
+     frame=0;
+     const timer=setInterval(()=>{
+       const reveal=Math.floor(frame/2);
+       el.textContent=[...final].map((ch,i)=>ch===' '?' ':i<reveal?ch:chars[Math.floor(Math.random()*chars.length)]).join('');
+       frame++;
+       if(reveal>=final.length){clearInterval(timer);el.textContent=final;setTimeout(run,2600)}
+     },55);
+   };
+   run();
+ });
+
+ // Carousel: advance the active card and dots.
+ root.querySelectorAll('.carousel-ref').forEach(box=>{
+   if(box.dataset.motionBound)return;box.dataset.motionBound='1';
+   const slides=[...box.querySelectorAll('.carousel-strip article')],dots=[...box.querySelectorAll('.carousel-dots i')];
+   let index=0;
+   const show=n=>{index=(n+slides.length)%slides.length;slides.forEach((x,i)=>x.classList.toggle('on',i===index));dots.forEach((x,i)=>x.classList.toggle('on',i===index));box.style.setProperty('--slide-index',index)};
+   box.querySelectorAll(':scope>button').forEach((b,i)=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index+(i?1:-1))}));
+   setInterval(()=>show(index+1),3400);
+ });
+
+ // Cursor specimen cycles through cursor names without moving the page.
+ root.querySelectorAll('.cursors').forEach(box=>{
+   if(box.dataset.motionBound)return;box.dataset.motionBound='1';
+   const icons=[...box.querySelectorAll(':scope>span')];let i=0;
+   if(icons.length)setInterval(()=>{icons.forEach(x=>x.classList.remove('cursor-live'));icons[i=(i+1)%icons.length].classList.add('cursor-live')},1500);
+ });
+}
+
+function bindHeroMotion(){
+ const input=document.querySelector('#search');if(!input||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const prompts=['صف العنصر الذي تفكر فيه…','الخلفية الداكنة خلف نافذة منبثقة…','النقطة التي تسحبها لتغيير الصوت…','النص الذي ينتهي بثلاث نقاط…','الشريط الذي يبقى ظاهرًا عند التمرير…'];
+ let i=0;
+ const tick=()=>{if(document.activeElement!==input&&!input.value){input.classList.add('placeholder-swap');setTimeout(()=>{input.placeholder=prompts[i=(i+1)%prompts.length];input.classList.remove('placeholder-swap')},180)}};
+ setInterval(tick,3400);
+}
 function home(platformOverride){
  if(platformOverride==='web'||platformOverride==='macos')state.cat=platformOverride;
  if(platformOverride==='all')state.cat='all';
@@ -224,24 +312,31 @@ function home(platformOverride){
  const newest=['data-table','bottom-navigation','timeline','presence-indicator','message-bubble'];
  const rank=new Map(newest.map((s,i)=>[s,i]));
  app.innerHTML=nav('elements')+`<main id="main"><section class="hero shell">
- <div class="newweek"><b>جديد هذا الأسبوع</b><div>${fresh.map(e=>`<a href="${entryHref(e)}">${esc(e.ar)} <span>${esc(e.en)}</span></a>`).join('')}</div></div>
+ <div class="newweek"><b>أضيف مؤخرًا</b><div>${fresh.map(e=>`<a href="${entryHref(e)}">${esc(e.ar)} <span dir="ltr">${esc(e.en)}</span></a>`).join('')}</div></div>
  <h1>ما اسم عنصر الواجهة هذا<span class="qmark">؟</span></h1>
- <p class="hero-copy">القاموس البصري لعناصر UI. صف الشيء بكلماتك العادية؛ تحصل على الاسم الحقيقي، رمز التنفيذ، وPrompt جاهز لوكيل البرمجة.</p>
- <div class="search-examples" aria-label="أمثلة بحث"><span>“الخلفية الشاحبة خلف أيقونة في شريط القوائم”</span><span>“الطبقة الداكنة الشفافة خلف نافذة منبثقة”</span><span>“النص الرمادي داخل الحقل الذي يختفي عند الكتابة”</span><span>“النقطة التي تسحبها لتغيير مستوى الصوت”</span><span>“النص ينقطع بثلاث نقاط”</span></div>
- <div class="hero-search"><input id="search" autocomplete="off" inputmode="search" aria-label="صف عنصر الواجهة" placeholder="صف عنصر الواجهة الذي تفكر فيه…" value="${esc(state.q)}"></div>
+ <p class="hero-copy">القاموس البصري لعناصر UI. صف الشيء بكلماتك العادية؛ تحصل على الاسم الحقيقي، رمز الـAPI، وPrompt جاهز لوكيل البرمجة.</p>
+ <label class="hero-search"><span>⌕</span><input id="search" autocomplete="off" inputmode="search" aria-label="صف عنصر الواجهة" placeholder="صف العنصر الذي تفكر فيه…" value="${esc(state.q)}"><kbd>⌘K</kbd></label>
  <div id="searchEmpty" class="search-empty" hidden><b>لا شيء يطابق هذا الوصف</b><p>جرّب وصف شكله أو مكانه — مثل «النقاط أسفل عرض الشرائح» أو «الشريط الذي يبقى ظاهرًا أثناء التمرير».</p></div>
- <div class="hero-help"><a href="#/styles">لا تعرف اسم المظهر أيضًا؟ جرّب أطلس الأنماط</a><span>اضغط مرتين على أي كلمة في الموقع لعرض تعريف عربي سريع.</span></div>
+ <div class="hero-help"><span>لا تعرف اسم <i>المظهر</i> أيضًا؟ <a href="${BASE}styles/">جرّب أطلس الأنماط</a></span><span>اضغط مرتين على أي كلمة في الموقع لعرض تعريف عربي سريع.</span></div>
  </section>
- <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button></div></div><div id="cards" class="entries-grid"></div></section>
- <section class="guides shell"><div class="sectionlabel">الأدلة — القرارات التي تسبق الأسماء</div><div class="guidecards"><a href="#/guide/appkit-swiftui"><b>AppKit أم SwiftUI؟</b><span>العنصر نفسه في Mac قد يملك اسمين حقيقيين — أيهما تستخدم في الـPrompt؟</span></a><a href="#/guide/swift-electron"><b>Swift أم Electron؟</b><span>تطبيق أصلي أم واجهة ويب داخل غلاف — القرار الأول الذي يحدد المفردات.</span></a><a href="#/translate"><b>جدول الترجمة</b><span>60+ عنصرًا: الاسم البسيط ← AppKit ← SwiftUI، مع بحث مباشر.</span></a></div></section></main>`+footer();
- const render=()=>{let list=D.entries.filter(e=>(state.cat==='all'||e.category===state.cat)&&searchMatches(e,state.q));list=[...list].sort((a,b)=>{if(state.sort==='popular')return b.popularity-a.popularity;const ar=rank.has(a.slug)?rank.get(a.slug):999,br=rank.has(b.slug)?rank.get(b.slug):999;return ar!==br?ar-br:Number(b.new)-Number(a.new)||D.entries.indexOf(a)-D.entries.indexOf(b)});const cards=document.querySelector('#cards');cards.innerHTML=list.map(card).join('');const empty=document.querySelector('#searchEmpty');if(empty)empty.hidden=!state.q||!!list.length;bindDemos(cards)};
+ <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button><button id="surprise" class="surprise" type="button">♧ فاجئني</button></div></div><div id="cards" class="entries-grid"></div></section>
+ <section class="guides shell"><div class="sectionlabel">الأدلة — القرارات التي تسبق الأسماء</div><div class="guidecards"><a href="${BASE}appkit-vs-swiftui/"><b>AppKit أم SwiftUI؟</b><span>العنصر نفسه في Mac قد يملك اسمين حقيقيين — أيهما تستخدم في الـPrompt؟</span></a><a href="${BASE}swift-vs-electron/"><b>Swift أم Electron؟</b><span>تطبيق أصلي أم واجهة ويب داخل غلاف — القرار الأول الذي يحدد المفردات.</span></a><a href="${BASE}translate/"><b>جدول الترجمة</b><span>60+ عنصرًا: الاسم البسيط ← AppKit ← SwiftUI، مع بحث مباشر.</span></a></div></section></main>`+footer();
+
+ const render=()=>{
+   let list=D.entries.filter(e=>(state.cat==='all'||e.category===state.cat)&&searchMatches(e,state.q));
+   list=[...list].sort((a,b)=>{if(state.sort==='popular')return b.popularity-a.popularity;const ar=rank.has(a.slug)?rank.get(a.slug):999,br=rank.has(b.slug)?rank.get(b.slug):999;return ar!==br?ar-br:Number(b.new)-Number(a.new)||D.entries.indexOf(a)-D.entries.indexOf(b)});
+   const cards=document.querySelector('#cards');cards.innerHTML=list.map(card).join('');
+   const empty=document.querySelector('#searchEmpty');if(empty)empty.hidden=!state.q||!!list.length;
+   bindDemos(cards);
+ };
  render();
- const search=document.querySelector('#search');search.addEventListener('input',e=>{state.q=e.target.value;render()});
+ const search=document.querySelector('#search');
+ search.addEventListener('input',e=>{state.q=e.target.value;const hs=document.querySelector('#headerSearch');if(hs)hs.value=state.q;render()});
  document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{state.cat=b.dataset.cat;home()});
  document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{state.sort=b.dataset.sort;home()});
-
- document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();document.querySelector('#search')?.focus()}},{once:true});
- bindChrome();bindGlossary();
+ const surprise=document.querySelector('#surprise');
+ if(surprise)surprise.onclick=()=>{const pool=D.entries.filter(e=>state.cat==='all'||e.category===state.cat);const pick=pool[Math.floor(Math.random()*pool.length)];if(pick)location.href=entryHref(pick)};
+ bindChrome();bindGlossary();bindHeroMotion();
 }
 function detail(slug){
  const e=bySlug(slug);
