@@ -203,7 +203,7 @@ jobs:
             if(width===393){
               await stylePage.click('[data-style-slug="neumorphism"]');
               await stylePage.waitForFunction(()=>document.querySelectorAll('.atlas-grid > .atlas-card').length===1);
-              const forced=await stylePage.$eval('.atlas-grid > .atlas-card',els=>els.length);
+              const forced=await stylePage.$$eval('.atlas-grid > .atlas-card',els=>els.length);
               assert(forced===1,`Style example filter expected 1 card, got ${forced}`);
               await stylePage.evaluate(()=>{location.hash='#/styles'});
               await stylePage.waitForFunction(()=>document.querySelectorAll('.atlas-grid > .atlas-card').length===14);
