@@ -156,6 +156,41 @@ function bindGlossary(){
   document.addEventListener('dblclick',handler,{once:true});
 }
 function bindCopy(){document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{const t=decodeURIComponent(b.dataset.copy);try{await navigator.clipboard.writeText(t);b.textContent='تم النسخ';setTimeout(()=>b.textContent='نسخ',1200)}catch{}})}
+function bindDetailActions(e){
+ const save=document.querySelector('[data-detail-save]');
+ const share=document.querySelector('[data-detail-share]');
+ const copy=document.querySelector('[data-detail-copy]');
+ const readSaved=()=>{try{return JSON.parse(localStorage.getItem('saved-ui-ar')||'[]')}catch{return[]}};
+ const writeSaved=ids=>{try{localStorage.setItem('saved-ui-ar',JSON.stringify(ids))}catch{}};
+ const syncSave=()=>{
+   if(!save)return;
+   const on=readSaved().includes(e.slug);
+   save.classList.toggle('is-saved',on);
+   save.textContent=on?'★ محفوظ':'☆ حفظ';
+   save.setAttribute('aria-pressed',on?'true':'false');
+ };
+ if(save){
+   syncSave();
+   save.onclick=()=>{
+     const ids=readSaved();
+     const next=ids.includes(e.slug)?ids.filter(x=>x!==e.slug):[...ids,e.slug];
+     writeSaved(next);syncSave();
+   };
+ }
+ const copyUrl=async(btn,label='تم النسخ')=>{
+   try{
+     await navigator.clipboard.writeText(location.href);
+     const old=btn.textContent;btn.textContent=label;setTimeout(()=>btn.textContent=old,1200);
+   }catch{}
+ };
+ if(copy)copy.onclick=()=>copyUrl(copy,'تم نسخ الرابط');
+ if(share)share.onclick=async()=>{
+   if(navigator.share){
+     try{await navigator.share({title:`${e.ar} — ${e.en}`,text:e.description,url:location.href});return}catch{}
+   }
+   copyUrl(share,'تم نسخ الرابط');
+ };
+}
 function bindDemos(root=document){if(!root||root.dataset?.demoBound)return;if(root.dataset)root.dataset.demoBound='1';root.addEventListener('click',ev=>{const t=ev.target;if(t.closest('.tabs-demo button')){const btn=t.closest('button'),box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');box.querySelector('section b').textContent=btn.textContent.trim()==='التحليلات'?'مؤشرات التحليلات':'النشاط الأسبوعي'}const tg=t.closest('.toggle-group button');if(tg){tg.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));tg.classList.add('on')}const bd=t.closest('.bottomtabs > *');if(bd){bd.parentElement.querySelectorAll(':scope > *').forEach(x=>x.classList.remove('active'));bd.classList.add('active')}const hm=t.closest('.hamb');if(hm)hm.closest('.drawer-demo').classList.toggle('open');const lb=t.closest('.lightbox .thumb,.lightbox .photo button');if(lb)lb.closest('.lightbox').classList.toggle('open');const day=t.closest('.calendar .week i');if(day)day.classList.toggle('sel');const ck=t.closest('.checklist label');if(ck)ck.classList.toggle('checked');const ov=t.closest('.overflow-demo button');if(ov)ov.closest('.overflow-demo').classList.toggle('menuopen');const sw=t.closest('.switch');if(sw)sw.classList.toggle('on')})}
 
 function home(){
@@ -182,8 +217,108 @@ function home(){
  bindChrome();bindGlossary();
 }
 function detail(slug){
- const e=bySlug(slug);if(!e)return notFound();setMeta(`${e.ar} — ${e.en}`,e.description,`element/${e.slug}/`);const idx=D.entries.indexOf(e);const rel=[1,2,3,4,5].map(n=>D.entries[(idx+n)%D.entries.length]).filter(Boolean);
- app.innerHTML=nav('elements')+`<main id="main" class="shell"><article class="detail"><div class="crumbs"><a href="#/">الفهرس</a><span>/</span><span>${e.category==='web'?'Web':'macOS'}</span></div><div class="specimen">${demo(e,true)}</div><p class="specnote">هذه معاينة أصلية بُنيت خصيصًا للقاموس العربي لتوضيح العنصر، وليست صورة من الموقع المرجعي.</p><h1>${esc(e.ar)}</h1><div class="detail-en">${esc(e.en)}</div><div class="slashline">/ <code>${esc(e.code)}</code> /</div><p class="aka"><b>يُسمى أيضًا</b> ${(e.aliases||[]).map(esc).join('، ')}</p><p class="lead">${esc(e.description)}</p><section class="section"><h2>إذا كنت تسميه…</h2><div class="called">${(e.aliases||[]).slice(0,6).map(a=>`<span>“${esc(a)}”</span>`).join('')}</div><p class="answerline">…فأنت تقصد <b>${esc(e.ar)}</b> — <span dir="ltr">${esc(e.en)}</span>.</p></section><section class="section"><h2>التشريح — اسم كل جزء</h2><div class="anatomy">${(e.anatomy||[]).map((p,i)=>`<div class="part"><i>${i+1}</i><div><b>${esc(p.name)}</b><p>${esc(p.desc)}</p></div></div>`).join('')}</div></section><section class="section"><h2>Prompt — جاهز لوكيل البرمجة</h2><div class="prompt"><button class="copybtn" data-copy="${encodeURIComponent(e.prompt)}">نسخ</button>${esc(e.prompt)}</div></section><section class="section"><h2>Debug Prompt — عندما لا يعمل كما ينبغي</h2><div class="prompt"><button class="copybtn" data-copy="${encodeURIComponent(e.debug)}">نسخ</button>${esc(e.debug)}</div></section><section class="section"><h2>في الكود</h2><div class="tablewrap"><table class="code-table"><tbody>${(e.inCode||[]).map(r=>`<tr><td>${esc(r.stack)}</td><td><code>${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody></table></div></section><section class="section"><h2>راجع أيضًا</h2><div class="related">${rel.map(r=>`<a href="#/element/${r.slug}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span></a>`).join('')}</div></section></article></main>`+footer();bindCopy();bindChrome();bindGlossary();bindDemos(document.querySelector('.specimen'));
+ const e=bySlug(slug);
+ if(!e)return notFound();
+ setMeta(`${e.ar} — ${e.en}`,e.description,`element/${e.slug}/`);
+ const idx=D.entries.indexOf(e);
+ const pool=D.entries.filter(x=>x!==e&&x.category===e.category);
+ const start=pool.length?idx%pool.length:0;
+ const rel=Array.from({length:Math.min(5,pool.length)},(_,i)=>pool[(start+i)%pool.length]);
+ const aliases=(e.aliases||[]).slice(0,8);
+ const codeRows=e.inCode||[];
+ app.innerHTML=nav('elements')+`
+ <main id="main" class="shell detail-shell">
+   <article class="detail">
+     <div class="detail-topbar">
+       <nav class="crumbs" aria-label="مسار الصفحة">
+         <a href="#/">الفهرس</a><span>/</span><span>${e.category==='web'?'Web':'macOS'}</span>
+       </nav>
+       <div class="detail-actions" aria-label="إجراءات الصفحة">
+         <button type="button" data-detail-save aria-pressed="false">☆ حفظ</button>
+         <button type="button" data-detail-share>مشاركة</button>
+         <button type="button" data-detail-copy>نسخ الصفحة</button>
+       </div>
+     </div>
+
+     <section class="detail-visual" aria-label="المعاينة">
+       <div class="specimen">${demo(e,true)}</div>
+       <p class="specimen-caption">معاينة تفاعلية توضّح الشكل والسلوك الأساسي لـ <b>${esc(e.ar)}</b>.</p>
+     </section>
+
+     <header class="detail-heading">
+       <div class="detail-kicker">${e.category==='web'?'WEB':'macOS'}</div>
+       <h1>${esc(e.ar)}</h1>
+       <div class="detail-en" dir="ltr">${esc(e.en)}</div>
+       <div class="detail-symbols" dir="ltr">/ <code>${esc(e.code)}</code> /</div>
+       ${aliases.length?`<p class="aka"><b>يُسمى أيضًا</b> ${aliases.map(esc).join('، ')}</p>`:''}
+       <p class="lead">${esc(e.description)}</p>
+     </header>
+
+     <section class="section called-section">
+       <h2>إذا كنت تسميه…</h2>
+       <div class="called">${(aliases.length?aliases:[e.en]).map(a=>`<span>“${esc(a)}”</span>`).join('')}</div>
+       <p class="answerline">…فالمصطلح الأدق هو <b>${esc(e.ar)}</b> <span dir="ltr">(${esc(e.en)})</span>.</p>
+     </section>
+
+     <section class="section anatomy-section">
+       <h2>التشريح — اسم كل جزء</h2>
+       <div class="anatomy">
+         ${(e.anatomy||[]).map((p,i)=>`
+           <div class="part">
+             <i>${i+1}</i>
+             <div>
+               <b>${esc(p.name)}</b>
+               <p>${esc(p.desc)}</p>
+             </div>
+           </div>`).join('')}
+       </div>
+     </section>
+
+     <section class="section prompt-section">
+       <h2>Prompt — جاهز لوكيل البرمجة</h2>
+       <p class="section-intro">انسخ النص كما هو، ثم أضف تفاصيل مشروعك أو إطار العمل الذي تستخدمه.</p>
+       <div class="prompt prompt-agent">
+         <button class="copybtn" type="button" data-copy="${encodeURIComponent(e.prompt)}">نسخ</button>
+         <p>${esc(e.prompt)}</p>
+       </div>
+     </section>
+
+     <section class="section prompt-section">
+       <h2>Debug Prompt — عندما لا يعمل كما ينبغي</h2>
+       <p class="section-intro">استخدمه كقائمة فحص سريعة للمشكلات الشائعة قبل تعديل المكوّن عشوائيًا.</p>
+       <div class="prompt prompt-debug">
+         <button class="copybtn" type="button" data-copy="${encodeURIComponent(e.debug)}">نسخ</button>
+         <p>${esc(e.debug)}</p>
+       </div>
+     </section>
+
+     <section class="section code-section">
+       <h2>في الكود</h2>
+       <p class="section-intro">الأسماء والرموز الأقرب لهذا العنصر في البيئات المختلفة.</p>
+       <div class="tablewrap">
+         <table class="code-table">
+           <tbody>
+             ${codeRows.map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}
+           </tbody>
+         </table>
+       </div>
+     </section>
+
+     <section class="section related-section">
+       <h2>راجع أيضًا</h2>
+       <div class="related">
+         ${rel.map(r=>`<a href="#/element/${r.slug}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span><small>${r.category==='web'?'Web':'macOS'}</small></a>`).join('')}
+       </div>
+     </section>
+
+     <p class="detail-source-note">المرجع الوظيفي والبصري: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. النصوص العربية والمعاينات هنا مكتوبة ومبنية للمشروع العربي.</p>
+   </article>
+ </main>`+footer();
+ bindCopy();
+ bindDetailActions(e);
+ bindChrome();
+ bindGlossary();
+ bindDemos(document.querySelector('.specimen'));
 }
 function styles(){
  setMeta('ما اسم هذا الأسلوب؟ — UI بالعربي','أطلس بصري عربي للأنماط التصميمية مع الإشارات التي تميز كل أسلوب.','styles/');
