@@ -1,0 +1,92 @@
+name: Card QA
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install browser driver
+        run: npm install --no-save puppeteer-core@24
+
+      - name: Validate all 81 cards
+        run: |
+          cat > card-qa.mjs <<'JS'
+          import puppeteer from 'puppeteer-core';
+
+          const browser=await puppeteer.launch({
+            headless:true,
+            executablePath:'/usr/bin/google-chrome',
+            args:['--no-sandbox']
+          });
+
+          const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
+          const url='https://mmashharawi2021-cell.github.io/Library-/?cardqa=15';
+
+          for(const width of [393,1440]){
+            const page=await browser.newPage();
+            await page.setViewport({width,height:1000,deviceScaleFactor:1});
+            const errors=[];
+            page.on('pageerror',e=>errors.push(String(e)));
+            await page.goto(url,{waitUntil:'networkidle0',timeout:60000});
+            await page.waitForSelector('.entry-card');
+
+            const result=await page.evaluate(()=>{
+              const cards=[...document.querySelectorAll('.entry-card')];
+              const previews=[...document.querySelectorAll('.entry-preview')];
+              const demos=[...document.querySelectorAll('.entry-preview .ui-demo')];
+              const demoClasses=demos.map(el=>[...el.classList].find(c=>c.startsWith('demo-'))).filter(Boolean);
+              const overflowing=previews.map((p,i)=>{
+                const d=p.querySelector('.ui-demo');
+                if(!d) return i;
+                const pr=p.getBoundingClientRect(),dr=d.getBoundingClientRect();
+                return (dr.left<pr.left-5||dr.right>pr.right+5||dr.top<pr.top-5||dr.bottom>pr.bottom+5)?i:null;
+              }).filter(x=>x!==null);
+              return {
+                cards:cards.length,
+                previews:previews.length,
+                demos:demos.length,
+                uniqueDemoClasses:new Set(demoClasses).size,
+                fallbacks:document.querySelectorAll('.fallback-demo').length,
+                uniqueMarkup:new Set(previews.map(p=>p.innerHTML)).size,
+                overflowing,
+                pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              };
+            });
+
+            assert(result.cards===81,`Expected 81 cards, got ${result.cards} at ${width}px`);
+            assert(result.previews===81,`Expected 81 previews, got ${result.previews}`);
+            assert(result.demos===81,`Expected 81 demos, got ${result.demos}`);
+            assert(result.uniqueDemoClasses===81,`Expected 81 unique demo classes, got ${result.uniqueDemoClasses}`);
+            assert(result.fallbacks===0,`Fallback demos found: ${result.fallbacks}`);
+            assert(result.uniqueMarkup===81,`Duplicate preview markup detected: ${result.uniqueMarkup}/81 unique`);
+            assert(result.overflowing.length===0,`Preview overflow in cards: ${result.overflowing.join(',')}`);
+            assert(result.pageOverflow<=2,`Horizontal page overflow: ${result.pageOverflow}px at ${width}px`);
+            assert(errors.length===0,`Page errors: ${errors.join(' | ')}`);
+
+            if(width===393){
+              await page.click('[data-cat="web"]');
+              await page.waitForFunction(()=>document.querySelectorAll('.entry-card').length===49);
+              const webCount=await page.$$eval('.entry-card',els=>els.length);
+              assert(webCount===49,`Web filter expected 49, got ${webCount}`);
+
+              await page.click('[data-cat="macos"]');
+              await page.waitForFunction(()=>document.querySelectorAll('.entry-card').length===32);
+              const macCount=await page.$$eval('.entry-card',els=>els.length);
+              assert(macCount===32,`macOS filter expected 32, got ${macCount}`);
+            }
+
+            await page.close();
+          }
+
+          await browser.close();
+          console.log('Card QA passed: 81 unique previews, no fallbacks, no overflow, filters correct.');
+          JS
+          node card-qa.mjs
