@@ -324,3 +324,57 @@ html{-webkit-text-size-adjust:100%}
 
   .nt-phone{width:50%;height:80%}
 }
+
+/* Final specimen calibration v14 */
+@media(max-width:700px){
+  .nt-table{width:47%}
+
+  .nt-phone{width:53%;height:85%}
+
+  .nt-timeline{
+    width:42%;
+    font-size:4.3px;
+    padding:6px 7px;
+  }
+  .nt-timeline>div{grid-template-columns:26px 8px 1fr;min-height:19px}
+  .nt-timeline time{font-size:3.8px}
+  .nt-timeline b{font-size:4.2px}
+  .nt-timeline small{font-size:3.4px}
+
+  .nt-presence{min-width:88px;gap:6px}
+  .nt-avatar{width:32px;height:32px;font-size:7.5px}
+  .nt-avatar i{width:7px;height:7px}
+  .nt-presence b{font-size:4.7px}
+  .nt-presence small{font-size:3.6px}
+
+  .nt-chat{width:47%;font-size:4.3px}
+  .nt-chat p{padding:4px 6px}
+  .nt-chat>small{font-size:3.2px}
+  .nt-chat .typing{font-size:3.4px;padding:2px 5px}
+
+  .nt-steps{
+    width:40%;
+    padding:7px 6px 14px;
+  }
+  .nt-steps>span{width:15px;height:15px}
+  .nt-steps>span small{top:18px;font-size:3px}
+  .nt-steps>i{max-width:20px}
+
+  .nt-avatars span{
+    width:22px;
+    height:22px;
+    margin-left:-4px;
+    font-size:4.2px;
+  }
+
+  .nt-multiselect{
+    width:30%;
+    min-width:66px;
+    padding:4px;
+    font-size:3.9px;
+  }
+  .nt-selecttop{height:12px;padding:0 4px}
+  .nt-selecttop b{font-size:3.8px}
+  .nt-multiselect label{gap:3px;padding:1.5px 1px}
+  .nt-multiselect label i{width:6.5px;height:6.5px}
+}
