@@ -709,7 +709,66 @@ function compareDetail(slug){
   app.innerHTML=nav('compare')+`<main id="main" class="shell vs-shell"><article class="vs-detail"><nav class="vs-crumbs"><a href="#/compare">المتشابهات</a><span>/</span><span>${esc(c.title)}</span></nav><header class="vs-head"><div class="compare-kicker">COMMONLY CONFUSED</div><h1>${esc(c.title)}</h1><p>${esc(c.answer)}</p></header><section class="vs-showcase">${items.map(comparisonCard).join('')}</section><section class="vs-section"><h2>كيف تفرّق بينها؟</h2><ul class="vs-rules">${rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="vs-section"><h2>القرار السريع</h2><div class="vs-decision">${items.map((e,i)=>`<div><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><p>${esc(rules[Math.min(i,rules.length-1)]||c.answer)}</p><a href="#/element/${e.slug}">افتح الإدخال الكامل ←</a></div>`).join('')}</div></section><p class="detail-source-note">المرجع البنيوي للمقارنات: <a href="https://namethatui.com/vs" target="_blank" rel="noopener">Name That UI — Commonly Confused ↗</a>. الشرح العربي هنا مكتوب للمشروع العربي.</p></article></main>`+footer();
   bindDemos(document.querySelector('.vs-showcase'));bindChrome();bindGlossary();
 }
+const translationEntryMap={
+  "تنبيه":"alert-macos",
+  "خلفيات صفوف متناوبة":"data-table",
+  "شريط قوائم التطبيق":"menu-bar",
+  "مربع اختيار":"switch-checkbox-radio",
+  "مربع لون / منتقي لون":"color-well",
+  "مجموعة أوامر":"menu-bar",
+  "حوار تأكيد":"alert-macos",
+  "قائمة سياقية":"context-menu",
+  "منتقي تاريخ":"date-picker",
+  "أيقونة الحوار":"alert-macos",
+  "أداة كشف":"disclosure-triangle",
+  "عدم الإظهار مجددًا":"alert-macos",
+  "مقياس / مؤشر مستوى":"level-indicator",
+  "صف هرمي":"outline-view",
+  "الفاحص":"inspector",
+  "قائمة":"data-table",
+  "قائمة أوامر":"menu-bar",
+  "عنصر شريط القوائم":"menu-bar-extra",
+  "سهم القائمة":"popup-pulldown-combobox",
+  "اختصار عنصر قائمة":"menu-bar",
+  "فاصل قائمة":"divider-separator-rule",
+  "عنصر حالة بنمط قائمة":"menu-bar-extra",
+  "مشهد متعدد النوافذ":"mac-window",
+  "عرض تنقل مقسّم":"split-view",
+  "عرض شجري / مصدر":"outline-view",
+  "منتقي Palette":"segmented-control",
+  "زر منبثق":"popup-pulldown-combobox",
+  "Popover":"popover-macos",
+  "شريط تقدم / Spinner":"progress-indicators",
+  "زر Pull-down":"popup-pulldown-combobox",
+  "مجموعة Radio":"switch-checkbox-radio",
+  "Split View قابل للتغيير":"split-view",
+  "لوحة حفظ/تصدير":"save-panel",
+  "حقل بحث":"search-field-macos",
+  "Segmented Control":"segmented-control",
+  "نافذة الإعدادات":"mac-window",
+  "Sheet":"sheet-macos",
+  "زر إظهار الشريط الجانبي":"sidebar-macos",
+  "نافذة مفردة":"mac-window",
+  "Slider":"slider-macos",
+  "Stepper":"stepper-macos",
+  "Switch":"switch-checkbox-radio",
+  "Tab View":"tabs",
+  "Table":"data-table",
+  "عمود جدول":"data-table",
+  "رأس أعمدة الجدول":"data-table",
+  "صف جدول":"data-table",
+  "Toolbar":"toolbar-macos",
+  "لوحة تخصيص Toolbar":"toolbar-macos",
+  "عنصر Toolbar":"toolbar-macos",
+  "مجموعة عناصر Toolbar":"toolbar-macos",
+  "قائمة تجاوز Toolbar":"toolbar-macos",
+  "قائمة أوامر عليا":"menu-bar",
+  "نافذة أدوات":"panel",
+  "عنصر حالة بنمط نافذة":"menu-bar-extra"
+};
 function translationEntry(r){
+  const mapped=translationEntryMap[r.thing];
+  if(mapped)return bySlug(mapped);
   const q=norm(r.thing);
   return D.entries.find(e=>{
     const hay=norm(`${e.ar} ${e.en} ${(e.aliases||[]).join(' ')}`);
