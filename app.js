@@ -320,20 +320,207 @@ function detail(slug){
  bindGlossary();
  bindDemos(document.querySelector('.specimen'));
 }
+
+function styleSpecimen(s,large=false){
+ const L=large?' large':'';
+ switch(s.slug){
+  case 'skeuomorphism': return \`<div class="style-visual style-skeuomorphism\${L}"><div class="sk-book"><div class="sk-tabs"><span>اليوم</span><span>الأرشيف</span></div><b>ملاحظات الرحلة</b><i></i><i></i><i></i><small>12 أكتوبر</small></div></div>\`;
+  case 'neumorphism': return \`<div class="style-visual style-neumorphism\${L}"><div class="neo-player"><span class="neo-label">Night Drive</span><b>lo-fi</b><div class="neo-track"><i></i></div><div class="neo-controls"><span>‹</span><span class="pressed">Ⅱ</span><span>›</span></div></div></div>\`;
+  case 'glassmorphism': return \`<div class="style-visual style-glassmorphism\${L}"><div class="glass-orb g1"></div><div class="glass-orb g2"></div><div class="glass-panel"><small>الطقس</small><b>24°</b><span>سماء صافية</span><div><i>الاثنين 24°</i><i>الثلاثاء 22°</i><i>الأربعاء 20°</i></div></div></div>\`;
+  case 'liquid-glass': return \`<div class="style-visual style-liquid-glass\${L}"><div class="lg-wall"></div><div class="lg-bar"><span>⌂<small>الرئيسية</small></span><span>⌕<small>بحث</small></span><span class="on">●<small>تشغيل</small></span><span>◎<small>حسابي</small></span></div><div class="lg-pill">وضع التركيز</div></div>\`;
+  case 'web-brutalism': return \`<div class="style-visual style-web-brutalism\${L}"><div class="wb-page"><b>صفحة مروان الشخصية</b><span>آخر تحديث: الثلاثاء</span><hr><u>مقالات</u> · <u>الأرشيف</u> · <u>سجل الزوار</u><table><tbody><tr><td>notes.txt</td><td>2 KB</td></tr><tr><td>photos.zip</td><td>14 MB</td></tr></tbody></table><input value="إرسال"></div></div>\`;
+  case 'neobrutalism': return \`<div class="style-visual style-neobrutalism\${L}"><div class="nb-card"><span>نسخة 2.0</span><b>SHIP<br>LOUD.</b><p>كتلة واحدة. حافتان. بلا تمويه.</p><i>جرّبها →</i></div></div>\`;
+  case 'y2k': return \`<div class="style-visual style-y2k\${L}"><div class="y2k-player"><div class="chrome-title">NEODRIVE</div><div class="y2k-screen"><span>01 · CYBER SUNSET</span><b>3:47</b></div><div class="y2k-controls"><i>◀</i><i>●</i><i>▶</i></div></div></div>\`;
+  case 'frutiger-aero': return \`<div class="style-visual style-frutiger-aero\${L}"><div class="fa-sky"><span class="fa-cloud c1"></span><span class="fa-cloud c2"></span></div><div class="fa-grass"></div><div class="fa-bubble"><small>صباح الخير</small><b>23°C</b><span>هواء نقي اليوم</span></div></div>\`;
+  case 'flat-design': return \`<div class="style-visual style-flat-design\${L}"><div class="flat-shell"><div class="flat-top"><b>لوحة اليوم</b><span>4 مهام</span></div><div class="flat-tiles"><i class="blue">✉</i><i class="yellow">★</i><i class="green">✓</i><i class="red">♥</i></div><div class="flat-line"></div></div></div>\`;
+  case 'minimalism': return \`<div class="style-visual style-minimalism\${L}"><div class="min-page"><small>ATELIER 01</small><b>أقل،<br>لكن أدق.</b><p>قطعة واحدة مصممة لتدوم.</p><span>استكشف المجموعة</span></div></div>\`;
+  case 'claymorphism': return \`<div class="style-visual style-claymorphism\${L}"><div class="clay-card"><span class="clay-fire">✦</span><small>سلسلة الصباح</small><b>12 يومًا</b><div class="clay-action">تم اليوم ✓</div><i>+2</i></div></div>\`;
+  case 'vernacular-web': return \`<div class="style-visual style-vernacular-web\${L}"><div class="vw-page"><div>✦ ☆ ✦</div><b>مرحبًا بصفحتي!</b><marquee>UNDER CONSTRUCTION</marquee><p>هذه الصفحة عن الصور والخرائط والموسيقى.</p><u>وقّع سجل الزوار</u><small>الزائر رقم 001337</small></div></div>\`;
+  case 'aqua': return \`<div class="style-visual style-aqua\${L}"><div class="aqua-window"><div class="aqua-title"><i></i><i></i><i></i><b>حفظ باسم</b></div><label>الاسم <span>تصميم-aqua.psd</span></label><label>المكان <span>Documents</span></label><div class="aqua-actions"><em>إلغاء</em><strong>حفظ</strong></div></div></div>\`;
+  case 'windows-aero': return \`<div class="style-visual style-windows-aero\${L}"><div class="aero-window"><div class="aero-title"><span>نسخ الملفات</span><i>×</i></div><div class="aero-body"><b>جارٍ نسخ 3 عناصر…</b><div class="aero-progress"><i></i></div><small>42% مكتمل · 12 MB/s</small><em>إلغاء</em></div></div></div>\`;
+  default:return \`<div class="style-visual generic-style\${L}"><b>\${esc(s.ar)}</b></div>\`;
+ }
+}
+
 function styles(){
  setMeta('ما اسم هذا الأسلوب؟ — UI بالعربي','أطلس بصري عربي للأنماط التصميمية مع الإشارات التي تميز كل أسلوب.','styles/');
  const examples=[
   {label:'أزرار ناعمة خارجة من الخلفية',slug:'neumorphism'},
   {label:'بطاقات زجاجية فوق خلفية ملونة',slug:'glassmorphism'},
   {label:'ألوان فاقعة وحدود سوداء وظلال حادة',slug:'neobrutalism'},
-  {label:'كروم وفقاعات ولمعان الألفينات',slug:'y2k'}
+  {label:'لمعان كروم وفقاعات أوائل الألفية',slug:'y2k'},
+  {label:'أزرار زجاجية تبدو كقطرات ماء',slug:'liquid-glass'}
  ];
- app.innerHTML=nav('styles')+`<main id="main"><section class="hero shell stylehero"><div class="sectionlabel">سمِّ هذا المظهر</div><h1>ما اسم هذا الأسلوب؟</h1><p>أطلس الأنماط البصرية. تعرّف على الاسم الحقيقي للمظهر، الإشارات التي تصنع هويته، وما الذي يفرقه عن أقرب أسلوب مشابه.</p><div class="examples">${examples.map(x=>`<button data-style-example="${esc(x.label)}" data-style-slug="${x.slug}">“${esc(x.label)}”</button>`).join('')}</div><div class="searchwrap"><span class="searchicon">⌕</span><input id="stylesearch" class="search" placeholder="صف الأسلوب بطريقتك…"><kbd>⌘K</kbd></div></section><section class="shell"><div id="stylegrid" class="style-grid"></div><div class="atlasnote"><h2>أطلس مضبوط، وليس قائمة عشوائية</h2><p>لا يوجد شيء اسمه قائمة صادقة لكل أنماط التصميم. نضيف الأسلوب عندما يكون له اسم قابل للتوثيق وإشارات بصرية واضحة وعينة يمكن التعرف عليها.</p><a href="#/">تبحث عن عنصر تحكم؟ تصفح عناصر UI ←</a></div></section></main>`+footer();
- const input=document.querySelector('#stylesearch');let forced='';
- const draw=()=>{const q=norm(input.value);const list=forced?D.styles.filter(s=>s.slug===forced):D.styles.filter(s=>!q||norm([s.ar,s.en,s.desc,...s.signals].join(' ')).includes(q));document.querySelector('#stylegrid').innerHTML=list.length?list.map(s=>`<a class="style-card" href="#/style/${s.slug}"><div class="style-demo ${s.slug}"><span>${esc(s.en)}</span></div><div class="styletype">${esc(s.status)}</div><h3>${esc(s.ar)}</h3><div class="en">${esc(s.en)}</div><p>${esc(s.desc)}</p><div class="signals">${s.signals.map(x=>`<span>${esc(x)}</span>`).join('')}</div></a>`).join(''):`<div class="style-empty">لم نجد أسلوبًا يطابق هذا الوصف. جرّب اسمًا أو وصفًا آخر.</div>`};
- draw();input.oninput=()=>{forced='';draw()};document.querySelectorAll('[data-style-example]').forEach(b=>b.onclick=()=>{forced=b.dataset.styleSlug;input.value=b.dataset.styleExample;draw();input.focus()});bindGlossary()
+ app.innerHTML=nav('styles')+\`<main id="main">
+   <section class="styles-hero shell">
+     <div class="styles-kicker">سمِّ هذا المظهر</div>
+     <h1>ما اسم هذا الأسلوب؟</h1>
+     <p>أطلس بصري للأنماط. تعرّف على الاسم المتداول للمظهر، الإشارات التي تصنع هويته، وما الذي يفرقه عن أقرب أسلوب مشابه.</p>
+     <div class="styles-describe">صفه بطريقتك…</div>
+     <div class="styles-examples">\${examples.map(x=>\`<button type="button" data-style-example="\${esc(x.label)}" data-style-slug="\${x.slug}">“\${esc(x.label)}”</button>\`).join('')}</div>
+     <label class="styles-searchbox">
+       <span>⌕</span>
+       <input id="stylesearch" autocomplete="off" placeholder="مثال: زجاج ضبابي فوق خلفية ملونة…">
+       <kbd>⌘K</kbd>
+     </label>
+   </section>
+   <section class="styles-catalog shell">
+     <div id="stylegrid" class="atlas-grid"></div>
+     <div id="styleempty" class="style-empty" hidden>لم نجد أسلوبًا يطابق هذا الوصف. جرّب وصف المادة أو اللون أو الظلال.</div>
+     <div class="atlasnote">
+       <h2>أطلس مضبوط، وليس قائمة عشوائية</h2>
+       <p>لا توجد قائمة نهائية وصادقة لكل أنماط التصميم. نضيف النمط عندما يملك اسمًا قابلًا للتوثيق، وإشارات بصرية يمكن الدفاع عنها، ومعاينة يمكن التعرف عليها فورًا.</p>
+       <p class="atlas-research">قيد البحث: Swiss Style، Bauhaus، Art Deco، Art Nouveau، Memphis، Vaporwave، Internet Ugly.</p>
+       <a href="#/">تبحث عن عنصر تحكم، لا عن مظهر؟ تصفّح عناصر UI ←</a>
+     </div>
+   </section>
+ </main>\`+footer();
+
+ const input=document.querySelector('#stylesearch');
+ let forced='';
+ const draw=()=>{
+   const q=norm(input.value);
+   const list=forced
+     ?D.styles.filter(s=>s.slug===forced)
+     :D.styles.filter(s=>!q||norm([s.ar,s.en,s.status,s.desc,...(s.aliases||[]),...(s.called||[]),...(s.signals||[])].join(' ')).includes(q));
+   const grid=document.querySelector('#stylegrid');
+   grid.innerHTML=list.map(s=>\`<a class="atlas-card" href="#/style/\${s.slug}">
+     <div class="atlas-preview">\${styleSpecimen(s)}</div>
+     <div class="atlas-copy">
+       <div class="atlas-status">\${esc(s.status)}</div>
+       <h3>\${esc(s.ar)}</h3>
+       <div class="atlas-en" dir="ltr">\${esc(s.en)}</div>
+       <p>\${esc(s.desc)}</p>
+       <div class="atlas-signals">\${s.signals.slice(0,3).map(x=>\`<span>\${esc(x)}</span>\`).join('')}</div>
+     </div>
+   </a>\`).join('');
+   document.querySelector('#styleempty').hidden=list.length!==0;
+ };
+ draw();
+ input.oninput=()=>{forced='';draw()};
+ document.querySelectorAll('[data-style-example]').forEach(b=>b.onclick=()=>{
+   forced=b.dataset.styleSlug;
+   input.value=b.dataset.styleExample;
+   draw();
+   input.focus();
+ });
+ document.addEventListener('keydown',e=>{
+   if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){
+     e.preventDefault();input.focus();
+   }
+ },{once:true});
+ bindChrome();bindGlossary();
 }
-function styleDetail(slug){const s=D.styles.find(x=>x.slug===slug);if(!s)return notFound();setMeta(`${s.ar} — ${s.en}`,s.desc,`styles/${s.slug}/`);app.innerHTML=nav('styles')+`<main id="main" class="shell"><article class="detail"><div class="crumbs"><a href="#/styles">الأنماط</a><span>/</span><span>${esc(s.en)}</span></div><div class="specimen style-specimen"><div class="style-demo ${s.slug}"><span>${esc(s.ar)}</span></div></div><h1>${esc(s.ar)}</h1><div class="en detail-en">${esc(s.en)}</div><span class="badge">${esc(s.status)}</span><p class="lead">${esc(s.desc)}</p><section class="section"><h2>ما الذي يجعله هذا الأسلوب؟</h2><div class="anatomy">${s.signals.map((x,i)=>`<div class="part"><b>${i+1}. ${esc(x)}</b><p>إشارة بصرية أساسية تساعد على تمييز ${esc(s.ar)} من الأنماط القريبة.</p></div>`).join('')}</div></section><section class="section"><h2>Style Brief — جاهز للوكيل</h2><div class="prompt">طبّق أسلوب ${esc(s.ar)} (${esc(s.en)}). الإشارات الأساسية: ${s.signals.map(esc).join('؛ ')}. حافظ على قابلية القراءة، تباين النص، حالات التركيز، وبدائل مناسبة عند تقليل الحركة أو الشفافية.</div></section><section class="section"><h2>غالبًا يختلط مع</h2><p><b>${esc(s.confused)}</b> — افصل بينهما بحسب الإشارات الأساسية السابقة، لا بحسب اللون وحده.</p></section><section class="section"><h2>في الكود — نقطة بداية</h2><div class="prompt">${esc(s.code)}</div></section><section class="section"><h2>الإتاحة وسوء الاستخدام</h2><ul><li>اختبر تباين النص في أسوأ حالة للخلفية.</li><li>لا تجعل الشكل البصري يحل محل الدلالة أو حالات التركيز.</li><li>احترم prefers-reduced-motion ووفّر بديلًا للشفافية الثقيلة عند الحاجة.</li></ul></section></article></main>`+footer();bindChrome();bindGlossary()}
+
+function styleDetail(slug){
+ const s=D.styles.find(x=>x.slug===slug);
+ if(!s)return notFound();
+ setMeta(\`\${s.ar} — \${s.en}\`,s.desc,\`styles/\${s.slug}/\`);
+ const confused=D.styles.find(x=>x.en===s.confused);
+ const idx=D.styles.indexOf(s);
+ const related=[confused,...Array.from({length:5},(_,i)=>D.styles[(idx+i+1)%D.styles.length])]
+   .filter((x,i,a)=>x&&x!==s&&a.indexOf(x)===i).slice(0,4);
+
+ app.innerHTML=nav('styles')+\`<main id="main" class="shell style-detail-shell">
+   <article class="style-detail">
+     <nav class="style-crumbs"><a href="#/styles">الأنماط</a><span>/</span><span dir="ltr">\${esc(s.en)}</span></nav>
+
+     <section class="style-detail-visual">
+       \${styleSpecimen(s,true)}
+     </section>
+
+     <header class="style-detail-head">
+       <h1>\${esc(s.ar)}</h1>
+       <div class="style-detail-en" dir="ltr">\${esc(s.en)}</div>
+       <span class="style-status-badge">\${esc(s.status)}</span>
+       <p class="style-origin-summary">\${esc(s.origin)}</p>
+       <p class="style-aliases"><b>يُسمى أيضًا</b> \${(s.aliases||[]).map(esc).join('، ')}</p>
+       <p class="style-lead">\${esc(s.desc)}</p>
+       <p class="style-scope"><b>النطاق:</b> \${esc(s.scope)}</p>
+     </header>
+
+     <section class="style-section style-called">
+       <h2>إذا كنت تسميه…</h2>
+       <div class="style-called-list">\${(s.called||[]).map(x=>\`<span>“\${esc(x)}”</span>\`).join('')}</div>
+       <p>…فأنت تقصد <b>\${esc(s.ar)}</b> <span dir="ltr">(\${esc(s.en)})</span>.</p>
+     </section>
+
+     <section class="style-section">
+       <h2>ما الذي يجعله هذا الأسلوب؟ — الإشارات المحدِّدة</h2>
+       <div class="style-signal-list">
+         \${(s.signalDetails||[]).map((x,i)=>\`<div class="style-signal">
+           <i>\${i+1}</i>
+           <div><small>\${esc(x.group)}</small><b>\${esc(x.title)}</b><p>\${esc(x.desc)}</p></div>
+         </div>\`).join('')}
+       </div>
+     </section>
+
+     <section class="style-section">
+       <h2>Style Brief — جاهز لوكيل البرمجة</h2>
+       <div class="style-brief prompt">
+         <button class="copybtn" type="button" data-copy="\${encodeURIComponent(s.brief)}">نسخ</button>
+         <p>\${esc(s.brief)}</p>
+       </div>
+     </section>
+
+     \${confused?\`<section class="style-section">
+       <h2>غالبًا يختلط مع <a href="#/style/\${confused.slug}">\${esc(confused.ar)}</a></h2>
+       <p class="style-section-intro">نفس نوع الواجهة، لكن بأسلوبين مختلفين. الفرق في المادة والضوء والهندسة، لا في اللون وحده.</p>
+       <div class="style-versus">
+         <a class="style-vs-card" href="#/style/\${s.slug}">
+           <div>\${styleSpecimen(s)}</div><b>\${esc(s.ar)}</b><span dir="ltr">\${esc(s.en)}</span>
+         </a>
+         <a class="style-vs-card" href="#/style/\${confused.slug}">
+           <div>\${styleSpecimen(confused)}</div><b>\${esc(confused.ar)}</b><span dir="ltr">\${esc(confused.en)}</span>
+         </a>
+       </div>
+       <div class="style-vs-copy">
+         <p><b>\${esc(s.ar)}:</b> \${esc(s.signals.slice(0,2).join('، '))}.</p>
+         <p><b>\${esc(confused.ar)}:</b> \${esc(confused.signals.slice(0,2).join('، '))}.</p>
+       </div>
+     </section>\`:''}
+
+     <section class="style-section">
+       <h2>Full Style DNA</h2>
+       <div class="style-dna">
+         \${(s.signalDetails||[]).map(x=>\`<div class="dna-row"><span>\${esc(x.group)}</span><em>محدِّد</em><b>\${esc(x.title)}</b><p>\${esc(x.desc)}</p></div>\`).join('')}
+         <div class="dna-row"><span>إشارة داعمة</span><em>داعم</em><b>ما الذي يعزز الأسلوب؟</b><p>\${esc(s.supporting)}</p></div>
+         <div class="dna-row avoid"><span>تجنّب</span><em>تجنّب</em><b>ما الذي يخرجه من هويته؟</b><p>\${esc(s.avoid)}</p></div>
+       </div>
+     </section>
+
+     <section class="style-section">
+       <h2>في الكود — نقاط بداية اختيارية</h2>
+       <p class="style-section-intro">الـBrief أعلاه محايد للأطر؛ هذه مقابض عملية عندما تناسب التقنية المستخدمة.</p>
+       <div class="tablewrap">
+         <table class="style-code-table">
+           <tbody>\${(s.codeRows||[]).map(r=>\`<tr><td>\${esc(r.stack)}</td><td><code dir="ltr">\${esc(r.symbol)}</code></td><td>\${esc(r.note)}</td></tr>\`).join('')}</tbody>
+         </table>
+       </div>
+     </section>
+
+     <section class="style-section">
+       <h2>الإتاحة وسوء الاستخدام</h2>
+       <ul class="style-access">\${(s.accessibility||[]).map(x=>\`<li>\${esc(x)}</li>\`).join('')}</ul>
+     </section>
+
+     <section class="style-section">
+       <h2>الأصل والسياق</h2>
+       <p class="style-origin-long">\${esc(s.origin)}</p>
+     </section>
+
+     <section class="style-section">
+       <h2>راجع أيضًا</h2>
+       <div class="style-related">\${related.map(r=>\`<a href="#/style/\${r.slug}">
+         <div>\${styleSpecimen(r)}</div><b>\${esc(r.ar)}</b><span dir="ltr">\${esc(r.en)}</span>
+       </a>\`).join('')}</div>
+     </section>
+
+     <p class="detail-source-note">المرجع البصري والوظيفي: <a href="https://namethatui.com/styles" target="_blank" rel="noopener">Name That UI — Styles ↗</a>. الشرح العربي والمعاينات في هذه المنصة مكتوبة ومبنية للمشروع العربي.</p>
+   </article>
+ </main>\`+footer();
+ bindCopy();bindChrome();bindGlossary();
+}
 
 function compare(){setMeta('العناصر التي يكثر الخلط بينها — UI بالعربي','مقارنات عملية بين عناصر واجهة متشابهة بصريًا لكن مختلفة في الوظيفة والسلوك.','compare/');app.innerHTML=nav('compare')+`<main id="main" class="shell"><section class="hero"><div class="eyebrow">Commonly Confused</div><h1>عناصر تبدو متشابهة، لكن الفرق حاسم.</h1><p>كل مقارنة تبدأ بالفرق الذي يمكنك ملاحظته مباشرة في البكسلات أو السلوك.</p></section><div class="compare-list">${D.comparisons.map(c=>`<article class="compare"><h3>${esc(c.title)}</h3><p>${esc(c.answer)}</p></article>`).join('')}</div></main>`+footer();bindChrome();bindGlossary()}
 function translate(){setMeta('جدول الترجمة — AppKit وSwiftUI','جدول عربي searchable يربط العنصر المرئي باسمه في AppKit وSwiftUI.','translate/');app.innerHTML=nav('translate')+`<main id="main" class="shell"><section class="hero"><div class="eyebrow">الاسم البصري · AppKit · SwiftUI</div><h1>جدول الترجمة</h1><p>ابحث عن الشيء الذي تراه، ثم خذ الاسم المناسب للتقنية التي يستخدمها مشروع macOS.</p><div class="searchwrap"><input id="tsearch" class="search" inputmode="search" placeholder="جرّب: segmented أو NSPopUpButton أو تنبيه"></div></section><div id="ttable"></div></main>`+footer();const draw=()=>{const q=norm(document.querySelector('#tsearch').value);const rows=D.translations.filter(r=>!q||norm(Object.values(r).join(' ')).includes(q));document.querySelector('#ttable').innerHTML=`<div class="tablewrap"><table class="translation"><thead><tr><th>العنصر</th><th>AppKit</th><th>SwiftUI</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.thing)}</td><td><code>${esc(r.appkit)}</code></td><td><code>${esc(r.swiftui)}</code></td></tr>`).join('')}</tbody></table></div><p class="tablecount">${rows.length} من ${D.translations.length} ترجمة</p>`};draw();document.querySelector('#tsearch').oninput=draw;bindChrome();bindGlossary()}
