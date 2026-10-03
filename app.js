@@ -252,7 +252,7 @@ function detail(slug){
    <article class="detail">
      <div class="detail-topbar">
        <nav class="crumbs" aria-label="مسار الصفحة">
-         <a href="#/">الفهرس</a><span>/</span><span>${e.category==='web'?'Web':'macOS'}</span>
+         <a href="${BASE}">الفهرس</a><span>/</span><a href="${BASE}${e.category}/">${e.category==='web'?'Web':'macOS'}</a>
        </nav>
        <div class="detail-actions" aria-label="إجراءات الصفحة">
          <button type="button" data-detail-save aria-pressed="false">☆ حفظ</button>
@@ -267,7 +267,6 @@ function detail(slug){
      </section>
 
      <header class="detail-heading">
-       <div class="detail-kicker">${e.category==='web'?'WEB':'macOS'}</div>
        <h1>${esc(e.ar)}</h1>
        <div class="detail-en" dir="ltr">${esc(e.en)}</div>
        <div class="detail-symbols" dir="ltr">/ <code>${esc(e.code)}</code> /</div>
@@ -297,7 +296,6 @@ function detail(slug){
 
      <section class="section prompt-section">
        <h2>Prompt — جاهز لوكيل البرمجة</h2>
-       <p class="section-intro">انسخ النص كما هو، ثم أضف تفاصيل مشروعك أو إطار العمل الذي تستخدمه.</p>
        <div class="prompt prompt-agent">
          <button class="copybtn" type="button" data-copy="${encodeURIComponent(e.prompt)}">نسخ</button>
          <p>${esc(e.prompt)}</p>
