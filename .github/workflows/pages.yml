@@ -455,7 +455,9 @@ jobs:
             assert((await p.evaluate(()=>localStorage.getItem('ui-theme')))==='light','Theme preference was not persisted');
 
             // Sitemap + direct metadata checks.
-            const sitemapText=await (await fetch(site+'sitemap.xml')).text();
+            const sitemapResponse=await p.goto(site+'sitemap.xml',{waitUntil:'networkidle0',timeout:60000});
+            assert(sitemapResponse&&sitemapResponse.ok(),`Sitemap HTTP failed: ${sitemapResponse?.status()}`);
+            const sitemapText=await sitemapResponse.text();
             const sitemapCount=(sitemapText.match(/<loc>/g)||[]).length;
             assert(sitemapCount===123,`Sitemap expected 123 URLs, got ${sitemapCount}`);
             assert(sitemapText.includes('/glossary/'),'Glossary missing from sitemap');
