@@ -481,6 +481,88 @@ jobs:
             console.log('LIVE V20 FINAL QA PASSED — Glossary, Saved, Submit, responsive sweep, light mode, SEO and sitemap valid.');
           }
           await stage20Qa();
+
+          async function stage21Qa(){
+            for(const width of [393,1440]){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1100,deviceScaleFactor:1});
+              const errors=[];
+              p.on('pageerror',e=>errors.push(String(e)));
+              await p.goto(site+'?homeqa=21#/',{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===81);
+
+              const home=await p.evaluate(()=>({
+                sponsor:document.querySelectorAll('.sponsor-strip').length,
+                sponsorLink:document.querySelector('.sponsor-strip a')?.textContent?.trim()||'',
+                oldSourceStrip:document.querySelectorAll('.source-strip').length,
+                navLinks:document.querySelectorAll('.sitehead .navlinks a').length,
+                headerSearch:document.querySelectorAll('#headerSearch,.headsearch').length,
+                version:document.querySelector('.brandbadge')?.textContent?.trim()||'',
+                fresh:document.querySelectorAll('.newweek a').length,
+                examples:document.querySelectorAll('.search-examples span').length,
+                search:document.querySelectorAll('#search').length,
+                surprise:document.querySelectorAll('#surprise').length,
+                filters:document.querySelectorAll('.filter-tabs [data-cat]').length,
+                sorts:document.querySelectorAll('.sort-tabs [data-sort]').length,
+                cards:document.querySelectorAll('#cards > .entry-card').length,
+                guides:document.querySelectorAll('.guidecards a').length,
+                footerLinks:document.querySelectorAll('.footer .footlinks a').length,
+                footerRss:document.querySelectorAll('.footer-rss a[href$="feed.xml"]').length,
+                attribution:document.querySelector('.footer-attribution a')?.href||'',
+                footerExtra:[...document.querySelectorAll('.footer .footlinks a')].some(a=>/المحفوظات|اقترح|المصطلحات|جدول الترجمة/.test(a.textContent)),
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+                order:[
+                  document.querySelector('.sponsor-strip')?.getBoundingClientRect().top,
+                  document.querySelector('.sitehead')?.getBoundingClientRect().top,
+                  document.querySelector('.hero')?.getBoundingClientRect().top,
+                  document.querySelector('.catalog')?.getBoundingClientRect().top,
+                  document.querySelector('.guides')?.getBoundingClientRect().top,
+                  document.querySelector('.footer')?.getBoundingClientRect().top
+                ]
+              }));
+
+              assert(home.sponsor===1,`Expected one sponsor strip at ${width}px`);
+              assert(home.sponsorLink.includes('$500/شهر'),`Sponsor strip copy mismatch at ${width}px`);
+              assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
+              assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
+              assert(home.headerSearch===0,`Reference homepage should not show the old header search field`);
+              assert(home.version==='21',`Visible version badge expected 21, got ${home.version}`);
+              assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
+              assert(home.examples===5,`Search examples expected 5, got ${home.examples}`);
+              assert(home.search===1,'Homepage search field missing');
+              assert(home.surprise===0,'Surprise button must not exist in V21 parity homepage');
+              assert(home.filters===3,`Expected 3 category filters, got ${home.filters}`);
+              assert(home.sorts===2,`Expected 2 sort controls, got ${home.sorts}`);
+              assert(home.cards===81,`Expected 81 cards, got ${home.cards}`);
+              assert(home.guides===3,`Expected 3 guide cards, got ${home.guides}`);
+              assert(home.footerLinks===3,`Footer expected 3 primary links, got ${home.footerLinks}`);
+              assert(home.footerRss===1,'Footer RSS action missing');
+              assert(home.attribution.includes('namethatui.com'),'Footer attribution to Name That UI missing');
+              assert(!home.footerExtra,'V20-only utilities leaked back into primary footer');
+              assert(home.overflow<=2,`Homepage overflow ${home.overflow}px at ${width}px`);
+              assert(home.order.every(Number.isFinite)&&home.order.every((v,i,a)=>i===0||v>=a[i-1]),`Homepage section order mismatch at ${width}px: ${home.order.join(',')}`);
+
+              await p.type('#search','zzzz-no-match-v21');
+              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===0&&!document.querySelector('#searchEmpty').hidden);
+              const empty=await p.evaluate(()=>({
+                visible:!document.querySelector('#searchEmpty').hidden,
+                title:document.querySelector('#searchEmpty b')?.textContent?.trim()||''
+              }));
+              assert(empty.visible,'No-results state did not appear');
+              assert(empty.title==='لا شيء يطابق هذا الوصف','No-results copy does not match reference structure');
+
+              await p.evaluate(()=>{
+                const i=document.querySelector('#search');
+                i.value='';
+                i.dispatchEvent(new Event('input',{bubbles:true}));
+              });
+              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===81&&document.querySelector('#searchEmpty').hidden);
+              assert(errors.length===0,`V21 homepage errors at ${width}px: ${errors.join(' | ')}`);
+              await p.close();
+            }
+            console.log('LIVE V21 HOMEPAGE PARITY QA PASSED — sponsor/header/hero/examples/search/filters/cards/guides/footer valid at 393px and 1440px.');
+          }
+          await stage21Qa();
           await browser.close();
           JS
           node card-qa.mjs
