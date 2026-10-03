@@ -50,7 +50,7 @@ function setMeta(title,desc,urlPath='',indexable=true){
 
 const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span class="sponsor-dot" aria-hidden="true"></span><b>SPONSOR</b><i></i><span>ضع اسمك هنا وصورتك على كل صفحة مصطلح</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">كن الراعي</a><span>· $500/mo</span></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="${BASE}"><strong>ui بالعربي</strong><i class="brandbadge">28</i></a>
+<a class="brand" href="${BASE}"><strong>ui بالعربي</strong><i class="brandbadge">29</i></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="${BASE}">العناصر</a><a class="${active==='styles'?'active':''}" href="${BASE}styles/">الأنماط</a></nav>
 <div class="headtools"><label class="headsearch"><span>⌕</span><input id="headerSearch" inputmode="search" autocomplete="off" placeholder="صف العنصر…" aria-label="بحث سريع"><kbd>⌘K</kbd></label><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر" title="تبديل المظهر">◔</button></div>
 </div></header>`;
