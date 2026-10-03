@@ -262,3 +262,65 @@ html{-webkit-text-size-adjust:100%}
  .nt-avatars span{width:28px;height:28px}
  .nt-multiselect{width:41%;min-width:82px}
 }
+
+/* Final homepage pixel polish v13 */
+@media(max-width:700px){
+  /* Pull catalog up to the reference position */
+  .hero{padding-bottom:34px}
+
+  /* Match original card rhythm: compact copy under each preview */
+  .entry-body{min-height:38px;padding-top:5px}
+  .entry-head h3{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:5.7px;
+    line-height:1.2;
+  }
+  .entry-head h3 span{font-size:5.1px}
+  .entry-code{font-size:4.25px;margin-top:3px}
+  .entry-body p{
+    font-size:4.8px;
+    line-height:1.38;
+    margin-top:3px;
+    -webkit-line-clamp:2;
+  }
+  .entries-grid{row-gap:10px}
+
+  /* Reference uses a subtler, wider dot grid */
+  .entry-preview{
+    background-image:radial-gradient(circle at 1px 1px,#22242a .75px,transparent .9px);
+    background-size:12px 12px;
+  }
+
+  /* Individual specimen calibration */
+  .nt-table{width:50%;font-size:4.6px}
+  .nt-timeline{width:45%;font-size:4.7px;padding:7px 8px}
+  .nt-timeline b{font-size:4.6px}
+  .nt-timeline small{font-size:3.7px}
+
+  .nt-presence{min-width:102px;gap:7px}
+  .nt-avatar{width:36px;height:36px;font-size:8.5px}
+  .nt-avatar i{width:8px;height:8px}
+  .nt-presence b{font-size:5.4px}
+  .nt-presence small{font-size:4px}
+
+  .nt-chat{width:53%;font-size:4.8px}
+  .nt-chat p{padding:5px 7px;border-radius:8px}
+  .nt-chat>small{font-size:3.5px}
+  .nt-chat .typing{font-size:3.8px;padding:2px 6px}
+
+  .nt-steps{width:47%;padding:9px 8px 16px}
+  .nt-steps>span{width:17px;height:17px}
+  .nt-steps>span small{top:20px;font-size:3.4px}
+  .nt-steps>i{max-width:23px}
+
+  .nt-avatars span{width:25px;height:25px;margin-left:-5px;font-size:4.8px}
+
+  .nt-multiselect{width:36%;min-width:76px;padding:4px 5px;font-size:4.3px}
+  .nt-selecttop{height:13px}
+  .nt-selecttop b{font-size:4.2px}
+  .nt-multiselect label{padding:1.8px 1px}
+
+  .nt-phone{width:50%;height:80%}
+}
