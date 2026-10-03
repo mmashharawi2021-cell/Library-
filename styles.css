@@ -3996,3 +3996,21 @@ body{font-size:14px;line-height:1.45}
     transition-duration:.001ms!important;
   }
 }
+
+
+/* V28 motion refinements */
+@keyframes nt-ease-dot{
+  0%,10%{transform:translate(0,0)}
+  45%{transform:translate(70px,-52px)}
+  75%,100%{transform:translate(142px,-78px)}
+}
+@keyframes nt-badge-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.entry-preview .curve svg circle:first-of-type{
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:nt-ease-dot 3.2s cubic-bezier(.25,.1,.25,1) infinite;
+}
+.entry-preview .nt-tabs .inbox i,
+.entry-preview .dockicon>span{
+  animation:nt-badge-breathe 2.1s ease-in-out infinite;
+}
