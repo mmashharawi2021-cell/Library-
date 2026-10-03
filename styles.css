@@ -3707,7 +3707,7 @@ body{font-size:14px;line-height:1.45}
   content:"";
   position:absolute;inset:0;
   pointer-events:none;
-  background:linear-gradient(180deg,#ffffff015,transparent 22%,#00000008);
+  background:linear-gradient(180deg,rgba(255,255,255,.005),transparent 22%,rgba(0,0,0,.03));
 }
 .entry-preview .ui-demo{
   min-height:0!important;
