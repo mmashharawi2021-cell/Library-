@@ -287,9 +287,11 @@ jobs:
               await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
               const trans=await p.evaluate(()=>({
                 rows:document.querySelectorAll('.translation-v2 tbody tr').length,
+                linked:document.querySelectorAll('.translation-v2 tbody td:first-child a').length,
                 overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
               }));
               assert(trans.rows===63,`Translation table expected 63 rows, got ${trans.rows}`);
+              assert(trans.linked>=55,`Translation table expected at least 55 linked terms, got ${trans.linked}`);
               assert(trans.overflow<=2,`Translation page overflow ${trans.overflow}px at ${width}px`);
               await p.type('#tsearch','NSButton');
               await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length>0 && document.querySelectorAll('.translation-v2 tbody tr').length<63);
