@@ -30,10 +30,15 @@ jobs:
           await page.goto('https://namethatui.com/',{waitUntil:'networkidle0',timeout:90000});
 
           const cards=await page.evaluate(()=>{
-            const links=[...document.querySelectorAll('a[href^="/web/"],a[href^="/macos/"]')];
+            const links=[...document.querySelectorAll('a[href]')].filter(a=>{
+              try{
+                const u=new URL(a.href,location.origin);
+                return u.origin===location.origin && (/^\\/web\\//.test(u.pathname)||/^\\/macos\\//.test(u.pathname));
+              }catch{return false}
+            });
             const groups=new Map();
             for(const a of links){
-              const href=a.getAttribute('href');
+              const href=new URL(a.href,location.origin).pathname;
               const r=a.getBoundingClientRect();
               if(r.width<40||r.height<40) continue;
               const area=r.width*r.height;
@@ -52,6 +57,7 @@ jobs:
               .map((x,i)=>({...x,index:i+1}));
           });
 
+          if(cards.length<80){throw new Error('Reference audit found only '+cards.length+' cards');}
           fs.mkdirSync('reference-cards',{recursive:true});
           fs.writeFileSync('reference-cards/index.json',JSON.stringify(cards,null,2));
 
