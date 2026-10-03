@@ -40,9 +40,10 @@ jobs:
 
             const result=await page.evaluate(()=>{
               const cards=[...document.querySelectorAll('#cards > .entry-card')];
-              const previews=[...document.querySelectorAll('#cards > .entry-card > .entry-preview')];
-              const demos=[...document.querySelectorAll('#cards > .entry-card > .entry-preview .ui-demo')];
+              const previews=cards.map(c=>c.querySelector(':scope > .entry-preview')).filter(Boolean);
+              const demos=cards.map(c=>c.querySelector('.entry-preview .ui-demo')).filter(Boolean);
               const demoClasses=demos.map(el=>[...el.classList].find(c=>c.startsWith('demo-'))).filter(Boolean);
+              const missingPreview=cards.map((c,i)=>c.querySelector(':scope > .entry-preview')?null:{i,href:c.getAttribute('href'),html:c.innerHTML.slice(0,160)}).filter(Boolean);
               const overflowing=previews.map((p,i)=>{
                 const d=p.querySelector('.ui-demo');
                 if(!d) return i;
@@ -56,13 +57,14 @@ jobs:
                 uniqueDemoClasses:new Set(demoClasses).size,
                 fallbacks:document.querySelectorAll('#cards > .entry-card .fallback-demo').length,
                 uniqueMarkup:new Set(previews.map(p=>p.innerHTML)).size,
+                missingPreview,
                 overflowing,
                 pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
               };
             });
 
             assert(result.cards===81,`Expected 81 cards, got ${result.cards} at ${width}px`);
-            assert(result.previews===81,`Expected 81 previews, got ${result.previews}`);
+            assert(result.previews===81,`Expected 81 previews, got ${result.previews}. Missing: ${JSON.stringify(result.missingPreview)}`);
             assert(result.demos===81,`Expected 81 demos, got ${result.demos}`);
             assert(result.uniqueDemoClasses===81,`Expected 81 unique demo classes, got ${result.uniqueDemoClasses}`);
             assert(result.fallbacks===0,`Fallback demos found: ${result.fallbacks}`);
