@@ -49,11 +49,11 @@ function setMeta(title,desc,urlPath='',indexable=true){
 
 const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span>راعِ الموقع</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">اسمك هنا · $500/شهر ↗</a></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">22</i><small>قاموس الواجهة</small></a>
+<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">23</i><small>قاموس الواجهة</small></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="#/">العناصر</a><a class="${active==='styles'?'active':''}" href="#/styles">الأنماط</a></nav>
 <div class="headtools"><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر">◐</button></div>
 </div></header>`;
-const footer=()=>`<footer class="footer"><div class="shell footgrid"><div class="footer-brandblock"><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p><div class="footer-rss"><span>مصطلحات جديدة تُضاف باستمرار</span><a href="/Library-/feed.xml">تابع عبر RSS</a></div></div><nav class="footlinks"><a href="#/compare">العناصر المتشابهة</a><a href="#/methodology">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية ↗</a></nav><div class="footer-attribution">المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات العربية أصلية لهذا المشروع.</div></div></footer><div id="glossary" class="glossary" role="status"></div>`;
+const footer=()=>`<footer class="footer"><div class="shell footgrid"><div class="footer-brandblock"><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p><div class="footer-rss"><span>مصطلحات جديدة تُضاف باستمرار</span><a href="/Library-/feed.xml">تابع عبر RSS</a></div></div><nav class="footlinks"><a href="${BASE}vs/">العناصر المتشابهة</a><a href="#/methodology">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية ↗</a></nav><div class="footer-attribution">المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات العربية أصلية لهذا المشروع.</div></div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function bindChrome(){
  const t=document.querySelector('#themeToggle');
@@ -707,6 +707,18 @@ const comparisonRules={
   "الموقع داخل النظام يحسم كثيرًا من الالتباس."
  ]
 };
+const comparisonRouteSlugs={
+ "dropdown-select-combobox":"dropdown-vs-select-vs-combobox",
+ "tabs-vs-segmented":"tabs-vs-segmented-control",
+ "context-vs-dropdown":"context-menu-vs-dropdown",
+ "masonry-vs-bento":"masonry-vs-bento-grid",
+ "sheet-vs-alert-mac":"sheet-vs-alert",
+ "empty-vs-skeleton":"empty-state-vs-skeleton"
+};
+const comparisonPath=c=>`vs/${comparisonRouteSlugs[c.slug]||c.slug}/`;
+function comparisonByRouteSlug(slug){
+  return D.comparisons.find(c=>c.slug===slug||(comparisonRouteSlugs[c.slug]||c.slug)===slug);
+}
 function comparisonItems(c){
   return (comparisonEntries[c.slug]||[]).map(bySlug).filter(Boolean);
 }
@@ -714,17 +726,17 @@ function comparisonCard(e){
   return `<a class="vs-entry" href="${entryHref(e)}"><div class="vs-entry-preview">${demo(e)}</div><div class="vs-entry-copy"><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><small>${e.category==='web'?'Web':'macOS'}</small></div></a>`;
 }
 function compare(){
-  setMeta('العناصر التي يكثر الخلط بينها — UI بالعربي','مقارنات عملية بين عناصر واجهة متشابهة بصريًا لكن مختلفة في الوظيفة والسلوك.','compare/');
-  app.innerHTML=nav('compare')+`<main id="main"><section class="compare-hero shell"><div class="compare-kicker">Commonly Confused</div><h1>تبدو متشابهة.<br>لكن الفرق حاسم.</h1><p>مقارنات قصيرة تبدأ من الشيء الذي يمكنك ملاحظته مباشرة: المكان، السلوك، نطاق التأثير، والدلالة.</p></section><section class="shell confused-grid">${D.comparisons.map((c,i)=>{const items=comparisonItems(c).slice(0,2);return `<a class="confused-card" href="#/vs/${c.slug}"><div class="confused-number">${String(i+1).padStart(2,'0')}</div><h2>${esc(c.title)}</h2><p>${esc(c.answer)}</p><div class="confused-mini">${items.map(e=>`<div><span>${esc(e.ar)}</span><small dir="ltr">${esc(e.en)}</small></div>`).join('')}</div><span class="confused-open">افتح المقارنة ←</span></a>`}).join('')}</section></main>`+footer();
+  setMeta('العناصر التي يكثر الخلط بينها — UI بالعربي','شيئان يبدوان متشابهين، لكن بينهما فرق حاسم. اختر الزوج الذي يربكك وستجد الجواب مباشرة ثم العلامات التي يمكنك فحصها بصريًا.','vs/');
+  app.innerHTML=nav('compare')+`<main id="main" class="shell compare-index"><header class="compare-index-head"><h1>العناصر التي يكثر الخلط بينها.</h1><p>شيئان يبدوان متشابهين، لكن بينهما فرق حاسم. اختر الزوج الذي يربكك؛ كل صفحة تعطيك الجواب مباشرة، ثم العلامات التي يمكنك فحصها في الواجهة أمامك.</p></header><section class="confused-list">${D.comparisons.map(c=>`<a class="confused-row" href="${BASE}${comparisonPath(c)}"><h2>${esc(c.title)}</h2><p>${esc(c.answer)}</p></a>`).join('')}</section></main>`+footer();
   bindChrome();bindGlossary();
 }
 function compareDetail(slug){
-  const c=D.comparisons.find(x=>x.slug===slug);
+  const c=comparisonByRouteSlug(slug);
   if(!c)return notFound();
   const items=comparisonItems(c);
   const rules=comparisonRules[c.slug]||[c.answer];
-  setMeta(`${c.title} — UI بالعربي`,c.answer,`vs/${c.slug}/`);
-  app.innerHTML=nav('compare')+`<main id="main" class="shell vs-shell"><article class="vs-detail"><nav class="vs-crumbs"><a href="#/compare">المتشابهات</a><span>/</span><span>${esc(c.title)}</span></nav><header class="vs-head"><div class="compare-kicker">COMMONLY CONFUSED</div><h1>${esc(c.title)}</h1><p>${esc(c.answer)}</p></header><section class="vs-showcase">${items.map(comparisonCard).join('')}</section><section class="vs-section"><h2>كيف تفرّق بينها؟</h2><ul class="vs-rules">${rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="vs-section"><h2>القرار السريع</h2><div class="vs-decision">${items.map((e,i)=>`<div><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><p>${esc(rules[Math.min(i,rules.length-1)]||c.answer)}</p><a href="${entryHref(e)}">افتح الإدخال الكامل ←</a></div>`).join('')}</div></section><p class="detail-source-note">المرجع البنيوي للمقارنات: <a href="https://namethatui.com/vs" target="_blank" rel="noopener">Name That UI — Commonly Confused ↗</a>. الشرح العربي هنا مكتوب للمشروع العربي.</p></article></main>`+footer();
+  setMeta(`${c.title} — UI بالعربي`,c.answer,comparisonPath(c));
+  app.innerHTML=nav('compare')+`<main id="main" class="shell vs-shell"><article class="vs-detail"><nav class="vs-crumbs"><a href="${BASE}">الفهرس</a><span>/</span><a href="${BASE}vs/">العناصر المتشابهة</a></nav><header class="vs-head"><h1>${esc(c.title)}</h1><p>${esc(c.answer)}</p></header><section class="vs-section vs-tells"><h2>كيف تفرّق بينها؟</h2><ul class="vs-rules">${rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="vs-section vs-full-entries"><h2>الإدخالات الكاملة — الأسماء، التشريح وPrompts الجاهزة</h2><div class="vs-showcase">${items.map(comparisonCard).join('')}</div></section><p class="vs-back">هل تقصد زوجًا مختلفًا؟ <a href="${BASE}vs/">شاهد كل العناصر التي يكثر الخلط بينها</a></p></article></main>`+footer();
   bindDemos(document.querySelector('.vs-showcase'));bindChrome();bindGlossary();
 }
 const translationEntryMap={
@@ -901,7 +913,7 @@ function routeFromLocation(){
   if((seg[0]==='web'||seg[0]==='macos')&&seg.length===1) return `/platform/${seg[0]}`;
   if(seg[0]==='styles'&&seg[1]) return `/style/${seg[1]}`;
   if(seg[0]==='styles') return '/styles';
-  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(['compare','translate','methodology','guides','glossary','saved','submit'].includes(seg[0])) return `/${seg[0]}`;
+  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(seg[0]==='vs') return '/compare';if(['compare','translate','methodology','guides','glossary','saved','submit'].includes(seg[0])) return `/${seg[0]}`;
   if(seg[0]==='appkit-vs-swiftui') return '/guide/appkit-swiftui';
   if(seg[0]==='swift-vs-electron') return '/guide/swift-electron';
   return '/404';
