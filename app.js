@@ -541,7 +541,6 @@ function styleDetail(slug){
        </a>`).join('')}</div>
      </section>
 
-     <p class="detail-source-note">المرجع البصري والوظيفي: <a href="https://namethatui.com/styles" target="_blank" rel="noopener">Name That UI — Styles ↗</a>. الشرح العربي والمعاينات في هذه المنصة مكتوبة ومبنية للمشروع العربي.</p>
    </article>
  </main>`+footer();
  bindCopy();bindChrome();bindGlossary();
