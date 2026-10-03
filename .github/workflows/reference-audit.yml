@@ -1,0 +1,79 @@
+name: Reference Card Audit
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Puppeteer
+        run: npm install --no-save puppeteer-core@24
+
+      - name: Capture Name That UI cards
+        run: |
+          cat > audit.mjs <<'JS'
+          import fs from 'node:fs';
+          import puppeteer from 'puppeteer-core';
+
+          const browser=await puppeteer.launch({
+            headless:true,
+            executablePath:'/usr/bin/google-chrome',
+            args:['--no-sandbox']
+          });
+          const page=await browser.newPage();
+          await page.setViewport({width:1440,height:1200,deviceScaleFactor:1});
+          await page.goto('https://namethatui.com/',{waitUntil:'networkidle0',timeout:90000});
+
+          const cards=await page.evaluate(()=>{
+            const links=[...document.querySelectorAll('a[href^="/web/"],a[href^="/macos/"]')];
+            const groups=new Map();
+            for(const a of links){
+              const href=a.getAttribute('href');
+              const r=a.getBoundingClientRect();
+              if(r.width<40||r.height<40) continue;
+              const area=r.width*r.height;
+              const prev=groups.get(href);
+              if(!prev||area>prev.area){
+                groups.set(href,{
+                  href,
+                  text:(a.innerText||'').trim(),
+                  area,
+                  x:r.x,y:r.y,width:r.width,height:r.height
+                });
+              }
+            }
+            return [...groups.values()]
+              .sort((a,b)=>a.y-b.y||a.x-b.x)
+              .map((x,i)=>({...x,index:i+1}));
+          });
+
+          fs.mkdirSync('reference-cards',{recursive:true});
+          fs.writeFileSync('reference-cards/index.json',JSON.stringify(cards,null,2));
+
+          for(const c of cards){
+            const el=await page.$(`a[href="${c.href}"]`);
+            const all=await page.$$(`a[href="${c.href}"]`);
+            let best=null,bestArea=0;
+            for(const e of all){
+              const box=await e.boundingBox();
+              if(box&&box.width*box.height>bestArea){best=e;bestArea=box.width*box.height;}
+            }
+            if(!best) continue;
+            const safe=String(c.index).padStart(2,'0')+'-'+c.href.split('/').filter(Boolean).pop().replace(/[^a-z0-9-]/gi,'_');
+            await best.screenshot({path:`reference-cards/${safe}.png`});
+          }
+
+          console.log(JSON.stringify({count:cards.length,first:cards.slice(0,10),last:cards.slice(-5)},null,2));
+          await browser.close();
+          JS
+          node audit.mjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reference-cards-audit
+          path: reference-cards
