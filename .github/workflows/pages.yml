@@ -287,12 +287,12 @@ jobs:
               p.on('pageerror',e=>errors.push(String(e)));
 
               await p.goto(site+'?contentqa=19#/compare',{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForSelector('.confused-grid > .confused-card');
+              await p.waitForSelector('.confused-list > .confused-row');
               const comp=await p.evaluate(()=>({
-                cards:document.querySelectorAll('.confused-grid > .confused-card').length,
+                cards:document.querySelectorAll('.confused-list > .confused-row').length,
                 overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
               }));
-              assert(comp.cards===18,`Expected 18 comparison cards, got ${comp.cards} at ${width}px`);
+              assert(comp.cards===18,`Expected 18 comparison rows, got ${comp.cards} at ${width}px`);
               assert(comp.overflow<=2,`Comparison index overflow ${comp.overflow}px at ${width}px`);
 
               const comparisonSlugs=await p.evaluate(()=>window.UI_AR_DATA.comparisons.map(c=>c.slug));
