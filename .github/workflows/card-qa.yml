@@ -39,9 +39,9 @@ jobs:
             await page.waitForSelector('.entry-card');
 
             const result=await page.evaluate(()=>{
-              const cards=[...document.querySelectorAll('.entry-card')];
-              const previews=[...document.querySelectorAll('.entry-preview')];
-              const demos=[...document.querySelectorAll('.entry-preview .ui-demo')];
+              const cards=[...document.querySelectorAll('#cards > .entry-card')];
+              const previews=[...document.querySelectorAll('#cards > .entry-card > .entry-preview')];
+              const demos=[...document.querySelectorAll('#cards > .entry-card > .entry-preview .ui-demo')];
               const demoClasses=demos.map(el=>[...el.classList].find(c=>c.startsWith('demo-'))).filter(Boolean);
               const overflowing=previews.map((p,i)=>{
                 const d=p.querySelector('.ui-demo');
@@ -54,7 +54,7 @@ jobs:
                 previews:previews.length,
                 demos:demos.length,
                 uniqueDemoClasses:new Set(demoClasses).size,
-                fallbacks:document.querySelectorAll('.fallback-demo').length,
+                fallbacks:document.querySelectorAll('#cards > .entry-card .fallback-demo').length,
                 uniqueMarkup:new Set(previews.map(p=>p.innerHTML)).size,
                 overflowing,
                 pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
@@ -73,13 +73,13 @@ jobs:
 
             if(width===393){
               await page.click('[data-cat="web"]');
-              await page.waitForFunction(()=>document.querySelectorAll('.entry-card').length===49);
-              const webCount=await page.$$eval('.entry-card',els=>els.length);
+              await page.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===49);
+              const webCount=await page.$eval('#cards > .entry-card',els=>els.length);
               assert(webCount===49,`Web filter expected 49, got ${webCount}`);
 
               await page.click('[data-cat="macos"]');
-              await page.waitForFunction(()=>document.querySelectorAll('.entry-card').length===32);
-              const macCount=await page.$$eval('.entry-card',els=>els.length);
+              await page.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===32);
+              const macCount=await page.$eval('#cards > .entry-card',els=>els.length);
               assert(macCount===32,`macOS filter expected 32, got ${macCount}`);
             }
 
