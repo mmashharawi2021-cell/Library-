@@ -34,8 +34,21 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs');
-          const r=JSON.parse(fs.readFileSync('dist/build-report.json','utf8'));
-          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63};
+          const raw=fs.readFileSync('data.js','utf8')
+            .replace(/^window\\.UI_AR_DATA\\s*=\\s*/,'')
+            .replace(/;\\s*$/,'');
+          const d=JSON.parse(raw);
+          const app=fs.readFileSync('app.js','utf8');
+          const r={
+            entries:d.entries.length,
+            web:d.entries.filter(e=>e.category==='web').length,
+            macos:d.entries.filter(e=>e.category==='macos').length,
+            styles:d.styles.length,
+            comparisons:d.comparisons.length,
+            translations:d.translations.length,
+            demoCases:(app.match(/case\\s+'[^']+'/g)||[]).length
+          };
+          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,demoCases:81};
           for(const [k,v] of Object.entries(expected)){
             if(r[k]!==v) throw new Error(`${k}: expected ${v}, got ${r[k]}`);
           }
