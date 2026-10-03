@@ -4014,3 +4014,8 @@ body{font-size:14px;line-height:1.45}
 .entry-preview .dockicon>span{
   animation:nt-badge-breathe 2.1s ease-in-out infinite;
 }
+
+
+/* V28 chrome priority fix — overrides the old V27 hide rule */
+.sitehead .headtools{display:flex!important}
+.sitehead .themebtn{display:grid!important}
