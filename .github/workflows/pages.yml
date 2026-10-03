@@ -47,7 +47,7 @@ jobs:
             styles:d.styles.length,
             comparisons:d.comparisons.length,
             translations:d.translations.length,
-            demoCases:(app.match(/case\\s+'[^']+'/g)||[]).length
+            demoCases:app.split("case '").length-1
           };
           const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,demoCases:81};
           for(const [k,v] of Object.entries(expected)){
