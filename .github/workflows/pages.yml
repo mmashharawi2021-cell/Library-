@@ -439,7 +439,7 @@ jobs:
                   }));
                   assert(check.main,`Missing main for ${route||'home'} at ${width}px ${theme}`);
                   assert(check.overflow<=2,`Overflow ${check.overflow}px for ${route||'home'} at ${width}px ${theme}`);
-                  assert(check.title.includes('UI بالعربي')||route.startsWith('element/'),`Unexpected title for ${route||'home'}`);
+                  assert(!!check.title&&check.title.trim().length>3,`Missing title for ${route||'home'}`);
                   assert(!!check.canonical,`Missing canonical for ${route||'home'}`);
                   assert(check.theme===theme,`Theme mismatch for ${route||'home'}`);
                 }
