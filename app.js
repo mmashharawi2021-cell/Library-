@@ -49,7 +49,7 @@ function setMeta(title,desc,urlPath='',indexable=true){
 
 const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span>راعِ الموقع</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">اسمك هنا · $500/شهر ↗</a></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">21</i><small>قاموس الواجهة</small></a>
+<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">22</i><small>قاموس الواجهة</small></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="#/">العناصر</a><a class="${active==='styles'?'active':''}" href="#/styles">الأنماط</a></nav>
 <div class="headtools"><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر">◐</button></div>
 </div></header>`;
@@ -209,8 +209,11 @@ function bindDetailActions(e){
 }
 function bindDemos(root=document){if(!root||root.dataset?.demoBound)return;if(root.dataset)root.dataset.demoBound='1';root.addEventListener('click',ev=>{const t=ev.target;if(t.closest('.tabs-demo button')){const btn=t.closest('button'),box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');box.querySelector('section b').textContent=btn.textContent.trim()==='التحليلات'?'مؤشرات التحليلات':'النشاط الأسبوعي'}const tg=t.closest('.toggle-group button');if(tg){tg.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));tg.classList.add('on')}const bd=t.closest('.bottomtabs > *');if(bd){bd.parentElement.querySelectorAll(':scope > *').forEach(x=>x.classList.remove('active'));bd.classList.add('active')}const hm=t.closest('.hamb');if(hm)hm.closest('.drawer-demo').classList.toggle('open');const lb=t.closest('.lightbox .thumb,.lightbox .photo button');if(lb)lb.closest('.lightbox').classList.toggle('open');const day=t.closest('.calendar .week i');if(day)day.classList.toggle('sel');const ck=t.closest('.checklist label');if(ck)ck.classList.toggle('checked');const ov=t.closest('.overflow-demo button');if(ov)ov.closest('.overflow-demo').classList.toggle('menuopen');const sw=t.closest('.switch');if(sw)sw.classList.toggle('on')})}
 
-function home(){
- setMeta('ما اسم عنصر الواجهة هذا؟ — UI بالعربي','قاموس بصري عربي لعناصر واجهة المستخدم. صف الشيء بطريقتك لتصل إلى اسمه الحقيقي ورمز التنفيذ.','');
+function home(platformOverride){
+ if(platformOverride==='web'||platformOverride==='macos')state.cat=platformOverride;
+ if(platformOverride==='all')state.cat='all';
+ const platformPath=platformOverride==='web'||platformOverride==='macos'?platformOverride+'/':'';
+ setMeta('ما اسم عنصر الواجهة هذا؟ — UI بالعربي','قاموس بصري عربي لعناصر واجهة المستخدم. صف الشيء بطريقتك لتصل إلى اسمه الحقيقي ورمز التنفيذ.',platformPath);
  const fresh=['data-table','bottom-navigation','timeline'].map(bySlug).filter(Boolean);
  const newest=['data-table','bottom-navigation','timeline','presence-indicator','message-bubble'];
  const rank=new Map(newest.map((s,i)=>[s,i]));
@@ -897,6 +900,8 @@ function routeFromLocation(){
   if(!p||p==='index.html'||p==='404.html') return '/';
   const seg=p.split('/').filter(Boolean);
   if(seg[0]==='element'&&seg[1]) return `/element/${seg[1]}`;
+  if((seg[0]==='web'||seg[0]==='macos')&&seg[1]) return `/entry/${seg[0]}/${seg[1]}`;
+  if((seg[0]==='web'||seg[0]==='macos')&&seg.length===1) return `/platform/${seg[0]}`;
   if(seg[0]==='styles'&&seg[1]) return `/style/${seg[1]}`;
   if(seg[0]==='styles') return '/styles';
   if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(['compare','translate','methodology','guides','glossary','saved','submit'].includes(seg[0])) return `/${seg[0]}`;
@@ -904,6 +909,6 @@ function routeFromLocation(){
   if(seg[0]==='swift-vs-electron') return '/guide/swift-electron';
   return '/404';
 }
-function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home();if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='glossary')return glossaryPage();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
+function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home('all');if(seg[0]==='platform')return home(seg[1]);if(seg[0]==='entry'){const e=bySlug(seg[2]);if(!e||e.category!==seg[1])return notFound();return detail(seg[2])}if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='glossary')return glossaryPage();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
 addEventListener('hashchange',router);router();
 })();
