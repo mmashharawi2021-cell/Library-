@@ -34,10 +34,11 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs');
-          const raw=fs.readFileSync('data.js','utf8')
-            .replace(/^window\\.UI_AR_DATA\\s*=\\s*/,'')
-            .replace(/;\\s*$/,'');
-          const d=JSON.parse(raw);
+          const src=fs.readFileSync('data.js','utf8');
+          const first=src.indexOf('{');
+          const last=src.lastIndexOf('}');
+          if(first<0||last<first) throw new Error('Could not locate UI_AR_DATA JSON payload');
+          const d=JSON.parse(src.slice(first,last+1));
           const app=fs.readFileSync('app.js','utf8');
           const r={
             entries:d.entries.length,
