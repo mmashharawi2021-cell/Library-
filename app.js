@@ -5,7 +5,8 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
-const state={q:'',cat:'all',sort:'newest'};
+const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
+const state={q:initialQuery,cat:'all',sort:'newest'};
 const norm=s=>(s||'').toLowerCase().normalize('NFD')
   .replace(/[\u064B-\u065F\u0670]/g,'')
   .replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')
