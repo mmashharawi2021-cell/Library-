@@ -343,7 +343,7 @@ jobs:
             assert(await direct.$('.vs-detail h1'), 'Direct comparison route failed');
             await direct.goto(site+'guides/',{waitUntil:'networkidle0',timeout:60000});
             await direct.waitForSelector('.guide-hub-grid');
-            assert((await direct.$('.guide-hub-card')).length===3,'Direct guides route failed');
+            assert((await direct.$$('.guide-hub-card')).length===3,'Direct guides route failed');
             await direct.close();
 
             console.log('LIVE CONTENT QA PASSED — comparisons, translations, methodology and guides valid on mobile and desktop.');
