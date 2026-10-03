@@ -2357,3 +2357,255 @@ html[data-theme="light"] .detail .lead{color:#363940}
   .guide-faq details{padding:5px 0}.guide-faq summary{font-size:5px}.guide-faq p{font-size:4.5px}
   .guide-table-link{font-size:4.5px}
 }
+
+
+/* =========================================================
+   GLOSSARY + SAVED + SUBMIT + FINAL POLISH v20
+   ========================================================= */
+.brandbadge{
+  width:auto;
+  min-width:18px;
+  height:14px;
+  border-radius:999px;
+  padding:0 4px;
+  font-size:6px;
+  margin-left:-3px;
+  margin-top:6px;
+}
+.glossary-page,.saved-page,.submit-page{max-width:1050px}
+.glossary-hero,.saved-hero,.submit-hero{padding:64px 0 34px}
+.glossary-hero h1,.saved-hero h1,.submit-hero h1{
+  margin:0;
+  font-size:clamp(42px,6vw,66px);
+  line-height:1;
+  letter-spacing:-.045em;
+}
+.glossary-hero>p,.saved-hero p,.submit-hero>p{
+  max-width:680px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+  margin:14px 0 0;
+}
+.glossary-search{
+  width:min(610px,100%);
+  height:44px;
+  border:1px solid var(--line2);
+  border-radius:8px;
+  background:var(--panel);
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:0 12px;
+  margin-top:22px;
+}
+.glossary-search>span{font-size:15px;color:var(--muted)}
+.glossary-search input{min-width:0;flex:1;border:0;outline:0;background:transparent;font-size:10px}
+.glossary-search kbd{border:1px solid var(--line2);border-radius:4px;padding:2px 5px;font-size:7px;color:var(--muted)}
+.glossary-list{
+  border-top:1px solid var(--line);
+  padding-bottom:70px;
+}
+.glossary-row{
+  display:grid;
+  grid-template-columns:minmax(150px,.42fr) minmax(0,1fr);
+  gap:28px;
+  padding:17px 0;
+  border-bottom:1px solid var(--line);
+}
+.glossary-row b{font-size:11px}
+.glossary-row p{margin:0;color:var(--muted);font-size:9.5px;line-height:1.7}
+.glossary-empty{padding:32px 0;color:var(--muted);font-size:10px}
+.glossary{
+  width:min(320px,calc(100vw - 20px));
+  max-width:none;
+  box-shadow:0 14px 38px rgba(0,0,0,.28);
+}
+.glossary b{display:block;font-size:10px;margin-bottom:5px}
+.glossary p{margin:0;color:#c8cbd2;font-size:9px;line-height:1.55}
+.glossary a{display:inline-block;margin-top:8px;color:#9fb5dd;font-size:8px;text-decoration:underline;text-underline-offset:3px}
+
+.saved-title-row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+}
+.saved-count{
+  min-width:105px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--panel);
+  padding:10px 12px;
+  text-align:center;
+}
+.saved-count b{display:block;font-size:18px;line-height:1}
+.saved-count span{display:block;color:var(--muted);font-size:7px;margin-top:4px}
+.saved-clear{
+  margin-top:16px;
+  appearance:none;
+  border:1px solid var(--line2);
+  background:var(--panel);
+  color:var(--muted);
+  border-radius:6px;
+  padding:6px 9px;
+  font-size:8px;
+}
+.saved-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px 10px;
+  padding-bottom:76px;
+}
+.saved-entry{position:relative;min-width:0}
+.saved-entry>.entry-card{height:100%}
+.saved-remove{
+  position:absolute;
+  top:8px;
+  left:8px;
+  z-index:3;
+  appearance:none;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(17,18,22,.86);
+  color:#d8dbe1;
+  border-radius:5px;
+  padding:4px 6px;
+  font-size:7px;
+  backdrop-filter:blur(8px);
+}
+.saved-remove:hover,.saved-remove:focus-visible{border-color:#6e7480;color:#fff}
+.saved-empty{
+  grid-column:1/-1;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:40px 0 48px;
+}
+.saved-empty b{font-size:15px}
+.saved-empty p{font-size:9px;color:var(--muted);margin:7px 0 10px}
+.saved-empty a{font-size:8px;color:#9fb5dd;text-decoration:underline}
+
+.submit-shell{max-width:820px;margin:0 auto;padding-bottom:78px}
+.submitform{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px 10px;
+  border-top:1px solid var(--line);
+  padding-top:26px;
+}
+.submit-field{display:grid;gap:6px}
+.submit-field.submit-wide{grid-column:1/-1}
+.submit-field label{font-size:9px;font-weight:650}
+.submit-field label span{color:var(--muted2);font-size:7px;font-weight:500}
+.submit-field small{font-size:7px;color:var(--muted2)}
+.submitform input,.submitform textarea,.submitform select{
+  width:100%;
+  background:var(--panel);
+  border:1px solid var(--line2);
+  border-radius:7px;
+  padding:10px 11px;
+  color:var(--text);
+  outline:none;
+  font-size:9px;
+}
+.submitform textarea{min-height:110px;resize:vertical;line-height:1.6}
+.submitform #notes{min-height:82px}
+.submitform input:focus,.submitform textarea:focus,.submitform select:focus{border-color:#555b67}
+.submit-actions{grid-column:1/-1;display:flex;gap:7px;margin-top:2px}
+.submit-actions button{
+  appearance:none;
+  width:auto;
+  background:var(--text);
+  color:var(--bg);
+  border:1px solid var(--text);
+  border-radius:6px;
+  padding:8px 12px;
+  font-size:8px;
+}
+.submit-actions .secondary{background:transparent;color:var(--muted);border-color:var(--line2)}
+.proposal-box{
+  margin-top:30px;
+  border-top:1px solid var(--line);
+  padding-top:24px;
+}
+.proposal-head{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:10px}
+.proposal-head b{display:block;font-size:11px}
+.proposal-head span{display:block;color:var(--muted);font-size:8px;margin-top:2px}
+.proposal-head>div:last-child{display:flex;gap:6px;flex-wrap:wrap}
+.proposal-head button,.proposal-head a{
+  border:1px solid var(--line2);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:6px;
+  padding:6px 8px;
+  font-size:8px;
+}
+.proposal-box pre{
+  margin:0;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--panel);
+  padding:14px;
+  color:#cfd2d9;
+  font:8.5px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+
+/* Final light-mode pass for content chrome; specimens keep their intentional preview colors. */
+html[data-theme="light"] .glossary{
+  background:#fff;
+  color:#111318;
+  border-color:#d1d1cc;
+  box-shadow:0 14px 36px rgba(20,22,26,.14);
+}
+html[data-theme="light"] .glossary p{color:#555961}
+html[data-theme="light"] .glossary a,
+html[data-theme="light"] .saved-empty a,
+html[data-theme="light"] .method-cta,
+html[data-theme="light"] .guide-table-link,
+html[data-theme="light"] .translation-v2 a,
+html[data-theme="light"] .source-card a{color:#275ddc}
+html[data-theme="light"] .saved-remove{
+  background:rgba(255,255,255,.9);
+  color:#33363c;
+  border-color:rgba(0,0,0,.15);
+}
+html[data-theme="light"] .proposal-box pre{color:#35383f}
+html[data-theme="light"] .vs-head>p,
+html[data-theme="light"] .guide-prose>p,
+html[data-theme="light"] .guide-prose>ul{color:#484c54}
+html[data-theme="light"] .called span{color:#42464e}
+html[data-theme="light"] .detail-en{color:#555a63}
+html[data-theme="light"] .detail-actions button.is-saved{color:#76520d;border-color:#bda66f;background:#fff7dc}
+html[data-theme="light"] .prompt{background:#f1f1ee;border-color:#d4d4cf;color:#25282e}
+html[data-theme="light"] .copybtn{background:#fff;color:#44484f;border-color:#cecec8}
+
+@media(max-width:700px){
+  .brandbadge{min-width:9px;height:7px;padding:0 2px;font-size:3.2px;margin-top:4px}
+  .glossary-hero,.saved-hero,.submit-hero{padding:36px 0 20px}
+  .glossary-hero h1,.saved-hero h1,.submit-hero h1{font-size:22px}
+  .glossary-hero>p,.saved-hero p,.submit-hero>p{font-size:5.5px;margin-top:7px}
+  .glossary-search{height:24px;border-radius:5px;gap:5px;padding:0 7px;margin-top:12px}
+  .glossary-search>span{font-size:8px}.glossary-search input{font-size:5px}.glossary-search kbd{font-size:3.5px;padding:1px 3px}
+  .glossary-list{padding-bottom:38px}
+  .glossary-row{grid-template-columns:90px 1fr;gap:12px;padding:8px 0}
+  .glossary-row b{font-size:5px}.glossary-row p{font-size:4.4px}.glossary-empty{font-size:4.5px;padding:16px 0}
+  .glossary{width:min(170px,calc(100vw - 10px));padding:6px;border-radius:4px}
+  .glossary b{font-size:5px}.glossary p{font-size:4.3px}.glossary a{font-size:3.8px;margin-top:4px}
+  .saved-title-row{gap:8px}
+  .saved-count{min-width:54px;padding:5px 6px;border-radius:4px}
+  .saved-count b{font-size:9px}.saved-count span{font-size:3.5px}
+  .saved-clear{font-size:4px;padding:3px 5px;margin-top:8px}
+  .saved-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 5px;padding-bottom:38px}
+  .saved-remove{top:4px;left:4px;padding:2px 3px;border-radius:3px;font-size:3.4px}
+  .saved-empty{padding:20px 0 24px}.saved-empty b{font-size:7px}.saved-empty p{font-size:4.3px}.saved-empty a{font-size:4px}
+  .submit-shell{padding-bottom:42px}
+  .submitform{gap:7px 5px;padding-top:13px}
+  .submit-field{gap:3px}.submit-field label{font-size:4.5px}.submit-field label span,.submit-field small{font-size:3.4px}
+  .submitform input,.submitform textarea,.submitform select{border-radius:4px;padding:5px 6px;font-size:4.5px}
+  .submitform textarea{min-height:58px}.submitform #notes{min-height:44px}
+  .submit-actions{gap:4px}.submit-actions button{font-size:4px;padding:4px 6px;border-radius:4px}
+  .proposal-box{margin-top:16px;padding-top:12px}
+  .proposal-head{gap:7px;margin-bottom:5px}.proposal-head b{font-size:5.5px}.proposal-head span{font-size:4px}
+  .proposal-head button,.proposal-head a{font-size:3.8px;padding:3px 4px;border-radius:3px}
+  .proposal-box pre{padding:7px;border-radius:4px;font-size:4px}
+}
