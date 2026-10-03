@@ -551,12 +551,12 @@ const comparisonEntries={
  ],
  "dropdown-select-combobox": [
   "popover-dropdown-tooltip",
-  "multi-select",
-  "combobox"
+  "combobox",
+  "popup-pulldown-combobox"
  ],
  "tabs-vs-segmented": [
   "tabs",
-  "segmented-control"
+  "toggle-group"
  ],
  "accordion-vs-tabs": [
   "accordion",
@@ -564,7 +564,7 @@ const comparisonEntries={
  ],
  "toast-vs-alert": [
   "toast",
-  "alert-callout-banner"
+  "alert-macos"
  ],
  "tooltip-vs-hover-card": [
   "popover-dropdown-tooltip",
@@ -588,7 +588,7 @@ const comparisonEntries={
  ],
  "sidebar-vs-drawer": [
   "sidebar-macos",
-  "hamburger-menu"
+  "modal-drawer-sheet"
  ],
  "hamburger-vs-kebab": [
   "hamburger-menu",
