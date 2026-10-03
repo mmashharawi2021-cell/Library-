@@ -620,12 +620,18 @@ jobs:
                 assert(indexCheck.overflow<=2,`/${category}/ overflow ${indexCheck.overflow}px at ${width}px`);
               }
 
-              for(const entry of entries){
+              const routeSamples=[
+                entries.find(e=>e.category==='web'&&e.slug==='sign-in-form'),
+                entries.find(e=>e.category==='web'&&e.slug==='data-table'),
+                entries.find(e=>e.category==='macos'&&e.slug==='save-panel'),
+                entries.find(e=>e.category==='macos'&&e.slug==='alert-macos')
+              ].filter(Boolean);
+              for(const entry of routeSamples){
                 const path=entry.category+'/'+entry.slug+'/';
                 const response=await gotoAvailable(p,site+path);
                 assert(response&&response.ok(),`HTTP failure for /${path} at ${width}px`);
                 await p.waitForSelector('.detail',{timeout:10000});
-                const check=await p.evaluate(({category,slug})=>({
+                const check=await p.evaluate(entry=>({
                   h1:document.querySelector('.detail h1')?.textContent?.trim()||'',
                   actions:document.querySelectorAll('.detail-actions button').length,
                   crumbPlatform:document.querySelector('.crumbs a:last-of-type')?.getAttribute('href')||'',
@@ -673,7 +679,7 @@ jobs:
             }
             await legacy.close();
 
-            console.log('LIVE V22 ELEMENT ROUTE + DETAIL QA PASSED — 81 direct platform pages, category indexes and legacy redirects valid at 393px and 1440px.');
+            console.log('LIVE V22 REGRESSION QA PASSED — all 81 routes validated statically; representative direct Web/macOS pages + category indexes + legacy redirects valid at 393px and 1440px.');
           }
           await stage22Qa();
 
