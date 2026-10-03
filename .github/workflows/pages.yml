@@ -71,6 +71,21 @@ jobs:
             const redirectHtml=fs.readFileSync(legacy,'utf8');
             if(!redirectHtml.includes(`/${e.category}/${e.slug}/`)) throw new Error(`Legacy redirect target mismatch for ${e.slug}`);
           }
+          const compareRouteSlugs={'dropdown-select-combobox':'dropdown-vs-select-vs-combobox','tabs-vs-segmented':'tabs-vs-segmented-control','context-vs-dropdown':'context-menu-vs-dropdown','masonry-vs-bento':'masonry-vs-bento-grid','sheet-vs-alert-mac':'sheet-vs-alert','empty-vs-skeleton':'empty-state-vs-skeleton'};
+          if(!fs.existsSync('dist/vs/index.html')) throw new Error('Missing /vs/ comparison index');
+          if(!fs.existsSync('dist/compare/index.html')) throw new Error('Missing legacy /compare/ redirect');
+          for(const c of d.comparisons){
+            const slug=compareRouteSlugs[c.slug]||c.slug;
+            const direct=`dist/vs/${slug}/index.html`;
+            if(!fs.existsSync(direct)) throw new Error(`Missing comparison route: ${direct}`);
+            if(slug!==c.slug){
+              const legacy=`dist/vs/${c.slug}/index.html`;
+              if(!fs.existsSync(legacy)) throw new Error(`Missing comparison redirect: ${legacy}`);
+              if(!fs.readFileSync(legacy,'utf8').includes(`/vs/${slug}/`)) throw new Error(`Comparison redirect mismatch for ${c.slug}`);
+            }
+          }
+          if(!sitemap.includes('/vs/')) throw new Error('Comparison index missing from sitemap');
+          if(sitemap.includes('/compare/')) throw new Error('Legacy /compare/ must not appear in sitemap');
           console.log('Catalog validation passed', r);
           NODE
 
@@ -529,7 +544,7 @@ jobs:
               assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
               assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
               assert(home.headerSearch===0,`Reference homepage should not show the old header search field`);
-              assert(home.version==='22',`Visible version badge expected 22, got ${home.version}`);
+              assert(home.version==='23',`Visible version badge expected 23, got ${home.version}`);
               assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
               assert(home.examples===5,`Search examples expected 5, got ${home.examples}`);
               assert(home.search===1,'Homepage search field missing');
@@ -661,6 +676,107 @@ jobs:
             console.log('LIVE V22 ELEMENT ROUTE + DETAIL QA PASSED — 81 direct platform pages, category indexes and legacy redirects valid at 393px and 1440px.');
           }
           await stage22Qa();
+
+          async function stage23Qa(){
+            const routes={
+              'popover-vs-tooltip':'popover-vs-tooltip',
+              'modal-vs-popover':'modal-vs-popover',
+              'dropdown-select-combobox':'dropdown-vs-select-vs-combobox',
+              'tabs-vs-segmented':'tabs-vs-segmented-control',
+              'accordion-vs-tabs':'accordion-vs-tabs',
+              'toast-vs-alert':'toast-vs-alert',
+              'tooltip-vs-hover-card':'tooltip-vs-hover-card',
+              'context-vs-dropdown':'context-menu-vs-dropdown',
+              'carousel-vs-marquee':'carousel-vs-marquee',
+              'lightbox-vs-modal':'lightbox-vs-modal',
+              'masonry-vs-bento':'masonry-vs-bento-grid',
+              'sidebar-vs-drawer':'sidebar-vs-drawer',
+              'hamburger-vs-kebab':'hamburger-vs-kebab',
+              'easing-vs-spring':'easing-vs-spring',
+              'stepper-vs-slider':'stepper-vs-slider',
+              'sheet-vs-alert-mac':'sheet-vs-alert',
+              'empty-vs-skeleton':'empty-state-vs-skeleton',
+              'toolbar-vs-menu-bar':'toolbar-vs-menu-bar'
+            };
+            const expectedSlugs=Object.values(routes);
+            for(const width of [393,1440]){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1050,deviceScaleFactor:1});
+              const errors=[];p.on('pageerror',e=>errors.push(String(e)));
+
+              const indexResponse=await p.goto(site+'vs/',{waitUntil:'networkidle0',timeout:60000});
+              assert(indexResponse&&indexResponse.ok(),`/vs/ HTTP failure at ${width}px`);
+              await p.waitForSelector('.compare-index');
+              const indexCheck=await p.evaluate(()=>({
+                rows:document.querySelectorAll('.confused-row').length,
+                oldCards:document.querySelectorAll('.confused-card').length,
+                title:document.querySelector('.compare-index h1')?.textContent?.trim()||'',
+                links:[...document.querySelectorAll('.confused-row')].map(a=>a.getAttribute('href')||''),
+                canonical:document.querySelector('link[rel="canonical"]')?.href||'',
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(indexCheck.rows===18,`/vs/ expected 18 rows, got ${indexCheck.rows}`);
+              assert(indexCheck.oldCards===0,'Legacy expanded comparison cards still visible');
+              assert(indexCheck.title.includes('الخلط'),'Comparison index title mismatch');
+              assert(indexCheck.links.every(h=>h.includes('/vs/')),'Comparison index has non-/vs/ links');
+              assert(indexCheck.canonical.endsWith('/vs/'),`/vs/ canonical mismatch: ${indexCheck.canonical}`);
+              assert(indexCheck.overflow<=2,`/vs/ overflow ${indexCheck.overflow}px at ${width}px`);
+
+              for(const slug of expectedSlugs){
+                const response=await p.goto(site+'vs/'+slug+'/',{waitUntil:'networkidle0',timeout:60000});
+                assert(response&&response.ok(),`HTTP failure for /vs/${slug}/ at ${width}px`);
+                await p.waitForSelector('.vs-detail');
+                const check=await p.evaluate(()=>({
+                  h1:document.querySelector('.vs-head h1')?.textContent?.trim()||'',
+                  answer:document.querySelector('.vs-head>p')?.textContent?.trim()||'',
+                  rules:document.querySelectorAll('.vs-tells .vs-rules li').length,
+                  entries:document.querySelectorAll('.vs-full-entries .vs-entry').length,
+                  decisions:document.querySelectorAll('.vs-decision').length,
+                  kicker:document.querySelectorAll('.vs-head .compare-kicker').length,
+                  sourceNote:document.querySelectorAll('.vs-detail .detail-source-note').length,
+                  crumbs:document.querySelectorAll('.vs-crumbs a').length,
+                  back:document.querySelectorAll('.vs-back a[href$="/vs/"]').length,
+                  badEntryLinks:[...document.querySelectorAll('.vs-entry')].filter(a=>!(/\/(web|macos)\//.test(a.getAttribute('href')||''))).length,
+                  canonical:document.querySelector('link[rel="canonical"]')?.href||'',
+                  order:[
+                    document.querySelector('.vs-head')?.getBoundingClientRect().top,
+                    document.querySelector('.vs-tells')?.getBoundingClientRect().top,
+                    document.querySelector('.vs-full-entries')?.getBoundingClientRect().top,
+                    document.querySelector('.vs-back')?.getBoundingClientRect().top
+                  ],
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+                }));
+                assert(!!check.h1&&!!check.answer,`Missing heading/answer for ${slug}`);
+                assert(check.rules>=3,`${slug} expected >=3 tells, got ${check.rules}`);
+                assert(check.entries>=2,`${slug} expected >=2 full entries, got ${check.entries}`);
+                if(slug==='dropdown-vs-select-vs-combobox')assert(check.entries===3,'Dropdown/Select/Combobox must show 3 full entries');
+                assert(check.decisions===0,`${slug} still shows non-reference quick-decision section`);
+                assert(check.kicker===0,`${slug} still shows non-reference kicker`);
+                assert(check.sourceNote===0,`${slug} still shows duplicate source note`);
+                assert(check.crumbs===2,`${slug} breadcrumb should contain Index + Commonly confused`);
+                assert(check.back===1,`${slug} missing back-to-all-comparisons CTA`);
+                assert(check.badEntryLinks===0,`${slug} contains non-platform entry links`);
+                assert(check.canonical.endsWith('/vs/'+slug+'/'),`${slug} canonical mismatch: ${check.canonical}`);
+                assert(check.order.every(Number.isFinite)&&check.order.every((v,i,a)=>i===0||v>=a[i-1]),`${slug} section order mismatch`);
+                assert(check.overflow<=2,`${slug} overflow ${check.overflow}px at ${width}px`);
+              }
+              assert(errors.length===0,`V23 comparison page errors at ${width}px: ${errors.join(' | ')}`);
+              await p.close();
+            }
+
+            const legacy=await browser.newPage();
+            for(const [oldSlug,newSlug] of Object.entries(routes).filter(([a,b])=>a!==b)){
+              await legacy.goto(site+'vs/'+oldSlug+'/',{waitUntil:'networkidle0',timeout:60000});
+              await legacy.waitForFunction(s=>location.pathname.endsWith('/vs/'+s+'/'),{timeout:10000},newSlug);
+              assert(legacy.url().includes('/vs/'+newSlug+'/'),`Legacy comparison redirect failed: ${oldSlug}`);
+            }
+            await legacy.goto(site+'compare/',{waitUntil:'networkidle0',timeout:60000});
+            await legacy.waitForFunction(()=>location.pathname.endsWith('/vs/'),{timeout:10000});
+            await legacy.close();
+
+            console.log('LIVE V23 COMMONLY CONFUSED PARITY QA PASSED — /vs index + all 18 comparison pages + legacy redirects valid at 393px and 1440px.');
+          }
+          await stage23Qa();
           await browser.close();
           JS
           node card-qa.mjs
