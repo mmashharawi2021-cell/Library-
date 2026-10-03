@@ -251,103 +251,103 @@ jobs:
           console.log('LIVE STYLES QA PASSED — atlas + all 14 style pages valid at mobile and desktop widths.');
 
           async function stage19Qa(){
-  for(const width of [393,1440]){
-    const p=await browser.newPage();
-    await p.setViewport({width,height:1000,deviceScaleFactor:1});
-    const errors=[];
-    p.on('pageerror',e=>errors.push(String(e)));
+            for(const width of [393,1440]){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1000,deviceScaleFactor:1});
+              const errors=[];
+              p.on('pageerror',e=>errors.push(String(e)));
 
-    await p.goto(site+'?contentqa=19#/compare',{waitUntil:'networkidle0',timeout:60000});
-    await p.waitForSelector('.confused-grid > .confused-card');
-    const comp=await p.evaluate(()=>({
-      cards:document.querySelectorAll('.confused-grid > .confused-card').length,
-      overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-    }));
-    assert(comp.cards===18,`Expected 18 comparison cards, got ${comp.cards} at ${width}px`);
-    assert(comp.overflow<=2,`Comparison index overflow ${comp.overflow}px at ${width}px`);
+              await p.goto(site+'?contentqa=19#/compare',{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForSelector('.confused-grid > .confused-card');
+              const comp=await p.evaluate(()=>({
+                cards:document.querySelectorAll('.confused-grid > .confused-card').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(comp.cards===18,`Expected 18 comparison cards, got ${comp.cards} at ${width}px`);
+              assert(comp.overflow<=2,`Comparison index overflow ${comp.overflow}px at ${width}px`);
 
-    const comparisonSlugs=await p.evaluate(()=>window.UI_AR_DATA.comparisons.map(c=>c.slug));
-    for(const slug of comparisonSlugs){
-      await p.evaluate(s=>{location.hash='#/vs/'+s},slug);
-      await p.waitForFunction(s=>{
-        const d=document.querySelector('.vs-detail');
-        return location.hash==='#/vs/'+s && !!d && d.querySelectorAll('.vs-showcase .vs-entry').length>=1 && d.querySelectorAll('.vs-rules li').length>=1;
-      },{timeout:10000},slug);
-      const c=await p.evaluate(()=>({
-        entries:document.querySelectorAll('.vs-showcase .vs-entry').length,
-        rules:document.querySelectorAll('.vs-rules li').length,
-        overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-      }));
-      assert(c.entries>=1,`Missing comparison entries for ${slug}`);
-      assert(c.rules>=1,`Missing comparison rules for ${slug}`);
-      assert(c.overflow<=2,`Comparison detail overflow ${c.overflow}px for ${slug}`);
-    }
+              const comparisonSlugs=await p.evaluate(()=>window.UI_AR_DATA.comparisons.map(c=>c.slug));
+              for(const slug of comparisonSlugs){
+                await p.evaluate(s=>{location.hash='#/vs/'+s},slug);
+                await p.waitForFunction(s=>{
+                  const d=document.querySelector('.vs-detail');
+                  return location.hash==='#/vs/'+s && !!d && d.querySelectorAll('.vs-showcase .vs-entry').length>=1 && d.querySelectorAll('.vs-rules li').length>=1;
+                },{timeout:10000},slug);
+                const c=await p.evaluate(()=>({
+                  entries:document.querySelectorAll('.vs-showcase .vs-entry').length,
+                  rules:document.querySelectorAll('.vs-rules li').length,
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+                }));
+                assert(c.entries>=1,`Missing comparison entries for ${slug}`);
+                assert(c.rules>=1,`Missing comparison rules for ${slug}`);
+                assert(c.overflow<=2,`Comparison detail overflow ${c.overflow}px for ${slug}`);
+              }
 
-    await p.evaluate(()=>{location.hash='#/translate'});
-    await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
-    const trans=await p.evaluate(()=>({
-      rows:document.querySelectorAll('.translation-v2 tbody tr').length,
-      overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-    }));
-    assert(trans.rows===63,`Translation table expected 63 rows, got ${trans.rows}`);
-    assert(trans.overflow<=2,`Translation page overflow ${trans.overflow}px at ${width}px`);
-    await p.type('#tsearch','NSButton');
-    await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length>0 && document.querySelectorAll('.translation-v2 tbody tr').length<63);
-    await p.evaluate(()=>{
-      const i=document.querySelector('#tsearch');i.value='';i.dispatchEvent(new Event('input',{bubbles:true}));
-    });
-    await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
+              await p.evaluate(()=>{location.hash='#/translate'});
+              await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
+              const trans=await p.evaluate(()=>({
+                rows:document.querySelectorAll('.translation-v2 tbody tr').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(trans.rows===63,`Translation table expected 63 rows, got ${trans.rows}`);
+              assert(trans.overflow<=2,`Translation page overflow ${trans.overflow}px at ${width}px`);
+              await p.type('#tsearch','NSButton');
+              await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length>0 && document.querySelectorAll('.translation-v2 tbody tr').length<63);
+              await p.evaluate(()=>{
+                const i=document.querySelector('#tsearch');i.value='';i.dispatchEvent(new Event('input',{bubbles:true}));
+              });
+              await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
 
-    await p.evaluate(()=>{location.hash='#/methodology'});
-    await p.waitForSelector('.methodology');
-    const method=await p.evaluate(()=>({
-      steps:document.querySelectorAll('.method-steps>div').length,
-      sources:document.querySelectorAll('.source-card').length,
-      principles:document.querySelectorAll('.method-principles>div').length,
-      overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-    }));
-    assert(method.steps===3,`Methodology expected 3 steps, got ${method.steps}`);
-    assert(method.sources===4,`Methodology expected 4 source cards, got ${method.sources}`);
-    assert(method.principles===3,`Methodology expected 3 translation principles, got ${method.principles}`);
-    assert(method.overflow<=2,`Methodology overflow ${method.overflow}px at ${width}px`);
+              await p.evaluate(()=>{location.hash='#/methodology'});
+              await p.waitForSelector('.methodology');
+              const method=await p.evaluate(()=>({
+                steps:document.querySelectorAll('.method-steps>div').length,
+                sources:document.querySelectorAll('.source-card').length,
+                principles:document.querySelectorAll('.method-principles>div').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(method.steps===3,`Methodology expected 3 steps, got ${method.steps}`);
+              assert(method.sources===4,`Methodology expected 4 source cards, got ${method.sources}`);
+              assert(method.principles===3,`Methodology expected 3 translation principles, got ${method.principles}`);
+              assert(method.overflow<=2,`Methodology overflow ${method.overflow}px at ${width}px`);
 
-    await p.evaluate(()=>{location.hash='#/guides'});
-    await p.waitForSelector('.guide-hub-grid');
-    const hub=await p.evaluate(()=>({
-      cards:document.querySelectorAll('.guide-hub-card').length,
-      overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-    }));
-    assert(hub.cards===3,`Guides hub expected 3 cards, got ${hub.cards}`);
-    assert(hub.overflow<=2,`Guides hub overflow ${hub.overflow}px at ${width}px`);
+              await p.evaluate(()=>{location.hash='#/guides'});
+              await p.waitForSelector('.guide-hub-grid');
+              const hub=await p.evaluate(()=>({
+                cards:document.querySelectorAll('.guide-hub-card').length,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(hub.cards===3,`Guides hub expected 3 cards, got ${hub.cards}`);
+              assert(hub.overflow<=2,`Guides hub overflow ${hub.overflow}px at ${width}px`);
 
-    for(const kind of ['appkit-swiftui','swift-electron']){
-      await p.evaluate(k=>{location.hash='#/guide/'+k},kind);
-      await p.waitForSelector('.guide-v2 .guide-prose');
-      const g=await p.evaluate(()=>({
-        title:document.querySelector('.guide-v2 h1')?.textContent?.trim(),
-        sections:document.querySelectorAll('.guide-prose h2').length,
-        overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-      }));
-      assert(!!g.title,`Missing guide title for ${kind}`);
-      assert(g.sections>=2,`Guide ${kind} expected at least 2 sections`);
-      assert(g.overflow<=2,`Guide ${kind} overflow ${g.overflow}px at ${width}px`);
-    }
-    assert(errors.length===0,`Content page errors at ${width}px: ${errors.join(' | ')}`);
-    await p.close();
-  }
+              for(const kind of ['appkit-swiftui','swift-electron']){
+                await p.evaluate(k=>{location.hash='#/guide/'+k},kind);
+                await p.waitForSelector('.guide-v2 .guide-prose');
+                const g=await p.evaluate(()=>({
+                  title:document.querySelector('.guide-v2 h1')?.textContent?.trim(),
+                  sections:document.querySelectorAll('.guide-prose h2').length,
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+                }));
+                assert(!!g.title,`Missing guide title for ${kind}`);
+                assert(g.sections>=2,`Guide ${kind} expected at least 2 sections`);
+                assert(g.overflow<=2,`Guide ${kind} overflow ${g.overflow}px at ${width}px`);
+              }
+              assert(errors.length===0,`Content page errors at ${width}px: ${errors.join(' | ')}`);
+              await p.close();
+            }
 
-  const direct=await browser.newPage();
-  await direct.setViewport({width:393,height:800,deviceScaleFactor:1});
-  await direct.goto(site+'vs/masonry-vs-bento/',{waitUntil:'networkidle0',timeout:60000});
-  await direct.waitForSelector('.vs-detail');
-  assert(await direct.$('.vs-detail h1'), 'Direct comparison route failed');
-  await direct.goto(site+'guides/',{waitUntil:'networkidle0',timeout:60000});
-  await direct.waitForSelector('.guide-hub-grid');
-  assert(await direct.$('.guide-hub-card').then(x=>x.length)===3,'Direct guides route failed');
-  await direct.close();
+            const direct=await browser.newPage();
+            await direct.setViewport({width:393,height:800,deviceScaleFactor:1});
+            await direct.goto(site+'vs/masonry-vs-bento/',{waitUntil:'networkidle0',timeout:60000});
+            await direct.waitForSelector('.vs-detail');
+            assert(await direct.$('.vs-detail h1'), 'Direct comparison route failed');
+            await direct.goto(site+'guides/',{waitUntil:'networkidle0',timeout:60000});
+            await direct.waitForSelector('.guide-hub-grid');
+            assert(await direct.$('.guide-hub-card').then(x=>x.length)===3,'Direct guides route failed');
+            await direct.close();
 
-  console.log('LIVE CONTENT QA PASSED — comparisons, translations, methodology and guides valid on mobile and desktop.');
-}
+            console.log('LIVE CONTENT QA PASSED — comparisons, translations, methodology and guides valid on mobile and desktop.');
+          }
           await stage19Qa();
           await browser.close();
           JS
