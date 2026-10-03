@@ -1050,7 +1050,7 @@ jobs:
               return {
                 spring:rect('.spring .ball'),
                 spinner:getComputedStyle(document.querySelector('.spinner')).transform,
-                skeleton:getComputedStyle(document.querySelector('.skeleton')).backgroundPosition,
+                skeletonTime:document.querySelector('.skeleton')?.getAnimations?.()[0]?.currentTime||0,
                 toast:rect('.toast-demo'),
                 parallax:rect('.parallax-layer.back'),
                 scramble:document.querySelector('.scramble b')?.textContent||'',
@@ -1065,7 +1065,7 @@ jobs:
 
             assert(f1.spring&&f2.spring&&(Math.abs(f1.spring.x-f2.spring.x)>2||Math.abs(f1.spring.y-f2.spring.y)>2),'Spring specimen is visually static');
             assert(f1.spinner!==f2.spinner,'Spinner transform did not change between frames');
-            assert(f1.skeleton!==f2.skeleton,'Skeleton shimmer did not advance');
+            assert(f2.skeletonTime>f1.skeletonTime,'Skeleton shimmer animation clock did not advance');
             assert(f1.parallax&&f2.parallax&&Math.abs(f1.parallax.y-f2.parallax.y)>.5,'Parallax layer did not move');
             assert(f1.carousel!==f3.carousel,'Carousel timing did not advance within audit window');
             assert(f1.scramble.length>0&&f2.scramble.length>0,'Scramble specimen missing text during motion');
