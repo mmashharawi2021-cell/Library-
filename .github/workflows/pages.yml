@@ -399,8 +399,12 @@ jobs:
               themeToggle:document.querySelectorAll('#themeToggle,.themebtn').length,
               hiddenNav:[...document.querySelectorAll('.sitehead a,.footer .footlinks a')].some(a=>/المحفوظات|اقترح|المصطلحات/.test(a.textContent))
             }));
-            assert(chrome.theme==='dark','Final reference surface must load in dark mode');
-            assert(chrome.themeToggle===0,'Theme toggle is not part of the reference chrome');
+            assert(chrome.theme==='dark','Reference surface should default to dark mode');
+            assert(chrome.themeToggle===1,'Reference chrome should include one theme toggle');
+            await p.click('#themeToggle');
+            assert((await p.evaluate(()=>document.documentElement.dataset.theme))==='light','Theme toggle did not switch to light mode');
+            assert((await p.evaluate(()=>localStorage.getItem('ui-theme')))==='light','Theme choice did not persist');
+            await p.click('#themeToggle');
             assert(!chrome.hiddenNav,'Hidden utilities leaked into primary navigation');
             assert(errors.length===0,`V20 hidden utility regression errors: ${errors.join(' | ')}`);
             await p.close();
@@ -420,6 +424,7 @@ jobs:
               const home=await p.evaluate(()=>({
                 sponsor:document.querySelectorAll('.sponsor-strip').length,
                 sponsorLink:document.querySelector('.sponsor-strip a')?.textContent?.trim()||'',
+                sponsorText:document.querySelector('.sponsor-strip')?.textContent?.trim()||'',
                 oldSourceStrip:document.querySelectorAll('.source-strip').length,
                 navLinks:document.querySelectorAll('.sitehead .navlinks a').length,
                 headerSearch:document.querySelectorAll('#headerSearch,.headsearch').length,
@@ -433,7 +438,7 @@ jobs:
                 cards:document.querySelectorAll('#cards > .entry-card').length,
                 guides:document.querySelectorAll('.guidecards a').length,
                 footerLinks:document.querySelectorAll('.footer .footlinks a').length,
-                footerRss:document.querySelectorAll('.footer-rss a[href$="feed.xml"]').length,
+                footerRss:document.querySelectorAll('.footer .footlinks a[href$="feed.xml"]').length,
                 attribution:document.querySelector('.footer-attribution a')?.href||'',
                 footerExtra:[...document.querySelectorAll('.footer .footlinks a')].some(a=>/المحفوظات|اقترح|المصطلحات|جدول الترجمة/.test(a.textContent)),
                 overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
@@ -448,20 +453,20 @@ jobs:
               }));
 
               assert(home.sponsor===1,`Expected one sponsor strip at ${width}px`);
-              assert(home.sponsorLink.includes('$500/شهر'),`Sponsor strip copy mismatch at ${width}px`);
+              assert(home.sponsorLink.includes('الراعي')&&home.sponsorText.includes('$500/mo'),`Sponsor strip copy mismatch at ${width}px`);
               assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
               assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
-              assert(home.headerSearch===0,`Reference homepage should not show the old header search field`);
-              assert(home.version==='27',`Visible version badge expected 27, got ${home.version}`);
+              assert(home.headerSearch===2,`Reference homepage should expose header search input + wrapper, got ${home.headerSearch}`);
+              assert(home.version==='28',`Visible version badge expected 28, got ${home.version}`);
               assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
-              assert(home.examples===5,`Search examples expected 5, got ${home.examples}`);
+              assert(home.examples===0,`Screenshot parity should not show visible search-example chips, got ${home.examples}`);
               assert(home.search===1,'Homepage search field missing');
-              assert(home.surprise===0,'Surprise button must not exist in V21 parity homepage');
+              assert(home.surprise===1,'Surprise me control is missing from catalog toolbar');
               assert(home.filters===3,`Expected 3 category filters, got ${home.filters}`);
               assert(home.sorts===2,`Expected 2 sort controls, got ${home.sorts}`);
               assert(home.cards===81,`Expected 81 cards, got ${home.cards}`);
               assert(home.guides===3,`Expected 3 guide cards, got ${home.guides}`);
-              assert(home.footerLinks===3,`Footer expected 3 primary links, got ${home.footerLinks}`);
+              assert(home.footerLinks===4,`Footer expected RSS + 3 primary links, got ${home.footerLinks}`);
               assert(home.footerRss===1,'Footer RSS action missing');
               assert(home.attribution.includes('namethatui.com'),'Footer attribution to Name That UI missing');
               assert(!home.footerExtra,'V20-only utilities leaked back into primary footer');
@@ -486,7 +491,7 @@ jobs:
               assert(errors.length===0,`V21 homepage errors at ${width}px: ${errors.join(' | ')}`);
               await p.close();
             }
-            console.log('LIVE V21 HOMEPAGE PARITY QA PASSED — sponsor/header/hero/examples/search/filters/cards/guides/footer valid at 393px and 1440px.');
+            console.log('LIVE V21 HOMEPAGE REGRESSION PASSED — screenshot chrome/search/surprise/cards/guides/footer valid at 393px and 1440px.');
           }
           await stage21Qa();
 
@@ -732,7 +737,8 @@ jobs:
               const home=await p.evaluate(()=>({
                 sponsor:document.querySelectorAll('.sponsor-strip').length,
                 nav:document.querySelectorAll('.sitehead .navlinks a').length,
-                themeToggle:document.querySelectorAll('#themeToggle,.themebtn').length,
+                themeToggle:document.querySelectorAll('#themeToggle').length,
+                headerSearch:document.querySelectorAll('#headerSearch').length,
                 fresh:document.querySelectorAll('.newweek a').length,
                 examples:document.querySelectorAll('.search-examples span').length,
                 search:document.querySelectorAll('#search').length,
@@ -746,11 +752,11 @@ jobs:
                 overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
               }));
               assert(home.sponsor===1&&home.nav===2,'Homepage chrome does not match reference');
-              assert(home.themeToggle===0&&home.theme==='dark','Reference chrome must be dark with no theme toggle');
-              assert(home.fresh===3&&home.examples===5&&home.search===1,'Homepage hero/search structure mismatch');
+              assert(home.themeToggle===1&&home.headerSearch===1&&home.theme==='dark','Reference chrome must include search + theme toggle and default dark');
+              assert(home.fresh===3&&home.examples===0&&home.search===1,'Homepage hero/search structure mismatch');
               assert(home.filters===3&&home.sorts===2&&home.cards===81,'Homepage catalog structure mismatch');
               assert(home.guides===3,'Homepage must expose three guide/reference cards');
-              assert(home.footerLinks===3&&home.footerSearch===1,'Footer structure mismatch');
+              assert(home.footerLinks===4&&home.footerSearch===1,'Footer structure mismatch');
               assert(home.overflow<=2,`Homepage overflow ${home.overflow}px at ${width}px`);
 
               // Styles atlas.
@@ -866,6 +872,92 @@ jobs:
             console.log('LIVE V27 FINAL PARITY QA PASSED — homepage, 81 elements, 14 styles, 18 comparisons, translation, methodology, guides, chrome and responsive surface valid at 393/768/1024/1440.');
           }
           await stage27Qa();
+
+          async function stage28Qa(){
+            const widths=[393,768,945,1440];
+            for(const width of widths){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1200,deviceScaleFactor:1});
+              const errors=[];p.on('pageerror',e=>errors.push(String(e)));
+              await p.evaluateOnNewDocument(()=>{try{localStorage.removeItem('ui-theme')}catch{}});
+              await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+
+              const visual=await p.evaluate(()=>({
+                sticky:getComputedStyle(document.querySelector('.sitehead')).position,
+                headerTop:getComputedStyle(document.querySelector('.sitehead')).top,
+                headerSearch:document.querySelectorAll('#headerSearch').length,
+                themeToggle:document.querySelectorAll('#themeToggle').length,
+                sponsorDot:document.querySelectorAll('.sponsor-dot').length,
+                heroExamples:document.querySelectorAll('.search-examples').length,
+                heroSearch:document.querySelectorAll('.hero-search #search').length,
+                surprise:document.querySelectorAll('#surprise').length,
+                columns:getComputedStyle(document.querySelector('.entries-grid')).gridTemplateColumns.split(' ').length,
+                firstPreviewRatio:(()=>{const r=document.querySelector('.entry-preview').getBoundingClientRect();return r.width/r.height})(),
+                cards:document.querySelectorAll('#cards>.entry-card').length,
+                dotted:getComputedStyle(document.querySelector('.entry-preview')).backgroundImage,
+                previewBg:getComputedStyle(document.querySelector('.entry-preview')).backgroundColor,
+                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+              }));
+              assert(visual.sticky==='sticky'&&visual.headerTop==='0px',`Header must remain sticky at ${width}px`);
+              assert(visual.headerSearch===1&&visual.themeToggle===1&&visual.sponsorDot===1,`Header/sponsor controls mismatch at ${width}px`);
+              assert(visual.heroExamples===0&&visual.heroSearch===1&&visual.surprise===1,`Hero/catalog screenshot parity mismatch at ${width}px`);
+              assert(visual.columns===2,`Catalog must remain two columns at ${width}px`);
+              assert(visual.firstPreviewRatio>2.45&&visual.firstPreviewRatio<2.65,`Preview ratio mismatch at ${width}px: ${visual.firstPreviewRatio}`);
+              assert(visual.cards===81,'V28 lost catalog cards');
+              assert(visual.dotted.includes('radial-gradient'),'Preview dot grid missing');
+              assert(visual.previewBg!=='rgba(0, 0, 0, 0)','Preview background missing');
+              assert(visual.overflow<=2,`V28 horizontal overflow ${visual.overflow}px at ${width}px`);
+
+              // Header search synchronizes the hero search.
+              await p.click('#headerSearch');
+              await p.type('#headerSearch','toast');
+              await p.waitForFunction(()=>document.querySelector('#search')?.value==='toast');
+              await p.evaluate(()=>{const h=document.querySelector('#headerSearch');h.value='';h.dispatchEvent(new Event('input',{bubbles:true}))});
+              await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+
+              assert(errors.length===0,`V28 page errors at ${width}px: ${errors.join(' | ')}`);
+              await p.close();
+            }
+
+            const m=await browser.newPage();
+            await m.setViewport({width:945,height:1200,deviceScaleFactor:1});
+            await m.goto(site,{waitUntil:'networkidle0',timeout:60000});
+            await m.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+
+            const motion=await m.evaluate(()=>({
+              caret:getComputedStyle(document.querySelector('.caret')).animationName,
+              spinner:getComputedStyle(document.querySelector('.spinner')).animationName,
+              marquee:getComputedStyle(document.querySelector('.marquee>div')).animationName,
+              spring:getComputedStyle(document.querySelector('.spring .ball')).animationName,
+              skeleton:getComputedStyle(document.querySelector('.skeleton')).animationName,
+              parallax:getComputedStyle(document.querySelector('.parallax-layer.back')).animationName,
+              toast:getComputedStyle(document.querySelector('.toast-demo')).animationName,
+              drag:getComputedStyle(document.querySelector('.kanban .ghost')).animationName,
+              scramble:document.querySelector('.scramble b')?.textContent||'',
+              carousel:[...document.querySelectorAll('.carousel-strip article')].findIndex(x=>x.classList.contains('on'))
+            }));
+            for(const [name,value] of Object.entries(motion).filter(([k])=>!['scramble','carousel'].includes(k))){
+              assert(value&&value!=='none',`Missing animation for ${name}`);
+            }
+            const beforeScramble=motion.scramble,beforeCarousel=motion.carousel;
+            await new Promise(resolve=>setTimeout(resolve,3800));
+            const after=await m.evaluate(()=>({
+              scramble:document.querySelector('.scramble b')?.textContent||'',
+              carousel:[...document.querySelectorAll('.carousel-strip article')].findIndex(x=>x.classList.contains('on'))
+            }));
+            assert(after.carousel!==beforeCarousel,'Carousel did not auto-advance');
+            assert(after.scramble.length>0,'Text scramble motion did not initialize');
+
+            // Theme control must work and persist exactly like the original chrome.
+            await m.click('#themeToggle');
+            assert((await m.evaluate(()=>document.documentElement.dataset.theme))==='light','Theme toggle failed in V28');
+            assert((await m.evaluate(()=>localStorage.getItem('ui-theme')))==='light','Theme toggle did not persist in V28');
+            await m.close();
+
+            console.log('LIVE V28 SCREENSHOT + MOTION PARITY QA PASSED — sticky chrome, header search, theme, hero, two-column cards, dark specimens and motion layer valid at 393/768/945/1440.');
+          }
+          await stage28Qa();
           await browser.close();
           JS
           node card-qa.mjs
