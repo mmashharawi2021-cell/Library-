@@ -109,6 +109,7 @@ jobs:
         run: |
           cat > card-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
+          import fs from 'node:fs';
 
           const browser=await puppeteer.launch({
             headless:true,
@@ -457,7 +458,7 @@ jobs:
               assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
               assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
               assert(home.headerSearch===2,`Reference homepage should expose header search input + wrapper, got ${home.headerSearch}`);
-              assert(home.version==='28',`Visible version badge expected 28, got ${home.version}`);
+              assert(home.version==='29',`Visible version badge expected 29, got ${home.version}`);
               assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
               assert(home.examples===0,`Screenshot parity should not show visible search-example chips, got ${home.examples}`);
               assert(home.search===1,'Homepage search field missing');
@@ -958,6 +959,131 @@ jobs:
             console.log('LIVE V28 SCREENSHOT + MOTION PARITY QA PASSED — sticky chrome, header search, theme, hero, two-column cards, dark specimens and motion layer valid at 393/768/945/1440.');
           }
           await stage28Qa();
+
+          async function stage29Qa(){
+            fs.mkdirSync('qa-screenshots',{recursive:true});
+            const widths=[393,768,945,1440];
+
+            for(const width of widths){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1200,deviceScaleFactor:1});
+              await p.evaluateOnNewDocument(()=>{try{localStorage.setItem('ui-theme','dark')}catch{}});
+              await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
+              await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+
+              const metrics=await p.evaluate(()=> {
+                const box=sel=>{const e=document.querySelector(sel);if(!e)return null;const r=e.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}};
+                const cards=[...document.querySelectorAll('#cards>.entry-card')].slice(0,4).map(e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}});
+                const p1=document.querySelector('.entry-preview')?.getBoundingClientRect();
+                const hero=document.querySelector('.hero')?.getBoundingClientRect();
+                const toolbar=document.querySelector('.catalog-toolbar')?.getBoundingClientRect();
+                return {
+                  sponsor:box('.sponsor-strip'),
+                  header:box('.sitehead'),
+                  hero:hero?{x:hero.x,y:hero.y,w:hero.width,h:hero.height}:null,
+                  title:box('.hero h1'),
+                  copy:box('.hero-copy'),
+                  search:box('.hero-search'),
+                  toolbar:toolbar?{x:toolbar.x,y:toolbar.y,w:toolbar.width,h:toolbar.height}:null,
+                  grid:box('.entries-grid'),
+                  cardPreview:p1?{w:p1.width,h:p1.height,ratio:p1.width/p1.height}:null,
+                  cards,
+                  guide:box('.guides'),
+                  footer:box('.footer'),
+                  bodyW:document.documentElement.clientWidth,
+                  scrollW:document.documentElement.scrollWidth
+                };
+              });
+
+              const near=(v,target,tol)=>Math.abs(v-target)<=tol;
+              if(width===393){
+                assert(near(metrics.sponsor.h,19,3),`393 sponsor height drift: ${metrics.sponsor.h}`);
+                assert(near(metrics.header.h,31,4),`393 header height drift: ${metrics.header.h}`);
+                assert(metrics.hero.h>180&&metrics.hero.h<285,`393 hero height drift: ${metrics.hero.h}`);
+                assert(metrics.title.w>220&&metrics.title.w<350,`393 hero title width drift: ${metrics.title.w}`);
+                assert(metrics.search.w>200&&metrics.search.w<270,`393 hero search width drift: ${metrics.search.w}`);
+                assert(metrics.cardPreview.ratio>2.48&&metrics.cardPreview.ratio<2.62,`393 preview ratio drift: ${metrics.cardPreview.ratio}`);
+                assert(metrics.cards.length===4&&metrics.cards[0].y===metrics.cards[1].y,'393 first card row lost two-column alignment');
+                assert(Math.abs(metrics.cards[0].w-metrics.cards[1].w)<2,'393 card columns are not equal width');
+              }else if(width===945){
+                assert(metrics.header.h>=48&&metrics.header.h<=58,`945 header height drift: ${metrics.header.h}`);
+                assert(metrics.hero.h>280&&metrics.hero.h<420,`945 hero height drift: ${metrics.hero.h}`);
+                assert(metrics.search.w>500&&metrics.search.w<650,`945 hero search width drift: ${metrics.search.w}`);
+                assert(metrics.cardPreview.ratio>2.48&&metrics.cardPreview.ratio<2.62,`945 preview ratio drift: ${metrics.cardPreview.ratio}`);
+              }else if(width===1440){
+                assert(metrics.grid.w>1080&&metrics.grid.w<1185,`1440 catalog width drift: ${metrics.grid.w}`);
+                assert(metrics.title.w>620&&metrics.title.w<840,`1440 title width drift: ${metrics.title.w}`);
+                assert(metrics.search.w>580&&metrics.search.w<630,`1440 search width drift: ${metrics.search.w}`);
+              }
+              assert(metrics.scrollW-metrics.bodyW<=2,`Pixel audit overflow at ${width}px`);
+
+              await p.screenshot({path:`qa-screenshots/v29-home-${width}.png`,fullPage:true});
+
+              if(width===393||width===1440){
+                await p.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
+                await p.waitForSelector('.atlas-card');
+                await p.screenshot({path:`qa-screenshots/v29-styles-${width}.png`,fullPage:true});
+
+                await p.goto(site+'web/data-table/',{waitUntil:'networkidle0',timeout:60000});
+                await p.waitForSelector('.detail');
+                await p.screenshot({path:`qa-screenshots/v29-detail-data-table-${width}.png`,fullPage:true});
+
+                await p.goto(site+'vs/toast-vs-alert/',{waitUntil:'networkidle0',timeout:60000});
+                await p.waitForSelector('.vs-detail');
+                await p.screenshot({path:`qa-screenshots/v29-compare-toast-alert-${width}.png`,fullPage:true});
+
+                await p.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
+                await p.waitForSelector('.guide-v2');
+                await p.screenshot({path:`qa-screenshots/v29-guide-appkit-swiftui-${width}.png`,fullPage:true});
+              }
+              await p.close();
+            }
+
+            // Motion timing audit: verify movement actually changes across frames, not merely CSS animation names.
+            const m=await browser.newPage();
+            await m.setViewport({width:945,height:1000,deviceScaleFactor:1});
+            await m.goto(site,{waitUntil:'networkidle0',timeout:60000});
+            await m.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+
+            const frame=()=>m.evaluate(()=> {
+              const rect=sel=>{const e=document.querySelector(sel);if(!e)return null;const r=e.getBoundingClientRect();return {x:r.x,y:r.y}};
+              return {
+                spring:rect('.spring .ball'),
+                spinner:getComputedStyle(document.querySelector('.spinner')).transform,
+                skeleton:getComputedStyle(document.querySelector('.skeleton')).backgroundPosition,
+                toast:rect('.toast-demo'),
+                parallax:rect('.parallax-layer.back'),
+                scramble:document.querySelector('.scramble b')?.textContent||'',
+                carousel:[...document.querySelectorAll('.carousel-strip article')].findIndex(x=>x.classList.contains('on'))
+              };
+            });
+            const f1=await frame();
+            await new Promise(resolve=>setTimeout(resolve,1150));
+            const f2=await frame();
+            await new Promise(resolve=>setTimeout(resolve,2450));
+            const f3=await frame();
+
+            assert(f1.spring&&f2.spring&&(Math.abs(f1.spring.x-f2.spring.x)>2||Math.abs(f1.spring.y-f2.spring.y)>2),'Spring specimen is visually static');
+            assert(f1.spinner!==f2.spinner,'Spinner transform did not change between frames');
+            assert(f1.skeleton!==f2.skeleton,'Skeleton shimmer did not advance');
+            assert(f1.parallax&&f2.parallax&&Math.abs(f1.parallax.y-f2.parallax.y)>.5,'Parallax layer did not move');
+            assert(f1.carousel!==f3.carousel,'Carousel timing did not advance within audit window');
+            assert(f1.scramble.length>0&&f2.scramble.length>0,'Scramble specimen missing text during motion');
+            await m.screenshot({path:'qa-screenshots/v29-motion-frame.png',fullPage:false});
+            await m.close();
+
+            console.log('LIVE V29 PIXEL + MOTION AUDIT PASSED — geometry locked to supplied reference captures; visual screenshots saved for 393/768/945/1440 and motion verified across frames.');
+          }
+          await stage29Qa();
           await browser.close();
           JS
           node card-qa.mjs
+
+      - name: Upload V29 visual regression screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v29-visual-regression
+          path: qa-screenshots
+          if-no-files-found: warn
+          retention-days: 30
