@@ -151,7 +151,9 @@ function demo(e,large=false){
   }
 }
 
-function card(e){return `<a class="entry-card" href="#/element/${e.slug}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3>${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
+const entryPath=e=>`${e.category}/${e.slug}/`;
+const entryHref=e=>`${BASE}${entryPath(e)}`;
+function card(e){return `<a class="entry-card" href="${entryHref(e)}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3>${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
 function searchMatches(e,q){if(!q)return true;const hay=norm([e.ar,e.en,e.code,e.description,...(e.aliases||[])].join(' '));return norm(q).split(' ').filter(Boolean).every(x=>hay.includes(x))}
 function bindGlossary(){
   const box=document.querySelector('#glossary');if(!box)return;
@@ -213,7 +215,7 @@ function home(){
  const newest=['data-table','bottom-navigation','timeline','presence-indicator','message-bubble'];
  const rank=new Map(newest.map((s,i)=>[s,i]));
  app.innerHTML=nav('elements')+`<main id="main"><section class="hero shell">
- <div class="newweek"><b>جديد هذا الأسبوع</b><div>${fresh.map(e=>`<a href="#/element/${e.slug}">${esc(e.ar)} <span>${esc(e.en)}</span></a>`).join('')}</div></div>
+ <div class="newweek"><b>جديد هذا الأسبوع</b><div>${fresh.map(e=>`<a href="${entryHref(e)}">${esc(e.ar)} <span>${esc(e.en)}</span></a>`).join('')}</div></div>
  <h1>ما اسم عنصر الواجهة هذا<span class="qmark">؟</span></h1>
  <p class="hero-copy">القاموس البصري لعناصر UI. صف الشيء بكلماتك العادية؛ تحصل على الاسم الحقيقي، رمز التنفيذ، وPrompt جاهز لوكيل البرمجة.</p>
  <div class="search-examples" aria-label="أمثلة بحث"><span>“الخلفية الشاحبة خلف أيقونة في شريط القوائم”</span><span>“الطبقة الداكنة الشفافة خلف نافذة منبثقة”</span><span>“النص الرمادي داخل الحقل الذي يختفي عند الكتابة”</span><span>“النقطة التي تسحبها لتغيير مستوى الصوت”</span><span>“النص ينقطع بثلاث نقاط”</span></div>
@@ -235,7 +237,7 @@ function home(){
 function detail(slug){
  const e=bySlug(slug);
  if(!e)return notFound();
- setMeta(`${e.ar} — ${e.en}`,e.description,`element/${e.slug}/`);
+ setMeta(`${e.ar} — ${e.en}`,e.description,entryPath(e));
  const idx=D.entries.indexOf(e);
  const pool=D.entries.filter(x=>x!==e&&x.category===e.category);
  const start=pool.length?idx%pool.length:0;
@@ -323,7 +325,7 @@ function detail(slug){
      <section class="section related-section">
        <h2>راجع أيضًا</h2>
        <div class="related">
-         ${rel.map(r=>`<a href="#/element/${r.slug}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span><small>${r.category==='web'?'Web':'macOS'}</small></a>`).join('')}
+         ${rel.map(r=>`<a href="${entryHref(r)}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span><small>${r.category==='web'?'Web':'macOS'}</small></a>`).join('')}
        </div>
      </section>
 
@@ -709,7 +711,7 @@ function comparisonItems(c){
   return (comparisonEntries[c.slug]||[]).map(bySlug).filter(Boolean);
 }
 function comparisonCard(e){
-  return `<a class="vs-entry" href="#/element/${e.slug}"><div class="vs-entry-preview">${demo(e)}</div><div class="vs-entry-copy"><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><small>${e.category==='web'?'Web':'macOS'}</small></div></a>`;
+  return `<a class="vs-entry" href="${entryHref(e)}"><div class="vs-entry-preview">${demo(e)}</div><div class="vs-entry-copy"><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><small>${e.category==='web'?'Web':'macOS'}</small></div></a>`;
 }
 function compare(){
   setMeta('العناصر التي يكثر الخلط بينها — UI بالعربي','مقارنات عملية بين عناصر واجهة متشابهة بصريًا لكن مختلفة في الوظيفة والسلوك.','compare/');
@@ -722,7 +724,7 @@ function compareDetail(slug){
   const items=comparisonItems(c);
   const rules=comparisonRules[c.slug]||[c.answer];
   setMeta(`${c.title} — UI بالعربي`,c.answer,`vs/${c.slug}/`);
-  app.innerHTML=nav('compare')+`<main id="main" class="shell vs-shell"><article class="vs-detail"><nav class="vs-crumbs"><a href="#/compare">المتشابهات</a><span>/</span><span>${esc(c.title)}</span></nav><header class="vs-head"><div class="compare-kicker">COMMONLY CONFUSED</div><h1>${esc(c.title)}</h1><p>${esc(c.answer)}</p></header><section class="vs-showcase">${items.map(comparisonCard).join('')}</section><section class="vs-section"><h2>كيف تفرّق بينها؟</h2><ul class="vs-rules">${rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="vs-section"><h2>القرار السريع</h2><div class="vs-decision">${items.map((e,i)=>`<div><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><p>${esc(rules[Math.min(i,rules.length-1)]||c.answer)}</p><a href="#/element/${e.slug}">افتح الإدخال الكامل ←</a></div>`).join('')}</div></section><p class="detail-source-note">المرجع البنيوي للمقارنات: <a href="https://namethatui.com/vs" target="_blank" rel="noopener">Name That UI — Commonly Confused ↗</a>. الشرح العربي هنا مكتوب للمشروع العربي.</p></article></main>`+footer();
+  app.innerHTML=nav('compare')+`<main id="main" class="shell vs-shell"><article class="vs-detail"><nav class="vs-crumbs"><a href="#/compare">المتشابهات</a><span>/</span><span>${esc(c.title)}</span></nav><header class="vs-head"><div class="compare-kicker">COMMONLY CONFUSED</div><h1>${esc(c.title)}</h1><p>${esc(c.answer)}</p></header><section class="vs-showcase">${items.map(comparisonCard).join('')}</section><section class="vs-section"><h2>كيف تفرّق بينها؟</h2><ul class="vs-rules">${rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="vs-section"><h2>القرار السريع</h2><div class="vs-decision">${items.map((e,i)=>`<div><b>${esc(e.ar)}</b><span dir="ltr">${esc(e.en)}</span><p>${esc(rules[Math.min(i,rules.length-1)]||c.answer)}</p><a href="${entryHref(e)}">افتح الإدخال الكامل ←</a></div>`).join('')}</div></section><p class="detail-source-note">المرجع البنيوي للمقارنات: <a href="https://namethatui.com/vs" target="_blank" rel="noopener">Name That UI — Commonly Confused ↗</a>. الشرح العربي هنا مكتوب للمشروع العربي.</p></article></main>`+footer();
   bindDemos(document.querySelector('.vs-showcase'));bindChrome();bindGlossary();
 }
 const translationEntryMap={
@@ -798,7 +800,7 @@ function translate(){
   const draw=()=>{
     const q=norm(input.value);
     const rows=D.translations.filter(r=>!q||norm(Object.values(r).join(' ')).includes(q));
-    document.querySelector('#ttable').innerHTML=`<div class="translation-wrap"><table class="translation-v2"><thead><tr><th>العنصر</th><th>AppKit</th><th>SwiftUI</th></tr></thead><tbody>${rows.map(r=>{const e=translationEntry(r);return `<tr><td>${e?`<a href="#/element/${e.slug}">${esc(r.thing)}</a>`:esc(r.thing)}</td><td><code dir="ltr">${esc(r.appkit)}</code></td><td><code dir="ltr">${esc(r.swiftui)}</code></td></tr>`}).join('')}</tbody></table></div><p class="translation-count">${rows.length} من ${D.translations.length} ترجمة · العناصر المسطّرة مرتبطة بمدخل بصري عند توفر تطابق.</p>`;
+    document.querySelector('#ttable').innerHTML=`<div class="translation-wrap"><table class="translation-v2"><thead><tr><th>العنصر</th><th>AppKit</th><th>SwiftUI</th></tr></thead><tbody>${rows.map(r=>{const e=translationEntry(r);return `<tr><td>${e?`<a href="${entryHref(e)}">${esc(r.thing)}</a>`:esc(r.thing)}</td><td><code dir="ltr">${esc(r.appkit)}</code></td><td><code dir="ltr">${esc(r.swiftui)}</code></td></tr>`}).join('')}</tbody></table></div><p class="translation-count">${rows.length} من ${D.translations.length} ترجمة · العناصر المسطّرة مرتبطة بمدخل بصري عند توفر تطابق.</p>`;
   };
   draw();input.oninput=draw;
   addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();input.focus()}},{once:true});
