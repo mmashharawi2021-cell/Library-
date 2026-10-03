@@ -30,14 +30,18 @@ for(const [slug,p] of Object.entries(patches)){
 const inspector=D.translations.find(x=>x.thing==='الفاحص');
 if(inspector) inspector.appkit='NSSplitViewItem.Behavior.inspector / NSInspectorBar / NSPanel';
 
-function setMeta(title,desc,urlPath=''){
+function setMeta(title,desc,urlPath='',indexable=true){
   document.title=title;
   const absolute=`https://mmashharawi2021-cell.github.io${BASE}${urlPath}`;
   const set=(sel,attr,val)=>{let el=document.querySelector(sel);if(!el){el=document.createElement('meta');if(sel.includes('property='))el.setAttribute('property',sel.match(/"([^"]+)"/)?.[1]||'');else el.setAttribute('name',sel.match(/"([^"]+)"/)?.[1]||'');document.head.appendChild(el)}el.setAttribute(attr,val)};
-  let md=document.querySelector('meta[name="description"]'); if(md) md.content=desc;
+  let md=document.querySelector('meta[name="description"]');if(!md){md=document.createElement('meta');md.name='description';document.head.appendChild(md)}md.content=desc;
+  set('meta[name="robots"]','content',indexable?'index,follow,max-image-preview:large':'noindex,follow');
   set('meta[property="og:title"]','content',title);
   set('meta[property="og:description"]','content',desc);
   set('meta[property="og:url"]','content',absolute);
+  set('meta[name="twitter:card"]','content','summary');
+  set('meta[name="twitter:title"]','content',title);
+  set('meta[name="twitter:description"]','content',desc);
   let canonical=document.querySelector('link[rel="canonical"]');
   if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}
   canonical.href=absolute;
@@ -45,11 +49,11 @@ function setMeta(title,desc,urlPath=''){
 
 const nav=(active='elements')=>`<div class="source-strip"><div class="shell source-inner"><span class="source-dot"></span><b>REFERENCE</b><span>المصدر المرجعي</span><a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">1</i><small>قاموس الواجهة</small></a>
+<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">20</i><small>قاموس الواجهة</small></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="#/">العناصر</a><a class="${active==='styles'?'active':''}" href="#/styles">الأنماط</a></nav>
 <div class="headtools"><label class="headsearch"><span>⌕</span><input id="headerSearch" placeholder="صف العنصر…" aria-label="بحث سريع"><kbd>⌘K</kbd></label><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر">◐</button></div>
 </div></header>`;
-const footer=()=>`<footer class="footer"><div class="shell footgrid"><div><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري العربي لعناصر واجهة المستخدم.</p><small>المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات هنا أصلية.</small></div><nav class="footlinks"><a href="#/guides">الأدلة</a><a href="#/compare">المتشابهات</a><a href="#/methodology">المنهجية</a><a href="#/translate">جدول الترجمة</a><a href="#/saved">المحفوظات</a><a href="#/submit">اقترح عنصرًا</a><a href="/Library-/feed.xml">RSS</a></nav></div></footer><div id="glossary" class="glossary" role="status"></div>`;
+const footer=()=>`<footer class="footer"><div class="shell footgrid"><div><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري العربي لعناصر واجهة المستخدم.</p><small>المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات هنا أصلية.</small></div><nav class="footlinks"><a href="#/glossary">المصطلحات</a><a href="#/guides">الأدلة</a><a href="#/compare">المتشابهات</a><a href="#/methodology">المنهجية</a><a href="#/translate">جدول الترجمة</a><a href="#/saved">المحفوظات</a><a href="#/submit">اقترح عنصرًا</a><a href="/Library-/feed.xml">RSS</a></nav></div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function bindChrome(){
  const t=document.querySelector('#themeToggle');
@@ -151,9 +155,20 @@ function demo(e,large=false){
 function card(e){return `<a class="entry-card" href="#/element/${e.slug}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3>${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
 function searchMatches(e,q){if(!q)return true;const hay=norm([e.ar,e.en,e.code,e.description,...(e.aliases||[])].join(' '));return norm(q).split(' ').filter(Boolean).every(x=>hay.includes(x))}
 function bindGlossary(){
-  const box=document.querySelector('#glossary'); if(!box)return;
-  const handler=ev=>{const w=(getSelection()?.toString()||'').trim();if(!w)return;const key=Object.keys(D.glossary||{}).find(k=>norm(k)===norm(w));box.textContent=key?D.glossary[key]:`«${w}»: لا يوجد تعريف سريع محفوظ لهذا المصطلح بعد.`;box.style.display='block';box.style.left=Math.max(10,Math.min(innerWidth-340,ev.clientX))+'px';box.style.top=Math.max(80,ev.clientY+14)+'px';clearTimeout(window.__gto);window.__gto=setTimeout(()=>box.style.display='none',4200)};
-  document.addEventListener('dblclick',handler,{once:true});
+  const box=document.querySelector('#glossary');if(!box)return;
+  document.ondblclick=ev=>{
+    if(ev.target.closest('input,textarea,select,button'))return;
+    const w=(getSelection()?.toString()||'').trim();
+    if(!w)return;
+    const key=Object.keys(D.glossary||{}).find(k=>norm(k)===norm(w));
+    const def=key?D.glossary[key]:null;
+    box.innerHTML=def?`<b>${esc(key)}</b><p>${esc(def)}</p><a href="#/glossary">افتح قاموس المصطلحات ←</a>`:`<b>${esc(w)}</b><p>لا يوجد تعريف سريع محفوظ لهذا المصطلح بعد.</p><a href="#/glossary">ابحث في قاموس المصطلحات ←</a>`;
+    box.style.display='block';
+    const maxLeft=Math.max(10,innerWidth-Math.min(330,innerWidth-20)-10);
+    box.style.left=Math.max(10,Math.min(maxLeft,ev.clientX))+'px';
+    box.style.top=Math.max(70,Math.min(innerHeight-150,ev.clientY+14))+'px';
+    clearTimeout(window.__gto);window.__gto=setTimeout(()=>box.style.display='none',4800);
+  };
 }
 function bindCopy(){document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{const t=decodeURIComponent(b.dataset.copy);try{await navigator.clipboard.writeText(t);b.textContent='تم النسخ';setTimeout(()=>b.textContent='نسخ',1200)}catch{}})}
 function bindDetailActions(e){
@@ -822,9 +837,55 @@ function guide(kind){
   app.innerHTML=nav('guides')+`<main id="main" class="shell guide-v2"><nav class="guide-crumbs"><a href="#/guides">الأدلة</a><span>/</span><span>${esc(title)}</span></nav><header><div class="guides-kicker">GUIDE</div><h1>${esc(title)}</h1><p>${esc(subtitle)}</p></header>${body}<p class="detail-source-note">بنية الدليل مستندة إلى قسم Guides في Name That UI، مع شرح عربي أصلي للمشروع.</p></main>`+footer();
   bindChrome();bindGlossary();
 }
-function saved(){setMeta('المحفوظات — UI بالعربي','العناصر التي حفظتها محليًا في متصفحك.','saved/');const ids=JSON.parse(localStorage.getItem('saved-ui-ar')||'[]');const list=ids.map(bySlug).filter(Boolean);app.innerHTML=nav('')+`<main id="main" class="shell"><section class="guide"><div class="sectionlabel">المحفوظات</div><h1>العناصر المحفوظة</h1><p class="lead">تُحفظ هذه القائمة على جهازك فقط.</p><div class="grid">${list.length?list.map(card).join(''):'<div class="emptysearch">لا توجد عناصر محفوظة بعد.</div>'}</div></section></main>`+footer();bindDemos(document.querySelector('.grid'));bindChrome();bindGlossary()}
-function submitTerm(){setMeta('اقترح عنصرًا — UI بالعربي','نموذج محلي لصياغة اقتراح عنصر جديد.','submit/');app.innerHTML=nav('')+`<main id="main" class="shell"><article class="guide"><div class="sectionlabel">اقترح عنصرًا</div><h1>ما العنصر الذي ينقص القاموس؟</h1><p class="lead">اكتب ما تراه حتى لو لم تعرف الاسم. النموذج لا يرسل بيانات إلى خادم؛ سيُنشئ لك نصًا منظمًا فقط.</p><form id="submitform" class="submitform"><label>صف العنصر<textarea name="seen" required placeholder="مثال: زر صغير بثلاث نقاط يفتح إجراءات إضافية"></textarea></label><label>أين يظهر؟<input name="where" placeholder="Web / macOS / تطبيقات الهاتف…"></label><label>ما الاسم الذي تتوقعه؟<input name="guess"></label><button>أنشئ نص الاقتراح</button><pre id="proposal"></pre></form></article></main>`+footer();const f=document.querySelector('#submitform');f.onsubmit=e=>{e.preventDefault();const fd=new FormData(f);document.querySelector('#proposal').textContent=`وصف العنصر: ${fd.get('seen')}\nالمنصة/المكان: ${fd.get('where')}\nالاسم المتوقع: ${fd.get('guess')}`};bindChrome();bindGlossary()}
-function notFound(){setMeta('الصفحة غير موجودة — UI بالعربي','تعذر العثور على الصفحة المطلوبة.','404.html');app.innerHTML=nav('')+`<main id="main" class="shell"><section class="hero"><h1>الصفحة غير موجودة</h1><p><a class="chip active" href="#/">العودة إلى الفهرس</a></p></section></main>`+footer()}
+function glossaryPage(){
+  setMeta('قاموس المصطلحات — UI بالعربي','تعريفات عربية سريعة للمفاهيم التقنية المتكررة في تصميم وبرمجة واجهات المستخدم.','glossary/');
+  const all=Object.entries(D.glossary||{});
+  app.innerHTML=nav('')+`<main id="main" class="shell glossary-page"><section class="glossary-hero"><div class="sectionlabel">GLOSSARY</div><h1>قاموس المصطلحات</h1><p>تعريفات قصيرة للمفاهيم التي تظهر عبر القاموس. العربية أولًا، والمصطلح الإنجليزي ملاصق عندما يمنع الغموض.</p><label class="glossary-search"><span>⌕</span><input id="gsearch" inputmode="search" autocomplete="off" placeholder="ابحث: ARIA أو AppKit أو RTL…"><kbd>⌘K</kbd></label></section><section id="glist" class="glossary-list"></section></main>`+footer();
+  const input=document.querySelector('#gsearch');
+  const draw=()=>{
+    const q=norm(input.value);
+    const rows=all.filter(([term,def])=>!q||norm(term+' '+def).includes(q));
+    document.querySelector('#glist').innerHTML=rows.length?rows.map(([term,def])=>`<article class="glossary-row"><div><b>${esc(term)}</b></div><p>${esc(def)}</p></article>`).join(''):`<div class="glossary-empty">لا يوجد مصطلح مطابق. جرّب الاسم الإنجليزي أو وصفًا أقصر.</div>`;
+  };
+  draw();input.oninput=draw;
+  addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();input.focus()}},{once:true});
+  bindChrome();bindGlossary();
+}
+function readSavedIds(){try{const ids=JSON.parse(localStorage.getItem('saved-ui-ar')||'[]');return Array.isArray(ids)?ids:[]}catch{return[]}}
+function writeSavedIds(ids){try{localStorage.setItem('saved-ui-ar',JSON.stringify([...new Set(ids)]))}catch{}}
+function saved(){
+  setMeta('المحفوظات — UI بالعربي','العناصر التي حفظتها محليًا في متصفحك للرجوع إليها لاحقًا.','saved/',false);
+  const ids=readSavedIds();
+  const list=ids.map(bySlug).filter(Boolean);
+  app.innerHTML=nav('')+`<main id="main" class="shell saved-page"><section class="saved-hero"><div class="sectionlabel">SAVED</div><div class="saved-title-row"><div><h1>العناصر المحفوظة</h1><p>قائمتك الخاصة على هذا الجهاز. لا تُرفع هذه البيانات إلى خادم.</p></div><div class="saved-count"><b>${list.length}</b><span>عنصر محفوظ</span></div></div>${list.length?`<button class="saved-clear" id="clearSaved" type="button">مسح الكل</button>`:''}</section><section class="saved-grid">${list.length?list.map(e=>`<article class="saved-entry" data-saved-slug="${e.slug}">${card(e)}<button class="saved-remove" type="button" data-saved-remove="${e.slug}" aria-label="إزالة ${esc(e.ar)} من المحفوظات">× إزالة</button></article>`).join(''):`<div class="saved-empty"><b>لا توجد عناصر محفوظة بعد.</b><p>افتح أي عنصر واضغط «☆ حفظ» ليظهر هنا.</p><a href="#/">تصفح العناصر ←</a></div>`}</section></main>`+footer();
+  const grid=document.querySelector('.saved-grid');bindDemos(grid);
+  document.querySelectorAll('[data-saved-remove]').forEach(btn=>btn.onclick=()=>{writeSavedIds(readSavedIds().filter(x=>x!==btn.dataset.savedRemove));saved()});
+  const clear=document.querySelector('#clearSaved');if(clear)clear.onclick=()=>{writeSavedIds([]);saved()};
+  bindChrome();bindGlossary();
+}
+function submitTerm(){
+  setMeta('اقترح عنصرًا — UI بالعربي','اقترح عنصر واجهة جديدًا للقاموس عبر نموذج منظم يجهز GitHub Issue للمراجعة.','submit/');
+  app.innerHTML=nav('')+`<main id="main" class="shell submit-page"><article class="submit-shell"><header class="submit-hero"><div class="sectionlabel">SUBMIT</div><h1>ما العنصر الذي ينقص القاموس؟</h1><p>صف ما تراه حتى لو لم تعرف الاسم. سنحوّل الوصف إلى اقتراح منظم يمكنك نسخه أو فتحه مباشرةً كـ GitHub Issue للمراجعة.</p></header><form id="submitform" class="submitform"><div class="submit-field submit-wide"><label for="seen">صف العنصر <span>مطلوب</span></label><textarea id="seen" name="seen" required placeholder="مثال: زر صغير بثلاث نقاط يفتح إجراءات إضافية"></textarea><small>صف الشكل، مكانه، وماذا يحدث عند التفاعل معه.</small></div><div class="submit-field"><label for="where">أين يظهر؟ <span>مطلوب</span></label><select id="where" name="where" required><option value="">اختر المنصة</option><option>Web</option><option>macOS</option><option>iOS / iPadOS</option><option>Android</option><option>Desktop / Other</option></select></div><div class="submit-field"><label for="guess">الاسم الذي تتوقعه</label><input id="guess" name="guess" placeholder="اختياري — عربي أو إنجليزي"></div><div class="submit-field submit-wide"><label for="reference">رابط أو مرجع بصري</label><input id="reference" name="reference" inputmode="url" placeholder="https://…"></div><div class="submit-field submit-wide"><label for="notes">ملاحظات إضافية</label><textarea id="notes" name="notes" placeholder="ما الذي يجعله مختلفًا عن عنصر موجود؟"></textarea></div><div class="submit-actions"><button type="submit">جهّز الاقتراح</button><button type="reset" class="secondary">إعادة تعيين</button></div></form><section id="proposalBox" class="proposal-box" hidden><div class="proposal-head"><div><b>الاقتراح جاهز</b><span>راجعه قبل الإرسال.</span></div><div><button id="copyProposal" type="button">نسخ النص</button><a id="openIssue" target="_blank" rel="noopener">فتح GitHub Issue ↗</a></div></div><pre id="proposal"></pre></section></article></main>`+footer();
+  const f=document.querySelector('#submitform');
+  const proposal=document.querySelector('#proposal');
+  const box=document.querySelector('#proposalBox');
+  const issue=document.querySelector('#openIssue');
+  const copy=document.querySelector('#copyProposal');
+  f.onsubmit=e=>{
+    e.preventDefault();
+    const fd=new FormData(f);
+    const seen=String(fd.get('seen')||'').trim(),where=String(fd.get('where')||'').trim(),guess=String(fd.get('guess')||'').trim(),reference=String(fd.get('reference')||'').trim(),notes=String(fd.get('notes')||'').trim();
+    const text=`## اقتراح عنصر جديد\n\n**الوصف المرئي**\n${seen}\n\n**المنصة / المكان**\n${where}\n\n**الاسم المتوقع**\n${guess||'غير معروف'}\n\n**مرجع بصري**\n${reference||'غير مرفق'}\n\n**ملاحظات**\n${notes||'لا توجد'}\n\n---\nأُنشئ هذا الاقتراح من صفحة Submit في UI بالعربي.`;
+    proposal.textContent=text;box.hidden=false;
+    const title=guess?`اقتراح عنصر: ${guess}`:`اقتراح عنصر UI جديد — ${where}`;
+    issue.href=`https://github.com/mmashharawi2021-cell/Library-/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(text)}`;
+    box.scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+  f.onreset=()=>{box.hidden=true;proposal.textContent='';issue.removeAttribute('href')};
+  copy.onclick=async()=>{try{await navigator.clipboard.writeText(proposal.textContent);const old=copy.textContent;copy.textContent='تم النسخ';setTimeout(()=>copy.textContent=old,1200)}catch{}};
+  bindChrome();bindGlossary();
+}
+function notFound(){setMeta('الصفحة غير موجودة — UI بالعربي','تعذر العثور على الصفحة المطلوبة.','404.html',false);app.innerHTML=nav('')+`<main id="main" class="shell"><section class="hero"><h1>الصفحة غير موجودة</h1><p><a class="chip active" href="#/">العودة إلى الفهرس</a></p></section></main>`+footer()}
 function routeFromLocation(){
   if(location.hash.startsWith('#/')) return location.hash.slice(1);
   let p=location.pathname;
@@ -835,11 +896,11 @@ function routeFromLocation(){
   if(seg[0]==='element'&&seg[1]) return `/element/${seg[1]}`;
   if(seg[0]==='styles'&&seg[1]) return `/style/${seg[1]}`;
   if(seg[0]==='styles') return '/styles';
-  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(['compare','translate','methodology','guides'].includes(seg[0])) return `/${seg[0]}`;
+  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(['compare','translate','methodology','guides','glossary','saved','submit'].includes(seg[0])) return `/${seg[0]}`;
   if(seg[0]==='appkit-vs-swiftui') return '/guide/appkit-swiftui';
   if(seg[0]==='swift-vs-electron') return '/guide/swift-electron';
   return '/404';
 }
-function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home();if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
+function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home();if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='glossary')return glossaryPage();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
 addEventListener('hashchange',router);router();
 })();
