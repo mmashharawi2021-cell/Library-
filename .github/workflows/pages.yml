@@ -568,6 +568,15 @@ jobs:
           await stage21Qa();
 
           async function stage22Qa(){
+            const gotoAvailable=async(page,url)=>{
+              let response=null;
+              for(let attempt=0;attempt<12;attempt++){
+                response=await page.goto(url,{waitUntil:'networkidle0',timeout:60000});
+                if(response&&response.ok()) return response;
+                await new Promise(resolve=>setTimeout(resolve,2000));
+              }
+              return response;
+            };
             const seed=await browser.newPage();
             await seed.goto(site+'?routes=22#/',{waitUntil:'networkidle0',timeout:60000});
             const entries=await seed.evaluate(()=>window.UI_AR_DATA.entries.map(e=>({slug:e.slug,category:e.category})));
@@ -581,7 +590,7 @@ jobs:
               p.on('pageerror',e=>errors.push(String(e)));
 
               for(const [category,count] of [['web',49],['macos',32]]){
-                const response=await p.goto(site+category+'/',{waitUntil:'networkidle0',timeout:60000});
+                const response=await gotoAvailable(p,site+category+'/');
                 assert(response&&response.ok(),`HTTP failure for /${category}/ at ${width}px`);
                 await p.waitForFunction(c=>document.querySelectorAll('#cards > .entry-card').length===c,{timeout:10000},count);
                 const indexCheck=await p.evaluate(category=>({
@@ -598,7 +607,7 @@ jobs:
 
               for(const entry of entries){
                 const path=entry.category+'/'+entry.slug+'/';
-                const response=await p.goto(site+path,{waitUntil:'networkidle0',timeout:60000});
+                const response=await gotoAvailable(p,site+path);
                 assert(response&&response.ok(),`HTTP failure for /${path} at ${width}px`);
                 await p.waitForSelector('.detail',{timeout:10000});
                 const check=await p.evaluate(({category,slug})=>({
