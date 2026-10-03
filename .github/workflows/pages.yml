@@ -143,5 +143,38 @@ jobs:
 
           await browser.close();
           console.log('LIVE CARD QA PASSED — 81 unique cards, no fallbacks, filters correct.');
+
+          const detailPage=await browser.newPage();
+          await detailPage.setViewport({width:393,height:1000,deviceScaleFactor:1});
+          const detailErrors=[];
+          detailPage.on('pageerror',e=>detailErrors.push(String(e)));
+          await detailPage.goto(site+'?detailqa=17',{waitUntil:'networkidle0',timeout:60000});
+          const slugs=await detailPage.evaluate(()=>window.UI_AR_DATA.entries.map(e=>e.slug));
+          for(const slug of slugs){
+            await detailPage.evaluate(s=>{location.hash='#/element/'+s},slug);
+            await detailPage.waitForFunction(s=>{
+              const d=document.querySelector('.detail');
+              return location.hash==='#/element/'+s && !!d && !!d.querySelector('.specimen .ui-demo') && !!d.querySelector('.anatomy .part') && !!d.querySelector('.prompt-agent') && !!d.querySelector('.prompt-debug') && !!d.querySelector('.code-table') && !!d.querySelector('.related a');
+            },{timeout:10000},slug);
+            const check=await detailPage.evaluate(()=>({
+              h1:document.querySelector('.detail h1')?.textContent?.trim(),
+              actions:document.querySelectorAll('.detail-actions button').length,
+              parts:document.querySelectorAll('.anatomy .part').length,
+              prompts:document.querySelectorAll('.prompt').length,
+              codeRows:document.querySelectorAll('.code-table tr').length,
+              related:document.querySelectorAll('.related a').length,
+              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+            }));
+            assert(!!check.h1,`Missing detail title for ${slug}`);
+            assert(check.actions===3,`Expected 3 detail actions for ${slug}, got ${check.actions}`);
+            assert(check.parts>0,`Missing anatomy for ${slug}`);
+            assert(check.prompts===2,`Expected 2 prompts for ${slug}, got ${check.prompts}`);
+            assert(check.codeRows>0,`Missing code rows for ${slug}`);
+            assert(check.related>0,`Missing related links for ${slug}`);
+            assert(check.overflow<=2,`Detail horizontal overflow ${check.overflow}px for ${slug}`);
+          }
+          assert(detailErrors.length===0,`Detail page errors: ${detailErrors.join(' | ')}`);
+          await detailPage.close();
+          console.log('LIVE DETAIL QA PASSED — all 81 element pages rendered with complete structure.');
           JS
           node card-qa.mjs
