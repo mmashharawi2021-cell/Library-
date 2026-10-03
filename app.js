@@ -47,19 +47,18 @@ function setMeta(title,desc,urlPath='',indexable=true){
   canonical.href=absolute;
 }
 
-const nav=(active='elements')=>`<div class="source-strip"><div class="shell source-inner"><span class="source-dot"></span><b>REFERENCE</b><span>المصدر المرجعي</span><a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a></div></div>
+const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span>راعِ الموقع</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">اسمك هنا · $500/شهر ↗</a></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">20</i><small>قاموس الواجهة</small></a>
+<a class="brand" href="#/"><strong>ui بالعربي</strong><i class="brandbadge">21</i><small>قاموس الواجهة</small></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="#/">العناصر</a><a class="${active==='styles'?'active':''}" href="#/styles">الأنماط</a></nav>
-<div class="headtools"><label class="headsearch"><span>⌕</span><input id="headerSearch" placeholder="صف العنصر…" aria-label="بحث سريع"><kbd>⌘K</kbd></label><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر">◐</button></div>
+<div class="headtools"><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر">◐</button></div>
 </div></header>`;
-const footer=()=>`<footer class="footer"><div class="shell footgrid"><div><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري العربي لعناصر واجهة المستخدم.</p><small>المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات هنا أصلية.</small></div><nav class="footlinks"><a href="#/glossary">المصطلحات</a><a href="#/guides">الأدلة</a><a href="#/compare">المتشابهات</a><a href="#/methodology">المنهجية</a><a href="#/translate">جدول الترجمة</a><a href="#/saved">المحفوظات</a><a href="#/submit">اقترح عنصرًا</a><a href="/Library-/feed.xml">RSS</a></nav></div></footer><div id="glossary" class="glossary" role="status"></div>`;
+const footer=()=>`<footer class="footer"><div class="shell footgrid"><div class="footer-brandblock"><a class="footbrand" href="#/">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p><div class="footer-rss"><span>مصطلحات جديدة تُضاف باستمرار</span><a href="/Library-/feed.xml">تابع عبر RSS</a></div></div><nav class="footlinks"><a href="#/compare">العناصر المتشابهة</a><a href="#/methodology">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية ↗</a></nav><div class="footer-attribution">المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. الكود والنصوص والمعاينات العربية أصلية لهذا المشروع.</div></div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function bindChrome(){
  const t=document.querySelector('#themeToggle');
  if(t)t.onclick=()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('ui-theme',next)}catch{}};
- const h=document.querySelector('#headerSearch');
- if(h){h.value=state.q||'';h.onkeydown=e=>{if(e.key==='Enter'){state.q=h.value.trim();location.hash='#/';if(location.hash==='#/')home()}}}
+
 }
 function demo(e,large=false){
   const s=e.slug;
@@ -216,18 +215,20 @@ function home(){
  app.innerHTML=nav('elements')+`<main id="main"><section class="hero shell">
  <div class="newweek"><b>جديد هذا الأسبوع</b><div>${fresh.map(e=>`<a href="#/element/${e.slug}">${esc(e.ar)} <span>${esc(e.en)}</span></a>`).join('')}</div></div>
  <h1>ما اسم عنصر الواجهة هذا<span class="qmark">؟</span></h1>
- <p class="hero-copy">القاموس البصري لعناصر UI. صف الشيء بكلماتك العادية؛ تحصل على الاسم الحقيقي، المصطلح الإنجليزي، رمز التنفيذ وPrompt جاهز لوكيل البرمجة.</p>
- <div class="hero-search"><span>⌕</span><input id="search" autocomplete="off" inputmode="search" placeholder="مثال: الخلفية الشاحبة خلف قائمة…" value="${esc(state.q)}"><kbd>⌘K</kbd></div>
- <div class="hero-help"><a href="#/styles">لا تعرف اسم المظهر أيضًا؟ جرّب أطلس الأنماط</a><span>اضغط مرتين على أي كلمة لعرض تعريف سريع.</span></div>
+ <p class="hero-copy">القاموس البصري لعناصر UI. صف الشيء بكلماتك العادية؛ تحصل على الاسم الحقيقي، رمز التنفيذ، وPrompt جاهز لوكيل البرمجة.</p>
+ <div class="search-examples" aria-label="أمثلة بحث"><button type="button" data-example="الخلفية الشاحبة خلف أيقونة في شريط القوائم">“الخلفية الشاحبة خلف أيقونة في شريط القوائم”</button><button type="button" data-example="الطبقة الداكنة الشفافة خلف نافذة منبثقة">“الطبقة الداكنة الشفافة خلف نافذة منبثقة”</button><button type="button" data-example="النص الرمادي داخل الحقل الذي يختفي عند الكتابة">“النص الرمادي داخل الحقل الذي يختفي عند الكتابة”</button><button type="button" data-example="النقطة التي تسحبها لتغيير مستوى الصوت">“النقطة التي تسحبها لتغيير مستوى الصوت”</button><button type="button" data-example="النص ينقطع بثلاث نقاط">“النص ينقطع بثلاث نقاط”</button></div>
+ <div class="hero-search"><input id="search" autocomplete="off" inputmode="search" aria-label="صف عنصر الواجهة" placeholder="صف عنصر الواجهة الذي تفكر فيه…" value="${esc(state.q)}"></div>
+ <div id="searchEmpty" class="search-empty" hidden><b>لا شيء يطابق هذا الوصف</b><p>جرّب وصف شكله أو مكانه — مثل «النقاط أسفل عرض الشرائح» أو «الشريط الذي يبقى ظاهرًا أثناء التمرير».</p></div>
+ <div class="hero-help"><a href="#/styles">لا تعرف اسم المظهر أيضًا؟ جرّب أطلس الأنماط</a><span>اضغط مرتين على أي كلمة في الموقع لعرض تعريف عربي سريع.</span></div>
  </section>
- <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button><button id="surprise" type="button">🎲 فاجئني</button></div></div><div id="cards" class="entries-grid"></div><div id="noResults" class="no-results" hidden>لا توجد نتائج مطابقة. جرّب وصفًا أبسط.</div></section>
- <section class="guides shell"><div class="sectionlabel">أدلة</div><div class="guidecards"><a href="#/guide/appkit-swiftui"><b>AppKit أم SwiftUI؟</b><span>اختر الاسم المناسب لعالم المشروع.</span></a><a href="#/guide/swift-electron"><b>Swift أم Electron؟</b><span>القرار التقني يحدد مفردات الواجهة.</span></a><a href="#/translate"><b>جدول الترجمة</b><span>${D.translations.length}+ مصطلحًا عبر AppKit وSwiftUI.</span></a></div></section></main>`+footer();
- const render=()=>{let list=D.entries.filter(e=>(state.cat==='all'||e.category===state.cat)&&searchMatches(e,state.q));list=[...list].sort((a,b)=>{if(state.sort==='popular')return b.popularity-a.popularity;const ar=rank.has(a.slug)?rank.get(a.slug):999,br=rank.has(b.slug)?rank.get(b.slug):999;return ar!==br?ar-br:Number(b.new)-Number(a.new)||D.entries.indexOf(a)-D.entries.indexOf(b)});const cards=document.querySelector('#cards');cards.innerHTML=list.map(card).join('');document.querySelector('#noResults').hidden=!!list.length;bindDemos(cards)};
+ <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button></div></div><div id="cards" class="entries-grid"></div></section>
+ <section class="guides shell"><div class="sectionlabel">الأدلة — القرارات التي تسبق الأسماء</div><div class="guidecards"><a href="#/guide/appkit-swiftui"><b>AppKit أم SwiftUI؟</b><span>العنصر نفسه في Mac قد يملك اسمين حقيقيين — أيهما تستخدم في الـPrompt؟</span></a><a href="#/guide/swift-electron"><b>Swift أم Electron؟</b><span>تطبيق أصلي أم واجهة ويب داخل غلاف — القرار الأول الذي يحدد المفردات.</span></a><a href="#/translate"><b>جدول الترجمة</b><span>60+ عنصرًا: الاسم البسيط ← AppKit ← SwiftUI، مع بحث مباشر.</span></a></div></section></main>`+footer();
+ const render=()=>{let list=D.entries.filter(e=>(state.cat==='all'||e.category===state.cat)&&searchMatches(e,state.q));list=[...list].sort((a,b)=>{if(state.sort==='popular')return b.popularity-a.popularity;const ar=rank.has(a.slug)?rank.get(a.slug):999,br=rank.has(b.slug)?rank.get(b.slug):999;return ar!==br?ar-br:Number(b.new)-Number(a.new)||D.entries.indexOf(a)-D.entries.indexOf(b)});const cards=document.querySelector('#cards');cards.innerHTML=list.map(card).join('');const empty=document.querySelector('#searchEmpty');if(empty)empty.hidden=!state.q||!!list.length;bindDemos(cards)};
  render();
- const search=document.querySelector('#search');search.addEventListener('input',e=>{state.q=e.target.value;const h=document.querySelector('#headerSearch');if(h)h.value=state.q;render()});
+ const search=document.querySelector('#search');search.addEventListener('input',e=>{state.q=e.target.value;render()});document.querySelectorAll('[data-example]').forEach(btn=>btn.onclick=()=>{state.q=btn.dataset.example;search.value=state.q;search.focus();render()});
  document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{state.cat=b.dataset.cat;home()});
  document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{state.sort=b.dataset.sort;home()});
- document.querySelector('#surprise').onclick=()=>{const e=D.entries[Math.floor(Math.random()*D.entries.length)];location.hash='#/element/'+e.slug};
+
  document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();document.querySelector('#search')?.focus()}},{once:true});
  bindChrome();bindGlossary();
 }
