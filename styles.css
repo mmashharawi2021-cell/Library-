@@ -877,7 +877,6 @@ html{-webkit-text-size-adjust:100%}
   border-radius:6px;
   padding:6px 9px;
   font-size:9px;
-  cursor:pointer;
 }
 .detail-actions button:hover,
 .detail-actions button:focus-visible{color:var(--text);border-color:#50545e}
@@ -2662,7 +2661,7 @@ html[data-theme="light"] .copybtn{background:#fff;color:#44484f;border-color:#ce
   flex-wrap:wrap;
   gap:4px 10px;
 }
-.search-examples button{
+.search-examples span{
   appearance:none;
   border:0;
   background:transparent;
@@ -2672,8 +2671,8 @@ html[data-theme="light"] .copybtn{background:#fff;color:#44484f;border-color:#ce
   line-height:1.65;
   cursor:pointer;
 }
-.search-examples button:hover,
-.search-examples button:focus-visible{
+.search-examples span:hover,
+.search-examples span:focus-visible{
   color:var(--text);
   text-decoration:underline;
   text-underline-offset:3px;
@@ -2822,7 +2821,7 @@ html[data-theme="light"] .newweek a span{color:#6d7178}
     margin-top:10px;
     gap:2px 5px;
   }
-  .search-examples button{
+  .search-examples span{
     font-size:3.8px;
     line-height:1.55;
   }
