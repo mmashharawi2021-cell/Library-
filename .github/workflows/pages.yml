@@ -338,18 +338,9 @@ jobs:
                 overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
               }));
               assert(method.steps===3,`Methodology expected 3 steps, got ${method.steps}`);
-              assert(method.sources===4,`Methodology expected 4 source cards, got ${method.sources}`);
-              assert(method.principles===3,`Methodology expected 3 translation principles, got ${method.principles}`);
+              assert(method.sources===3,`Methodology expected 3 source cards, got ${method.sources}`);
+              assert(method.principles===0,`Methodology should not expose non-reference translation principles, got ${method.principles}`);
               assert(method.overflow<=2,`Methodology overflow ${method.overflow}px at ${width}px`);
-
-              await p.evaluate(()=>{location.hash='#/guides'});
-              await p.waitForSelector('.guide-hub-grid');
-              const hub=await p.evaluate(()=>({
-                cards:document.querySelectorAll('.guide-hub-card').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(hub.cards===3,`Guides hub expected 3 cards, got ${hub.cards}`);
-              assert(hub.overflow<=2,`Guides hub overflow ${hub.overflow}px at ${width}px`);
 
               for(const kind of ['appkit-swiftui','swift-electron']){
                 await p.evaluate(k=>{location.hash='#/guide/'+k},kind);
@@ -372,9 +363,12 @@ jobs:
             await direct.goto(site+'vs/masonry-vs-bento/',{waitUntil:'networkidle0',timeout:60000});
             await direct.waitForSelector('.vs-detail');
             assert(await direct.$('.vs-detail h1'), 'Direct comparison route failed');
-            await direct.goto(site+'guides/',{waitUntil:'networkidle0',timeout:60000});
-            await direct.waitForSelector('.guide-hub-grid');
-            assert((await direct.$$('.guide-hub-card')).length===3,'Direct guides route failed');
+            await direct.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
+            await direct.waitForSelector('.guide-v2 .guide-prose');
+            assert(await direct.$('.guide-equation'),'Direct AppKit vs SwiftUI guide failed');
+            await direct.goto(site+'swift-vs-electron/',{waitUntil:'networkidle0',timeout:60000});
+            await direct.waitForSelector('.guide-v2 .guide-prose');
+            assert(await direct.$('.guide-trade'),'Direct Swift vs Electron guide failed');
             await direct.close();
 
             console.log('LIVE CONTENT QA PASSED — comparisons, translations, methodology and guides valid on mobile and desktop.');
