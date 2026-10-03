@@ -55,7 +55,7 @@ jobs:
             sitemapUrls:(fs.readFileSync('dist/sitemap.xml','utf8').match(/<loc>/g)||[]).length,
             demoCases:demoBlock.split("case '").length-1
           };
-          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,glossary:38,sitemapUrls:123,demoCases:81};
+          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,glossary:38,sitemapUrls:125,demoCases:81};
           for(const [k,v] of Object.entries(expected)){
             if(r[k]!==v) throw new Error(`${k}: expected ${v}, got ${r[k]}`);
           }
@@ -459,7 +459,7 @@ jobs:
             assert(sitemapResponse&&sitemapResponse.ok(),`Sitemap HTTP failed: ${sitemapResponse?.status()}`);
             const sitemapText=await sitemapResponse.text();
             const sitemapCount=(sitemapText.match(/<loc>/g)||[]).length;
-            assert(sitemapCount===123,`Sitemap expected 123 URLs, got ${sitemapCount}`);
+            assert(sitemapCount===125,`Sitemap expected 125 URLs, got ${sitemapCount}`);
             assert(sitemapText.includes('/glossary/'),'Glossary missing from sitemap');
             assert(sitemapText.includes('/submit/'),'Submit missing from sitemap');
             assert(!sitemapText.includes('/saved/'),'Saved should not be in sitemap');
@@ -526,7 +526,7 @@ jobs:
               assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
               assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
               assert(home.headerSearch===0,`Reference homepage should not show the old header search field`);
-              assert(home.version==='21',`Visible version badge expected 21, got ${home.version}`);
+              assert(home.version==='22',`Visible version badge expected 22, got ${home.version}`);
               assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
               assert(home.examples===5,`Search examples expected 5, got ${home.examples}`);
               assert(home.search===1,'Homepage search field missing');
@@ -563,6 +563,101 @@ jobs:
             console.log('LIVE V21 HOMEPAGE PARITY QA PASSED — sponsor/header/hero/examples/search/filters/cards/guides/footer valid at 393px and 1440px.');
           }
           await stage21Qa();
+
+          async function stage22Qa(){
+            const seed=await browser.newPage();
+            await seed.goto(site+'?routes=22#/',{waitUntil:'networkidle0',timeout:60000});
+            const entries=await seed.evaluate(()=>window.UI_AR_DATA.entries.map(e=>({slug:e.slug,category:e.category})));
+            await seed.close();
+            assert(entries.length===81,`V22 expected 81 entries, got ${entries.length}`);
+
+            for(const width of [393,1440]){
+              const p=await browser.newPage();
+              await p.setViewport({width,height:1050,deviceScaleFactor:1});
+              const errors=[];
+              p.on('pageerror',e=>errors.push(String(e)));
+
+              for(const [category,count] of [['web',49],['macos',32]]){
+                const response=await p.goto(site+category+'/',{waitUntil:'networkidle0',timeout:60000});
+                assert(response&&response.ok(),`HTTP failure for /${category}/ at ${width}px`);
+                await p.waitForFunction(c=>document.querySelectorAll('#cards > .entry-card').length===c,{timeout:10000},count);
+                const indexCheck=await p.evaluate(category=>({
+                  cards:document.querySelectorAll('#cards > .entry-card').length,
+                  canonical:document.querySelector('link[rel="canonical"]')?.href||'',
+                  wrongLinks:[...document.querySelectorAll('#cards > .entry-card')].filter(a=>!a.getAttribute('href')?.includes('/'+category+'/')).length,
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+                }),category);
+                assert(indexCheck.cards===count,`/${category}/ expected ${count} cards, got ${indexCheck.cards}`);
+                assert(indexCheck.canonical.endsWith('/'+category+'/'),`/${category}/ canonical mismatch`);
+                assert(indexCheck.wrongLinks===0,`/${category}/ contains ${indexCheck.wrongLinks} cross-platform card URLs`);
+                assert(indexCheck.overflow<=2,`/${category}/ overflow ${indexCheck.overflow}px at ${width}px`);
+              }
+
+              for(const entry of entries){
+                const path=entry.category+'/'+entry.slug+'/';
+                const response=await p.goto(site+path,{waitUntil:'networkidle0',timeout:60000});
+                assert(response&&response.ok(),`HTTP failure for /${path} at ${width}px`);
+                await p.waitForSelector('.detail',{timeout:10000});
+                const check=await p.evaluate(({category,slug})=>({
+                  h1:document.querySelector('.detail h1')?.textContent?.trim()||'',
+                  actions:document.querySelectorAll('.detail-actions button').length,
+                  crumbPlatform:document.querySelector('.crumbs a:last-of-type')?.getAttribute('href')||'',
+                  kicker:document.querySelectorAll('.detail-kicker').length,
+                  parts:document.querySelectorAll('.anatomy .part').length,
+                  prompts:document.querySelectorAll('.prompt').length,
+                  codeRows:document.querySelectorAll('.code-table tr').length,
+                  related:document.querySelectorAll('.related a').length,
+                  badRelated:[...document.querySelectorAll('.related a')].filter(a=>!(/\/(web|macos)\//.test(a.getAttribute('href')||''))).length,
+                  oldEntryLinks:document.querySelectorAll('a[href*="/element/"]').length,
+                  perDetailAttribution:document.querySelectorAll('.detail .detail-source-note').length,
+                  canonical:document.querySelector('link[rel="canonical"]')?.href||'',
+                  pathname:location.pathname,
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+                }),entry);
+                assert(!!check.h1,`Missing title for /${path}`);
+                assert(check.actions===3,`/${path} expected 3 detail actions, got ${check.actions}`);
+                assert(check.crumbPlatform.endsWith('/'+entry.category+'/'),`/${path} platform breadcrumb mismatch`);
+                assert(check.kicker===0,`/${path} still contains non-reference detail kicker`);
+                assert(check.parts>0,`/${path} missing anatomy`);
+                assert(check.prompts===2,`/${path} expected prompt + debug prompt`);
+                assert(check.codeRows>0,`/${path} missing code rows`);
+                assert(check.related>0,`/${path} missing See also links`);
+                assert(check.badRelated===0,`/${path} has non-platform related links`);
+                assert(check.oldEntryLinks===0,`/${path} still exposes /element/ links`);
+                assert(check.perDetailAttribution===0,`/${path} still has duplicate detail attribution`);
+                assert(check.canonical.endsWith('/'+path),`/${path} canonical mismatch: ${check.canonical}`);
+                assert(check.pathname.endsWith('/'+path),`/${path} pathname mismatch: ${check.pathname}`);
+                assert(check.overflow<=2,`/${path} overflow ${check.overflow}px at ${width}px`);
+              }
+
+              assert(errors.length===0,`V22 direct-route page errors at ${width}px: ${errors.join(' | ')}`);
+              await p.close();
+            }
+
+            const legacy=await browser.newPage();
+            await legacy.setViewport({width:393,height:800,deviceScaleFactor:1});
+            for(const sample of [
+              {old:'element/sign-in-form/',expected:'web/sign-in-form/'},
+              {old:'element/save-panel/',expected:'macos/save-panel/'}
+            ]){
+              await legacy.goto(site+sample.old,{waitUntil:'networkidle0',timeout:60000});
+              await legacy.waitForFunction(expected=>location.pathname.endsWith('/'+expected),{timeout:10000},sample.expected);
+              assert(legacy.url().includes('/'+sample.expected),`Legacy redirect failed for ${sample.old}`);
+            }
+            await legacy.close();
+
+            const sm=await browser.newPage();
+            const sitemapResponse=await sm.goto(site+'sitemap.xml',{waitUntil:'networkidle0',timeout:60000});
+            assert(sitemapResponse&&sitemapResponse.ok(),'V22 sitemap request failed');
+            const sitemap=await sitemapResponse.text();
+            assert((sitemap.match(/<loc>/g)||[]).length===125,'V22 sitemap must contain 125 URLs');
+            assert(sitemap.includes('/web/')&&sitemap.includes('/macos/'),'Platform indexes missing from sitemap');
+            assert(!sitemap.includes('/element/'),'Legacy /element/ URLs must not appear in sitemap');
+            await sm.close();
+
+            console.log('LIVE V22 ELEMENT ROUTE + DETAIL QA PASSED — 81 direct platform pages, category indexes, legacy redirects and sitemap valid at 393px and 1440px.');
+          }
+          await stage22Qa();
           await browser.close();
           JS
           node card-qa.mjs
