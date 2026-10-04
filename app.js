@@ -5,7 +5,7 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
-const RELEASE='V40'; document.documentElement.dataset.release=RELEASE;
+const RELEASE='V41'; document.documentElement.dataset.release=RELEASE;
 const DEMO_CONTRACTS=Object.freeze({"data-table":"click","bottom-navigation":"click","timeline":"static","presence-indicator":"static","message-bubble":"static","steps":"click","avatar-group":"hover","multi-select":"form","scrollspy":"scroll","alert-callout-banner":"static","sign-in-form":"form","pagination":"click","date-picker":"click","parallax-scrolling":"scroll","carousel":"click","site-header-nav":"click","card":"click","resize-handle":"drag","hamburger-menu":"click","bento-grid":"static","masonry":"static","easing":"static","spring-animation":"click","text-scramble":"auto","lightbox":"click","marquee":"hover","form-field":"form","truncation":"static","drag-drop":"drag","divider-separator-rule":"static","progress-indicators":"click","toast":"click","modal-drawer-sheet":"static","popover-dropdown-tooltip":"mixed","scrim":"click","skeleton-spinner":"click","combobox":"form","command-palette":"form","accordion":"click","tabs":"click","badge-chip-pill-tag":"click","breadcrumbs":"click","sticky-fixed":"scroll","focus-ring-web":"form","empty-state":"click","hover-card":"hover","switch-checkbox-radio":"form","toggle-group":"click","three-dots":"click","insertion-caret":"pointer","pointer":"hover","alert-macos":"click","slider-macos":"drag","color-well":"click","mac-window":"click","split-view":"drag","scroll-view":"scroll","search-field-macos":"form","save-panel":"form","token-field":"form","combo-button":"click","level-indicator":"click","column-view":"click","outline-view":"click","menu-bar":"click","context-menu":"context","disclosure-triangle":"click","dock-badge":"click","focus-ring-macos":"form","inspector":"form","panel":"drag","popover-macos":"click","popup-pulldown-combobox":"form","segmented-control":"click","sheet-macos":"click","sidebar-macos":"click","stepper-macos":"click","toolbar-macos":"click","traffic-lights":"click","vibrancy":"static","menu-bar-extra":"click"});
 
 const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
@@ -97,7 +97,7 @@ function demo(e,large=false){
     case 'sign-in-form': return wrap(`<div class="signin"><b>تسجيل الدخول</b><button>G&nbsp; متابعة باستخدام Google</button><div class="or"><i></i><span>أو</span><i></i></div><label>البريد<input value="user@example.com"></label><label>كلمة المرور<input type="password" value="password"></label><button class="primary">دخول</button></div>`);
     case 'pagination': return wrap(`<div class="pagination"><button>‹</button><button class="on">1</button><button>2</button><button>3</button><span>…</span><button>8</button><button>›</button></div>`);
     case 'date-picker': return wrap(`<div class="calendar"><div class="range">5 يوليو – 16 يوليو 2026</div><b>يوليو 2026</b><div class="week"><span>س</span><span>ح</span><span>ن</span><span>ث</span><span>ر</span><span>خ</span><span>ج</span>${Array.from({length:21},(_,i)=>`<i class="${i>4&&i<16?'sel':''}">${i+1}</i>`).join('')}</div></div>`);
-    case 'parallax-scrolling': return wrap(`<div class="parallax-ref"><div class="parallax-layer back">Field notes</div><div class="parallax-layer mid">Trail map</div><div class="parallax-layer front">Packing list</div><span class="parallax-axis">scroll ↓</span></div>`);
+    case 'parallax-scrolling': return wrap(`<div class="parallax-ref" tabindex="0" aria-label="اسحب عموديًا لتجربة Parallax"><div class="parallax-layer back">Field notes</div><div class="parallax-layer mid">Trail map</div><div class="parallax-layer front">Packing list</div><span class="parallax-axis">scroll / swipe ↓</span></div>`);
     case 'carousel': return wrap(`<div class="carousel-ref" dir="ltr"><button>‹</button><div class="carousel-strip"><article class="on"><b>Dunes</b><small>1 / 3</small></article><article><b>Reef</b><small>2 / 3</small></article><article><b>Meadow</b><small>3 / 3</small></article></div><button>›</button><div class="carousel-dots"><i class="on"></i><i></i><i></i></div></div>`);
     case 'site-header-nav': return wrap(`<div class="site-ref" dir="ltr"><header><b>Field Notes</b><nav><span>Home</span><span>Docs</span><span>Pricing</span></nav><button>Sign in</button></header><div class="site-ref-body"><span>Header</span><i></i><span>Navigation bar</span></div></div>`);
     case 'card': return wrap(`<article class="visual-card"><div class="media">صورة</div><small>دراسة حالة</small><b>إعادة تصميم الدفع</b><p>ملخص قصير يشرح المحتوى.</p><footer><span class="story-link">اقرأ القصة</span><button type="button">مشاركة</button></footer></article>`);
@@ -112,12 +112,12 @@ function demo(e,large=false){
     case 'marquee': return wrap(`<div class="marquee"><div>▲ Vertex　● Orbit　■ Quadra　✦ Nova　◆ Prism　▲ Vertex　● Orbit</div></div>`);
     case 'form-field': return wrap(`<div class="field-demo"><label>البريد الإلكتروني <b>*</b><input placeholder="name@example.com"></label><small>سنستخدمه لتسجيل الدخول فقط.</small><label class="error">الاسم<input value=""><em>هذا الحقل مطلوب</em></label></div>`);
     case 'truncation': return wrap(`<div class="truncate"><code>text-overflow: ellipsis</code><p class="one">تمت إعادة جدولة اجتماع المراجعة الفصلية إلى مساء الجمعة</p><code>line-clamp: 2</code><p class="two">يتضمن هذا التحديث تحسينات على المزامنة وإصلاحات لمشكلات العمل دون اتصال وإضافة اختصارات لوحة المفاتيح.</p></div>`);
-    case 'drag-drop': return wrap(`<div class="kanban"><div data-dropzone><b>للعمل</b><span draggable="true" tabindex="0">☷ كتابة المقدمة</span><span draggable="true" tabindex="0">☷ إرسال المسودة</span></div><div data-dropzone><b>قيد المراجعة</b><span class="ghost" draggable="true" tabindex="0">☷ إصلاح الرأس</span><i>أسقط هنا</i></div></div>`);
+    case 'drag-drop': return wrap(`<div class="kanban"><div data-dropzone><b>للعمل</b><span draggable="true" data-drag-card tabindex="0" aria-grabbed="false">☷ كتابة المقدمة</span><span draggable="true" data-drag-card tabindex="0" aria-grabbed="false">☷ إرسال المسودة</span></div><div data-dropzone><b>قيد المراجعة</b><span class="ghost" draggable="true" data-drag-card tabindex="0" aria-grabbed="false">☷ إصلاح الرأس</span><i>أسقط هنا</i></div></div>`);
     case 'divider-separator-rule': return wrap(`<div class="rules"><span>مقطع محتوى</span><hr><span>مقطع جديد</span><div class="menurow">قص <i></i> نسخ <i></i> لصق</div><div class="decorative"></div></div>`);
     case 'progress-indicators': return wrap(`<div class="progresses"><button type="button" class="progress-trigger">متابعة المهمة</button><div><i class="spinner"></i><small>انتظار</small></div><div><i class="ring"><b>65%</b></i><small>حلقة تقدم</small></div><div><progress value="65" max="100"></progress><small>شريط تقدم</small></div></div>`);
     case 'toast': return wrap(`<div class="workspace"><span>مساحة العمل</span><button type="button" class="toast-trigger">حفظ التغييرات</button><div class="toast-demo" role="status" aria-live="polite">✓ تم حفظ التغييرات</div></div>`);
     case 'modal-drawer-sheet': return wrap(`<div class="triple"><div><b>Modal</b><span class="modal-mini">حذف الملف؟<small>إلغاء　حذف</small></span></div><div><b>Drawer</b><span class="drawer-mini">تعديل التفاصيل</span></div><div><b>Sheet</b><span class="sheet-mini">مشاركة مع…</span></div></div>`);
-    case 'popover-dropdown-tooltip': return wrap(`<div class="overlay-kinds"><button>الفلاتر</button><div class="popover-demo">Popover<br><label>☑ نشط فقط</label></div><button>الإجراءات⌄</button><div class="dropdown-demo">إعادة تسمية<br>حذف</div><button class="info">i<span>آخر تحديث اليوم</span></button></div>`);
+    case 'popover-dropdown-tooltip': return wrap(`<div class="overlay-kinds"><button>الفلاتر</button><div class="popover-demo">Popover<br><label>☑ نشط فقط</label></div><button>الإجراءات⌄</button><div class="dropdown-demo">إعادة تسمية<br>حذف</div><button class="info" aria-expanded="false">i<span>آخر تحديث اليوم</span></button></div>`);
     case 'scrim': return wrap(`<div class="scrim-scene"><div class="pagegrid"><i></i><i></i><i></i><i></i></div><button type="button" class="scrim-open">فتح النافذة</button><div class="scrim-demo" aria-hidden="true"></div><div class="modal-surface" role="dialog" aria-modal="true"><b>سطح Modal</b><p>الطبقة الشفافة خلف هذه البطاقة هي Scrim.</p><button type="button" class="scrim-close">إغلاق</button></div></div>`);
     case 'skeleton-spinner': return wrap(`<div class="loading-pair"><button type="button" class="loading-trigger">إعادة التحميل</button><div><b>Skeleton</b><span class="skeleton a"></span><span class="skeleton"></span><span class="skeleton short"></span></div><div><b>Spinner</b><i class="spinner big"></i></div><div class="loaded-content" aria-live="polite">تم تحميل المحتوى</div></div>`);
     case 'combobox': return wrap(`<div class="combo"><label>الفاكهة المفضلة<input value="تف"></label><div class="suggest"><b>تفاح</b><span>تفاح أخضر</span><span>تفاح أحمر</span></div></div>`);
@@ -129,7 +129,7 @@ function demo(e,large=false){
     case 'sticky-fixed': return wrap(`<div class="scroll-box"><span class="sticky-demo">position: sticky</span><div class="longtext"></div><span class="fixed-demo">fixed</span></div>`);
     case 'focus-ring-web': return wrap(`<div class="focusset"><button>رجوع</button><button class="focused">متابعة</button><button>حفظ</button><code>:focus-visible</code></div>`);
     case 'empty-state': return wrap(`<div class="empty"><div class="emptyicon">□</div><b>لا توجد مشاريع بعد</b><p>أنشئ مشروعك الأول للبدء.</p><button>مشروع جديد</button></div>`);
-    case 'hover-card': return wrap(`<div class="hovercard"><button type="button" class="hover-trigger" aria-describedby="hover-profile-${large?'detail':'card'}">@jane</button><div id="hover-profile-${large?'detail':'card'}" class="profile" role="tooltip"><span>J</span><b>Jane Appleseed</b><small>@jane</small><p>مهندسة نظم تصميم.</p><em>Toronto · 2.4k</em></div></div>`);
+    case 'hover-card': return wrap(`<div class="hovercard"><button type="button" class="hover-trigger" aria-describedby="hover-profile-${large?'detail':'card'}" aria-expanded="false">@jane</button><div id="hover-profile-${large?'detail':'card'}" class="profile" role="tooltip"><span>J</span><b>Jane Appleseed</b><small>@jane</small><p>مهندسة نظم تصميم.</p><em>Toronto · 2.4k</em></div></div>`);
     case 'switch-checkbox-radio': return wrap(`<div class="choice-types"><label><i class="switch on"></i> Switch</label><label><input type="checkbox" checked> Checkbox</label><label><input type="radio" checked> Radio</label></div>`);
     case 'toggle-group': return wrap(`<div class="toggle-group"><button>يسار</button><button class="on">وسط</button><button>يمين</button></div>`);
     case 'three-dots': return wrap(`<div class="overflow-demo"><div><button>•••</button><small>Meatballs</small><menu><span>إعادة تسمية</span><span>تكرار</span><span>حذف</span></menu></div><div><button>⋮</button><small>Kebab</small></div><div><button>☰</button><small>Hamburger</small></div><div><button>…</button><small>Ellipsis</small></div></div>`);
@@ -150,7 +150,7 @@ function demo(e,large=false){
     case 'column-view': return wrap(`<div class="columns"><div><button type="button">📁 Projects</button><button type="button">📁 Archive</button><button type="button">📁 NameThat</button></div><div><button type="button">📁 content</button><button type="button">📁 research</button><button type="button">📁 assets</button></div><div><button type="button">📄 index</button><button type="button">📄 styles</button><button type="button">📄 data</button></div></div>`);
     case 'outline-view': return wrap(`<div class="outline"><span>▾ Library</span><span class="in1">▾ 📁 Projects</span><span class="in2">▾ 📁 NameThat</span><span class="in3">📄 content</span><span class="in3">📄 FeelBench</span></div>`);
     case 'menu-bar': return wrap(`<div class="menubar"><b>Finder</b><span>ملف</span><span>تحرير</span><span>عرض</span><span>نافذة</span><span>مساعدة</span><i></i><small>9:41</small><div class="macmenu"><span>فتح… <kbd>⌘O</kbd></span><span>الإعدادات… <kbd>⌘,</kbd></span><hr><span>إنهاء <kbd>⌘Q</kbd></span></div></div>`);
-    case 'context-menu': return wrap(`<div class="fileitem">📁 Projects<div class="context"><span>فتح <kbd>⌘O</kbd></span><span>إعادة تسمية…</span><span>تكرار ›</span><hr><span>نقل إلى سلة المهملات</span></div></div>`);
+    case 'context-menu': return wrap(`<div class="fileitem" tabindex="0" aria-haspopup="menu" aria-expanded="false">📁 Projects<div class="context" role="menu"><span role="menuitem">فتح <kbd>⌘O</kbd></span><span role="menuitem">إعادة تسمية…</span><span role="menuitem">تكرار ›</span><hr><span role="menuitem">نقل إلى سلة المهملات</span></div></div>`);
     case 'disclosure-triangle': return wrap(`<div class="finder-list"><span>▾ 📁 Documents</span><span class="indent">📄 Q3 Report.pages</span><span class="indent">📄 Notes.md</span><span>▸ 📁 Downloads</span></div>`);
     case 'dock-badge': return wrap(`<div class="dock"><div class="dockicon">UI<span>3</span></div><div class="dockicon muted">N</div><div class="dockicon muted">S</div></div>`);
     case 'focus-ring-macos': return wrap(`<div class="mac-focus"><input placeholder="بحث"><button class="macfocused">حفظ</button><small>حلقة التركيز تتبع لون Accent في النظام</small></div>`);
@@ -239,6 +239,9 @@ function bindDemos(root=document){
   root.__semanticBound=true;
 
   root.addEventListener('click',ev=>{
+   if(!ev.target.closest('.demo-context-menu .fileitem'))closeContextMenus?.();
+   root.querySelectorAll('.demo-hover-card .hovercard.v41-touch-open').forEach(box=>{if(!box.contains(ev.target)){box.classList.remove('v41-touch-open');box.querySelector('.hover-trigger')?.setAttribute('aria-expanded','false')}});
+
    const demo=ev.target.closest('.ui-demo');if(!demo||!root.contains(demo))return;
    const s=demo.dataset.demoSlug||'',t=ev.target;let action='';
    switch(s){
@@ -257,10 +260,14 @@ function bindDemos(root=document){
     case 'hamburger-menu':{const x=t.closest('.hamb,.drawer-demo .shade');if(x){demo.querySelector('.drawer-demo')?.classList.toggle('open');action='drawer'}break}
     case 'spring-animation':{if(t.closest('.ball')){const box=demo.querySelector('.spring');box?.classList.remove('v37-replay');void box?.offsetWidth;box?.classList.add('v37-replay');action='spring-replay'}break}
     case 'lightbox':{const thumb=t.closest('.thumb'),close=t.closest('.photo button,.lightbox>.scrim-demo'),box=demo.querySelector('.lightbox');if(thumb){box?.classList.add('v39-open');action='lightbox-open'}else if(close){box?.classList.remove('v39-open');action='lightbox-close'}break}
+    case 'hover-card':{const trigger=t.closest('.hover-trigger');if(trigger){const box=trigger.closest('.hovercard'),open=!box.classList.contains('v41-touch-open');box.classList.toggle('v41-touch-open',open);trigger.setAttribute('aria-expanded',open?'true':'false');action=open?'hover-touch-open':'hover-touch-close'}break}
+    case 'avatar-group':{const avatar=t.closest('.nt-avatars>span');if(avatar){choose(avatar.parentElement,':scope>span',avatar);avatar.classList.add('v41-avatar-active');action='avatar-touch'}break}
+    case 'marquee':{const m=t.closest('.marquee');if(m){m.classList.toggle('v41-paused');action=m.classList.contains('v41-paused')?'marquee-pause':'marquee-resume'}break}
+    case 'pointer':{const cursor=t.closest('.cursors>span:not(small)');if(cursor){choose(cursor.parentElement,':scope>span:not(small)',cursor);cursor.classList.add('v41-selected');action='pointer-touch'}break}
     case 'form-field':{const input=t.closest('.field-demo input');if(input){input.focus();action='field-focus'}break}
     case 'progress-indicators':{const btn=t.closest('.progress-trigger');if(btn){const box=demo.querySelector('.progresses'),p=box.querySelector('progress'),ring=box.querySelector('.ring b');let v=Number(p?.value||0)+15;if(v>100)v=20;if(p)p.value=v;if(ring)ring.textContent=v+'%';action='progress'}break}
     case 'toast':{const btn=t.closest('.toast-trigger');if(btn){const box=demo.querySelector('.workspace');box.classList.add('v39-show-toast');clearTimeout(box.__toastTimer);box.__toastTimer=setTimeout(()=>box.classList.remove('v39-show-toast'),1600);action='toast'}break}
-    case 'popover-dropdown-tooltip':{const box=demo.querySelector('.overlay-kinds'),btn=t.closest('.overlay-kinds>button:not(.info)');if(btn){const buttons=[...box.querySelectorAll(':scope>button:not(.info)')],i=buttons.indexOf(btn);box.dataset.open=i===0?'popover':'dropdown';action=box.dataset.open}else if(!t.closest('.popover-demo,.dropdown-demo,.info')){box.removeAttribute('data-open');action='overlay-close'}break}
+    case 'popover-dropdown-tooltip':{const box=demo.querySelector('.overlay-kinds'),info=t.closest('.overlay-kinds>.info'),btn=t.closest('.overlay-kinds>button:not(.info)');if(info){const open=box.dataset.open!=='tooltip';if(open)box.dataset.open='tooltip';else box.removeAttribute('data-open');info.setAttribute('aria-expanded',open?'true':'false');action=open?'tooltip-touch-open':'tooltip-touch-close'}else if(btn){const buttons=[...box.querySelectorAll(':scope>button:not(.info)')],i=buttons.indexOf(btn);box.dataset.open=i===0?'popover':'dropdown';action=box.dataset.open}else if(!t.closest('.popover-demo,.dropdown-demo')){box.removeAttribute('data-open');action='overlay-close'}break}
     case 'scrim':{const scene=demo.querySelector('.scrim-scene');if(t.closest('.scrim-open')){scene.classList.add('v39-open');action='scrim-open'}else if(t.closest('.scrim-close,.scrim-demo')){scene.classList.remove('v39-open');action='scrim-close'}break}
     case 'skeleton-spinner':{const btn=t.closest('.loading-trigger');if(btn){const box=demo.querySelector('.loading-pair');box.classList.remove('v39-loaded');btn.disabled=true;btn.textContent='جارٍ التحميل…';setTimeout(()=>{box.classList.add('v39-loaded');btn.disabled=false;btn.textContent='إعادة التحميل'},650);action='loading'}break}
     case 'combobox':{const option=t.closest('.suggest>*'),input=demo.querySelector('.combo input');if(option&&input){input.value=option.textContent.trim();demo.querySelector('.combo')?.classList.add('v37-picked');action='combobox-pick'}else if(input){input.focus();demo.querySelector('.combo')?.classList.toggle('v37-open');action='combobox-open'}break}
@@ -301,7 +308,14 @@ function bindDemos(root=document){
    if(action)record(demo,action);
   },true);
 
-  root.addEventListener('contextmenu',ev=>{const demo=ev.target.closest('.demo-context-menu');if(!demo||!root.contains(demo))return;ev.preventDefault();demo.querySelector('.fileitem')?.classList.add('v39-open');record(demo,'context-open')},true);
+  const closeContextMenus=()=>root.querySelectorAll('.demo-context-menu .fileitem').forEach(item=>{item.classList.remove('v39-open','v41-touch-open');item.setAttribute('aria-expanded','false')});
+  root.addEventListener('contextmenu',ev=>{const demo=ev.target.closest('.demo-context-menu');if(!demo||!root.contains(demo))return;ev.preventDefault();closeContextMenus();const item=demo.querySelector('.fileitem');item?.classList.add('v39-open');item?.setAttribute('aria-expanded','true');record(demo,'context-open')},true);
+  let longPress=null;
+  const cancelLongPress=()=>{if(longPress?.timer)clearTimeout(longPress.timer);longPress=null};
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const item=ev.target.closest?.('.demo-context-menu .fileitem');if(!item)return;cancelLongPress();const demo=item.closest('.ui-demo'),sx=ev.clientX,sy=ev.clientY,pid=ev.pointerId;longPress={pid,sx,sy,timer:setTimeout(()=>{closeContextMenus();item.classList.add('v39-open','v41-touch-open');item.setAttribute('aria-expanded','true');record(demo,'context-longpress');longPress=null},520)}},true);
+  root.addEventListener('pointermove',ev=>{if(longPress&&ev.pointerId===longPress.pid&&Math.hypot(ev.clientX-longPress.sx,ev.clientY-longPress.sy)>10)cancelLongPress()},true);
+  root.addEventListener('pointerup',ev=>{if(longPress&&ev.pointerId===longPress.pid)cancelLongPress()},true);
+  root.addEventListener('pointercancel',cancelLongPress,true);
 
   root.addEventListener('pointerenter',ev=>{
    const hover=ev.target.closest?.('.demo-hover-card .hover-trigger');if(hover){hover.closest('.hovercard')?.classList.add('v39-open');record(hover.closest('.ui-demo'),'hover-open')}
@@ -324,6 +338,11 @@ function bindDemos(root=document){
   },true);
 
   root.addEventListener('wheel',ev=>{const par=ev.target.closest?.('.demo-parallax-scrolling .parallax-ref');if(par){ev.preventDefault();const v=Math.max(-35,Math.min(35,Number(par.dataset.offset||0)+Math.sign(ev.deltaY)*5));par.dataset.offset=String(v);par.style.setProperty('--parallax',v);record(par.closest('.ui-demo'),'parallax-scroll')}},{capture:true,passive:false});
+  let touchParallax=null;
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const par=ev.target.closest?.('.demo-parallax-scrolling .parallax-ref');if(!par)return;touchParallax={pid:ev.pointerId,par,demo:par.closest('.ui-demo'),startY:ev.clientY,start:Number(par.dataset.offset||0)};par.setPointerCapture?.(ev.pointerId)},true);
+  root.addEventListener('pointermove',ev=>{if(!touchParallax||ev.pointerId!==touchParallax.pid)return;ev.preventDefault();const delta=(touchParallax.startY-ev.clientY)*.34,v=Math.max(-35,Math.min(35,touchParallax.start+delta));touchParallax.par.dataset.offset=String(v);touchParallax.par.style.setProperty('--parallax',v)},{capture:true,passive:false});
+  const finishParallax=ev=>{if(touchParallax&&(!ev||ev.pointerId===touchParallax.pid)){record(touchParallax.demo,'parallax-swipe');touchParallax=null}};
+  root.addEventListener('pointerup',finishParallax,true);root.addEventListener('pointercancel',finishParallax,true);
 
   let drag=null;
   root.addEventListener('pointerdown',ev=>{
@@ -341,6 +360,23 @@ function bindDemos(root=document){
   root.addEventListener('dragleave',ev=>{ev.target.closest?.('[data-dropzone]')?.classList.remove('v39-dragover')},true);
   root.addEventListener('drop',ev=>{const zone=ev.target.closest?.('.demo-drag-drop [data-dropzone]'),card=window.__demoDragCard;if(zone&&card){ev.preventDefault();zone.appendChild(card);zone.classList.remove('v39-dragover');card.classList.remove('v39-dragging');record(zone.closest('.ui-demo'),'drop');window.__demoDragCard=null}},true);
   root.addEventListener('dragend',()=>{window.__demoDragCard?.classList.remove('v39-dragging');window.__demoDragCard=null},true);
+
+  let touchCard=null;
+  const clearTouchZones=()=>root.querySelectorAll('.demo-drag-drop [data-dropzone]').forEach(z=>z.classList.remove('v41-touch-over'));
+  const finishTouchCard=(commit=true)=>{
+    if(!touchCard)return;
+    const {card,demo,zone}=touchCard;
+    card.classList.remove('v41-touch-dragging');
+    card.style.removeProperty('--touch-dx');card.style.removeProperty('--touch-dy');
+    card.setAttribute('aria-grabbed','false');
+    clearTouchZones();
+    if(commit&&zone&&!zone.contains(card)){zone.appendChild(card);record(demo,'touch-drop')}
+    touchCard=null;
+  };
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const card=ev.target.closest?.('.demo-drag-drop [data-drag-card]');if(!card)return;ev.preventDefault();const demo=card.closest('.ui-demo'),r=card.getBoundingClientRect();touchCard={pid:ev.pointerId,card,demo,startX:ev.clientX,startY:ev.clientY,originX:r.left,originY:r.top,zone:card.closest('[data-dropzone]')};card.classList.add('v41-touch-dragging');card.setAttribute('aria-grabbed','true');card.setPointerCapture?.(ev.pointerId)}, {capture:true,passive:false});
+  root.addEventListener('pointermove',ev=>{if(!touchCard||ev.pointerId!==touchCard.pid)return;ev.preventDefault();const dx=ev.clientX-touchCard.startX,dy=ev.clientY-touchCard.startY;touchCard.card.style.setProperty('--touch-dx',dx+'px');touchCard.card.style.setProperty('--touch-dy',dy+'px');clearTouchZones();const zone=document.elementsFromPoint(ev.clientX,ev.clientY).find(x=>x.matches?.('.demo-drag-drop [data-dropzone]'));if(zone){zone.classList.add('v41-touch-over');touchCard.zone=zone}}, {capture:true,passive:false});
+  root.addEventListener('pointerup',ev=>{if(touchCard&&ev.pointerId===touchCard.pid)finishTouchCard(true)},true);
+  root.addEventListener('pointercancel',ev=>{if(touchCard&&ev.pointerId===touchCard.pid)finishTouchCard(false)},true);
 
   root.addEventListener('input',ev=>{const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(range){const demo=range.closest('.ui-demo'),out=range.closest('.mac-control')?.querySelector('output');if(out)out.textContent=range.value+'%';record(demo,'slider-change');return}const demo=ev.target.closest?.('.demo-inspector');if(!demo)return;const canvas=demo.querySelector('.canvas');if(ev.target.type==='color')canvas.style.background=ev.target.value;else if(ev.target.type==='checkbox')canvas.style.boxShadow=ev.target.checked?'0 8px 18px rgba(0,0,0,.22)':'none';else canvas.style.borderWidth=Math.max(0,parseFloat(ev.target.value)||0)+'px';record(demo,'inspector-change')},true);
 

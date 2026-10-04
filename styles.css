@@ -4615,3 +4615,57 @@ body{font-size:14px;line-height:1.45}
   .entry-preview{min-height:174px}
   .detail-actions{grid-template-columns:1fr}
 }
+
+
+/* =========================================================
+   V41 — TOUCH INTERACTIONS
+   ========================================================= */
+.hovercard.v41-touch-open .profile{
+  opacity:1!important;
+  pointer-events:auto!important;
+  transform:translateY(-4px) scale(1.02)
+}
+.marquee.v41-paused>div{animation-play-state:paused!important}
+.nt-avatars>span.v37-selected,.nt-avatars>span.v41-avatar-active{
+  transform:translateY(-3px) scale(1.08);
+  outline:1px solid #74a7ff;
+  outline-offset:1px
+}
+.cursors>span.v37-selected,.cursors>span.v41-selected{
+  transform:scale(1.12);
+  filter:drop-shadow(0 0 5px #74a7ff88)
+}
+.demo-parallax-scrolling .parallax-ref{touch-action:pan-x}
+.demo-drag-drop [data-drag-card]{touch-action:none}
+.demo-drag-drop [data-drag-card].v41-touch-dragging{
+  position:relative;
+  z-index:12;
+  opacity:.9;
+  transform:translate(var(--touch-dx,0),var(--touch-dy,0)) scale(1.04)!important;
+  box-shadow:0 8px 20px #0004;
+  cursor:grabbing
+}
+.demo-drag-drop [data-dropzone].v41-touch-over{
+  outline:2px dashed #5c9cff;
+  outline-offset:-3px;
+  background:#eef5ff
+}
+.fileitem.v41-touch-open .context{
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:translateY(0) scale(1)!important
+}
+@media(max-width:700px){
+  .hover-trigger,.overlay-kinds>.info,.fileitem,[data-drag-card],.thumb,.marquee,.cursors>span{
+    -webkit-tap-highlight-color:transparent
+  }
+  .hover-trigger,.overlay-kinds>.info,.fileitem{min-height:34px}
+  .hover-trigger{padding:6px 9px;border-radius:7px}
+  .demo-context-menu .fileitem{touch-action:manipulation}
+  .demo-context-menu .context{min-width:180px}
+  .kanban span{min-height:30px;display:flex;align-items:center}
+  .slider-native{height:34px}
+  .slider-native::-webkit-slider-thumb{width:24px;height:24px;margin-top:-9px}
+  .slider-native::-moz-range-thumb{width:24px;height:24px}
+}
