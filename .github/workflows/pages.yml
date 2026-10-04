@@ -399,8 +399,7 @@ jobs:
           await touch.waitForSelector('.demo-hamburger-menu .hamb');
           const urlBefore=touch.url();
           const box=await touch.$('.demo-hamburger-menu .hamb');
-          const rect=await box.boundingBox();
-          await touch.touchscreen.tap(rect.x+rect.width/2,rect.y+rect.height/2);
+          await box.tap();
           const touchResult=await touch.evaluate(()=>({
             open:document.querySelector('.demo-hamburger-menu .drawer-demo')?.classList.contains('open'),
             count:Number(document.querySelector('.demo-hamburger-menu')?.dataset.v37Interactions||0),
