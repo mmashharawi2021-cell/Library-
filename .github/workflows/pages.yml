@@ -323,7 +323,7 @@ jobs:
           assert(resizeNative.tag==='TEXTAREA'&&resizeNative.resize!=='none','Resize specimen must use a native resizable textarea');
           assert(resizeNative.overflow==='auto'||resizeNative.overflow==='scroll','Resizable textarea must expose overflow for native resizing');
 
-          await page.$eval('.demo-hover-card',x=>x.scrollIntoView({block:'center'}));await page.hover('.demo-hover-card .hover-trigger');await new Promise(r=>setTimeout(r,60));assert(await page.$eval('.demo-hover-card .profile',x=>Number(getComputedStyle(x).opacity)>.5),'Hover card did not open on hover');
+          await page.$eval('.demo-hover-card',x=>x.scrollIntoView({block:'center'}));await page.hover('.demo-hover-card .hover-trigger');await new Promise(r=>setTimeout(r,280));assert(await page.$eval('.demo-hover-card .profile',x=>x.closest('.hovercard').matches(':hover')&&Number(getComputedStyle(x).opacity)>.9),'Hover card did not open on hover');
           await page.click('.demo-context-menu .fileitem',{button:'right'});assert(await page.$eval('.demo-context-menu .fileitem',x=>x.classList.contains('v39-open')),'Context menu did not open on right click');
           await page.click('.demo-toast .toast-trigger');assert(await page.$eval('.demo-toast .workspace',x=>x.classList.contains('v39-show-toast')),'Toast action did not show toast');
           await page.click('.demo-lightbox .thumb');assert(await page.$eval('.demo-lightbox .lightbox',x=>x.classList.contains('v39-open')),'Lightbox did not open from thumbnail');
