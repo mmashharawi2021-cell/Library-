@@ -279,8 +279,8 @@ function bindDemos(root=document){
    demo.dataset.v37State='idle';
  });
 
- if(!root.dataset?.v37PointerBound){
-   if(root.dataset)root.dataset.v37PointerBound='1';
+ if(!root.__v37PointerBound){
+   root.__v37PointerBound=true;
    root.addEventListener('pointerdown',ev=>{
      const demo=ev.target.closest('.ui-demo');if(!demo||!root.contains(demo))return;
      demo.classList.add('is-v37-pressed');
@@ -293,8 +293,8 @@ function bindDemos(root=document){
    root.addEventListener('pointerleave',release,true);
  }
 
- if(!root.dataset?.v37ClickBound){
-   if(root.dataset)root.dataset.v37ClickBound='1';
+ if(!root.__v37ClickBound){
+   root.__v37ClickBound=true;
    root.addEventListener('click',ev=>{
      const demo=ev.target.closest('.ui-demo');
      if(!demo||!root.contains(demo))return;
@@ -358,7 +358,7 @@ function bindDemos(root=document){
        case 'parallax-scrolling':{demo.querySelector('.parallax-ref')?.classList.toggle('v37-shifted');action='parallax';break}
        case 'carousel':{
          const box=demo.querySelector('.carousel-ref'),buttons=[...box.querySelectorAll(':scope>button')],dots=[...box.querySelectorAll('.carousel-dots i')];
-         const btn=t.closest(':scope>button');const dot=t.closest('.carousel-dots i');let i=Number(box.dataset.index||0);
+         const btn=t.closest('.carousel-ref > button');const dot=t.closest('.carousel-dots i');let i=Number(box.dataset.index||0);
          if(btn)i+=btn===buttons[0]?-1:1;else if(dot)i=dots.indexOf(dot);else i+=1;setCarousel(box,i);action='carousel';break;
        }
        case 'site-header-nav':{
