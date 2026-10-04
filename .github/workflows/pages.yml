@@ -331,7 +331,7 @@ jobs:
           await page.$eval('.demo-scrollspy .doclines',x=>x.scrollTo(0,x.scrollHeight));await new Promise(r=>setTimeout(r,120));
           assert(await page.$eval('.demo-scrollspy .docs aside button:last-child',x=>x.classList.contains('on')),'Scrollspy did not follow scroll');
 
-          await page.$eval('.demo-inspector input[type="color"]',x=>{x.value='#ff0000';x.dispatchEvent(new Event('input',{bubbles:true}))});
+          await page.$eval('.demo-inspector input[type="color"]',x=>{x.value='#ff0000';x.dispatchEvent(new Event('input',{bubbles:true}))});await new Promise(r=>setTimeout(r,240));
           const bg=await page.$eval('.demo-inspector .canvas',x=>getComputedStyle(x).backgroundColor);assert(bg.includes('255'),'Inspector color control did not update canvas');
 
           const drop=await page.evaluate(()=>{
