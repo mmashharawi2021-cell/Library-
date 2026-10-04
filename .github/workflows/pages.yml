@@ -203,10 +203,17 @@ jobs:
           const feed=await get(site+'feed.xml');
           assert(feed.r.ok&&feed.text.includes('<rss version="2.0">')&&(feed.text.match(/<item>/g)||[]).length>=3,'RSS feed invalid');
 
-          // One legacy path must land on its canonical direct route.
-          const legacy=await fetch(site+'element/data-table/',{redirect:'follow'});
-          const legacyText=await legacy.text();
-          assert(legacy.ok&&legacy.url===site+'web/data-table/','Legacy element redirect failed');
+          // GitHub Pages cannot emit custom 301/302 responses from static files.
+          // Legacy routes therefore use canonical + meta refresh + location.replace.
+          const legacy=await get(site+'element/data-table/');
+          const legacyTarget=site+'web/data-table/';
+          assert(
+            legacy.r.ok &&
+            legacy.text.includes('rel="canonical" href="'+legacyTarget+'"') &&
+            legacy.text.includes('http-equiv="refresh"') &&
+            legacy.text.includes('location.replace'),
+            'Legacy element compatibility redirect failed'
+          );
 
           const report={release:'V43',checkedAt:new Date().toISOString(),sitemapUrls:urls.length,failures,results};
           fs.writeFileSync('qa-reports/v43-production.json',JSON.stringify(report,null,2));
