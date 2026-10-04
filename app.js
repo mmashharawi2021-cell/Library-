@@ -386,6 +386,10 @@ function bindDemos(root=document){
 
   let touchCard=null;
   const clearTouchZones=()=>root.querySelectorAll('.demo-drag-drop [data-dropzone]').forEach(z=>z.classList.remove('v41-touch-over'));
+  const findTouchZone=(demo,x,y)=>{
+    const zones=[...demo.querySelectorAll('[data-dropzone]')];
+    return zones.find(zone=>{const r=zone.getBoundingClientRect();return x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom})||null;
+  };
   const finishTouchCard=(commit=true)=>{
     if(!touchCard)return;
     const {card,demo,zone}=touchCard;
@@ -396,9 +400,9 @@ function bindDemos(root=document){
     if(commit&&zone&&!zone.contains(card)){zone.appendChild(card);record(demo,'touch-drop')}
     touchCard=null;
   };
-  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const card=ev.target.closest?.('.demo-drag-drop [data-drag-card]');if(!card)return;ev.preventDefault();const demo=card.closest('.ui-demo'),r=card.getBoundingClientRect();touchCard={pid:ev.pointerId,card,demo,startX:ev.clientX,startY:ev.clientY,originX:r.left,originY:r.top,zone:card.closest('[data-dropzone]')};card.classList.add('v41-touch-dragging');card.setAttribute('aria-grabbed','true');card.setPointerCapture?.(ev.pointerId)}, {capture:true,passive:false});
-  root.addEventListener('pointermove',ev=>{if(!touchCard||ev.pointerId!==touchCard.pid)return;ev.preventDefault();const dx=ev.clientX-touchCard.startX,dy=ev.clientY-touchCard.startY;touchCard.card.style.setProperty('--touch-dx',dx+'px');touchCard.card.style.setProperty('--touch-dy',dy+'px');clearTouchZones();const zone=document.elementsFromPoint(ev.clientX,ev.clientY).find(x=>x.matches?.('.demo-drag-drop [data-dropzone]'));if(zone){zone.classList.add('v41-touch-over');touchCard.zone=zone}}, {capture:true,passive:false});
-  root.addEventListener('pointerup',ev=>{if(touchCard&&ev.pointerId===touchCard.pid)finishTouchCard(true)},true);
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const card=ev.target.closest?.('.demo-drag-drop [data-drag-card]');if(!card)return;ev.preventDefault();const demo=card.closest('.ui-demo'),r=card.getBoundingClientRect();touchCard={pid:ev.pointerId,card,demo,startX:ev.clientX,startY:ev.clientY,originX:r.left,originY:r.top,zone:card.closest('[data-dropzone]')};card.classList.add('v41-touch-dragging');card.setAttribute('aria-grabbed','true');try{card.setPointerCapture?.(ev.pointerId)}catch{}}, {capture:true,passive:false});
+  root.addEventListener('pointermove',ev=>{if(!touchCard||ev.pointerId!==touchCard.pid)return;ev.preventDefault();const dx=ev.clientX-touchCard.startX,dy=ev.clientY-touchCard.startY;touchCard.card.style.setProperty('--touch-dx',dx+'px');touchCard.card.style.setProperty('--touch-dy',dy+'px');clearTouchZones();const zone=findTouchZone(touchCard.demo,ev.clientX,ev.clientY);touchCard.zone=zone;if(zone)zone.classList.add('v41-touch-over')}, {capture:true,passive:false});
+  root.addEventListener('pointerup',ev=>{if(touchCard&&ev.pointerId===touchCard.pid){touchCard.zone=findTouchZone(touchCard.demo,ev.clientX,ev.clientY)||touchCard.zone;finishTouchCard(true)}},true);
   root.addEventListener('pointercancel',ev=>{if(touchCard&&ev.pointerId===touchCard.pid)finishTouchCard(false)},true);
 
   root.addEventListener('input',ev=>{const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(range){const demo=range.closest('.ui-demo'),out=range.closest('.mac-control')?.querySelector('output');if(out)out.textContent=range.value+'%';record(demo,'slider-change');return}const demo=ev.target.closest?.('.demo-inspector');if(!demo)return;const canvas=demo.querySelector('.canvas');if(ev.target.type==='color')canvas.style.background=ev.target.value;else if(ev.target.type==='checkbox')canvas.style.boxShadow=ev.target.checked?'0 8px 18px rgba(0,0,0,.22)':'none';else canvas.style.borderWidth=Math.max(0,parseFloat(ev.target.value)||0)+'px';record(demo,'inspector-change')},true);
