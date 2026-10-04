@@ -4169,3 +4169,248 @@ body{font-size:14px;line-height:1.45}
   .style-secondary-confusions a{font-size:3.8px}
   .style-related{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* =========================================================
+   V37 — FULLY INTERACTIVE UI LIBRARY
+   ========================================================= */
+.ui-demo{
+  position:relative;
+  outline:none;
+  cursor:pointer;
+  touch-action:manipulation;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.ui-demo input,
+.ui-demo textarea{
+  user-select:text;
+}
+.ui-demo:focus-visible{
+  outline:2px solid rgba(117,168,255,.72);
+  outline-offset:-2px;
+}
+.ui-demo.is-v37-pressed{
+  filter:brightness(.95);
+}
+.ui-demo.v37-animate{
+  animation-duration:.46s;
+  animation-timing-function:cubic-bezier(.2,.85,.25,1);
+  animation-fill-mode:both;
+}
+.ui-demo[data-v37-mode="lift"].v37-animate{animation-name:v37Lift}
+.ui-demo[data-v37-mode="shift"].v37-animate{animation-name:v37Shift}
+.ui-demo[data-v37-mode="tilt"].v37-animate{animation-name:v37Tilt}
+.ui-demo[data-v37-mode="pulse"].v37-animate{animation-name:v37Pulse}
+.ui-demo[data-v37-mode="spring"].v37-animate{animation-name:v37Spring}
+.ui-demo[data-v37-mode="glow"].v37-animate{animation-name:v37Glow}
+
+@keyframes v37Lift{
+  0%{transform:translateY(0)}
+  38%{transform:translateY(-5px)}
+  100%{transform:translateY(0)}
+}
+@keyframes v37Shift{
+  0%{transform:translateX(0)}
+  35%{transform:translateX(5px)}
+  70%{transform:translateX(-2px)}
+  100%{transform:translateX(0)}
+}
+@keyframes v37Tilt{
+  0%{transform:rotate(0)}
+  38%{transform:rotate(-1.35deg)}
+  70%{transform:rotate(.55deg)}
+  100%{transform:rotate(0)}
+}
+@keyframes v37Pulse{
+  0%{transform:scale(1)}
+  38%{transform:scale(.985)}
+  68%{transform:scale(1.012)}
+  100%{transform:scale(1)}
+}
+@keyframes v37Spring{
+  0%{transform:translateY(0) scale(1)}
+  28%{transform:translateY(-4px) scale(1.008)}
+  55%{transform:translateY(2px) scale(.997)}
+  78%{transform:translateY(-1px)}
+  100%{transform:translateY(0) scale(1)}
+}
+@keyframes v37Glow{
+  0%{box-shadow:inset 0 0 0 0 rgba(120,160,255,0)}
+  42%{box-shadow:inset 0 0 0 1px rgba(120,160,255,.24),0 0 22px rgba(90,135,255,.10)}
+  100%{box-shadow:inset 0 0 0 0 rgba(120,160,255,0)}
+}
+
+/* Web interaction states */
+.nt-table>div:not(.nt-table-head).v37-selected{
+  background:rgba(99,145,255,.10);
+}
+.nt-table-head .v37-sorted{
+  color:var(--text);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.nt-timeline>div.v37-selected p{
+  transform:translateX(3px);
+}
+.nt-timeline>div.v37-selected i{
+  box-shadow:0 0 0 4px rgba(104,151,255,.13);
+}
+.nt-presence.v37-offline .nt-avatar i{
+  background:#f0a94b!important;
+}
+.nt-chat.v37-replied .outgoing{
+  transform:translateX(-3px);
+}
+.nt-avatars.v37-expanded span{
+  margin-inline-start:4px!important;
+  transform:translateY(-2px);
+}
+.notice-stack>.v37-selected,
+.bento>.v37-selected,
+.masonry i.v37-selected,
+.triple>.v37-selected,
+.cmd span.v37-selected,
+.crumb-demo .v37-selected{
+  outline:1px solid rgba(108,157,255,.42);
+  outline-offset:2px;
+}
+.signin.v37-success{
+  box-shadow:0 0 0 1px rgba(85,205,126,.22),0 12px 28px rgba(0,0,0,.18);
+}
+.parallax-ref.v37-shifted .back{transform:translateY(5px)}
+.parallax-ref.v37-shifted .mid{transform:translateY(-4px)}
+.parallax-ref.v37-shifted .front{transform:translateY(-10px)}
+.site-ref nav span.v37-selected{color:var(--text);font-weight:700}
+.visual-card .story-link.v37-selected{text-decoration:underline;text-underline-offset:3px}
+.resize-box.v37-wide{transform:scaleX(1.07);transform-origin:right center}
+.curve.v37-reverse svg{transform:scaleX(-1)}
+.spring.v37-replay .ball{animation:v37SpringBall .65s cubic-bezier(.2,.85,.25,1)}
+@keyframes v37SpringBall{
+  0%{transform:translateX(0)}
+  50%{transform:translateX(34px)}
+  72%{transform:translateX(25px)}
+  100%{transform:translateX(29px)}
+}
+.marquee.v37-paused>div{animation-play-state:paused!important}
+.truncate.v37-expanded .one,
+.truncate.v37-expanded .two{
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  -webkit-line-clamp:unset!important;
+  display:block!important;
+}
+.kanban.v37-moved{box-shadow:inset 0 0 0 1px rgba(105,157,255,.25)}
+.rules.v37-emphasis hr,
+.rules.v37-emphasis .decorative{filter:brightness(1.8)}
+.progresses.v37-progressed{filter:saturate(1.2)}
+.workspace .toast-demo{
+  transition:transform .28s ease,opacity .28s ease;
+}
+.workspace.v37-show-toast .toast-demo{
+  transform:translateY(-5px) scale(1.02);
+  opacity:1;
+}
+.overlay-kinds .popover-demo,
+.overlay-kinds .dropdown-demo,
+.overlay-kinds .info span{
+  transition:transform .22s ease,opacity .22s ease;
+}
+.overlay-kinds[data-open="popover"] .popover-demo{transform:translateY(-4px) scale(1.02)}
+.overlay-kinds[data-open="dropdown"] .dropdown-demo{transform:translateY(-4px) scale(1.02)}
+.overlay-kinds[data-open="tooltip"] .info span{transform:translateY(-3px) scale(1.03)}
+.scrim-scene.v37-open .modal-surface{transform:translateY(-4px) scale(1.02)}
+.scrim-scene.v37-open .scrim-demo{opacity:.78}
+.loading-pair.v37-loaded .skeleton{opacity:.2;transform:scaleX(.7)}
+.loading-pair.v37-loaded .spinner{opacity:.35}
+.combo.v37-picked{box-shadow:0 0 0 1px rgba(95,203,126,.28)}
+.combo.v37-open .suggest{transform:translateY(-2px)}
+.cmd.v37-open{box-shadow:0 0 0 1px rgba(108,157,255,.32)}
+.label-types .v37-muted{opacity:.38;transform:scale(.92)}
+.scroll-box.v37-shifted .sticky-demo{transform:translateY(5px)}
+.scroll-box.v37-shifted .fixed-demo{transform:translateY(-5px)}
+.empty.v37-created .emptyicon{transform:scale(1.14) rotate(6deg)}
+.hovercard .profile{transition:transform .22s ease,opacity .22s ease}
+.hovercard.v37-open .profile{transform:translateY(-4px) scale(1.02);opacity:1}
+.overflow-demo>div.v37-menuopen menu{
+  opacity:1!important;
+  transform:translateY(0) scale(1)!important;
+  pointer-events:auto!important;
+}
+
+/* macOS interaction states */
+.mac-text.v37-caret-moved .caret{transform:translateX(12px)}
+.mac-alert.v37-resolved{transform:scale(.985);opacity:.88}
+.mac-window.v37-closed{opacity:.35;transform:scale(.92)}
+.mac-window.v37-minimized{transform:scale(.78) translateY(16px)}
+.mac-window.v37-zoomed{transform:scale(1.035)}
+.split.v37-collapsed aside{width:18%!important;opacity:.55}
+.split.v37-collapsed main{width:82%!important}
+.scroller i.v37-bottom{transform:translateY(22px)}
+.mac-search.v37-open .recent{transform:translateY(-3px);opacity:1}
+.savepanel [class~="v37-selected"],
+.savepanel .files .v37-selected{outline:1px solid rgba(104,151,255,.42);outline-offset:2px}
+.tokenfield .v37-muted{opacity:.35;transform:scale(.9)}
+.combo-button.v37-open menu{opacity:1!important;transform:translateY(0)!important;pointer-events:auto!important}
+.columns[data-column="1"]>div:nth-child(2),
+.columns[data-column="2"]>div:nth-child(3){
+  background:rgba(104,151,255,.10)
+}
+.outline .v37-selected{background:rgba(104,151,255,.11)}
+.menubar.v37-open .macmenu,
+.menubar.v37-status-open .statusmenu,
+.fileitem.v37-open .context,
+.mac-popover.v37-open .bubble{
+  opacity:1!important;
+  transform:translateY(0) scale(1)!important;
+  pointer-events:auto!important;
+}
+.finder-list.v37-collapsed .indent{opacity:.18;transform:translateX(-5px)}
+.dockicon.v37-selected{transform:translateY(-7px) scale(1.08)}
+.inspector-scene.v37-inspecting aside{box-shadow:0 0 0 1px rgba(104,151,255,.36)}
+.floating-panel.v37-focused{transform:translateY(-4px);box-shadow:0 18px 38px rgba(0,0,0,.35)}
+.mac-pickers label.v37-selected{background:rgba(104,151,255,.08)}
+.mac-pickers label.v37-open{transform:translateY(-2px)}
+.attached-sheet.v37-resolved{transform:translateY(-10px);opacity:.72}
+.traffic-large[data-window-action="close"]{opacity:.45}
+.traffic-large[data-window-action="minimize"]{transform:scale(.86)}
+.traffic-large[data-window-action="zoom"]{transform:scale(1.06)}
+.vibrant.v37-strong{backdrop-filter:blur(22px) saturate(1.55);transform:scale(1.025)}
+
+/* Smooth state transitions shared by demos */
+.nt-table>div,
+.nt-timeline>div,
+.nt-avatars span,
+.bento>div,
+.masonry i,
+.triple>div,
+.cmd span,
+.crumb-demo span,
+.crumb-demo b,
+.mac-window,
+.split aside,
+.split main,
+.scroller i,
+.tokenfield span,
+.columns>div,
+.outline span,
+.dockicon,
+.inspector-scene aside,
+.floating-panel,
+.mac-pickers label,
+.attached-sheet,
+.traffic-large,
+.vibrant{
+  transition:transform .26s cubic-bezier(.2,.8,.25,1),opacity .26s ease,background-color .26s ease,box-shadow .26s ease;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ui-demo.v37-animate,
+  .spring.v37-replay .ball{
+    animation:none!important;
+  }
+  .ui-demo *{
+    transition:none!important;
+  }
+}
