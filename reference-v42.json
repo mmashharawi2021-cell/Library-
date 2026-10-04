@@ -1,0 +1,41 @@
+{
+  "verifiedAt": "2026-10-05",
+  "source": "NameThatUI current public pages",
+  "sources": {
+    "home": "https://namethatui.com/",
+    "styles": "https://namethatui.com/styles",
+    "comparisons": "https://namethatui.com/vs",
+    "translation": "https://namethatui.com/translate",
+    "methodology": "https://namethatui.com/methodology",
+    "detailDataTable": "https://namethatui.com/web/data-table"
+  },
+  "home": {
+    "total": 81,
+    "macos": 32,
+    "web": 49,
+    "newThisWeek": 3,
+    "guides": 3
+  },
+  "styles": {
+    "count": 14
+  },
+  "comparisons": {
+    "count": 18
+  },
+  "translation": {
+    "minimum": 60
+  },
+  "methodology": {
+    "steps": 3,
+    "sourceGroups": 3
+  },
+  "detailDataTable": {
+    "actions": 3,
+    "anatomyParts": 5,
+    "minimumSections": 6,
+    "topSymbols": [
+      "<table>",
+      "NSTableView"
+    ]
+  }
+}

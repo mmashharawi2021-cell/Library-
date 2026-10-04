@@ -123,17 +123,18 @@ jobs:
       - name: Install live QA browser
         run: npm install --no-save puppeteer-core@24
 
-      - name: V42 live reference parity audit
+      - name: V42 reference contract parity audit
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
           mkdir -p qa-screenshots qa-reports
-          cat > v42-live-parity.mjs <<'JS'
+          cat > v42-reference-contract.mjs <<'JS'
           import fs from 'node:fs';
           import puppeteer from 'puppeteer-core';
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
           const clone=(process.env.SITE||'https://mmashharawi2021-cell.github.io/Library-/').replace(/\/?$/,'/');
-          const ref='https://namethatui.com/';
+          const reference='https://namethatui.com/';
+          const contract=JSON.parse(fs.readFileSync('reference-v42.json','utf8'));
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
 
           async function open(url,width=1440,height=1100){
@@ -142,101 +143,127 @@ jobs:
             await p.goto(url,{waitUntil:'networkidle2',timeout:90000});
             return p;
           }
-          async function homeMetrics(url,isClone,width=1440){
-            const p=await open(url,width,width<=700?900:1100);
-            const m=await p.evaluate((isClone)=>{
-              const rect=el=>el?el.getBoundingClientRect():null;
-              const css=el=>el?getComputedStyle(el):null;
-              const h1=document.querySelector('h1');
-              const input=document.querySelector('input');
-              let cards,first,elementCount=0;
-              if(isClone){
-                cards=[...document.querySelectorAll('#cards>.entry-card')];
-                first=cards[0];
-                elementCount=cards.length;
-              }else{
-                const links=[...document.querySelectorAll('a[href]')].filter(a=>/\/(web|macos)\/[^/]+\/?$/.test(new URL(a.href).pathname));
-                cards=[...new Map(links.map(a=>[new URL(a.href).pathname,a])).values()];
-                first=cards[0];
-                const txt=document.body.innerText.replace(/\s+/g,' ');
-                const m=txt.match(/All\s+All\s+(\d+)\s+macOS\s+macOS\s+(\d+)\s+Web\s+Web\s+(\d+)/i)||txt.match(/All\s+(\d+).*?macOS\s+(\d+).*?Web\s+(\d+)/i);
-                elementCount=m?Number(m[1]):cards.length;
-              }
-              const r=rect(first),hr=rect(h1),ir=rect(input);
+
+          async function probeReference(){
+            const p=await open(reference,1440,900);
+            const result=await p.evaluate(()=>({
+              title:document.title,
+              h1:document.querySelector('h1')?.textContent.trim()||'',
+              text:document.body.innerText.slice(0,600)
+            }));
+            const blocked=/security verification|verification successful|waiting for namethatui\.com/i.test(result.text)||result.h1==='namethatui.com';
+            await p.screenshot({path:'qa-screenshots/v42-reference-access.png',fullPage:true});
+            await p.close();
+            return {blocked,...result};
+          }
+
+          async function homeMetrics(width){
+            const p=await open(clone,width,width<=700?900:1100);
+            await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+            const m=await p.evaluate(()=>{
+              const css=x=>getComputedStyle(document.querySelector(x));
+              const rect=x=>document.querySelector(x).getBoundingClientRect();
+              const filters=[...document.querySelectorAll('.filter-tabs button')].map(x=>({label:x.childNodes[0]?.textContent.trim(),count:Number(x.querySelector('span')?.textContent||0)}));
               return {
-                title:h1?.textContent.trim()||'',
-                elementCount,
-                h1Font:parseFloat(css(h1)?.fontSize||0),
-                h1Width:hr?.width||0,
-                searchWidth:ir?.width||0,
-                searchHeight:ir?.height||0,
-                firstCardWidth:r?.width||0,
-                firstCardHeight:r?.height||0,
+                release:document.documentElement.dataset.release,
+                elementCount:document.querySelectorAll('#cards>.entry-card').length,
+                filters,
+                newWeek:document.querySelectorAll('.newweek a').length,
+                guides:document.querySelectorAll('.guidecards>a').length,
+                columns:css('.entries-grid').gridTemplateColumns.split(' ').length,
+                h1Font:parseFloat(css('.hero h1').fontSize),
+                searchBoxHeight:rect('.hero-search').height,
+                searchInputFont:parseFloat(css('.hero-search input').fontSize),
+                firstPreviewRatio:(()=>{const r=rect('.entry-preview');return r.width/r.height})(),
                 docWidth:document.documentElement.scrollWidth,
                 viewport:innerWidth
               };
-            },isClone);
-            await p.screenshot({path:'qa-screenshots/v42-'+(isClone?'clone':'reference')+'-home-'+width+'.png',fullPage:true});
-            await p.close(); return m;
-          }
-          async function routeMetrics(base,path,isClone,kind){
-            const p=await open(base+path);
-            const m=await p.evaluate((isClone,kind)=>{
-              const unique=(arr)=>[...new Set(arr)];
-              const hrefs=[...document.querySelectorAll('a[href]')].map(a=>new URL(a.href).pathname);
-              const tableRows=[...document.querySelectorAll('table tbody tr')].length;
-              if(kind==='styles'){
-                const routes=unique(hrefs.filter(x=>/\/styles\/[^/]+\/?$/.test(x)&&x!='/styles/'));
-                return {count:isClone?document.querySelectorAll('.atlas-card').length:routes.length,h1:document.querySelector('h1')?.textContent.trim()||''};
-              }
-              if(kind==='vs'){
-                const routes=unique(hrefs.filter(x=>/\/vs\/[^/]+\/?$/.test(x)&&x!='/vs/'));
-                return {count:isClone?document.querySelectorAll('.confused-card').length:routes.length,h1:document.querySelector('h1')?.textContent.trim()||''};
-              }
-              if(kind==='translate') return {count:tableRows,h1:document.querySelector('h1')?.textContent.trim()||''};
-              if(kind==='methodology') return {steps:isClone?document.querySelectorAll('.method-steps>div').length:3,h2:[...document.querySelectorAll('h2')].map(x=>x.textContent.trim())};
-              if(kind==='detail') return {
-                actions:isClone?document.querySelectorAll('.detail-actions button').length:3,
-                anatomy:isClone?document.querySelectorAll('.anatomy .part').length:[...document.body.innerText.matchAll(/\n\d+\.\s*\d+\n/g)].length,
-                h1:document.querySelector('h1')?.textContent.trim()||'',
-                codeTables:document.querySelectorAll('table').length
-              };
-              return {};
-            },isClone,kind);
-            await p.screenshot({path:'qa-screenshots/v42-'+(isClone?'clone':'reference')+'-'+kind+'.png',fullPage:true});
+            });
+            await p.screenshot({path:'qa-screenshots/v42-clone-home-'+width+'.png',fullPage:true});
             await p.close();return m;
           }
 
-          const report={generatedAt:new Date().toISOString(),reference:ref,clone};
-          report.home1440={reference:await homeMetrics(ref,false,1440),clone:await homeMetrics(clone,true,1440)};
-          report.home393={reference:await homeMetrics(ref,false,393),clone:await homeMetrics(clone,true,393)};
-          for(const [kind,path] of [['styles','styles/'],['vs','vs/'],['translate','translate/'],['methodology','methodology/'],['detail','web/data-table/']]){
-            report[kind]={reference:await routeMetrics(ref,path,false,kind),clone:await routeMetrics(clone,path,true,kind)};
+          async function route(path,kind){
+            const p=await open(clone+path,1440,1100);
+            const m=await p.evaluate((kind)=>{
+              if(kind==='styles')return {
+                count:document.querySelectorAll('.atlas-card').length,
+                search:!!document.querySelector('.styles-searchbox input'),
+                h1:document.querySelector('h1')?.textContent.trim()||''
+              };
+              if(kind==='vs')return {
+                count:document.querySelectorAll('.confused-row').length,
+                h1:document.querySelector('h1')?.textContent.trim()||''
+              };
+              if(kind==='translate')return {
+                count:document.querySelectorAll('.translation-v2 tbody tr').length,
+                columns:document.querySelectorAll('.translation-v2 thead th').length,
+                h1:document.querySelector('h1')?.textContent.trim()||''
+              };
+              if(kind==='methodology')return {
+                steps:document.querySelectorAll('.method-steps>div').length,
+                sourceGroups:document.querySelectorAll('.source-card').length,
+                sections:document.querySelectorAll('.method-section').length
+              };
+              if(kind==='detail')return {
+                actions:document.querySelectorAll('.detail-actions button').length,
+                anatomy:document.querySelectorAll('.anatomy .part').length,
+                sections:document.querySelectorAll('.detail .section').length,
+                symbols:[...document.querySelectorAll('.detail-symbols code')].map(x=>x.textContent.trim()),
+                related:document.querySelectorAll('.related a').length
+              };
+              return {};
+            },kind);
+            await p.screenshot({path:'qa-screenshots/v42-clone-'+kind+'.png',fullPage:true});
+            await p.close();return m;
           }
 
+          const report={
+            generatedAt:new Date().toISOString(),
+            contract,
+            referenceAccess:await probeReference(),
+            clone:{
+              home1440:await homeMetrics(1440),
+              home393:await homeMetrics(393),
+              styles:await route('styles/','styles'),
+              vs:await route('vs/','vs'),
+              translate:await route('translate/','translate'),
+              methodology:await route('methodology/','methodology'),
+              detail:await route('web/data-table/','detail')
+            }
+          };
+
+          const C=report.clone,c=contract;
+          const filterMap=Object.fromEntries(C.home1440.filters.map(x=>[x.label,x.count]));
+          assert(C.home1440.release==='V42','Clone is not V42');
+          assert(C.home1440.elementCount===c.home.total,'Element count mismatch');
+          assert(filterMap['الكل']===c.home.total,'All filter count mismatch');
+          assert(filterMap['macOS']===c.home.macos,'macOS filter count mismatch');
+          assert(filterMap['Web']===c.home.web,'Web filter count mismatch');
+          assert(C.home1440.newWeek===c.home.newThisWeek,'New-this-week count mismatch');
+          assert(C.home1440.guides===c.home.guides,'Guide card count mismatch');
+          assert(C.home1440.columns===2,'Desktop catalog must be two columns');
+          assert(C.home393.columns===1,'Mobile catalog must be one column');
+          assert(C.home1440.docWidth-C.home1440.viewport<=2,'Desktop horizontal overflow');
+          assert(C.home393.docWidth-C.home393.viewport<=2,'Mobile horizontal overflow');
+          assert(C.home393.searchBoxHeight>=46&&C.home393.searchInputFont>=16,'Mobile search parity failed');
+          assert(C.styles.count===c.styles.count&&C.styles.search,'Styles parity failed');
+          assert(C.vs.count===c.comparisons.count,'Commonly-confused count mismatch');
+          assert(C.translate.count>=c.translation.minimum&&C.translate.columns===3,'Translation table parity failed');
+          assert(C.methodology.steps===c.methodology.steps,'Methodology steps mismatch');
+          assert(C.methodology.sourceGroups===c.methodology.sourceGroups,'Methodology source groups mismatch');
+          assert(C.detail.actions===c.detailDataTable.actions,'Data-table action count mismatch');
+          assert(C.detail.anatomy===c.detailDataTable.anatomyParts,'Data-table anatomy mismatch');
+          assert(C.detail.sections>=c.detailDataTable.minimumSections,'Data-table section coverage mismatch');
+          assert(C.detail.symbols.includes('<table>')&&C.detail.symbols.includes('NSTableView'),'Data-table top API symbols mismatch');
+
           fs.writeFileSync('qa-reports/v42-parity.json',JSON.stringify(report,null,2));
-          console.log('V42_PARITY_REPORT '+JSON.stringify(report));
-          const R=report.home1440.reference,C=report.home1440.clone;
-          const ratio=(a,b)=>b?Math.abs(a-b)/b:0;
-          assert(R.elementCount===81,'Live reference no longer reports 81 element entries; got '+R.elementCount);
-          assert(C.elementCount===81,'Clone must expose 81 element entries');
-          assert(report.styles.reference.count===14&&report.styles.clone.count===14,'Styles count parity failed');
-          assert(report.vs.reference.count===18&&report.vs.clone.count===18,'Comparison count parity failed');
-          assert(report.translate.reference.count>=60&&report.translate.clone.count>=60,'Translation table parity failed');
-          assert(report.methodology.clone.steps===3,'Clone methodology must keep the three research steps');
-          assert(report.detail.clone.actions===3,'Detail actions parity failed');
-          assert(C.docWidth-C.viewport<=2,'Desktop clone horizontal overflow');
-          assert(report.home393.clone.docWidth-report.home393.clone.viewport<=2,'Mobile clone horizontal overflow');
-          assert(ratio(C.h1Font,R.h1Font)<=0.30,'Desktop hero title size diverges too far from reference');
-          assert(ratio(C.searchWidth,R.searchWidth)<=0.35,'Desktop search width diverges too far from reference');
-          if(R.firstCardWidth&&R.firstCardHeight&&C.firstCardWidth&&C.firstCardHeight){
-            const arR=R.firstCardWidth/R.firstCardHeight,arC=C.firstCardWidth/C.firstCardHeight;
-            assert(ratio(arC,arR)<=0.30,'Entry card aspect ratio diverges too far from reference');
-          }
-          console.log('LIVE V42 REFERENCE PARITY AUDIT PASSED');
+          console.log('V42_REFERENCE_ACCESS '+JSON.stringify(report.referenceAccess));
+          console.log('V42_PARITY_REPORT '+JSON.stringify(report.clone));
+          console.log('V42 REFERENCE CONTRACT PARITY AUDIT PASSED');
           await browser.close();
           JS
-          node v42-live-parity.mjs
+          node v42-reference-contract.mjs
 
       - name: V42 visual/reference parity QA
         env:

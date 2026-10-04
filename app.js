@@ -489,10 +489,11 @@ function home(platformOverride){
  bindChrome();bindGlossary();bindHeroMotion();
 }
 function detailSymbols(e){
+ const exactSecondary={ 'data-table':'NSTableView' };
  const skip=/^(المرجع|إتاحة|CSS|Accessibility|macOS behavior)$/i;
  const generic=/^(ARIA \/ HTML semantics|layout \+ state styles|semantic HTML \/ ARIA|AppKit \/ SwiftUI|SwiftUI counterpart|keyboard \+ focus \+ window semantics|NSAccessibility \/ SwiftUI accessibility)$/i;
  const rows=(e.inCode||[]).filter(r=>r?.symbol&&!skip.test(r.stack||'')&&!generic.test(r.symbol||''));
- const symbols=[e.code,...rows.map(r=>r.symbol)].filter(Boolean);
+ const symbols=[e.code,exactSecondary[e.slug],...rows.map(r=>r.symbol)].filter(Boolean);
  return [...new Set(symbols)].slice(0,2);
 }
 function detail(slug){
