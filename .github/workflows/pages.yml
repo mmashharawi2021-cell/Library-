@@ -313,10 +313,12 @@ jobs:
           assert(staticCheck.count>=8,'Expected static presentation specimens');
           assert(staticCheck.changed.length===0,'Static demos reacted to arbitrary click: '+staticCheck.changed.join(','));
 
+          await page.$eval('.demo-slider-macos',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
           const slider=await page.$('.demo-slider-macos .slider'),sb=await slider.boundingBox(),s0=await page.$eval('.demo-slider-macos .slider',x=>x.getAttribute('aria-valuenow'));
           await page.mouse.move(sb.x+sb.width*.2,sb.y+sb.height/2);await page.mouse.down();await page.mouse.move(sb.x+sb.width*.82,sb.y+sb.height/2,{steps:6});await page.mouse.up();
           const s1=await page.$eval('.demo-slider-macos .slider',x=>x.getAttribute('aria-valuenow'));assert(Number(s1)>Number(s0),'Slider drag did not change its value');
 
+          await page.$eval('.demo-resize-handle',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
           const grip=await page.$('.demo-resize-handle .resize-grip'),gb=await grip.boundingBox(),r0=await page.$eval('.demo-resize-handle .resize-box',x=>x.getBoundingClientRect().width);
           await page.mouse.move(gb.x+2,gb.y+2);await page.mouse.down();await page.mouse.move(gb.x+55,gb.y+18,{steps:5});await page.mouse.up();
           const r1=await page.$eval('.demo-resize-handle .resize-box',x=>x.getBoundingClientRect().width);assert(r1>r0,'Resize handle did not resize');
