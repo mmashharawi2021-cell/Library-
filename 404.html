@@ -15,7 +15,16 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UI بالعربي — ما اسم عنصر الواجهة هذا؟">
 <meta name="twitter:description" content="صف عنصر الواجهة بكلماتك واحصل على اسمه العربي والإنجليزي ورمز التنفيذ.">
-<script id="data-theme-init">document.documentElement.dataset.theme="dark"</script>
+<script id="data-theme-init">document.documentElement.dataset.theme="dark"</script>\n<script id="legacy-sw-cleanup">
+(async()=>{
+  try{
+    if('serviceWorker' in navigator){
+      const regs=await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.filter(r=>r.scope.startsWith(location.origin+'/Library-/')).map(r=>r.unregister()));
+    }
+  }catch{}
+})();
+</script>
 <link rel="canonical" href="https://mmashharawi2021-cell.github.io/Library-/">
 <link rel="stylesheet" href="/Library-/styles.css?v=37">
 <link rel="icon" href="/Library-/icon.svg" type="image/svg+xml">
