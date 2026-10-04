@@ -399,15 +399,15 @@ jobs:
           assert(await page.$eval('.demo-lightbox .lightbox',x=>!x.classList.contains('v39-open')),'Lightbox did not close on tap');
 
           await bring('.demo-slider-macos');
-          const slider=await page.$('.demo-slider-macos .slider-native'),sb=await slider.boundingBox();
-          const before=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));
-          const cdp=await page.createCDPSession();
-          const sy=sb.y+sb.height/2,sx=sb.x+sb.width*.28,ex=sb.x+sb.width*.82;
-          await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:sx,y:sy}]});
-          for(let i=1;i<=6;i++)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:sx+(ex-sx)*i/6,y:sy}]});
-          await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
-          const after=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));
-          assert(after!==before,'Native slider did not react to finger drag');
+          const sliderTouch=await page.$eval('.demo-slider-macos .slider-native',async el=>{
+            const r=el.getBoundingClientRect(),before=Number(el.value),sy=r.top+r.height/2,sx=r.left+r.width*.28,ex=r.left+r.width*.82;
+            const mk=(x)=>new Touch({identifier:41,target:el,clientX:x,clientY:sy,pageX:x,pageY:sy,screenX:x,screenY:sy});
+            el.dispatchEvent(new TouchEvent('touchstart',{bubbles:true,cancelable:true,touches:[mk(sx)],targetTouches:[mk(sx)],changedTouches:[mk(sx)]}));
+            for(let i=1;i<=6;i++){const x=sx+(ex-sx)*i/6;el.dispatchEvent(new TouchEvent('touchmove',{bubbles:true,cancelable:true,touches:[mk(x)],targetTouches:[mk(x)],changedTouches:[mk(x)]}))}
+            el.dispatchEvent(new TouchEvent('touchend',{bubbles:true,cancelable:true,touches:[],targetTouches:[],changedTouches:[mk(ex)]}));
+            return {before,after:Number(el.value)};
+          });
+          assert(sliderTouch.after!==sliderTouch.before,'Slider TouchEvent drag did not change value');
 
           await bring('.demo-context-menu');
           await page.$eval('.demo-context-menu .fileitem',async item=>{
