@@ -416,6 +416,19 @@ function bindDemos(root=document){
   const finishTouchSlider=ev=>{if(touchSlider&&(!ev||ev.pointerId===touchSlider.pid)){record(touchSlider.demo,'slider-touch-drag');touchSlider=null}};
   root.addEventListener('pointerup',finishTouchSlider,true);root.addEventListener('pointercancel',finishTouchSlider,true);
 
+  let directTouchSlider=null;
+  root.addEventListener('touchstart',ev=>{
+   const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(!range)return;
+   const touch=ev.touches?.[0];if(!touch)return;
+   ev.preventDefault();directTouchSlider={range,demo:range.closest('.ui-demo')};updateTouchSlider(range,touch.clientX)
+  },{capture:true,passive:false});
+  root.addEventListener('touchmove',ev=>{
+   if(!directTouchSlider)return;const touch=ev.touches?.[0];if(!touch)return;
+   ev.preventDefault();updateTouchSlider(directTouchSlider.range,touch.clientX)
+  },{capture:true,passive:false});
+  const finishDirectTouchSlider=()=>{if(directTouchSlider){record(directTouchSlider.demo,'slider-touch-event');directTouchSlider=null}};
+  root.addEventListener('touchend',finishDirectTouchSlider,true);root.addEventListener('touchcancel',finishDirectTouchSlider,true);
+
   root.addEventListener('keydown',ev=>{if(ev.key==='Escape'){root.querySelectorAll('.v39-open').forEach(x=>x.classList.remove('v39-open'));root.querySelectorAll('.overlay-kinds[data-open]').forEach(x=>x.removeAttribute('data-open'))}},true);
  }
 
