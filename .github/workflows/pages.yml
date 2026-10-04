@@ -66,7 +66,7 @@ jobs:
           assert(!app.includes('slugHash'),'Random hash animation assignment must be removed');
           assert(!app.includes('data-v37-mode'),'Random animation mode must be removed');
           assert(!app.includes("const modes=['lift','shift','tilt','pulse','spring','glow']"),'Generic animation modes must be removed');
-          assert(app.includes("case 'data-table'")&&app.includes("case 'slider-macos'")&&app.includes("contextmenu")&&app.includes("dragstart"),'V39 semantic handlers missing');
+          assert(app.includes("case 'data-table'")&&app.includes('slider-native')&&app.includes("contextmenu")&&app.includes("dragstart"),'V39 semantic handlers missing');
 
           const slugs=new Set(d.entries.map(e=>e.slug));
           for(const e of d.entries){
@@ -314,9 +314,10 @@ jobs:
           assert(staticCheck.changed.length===0,'Static demos reacted to arbitrary click: '+staticCheck.changed.join(','));
 
           await page.$eval('.demo-slider-macos',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
-          const slider=await page.$('.demo-slider-macos .slider'),sb=await slider.boundingBox(),s0=await page.$eval('.demo-slider-macos .slider',x=>x.getAttribute('aria-valuenow'));
-          await page.mouse.move(sb.x+sb.width*.2,sb.y+sb.height/2);await page.mouse.down();await page.mouse.move(sb.x+sb.width*.82,sb.y+sb.height/2,{steps:6});await page.mouse.up();
-          const s1=await page.$eval('.demo-slider-macos .slider',x=>x.getAttribute('aria-valuenow'));assert(Number(s1)>Number(s0),'Slider drag did not change its value');
+          const s0=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));
+          await page.focus('.demo-slider-macos .slider-native');for(let i=0;i<8;i++)await page.keyboard.press('ArrowRight');
+          const s1=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));assert(s1>s0,'Native slider did not respond to keyboard/range interaction');
+          assert(await page.$eval('.demo-slider-macos output',x=>x.textContent===document.querySelector('.demo-slider-macos .slider-native').value+'%'),'Slider output did not mirror value');
 
           await page.$eval('.demo-resize-handle',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
           const grip=await page.$('.demo-resize-handle .resize-grip'),gb=await grip.boundingBox(),r0=await page.$eval('.demo-resize-handle .resize-box',x=>x.getBoundingClientRect().width);
