@@ -336,8 +336,10 @@ jobs:
             const swBefore=sw?.classList.contains('on');click(sw);
             out.switch=sw?.classList.contains('on')!==swBefore;
 
+            const toastBox=q('toast','.workspace');
+            const toastBefore=toastBox?.classList.contains('v37-show-toast');
             click(document.querySelector('.demo-toast'));
-            out.toast=q('toast','.workspace')?.classList.contains('v37-show-toast');
+            out.toast=toastBox?.classList.contains('v37-show-toast')!==toastBefore;
 
             const acc=[...document.querySelectorAll('.demo-accordion details')][1];
             click(acc.querySelector('summary'));out.accordion=acc.open;
