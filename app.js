@@ -366,7 +366,7 @@ function bindDemos(root=document){
        }
        case 'card':{const btn=t.closest('.visual-card button'),link=t.closest('.story-link');if(btn){btn.textContent=btn.textContent.includes('✓')?'مشاركة':'تمت المشاركة ✓';action='share'}else if(link){link.classList.toggle('v37-selected');action='open-story'}break}
        case 'resize-handle':{const box=demo.querySelector('.resize-box');box?.classList.toggle('v37-wide');action='resize';break}
-       case 'hamburger-menu':{demo.querySelector('.drawer-demo')?.classList.toggle('open');action='drawer';break}
+       case 'hamburger-menu':{const x=t.closest('.hamb,.drawer-demo .shade');if(x){demo.querySelector('.drawer-demo')?.classList.toggle('open');action='drawer'}break}
        case 'bento-grid':{const cell=t.closest('.bento>div');if(cell){choose(cell.parentElement,':scope>div',cell);action='bento-select'}break}
        case 'masonry':{const cell=t.closest('.masonry i');if(cell){choose(cell.parentElement,'i',cell);action='masonry-select'}break}
        case 'easing':{demo.querySelector('.curve')?.classList.toggle('v37-reverse');action='easing';break}
@@ -446,7 +446,7 @@ function bindDemos(root=document){
        case 'focus-ring-macos':{const btn=t.closest('.mac-focus button');if(btn){btn.classList.toggle('macfocused');action='mac-focus'}else{demo.querySelector('.mac-focus input')?.focus();action='mac-input'}break}
        case 'inspector':{const box=demo.querySelector('.inspector-scene');box?.classList.toggle('v37-inspecting');action='inspector';break}
        case 'panel':{demo.querySelector('.floating-panel')?.classList.toggle('v37-focused');action='panel';break}
-       case 'popover-macos':{demo.querySelector('.mac-popover')?.classList.toggle('v37-open');action='popover';break}
+       case 'popover-macos':{const x=t.closest('.mac-popover > button,.mac-popover .bubble button');if(x){demo.querySelector('.mac-popover')?.classList.toggle('v37-open');action='popover'}break}
        case 'popup-pulldown-combobox':{const x=t.closest('.mac-pickers label');if(x){choose(x.parentElement,'label',x);x.classList.toggle('v37-open');action='picker'}break}
        case 'segmented-control':{const btn=t.closest('.segmented button');if(btn){btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');action='segment'}break}
        case 'sheet-macos':{const btn=t.closest('.attached-sheet button');if(btn){const sheet=btn.closest('.attached-sheet');sheet.classList.toggle('v37-resolved');btn.textContent=btn.textContent.includes('✓')?btn.textContent.replace(' ✓',''):btn.textContent+' ✓';action='sheet'}break}
