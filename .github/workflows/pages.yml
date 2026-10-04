@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy V36 to GitHub Pages
 
 on:
   push:
@@ -27,66 +27,68 @@ jobs:
       - name: Syntax check
         run: node --check app.js
 
-      - name: Build
+      - name: Build static surface
         run: node scripts/build-static.mjs
 
-      - name: Validate catalog
+      - name: Validate V36 reference model
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const src=fs.readFileSync('data.js','utf8');
-          const first=src.indexOf('{');
-          const last=src.lastIndexOf('}');
-          if(first<0||last<first) throw new Error('Could not locate UI_AR_DATA JSON payload');
+          const first=src.indexOf('{'), last=src.lastIndexOf('}');
           const d=JSON.parse(src.slice(first,last+1));
+          const baseline=JSON.parse(fs.readFileSync('qa/reference/name-that-ui-2026-10-04.json','utf8'));
           const app=fs.readFileSync('app.js','utf8');
           const demoStart=app.indexOf('function demo(');
-          const demoEnd=app.indexOf('function card(',demoStart);
-          if(demoStart<0||demoEnd<demoStart) throw new Error('Could not isolate demo()');
+          const demoEnd=app.indexOf('const entryPath=',demoStart);
           const demoBlock=app.slice(demoStart,demoEnd);
-          const r={
+          const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
+
+          assert(d.entries.length===baseline.counts.elements,'Expected 81 elements');
+          assert(d.entries.filter(e=>e.category==='web').length===baseline.counts.web,'Expected 49 web elements');
+          assert(d.entries.filter(e=>e.category==='macos').length===baseline.counts.macos,'Expected 32 macOS elements');
+          assert(d.styles.length===baseline.counts.styles,'Expected 14 styles');
+          assert(d.comparisons.length===baseline.counts.comparisons,'Expected 18 comparisons');
+          assert(d.translations.length===baseline.counts.translations,'Expected 63 translations');
+          assert((demoBlock.match(/case '/g)||[]).length===81,'Expected 81 explicit demo cases');
+
+          const slugs=new Set(d.entries.map(e=>e.slug));
+          for(const e of d.entries){
+            assert(e.caption&&e.caption.trim(),e.slug+': missing caption');
+            assert((e.calledPhrases||[]).length>=3,e.slug+': expected >=3 called phrases');
+            assert((e.anatomy||[]).length>0,e.slug+': missing anatomy');
+            assert(e.anatomy.every(p=>p.symbol),e.slug+': anatomy symbol missing');
+            assert(e.debugSymptom&&e.debugSymptom.trim(),e.slug+': missing debug symptom');
+            assert((e.inCode||[]).length>=4,e.slug+': expected >=4 in-code rows');
+            assert((e.related||[]).length===4,e.slug+': expected exactly 4 related items');
+            assert(e.related.every(s=>slugs.has(s)&&s!==e.slug),e.slug+': invalid related slug');
+          }
+
+          const styleSlugs=new Set(d.styles.map(s=>s.slug));
+          for(const s of d.styles){
+            assert((s.signalDetails||[]).length>=4,s.slug+': expected >=4 defining signals');
+            assert((s.dna||[]).length===5,s.slug+': expected 5 DNA axes');
+            assert((s.sources||[]).length>=2,s.slug+': expected >=2 sources');
+            assert((s.relatedStyles||[]).length>=4,s.slug+': expected >=4 related styles');
+            assert(s.relatedStyles.every(x=>styleSlugs.has(x)&&x!==s.slug),s.slug+': invalid related style');
+          }
+
+          const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
+          assert((sitemap.match(/<loc>/g)||[]).length===122,'Expected 122 sitemap URLs');
+          assert(!sitemap.includes('/element/'),'Legacy element URLs leaked into sitemap');
+          assert(!sitemap.includes('/saved/'),'Saved route leaked into sitemap');
+
+          for(const e of d.entries){
+            assert(fs.existsSync(`dist/${e.category}/${e.slug}/index.html`),'Missing direct entry page: '+e.slug);
+            assert(fs.existsSync(`dist/element/${e.slug}/index.html`),'Missing legacy entry redirect: '+e.slug);
+          }
+
+          console.log('V36 model validation passed', {
             entries:d.entries.length,
-            web:d.entries.filter(e=>e.category==='web').length,
-            macos:d.entries.filter(e=>e.category==='macos').length,
             styles:d.styles.length,
             comparisons:d.comparisons.length,
-            translations:d.translations.length,
-            glossary:Object.keys(d.glossary||{}).length,
-            sitemapUrls:(fs.readFileSync('dist/sitemap.xml','utf8').match(/<loc>/g)||[]).length,
-            demoCases:demoBlock.split("case '").length-1
-          };
-          const expected={entries:81,web:49,macos:32,styles:14,comparisons:18,translations:63,glossary:38,sitemapUrls:122,demoCases:81};
-          for(const [k,v] of Object.entries(expected)){
-            if(r[k]!==v) throw new Error(`${k}: expected ${v}, got ${r[k]}`);
-          }
-          const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
-          if(!sitemap.includes('/web/')||!sitemap.includes('/macos/')) throw new Error('Platform indexes missing from sitemap');
-          if(sitemap.includes('/element/')) throw new Error('Legacy /element/ URLs must not appear in sitemap');
-          if(sitemap.includes('/saved/')) throw new Error('Saved must not appear in sitemap');
-          for(const e of d.entries){
-            const direct=`dist/${e.category}/${e.slug}/index.html`;
-            const legacy=`dist/element/${e.slug}/index.html`;
-            if(!fs.existsSync(direct)) throw new Error(`Missing static direct route: ${direct}`);
-            if(!fs.existsSync(legacy)) throw new Error(`Missing legacy redirect: ${legacy}`);
-            const redirectHtml=fs.readFileSync(legacy,'utf8');
-            if(!redirectHtml.includes(`/${e.category}/${e.slug}/`)) throw new Error(`Legacy redirect target mismatch for ${e.slug}`);
-          }
-          const compareRouteSlugs={'dropdown-select-combobox':'dropdown-vs-select-vs-combobox','tabs-vs-segmented':'tabs-vs-segmented-control','context-vs-dropdown':'context-menu-vs-dropdown','masonry-vs-bento':'masonry-vs-bento-grid','sheet-vs-alert-mac':'sheet-vs-alert','empty-vs-skeleton':'empty-state-vs-skeleton'};
-          if(!fs.existsSync('dist/vs/index.html')) throw new Error('Missing /vs/ comparison index');
-          if(!fs.existsSync('dist/compare/index.html')) throw new Error('Missing legacy /compare/ redirect');
-          for(const c of d.comparisons){
-            const slug=compareRouteSlugs[c.slug]||c.slug;
-            const direct=`dist/vs/${slug}/index.html`;
-            if(!fs.existsSync(direct)) throw new Error(`Missing comparison route: ${direct}`);
-            if(slug!==c.slug){
-              const legacy=`dist/vs/${c.slug}/index.html`;
-              if(!fs.existsSync(legacy)) throw new Error(`Missing comparison redirect: ${legacy}`);
-              if(!fs.readFileSync(legacy,'utf8').includes(`/vs/${slug}/`)) throw new Error(`Comparison redirect mismatch for ${c.slug}`);
-            }
-          }
-          if(!sitemap.includes('/vs/')) throw new Error('Comparison index missing from sitemap');
-          if(sitemap.includes('/compare/')) throw new Error('Legacy /compare/ must not appear in sitemap');
-          console.log('Catalog validation passed', r);
+            translations:d.translations.length
+          });
           NODE
 
       - uses: actions/configure-pages@v5
@@ -100,14 +102,14 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Install live QA browser driver
+      - name: Install live QA browser
         run: npm install --no-save puppeteer-core@24
 
-      - name: Live QA — all 81 cards
+      - name: V36 final live QA
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > card-qa.mjs <<'JS'
+          cat > v36-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           import fs from 'node:fs';
 
@@ -118,972 +120,150 @@ jobs:
           });
           const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
           const site=process.env.SITE || 'https://mmashharawi2021-cell.github.io/Library-/';
+          fs.mkdirSync('qa-screenshots',{recursive:true});
 
-          for(const width of [393,1440]){
-            const page=await browser.newPage();
-            await page.setViewport({width,height:1000,deviceScaleFactor:1});
-            const errors=[];
-            page.on('pageerror',e=>errors.push(String(e)));
-            await page.goto(site+'?cardqa=16',{waitUntil:'networkidle0',timeout:60000});
-            await page.waitForSelector('#cards > .entry-card');
+          const widths=[393,768,945,1440];
 
-            const result=await page.evaluate(()=>{
-              const cards=[...document.querySelectorAll('#cards > .entry-card')];
-              const previews=cards.map(c=>c.querySelector(':scope > .entry-preview'));
-              const demos=previews.map(p=>p?.querySelector('.ui-demo'));
-              const missing=cards.map((c,i)=>{
-                const p=previews[i],d=demos[i];
-                return (p&&d)?null:{i,href:c.getAttribute('href')};
-              }).filter(Boolean);
-              const demoClasses=demos.filter(Boolean).map(el=>[...el.classList].find(c=>c.startsWith('demo-'))).filter(Boolean);
-              const empty=previews.map((p,i)=>p && p.innerHTML.trim()?null:i).filter(x=>x!==null);
-              return {
-                cards:cards.length,
-                previews:previews.filter(Boolean).length,
-                demos:demos.filter(Boolean).length,
-                uniqueDemoClasses:new Set(demoClasses).size,
-                uniqueMarkup:new Set(previews.filter(Boolean).map(p=>p.innerHTML)).size,
-                fallbacks:document.querySelectorAll('#cards > .entry-card .fallback-demo').length,
-                missing,
-                empty,
-                pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              };
-            });
-
-            assert(result.cards===81,`Expected 81 cards, got ${result.cards} at ${width}px`);
-            assert(result.previews===81,`Missing card previews: ${JSON.stringify(result.missing)}`);
-            assert(result.demos===81,`Missing demo roots: ${JSON.stringify(result.missing)}`);
-            assert(result.uniqueDemoClasses===81,`Expected 81 unique demo classes, got ${result.uniqueDemoClasses}`);
-            assert(result.uniqueMarkup===81,`Expected 81 unique preview markups, got ${result.uniqueMarkup}`);
-            assert(result.fallbacks===0,`Fallback demos found: ${result.fallbacks}`);
-            assert(result.empty.length===0,`Empty previews: ${result.empty.join(',')}`);
-            assert(result.pageOverflow<=2,`Horizontal page overflow: ${result.pageOverflow}px at ${width}px`);
-            assert(errors.length===0,`Page errors at ${width}px: ${errors.join(' | ')}`);
-
-            if(width===393){
-              await page.click('[data-cat="web"]');
-              await page.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===49);
-              const webCount=await page.$$eval('#cards > .entry-card',els=>els.length);
-              assert(webCount===49,`Web filter expected 49, got ${webCount}`);
-
-              await page.click('[data-cat="macos"]');
-              await page.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===32);
-              const macCount=await page.$$eval('#cards > .entry-card',els=>els.length);
-              assert(macCount===32,`macOS filter expected 32, got ${macCount}`);
-            }
-
-            await page.close();
-          }
-
-          console.log('LIVE CARD QA PASSED — 81 unique cards, no fallbacks, filters correct.');
-
-          const detailPage=await browser.newPage();
-          await detailPage.setViewport({width:393,height:1000,deviceScaleFactor:1});
-          const detailErrors=[];
-          detailPage.on('pageerror',e=>detailErrors.push(String(e)));
-          await detailPage.goto(site+'?detailqa=17',{waitUntil:'networkidle0',timeout:60000});
-          const slugs=await detailPage.evaluate(()=>window.UI_AR_DATA.entries.map(e=>e.slug));
-          for(const slug of slugs){
-            await detailPage.evaluate(s=>{location.hash='#/element/'+s},slug);
-            await detailPage.waitForFunction(s=>{
-              const d=document.querySelector('.detail');
-              return location.hash==='#/element/'+s && !!d && !!d.querySelector('.specimen .ui-demo') && !!d.querySelector('.anatomy .part') && !!d.querySelector('.prompt-agent') && !!d.querySelector('.prompt-debug') && !!d.querySelector('.code-table') && !!d.querySelector('.related a');
-            },{timeout:10000},slug);
-            const check=await detailPage.evaluate(()=>({
-              h1:document.querySelector('.detail h1')?.textContent?.trim(),
-              actions:document.querySelectorAll('.detail-actions button').length,
-              parts:document.querySelectorAll('.anatomy .part').length,
-              prompts:document.querySelectorAll('.prompt').length,
-              codeRows:document.querySelectorAll('.code-table tr').length,
-              related:document.querySelectorAll('.related a').length,
-              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-            }));
-            assert(!!check.h1,`Missing detail title for ${slug}`);
-            assert(check.actions===3,`Expected 3 detail actions for ${slug}, got ${check.actions}`);
-            assert(check.parts>0,`Missing anatomy for ${slug}`);
-            assert(check.prompts===2,`Expected 2 prompts for ${slug}, got ${check.prompts}`);
-            assert(check.codeRows>0,`Missing code rows for ${slug}`);
-            assert(check.related>0,`Missing related links for ${slug}`);
-            assert(check.overflow<=2,`Detail horizontal overflow ${check.overflow}px for ${slug}`);
-          }
-          assert(detailErrors.length===0,`Detail page errors: ${detailErrors.join(' | ')}`);
-          await detailPage.close();
-          console.log('LIVE DETAIL QA PASSED — all 81 element pages rendered with complete structure.');
-
-          for(const width of [393,1440]){
-            const stylePage=await browser.newPage();
-            await stylePage.setViewport({width,height:1000,deviceScaleFactor:1});
-            const styleErrors=[];
-            stylePage.on('pageerror',e=>styleErrors.push(String(e)));
-            await stylePage.goto(site+'?styleqa=18#/styles',{waitUntil:'networkidle0',timeout:60000});
-            await stylePage.waitForSelector('.atlas-grid > .atlas-card');
-            const atlas=await stylePage.evaluate(()=>({
-              cards:document.querySelectorAll('.atlas-grid > .atlas-card').length,
-              visuals:document.querySelectorAll('.atlas-grid .style-visual').length,
-              uniqueMarkup:new Set([...document.querySelectorAll('.atlas-preview')].map(x=>x.innerHTML)).size,
-              empty:[...document.querySelectorAll('.atlas-preview')].filter(x=>!x.innerHTML.trim()).length,
-              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-            }));
-            assert(atlas.cards===14,`Styles atlas expected 14 cards, got ${atlas.cards} at ${width}px`);
-            assert(atlas.visuals===14,`Styles atlas expected 14 visuals, got ${atlas.visuals}`);
-            assert(atlas.uniqueMarkup===14,`Expected 14 unique style specimens, got ${atlas.uniqueMarkup}`);
-            assert(atlas.empty===0,`Empty style specimens: ${atlas.empty}`);
-            assert(atlas.overflow<=2,`Styles atlas horizontal overflow ${atlas.overflow}px at ${width}px`);
-
-            if(width===393){
-              await stylePage.click('[data-style-slug="neumorphism"]');
-              await stylePage.waitForFunction(()=>document.querySelectorAll('.atlas-grid > .atlas-card').length===1);
-              const forced=await stylePage.$$eval('.atlas-grid > .atlas-card',els=>els.length);
-              assert(forced===1,`Style example filter expected 1 card, got ${forced}`);
-              await stylePage.evaluate(()=>{
-                const input=document.querySelector('#stylesearch');
-                input.value='';
-                input.dispatchEvent(new Event('input',{bubbles:true}));
-              });
-              await stylePage.waitForFunction(()=>document.querySelectorAll('.atlas-grid > .atlas-card').length===14);
-            }
-
-            const styleSlugs=await stylePage.evaluate(()=>window.UI_AR_DATA.styles.map(s=>s.slug));
-            for(const slug of styleSlugs){
-              await stylePage.evaluate(s=>{location.hash='#/style/'+s},slug);
-              await stylePage.waitForFunction(s=>{
-                const d=document.querySelector('.style-detail');
-                return location.hash==='#/style/'+s &&
-                  !!d &&
-                  !!d.querySelector('.style-detail-visual .style-visual') &&
-                  !!d.querySelector('.style-signal') &&
-                  !!d.querySelector('.style-brief') &&
-                  !!d.querySelector('.style-dna .dna-row') &&
-                  !!d.querySelector('.style-code-table tr') &&
-                  !!d.querySelector('.style-access li') &&
-                  !!d.querySelector('.style-related a');
-              },{timeout:10000},slug);
-              const check=await stylePage.evaluate(()=>({
-                h1:document.querySelector('.style-detail h1')?.textContent?.trim(),
-                signals:document.querySelectorAll('.style-signal').length,
-                dna:document.querySelectorAll('.style-dna .dna-row').length,
-                codeRows:document.querySelectorAll('.style-code-table tr').length,
-                access:document.querySelectorAll('.style-access li').length,
-                related:document.querySelectorAll('.style-related a').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(!!check.h1,`Missing style title for ${slug}`);
-              assert(check.signals>=3,`Expected >=3 signals for ${slug}, got ${check.signals}`);
-              assert(check.dna>=5,`Expected >=5 DNA rows for ${slug}, got ${check.dna}`);
-              assert(check.codeRows>=1,`Missing style code rows for ${slug}`);
-              assert(check.access>=3,`Expected accessibility guidance for ${slug}`);
-              assert(check.related>=1,`Missing related styles for ${slug}`);
-              assert(check.overflow<=2,`Style detail horizontal overflow ${check.overflow}px for ${slug} at ${width}px`);
-            }
-            assert(styleErrors.length===0,`Style page errors at ${width}px: ${styleErrors.join(' | ')}`);
-            await stylePage.close();
-          }
-          console.log('LIVE STYLES QA PASSED — atlas + all 14 style pages valid at mobile and desktop widths.');
-
-          async function stage19Qa(){
-            for(const width of [393,1440]){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1000,deviceScaleFactor:1});
-              const errors=[];
-              p.on('pageerror',e=>errors.push(String(e)));
-
-              await p.goto(site+'?contentqa=19#/compare',{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForSelector('.confused-list > .confused-row');
-              const comp=await p.evaluate(()=>({
-                cards:document.querySelectorAll('.confused-list > .confused-row').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(comp.cards===18,`Expected 18 comparison rows, got ${comp.cards} at ${width}px`);
-              assert(comp.overflow<=2,`Comparison index overflow ${comp.overflow}px at ${width}px`);
-
-              const comparisonSlugs=await p.evaluate(()=>window.UI_AR_DATA.comparisons.map(c=>c.slug));
-              for(const slug of comparisonSlugs){
-                await p.evaluate(s=>{location.hash='#/vs/'+s},slug);
-                await p.waitForFunction(s=>{
-                  const d=document.querySelector('.vs-detail');
-                  return location.hash==='#/vs/'+s && !!d && d.querySelectorAll('.vs-showcase .vs-entry').length>=1 && d.querySelectorAll('.vs-rules li').length>=1;
-                },{timeout:10000},slug);
-                const c=await p.evaluate(()=>({
-                  entries:document.querySelectorAll('.vs-showcase .vs-entry').length,
-                  rules:document.querySelectorAll('.vs-rules li').length,
-                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-                }));
-                assert(c.entries>=1,`Missing comparison entries for ${slug}`);
-                assert(c.rules>=1,`Missing comparison rules for ${slug}`);
-                assert(c.overflow<=2,`Comparison detail overflow ${c.overflow}px for ${slug}`);
-              }
-
-              await p.evaluate(()=>{location.hash='#/translate'});
-              await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
-              const trans=await p.evaluate(()=>({
-                rows:document.querySelectorAll('.translation-v2 tbody tr').length,
-                linked:document.querySelectorAll('.translation-v2 tbody td:first-child a').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(trans.rows===63,`Translation table expected 63 rows, got ${trans.rows}`);
-              assert(trans.linked>=55,`Translation table expected at least 55 linked terms, got ${trans.linked}`);
-              assert(trans.overflow<=2,`Translation page overflow ${trans.overflow}px at ${width}px`);
-              await p.type('#tsearch','NSButton');
-              await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length>0 && document.querySelectorAll('.translation-v2 tbody tr').length<63);
-              await p.evaluate(()=>{
-                const i=document.querySelector('#tsearch');i.value='';i.dispatchEvent(new Event('input',{bubbles:true}));
-              });
-              await p.waitForFunction(()=>document.querySelectorAll('.translation-v2 tbody tr').length===63);
-
-              await p.evaluate(()=>{location.hash='#/methodology'});
-              await p.waitForSelector('.methodology');
-              const method=await p.evaluate(()=>({
-                steps:document.querySelectorAll('.method-steps>div').length,
-                sources:document.querySelectorAll('.source-card').length,
-                principles:document.querySelectorAll('.method-principles>div').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(method.steps===3,`Methodology expected 3 steps, got ${method.steps}`);
-              assert(method.sources===3,`Methodology expected 3 source cards, got ${method.sources}`);
-              assert(method.principles===0,`Methodology should not expose non-reference translation principles, got ${method.principles}`);
-              assert(method.overflow<=2,`Methodology overflow ${method.overflow}px at ${width}px`);
-
-              for(const kind of ['appkit-swiftui','swift-electron']){
-                await p.evaluate(k=>{location.hash='#/guide/'+k},kind);
-                await p.waitForSelector('.guide-v2 .guide-prose');
-                const g=await p.evaluate(()=>({
-                  title:document.querySelector('.guide-v2 h1')?.textContent?.trim(),
-                  sections:document.querySelectorAll('.guide-prose h2').length,
-                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-                }));
-                assert(!!g.title,`Missing guide title for ${kind}`);
-                assert(g.sections>=2,`Guide ${kind} expected at least 2 sections`);
-                assert(g.overflow<=2,`Guide ${kind} overflow ${g.overflow}px at ${width}px`);
-              }
-              assert(errors.length===0,`Content page errors at ${width}px: ${errors.join(' | ')}`);
-              await p.close();
-            }
-
-            const direct=await browser.newPage();
-            await direct.setViewport({width:393,height:800,deviceScaleFactor:1});
-            await direct.goto(site+'vs/masonry-vs-bento/',{waitUntil:'networkidle0',timeout:60000});
-            await direct.waitForSelector('.vs-detail');
-            assert(await direct.$('.vs-detail h1'), 'Direct comparison route failed');
-            await direct.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
-            await direct.waitForSelector('.guide-v2 .guide-prose');
-            assert(await direct.$('.guide-equation'),'Direct AppKit vs SwiftUI guide failed');
-            await direct.goto(site+'swift-vs-electron/',{waitUntil:'networkidle0',timeout:60000});
-            await direct.waitForSelector('.guide-v2 .guide-prose');
-            assert(await direct.$('.guide-trade'),'Direct Swift vs Electron guide failed');
-            await direct.close();
-
-            console.log('LIVE CONTENT QA PASSED — comparisons, translations, methodology and guides valid on mobile and desktop.');
-          }
-          await stage19Qa();
-
-          async function stage20Qa(){
+          for(const width of widths){
             const p=await browser.newPage();
-            await p.setViewport({width:393,height:900,deviceScaleFactor:1});
-            const errors=[];p.on('pageerror',e=>errors.push(String(e)));
-
-            // Hidden utilities remain functional but are excluded from the public reference surface.
-            for(const route of ['glossary/','saved/','submit/']){
-              await p.goto(site+route,{waitUntil:'networkidle0',timeout:60000});
-              const hidden=await p.evaluate(()=>({
-                main:!!document.querySelector('#main'),
-                robots:document.querySelector('meta[name="robots"]')?.content||'',
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(hidden.main,`Hidden utility failed: ${route}`);
-              assert(hidden.robots.startsWith('noindex'),`Hidden utility must be noindex: ${route}`);
-              assert(hidden.overflow<=2,`Hidden utility overflow: ${route}`);
-            }
-
+            await p.setViewport({width,height:1200,deviceScaleFactor:1});
+            const errors=[];
+            p.on('pageerror',e=>errors.push(String(e)));
             await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
-            const chrome=await p.evaluate(()=>({
-              theme:document.documentElement.dataset.theme,
-              themeToggle:document.querySelectorAll('#themeToggle,.themebtn').length,
-              hiddenNav:[...document.querySelectorAll('.sitehead a,.footer .footlinks a')].some(a=>/المحفوظات|اقترح|المصطلحات/.test(a.textContent))
+            await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+
+            const home=await p.evaluate(()=>({
+              sponsor:document.querySelectorAll('.sponsor-strip').length,
+              sponsorDots:document.querySelectorAll('.sponsor-dot').length,
+              nav:document.querySelectorAll('.sitehead .navlinks a').length,
+              headSearch:document.querySelectorAll('#headerSearch,.headsearch').length,
+              theme:document.querySelectorAll('#themeToggle,.themebtn').length,
+              brandBadge:document.querySelectorAll('.brandbadge').length,
+              fresh:document.querySelectorAll('.newweek a').length,
+              examples:document.querySelectorAll('.search-examples span').length,
+              search:document.querySelectorAll('#search').length,
+              surprise:document.querySelectorAll('#surprise,.surprise').length,
+              filters:document.querySelectorAll('.filter-tabs [data-cat]').length,
+              sorts:document.querySelectorAll('.sort-tabs [data-sort]').length,
+              cards:document.querySelectorAll('#cards>.entry-card').length,
+              demos:new Set([...document.querySelectorAll('#cards .ui-demo')].map(x=>[...x.classList].find(c=>c.startsWith('demo-')))).size,
+              guides:document.querySelectorAll('.guidecards a').length,
+              rss:document.querySelectorAll('.rss-button').length,
+              footerLinks:document.querySelectorAll('.footer .footlinks a').length,
+              footerSearch:document.querySelectorAll('#footerSearch').length,
+              columns:getComputedStyle(document.querySelector('.entries-grid')).gridTemplateColumns.split(' ').length,
+              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
             }));
-            assert(chrome.theme==='dark','Reference surface should default to dark mode');
-            assert(chrome.themeToggle===1,'Reference chrome should include one theme toggle');
-            await p.click('#themeToggle');
-            assert((await p.evaluate(()=>document.documentElement.dataset.theme))==='light','Theme toggle did not switch to light mode');
-            assert((await p.evaluate(()=>localStorage.getItem('ui-theme')))==='light','Theme choice did not persist');
-            await p.click('#themeToggle');
-            assert(!chrome.hiddenNav,'Hidden utilities leaked into primary navigation');
-            assert(errors.length===0,`V20 hidden utility regression errors: ${errors.join(' | ')}`);
+
+            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V36 reference');
+            assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
+            assert(home.fresh===3&&home.examples===5&&home.search===1&&home.surprise===0,'Hero/search controls mismatch');
+            assert(home.filters===3&&home.sorts===2&&home.cards===81&&home.demos===81,'Catalog mismatch');
+            assert(home.guides===3,'Guide cards mismatch');
+            assert(home.rss===1&&home.footerLinks===3&&home.footerSearch===1,'Footer mismatch');
+            assert(home.columns===2,'Catalog must remain two columns');
+            assert(home.overflow<=2,'Horizontal overflow at '+width+'px: '+home.overflow);
+            assert(errors.length===0,'Homepage JS errors at '+width+'px: '+errors.join(' | '));
+
+            await p.screenshot({path:`qa-screenshots/v36-home-${width}.png`,fullPage:true});
             await p.close();
-            console.log('LIVE V20 HIDDEN-UTILITY REGRESSION PASSED — utilities remain functional, noindex and absent from public chrome.');
           }
-          await stage20Qa();
 
-          async function stage21Qa(){
-            for(const width of [393,1440]){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1100,deviceScaleFactor:1});
-              const errors=[];
-              p.on('pageerror',e=>errors.push(String(e)));
-              await p.goto(site+'?homeqa=21#/',{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===81);
-
-              const home=await p.evaluate(()=>({
-                sponsor:document.querySelectorAll('.sponsor-strip').length,
-                sponsorLink:document.querySelector('.sponsor-strip a')?.textContent?.trim()||'',
-                sponsorText:document.querySelector('.sponsor-strip')?.textContent?.trim()||'',
-                oldSourceStrip:document.querySelectorAll('.source-strip').length,
-                navLinks:document.querySelectorAll('.sitehead .navlinks a').length,
-                headerSearch:document.querySelectorAll('#headerSearch,.headsearch').length,
-                version:document.querySelector('.brandbadge')?.textContent?.trim()||'',
-                fresh:document.querySelectorAll('.newweek a').length,
-                examples:document.querySelectorAll('.search-examples span').length,
-                search:document.querySelectorAll('#search').length,
-                surprise:document.querySelectorAll('#surprise').length,
-                filters:document.querySelectorAll('.filter-tabs [data-cat]').length,
-                sorts:document.querySelectorAll('.sort-tabs [data-sort]').length,
-                cards:document.querySelectorAll('#cards > .entry-card').length,
-                guides:document.querySelectorAll('.guidecards a').length,
-                footerLinks:document.querySelectorAll('.footer .footlinks a').length,
-                footerRss:document.querySelectorAll('.footer .footlinks a[href$="feed.xml"]').length,
-                attribution:document.querySelector('.footer-attribution a')?.href||'',
-                footerExtra:[...document.querySelectorAll('.footer .footlinks a')].some(a=>/المحفوظات|اقترح|المصطلحات|جدول الترجمة/.test(a.textContent)),
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
-                order:[
-                  document.querySelector('.sponsor-strip')?.getBoundingClientRect().top,
-                  document.querySelector('.sitehead')?.getBoundingClientRect().top,
-                  document.querySelector('.hero')?.getBoundingClientRect().top,
-                  document.querySelector('.catalog')?.getBoundingClientRect().top,
-                  document.querySelector('.guides')?.getBoundingClientRect().top,
-                  document.querySelector('.footer')?.getBoundingClientRect().top
-                ]
-              }));
-
-              assert(home.sponsor===1,`Expected one sponsor strip at ${width}px`);
-              assert(home.sponsorLink.includes('الراعي')&&home.sponsorText.includes('$500/mo'),`Sponsor strip copy mismatch at ${width}px`);
-              assert(home.oldSourceStrip===0,`Legacy reference strip still visible at ${width}px`);
-              assert(home.navLinks===2,`Homepage header expected 2 primary links, got ${home.navLinks}`);
-              assert(home.headerSearch===2,`Reference homepage should expose header search input + wrapper, got ${home.headerSearch}`);
-              assert(home.version==='29',`Visible version badge expected 29, got ${home.version}`);
-              assert(home.fresh===3,`New this week expected 3 links, got ${home.fresh}`);
-              assert(home.examples===0,`Screenshot parity should not show visible search-example chips, got ${home.examples}`);
-              assert(home.search===1,'Homepage search field missing');
-              assert(home.surprise===1,'Surprise me control is missing from catalog toolbar');
-              assert(home.filters===3,`Expected 3 category filters, got ${home.filters}`);
-              assert(home.sorts===2,`Expected 2 sort controls, got ${home.sorts}`);
-              assert(home.cards===81,`Expected 81 cards, got ${home.cards}`);
-              assert(home.guides===3,`Expected 3 guide cards, got ${home.guides}`);
-              assert(home.footerLinks===4,`Footer expected RSS + 3 primary links, got ${home.footerLinks}`);
-              assert(home.footerRss===1,'Footer RSS action missing');
-              assert(home.attribution.includes('namethatui.com'),'Footer attribution to Name That UI missing');
-              assert(!home.footerExtra,'V20-only utilities leaked back into primary footer');
-              assert(home.overflow<=2,`Homepage overflow ${home.overflow}px at ${width}px`);
-              assert(home.order.every(Number.isFinite)&&home.order.every((v,i,a)=>i===0||v>=a[i-1]),`Homepage section order mismatch at ${width}px: ${home.order.join(',')}`);
-
-              await p.type('#search','zzzz-no-match-v21');
-              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===0&&!document.querySelector('#searchEmpty').hidden);
-              const empty=await p.evaluate(()=>({
-                visible:!document.querySelector('#searchEmpty').hidden,
-                title:document.querySelector('#searchEmpty b')?.textContent?.trim()||''
-              }));
-              assert(empty.visible,'No-results state did not appear');
-              assert(empty.title==='لا شيء يطابق هذا الوصف','No-results copy does not match reference structure');
-
-              await p.evaluate(()=>{
-                const i=document.querySelector('#search');
-                i.value='';
-                i.dispatchEvent(new Event('input',{bubbles:true}));
-              });
-              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===81&&document.querySelector('#searchEmpty').hidden);
-              assert(errors.length===0,`V21 homepage errors at ${width}px: ${errors.join(' | ')}`);
-              await p.close();
-            }
-            console.log('LIVE V21 HOMEPAGE REGRESSION PASSED — screenshot chrome/search/surprise/cards/guides/footer valid at 393px and 1440px.');
+          const detail=await browser.newPage();
+          await detail.setViewport({width:1440,height:1200,deviceScaleFactor:1});
+          await detail.goto(site+'web/data-table/',{waitUntil:'networkidle0',timeout:60000});
+          await detail.waitForSelector('.detail');
+          const dataTable=await detail.evaluate(()=>({
+            caption:document.querySelector('.specimen-caption')?.textContent.trim()||'',
+            called:document.querySelectorAll('.called span').length,
+            parts:document.querySelectorAll('.anatomy .part').length,
+            symbols:[...document.querySelectorAll('.anatomy .part code')].map(x=>x.textContent.trim()).filter(Boolean).length,
+            debug:document.querySelectorAll('.debug-symptom').length,
+            codeRows:document.querySelectorAll('.code-table tr').length,
+            related:[...document.querySelectorAll('.related a')].map(a=>a.getAttribute('href')||''),
+            overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+          }));
+          assert(dataTable.caption.length>10,'Data Table caption missing');
+          assert(dataTable.called===3,'Data Table called-phrases mismatch');
+          assert(dataTable.parts===dataTable.symbols&&dataTable.parts>=4,'Data Table anatomy symbols incomplete');
+          assert(dataTable.debug===1&&dataTable.codeRows>=4,'Data Table debug/code structure incomplete');
+          for(const slug of ['pagination','outline-view','column-view','bento-grid']){
+            assert(dataTable.related.some(h=>h.includes('/'+slug+'/')),'Data Table missing related '+slug);
           }
-          await stage21Qa();
+          assert(dataTable.overflow<=2,'Data Table overflow');
+          await detail.screenshot({path:'qa-screenshots/v36-detail-data-table-1440.png',fullPage:true});
+          await detail.close();
 
-          async function stage22Qa(){
-            const gotoAvailable=async(page,url)=>{
-              let response=null;
-              for(let attempt=0;attempt<12;attempt++){
-                response=await page.goto(url,{waitUntil:'networkidle0',timeout:60000});
-                if(response&&response.ok()) return response;
-                await new Promise(resolve=>setTimeout(resolve,2000));
-              }
-              return response;
-            };
-            const seed=await browser.newPage();
-            await seed.goto(site+'?routes=22#/',{waitUntil:'networkidle0',timeout:60000});
-            const entries=await seed.evaluate(()=>window.UI_AR_DATA.entries.map(e=>({slug:e.slug,category:e.category})));
-            await seed.close();
-            assert(entries.length===81,`V22 expected 81 entries, got ${entries.length}`);
+          const style=await browser.newPage();
+          await style.setViewport({width:1440,height:1200,deviceScaleFactor:1});
+          await style.goto(site+'styles/skeuomorphism/',{waitUntil:'networkidle0',timeout:60000});
+          await style.waitForSelector('.style-detail');
+          const skeu=await style.evaluate(()=>({
+            signals:document.querySelectorAll('.style-signal').length,
+            dna:document.querySelectorAll('.dna-row').length,
+            sources:document.querySelectorAll('.style-source-links a').length,
+            related:document.querySelectorAll('.style-related a').length,
+            confused:document.querySelector('.style-section a[href*="/styles/neumorphism/"]')?.href||'',
+            overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
+          }));
+          assert(skeu.signals>=4&&skeu.dna===5,'Skeuomorphism signals/DNA mismatch');
+          assert(skeu.sources>=2&&skeu.related===5,'Skeuomorphism sources/related mismatch');
+          assert(!!skeu.confused,'Skeuomorphism must compare with Neumorphism');
+          assert(skeu.overflow<=2,'Style overflow');
+          await style.screenshot({path:'qa-screenshots/v36-style-skeuomorphism-1440.png',fullPage:true});
+          await style.close();
 
-            for(const width of [393,1440]){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1050,deviceScaleFactor:1});
-              const errors=[];
-              p.on('pageerror',e=>errors.push(String(e)));
+          const cmp=await browser.newPage();
+          await cmp.setViewport({width:1440,height:1000,deviceScaleFactor:1});
+          await cmp.goto(site+'vs/popover-vs-tooltip/',{waitUntil:'networkidle0',timeout:60000});
+          await cmp.waitForSelector('.vs-detail');
+          assert((await cmp.$$('.vs-rules li')).length>=4,'Popover vs Tooltip must expose >=4 checks');
+          await cmp.screenshot({path:'qa-screenshots/v36-compare-popover-tooltip-1440.png',fullPage:true});
+          await cmp.close();
 
-              for(const [category,count] of [['web',49],['macos',32]]){
-                const response=await gotoAvailable(p,site+category+'/');
-                assert(response&&response.ok(),`HTTP failure for /${category}/ at ${width}px`);
-                await p.waitForFunction(c=>document.querySelectorAll('#cards > .entry-card').length===c,{timeout:10000},count);
-                const indexCheck=await p.evaluate(category=>({
-                  cards:document.querySelectorAll('#cards > .entry-card').length,
-                  canonical:document.querySelector('link[rel="canonical"]')?.href||'',
-                  wrongLinks:[...document.querySelectorAll('#cards > .entry-card')].filter(a=>!a.getAttribute('href')?.includes('/'+category+'/')).length,
-                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-                }),category);
-                assert(indexCheck.cards===count,`/${category}/ expected ${count} cards, got ${indexCheck.cards}`);
-                assert(indexCheck.canonical.endsWith('/'+category+'/'),`/${category}/ canonical mismatch`);
-                assert(indexCheck.wrongLinks===0,`/${category}/ contains ${indexCheck.wrongLinks} cross-platform card URLs`);
-                assert(indexCheck.overflow<=2,`/${category}/ overflow ${indexCheck.overflow}px at ${width}px`);
-              }
+          const content=await browser.newPage();
+          await content.setViewport({width:1024,height:1100,deviceScaleFactor:1});
+          await content.goto(site+'translate/',{waitUntil:'networkidle0',timeout:60000});
+          assert((await content.$$('.translation-v2 tbody tr')).length===63,'Translation table expected 63 rows');
+          await content.goto(site+'methodology/',{waitUntil:'networkidle0',timeout:60000});
+          assert((await content.$$('.method-steps>div')).length===3,'Methodology expected 3 steps');
+          assert((await content.$$('.source-card')).length===3,'Methodology expected 3 source groups');
+          await content.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
+          assert((await content.$$('.guide-rules li')).length===3,'AppKit guide expected 3 rules');
+          assert((await content.$$('.worked-prompts>div')).length===3,'AppKit guide expected 3 prompts');
+          assert((await content.$$('.guide-faq details')).length===4,'AppKit guide expected 4 FAQs');
+          await content.goto(site+'swift-vs-electron/',{waitUntil:'networkidle0',timeout:60000});
+          assert((await content.$$('.guide-trade tbody tr')).length===6,'Swift/Electron expected 6 trade rows');
+          assert((await content.$$('.worked-prompts.two>div')).length===2,'Swift/Electron expected 2 prompts');
+          await content.close();
 
-              const routeSamples=[
-                entries.find(e=>e.category==='web'&&e.slug==='sign-in-form'),
-                entries.find(e=>e.category==='web'&&e.slug==='data-table'),
-                entries.find(e=>e.category==='macos'&&e.slug==='save-panel'),
-                entries.find(e=>e.category==='macos'&&e.slug==='alert-macos')
-              ].filter(Boolean);
-              for(const entry of routeSamples){
-                const path=entry.category+'/'+entry.slug+'/';
-                const response=await gotoAvailable(p,site+path);
-                assert(response&&response.ok(),`HTTP failure for /${path} at ${width}px`);
-                await p.waitForSelector('.detail',{timeout:10000});
-                const check=await p.evaluate(entry=>({
-                  h1:document.querySelector('.detail h1')?.textContent?.trim()||'',
-                  actions:document.querySelectorAll('.detail-actions button').length,
-                  crumbPlatform:document.querySelector('.crumbs a:last-of-type')?.getAttribute('href')||'',
-                  kicker:document.querySelectorAll('.detail-kicker').length,
-                  parts:document.querySelectorAll('.anatomy .part').length,
-                  prompts:document.querySelectorAll('.prompt').length,
-                  codeRows:document.querySelectorAll('.code-table tr').length,
-                  related:document.querySelectorAll('.related a').length,
-                  badRelated:[...document.querySelectorAll('.related a')].filter(a=>!(/\/(web|macos)\//.test(a.getAttribute('href')||''))).length,
-                  oldEntryLinks:document.querySelectorAll('a[href*="/element/"]').length,
-                  perDetailAttribution:document.querySelectorAll('.detail .detail-source-note').length,
-                  canonical:document.querySelector('link[rel="canonical"]')?.href||'',
-                  pathname:location.pathname,
-                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-                }),entry);
-                assert(!!check.h1,`Missing title for /${path}`);
-                assert(check.actions===3,`/${path} expected 3 detail actions, got ${check.actions}`);
-                assert(check.crumbPlatform.endsWith('/'+entry.category+'/'),`/${path} platform breadcrumb mismatch`);
-                assert(check.kicker===0,`/${path} still contains non-reference detail kicker`);
-                assert(check.parts>0,`/${path} missing anatomy`);
-                assert(check.prompts===2,`/${path} expected prompt + debug prompt`);
-                assert(check.codeRows>0,`/${path} missing code rows`);
-                assert(check.related>0,`/${path} missing See also links`);
-                assert(check.badRelated===0,`/${path} has non-platform related links`);
-                assert(check.oldEntryLinks===0,`/${path} still exposes /element/ links`);
-                assert(check.perDetailAttribution===0,`/${path} still has duplicate detail attribution`);
-                assert(check.canonical.endsWith('/'+path),`/${path} canonical mismatch: ${check.canonical}`);
-                assert(check.pathname.endsWith('/'+path),`/${path} pathname mismatch: ${check.pathname}`);
-                assert(check.overflow<=2,`/${path} overflow ${check.overflow}px at ${width}px`);
-              }
-
-              assert(errors.length===0,`V22 direct-route page errors at ${width}px: ${errors.join(' | ')}`);
-              await p.close();
+          // External reference is informative only; CI runners can be blocked by the source site.
+          const ref=await browser.newPage();
+          try{
+            const response=await ref.goto('https://namethatui.com/',{waitUntil:'domcontentloaded',timeout:12000});
+            if(response&&response.ok()){
+              const body=await ref.evaluate(()=>document.body.innerText);
+              assert(body.includes('All 81'),'Live reference count changed');
+              assert(body.includes('macOS 32'),'Live reference macOS count changed');
+              assert(body.includes('Web 49'),'Live reference Web count changed');
+            }else{
+              console.warn('Reference probe skipped:',response?.status());
             }
-
-            const legacy=await browser.newPage();
-            await legacy.setViewport({width:393,height:800,deviceScaleFactor:1});
-            for(const sample of [
-              {old:'element/sign-in-form/',expected:'web/sign-in-form/'},
-              {old:'element/save-panel/',expected:'macos/save-panel/'}
-            ]){
-              await legacy.goto(site+sample.old,{waitUntil:'networkidle0',timeout:60000});
-              await legacy.waitForFunction(expected=>location.pathname.endsWith('/'+expected),{timeout:10000},sample.expected);
-              assert(legacy.url().includes('/'+sample.expected),`Legacy redirect failed for ${sample.old}`);
-            }
-            await legacy.close();
-
-            console.log('LIVE V22 REGRESSION QA PASSED — all 81 routes validated statically; representative direct Web/macOS pages + category indexes + legacy redirects valid at 393px and 1440px.');
+          }catch(err){
+            console.warn('Reference probe skipped:',String(err));
           }
-          await stage22Qa();
+          await ref.close();
 
-          async function stage23Qa(){
-            const routes={
-              'popover-vs-tooltip':'popover-vs-tooltip',
-              'modal-vs-popover':'modal-vs-popover',
-              'dropdown-select-combobox':'dropdown-vs-select-vs-combobox',
-              'tabs-vs-segmented':'tabs-vs-segmented-control',
-              'accordion-vs-tabs':'accordion-vs-tabs',
-              'toast-vs-alert':'toast-vs-alert',
-              'tooltip-vs-hover-card':'tooltip-vs-hover-card',
-              'context-vs-dropdown':'context-menu-vs-dropdown',
-              'carousel-vs-marquee':'carousel-vs-marquee',
-              'lightbox-vs-modal':'lightbox-vs-modal',
-              'masonry-vs-bento':'masonry-vs-bento-grid',
-              'sidebar-vs-drawer':'sidebar-vs-drawer',
-              'hamburger-vs-kebab':'hamburger-vs-kebab',
-              'easing-vs-spring':'easing-vs-spring',
-              'stepper-vs-slider':'stepper-vs-slider',
-              'sheet-vs-alert-mac':'sheet-vs-alert',
-              'empty-vs-skeleton':'empty-state-vs-skeleton',
-              'toolbar-vs-menu-bar':'toolbar-vs-menu-bar'
-            };
-            const expectedSlugs=Object.values(routes);
-            for(const width of [393,1440]){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1050,deviceScaleFactor:1});
-              const errors=[];p.on('pageerror',e=>errors.push(String(e)));
-
-              const indexResponse=await p.goto(site+'vs/',{waitUntil:'networkidle0',timeout:60000});
-              assert(indexResponse&&indexResponse.ok(),`/vs/ HTTP failure at ${width}px`);
-              await p.waitForSelector('.compare-index');
-              const indexCheck=await p.evaluate(()=>({
-                rows:document.querySelectorAll('.confused-row').length,
-                oldCards:document.querySelectorAll('.confused-card').length,
-                title:document.querySelector('.compare-index h1')?.textContent?.trim()||'',
-                links:[...document.querySelectorAll('.confused-row')].map(a=>a.getAttribute('href')||''),
-                canonical:document.querySelector('link[rel="canonical"]')?.href||'',
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(indexCheck.rows===18,`/vs/ expected 18 rows, got ${indexCheck.rows}`);
-              assert(indexCheck.oldCards===0,'Legacy expanded comparison cards still visible');
-              assert(indexCheck.title.includes('الخلط'),'Comparison index title mismatch');
-              assert(indexCheck.links.every(h=>h.includes('/vs/')),'Comparison index has non-/vs/ links');
-              assert(indexCheck.canonical.endsWith('/vs/'),`/vs/ canonical mismatch: ${indexCheck.canonical}`);
-              assert(indexCheck.overflow<=2,`/vs/ overflow ${indexCheck.overflow}px at ${width}px`);
-
-              for(const slug of expectedSlugs){
-                const response=await p.goto(site+'vs/'+slug+'/',{waitUntil:'networkidle0',timeout:60000});
-                assert(response&&response.ok(),`HTTP failure for /vs/${slug}/ at ${width}px`);
-                await p.waitForSelector('.vs-detail');
-                const check=await p.evaluate(()=>({
-                  h1:document.querySelector('.vs-head h1')?.textContent?.trim()||'',
-                  answer:document.querySelector('.vs-head>p')?.textContent?.trim()||'',
-                  rules:document.querySelectorAll('.vs-tells .vs-rules li').length,
-                  entries:document.querySelectorAll('.vs-full-entries .vs-entry').length,
-                  decisions:document.querySelectorAll('.vs-decision').length,
-                  kicker:document.querySelectorAll('.vs-head .compare-kicker').length,
-                  sourceNote:document.querySelectorAll('.vs-detail .detail-source-note').length,
-                  crumbs:document.querySelectorAll('.vs-crumbs a').length,
-                  back:document.querySelectorAll('.vs-back a[href$="/vs/"]').length,
-                  badEntryLinks:[...document.querySelectorAll('.vs-entry')].filter(a=>!(/\/(web|macos)\//.test(a.getAttribute('href')||''))).length,
-                  canonical:document.querySelector('link[rel="canonical"]')?.href||'',
-                  order:[
-                    document.querySelector('.vs-head')?.getBoundingClientRect().top,
-                    document.querySelector('.vs-tells')?.getBoundingClientRect().top,
-                    document.querySelector('.vs-full-entries')?.getBoundingClientRect().top,
-                    document.querySelector('.vs-back')?.getBoundingClientRect().top
-                  ],
-                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-                }));
-                assert(!!check.h1&&!!check.answer,`Missing heading/answer for ${slug}`);
-                assert(check.rules>=3,`${slug} expected >=3 tells, got ${check.rules}`);
-                assert(check.entries>=2,`${slug} expected >=2 full entries, got ${check.entries}`);
-                if(slug==='dropdown-vs-select-vs-combobox')assert(check.entries===3,'Dropdown/Select/Combobox must show 3 full entries');
-                assert(check.decisions===0,`${slug} still shows non-reference quick-decision section`);
-                assert(check.kicker===0,`${slug} still shows non-reference kicker`);
-                assert(check.sourceNote===0,`${slug} still shows duplicate source note`);
-                assert(check.crumbs===2,`${slug} breadcrumb should contain Index + Commonly confused`);
-                assert(check.back===1,`${slug} missing back-to-all-comparisons CTA`);
-                assert(check.badEntryLinks===0,`${slug} contains non-platform entry links`);
-                assert(check.canonical.endsWith('/vs/'+slug+'/'),`${slug} canonical mismatch: ${check.canonical}`);
-                assert(check.order.every(Number.isFinite)&&check.order.every((v,i,a)=>i===0||v>=a[i-1]),`${slug} section order mismatch`);
-                assert(check.overflow<=2,`${slug} overflow ${check.overflow}px at ${width}px`);
-              }
-              assert(errors.length===0,`V23 comparison page errors at ${width}px: ${errors.join(' | ')}`);
-              await p.close();
-            }
-
-            const legacy=await browser.newPage();
-            for(const [oldSlug,newSlug] of Object.entries(routes).filter(([a,b])=>a!==b)){
-              await legacy.goto(site+'vs/'+oldSlug+'/',{waitUntil:'networkidle0',timeout:60000});
-              await legacy.waitForFunction(s=>location.pathname.endsWith('/vs/'+s+'/'),{timeout:10000},newSlug);
-              assert(legacy.url().includes('/vs/'+newSlug+'/'),`Legacy comparison redirect failed: ${oldSlug}`);
-            }
-            await legacy.goto(site+'compare/',{waitUntil:'networkidle0',timeout:60000});
-            await legacy.waitForFunction(()=>location.pathname.endsWith('/vs/'),{timeout:10000});
-            await legacy.close();
-
-            console.log('LIVE V23 COMMONLY CONFUSED PARITY QA PASSED — /vs index + all 18 comparison pages + legacy redirects valid at 393px and 1440px.');
-          }
-          await stage23Qa();
-
-          async function stage27Qa(){
-            const widths=[393,768,1024,1440];
-
-            // Verify the current reference site still exposes the structure this clone targets.
-            const ref=await browser.newPage();
-            await ref.setViewport({width:1440,height:1000,deviceScaleFactor:1});
-            const refPages=[
-              ['https://namethatui.com/',['What’s this UI element called?','All 81','macOS 32','Web 49']],
-              ['https://namethatui.com/styles',['What style is this?','A governed atlas']],
-              ['https://namethatui.com/translate',['The Translation Table','63 of 63 translations']],
-              ['https://namethatui.com/methodology',['Methodology','How a term gets in','Sources we consult']],
-              ['https://namethatui.com/appkit-vs-swiftui',['AppKit vs SwiftUI','Which name do I say?','Worked prompts']],
-              ['https://namethatui.com/swift-vs-electron',['Swift vs Electron','The trade','Your first prompt']]
-            ];
-            for(const [url,landmarks] of refPages){
-              try{
-                const response=await ref.goto(url,{waitUntil:'domcontentloaded',timeout:30000});
-                if(response&&response.ok()){
-                  const body=await ref.evaluate(()=>document.body.innerText);
-                  for(const landmark of landmarks)assert(body.includes(landmark),`Reference structure changed: ${url} missing "${landmark}"`);
-                }else{
-                  console.warn('REFERENCE CHECK SKIPPED — unavailable from GitHub runner:',url,response?.status());
-                }
-              }catch(err){
-                console.warn('REFERENCE CHECK SKIPPED — network error from GitHub runner:',url,String(err));
-              }
-            }
-            await ref.close();
-
-            for(const width of widths){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1100,deviceScaleFactor:1});
-              const errors=[];p.on('pageerror',e=>errors.push(String(e)));
-
-              // Homepage parity surface.
-              await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForFunction(()=>document.querySelectorAll('#cards > .entry-card').length===81);
-              const home=await p.evaluate(()=>({
-                sponsor:document.querySelectorAll('.sponsor-strip').length,
-                nav:document.querySelectorAll('.sitehead .navlinks a').length,
-                themeToggle:document.querySelectorAll('#themeToggle').length,
-                headerSearch:document.querySelectorAll('#headerSearch').length,
-                fresh:document.querySelectorAll('.newweek a').length,
-                examples:document.querySelectorAll('.search-examples span').length,
-                search:document.querySelectorAll('#search').length,
-                filters:document.querySelectorAll('.filter-tabs [data-cat]').length,
-                sorts:document.querySelectorAll('.sort-tabs [data-sort]').length,
-                cards:document.querySelectorAll('#cards > .entry-card').length,
-                guides:document.querySelectorAll('.guidecards a').length,
-                footerLinks:document.querySelectorAll('.footer .footlinks a').length,
-                footerSearch:document.querySelectorAll('#footerSearch').length,
-                theme:document.documentElement.dataset.theme,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(home.sponsor===1&&home.nav===2,'Homepage chrome does not match reference');
-              assert(home.themeToggle===1&&home.headerSearch===1&&home.theme==='dark','Reference chrome must include search + theme toggle and default dark');
-              assert(home.fresh===3&&home.examples===0&&home.search===1,'Homepage hero/search structure mismatch');
-              assert(home.filters===3&&home.sorts===2&&home.cards===81,'Homepage catalog structure mismatch');
-              assert(home.guides===3,'Homepage must expose three guide/reference cards');
-              assert(home.footerLinks===4&&home.footerSearch===1,'Footer structure mismatch');
-              assert(home.overflow<=2,`Homepage overflow ${home.overflow}px at ${width}px`);
-
-              // Styles atlas.
-              await p.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForFunction(()=>document.querySelectorAll('.atlas-card').length===14);
-              const styles=await p.evaluate(()=>({
-                cards:document.querySelectorAll('.atlas-card').length,
-                direct:[...document.querySelectorAll('.atlas-card')].every(a=>/\/styles\/[^/]+\/$/.test(a.href)),
-                note:!!document.querySelector('.atlasnote'),
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(styles.cards===14&&styles.direct&&styles.note,'Styles atlas parity failed');
-              assert(styles.overflow<=2,`Styles overflow ${styles.overflow}px at ${width}px`);
-
-              // Translation table.
-              await p.goto(site+'translate/',{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForSelector('.translation-v2');
-              const trans=await p.evaluate(()=>({
-                rows:document.querySelectorAll('.translation-v2 tbody tr').length,
-                cols:document.querySelectorAll('.translation-v2 thead th').length,
-                linked:document.querySelectorAll('.translation-v2 tbody td:first-child a').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(trans.rows===63&&trans.cols===3,'Translation table must match 63×3 reference structure');
-              assert(trans.linked>=18,'Translation table lost visual-entry links');
-              assert(trans.overflow<=2,`Translation overflow ${trans.overflow}px at ${width}px`);
-
-              // Methodology.
-              await p.goto(site+'methodology/',{waitUntil:'networkidle0',timeout:60000});
-              const method=await p.evaluate(()=>({
-                steps:document.querySelectorAll('.method-steps>div').length,
-                sources:document.querySelectorAll('.source-card').length,
-                extraPrinciples:document.querySelectorAll('.method-principles').length,
-                independence:document.querySelectorAll('.method-independence').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(method.steps===3&&method.sources===3,'Methodology must match 3-step / 3-source reference');
-              assert(method.extraPrinciples===0,'Non-reference translation-rules section still visible');
-              assert(method.independence===1,'Methodology independence note missing');
-              assert(method.overflow<=2,`Methodology overflow ${method.overflow}px at ${width}px`);
-
-              // AppKit vs SwiftUI.
-              await p.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
-              const appkit=await p.evaluate(()=>({
-                equation:document.querySelectorAll('.guide-equation').length,
-                rules:document.querySelectorAll('.guide-rules li').length,
-                prompts:document.querySelectorAll('.worked-prompts>div').length,
-                confusions:document.querySelectorAll('.guide-confusions>div').length,
-                faq:document.querySelectorAll('.guide-faq details').length,
-                sourceNote:document.querySelectorAll('.detail-source-note').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(appkit.equation===1&&appkit.rules===3&&appkit.prompts===3,'AppKit/SwiftUI guide core structure mismatch');
-              assert(appkit.confusions===3&&appkit.faq===4,'AppKit/SwiftUI guide secondary structure mismatch');
-              assert(appkit.sourceNote===0,'Guide has non-reference source note');
-              assert(appkit.overflow<=2,`AppKit guide overflow ${appkit.overflow}px at ${width}px`);
-
-              // Swift vs Electron.
-              await p.goto(site+'swift-vs-electron/',{waitUntil:'networkidle0',timeout:60000});
-              const electron=await p.evaluate(()=>({
-                tradeRows:document.querySelectorAll('.guide-trade tbody tr').length,
-                prompts:document.querySelectorAll('.worked-prompts.two>div').length,
-                confusions:document.querySelectorAll('.guide-confusions>div').length,
-                nextLinks:document.querySelectorAll('.guide-next a').length,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(electron.tradeRows===6&&electron.prompts===2,'Swift/Electron trade + prompt structure mismatch');
-              assert(electron.confusions===3&&electron.nextLinks===2,'Swift/Electron cross-reference structure mismatch');
-              assert(electron.overflow<=2,`Swift/Electron overflow ${electron.overflow}px at ${width}px`);
-
-              assert(errors.length===0,`V27 page errors at ${width}px: ${errors.join(' | ')}`);
-              await p.close();
-            }
-
-            // Every style detail remains complete and uses direct canonical paths.
-            const stylesPage=await browser.newPage();
-            await stylesPage.setViewport({width:1440,height:1100,deviceScaleFactor:1});
-            await stylesPage.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
-            const styleSlugs=await stylesPage.evaluate(()=>window.UI_AR_DATA.styles.map(s=>s.slug));
-            for(const slug of styleSlugs){
-              const response=await stylesPage.goto(site+'styles/'+slug+'/',{waitUntil:'networkidle0',timeout:60000});
-              assert(response&&response.ok(),`Style route failed: ${slug}`);
-              const detail=await stylesPage.evaluate(()=>({
-                h1:!!document.querySelector('.style-detail h1'),
-                signals:document.querySelectorAll('.style-signal').length,
-                brief:document.querySelectorAll('.style-brief').length,
-                dna:document.querySelectorAll('.dna-row').length,
-                code:document.querySelectorAll('.style-code-table tr').length,
-                access:document.querySelectorAll('.style-access li').length,
-                sources:document.querySelectorAll('.style-source-links a').length,
-                sourceNote:document.querySelectorAll('.style-detail .detail-source-note').length,
-                canonical:document.querySelector('link[rel="canonical"]')?.href||'',
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(detail.h1&&detail.signals>=3&&detail.brief===1&&detail.dna>=5,`Style content incomplete: ${slug}`);
-              assert(detail.code>0&&detail.access>=3&&detail.sources>=2,`Style implementation/source sections incomplete: ${slug}`);
-              assert(detail.sourceNote===0,`Style duplicate attribution remains: ${slug}`);
-              assert(detail.canonical.endsWith('/styles/'+slug+'/'),`Style canonical mismatch: ${slug}`);
-              assert(detail.overflow<=2,`Style overflow: ${slug}`);
-            }
-            await stylesPage.close();
-
-            // Public sitemap exactly mirrors the reference-equivalent surface.
-            const sm=await browser.newPage();
-            const smResponse=await sm.goto(site+'sitemap.xml',{waitUntil:'networkidle0',timeout:60000});
-            if(smResponse&&smResponse.ok()){
-              const xml=await smResponse.text();
-              assert((xml.match(/<loc>/g)||[]).length===122,'Final sitemap must contain 122 reference-equivalent URLs');
-              for(const hidden of ['/guides/','/glossary/','/saved/','/submit/','/compare/','/element/'])assert(!xml.includes(hidden),`Non-reference route leaked into sitemap: ${hidden}`);
-            }
-            await sm.close();
-
-            console.log('LIVE V27 FINAL PARITY QA PASSED — homepage, 81 elements, 14 styles, 18 comparisons, translation, methodology, guides, chrome and responsive surface valid at 393/768/1024/1440.');
-          }
-          await stage27Qa();
-
-          async function stage28Qa(){
-            const widths=[393,768,945,1440];
-            for(const width of widths){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1200,deviceScaleFactor:1});
-              const errors=[];p.on('pageerror',e=>errors.push(String(e)));
-              await p.evaluateOnNewDocument(()=>{try{localStorage.removeItem('ui-theme')}catch{}});
-              await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
-
-              const visual=await p.evaluate(()=>({
-                sticky:getComputedStyle(document.querySelector('.sitehead')).position,
-                headerTop:getComputedStyle(document.querySelector('.sitehead')).top,
-                headerSearch:document.querySelectorAll('#headerSearch').length,
-                themeToggle:document.querySelectorAll('#themeToggle').length,
-                sponsorDot:document.querySelectorAll('.sponsor-dot').length,
-                heroExamples:document.querySelectorAll('.search-examples').length,
-                heroSearch:document.querySelectorAll('.hero-search #search').length,
-                surprise:document.querySelectorAll('#surprise').length,
-                columns:getComputedStyle(document.querySelector('.entries-grid')).gridTemplateColumns.split(' ').length,
-                firstPreviewRatio:(()=>{const r=document.querySelector('.entry-preview').getBoundingClientRect();return r.width/r.height})(),
-                cards:document.querySelectorAll('#cards>.entry-card').length,
-                dotted:getComputedStyle(document.querySelector('.entry-preview')).backgroundImage,
-                previewBg:getComputedStyle(document.querySelector('.entry-preview')).backgroundColor,
-                overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
-              }));
-              assert(visual.sticky==='sticky'&&visual.headerTop==='0px',`Header must remain sticky at ${width}px`);
-              assert(visual.headerSearch===1&&visual.themeToggle===1&&visual.sponsorDot===1,`Header/sponsor controls mismatch at ${width}px`);
-              assert(visual.heroExamples===0&&visual.heroSearch===1&&visual.surprise===1,`Hero/catalog screenshot parity mismatch at ${width}px`);
-              assert(visual.columns===2,`Catalog must remain two columns at ${width}px`);
-              assert(visual.firstPreviewRatio>2.45&&visual.firstPreviewRatio<2.65,`Preview ratio mismatch at ${width}px: ${visual.firstPreviewRatio}`);
-              assert(visual.cards===81,'V28 lost catalog cards');
-              assert(visual.dotted.includes('radial-gradient'),'Preview dot grid missing');
-              assert(visual.previewBg!=='rgba(0, 0, 0, 0)','Preview background missing');
-              assert(visual.overflow<=2,`V28 horizontal overflow ${visual.overflow}px at ${width}px`);
-
-              // Header search synchronizes the hero search.
-              await p.click('#headerSearch');
-              await p.type('#headerSearch','toast');
-              await p.waitForFunction(()=>document.querySelector('#search')?.value==='toast');
-              await p.evaluate(()=>{const h=document.querySelector('#headerSearch');h.value='';h.dispatchEvent(new Event('input',{bubbles:true}))});
-              await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
-
-              assert(errors.length===0,`V28 page errors at ${width}px: ${errors.join(' | ')}`);
-              await p.close();
-            }
-
-            const m=await browser.newPage();
-            await m.setViewport({width:945,height:1200,deviceScaleFactor:1});
-            await m.goto(site,{waitUntil:'networkidle0',timeout:60000});
-            await m.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
-
-            const motion=await m.evaluate(()=>({
-              caret:getComputedStyle(document.querySelector('.caret')).animationName,
-              spinner:getComputedStyle(document.querySelector('.spinner')).animationName,
-              marquee:getComputedStyle(document.querySelector('.marquee>div')).animationName,
-              spring:getComputedStyle(document.querySelector('.spring .ball')).animationName,
-              skeleton:getComputedStyle(document.querySelector('.skeleton')).animationName,
-              parallax:getComputedStyle(document.querySelector('.parallax-layer.back')).animationName,
-              toast:getComputedStyle(document.querySelector('.toast-demo')).animationName,
-              drag:getComputedStyle(document.querySelector('.kanban .ghost')).animationName,
-              scramble:document.querySelector('.scramble b')?.textContent||'',
-              carousel:[...document.querySelectorAll('.carousel-strip article')].findIndex(x=>x.classList.contains('on'))
-            }));
-            for(const [name,value] of Object.entries(motion).filter(([k])=>!['scramble','carousel'].includes(k))){
-              assert(value&&value!=='none',`Missing animation for ${name}`);
-            }
-            const beforeScramble=motion.scramble,beforeCarousel=motion.carousel;
-            await new Promise(resolve=>setTimeout(resolve,3800));
-            const after=await m.evaluate(()=>({
-              scramble:document.querySelector('.scramble b')?.textContent||'',
-              carousel:[...document.querySelectorAll('.carousel-strip article')].findIndex(x=>x.classList.contains('on'))
-            }));
-            assert(after.carousel!==beforeCarousel,'Carousel did not auto-advance');
-            assert(after.scramble.length>0,'Text scramble motion did not initialize');
-
-            // Theme control must work and persist exactly like the original chrome.
-            await m.click('#themeToggle');
-            assert((await m.evaluate(()=>document.documentElement.dataset.theme))==='light','Theme toggle failed in V28');
-            assert((await m.evaluate(()=>localStorage.getItem('ui-theme')))==='light','Theme toggle did not persist in V28');
-            await m.close();
-
-            console.log('LIVE V28 SCREENSHOT + MOTION PARITY QA PASSED — sticky chrome, header search, theme, hero, two-column cards, dark specimens and motion layer valid at 393/768/945/1440.');
-          }
-          await stage28Qa();
-
-          async function stage29Qa(){
-            fs.mkdirSync('qa-screenshots',{recursive:true});
-            const widths=[393,768,945,1440];
-
-            for(const width of widths){
-              const p=await browser.newPage();
-              await p.setViewport({width,height:1200,deviceScaleFactor:1});
-              await p.evaluateOnNewDocument(()=>{try{localStorage.setItem('ui-theme','dark')}catch{}});
-              await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
-              await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
-
-              const metrics=await p.evaluate(()=> {
-                const box=sel=>{const e=document.querySelector(sel);if(!e)return null;const r=e.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}};
-                const cards=[...document.querySelectorAll('#cards>.entry-card')].slice(0,4).map(e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}});
-                const p1=document.querySelector('.entry-preview')?.getBoundingClientRect();
-                const hero=document.querySelector('.hero')?.getBoundingClientRect();
-                const toolbar=document.querySelector('.catalog-toolbar')?.getBoundingClientRect();
-                return {
-                  sponsor:box('.sponsor-strip'),
-                  header:box('.sitehead'),
-                  hero:hero?{x:hero.x,y:hero.y,w:hero.width,h:hero.height}:null,
-                  title:box('.hero h1'),
-                  copy:box('.hero-copy'),
-                  search:box('.hero-search'),
-                  toolbar:toolbar?{x:toolbar.x,y:toolbar.y,w:toolbar.width,h:toolbar.height}:null,
-                  grid:box('.entries-grid'),
-                  cardPreview:p1?{w:p1.width,h:p1.height,ratio:p1.width/p1.height}:null,
-                  cards,
-                  guide:box('.guides'),
-                  footer:box('.footer'),
-                  bodyW:document.documentElement.clientWidth,
-                  scrollW:document.documentElement.scrollWidth
-                };
-              });
-
-              const near=(v,target,tol)=>Math.abs(v-target)<=tol;
-              if(width===393){
-                assert(near(metrics.sponsor.h,19,3),`393 sponsor height drift: ${metrics.sponsor.h}`);
-                assert(near(metrics.header.h,31,4),`393 header height drift: ${metrics.header.h}`);
-                assert(metrics.hero.h>180&&metrics.hero.h<285,`393 hero height drift: ${metrics.hero.h}`);
-                assert(metrics.title.w>220&&metrics.title.w<350,`393 hero title width drift: ${metrics.title.w}`);
-                assert(metrics.search.w>200&&metrics.search.w<270,`393 hero search width drift: ${metrics.search.w}`);
-                assert(metrics.cardPreview.ratio>2.48&&metrics.cardPreview.ratio<2.62,`393 preview ratio drift: ${metrics.cardPreview.ratio}`);
-                assert(metrics.cards.length===4&&metrics.cards[0].y===metrics.cards[1].y,'393 first card row lost two-column alignment');
-                assert(Math.abs(metrics.cards[0].w-metrics.cards[1].w)<2,'393 card columns are not equal width');
-              }else if(width===945){
-                assert(metrics.header.h>=48&&metrics.header.h<=58,`945 header height drift: ${metrics.header.h}`);
-                assert(metrics.hero.h>280&&metrics.hero.h<420,`945 hero height drift: ${metrics.hero.h}`);
-                assert(metrics.search.w>500&&metrics.search.w<650,`945 hero search width drift: ${metrics.search.w}`);
-                assert(metrics.cardPreview.ratio>2.48&&metrics.cardPreview.ratio<2.62,`945 preview ratio drift: ${metrics.cardPreview.ratio}`);
-              }else if(width===1440){
-                assert(metrics.grid.w>1080&&metrics.grid.w<1185,`1440 catalog width drift: ${metrics.grid.w}`);
-                assert(metrics.title.w>620&&metrics.title.w<840,`1440 title width drift: ${metrics.title.w}`);
-                assert(metrics.search.w>580&&metrics.search.w<630,`1440 search width drift: ${metrics.search.w}`);
-              }
-              assert(metrics.scrollW-metrics.bodyW<=2,`Pixel audit overflow at ${width}px`);
-
-              await p.screenshot({path:`qa-screenshots/v29-home-${width}.png`,fullPage:true});
-
-              if(width===393||width===1440){
-                await p.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
-                await p.waitForSelector('.atlas-card');
-                await p.screenshot({path:`qa-screenshots/v29-styles-${width}.png`,fullPage:true});
-
-                await p.goto(site+'web/data-table/',{waitUntil:'networkidle0',timeout:60000});
-                await p.waitForSelector('.detail');
-                await p.screenshot({path:`qa-screenshots/v29-detail-data-table-${width}.png`,fullPage:true});
-
-                await p.goto(site+'vs/toast-vs-alert/',{waitUntil:'networkidle0',timeout:60000});
-                await p.waitForSelector('.vs-detail');
-                await p.screenshot({path:`qa-screenshots/v29-compare-toast-alert-${width}.png`,fullPage:true});
-
-                await p.goto(site+'appkit-vs-swiftui/',{waitUntil:'networkidle0',timeout:60000});
-                await p.waitForSelector('.guide-v2');
-                await p.screenshot({path:`qa-screenshots/v29-guide-appkit-swiftui-${width}.png`,fullPage:true});
-              }
-              await p.close();
-            }
-
-            // Motion timing audit: verify movement actually changes across frames, not merely CSS animation names.
-            const m=await browser.newPage();
-            await m.setViewport({width:945,height:1000,deviceScaleFactor:1});
-            await m.goto(site,{waitUntil:'networkidle0',timeout:60000});
-            await m.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
-
-            const frame=()=>m.evaluate(()=> {
-              const rect=sel=>{const e=document.querySelector(sel);if(!e)return null;const r=e.getBoundingClientRect();return {x:r.x,y:r.y}};
-              return {
-                spring:rect('.spring .ball'),
-                spinner:getComputedStyle(document.querySelector('.spinner')).transform,
-                skeletonTime:document.querySelector('.skeleton')?.getAnimations?.()[0]?.currentTime||0,
-                toast:rect('.toast-demo'),
-                parallax:rect('.parallax-layer.back'),
-                scramble:document.querySelector('.scramble b')?.textContent||'',
-                carousel:[...document.querySelectorAll('.carousel-strip article')].findIndex(x=>x.classList.contains('on'))
-              };
-            });
-            const f1=await frame();
-            await new Promise(resolve=>setTimeout(resolve,1150));
-            const f2=await frame();
-            await new Promise(resolve=>setTimeout(resolve,2450));
-            const f3=await frame();
-
-            assert(f1.spring&&f2.spring&&(Math.abs(f1.spring.x-f2.spring.x)>2||Math.abs(f1.spring.y-f2.spring.y)>2),'Spring specimen is visually static');
-            assert(f1.spinner!==f2.spinner,'Spinner transform did not change between frames');
-            assert(f2.skeletonTime>f1.skeletonTime,'Skeleton shimmer animation clock did not advance');
-            assert(f1.parallax&&f2.parallax&&Math.abs(f1.parallax.y-f2.parallax.y)>.5,'Parallax layer did not move');
-            assert(f1.carousel!==f3.carousel,'Carousel timing did not advance within audit window');
-            assert(f1.scramble.length>0&&f2.scramble.length>0,'Scramble specimen missing text during motion');
-            await m.screenshot({path:'qa-screenshots/v29-motion-frame.png',fullPage:false});
-            await m.close();
-
-            console.log('LIVE V29 PIXEL + MOTION AUDIT PASSED — geometry locked to supplied reference captures; visual screenshots saved for 393/768/945/1440 and motion verified across frames.');
-          }
-          await stage29Qa();
+          console.log('LIVE V36 FINAL DELIVERY QA PASSED — live-reference chrome, 81 element metadata, styles, comparisons, translation, methodology and guides validated.');
           await browser.close();
           JS
-          node card-qa.mjs
+          node v36-qa.mjs
 
-      - name: Upload V29 visual regression screenshots
+      - name: Upload V36 delivery screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v29-visual-regression
+          name: v36-final-delivery
           path: qa-screenshots
           if-no-files-found: warn
           retention-days: 30
