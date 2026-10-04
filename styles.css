@@ -4200,7 +4200,7 @@ body{font-size:14px;line-height:1.45}
 .toast-trigger,.progress-trigger,.loading-trigger,.scrim-open,.scrim-close{border:1px solid #d0d0d0;border-radius:6px;background:#fff;padding:4px 7px;font-size:8px}
 .scrim-scene>.scrim-demo,.scrim-scene>.modal-surface{opacity:0;pointer-events:none}.scrim-scene.v39-open>.scrim-demo,.scrim-scene.v39-open>.modal-surface{opacity:1;pointer-events:auto}
 .loading-pair .loaded-content{display:none}.loading-pair.v39-loaded .skeleton,.loading-pair.v39-loaded .spinner{opacity:.12}.loading-pair.v39-loaded .loaded-content{display:block}
-.hovercard .profile{opacity:0;pointer-events:none}.hovercard.v39-open .profile{opacity:1;pointer-events:auto;transform:translateY(-4px) scale(1.02)}
+.hovercard .profile{opacity:0;pointer-events:none}.hovercard:hover .profile,.hovercard:focus-within .profile,.hovercard.v39-open .profile{opacity:1;pointer-events:auto;transform:translateY(-4px) scale(1.02)}
 .fileitem.v39-open .context{opacity:1!important;transform:translateY(0) scale(1)!important;pointer-events:auto!important}
 .scrollview .scroll-content{overflow:auto;max-height:100%;scrollbar-width:none}.scrollview .scroll-content::-webkit-scrollbar{display:none}
 .columns button{display:block;width:100%;border:0;background:transparent;text-align:start;padding:2px 4px;font:inherit;color:inherit}.columns button.on{background:rgba(104,151,255,.12)}
