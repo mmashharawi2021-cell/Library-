@@ -5,7 +5,7 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
-const RELEASE='V41'; document.documentElement.dataset.release=RELEASE;
+const RELEASE='V42'; document.documentElement.dataset.release=RELEASE;
 const DEMO_CONTRACTS=Object.freeze({"data-table":"click","bottom-navigation":"click","timeline":"static","presence-indicator":"static","message-bubble":"static","steps":"click","avatar-group":"hover","multi-select":"form","scrollspy":"scroll","alert-callout-banner":"static","sign-in-form":"form","pagination":"click","date-picker":"click","parallax-scrolling":"scroll","carousel":"click","site-header-nav":"click","card":"click","resize-handle":"drag","hamburger-menu":"click","bento-grid":"static","masonry":"static","easing":"static","spring-animation":"click","text-scramble":"auto","lightbox":"click","marquee":"hover","form-field":"form","truncation":"static","drag-drop":"drag","divider-separator-rule":"static","progress-indicators":"click","toast":"click","modal-drawer-sheet":"static","popover-dropdown-tooltip":"mixed","scrim":"click","skeleton-spinner":"click","combobox":"form","command-palette":"form","accordion":"click","tabs":"click","badge-chip-pill-tag":"click","breadcrumbs":"click","sticky-fixed":"scroll","focus-ring-web":"form","empty-state":"click","hover-card":"hover","switch-checkbox-radio":"form","toggle-group":"click","three-dots":"click","insertion-caret":"pointer","pointer":"hover","alert-macos":"click","slider-macos":"drag","color-well":"click","mac-window":"click","split-view":"drag","scroll-view":"scroll","search-field-macos":"form","save-panel":"form","token-field":"form","combo-button":"click","level-indicator":"click","column-view":"click","outline-view":"click","menu-bar":"click","context-menu":"context","disclosure-triangle":"click","dock-badge":"click","focus-ring-macos":"form","inspector":"form","panel":"drag","popover-macos":"click","popup-pulldown-combobox":"form","segmented-control":"click","sheet-macos":"click","sidebar-macos":"click","stepper-macos":"click","toolbar-macos":"click","traffic-lights":"click","vibrancy":"static","menu-bar-extra":"click"});
 
 const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
@@ -488,6 +488,13 @@ function home(platformOverride){
  document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{state.sort=b.dataset.sort;home()});
  bindChrome();bindGlossary();bindHeroMotion();
 }
+function detailSymbols(e){
+ const skip=/^(المرجع|إتاحة|CSS|Accessibility|macOS behavior)$/i;
+ const generic=/^(ARIA \/ HTML semantics|layout \+ state styles|semantic HTML \/ ARIA|AppKit \/ SwiftUI|SwiftUI counterpart|keyboard \+ focus \+ window semantics|NSAccessibility \/ SwiftUI accessibility)$/i;
+ const rows=(e.inCode||[]).filter(r=>r?.symbol&&!skip.test(r.stack||'')&&!generic.test(r.symbol||''));
+ const symbols=[e.code,...rows.map(r=>r.symbol)].filter(Boolean);
+ return [...new Set(symbols)].slice(0,2);
+}
 function detail(slug){
  const e=bySlug(slug);
  if(!e)return notFound();
@@ -507,7 +514,7 @@ function detail(slug){
      <section class="detail-visual" aria-label="المعاينة"><div class="specimen">${demo(e,true)}</div><p class="specimen-caption">${esc(e.caption||e.description)}</p></section>
 
      <header class="detail-heading">
-       <h1>${esc(e.ar)}</h1><div class="detail-en" dir="ltr">${esc(e.en)}</div><div class="detail-symbols" dir="ltr">/ <code>${esc(e.code)}</code> /</div>
+       <h1>${esc(e.ar)}</h1><div class="detail-en" dir="ltr">${esc(e.en)}</div><div class="detail-symbols" dir="ltr">/ ${detailSymbols(e).map(x=>`<code>${esc(x)}</code>`).join(' · ')} /</div>
        ${aliases.length?`<p class="aka"><b>يُسمى أيضًا</b> ${aliases.map(esc).join('، ')}</p>`:''}
        <p class="lead">${esc(e.description)}</p>
      </header>
