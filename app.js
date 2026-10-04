@@ -362,7 +362,7 @@ function bindDemos(root=document){
 
   root.addEventListener('wheel',ev=>{const par=ev.target.closest?.('.demo-parallax-scrolling .parallax-ref');if(par){ev.preventDefault();const v=Math.max(-35,Math.min(35,Number(par.dataset.offset||0)+Math.sign(ev.deltaY)*5));par.dataset.offset=String(v);par.style.setProperty('--parallax',v);record(par.closest('.ui-demo'),'parallax-scroll')}},{capture:true,passive:false});
   let touchParallax=null;
-  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const par=ev.target.closest?.('.demo-parallax-scrolling .parallax-ref');if(!par)return;touchParallax={pid:ev.pointerId,par,demo:par.closest('.ui-demo'),startY:ev.clientY,start:Number(par.dataset.offset||0)};par.setPointerCapture?.(ev.pointerId)},true);
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const par=ev.target.closest?.('.demo-parallax-scrolling .parallax-ref');if(!par)return;touchParallax={pid:ev.pointerId,par,demo:par.closest('.ui-demo'),startY:ev.clientY,start:Number(par.dataset.offset||0)};try{par.setPointerCapture?.(ev.pointerId)}catch{}},true);
   root.addEventListener('pointermove',ev=>{if(!touchParallax||ev.pointerId!==touchParallax.pid)return;ev.preventDefault();const delta=(touchParallax.startY-ev.clientY)*.34,v=Math.max(-35,Math.min(35,touchParallax.start+delta));touchParallax.par.dataset.offset=String(v);touchParallax.par.style.setProperty('--parallax',v)},{capture:true,passive:false});
   const finishParallax=ev=>{if(touchParallax&&(!ev||ev.pointerId===touchParallax.pid)){record(touchParallax.demo,'parallax-swipe');touchParallax=null}};
   root.addEventListener('pointerup',finishParallax,true);root.addEventListener('pointercancel',finishParallax,true);
@@ -370,8 +370,8 @@ function bindDemos(root=document){
   let drag=null;
   root.addEventListener('pointerdown',ev=>{
    const splitter=ev.target.closest?.('.demo-split-view .splitter'),title=ev.target.closest?.('.demo-panel .floating-panel .titlebar'),caret=ev.target.closest?.('.demo-insertion-caret .mac-text');
-   if(splitter){ev.preventDefault();const split=splitter.closest('.split'),r=split.getBoundingClientRect();drag={type:'split',demo:splitter.closest('.ui-demo'),box:split,left:r.left,width:r.width};splitter.setPointerCapture?.(ev.pointerId)}
-   else if(title){ev.preventDefault();const panel=title.closest('.floating-panel');drag={type:'panel',demo:title.closest('.ui-demo'),box:panel,startX:ev.clientX,startY:ev.clientY,x:Number(panel.dataset.x||0),y:Number(panel.dataset.y||0)};title.setPointerCapture?.(ev.pointerId)}
+   if(splitter){ev.preventDefault();const split=splitter.closest('.split'),r=split.getBoundingClientRect();drag={type:'split',demo:splitter.closest('.ui-demo'),box:split,left:r.left,width:r.width};try{splitter.setPointerCapture?.(ev.pointerId)}catch{}}
+   else if(title){ev.preventDefault();const panel=title.closest('.floating-panel');drag={type:'panel',demo:title.closest('.ui-demo'),box:panel,startX:ev.clientX,startY:ev.clientY,x:Number(panel.dataset.x||0),y:Number(panel.dataset.y||0)};try{title.setPointerCapture?.(ev.pointerId)}catch{}}
    else if(caret){const r=caret.getBoundingClientRect(),x=Math.max(0,Math.min(r.width,ev.clientX-r.left)),c=caret.querySelector('.caret');if(c){c.style.left=x+'px';c.style.right='auto'}record(caret.closest('.ui-demo'),'caret-place')}
   },true);
   root.addEventListener('pointermove',ev=>{if(!drag)return;if(drag.type==='split'){const pct=Math.max(22,Math.min(70,(ev.clientX-drag.left)/drag.width*100)),aside=drag.box.querySelector('aside'),main=drag.box.querySelector('main');aside.style.width=pct+'%';main.style.width=(100-pct)+'%'}else if(drag.type==='panel'){const x=drag.x+ev.clientX-drag.startX,y=drag.y+ev.clientY-drag.startY;drag.box.dataset.x=String(x);drag.box.dataset.y=String(y);drag.box.style.transform='translate('+x+'px,'+y+'px)'}},true);
@@ -415,7 +415,7 @@ function bindDemos(root=document){
     const raw=min+ratio*(max-min),value=Math.max(min,Math.min(max,Math.round(raw/step)*step));
     if(Number(range.value)!==value){range.value=String(value);range.dispatchEvent(new Event('input',{bubbles:true}))}
   };
-  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(!range)return;ev.preventDefault();touchSlider={pid:ev.pointerId,range,demo:range.closest('.ui-demo')};range.setPointerCapture?.(ev.pointerId);updateTouchSlider(range,ev.clientX)}, {capture:true,passive:false});
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(!range)return;ev.preventDefault();touchSlider={pid:ev.pointerId,range,demo:range.closest('.ui-demo')};try{range.setPointerCapture?.(ev.pointerId)}catch{};updateTouchSlider(range,ev.clientX)}, {capture:true,passive:false});
   root.addEventListener('pointermove',ev=>{if(!touchSlider||ev.pointerId!==touchSlider.pid)return;ev.preventDefault();updateTouchSlider(touchSlider.range,ev.clientX)}, {capture:true,passive:false});
   const finishTouchSlider=ev=>{if(touchSlider&&(!ev||ev.pointerId===touchSlider.pid)){record(touchSlider.demo,'slider-touch-drag');touchSlider=null}};
   root.addEventListener('pointerup',finishTouchSlider,true);root.addEventListener('pointercancel',finishTouchSlider,true);
