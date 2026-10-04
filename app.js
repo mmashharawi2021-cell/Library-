@@ -48,30 +48,18 @@ function setMeta(title,desc,urlPath='',indexable=true){
   canonical.href=absolute;
 }
 
-const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span class="sponsor-dot" aria-hidden="true"></span><b>SPONSOR</b><i></i><span>ضع اسمك هنا وصورتك على كل صفحة مصطلح</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">كن الراعي</a><span>· $500/mo</span></div></div>
+const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span>الراعي</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">اسمك هنا · $500/شهر</a></div></div>
 <header class="sitehead"><div class="shell headrow">
-<a class="brand" href="${BASE}"><strong>ui بالعربي</strong><i class="brandbadge">29</i></a>
+<a class="brand" href="${BASE}"><strong>ui بالعربي</strong></a>
 <nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="${BASE}">العناصر</a><a class="${active==='styles'?'active':''}" href="${BASE}styles/">الأنماط</a></nav>
-<div class="headtools"><label class="headsearch"><span>⌕</span><input id="headerSearch" inputmode="search" autocomplete="off" placeholder="صف العنصر…" aria-label="بحث سريع"><kbd>⌘K</kbd></label><button id="themeToggle" class="themebtn" type="button" aria-label="تبديل المظهر" title="تبديل المظهر">◔</button></div>
 </div></header>`;
 const footer=()=>`<footer class="footer"><div class="shell footgrid">
 <div class="footer-brandblock"><a class="footbrand" href="${BASE}">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p></div>
-<div class="footer-shipping"><small>مصطلحات جديدة تُضاف باستمرار</small><nav class="footlinks"><a href="${BASE}feed.xml">تابع عبر RSS</a><a href="${BASE}vs/">العناصر المتشابهة</a><a href="${BASE}methodology/">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية</a></nav></div>
-<div class="footer-search"><b>بحث</b><label><span>⌕</span><input id="footerSearch" inputmode="search" autocomplete="off" placeholder="صف عنصر الواجهة الذي تفكر فيه"></label></div>
-<div class="footer-attribution">المصدر والمرجع البصري والوظيفي: <a href="https://namethatui.com/" target="_blank" rel="noopener">Name That UI ↗</a>. النصوص العربية والكود والمعاينات هنا مبنية لهذا المشروع.</div>
+<div class="footer-shipping"><small>مصطلحات جديدة تُضاف باستمرار</small><a class="rss-button" href="${BASE}feed.xml">تابع عبر RSS</a><nav class="footlinks"><a href="${BASE}vs/">العناصر المتشابهة</a><a href="${BASE}methodology/">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية</a></nav></div>
+<div class="footer-search"><b>بحث</b><label><input id="footerSearch" inputmode="search" autocomplete="off" placeholder="صف عنصر الواجهة الذي تفكر فيه"></label></div>
 </div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
 function bindChrome(){
- const t=document.querySelector('#themeToggle');
- if(t){
-   t.textContent=document.documentElement.dataset.theme==='light'?'☀':'☾';
-   t.onclick=()=>{
-     const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
-     document.documentElement.dataset.theme=next;
-     t.textContent=next==='light'?'☀':'☾';
-     try{localStorage.setItem('ui-theme',next)}catch{}
-   };
- }
  const go=q=>{
    state.q=(q||'').trim();
    const target=BASE+(state.q?'?q='+encodeURIComponent(state.q):'');
@@ -79,18 +67,12 @@ function bindChrome(){
    const hero=document.querySelector('#search');
    if(hero){hero.value=state.q;hero.dispatchEvent(new Event('input',{bubbles:true}));hero.focus()}
  };
- const hs=document.querySelector('#headerSearch');
- if(hs){
-   hs.value=state.q;
-   hs.onkeydown=e=>{if(e.key==='Enter')go(hs.value)};
-   hs.oninput=()=>{const hero=document.querySelector('#search');if(hero){hero.value=hs.value;hero.dispatchEvent(new Event('input',{bubbles:true}))}};
- }
  const fs=document.querySelector('#footerSearch');
  if(fs)fs.onkeydown=e=>{if(e.key==='Enter')go(fs.value)};
  document.onkeydown=e=>{
    if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){
      e.preventDefault();
-     (document.querySelector('#search')||document.querySelector('#headerSearch'))?.focus();
+     document.querySelector('#search')?.focus();
    }
  };
 }
@@ -308,19 +290,27 @@ function home(platformOverride){
  if(platformOverride==='web'||platformOverride==='macos')state.cat=platformOverride;
  if(platformOverride==='all')state.cat='all';
  const platformPath=platformOverride==='web'||platformOverride==='macos'?platformOverride+'/':'';
- setMeta('ما اسم عنصر الواجهة هذا؟ — UI بالعربي','قاموس بصري عربي لعناصر واجهة المستخدم. صف الشيء بطريقتك لتصل إلى اسمه الحقيقي ورمز التنفيذ.',platformPath);
+ setMeta('ما اسم عنصر الواجهة هذا؟ — UI بالعربي','القاموس البصري العربي لعناصر واجهة المستخدم. صف العنصر بطريقتك للوصول إلى اسمه الحقيقي ورمز التنفيذ.',platformPath);
  const fresh=['data-table','bottom-navigation','timeline'].map(bySlug).filter(Boolean);
  const newest=['data-table','bottom-navigation','timeline','presence-indicator','message-bubble'];
  const rank=new Map(newest.map((s,i)=>[s,i]));
+ const examples=[
+   'الخلفية الشاحبة خلف أيقونة في شريط القوائم',
+   'الطبقة الداكنة الشفافة خلف نافذة منبثقة',
+   'النص الرمادي داخل الحقل الذي يختفي عند الكتابة',
+   'النقطة التي تسحبها لتغيير مستوى الصوت',
+   'النص يُقطع بثلاث نقاط'
+ ];
  app.innerHTML=nav('elements')+`<main id="main"><section class="hero shell">
- <div class="newweek"><b>أضيف مؤخرًا</b><div>${fresh.map(e=>`<a href="${entryHref(e)}">${esc(e.ar)} <span dir="ltr">${esc(e.en)}</span></a>`).join('')}</div></div>
+ <div class="newweek"><b>جديد هذا الأسبوع</b><div>${fresh.map(e=>`<a href="${entryHref(e)}">${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span></a>`).join('')}</div></div>
  <h1>ما اسم عنصر الواجهة هذا<span class="qmark">؟</span></h1>
  <p class="hero-copy">القاموس البصري لعناصر UI. صف الشيء بكلماتك العادية؛ تحصل على الاسم الحقيقي، رمز الـAPI، وPrompt جاهز لوكيل البرمجة.</p>
- <label class="hero-search"><span>⌕</span><input id="search" autocomplete="off" inputmode="search" aria-label="صف عنصر الواجهة" placeholder="صف العنصر الذي تفكر فيه…" value="${esc(state.q)}"><kbd>⌘K</kbd></label>
+ <div class="search-examples" aria-label="أمثلة لوصف العناصر">${examples.map(x=>`<span>“${esc(x)}”</span>`).join('')}</div>
+ <label class="hero-search"><input id="search" autocomplete="off" inputmode="search" aria-label="صف عنصر الواجهة" placeholder="صف عنصر الواجهة الذي تفكر فيه" value="${esc(state.q)}"></label>
  <div id="searchEmpty" class="search-empty" hidden><b>لا شيء يطابق هذا الوصف</b><p>جرّب وصف شكله أو مكانه — مثل «النقاط أسفل عرض الشرائح» أو «الشريط الذي يبقى ظاهرًا أثناء التمرير».</p></div>
- <div class="hero-help"><span>لا تعرف اسم <i>المظهر</i> أيضًا؟ <a href="${BASE}styles/">جرّب أطلس الأنماط</a></span><span>اضغط مرتين على أي كلمة في الموقع لعرض تعريف عربي سريع.</span></div>
+ <div class="hero-help"><span>لا تعرف اسم المظهر أيضًا؟ <a href="${BASE}styles/">جرّب أطلس الأنماط</a></span><span>اضغط مرتين على أي كلمة لعرض تعريف عربي سريع.</span></div>
  </section>
- <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button><button id="surprise" class="surprise" type="button">♧ فاجئني</button></div></div><div id="cards" class="entries-grid"></div></section>
+ <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button></div></div><div id="cards" class="entries-grid"></div></section>
  <section class="guides shell"><div class="sectionlabel">الأدلة — القرارات التي تسبق الأسماء</div><div class="guidecards"><a href="${BASE}appkit-vs-swiftui/"><b>AppKit أم SwiftUI؟</b><span>العنصر نفسه في Mac قد يملك اسمين حقيقيين — أيهما تستخدم في الـPrompt؟</span></a><a href="${BASE}swift-vs-electron/"><b>Swift أم Electron؟</b><span>تطبيق أصلي أم واجهة ويب داخل غلاف — القرار الأول الذي يحدد المفردات.</span></a><a href="${BASE}translate/"><b>جدول الترجمة</b><span>60+ عنصرًا: الاسم البسيط ← AppKit ← SwiftUI، مع بحث مباشر.</span></a></div></section></main>`+footer();
 
  const render=()=>{
@@ -332,113 +322,49 @@ function home(platformOverride){
  };
  render();
  const search=document.querySelector('#search');
- search.addEventListener('input',e=>{state.q=e.target.value;const hs=document.querySelector('#headerSearch');if(hs)hs.value=state.q;render()});
+ search.addEventListener('input',e=>{state.q=e.target.value;render()});
  document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{state.cat=b.dataset.cat;home()});
  document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{state.sort=b.dataset.sort;home()});
- const surprise=document.querySelector('#surprise');
- if(surprise)surprise.onclick=()=>{const pool=D.entries.filter(e=>state.cat==='all'||e.category===state.cat);const pick=pool[Math.floor(Math.random()*pool.length)];if(pick)location.href=entryHref(pick)};
  bindChrome();bindGlossary();bindHeroMotion();
 }
 function detail(slug){
  const e=bySlug(slug);
  if(!e)return notFound();
  setMeta(`${e.ar} — ${e.en}`,e.description,entryPath(e));
- const idx=D.entries.indexOf(e);
- const pool=D.entries.filter(x=>x!==e&&x.category===e.category);
- const start=pool.length?idx%pool.length:0;
- const rel=Array.from({length:Math.min(5,pool.length)},(_,i)=>pool[(start+i)%pool.length]);
+ const rel=(e.related||[]).map(bySlug).filter(Boolean);
  const aliases=(e.aliases||[]).slice(0,8);
+ const called=e.calledPhrases||aliases||[e.en];
  const codeRows=e.inCode||[];
  app.innerHTML=nav('elements')+`
  <main id="main" class="shell detail-shell">
    <article class="detail">
      <div class="detail-topbar">
-       <nav class="crumbs" aria-label="مسار الصفحة">
-         <a href="${BASE}">الفهرس</a><span>/</span><a href="${BASE}${e.category}/">${e.category==='web'?'Web':'macOS'}</a>
-       </nav>
-       <div class="detail-actions" aria-label="إجراءات الصفحة">
-         <button type="button" data-detail-save aria-pressed="false">☆ حفظ</button>
-         <button type="button" data-detail-share>مشاركة</button>
-         <button type="button" data-detail-copy>نسخ الصفحة</button>
-       </div>
+       <nav class="crumbs" aria-label="مسار الصفحة"><a href="${BASE}">الفهرس</a><span>/</span><a href="${BASE}${e.category}/">${e.category==='web'?'Web':'macOS'}</a></nav>
+       <div class="detail-actions" aria-label="إجراءات الصفحة"><button type="button" data-detail-save aria-pressed="false">☆ حفظ</button><button type="button" data-detail-share>مشاركة</button><button type="button" data-detail-copy>نسخ الصفحة</button></div>
      </div>
 
-     <section class="detail-visual" aria-label="المعاينة">
-       <div class="specimen">${demo(e,true)}</div>
-       <p class="specimen-caption">معاينة تفاعلية توضّح الشكل والسلوك الأساسي لـ <b>${esc(e.ar)}</b>.</p>
-     </section>
+     <section class="detail-visual" aria-label="المعاينة"><div class="specimen">${demo(e,true)}</div><p class="specimen-caption">${esc(e.caption||e.description)}</p></section>
 
      <header class="detail-heading">
-       <h1>${esc(e.ar)}</h1>
-       <div class="detail-en" dir="ltr">${esc(e.en)}</div>
-       <div class="detail-symbols" dir="ltr">/ <code>${esc(e.code)}</code> /</div>
+       <h1>${esc(e.ar)}</h1><div class="detail-en" dir="ltr">${esc(e.en)}</div><div class="detail-symbols" dir="ltr">/ <code>${esc(e.code)}</code> /</div>
        ${aliases.length?`<p class="aka"><b>يُسمى أيضًا</b> ${aliases.map(esc).join('، ')}</p>`:''}
        <p class="lead">${esc(e.description)}</p>
      </header>
 
-     <section class="section called-section">
-       <h2>إذا كنت تسميه…</h2>
-       <div class="called">${(aliases.length?aliases:[e.en]).map(a=>`<span>“${esc(a)}”</span>`).join('')}</div>
-       <p class="answerline">…فالمصطلح الأدق هو <b>${esc(e.ar)}</b> <span dir="ltr">(${esc(e.en)})</span>.</p>
-     </section>
+     <section class="section called-section"><h2>إذا كنت تسميه…</h2><div class="called">${called.map(x=>`<span>“${esc(x)}”</span>`).join('')}</div><p class="answerline">…فالمصطلح الأدق هو <b>${esc(e.ar)}</b> <span dir="ltr">(${esc(e.en)})</span>.</p></section>
 
-     <section class="section anatomy-section">
-       <h2>التشريح — اسم كل جزء</h2>
-       <div class="anatomy">
-         ${(e.anatomy||[]).map((p,i)=>`
-           <div class="part">
-             <i>${i+1}</i>
-             <div>
-               <b>${esc(p.name)}</b>
-               <p>${esc(p.desc)}</p>
-             </div>
-           </div>`).join('')}
-       </div>
-     </section>
+     <section class="section anatomy-section"><h2>التشريح — اسم كل جزء</h2><div class="anatomy">${(e.anatomy||[]).map((p,i)=>`<div class="part"><i>${i+1}</i><div><b>${esc(p.name)}</b><code dir="ltr">${esc(p.symbol||e.code)}</code><p>${esc(p.desc)}</p></div></div>`).join('')}</div></section>
 
-     <section class="section prompt-section">
-       <h2>Prompt — جاهز لوكيل البرمجة</h2>
-       <div class="prompt prompt-agent">
-         <button class="copybtn" type="button" data-copy="${encodeURIComponent(e.prompt)}">نسخ</button>
-         <p>${esc(e.prompt)}</p>
-       </div>
-     </section>
+     <section class="section prompt-section"><h2>Prompt — جاهز لوكيل البرمجة</h2><div class="prompt prompt-agent"><button class="copybtn" type="button" data-copy="${encodeURIComponent(e.prompt)}">نسخ</button><p>${esc(e.prompt)}</p></div></section>
 
-     <section class="section prompt-section">
-       <h2>Debug Prompt — عندما لا يعمل كما ينبغي</h2>
-       <p class="section-intro">استخدمه كقائمة فحص سريعة للمشكلات الشائعة قبل تعديل المكوّن عشوائيًا.</p>
-       <div class="prompt prompt-debug">
-         <button class="copybtn" type="button" data-copy="${encodeURIComponent(e.debug)}">نسخ</button>
-         <p>${esc(e.debug)}</p>
-       </div>
-     </section>
+     <section class="section prompt-section"><h2>Debug Prompt — عندما لا يعمل كما ينبغي</h2><p class="debug-symptom"><b>العَرَض:</b> ${esc(e.debugSymptom||'العنصر ظاهر لكن سلوكه لا يطابق المتوقع.')}</p><div class="prompt prompt-debug"><button class="copybtn" type="button" data-copy="${encodeURIComponent(e.debug)}">نسخ</button><p>${esc(e.debug)}</p></div></section>
 
-     <section class="section code-section">
-       <h2>في الكود</h2>
-       <p class="section-intro">الأسماء والرموز الأقرب لهذا العنصر في البيئات المختلفة.</p>
-       <div class="tablewrap">
-         <table class="code-table">
-           <tbody>
-             ${codeRows.map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}
-           </tbody>
-         </table>
-       </div>
-     </section>
+     <section class="section code-section"><h2>في الكود</h2><div class="tablewrap"><table class="code-table"><tbody>${codeRows.map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody></table></div></section>
 
-     <section class="section related-section">
-       <h2>راجع أيضًا</h2>
-       <div class="related">
-         ${rel.map(r=>`<a href="${entryHref(r)}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span><small>${r.category==='web'?'Web':'macOS'}</small></a>`).join('')}
-       </div>
-     </section>
-
+     <section class="section related-section"><h2>راجع أيضًا</h2><div class="related">${rel.map(r=>`<a href="${entryHref(r)}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span><small>${r.category==='web'?'Web':'macOS'}</small></a>`).join('')}</div></section>
    </article>
  </main>`+footer();
- bindCopy();
- bindDetailActions(e);
- bindChrome();
- bindGlossary();
- bindDemos(document.querySelector('.specimen'));
+ bindCopy();bindDetailActions(e);bindChrome();bindGlossary();bindDemos(document.querySelector('.specimen'));
 }
 
 function styleSpecimen(s,large=false){
