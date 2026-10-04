@@ -149,19 +149,23 @@ jobs:
               const css=el=>el?getComputedStyle(el):null;
               const h1=document.querySelector('h1');
               const input=document.querySelector('input');
-              let cards,first;
+              let cards,first,elementCount=0;
               if(isClone){
                 cards=[...document.querySelectorAll('#cards>.entry-card')];
                 first=cards[0];
+                elementCount=cards.length;
               }else{
                 const links=[...document.querySelectorAll('a[href]')].filter(a=>/\/(web|macos)\/[^/]+\/?$/.test(new URL(a.href).pathname));
                 cards=[...new Map(links.map(a=>[new URL(a.href).pathname,a])).values()];
                 first=cards[0];
+                const txt=document.body.innerText.replace(/\s+/g,' ');
+                const m=txt.match(/All\s+All\s+(\d+)\s+macOS\s+macOS\s+(\d+)\s+Web\s+Web\s+(\d+)/i)||txt.match(/All\s+(\d+).*?macOS\s+(\d+).*?Web\s+(\d+)/i);
+                elementCount=m?Number(m[1]):cards.length;
               }
               const r=rect(first),hr=rect(h1),ir=rect(input);
               return {
                 title:h1?.textContent.trim()||'',
-                elementCount:cards.length,
+                elementCount,
                 h1Font:parseFloat(css(h1)?.fontSize||0),
                 h1Width:hr?.width||0,
                 searchWidth:ir?.width||0,
@@ -210,9 +214,11 @@ jobs:
             report[kind]={reference:await routeMetrics(ref,path,false,kind),clone:await routeMetrics(clone,path,true,kind)};
           }
 
+          fs.writeFileSync('qa-reports/v42-parity.json',JSON.stringify(report,null,2));
+          console.log('V42_PARITY_REPORT '+JSON.stringify(report));
           const R=report.home1440.reference,C=report.home1440.clone;
           const ratio=(a,b)=>b?Math.abs(a-b)/b:0;
-          assert(R.elementCount===81,'Live reference no longer has 81 element entries');
+          assert(R.elementCount===81,'Live reference no longer reports 81 element entries; got '+R.elementCount);
           assert(C.elementCount===81,'Clone must expose 81 element entries');
           assert(report.styles.reference.count===14&&report.styles.clone.count===14,'Styles count parity failed');
           assert(report.vs.reference.count===18&&report.vs.clone.count===18,'Comparison count parity failed');
@@ -227,8 +233,6 @@ jobs:
             const arR=R.firstCardWidth/R.firstCardHeight,arC=C.firstCardWidth/C.firstCardHeight;
             assert(ratio(arC,arR)<=0.30,'Entry card aspect ratio diverges too far from reference');
           }
-          fs.writeFileSync('qa-reports/v42-parity.json',JSON.stringify(report,null,2));
-          console.log('V42_PARITY_REPORT '+JSON.stringify(report));
           console.log('LIVE V42 REFERENCE PARITY AUDIT PASSED');
           await browser.close();
           JS
