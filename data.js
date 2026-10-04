@@ -6777,7 +6777,7 @@ window.UI_AR_DATA = {
         "إشارة لونية مميزة"
       ],
       "code": "box-shadow + gradients + textured surfaces",
-      "confused": "Flat Design",
+      "confused": "Neumorphism",
       "aliases": [
         "التصميم المحاكي للواقع",
         "Skeuomorphic UI",
@@ -6895,7 +6895,7 @@ window.UI_AR_DATA = {
         "لا حدود حادة"
       ],
       "code": "box-shadow: ±x ±y blur",
-      "confused": "Glassmorphism",
+      "confused": "Skeuomorphism",
       "aliases": [
         "Soft UI",
         "Neomorphism",
