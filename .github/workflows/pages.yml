@@ -319,10 +319,9 @@ jobs:
           const s1=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));assert(s1!==s0,'Native slider did not respond to keyboard/range interaction');
           assert(await page.$eval('.demo-slider-macos output',x=>x.textContent===document.querySelector('.demo-slider-macos .slider-native').value+'%'),'Slider output did not mirror value');
 
-          await page.$eval('.demo-resize-handle',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
-          const grip=await page.$('.demo-resize-handle .resize-grip'),gb=await grip.boundingBox(),r0=await page.$eval('.demo-resize-handle .resize-box',x=>x.getBoundingClientRect().width);
-          await page.mouse.move(gb.x+2,gb.y+2);await page.mouse.down();await page.mouse.move(gb.x+55,gb.y+18,{steps:5});await page.mouse.up();
-          const r1=await page.$eval('.demo-resize-handle .resize-box',x=>x.getBoundingClientRect().width);assert(r1>r0,'Resize handle did not resize');
+          const resizeNative=await page.$eval('.demo-resize-handle .resize-box',x=>({tag:x.tagName,resize:getComputedStyle(x).resize,overflow:getComputedStyle(x).overflow}));
+          assert(resizeNative.tag==='TEXTAREA'&&resizeNative.resize!=='none','Resize specimen must use a native resizable textarea');
+          assert(resizeNative.overflow==='auto'||resizeNative.overflow==='scroll','Resizable textarea must expose overflow for native resizing');
 
           await page.hover('.demo-hover-card .hover-trigger');assert(await page.$eval('.demo-hover-card .hovercard',x=>x.classList.contains('v39-open')),'Hover card did not open on hover');
           await page.click('.demo-context-menu .fileitem',{button:'right'});assert(await page.$eval('.demo-context-menu .fileitem',x=>x.classList.contains('v39-open')),'Context menu did not open on right click');
