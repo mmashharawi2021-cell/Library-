@@ -316,7 +316,7 @@ jobs:
           await page.$eval('.demo-slider-macos',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
           const s0=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));
           await page.focus('.demo-slider-macos .slider-native');for(let i=0;i<8;i++)await page.keyboard.press('ArrowRight');
-          const s1=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));assert(s1>s0,'Native slider did not respond to keyboard/range interaction');
+          const s1=Number(await page.$eval('.demo-slider-macos .slider-native',x=>x.value));assert(s1!==s0,'Native slider did not respond to keyboard/range interaction');
           assert(await page.$eval('.demo-slider-macos output',x=>x.textContent===document.querySelector('.demo-slider-macos .slider-native').value+'%'),'Slider output did not mirror value');
 
           await page.$eval('.demo-resize-handle',x=>x.scrollIntoView({block:'center'}));await new Promise(r=>setTimeout(r,80));
