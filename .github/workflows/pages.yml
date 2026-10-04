@@ -47,11 +47,11 @@ jobs:
           const demoBlock=app.slice(demoStart,demoEnd);
           const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
 
-          assert(index.includes('ui-ar-release\" content=\"V39')&&fallback.includes('ui-ar-release\" content=\"V39'),'V38 release marker missing');
-          assert(index.includes('styles.css?v=39')&&index.includes('data.js?v=39')&&index.includes('app.js?v=39'),'V38 cache bust missing');
+          assert(index.includes('ui-ar-release\" content=\"V39')&&fallback.includes('ui-ar-release\" content=\"V39'),'V39 release marker missing');
+          assert(index.includes('styles.css?v=39')&&index.includes('data.js?v=39')&&index.includes('app.js?v=39'),'V39 cache bust missing');
           assert(!index.includes('\\\\n<script')&&!fallback.includes('\\\\n<script'),'Literal backslash-n leaked into HTML head');
-          assert(manifest.includes('/Library-/?v=39'),'Manifest start_url is not V38');
-          assert(app.includes("const RELEASE='V39'"),'V38 runtime release marker missing');
+          assert(manifest.includes('/Library-/?v=39'),'Manifest start_url is not V39');
+          assert(app.includes("const RELEASE='V39'"),'V39 runtime release marker missing');
           assert(d.entries.length===baseline.counts.elements,'Expected 81 elements');
           assert(d.entries.filter(e=>e.category==='web').length===baseline.counts.web,'Expected 49 web elements');
           assert(d.entries.filter(e=>e.category==='macos').length===baseline.counts.macos,'Expected 32 macOS elements');
@@ -279,7 +279,7 @@ jobs:
 
       - name: V39 semantic interaction QA — 81 contracts
         env:
-          SITE: \${{ steps.deployment.outputs.page_url }}
+          SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
           cat > v39-semantic-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
