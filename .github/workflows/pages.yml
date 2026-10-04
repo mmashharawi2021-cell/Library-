@@ -1,4 +1,4 @@
-name: Deploy V39 Semantic Mini-UIs
+name: Deploy V40 Mobile UX
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Build static surface
         run: node scripts/build-static.mjs
 
-      - name: Validate V39 semantic interaction model
+      - name: Validate V40 mobile + semantic model
         run: |
           node - <<'NODE'
           const fs=require('fs');
@@ -47,11 +47,11 @@ jobs:
           const demoBlock=app.slice(demoStart,demoEnd);
           const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
 
-          assert(index.includes('ui-ar-release\" content=\"V39')&&fallback.includes('ui-ar-release\" content=\"V39'),'V39 release marker missing');
-          assert(index.includes('styles.css?v=39')&&index.includes('data.js?v=39')&&index.includes('app.js?v=39'),'V39 cache bust missing');
+          assert(index.includes('ui-ar-release\" content=\"V40')&&fallback.includes('ui-ar-release\" content=\"V40'),'V40 release marker missing');
+          assert(index.includes('styles.css?v=40')&&index.includes('data.js?v=40')&&index.includes('app.js?v=40'),'V40 cache bust missing');
           assert(!index.includes('\\\\n<script')&&!fallback.includes('\\\\n<script'),'Literal backslash-n leaked into HTML head');
-          assert(manifest.includes('/Library-/?v=39'),'Manifest start_url is not V39');
-          assert(app.includes("const RELEASE='V39'"),'V39 runtime release marker missing');
+          assert(manifest.includes('/Library-/?v=40'),'Manifest start_url is not V40');
+          assert(app.includes("const RELEASE='V40'"),'V40 runtime release marker missing');
           assert(d.entries.length===baseline.counts.elements,'Expected 81 elements');
           assert(d.entries.filter(e=>e.category==='web').length===baseline.counts.web,'Expected 49 web elements');
           assert(d.entries.filter(e=>e.category==='macos').length===baseline.counts.macos,'Expected 32 macOS elements');
@@ -59,14 +59,14 @@ jobs:
           assert(d.comparisons.length===baseline.counts.comparisons,'Expected 18 comparisons');
           assert(d.translations.length===baseline.counts.translations,'Expected 63 translations');
           assert((demoBlock.match(/case '/g)||[]).length===81,'Expected 81 explicit demo cases');
-          assert(app.includes('data-demo-slug'),'V39 demos must expose data-demo-slug');
-          assert(app.includes('data-demo-contract'),'V39 semantic contracts missing');
-          assert(app.includes('const DEMO_CONTRACTS='),'V39 contract registry missing');
-          assert(app.includes('function bindDemos('),'V39 semantic engine missing');
+          assert(app.includes('data-demo-slug'),'V40 demos must expose data-demo-slug');
+          assert(app.includes('data-demo-contract'),'V40 semantic contracts missing');
+          assert(app.includes('const DEMO_CONTRACTS='),'V40 contract registry missing');
+          assert(app.includes('function bindDemos('),'V40 semantic engine missing');
           assert(!app.includes('slugHash'),'Random hash animation assignment must be removed');
           assert(!app.includes('data-v37-mode'),'Random animation mode must be removed');
           assert(!app.includes("const modes=['lift','shift','tilt','pulse','spring','glow']"),'Generic animation modes must be removed');
-          assert(app.includes("case 'data-table'")&&app.includes('slider-native')&&app.includes("contextmenu")&&app.includes("dragstart"),'V39 semantic handlers missing');
+          assert(app.includes("case 'data-table'")&&app.includes('slider-native')&&app.includes("contextmenu")&&app.includes("dragstart"),'V40 semantic handlers missing');
 
           const slugs=new Set(d.entries.map(e=>e.slug));
           for(const e of d.entries){
@@ -121,11 +121,11 @@ jobs:
       - name: Install live QA browser
         run: npm install --no-save puppeteer-core@24
 
-      - name: V39 visual/reference parity QA
+      - name: V40 visual/reference parity QA
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v39-parity-qa.mjs <<'JS'
+          cat > v40-parity-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           import fs from 'node:fs';
 
@@ -172,18 +172,18 @@ jobs:
               overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
             }));
 
-            assert(home.release==='V39','Live release marker is not V38');
-            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V39 reference');
+            assert(home.release==='V40','Live release marker is not V40');
+            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V40 reference');
             assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
             assert(home.fresh===3&&home.examples===5&&home.search===1&&home.surprise===0,'Hero/search controls mismatch');
             assert(home.filters===3&&home.sorts===2&&home.cards===81&&home.demos===81,'Catalog mismatch');
             assert(home.guides===3,'Guide cards mismatch');
             assert(home.rss===1&&home.footerLinks===3&&home.footerSearch===1,'Footer mismatch');
-            assert(home.columns===2,'Catalog must remain two columns');
+            assert(home.columns===(width<=700?1:2),'Catalog column count mismatch at '+width+'px');
             assert(home.overflow<=2,'Horizontal overflow at '+width+'px: '+home.overflow);
             assert(errors.length===0,'Homepage JS errors at '+width+'px: '+errors.join(' | '));
 
-            await p.screenshot({path:`qa-screenshots/v39-home-${width}.png`,fullPage:true});
+            await p.screenshot({path:`qa-screenshots/v40-home-${width}.png`,fullPage:true});
             await p.close();
           }
 
@@ -209,7 +209,7 @@ jobs:
             assert(dataTable.related.some(h=>h.includes('/'+slug+'/')),'Data Table missing related '+slug);
           }
           assert(dataTable.overflow<=2,'Data Table overflow');
-          await detail.screenshot({path:'qa-screenshots/v39-detail-data-table-1440.png',fullPage:true});
+          await detail.screenshot({path:'qa-screenshots/v40-detail-data-table-1440.png',fullPage:true});
           await detail.close();
 
           const style=await browser.newPage();
@@ -228,7 +228,7 @@ jobs:
           assert(skeu.sources>=2&&skeu.related===5,'Skeuomorphism sources/related mismatch');
           assert(!!skeu.confused,'Skeuomorphism must compare with Neumorphism');
           assert(skeu.overflow<=2,'Style overflow');
-          await style.screenshot({path:'qa-screenshots/v39-style-skeuomorphism-1440.png',fullPage:true});
+          await style.screenshot({path:'qa-screenshots/v40-style-skeuomorphism-1440.png',fullPage:true});
           await style.close();
 
           const cmp=await browser.newPage();
@@ -236,7 +236,7 @@ jobs:
           await cmp.goto(site+'vs/popover-vs-tooltip/',{waitUntil:'networkidle0',timeout:60000});
           await cmp.waitForSelector('.vs-detail');
           assert((await cmp.$$('.vs-rules li')).length>=4,'Popover vs Tooltip must expose >=4 checks');
-          await cmp.screenshot({path:'qa-screenshots/v39-compare-popover-tooltip-1440.png',fullPage:true});
+          await cmp.screenshot({path:'qa-screenshots/v40-compare-popover-tooltip-1440.png',fullPage:true});
           await cmp.close();
 
           const content=await browser.newPage();
@@ -272,16 +272,96 @@ jobs:
           }
           await ref.close();
 
-          console.log('LIVE V39 VISUAL QA PASSED — live-reference chrome, 81 element metadata, styles, comparisons, translation, methodology and guides validated.');
+          console.log('LIVE V40 VISUAL QA PASSED — live-reference chrome, 81 element metadata, styles, comparisons, translation, methodology and guides validated.');
           await browser.close();
           JS
-          node v39-parity-qa.mjs
+          node v40-parity-qa.mjs
 
-      - name: V39 semantic interaction QA — 81 contracts
+      - name: V40 mobile UX QA — 393px
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v39-semantic-qa.mjs <<'JS'
+          cat > v40-mobile-qa.mjs <<'JS'
+          import puppeteer from 'puppeteer-core';
+          const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+          const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
+          const site=process.env.SITE||'https://mmashharawi2021-cell.github.io/Library-/';
+          const page=await browser.newPage();
+          await page.setViewport({width:393,height:852,deviceScaleFactor:1,isMobile:true,hasTouch:true});
+          await page.goto(site,{waitUntil:'networkidle0',timeout:60000});
+          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+          const home=await page.evaluate(()=>{
+            const css=x=>getComputedStyle(document.querySelector(x)),rect=x=>document.querySelector(x).getBoundingClientRect();
+            return {
+              release:document.documentElement.dataset.release,
+              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+              columns:css('.entries-grid').gridTemplateColumns.split(' ').length,
+              searchHeight:rect('.hero-search').height,
+              searchFont:parseFloat(css('.hero-search input').fontSize),
+              titleFont:parseFloat(css('.entry-head h3').fontSize),
+              bodyFont:parseFloat(css('.entry-body p').fontSize),
+              cardWidth:rect('.entry-card').width,
+              previewHeight:rect('.entry-preview').height,
+              filterHeight:rect('.catalog-toolbar button').height,
+              brandFont:parseFloat(css('.brand strong').fontSize),
+              navFont:parseFloat(css('.navlinks a').fontSize)
+            };
+          });
+          assert(home.release==='V40','Mobile page is not V40');
+          assert(home.overflow<=2,'Mobile page has horizontal overflow: '+home.overflow);
+          assert(home.columns===1,'Mobile catalog must be one column');
+          assert(home.searchHeight>=46&&home.searchFont>=16,'Mobile search is too small');
+          assert(home.titleFont>=15&&home.bodyFont>=12,'Mobile card copy is too small');
+          assert(home.cardWidth>=350&&home.previewHeight>=180,'Mobile card/preview sizing is too small');
+          assert(home.filterHeight>=40,'Mobile filter touch target is too small');
+          assert(home.brandFont>=15&&home.navFont>=12,'Mobile header typography is too small');
+          await page.tap('.filter-tabs [data-cat="web"]');
+          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===49);
+          await page.tap('.filter-tabs [data-cat="all"]');
+          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+          await page.screenshot({path:'qa-screenshots/v40-mobile-home-393.png',fullPage:true});
+
+          await page.goto(site+'web/data-table/',{waitUntil:'networkidle0',timeout:60000});
+          await page.waitForSelector('.detail');
+          const detail=await page.evaluate(()=>{
+            const css=x=>getComputedStyle(document.querySelector(x)),rect=x=>document.querySelector(x).getBoundingClientRect();
+            return {
+              overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+              h1:parseFloat(css('.detail h1').fontSize),
+              lead:parseFloat(css('.detail .lead').fontSize),
+              actionHeight:rect('.detail-actions button').height,
+              specimenHeight:rect('.specimen').height,
+              relatedCols:css('.related').gridTemplateColumns.split(' ').length
+            };
+          });
+          assert(detail.overflow<=2,'Mobile detail page has horizontal overflow');
+          assert(detail.h1>=30&&detail.lead>=14,'Mobile detail typography is too small');
+          assert(detail.actionHeight>=40,'Mobile detail actions are too small');
+          assert(detail.specimenHeight>=220,'Mobile detail specimen is too small');
+          assert(detail.relatedCols===1,'Mobile related cards should be one column');
+          await page.screenshot({path:'qa-screenshots/v40-mobile-detail-393.png',fullPage:true});
+
+          await page.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
+          await page.waitForSelector('.atlas-grid');
+          const styles=await page.evaluate(()=>({
+            overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+            columns:getComputedStyle(document.querySelector('.atlas-grid')).gridTemplateColumns.split(' ').length,
+            searchFont:parseFloat(getComputedStyle(document.querySelector('.styles-searchbox input')).fontSize)
+          }));
+          assert(styles.overflow<=2,'Mobile styles page has horizontal overflow');
+          assert(styles.columns===1,'Mobile styles atlas must be one column');
+          assert(styles.searchFont>=16,'Mobile styles search is too small');
+          await page.screenshot({path:'qa-screenshots/v40-mobile-styles-393.png',fullPage:true});
+          console.log('LIVE V40 MOBILE QA PASSED — readable typography, one-column cards, touch targets and no page overflow at 393px.');
+          await browser.close();
+          JS
+          node v40-mobile-qa.mjs
+
+      - name: V40 semantic interaction QA — 81 contracts
+        env:
+          SITE: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          cat > v40-semantic-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
@@ -340,21 +420,21 @@ jobs:
           });
           assert(drop,'Drag & drop did not move card');
           assert(errors.length===0,'V39 page errors: '+errors.join(' | '));
-          await page.screenshot({path:'qa-screenshots/v39-semantic-1440.png',fullPage:true});
+          await page.screenshot({path:'qa-screenshots/v40-semantic-1440.png',fullPage:true});
           await page.close();
 
-          const touch=await browser.newPage();await touch.setViewport({width:393,height:900,deviceScaleFactor:1,isMobile:true,hasTouch:true});await touch.goto(site,{waitUntil:'networkidle0',timeout:60000});await touch.waitForSelector('.demo-bottom-navigation .nt-tabs');await touch.tap('.demo-bottom-navigation .nt-tabs>*:nth-child(2)');assert(await touch.$eval('.demo-bottom-navigation .nt-tabs>*:nth-child(2)',x=>x.classList.contains('on')),'Touch navigation failed');await touch.screenshot({path:'qa-screenshots/v39-semantic-touch-393.png',fullPage:true});await touch.close();
+          const touch=await browser.newPage();await touch.setViewport({width:393,height:900,deviceScaleFactor:1,isMobile:true,hasTouch:true});await touch.goto(site,{waitUntil:'networkidle0',timeout:60000});await touch.waitForSelector('.demo-bottom-navigation .nt-tabs');await touch.tap('.demo-bottom-navigation .nt-tabs>*:nth-child(2)');assert(await touch.$eval('.demo-bottom-navigation .nt-tabs>*:nth-child(2)',x=>x.classList.contains('on')),'Touch navigation failed');await touch.screenshot({path:'qa-screenshots/v40-semantic-touch-393.png',fullPage:true});await touch.close();
 
-          console.log('LIVE V39 SEMANTIC QA PASSED — 81 contracts; static, click, hover, context, scroll, drag and form behavior validated.');
+          console.log('LIVE V40 SEMANTIC QA PASSED — 81 contracts; static, click, hover, context, scroll, drag and form behavior validated.');
           await browser.close();
           JS
-          node v39-semantic-qa.mjs
+          node v40-semantic-qa.mjs
 
-      - name: Upload V39 delivery screenshots
+      - name: Upload V40 delivery screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v39-semantic-mini-uis
+          name: v40-mobile-ux
           path: qa-screenshots
           if-no-files-found: warn
           retention-days: 30
