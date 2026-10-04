@@ -4665,7 +4665,7 @@ body{font-size:14px;line-height:1.45}
   .demo-context-menu .fileitem{touch-action:manipulation}
   .demo-context-menu .context{min-width:180px}
   .kanban span{min-height:30px;display:flex;align-items:center}
-  .slider-native{height:34px}
+  .slider-native{height:34px;touch-action:none}
   .slider-native::-webkit-slider-thumb{width:24px;height:24px;margin-top:-9px}
   .slider-native::-moz-range-thumb{width:24px;height:24px}
 }

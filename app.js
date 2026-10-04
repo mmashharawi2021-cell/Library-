@@ -380,6 +380,19 @@ function bindDemos(root=document){
 
   root.addEventListener('input',ev=>{const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(range){const demo=range.closest('.ui-demo'),out=range.closest('.mac-control')?.querySelector('output');if(out)out.textContent=range.value+'%';record(demo,'slider-change');return}const demo=ev.target.closest?.('.demo-inspector');if(!demo)return;const canvas=demo.querySelector('.canvas');if(ev.target.type==='color')canvas.style.background=ev.target.value;else if(ev.target.type==='checkbox')canvas.style.boxShadow=ev.target.checked?'0 8px 18px rgba(0,0,0,.22)':'none';else canvas.style.borderWidth=Math.max(0,parseFloat(ev.target.value)||0)+'px';record(demo,'inspector-change')},true);
 
+  let touchSlider=null;
+  const updateTouchSlider=(range,clientX)=>{
+    const r=range.getBoundingClientRect(),min=Number(range.min||0),max=Number(range.max||100),step=Number(range.step||1)||1;
+    let ratio=Math.max(0,Math.min(1,(clientX-r.left)/Math.max(1,r.width)));
+    if(getComputedStyle(range).direction==='rtl')ratio=1-ratio;
+    const raw=min+ratio*(max-min),value=Math.max(min,Math.min(max,Math.round(raw/step)*step));
+    if(Number(range.value)!==value){range.value=String(value);range.dispatchEvent(new Event('input',{bubbles:true}))}
+  };
+  root.addEventListener('pointerdown',ev=>{if(ev.pointerType!=='touch')return;const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(!range)return;ev.preventDefault();touchSlider={pid:ev.pointerId,range,demo:range.closest('.ui-demo')};range.setPointerCapture?.(ev.pointerId);updateTouchSlider(range,ev.clientX)}, {capture:true,passive:false});
+  root.addEventListener('pointermove',ev=>{if(!touchSlider||ev.pointerId!==touchSlider.pid)return;ev.preventDefault();updateTouchSlider(touchSlider.range,ev.clientX)}, {capture:true,passive:false});
+  const finishTouchSlider=ev=>{if(touchSlider&&(!ev||ev.pointerId===touchSlider.pid)){record(touchSlider.demo,'slider-touch-drag');touchSlider=null}};
+  root.addEventListener('pointerup',finishTouchSlider,true);root.addEventListener('pointercancel',finishTouchSlider,true);
+
   root.addEventListener('keydown',ev=>{if(ev.key==='Escape'){root.querySelectorAll('.v39-open').forEach(x=>x.classList.remove('v39-open'));root.querySelectorAll('.overlay-kinds[data-open]').forEach(x=>x.removeAttribute('data-open'))}},true);
  }
 
