@@ -5,7 +5,9 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
-const RELEASE='V38'; document.documentElement.dataset.release=RELEASE;
+const RELEASE='V39'; document.documentElement.dataset.release=RELEASE;
+const DEMO_CONTRACTS=Object.freeze({"data-table":"click","bottom-navigation":"click","timeline":"static","presence-indicator":"static","message-bubble":"static","steps":"click","avatar-group":"hover","multi-select":"form","scrollspy":"scroll","alert-callout-banner":"static","sign-in-form":"form","pagination":"click","date-picker":"click","parallax-scrolling":"scroll","carousel":"click","site-header-nav":"click","card":"click","resize-handle":"drag","hamburger-menu":"click","bento-grid":"static","masonry":"static","easing":"static","spring-animation":"click","text-scramble":"auto","lightbox":"click","marquee":"hover","form-field":"form","truncation":"static","drag-drop":"drag","divider-separator-rule":"static","progress-indicators":"click","toast":"click","modal-drawer-sheet":"static","popover-dropdown-tooltip":"mixed","scrim":"click","skeleton-spinner":"click","combobox":"form","command-palette":"form","accordion":"click","tabs":"click","badge-chip-pill-tag":"click","breadcrumbs":"click","sticky-fixed":"scroll","focus-ring-web":"form","empty-state":"click","hover-card":"hover","switch-checkbox-radio":"form","toggle-group":"click","three-dots":"click","insertion-caret":"pointer","pointer":"hover","alert-macos":"click","slider-macos":"drag","color-well":"click","mac-window":"click","split-view":"drag","scroll-view":"scroll","search-field-macos":"form","save-panel":"form","token-field":"form","combo-button":"click","level-indicator":"click","column-view":"click","outline-view":"click","menu-bar":"click","context-menu":"context","disclosure-triangle":"click","dock-badge":"click","focus-ring-macos":"form","inspector":"form","panel":"drag","popover-macos":"click","popup-pulldown-combobox":"form","segmented-control":"click","sheet-macos":"click","sidebar-macos":"click","stepper-macos":"click","toolbar-macos":"click","traffic-lights":"click","vibrancy":"static","menu-bar-extra":"click"});
+
 const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
 const state={q:initialQuery,cat:'all',sort:'newest'};
 const norm=s=>(s||'').toLowerCase().normalize('NFD')
@@ -80,7 +82,7 @@ function bindChrome(){
 function demo(e,large=false){
   const s=e.slug;
   const cls=`ui-demo ${large?'large':''} demo-${s}`;
-  const wrap=x=>`<div class="${cls}" data-demo-slug="${esc(s)}" tabindex="0" role="group" aria-label="معاينة تفاعلية لـ ${esc(e.ar)}">${x}</div>`;
+  const wrap=x=>{const contract=DEMO_CONTRACTS[s]||'static';const tab=contract==='static'||contract==='auto'?'':' tabindex="0"';return `<div class="${cls}" data-demo-slug="${esc(s)}" data-demo-contract="${contract}"${tab} role="group" aria-label="معاينة لـ ${esc(e.ar)}">${x}</div>`};
   switch(s){
     case 'data-table': return wrap(`<div class="nt-table" dir="ltr"><div class="nt-table-head"><span>Customer</span><span>Status</span><span>Amount</span></div><div><span>Northwind</span><em>Paid</em><b>$4,280</b></div><div><span>Acme Co</span><em class="late">Overdue</em><b>$2,940</b></div><div><span>Globex</span><em class="pending">Pending</em><b>$1,860</b></div><div><span>Initech</span><em>Paid</em><b>$1,215</b></div><div><span>Umbrella</span><em>Paid</em><b>$640</b></div></div>`);
     case 'bottom-navigation': return wrap(`<div class="nt-phone" dir="ltr"><div class="nt-phone-glow"></div><div class="nt-tabs"><span class="on">⌂<small>Home</small></span><span>⌕<small>Search</small></span><span class="inbox">▣<i>3</i><small>Inbox</small></span><span>○<small>Profile</small></span></div><div class="nt-homebar"></div></div>`);
@@ -90,7 +92,7 @@ function demo(e,large=false){
     case 'steps': return wrap(`<div class="nt-steps" dir="ltr"><span class="done">✓<small>Cart</small></span><i></i><span class="done">✓<small>Shipping</small></span><i></i><span class="active">3<small>Payment</small></span><i></i><span>4<small>Review</small></span></div>`);
     case 'avatar-group': return wrap(`<div class="nt-avatars" dir="ltr"><span class="a1">AR</span><span class="a2">JT</span><span class="a3">MK</span><span class="a4">DK</span><span class="more">+4</span></div>`);
     case 'multi-select': return wrap(`<div class="nt-multiselect" dir="ltr"><div class="nt-selecttop"><b>2 selected</b><span>⌄</span></div><label><i class="check">✓</i> Design</label><label><i class="check">✓</i> Research</label><label><i></i> Ops</label><label><i></i> Sales</label></div>`);
-    case 'scrollspy': return wrap(`<div class="docs"><aside><b>في هذه الصفحة</b><span class="on">نظرة عامة</span><span>الإعداد</span><span>الأمثلة</span></aside><div class="doclines"><strong>نظرة عامة</strong><i></i><i></i><i></i><strong>الإعداد</strong><i></i></div></div>`);
+    case 'scrollspy': return wrap(`<div class="docs"><aside><b>في هذه الصفحة</b><button type="button" class="on" data-section="0">نظرة عامة</button><button type="button" data-section="1">الإعداد</button><button type="button" data-section="2">الأمثلة</button></aside><div class="doclines" tabindex="0"><section><strong>نظرة عامة</strong><i></i><i></i><i></i></section><section><strong>الإعداد</strong><i></i><i></i><i></i></section><section><strong>الأمثلة</strong><i></i><i></i><i></i></section></div></div>`);
     case 'alert-callout-banner': return wrap(`<div class="notice-stack"><div class="banner">تنبيه عام يمتد بعرض الصفحة</div><div class="callout-demo"><b>ملاحظة</b><span>معلومة مهمة داخل السياق.</span></div><div class="inline-alert">⚠ بطاقتك ستنتهي خلال 3 أيام.</div></div>`);
     case 'sign-in-form': return wrap(`<div class="signin"><b>تسجيل الدخول</b><button>G&nbsp; متابعة باستخدام Google</button><div class="or"><i></i><span>أو</span><i></i></div><label>البريد<input value="user@example.com"></label><label>كلمة المرور<input type="password" value="password"></label><button class="primary">دخول</button></div>`);
     case 'pagination': return wrap(`<div class="pagination"><button>‹</button><button class="on">1</button><button>2</button><button>3</button><span>…</span><button>8</button><button>›</button></div>`);
@@ -99,7 +101,7 @@ function demo(e,large=false){
     case 'carousel': return wrap(`<div class="carousel-ref" dir="ltr"><button>‹</button><div class="carousel-strip"><article class="on"><b>Dunes</b><small>1 / 3</small></article><article><b>Reef</b><small>2 / 3</small></article><article><b>Meadow</b><small>3 / 3</small></article></div><button>›</button><div class="carousel-dots"><i class="on"></i><i></i><i></i></div></div>`);
     case 'site-header-nav': return wrap(`<div class="site-ref" dir="ltr"><header><b>Field Notes</b><nav><span>Home</span><span>Docs</span><span>Pricing</span></nav><button>Sign in</button></header><div class="site-ref-body"><span>Header</span><i></i><span>Navigation bar</span></div></div>`);
     case 'card': return wrap(`<article class="visual-card"><div class="media">صورة</div><small>دراسة حالة</small><b>إعادة تصميم الدفع</b><p>ملخص قصير يشرح المحتوى.</p><footer><span class="story-link">اقرأ القصة</span><button type="button">مشاركة</button></footer></article>`);
-    case 'resize-handle': return wrap(`<div class="resize-ref"><label>Feedback</label><div class="resize-box">The export button is hard to find…<span class="resize-grip">⌟</span></div><button>Send</button></div>`);
+    case 'resize-handle': return wrap(`<div class="resize-ref"><label>Feedback</label><div class="resize-box">The export button is hard to find…<span class="resize-grip" role="separator" aria-label="Resize feedback field" tabindex="0">⌟</span></div><button type="button">Send</button></div>`);
     case 'hamburger-menu': return wrap(`<div class="drawer-demo"><button class="hamb">☰</button><aside><b>Field Notes</b><span>تصفح</span><span>الرئيسية</span><span>المقالات</span><span>الأرشيف</span></aside><div class="shade"></div></div>`);
     case 'bento-grid': return wrap(`<div class="bento"><div class="wide"><small>الإيراد</small><b>$48.2k</b></div><div><small>المستخدمون</small><b>2.4k</b></div><div><small>النمو</small><b>↑ 12%</b></div><div class="tall"><small>اليوم</small><b>+9</b><span>تسجيلات جديدة</span></div></div>`);
     case 'masonry': return wrap(`<div class="masonry"><i style="height:54px">1</i><i style="height:92px">2</i><i style="height:70px">3</i><i style="height:44px">4</i><i style="height:82px">5</i><i style="height:58px">6</i></div>`);
@@ -110,14 +112,14 @@ function demo(e,large=false){
     case 'marquee': return wrap(`<div class="marquee"><div>▲ Vertex　● Orbit　■ Quadra　✦ Nova　◆ Prism　▲ Vertex　● Orbit</div></div>`);
     case 'form-field': return wrap(`<div class="field-demo"><label>البريد الإلكتروني <b>*</b><input placeholder="name@example.com"></label><small>سنستخدمه لتسجيل الدخول فقط.</small><label class="error">الاسم<input value=""><em>هذا الحقل مطلوب</em></label></div>`);
     case 'truncation': return wrap(`<div class="truncate"><code>text-overflow: ellipsis</code><p class="one">تمت إعادة جدولة اجتماع المراجعة الفصلية إلى مساء الجمعة</p><code>line-clamp: 2</code><p class="two">يتضمن هذا التحديث تحسينات على المزامنة وإصلاحات لمشكلات العمل دون اتصال وإضافة اختصارات لوحة المفاتيح.</p></div>`);
-    case 'drag-drop': return wrap(`<div class="kanban"><div><b>للعمل</b><span draggable="true">☷ كتابة المقدمة</span><span>☷ إرسال المسودة</span></div><div><b>قيد المراجعة</b><span class="ghost">☷ إصلاح الرأس</span><i>أسقط هنا</i></div></div>`);
+    case 'drag-drop': return wrap(`<div class="kanban"><div data-dropzone><b>للعمل</b><span draggable="true" tabindex="0">☷ كتابة المقدمة</span><span draggable="true" tabindex="0">☷ إرسال المسودة</span></div><div data-dropzone><b>قيد المراجعة</b><span class="ghost" draggable="true" tabindex="0">☷ إصلاح الرأس</span><i>أسقط هنا</i></div></div>`);
     case 'divider-separator-rule': return wrap(`<div class="rules"><span>مقطع محتوى</span><hr><span>مقطع جديد</span><div class="menurow">قص <i></i> نسخ <i></i> لصق</div><div class="decorative"></div></div>`);
-    case 'progress-indicators': return wrap(`<div class="progresses"><div><i class="spinner"></i><small>انتظار</small></div><div><i class="ring"><b>65%</b></i><small>حلقة تقدم</small></div><div><progress value="65" max="100"></progress><small>شريط تقدم</small></div></div>`);
-    case 'toast': return wrap(`<div class="workspace"><span>مساحة العمل</span><div class="toast-demo">✓ تم حفظ التغييرات</div></div>`);
+    case 'progress-indicators': return wrap(`<div class="progresses"><button type="button" class="progress-trigger">متابعة المهمة</button><div><i class="spinner"></i><small>انتظار</small></div><div><i class="ring"><b>65%</b></i><small>حلقة تقدم</small></div><div><progress value="65" max="100"></progress><small>شريط تقدم</small></div></div>`);
+    case 'toast': return wrap(`<div class="workspace"><span>مساحة العمل</span><button type="button" class="toast-trigger">حفظ التغييرات</button><div class="toast-demo" role="status" aria-live="polite">✓ تم حفظ التغييرات</div></div>`);
     case 'modal-drawer-sheet': return wrap(`<div class="triple"><div><b>Modal</b><span class="modal-mini">حذف الملف؟<small>إلغاء　حذف</small></span></div><div><b>Drawer</b><span class="drawer-mini">تعديل التفاصيل</span></div><div><b>Sheet</b><span class="sheet-mini">مشاركة مع…</span></div></div>`);
     case 'popover-dropdown-tooltip': return wrap(`<div class="overlay-kinds"><button>الفلاتر</button><div class="popover-demo">Popover<br><label>☑ نشط فقط</label></div><button>الإجراءات⌄</button><div class="dropdown-demo">إعادة تسمية<br>حذف</div><button class="info">i<span>آخر تحديث اليوم</span></button></div>`);
-    case 'scrim': return wrap(`<div class="scrim-scene"><div class="pagegrid"><i></i><i></i><i></i><i></i></div><div class="scrim-demo"></div><div class="modal-surface"><b>سطح Modal</b><p>الطبقة الشفافة خلف هذه البطاقة هي Scrim.</p></div></div>`);
-    case 'skeleton-spinner': return wrap(`<div class="loading-pair"><div><b>Skeleton</b><span class="skeleton a"></span><span class="skeleton"></span><span class="skeleton short"></span></div><div><b>Spinner</b><i class="spinner big"></i></div></div>`);
+    case 'scrim': return wrap(`<div class="scrim-scene"><div class="pagegrid"><i></i><i></i><i></i><i></i></div><button type="button" class="scrim-open">فتح النافذة</button><div class="scrim-demo" aria-hidden="true"></div><div class="modal-surface" role="dialog" aria-modal="true"><b>سطح Modal</b><p>الطبقة الشفافة خلف هذه البطاقة هي Scrim.</p><button type="button" class="scrim-close">إغلاق</button></div></div>`);
+    case 'skeleton-spinner': return wrap(`<div class="loading-pair"><button type="button" class="loading-trigger">إعادة التحميل</button><div><b>Skeleton</b><span class="skeleton a"></span><span class="skeleton"></span><span class="skeleton short"></span></div><div><b>Spinner</b><i class="spinner big"></i></div><div class="loaded-content" aria-live="polite">تم تحميل المحتوى</div></div>`);
     case 'combobox': return wrap(`<div class="combo"><label>الفاكهة المفضلة<input value="تف"></label><div class="suggest"><b>تفاح</b><span>تفاح أخضر</span><span>تفاح أحمر</span></div></div>`);
     case 'command-palette': return wrap(`<div class="cmd"><div class="cmdsearch"><kbd>⌘ K</kbd> ابحث عن أمر…</div><div><span>إنشاء مشروع جديد <kbd>⌘ N</kbd></span><span>دعوة زميل <kbd>⌘ I</kbd></span><span>فتح الإعدادات <kbd>⌘ ,</kbd></span></div></div>`);
     case 'accordion': return wrap(`<div class="accordion"><details open><summary>ما هو المكوّن؟</summary><p>جزء قابل لإعادة الاستخدام.</p></details><details><summary>ما هو Design Token؟</summary></details><details><summary>لماذا نسمّي الأنماط؟</summary></details></div>`);
@@ -135,17 +137,17 @@ function demo(e,large=false){
     case 'insertion-caret': return wrap(`<div class="mac-text">Name that U<span class="caret"></span>I</div>`);
     case 'pointer': return wrap(`<div class="cursors"><span class="arrow">↖</span><span class="ibeam">I</span><span class="cross">＋</span><span class="hand">☝</span><small>Arrow · I-beam · Crosshair · Pointing hand</small></div>`);
     case 'alert-macos': return wrap(`<div class="mac-alert"><div class="appicon">!</div><section><b>إفراغ سلة المهملات؟</b><p>لا يمكن التراجع عن هذا الإجراء.</p><div><button>إلغاء</button><button class="primary">إفراغ</button></div></section></div>`);
-    case 'slider-macos': return wrap(`<div class="mac-control"><b>الصوت</b><div class="slider"><span style="width:62%"></span><i style="left:62%"></i></div></div>`);
+    case 'slider-macos': return wrap(`<div class="mac-control"><b>الصوت <output>62%</output></b><div class="slider" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62"><span style="width:62%"></span><i style="left:62%"></i></div></div>`);
     case 'color-well': return wrap(`<div class="mac-control"><b>التعبئة</b><button class="colorwell"><i></i> إظهار الألوان…</button></div>`);
     case 'mac-window': return wrap(`<div class="mac-window"><div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span><b>الملاحظات</b></div><div class="mac-content"><aside>قائمة جانبية</aside><main>محتوى النافذة</main></div></div>`);
-    case 'split-view': return wrap(`<div class="mac-window"><div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span><b>البريد</b></div><div class="split"><aside>الوارد<br>المرسل<br>المسودات</aside><i class="splitter"></i><main>رسالة محددة</main></div></div>`);
-    case 'scroll-view': return wrap(`<div class="scrollview"><div>Journal<br>${'سطر من المحتوى<br>'.repeat(7)}</div><span class="scroller"><i></i></span></div>`);
+    case 'split-view': return wrap(`<div class="mac-window"><div class="titlebar"><span class="traffic"><i></i><i></i><i></i></span><b>البريد</b></div><div class="split"><aside>الوارد<br>المرسل<br>المسودات</aside><i class="splitter" role="separator" tabindex="0" aria-orientation="vertical"></i><main>رسالة محددة</main></div></div>`);
+    case 'scroll-view': return wrap(`<div class="scrollview"><div class="scroll-content" tabindex="0">Journal<br>${'سطر من المحتوى<br>'.repeat(12)}</div><span class="scroller"><i></i></span></div>`);
     case 'search-field-macos': return wrap(`<div class="mac-search"><span>⌕</span><input placeholder="بحث…"><button>×</button><div class="recent"><b>عمليات بحث حديثة</b><span>invoices 2026</span><span>receipts</span><span>tax</span></div></div>`);
     case 'save-panel': return wrap(`<div class="savepanel"><b>حفظ باسم:</b><input value="تقرير.pages"><label>المكان: <button>📁 Documents⌄</button></label><div class="files"><span>📁 Desktop</span><span>📁 Documents</span><span>📁 Downloads</span></div><footer><button>إلغاء</button><button class="primary">حفظ</button></footer></div>`);
     case 'token-field': return wrap(`<div class="tokenfield"><label>الوسوم:</label><span>Design ×</span><span>Q3 ×</span><input value="Rep"></div>`);
     case 'combo-button': return wrap(`<div class="combo-button"><button>حفظ</button><button>⌄</button><menu><span>حفظ باسم…</span><span>حفظ الكل</span><span>تصدير…</span></menu></div>`);
     case 'level-indicator': return wrap(`<div class="levels"><label>التقييم <span class="stars">★★★★☆</span></label><label>السعة <span class="capacity"><i style="width:72%"></i></span></label><label>الصلة <span class="dotslevel">●●●○○</span></label></div>`);
-    case 'column-view': return wrap(`<div class="columns"><div>📁 Projects<br>📁 Archive<br>📁 NameThat</div><div>📁 content<br>📁 research<br>📁 assets</div><div>📄 index<br>📄 styles<br>📄 data</div></div>`);
+    case 'column-view': return wrap(`<div class="columns"><div><button type="button">📁 Projects</button><button type="button">📁 Archive</button><button type="button">📁 NameThat</button></div><div><button type="button">📁 content</button><button type="button">📁 research</button><button type="button">📁 assets</button></div><div><button type="button">📄 index</button><button type="button">📄 styles</button><button type="button">📄 data</button></div></div>`);
     case 'outline-view': return wrap(`<div class="outline"><span>▾ Library</span><span class="in1">▾ 📁 Projects</span><span class="in2">▾ 📁 NameThat</span><span class="in3">📄 content</span><span class="in3">📄 FeelBench</span></div>`);
     case 'menu-bar': return wrap(`<div class="menubar"><b>Finder</b><span>ملف</span><span>تحرير</span><span>عرض</span><span>نافذة</span><span>مساعدة</span><i></i><small>9:41</small><div class="macmenu"><span>فتح… <kbd>⌘O</kbd></span><span>الإعدادات… <kbd>⌘,</kbd></span><hr><span>إنهاء <kbd>⌘Q</kbd></span></div></div>`);
     case 'context-menu': return wrap(`<div class="fileitem">📁 Projects<div class="context"><span>فتح <kbd>⌘O</kbd></span><span>إعادة تسمية…</span><span>تكرار ›</span><hr><span>نقل إلى سلة المهملات</span></div></div>`);
@@ -170,7 +172,7 @@ function demo(e,large=false){
 
 const entryPath=e=>`${e.category}/${e.slug}/`;
 const entryHref=e=>`${BASE}${entryPath(e)}`;
-function card(e){return `<a class="entry-card" data-slug="${esc(e.slug)}" href="${entryHref(e)}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3>${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></a>`}
+function card(e){return `<article class="entry-card" data-slug="${esc(e.slug)}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3><a class="entry-link" href="${entryHref(e)}">${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</a></h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></article>`}
 function searchMatches(e,q){if(!q)return true;const hay=norm([e.ar,e.en,e.code,e.description,...(e.aliases||[])].join(' '));return norm(q).split(' ').filter(Boolean).every(x=>hay.includes(x))}
 function bindGlossary(){
   const box=document.querySelector('#glossary');if(!box)return;
@@ -227,272 +229,133 @@ function bindDetailActions(e){
 function bindDemos(root=document){
  if(!root)return;
  const demos=[...root.querySelectorAll('.ui-demo')];
- const modes=['lift','shift','tilt','pulse','spring','glow'];
+ const record=(demo,action)=>{if(!demo||!action)return;demo.dataset.interactionCount=String(Number(demo.dataset.interactionCount||0)+1);demo.dataset.demoState=action};
+ const choose=(box,selector,target)=>{[...box.querySelectorAll(selector)].forEach(x=>x.classList.toggle('v37-selected',x===target))};
+ const setCarousel=(box,next)=>{const slides=[...box.querySelectorAll('.carousel-strip article')],dots=[...box.querySelectorAll('.carousel-dots i')];if(!slides.length)return;let index=(next+slides.length)%slides.length;box.dataset.index=String(index);slides.forEach((x,i)=>x.classList.toggle('on',i===index));dots.forEach((x,i)=>x.classList.toggle('on',i===index));box.style.setProperty('--slide-index',index)};
+ const scrambleNow=el=>{if(!el)return;const final='THAT UI',chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#?!*';let frame=0;clearInterval(el.__timer);el.__timer=setInterval(()=>{const reveal=Math.floor(frame/2);el.textContent=[...final].map((ch,i)=>ch===' '?' ':i<reveal?ch:chars[Math.floor(Math.random()*chars.length)]).join('');frame++;if(reveal>=final.length){clearInterval(el.__timer);el.textContent=final}},45)};
+ const setSlider=(slider,clientX)=>{const r=slider.getBoundingClientRect(),pct=Math.max(0,Math.min(100,(clientX-r.left)/Math.max(1,r.width)*100)),v=Math.round(pct);slider.querySelector('span').style.width=v+'%';slider.querySelector('i').style.left=v+'%';slider.setAttribute('aria-valuenow',String(v));const out=slider.closest('.mac-control')?.querySelector('output');if(out)out.textContent=v+'%'};
+ demos.forEach(d=>{if(!d.dataset.semanticBound){d.dataset.semanticBound='1';d.dataset.interactionCount='0';d.dataset.demoState='idle'}});
 
- const slugHash=s=>[...s].reduce((n,ch)=>(n*31+ch.charCodeAt(0))>>>0,7);
- const mark=(demo,action='press')=>{
-   const count=Number(demo.dataset.v37Interactions||0)+1;
-   demo.dataset.v37Interactions=String(count);
-   demo.dataset.v37State=action;
-   demo.classList.remove('v37-animate');
-   void demo.offsetWidth;
-   demo.classList.add('v37-animate');
-   setTimeout(()=>demo.classList.remove('v37-animate'),520);
- };
- const choose=(box,selector,target)=>{
-   const nodes=[...box.querySelectorAll(selector)];
-   nodes.forEach(x=>x.classList.toggle('v37-selected',x===target));
- };
- const cycleText=(el,values)=>{
-   if(!el||!values.length)return;
-   const i=Math.max(0,values.indexOf(el.textContent.trim()));
-   el.textContent=values[(i+1)%values.length];
- };
- const setCarousel=(box,next)=>{
-   const slides=[...box.querySelectorAll('.carousel-strip article')];
-   const dots=[...box.querySelectorAll('.carousel-dots i')];
-   if(!slides.length)return;
-   let index=Number(box.dataset.index||0);
-   index=(next+slides.length)%slides.length;
-   box.dataset.index=String(index);
-   slides.forEach((x,i)=>x.classList.toggle('on',i===index));
-   dots.forEach((x,i)=>x.classList.toggle('on',i===index));
-   box.style.setProperty('--slide-index',index);
- };
- const scrambleNow=el=>{
-   if(!el)return;
-   const final='THAT UI',chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#?!*';
-   let frame=0;
-   clearInterval(el.__v37Timer);
-   el.__v37Timer=setInterval(()=>{
-     const reveal=Math.floor(frame/2);
-     el.textContent=[...final].map((ch,i)=>ch===' '?' ':i<reveal?ch:chars[Math.floor(Math.random()*chars.length)]).join('');
-     frame++;
-     if(reveal>=final.length){clearInterval(el.__v37Timer);el.textContent=final}
-   },45);
- };
+ if(!root.__semanticBound){
+  root.__semanticBound=true;
 
- demos.forEach(demo=>{
-   if(demo.dataset.v37Bound)return;
-   demo.dataset.v37Bound='1';
-   demo.dataset.v37Mode=modes[slugHash(demo.dataset.demoSlug||'demo')%modes.length];
-   demo.dataset.v37Interactions='0';
-   demo.dataset.v37State='idle';
- });
+  root.addEventListener('click',ev=>{
+   const demo=ev.target.closest('.ui-demo');if(!demo||!root.contains(demo))return;
+   const s=demo.dataset.demoSlug||'',t=ev.target;let action='';
+   switch(s){
+    case 'data-table':{const head=t.closest('.nt-table-head span'),row=t.closest('.nt-table>div:not(.nt-table-head)');if(head){const table=head.closest('.nt-table'),rows=[...table.children].slice(1),dir=table.dataset.sortDir==='asc'?'desc':'asc',col=[...head.parentElement.children].indexOf(head);table.dataset.sortDir=dir;rows.sort((x,y)=>{const A=x.children[col]?.textContent.replace(/[$,]/g,'').trim()||'',B=y.children[col]?.textContent.replace(/[$,]/g,'').trim()||'',an=Number(A),bn=Number(B),v=Number.isNaN(an)||Number.isNaN(bn)?A.localeCompare(B):an-bn;return dir==='asc'?v:-v}).forEach(x=>table.appendChild(x));[...head.parentElement.children].forEach(x=>x.classList.toggle('v37-sorted',x===head));action='sort'}else if(row){row.classList.toggle('v37-selected');action='select-row'}break}
+    case 'bottom-navigation':{const item=t.closest('.nt-tabs>*');if(item){item.parentElement.querySelectorAll(':scope>*').forEach(x=>x.classList.remove('on'));item.classList.add('on');action='navigate'}break}
+    case 'steps':{const step=t.closest('.nt-steps>span');if(step){const all=[...step.parentElement.querySelectorAll(':scope>span')],i=all.indexOf(step);all.forEach((x,n)=>{x.classList.toggle('done',n<i);x.classList.toggle('active',n===i)});action='step'}break}
+    case 'multi-select':{const label=t.closest('.nt-multiselect label');if(label){label.classList.toggle('checked');const i=label.querySelector('i');if(i){i.classList.toggle('check');i.textContent=label.classList.contains('checked')?'✓':''}const box=label.closest('.nt-multiselect'),n=box.querySelectorAll('label.checked').length,b=box.querySelector('.nt-selecttop b');if(b)b.textContent=n+' selected';action='multi-select'}break}
+    case 'scrollspy':{const btn=t.closest('.docs aside button');if(btn){const sc=demo.querySelector('.doclines'),i=Number(btn.dataset.section||0),sec=sc?.querySelectorAll('section')[i];if(sc&&sec)sc.scrollTo({top:sec.offsetTop,behavior:'smooth'});action='scrollspy-nav'}break}
+    case 'sign-in-form':{const btn=t.closest('.signin button');if(btn){const form=btn.closest('.signin');if(btn.classList.contains('primary')){const inputs=form.querySelectorAll('input');btn.disabled=true;btn.textContent='جارٍ الدخول…';setTimeout(()=>{btn.disabled=false;btn.textContent=(inputs[0]?.value&&inputs[1]?.value)?'تم الدخول ✓':'أكمل الحقول';form.classList.toggle('v37-success',!!(inputs[0]?.value&&inputs[1]?.value))},350);action='submit'}else{btn.textContent='تم الاتصال ✓';action='oauth'}}break}
+    case 'pagination':{const btn=t.closest('.pagination button');if(btn){const box=btn.closest('.pagination'),buttons=[...box.querySelectorAll('button')],pages=buttons.slice(1,-1);let i=Math.max(0,pages.findIndex(x=>x.classList.contains('on')));if(btn===buttons[0])i=Math.max(0,i-1);else if(btn===buttons.at(-1))i=Math.min(pages.length-1,i+1);else i=pages.indexOf(btn);pages.forEach((x,n)=>x.classList.toggle('on',n===i));action='paginate'}break}
+    case 'date-picker':{const day=t.closest('.calendar .week i');if(day){day.classList.toggle('sel');action='pick-date'}break}
+    case 'carousel':{const box=demo.querySelector('.carousel-ref'),buttons=[...box.querySelectorAll(':scope>button')],dots=[...box.querySelectorAll('.carousel-dots i')],btn=t.closest('.carousel-ref > button'),dot=t.closest('.carousel-dots i');let i=Number(box.dataset.index||0);if(btn)i+=btn===buttons[0]?-1:1;else if(dot)i=dots.indexOf(dot);else break;setCarousel(box,i);action='carousel'}break}
+    case 'site-header-nav':{const nav=t.closest('.site-ref nav span'),btn=t.closest('.site-ref header button');if(nav){choose(nav.parentElement,'span',nav);action='site-nav'}else if(btn){btn.classList.toggle('v37-selected');btn.textContent=btn.classList.contains('v37-selected')?'Signed in':'Sign in';action='site-signin'}break}
+    case 'card':{const btn=t.closest('.visual-card button'),link=t.closest('.story-link');if(btn){btn.textContent=btn.textContent.includes('✓')?'مشاركة':'تمت المشاركة ✓';action='share'}else if(link){link.classList.toggle('v37-selected');action='open-story'}break}
+    case 'resize-handle':{if(t.closest('.resize-ref>button')){t.textContent='Sent ✓';action='send'}break}
+    case 'hamburger-menu':{const x=t.closest('.hamb,.drawer-demo .shade');if(x){demo.querySelector('.drawer-demo')?.classList.toggle('open');action='drawer'}break}
+    case 'spring-animation':{if(t.closest('.ball')){const box=demo.querySelector('.spring');box?.classList.remove('v37-replay');void box?.offsetWidth;box?.classList.add('v37-replay');action='spring-replay'}break}
+    case 'lightbox':{const thumb=t.closest('.thumb'),close=t.closest('.photo button,.lightbox>.scrim-demo'),box=demo.querySelector('.lightbox');if(thumb){box?.classList.add('v39-open');action='lightbox-open'}else if(close){box?.classList.remove('v39-open');action='lightbox-close'}break}
+    case 'form-field':{const input=t.closest('.field-demo input');if(input){input.focus();action='field-focus'}break}
+    case 'progress-indicators':{const btn=t.closest('.progress-trigger');if(btn){const box=demo.querySelector('.progresses'),p=box.querySelector('progress'),ring=box.querySelector('.ring b');let v=Number(p?.value||0)+15;if(v>100)v=20;if(p)p.value=v;if(ring)ring.textContent=v+'%';action='progress'}break}
+    case 'toast':{const btn=t.closest('.toast-trigger');if(btn){const box=demo.querySelector('.workspace');box.classList.add('v39-show-toast');clearTimeout(box.__toastTimer);box.__toastTimer=setTimeout(()=>box.classList.remove('v39-show-toast'),1600);action='toast'}break}
+    case 'popover-dropdown-tooltip':{const box=demo.querySelector('.overlay-kinds'),btn=t.closest('.overlay-kinds>button:not(.info)');if(btn){const buttons=[...box.querySelectorAll(':scope>button:not(.info)')],i=buttons.indexOf(btn);box.dataset.open=i===0?'popover':'dropdown';action=box.dataset.open}else if(!t.closest('.popover-demo,.dropdown-demo,.info')){box.removeAttribute('data-open');action='overlay-close'}break}
+    case 'scrim':{const scene=demo.querySelector('.scrim-scene');if(t.closest('.scrim-open')){scene.classList.add('v39-open');action='scrim-open'}else if(t.closest('.scrim-close,.scrim-demo')){scene.classList.remove('v39-open');action='scrim-close'}break}
+    case 'skeleton-spinner':{const btn=t.closest('.loading-trigger');if(btn){const box=demo.querySelector('.loading-pair');box.classList.remove('v39-loaded');btn.disabled=true;btn.textContent='جارٍ التحميل…';setTimeout(()=>{box.classList.add('v39-loaded');btn.disabled=false;btn.textContent='إعادة التحميل'},650);action='loading'}break}
+    case 'combobox':{const option=t.closest('.suggest>*'),input=demo.querySelector('.combo input');if(option&&input){input.value=option.textContent.trim();demo.querySelector('.combo')?.classList.add('v37-picked');action='combobox-pick'}else if(input){input.focus();demo.querySelector('.combo')?.classList.toggle('v37-open');action='combobox-open'}break}
+    case 'command-palette':{const cmd=t.closest('.cmd>div:last-child>span');if(cmd){choose(cmd.parentElement,'span',cmd);action='command'}break}
+    case 'accordion':{const summary=t.closest('.accordion summary');if(summary){ev.preventDefault();summary.parentElement.open=!summary.parentElement.open;action='accordion'}break}
+    case 'tabs':{const btn=t.closest('.tabs-demo button');if(btn){const box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');const active=btn.textContent.trim()==='التحليلات';box.querySelector('section b').textContent=active?'مؤشرات التحليلات':'النشاط الأسبوعي';box.querySelector('section strong').textContent=active?'86%':'1,248';action='tab'}break}
+    case 'badge-chip-pill-tag':{const chip=t.closest('.chip-demo'),badge=t.closest('.badge-demo');if(chip){chip.classList.toggle('v37-muted');action='chip'}else if(badge){badge.textContent=String((Number(badge.textContent)||0)+1);action='badge'}break}
+    case 'breadcrumbs':{const x=t.closest('.crumb-demo span,.crumb-demo b');if(x){choose(x.parentElement,'span,b',x);action='breadcrumb'}break}
+    case 'focus-ring-web':{const btn=t.closest('.focusset button');if(btn){btn.focus();action='focus-ring'}break}
+    case 'empty-state':{const btn=t.closest('.empty button');if(btn){const box=btn.closest('.empty');box.classList.toggle('v37-created');box.querySelector('b').textContent=box.classList.contains('v37-created')?'تم إنشاء مشروع':'لا توجد مشاريع بعد';btn.textContent=box.classList.contains('v37-created')?'تراجع':'مشروع جديد';action='empty-state'}break}
+    case 'switch-checkbox-radio':{const sw=t.closest('.switch');if(sw){sw.classList.toggle('on');action='switch'}break}
+    case 'toggle-group':{const btn=t.closest('.toggle-group button');if(btn){btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');action='toggle'}break}
+    case 'three-dots':{const btn=t.closest('.overflow-demo button');if(btn){const slot=btn.parentElement,was=slot.classList.contains('v37-menuopen');btn.closest('.overflow-demo').querySelectorAll(':scope>div').forEach(x=>x.classList.remove('v37-menuopen'));slot.classList.toggle('v37-menuopen',!was);action='overflow-menu'}break}
+    case 'alert-macos':{const btn=t.closest('.mac-alert button');if(btn){const box=btn.closest('.mac-alert');box.dataset.choice=btn.classList.contains('primary')?'confirm':'cancel';box.classList.add('v37-resolved');action='alert-choice'}break}
+    case 'color-well':{const b=t.closest('.colorwell');if(b){const colors=['#ff5f57','#6699cc','#5ccf7a','#f2c94c','#b76cff'];let i=(Number(b.dataset.color||0)+1)%colors.length;b.dataset.color=String(i);b.querySelector('i').style.background=colors[i];action='color'}break}
+    case 'mac-window':{const dot=t.closest('.traffic i');if(dot){const win=dot.closest('.mac-window'),i=[...dot.parentElement.children].indexOf(dot);win.classList.remove('v37-closed','v37-minimized','v37-zoomed');win.classList.add(i===0?'v37-closed':i===1?'v37-minimized':'v37-zoomed');action='window-control'}break}
+    case 'search-field-macos':{const input=demo.querySelector('.mac-search input'),clear=t.closest('.mac-search button'),recent=t.closest('.recent span');if(clear&&input){input.value='';input.focus();action='clear-search'}else if(recent&&input){input.value=recent.textContent.trim();action='recent-search'}break}
+    case 'save-panel':{const file=t.closest('.files span'),btn=t.closest('.savepanel footer button'),place=t.closest('.savepanel label button');if(file){choose(file.parentElement,'span',file);action='folder'}else if(place){place.classList.toggle('v37-selected');action='location'}else if(btn){const box=btn.closest('.savepanel');box.dataset.result=btn.classList.contains('primary')?'saved':'cancelled';btn.textContent=btn.classList.contains('primary')?'تم الحفظ ✓':'تم الإلغاء';action='save-panel'}break}
+    case 'token-field':{const tok=t.closest('.tokenfield>span');if(tok){tok.remove();action='token-remove'}else demo.querySelector('.tokenfield input')?.focus();break}
+    case 'combo-button':{const box=demo.querySelector('.combo-button'),btn=t.closest('.combo-button button'),item=t.closest('.combo-button menu span');if(item){box.querySelector('button').textContent=item.textContent.replace('…','');box.classList.remove('v37-open');action='combo-action'}else if(btn){if(btn===box.querySelectorAll('button')[1])box.classList.toggle('v37-open');else btn.textContent=btn.textContent.includes('✓')?'حفظ':'تم الحفظ ✓';action='combo-button'}break}
+    case 'level-indicator':{const stars=t.closest('.stars'),cap=t.closest('.capacity'),dots=t.closest('.dotslevel');if(stars){stars.textContent=stars.textContent==='★★★★★'?'★★★☆☆':'★★★★★';action='rating'}else if(cap){const i=cap.querySelector('i');i.style.width=i.style.width==='90%'?'42%':'90%';action='capacity'}else if(dots){dots.textContent=dots.textContent==='●●●●●'?'●●○○○':'●●●●●';action='level'}break}
+    case 'column-view':{const btn=t.closest('.columns button');if(btn){const col=btn.parentElement,box=btn.closest('.columns'),cols=[...box.children],i=cols.indexOf(col);col.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===btn));box.dataset.column=String(Math.min(i+1,2));action='column-select'}break}
+    case 'outline-view':{const row=t.closest('.outline span');if(row){row.classList.toggle('v37-selected');if(row.textContent.includes('▾'))row.textContent=row.textContent.replace('▾','▸');else if(row.textContent.includes('▸'))row.textContent=row.textContent.replace('▸','▾');action='outline'}break}
+    case 'menu-bar':{const box=demo.querySelector('.menubar'),item=t.closest('.menubar>span');if(item){box.classList.toggle('v37-open');choose(box,':scope>span',item);action='menu-bar'}break}
+    case 'disclosure-triangle':{const row=t.closest('.finder-list>span:not(.indent)');if(row){const open=row.textContent.includes('▾');row.textContent=row.textContent.replace(open?'▾':'▸',open?'▸':'▾');demo.querySelector('.finder-list')?.classList.toggle('v37-collapsed',open);action='disclosure'}break}
+    case 'dock-badge':{const icon=t.closest('.dockicon');if(icon){choose(icon.parentElement,'.dockicon',icon);action='dock'}break}
+    case 'focus-ring-macos':{const btn=t.closest('.mac-focus button');if(btn){btn.focus();action='mac-focus'}break}
+    case 'popover-macos':{if(t.closest('.mac-popover > button,.mac-popover .bubble button')){demo.querySelector('.mac-popover')?.classList.toggle('v37-open');action='popover'}break}
+    case 'popup-pulldown-combobox':{const x=t.closest('.mac-pickers label');if(x){choose(x.parentElement,'label',x);x.classList.toggle('v37-open');action='picker'}break}
+    case 'segmented-control':{const btn=t.closest('.segmented button');if(btn){btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');action='segment'}break}
+    case 'sheet-macos':{const btn=t.closest('.attached-sheet button');if(btn){btn.closest('.attached-sheet').classList.add('v37-resolved');action='sheet'}break}
+    case 'sidebar-macos':{const row=t.closest('.source-list aside span');if(row){row.parentElement.querySelectorAll('span').forEach(x=>x.classList.remove('on'));row.classList.add('on');const main=row.closest('.source-list').querySelector('main');if(main)main.textContent=row.textContent.trim();action='sidebar'}break}
+    case 'stepper-macos':{const btn=t.closest('.stepper button'),input=demo.querySelector('.stepper input');if(btn&&input){let n=Number(input.value)||0;n+=btn===btn.parentElement.querySelector('button')?1:-1;input.value=String(Math.max(0,n));action='stepper'}break}
+    case 'toolbar-macos':{const btn=t.closest('.unified nav button');if(btn){choose(btn.parentElement,'button',btn);action='toolbar'}break}
+    case 'traffic-lights':{const dot=t.closest('.traffic-large i');if(dot){const box=dot.closest('.traffic-large'),i=[...dot.parentElement.children].indexOf(dot);box.dataset.windowAction=['close','minimize','zoom'][i]||'zoom';action='traffic-light'}break}
+    case 'menu-bar-extra':{const box=demo.querySelector('.menubar'),item=t.closest('.menubar>span');if(item){box.classList.toggle('v37-status-open');choose(box,':scope>span',item);action='menu-bar-extra'}break}
+   }
+   if(action)record(demo,action);
+  },true);
 
- if(!root.__v37PointerBound){
-   root.__v37PointerBound=true;
-   root.addEventListener('pointerdown',ev=>{
-     const demo=ev.target.closest('.ui-demo');if(!demo||!root.contains(demo))return;
-     demo.classList.add('is-v37-pressed');
-   },true);
-   const release=ev=>{
-     const demo=ev.target.closest?.('.ui-demo');if(demo)demo.classList.remove('is-v37-pressed');
-   };
-   root.addEventListener('pointerup',release,true);
-   root.addEventListener('pointercancel',release,true);
-   root.addEventListener('pointerleave',release,true);
- }
+  root.addEventListener('contextmenu',ev=>{const demo=ev.target.closest('.demo-context-menu');if(!demo||!root.contains(demo))return;ev.preventDefault();demo.querySelector('.fileitem')?.classList.add('v39-open');record(demo,'context-open')},true);
 
- if(!root.__v37ClickBound){
-   root.__v37ClickBound=true;
-   root.addEventListener('click',ev=>{
-     const demo=ev.target.closest('.ui-demo');
-     if(!demo||!root.contains(demo))return;
-     if(demo.closest('.entry-card')){
-       ev.preventDefault();
-       ev.stopPropagation();
-       if(ev.target.matches('input,textarea')) ev.target.focus();
-     }
+  root.addEventListener('pointerenter',ev=>{
+   const hover=ev.target.closest?.('.demo-hover-card .hover-trigger');if(hover){hover.closest('.hovercard')?.classList.add('v39-open');record(hover.closest('.ui-demo'),'hover-open')}
+   const marquee=ev.target.closest?.('.demo-marquee .marquee');if(marquee)marquee.classList.add('v39-paused');
+   const info=ev.target.closest?.('.demo-popover-dropdown-tooltip .info');if(info)info.closest('.overlay-kinds').dataset.open='tooltip';
+   const cursor=ev.target.closest?.('.demo-pointer .cursors>span');if(cursor)cursor.parentElement.querySelectorAll(':scope>span').forEach(x=>x.classList.toggle('cursor-live',x===cursor));
+  },true);
+  root.addEventListener('pointerleave',ev=>{
+   const hover=ev.target.closest?.('.demo-hover-card .hovercard');if(hover)hover.classList.remove('v39-open');
+   const marquee=ev.target.closest?.('.demo-marquee .marquee');if(marquee)marquee.classList.remove('v39-paused');
+   const info=ev.target.closest?.('.demo-popover-dropdown-tooltip .info');if(info)info.closest('.overlay-kinds').removeAttribute('data-open');
+  },true);
+  root.addEventListener('focusin',ev=>{const h=ev.target.closest?.('.demo-hover-card .hover-trigger');if(h)h.closest('.hovercard')?.classList.add('v39-open')},true);
+  root.addEventListener('focusout',ev=>{const h=ev.target.closest?.('.demo-hover-card .hover-trigger');if(h)setTimeout(()=>h.closest('.hovercard')?.classList.remove('v39-open'),0)},true);
 
-     const slug=demo.dataset.demoSlug||'';
-     const t=ev.target;
-     let action='press';
+  root.addEventListener('scroll',ev=>{
+   const sc=ev.target;
+   if(sc.matches?.('.demo-scrollspy .doclines')){const demo=sc.closest('.ui-demo'),sections=[...sc.querySelectorAll('section')],buttons=[...demo.querySelectorAll('.docs aside button')];let idx=0;sections.forEach((sec,i)=>{if(sc.scrollTop>=sec.offsetTop-12)idx=i});buttons.forEach((b,i)=>b.classList.toggle('on',i===idx));record(demo,'scrollspy-scroll')}
+   if(sc.matches?.('.demo-scroll-view .scroll-content')){const demo=sc.closest('.ui-demo'),thumb=demo.querySelector('.scroller i'),max=Math.max(1,sc.scrollHeight-sc.clientHeight),pct=sc.scrollTop/max;if(thumb)thumb.style.transform='translateY('+Math.round(pct*30)+'px)';record(demo,'scroll-view')}
+  },true);
 
-     switch(slug){
-       case 'data-table':{
-         const head=t.closest('.nt-table-head span');
-         const row=t.closest('.nt-table>div:not(.nt-table-head)');
-         if(head){
-           const table=head.closest('.nt-table'),rows=[...table.children].slice(1);
-           const dir=table.dataset.sortDir==='asc'?'desc':'asc';table.dataset.sortDir=dir;
-           const col=[...head.parentElement.children].indexOf(head);
-           rows.sort((x,y)=>{
-             const A=x.children[col]?.textContent.replace(/[$,]/g,'').trim()||'';
-             const B=y.children[col]?.textContent.replace(/[$,]/g,'').trim()||'';
-             const an=Number(A),bn=Number(B),v=Number.isNaN(an)||Number.isNaN(bn)?A.localeCompare(B):an-bn;
-             return dir==='asc'?v:-v;
-           }).forEach(x=>table.appendChild(x));
-           [...head.parentElement.children].forEach(x=>x.classList.toggle('v37-sorted',x===head));
-           action='sort';
-         }else if(row){row.classList.toggle('v37-selected');action='select-row'}
-         break;
-       }
-       case 'bottom-navigation':{
-         const item=t.closest('.nt-tabs>*');if(item){choose(item.parentElement,':scope>*',item);item.parentElement.querySelectorAll(':scope>*').forEach(x=>x.classList.remove('on'));item.classList.add('on');action='navigate'}break;
-       }
-       case 'timeline':{const row=t.closest('.nt-timeline>div');if(row){choose(row.parentElement,':scope>div',row);action='timeline-select'}break}
-       case 'presence-indicator':{
-         const box=demo.querySelector('.nt-presence');box.classList.toggle('v37-offline');
-         const label=box.querySelector('small');if(label)label.textContent=box.classList.contains('v37-offline')?'Away':'Online';action='presence';break;
-       }
-       case 'message-bubble':{
-         const box=demo.querySelector('.nt-chat'),typing=box.querySelector('.typing');
-         box.classList.toggle('v37-replied');if(typing)typing.textContent=box.classList.contains('v37-replied')?'✓ Seen':'•••';action='message';break;
-       }
-       case 'steps':{
-         const step=t.closest('.nt-steps>span');if(step){const all=[...step.parentElement.querySelectorAll(':scope>span')],i=all.indexOf(step);all.forEach((x,n)=>{x.classList.toggle('done',n<i);x.classList.toggle('active',n===i)});action='step'}break;
-       }
-       case 'avatar-group':{demo.querySelector('.nt-avatars')?.classList.toggle('v37-expanded');action='expand-avatars';break}
-       case 'multi-select':{
-         const label=t.closest('.nt-multiselect label');if(label){label.classList.toggle('checked');const i=label.querySelector('i');if(i){i.classList.toggle('check');i.textContent=label.classList.contains('checked')?'✓':''}const box=label.closest('.nt-multiselect');const n=box.querySelectorAll('label.checked').length;const b=box.querySelector('.nt-selecttop b');if(b)b.textContent=n+' selected';action='multi-select'}break;
-       }
-       case 'scrollspy':{const x=t.closest('.docs aside span');if(x){choose(x.parentElement,'span',x);x.classList.add('on');action='scrollspy'}break}
-       case 'alert-callout-banner':{const x=t.closest('.notice-stack>*');if(x){choose(x.parentElement,':scope>*',x);action='alert-focus'}break}
-       case 'sign-in-form':{
-         const btn=t.closest('.signin button');if(btn){const form=btn.closest('.signin');form.classList.add('v37-success');btn.textContent=btn.classList.contains('primary')?'تم الدخول ✓':'تم الاتصال ✓';action='sign-in'}break;
-       }
-       case 'pagination':{
-         const btn=t.closest('.pagination button');if(btn){const box=btn.closest('.pagination'),buttons=[...box.querySelectorAll('button')],pages=buttons.slice(1,-1);let i=Math.max(0,pages.findIndex(x=>x.classList.contains('on')));if(btn===buttons[0])i=Math.max(0,i-1);else if(btn===buttons.at(-1))i=Math.min(pages.length-1,i+1);else i=pages.indexOf(btn);pages.forEach((x,n)=>x.classList.toggle('on',n===i));action='paginate'}break;
-       }
-       case 'date-picker':{const day=t.closest('.calendar .week i');if(day){day.classList.toggle('sel');action='pick-date'}break}
-       case 'parallax-scrolling':{demo.querySelector('.parallax-ref')?.classList.toggle('v37-shifted');action='parallax';break}
-       case 'carousel':{
-         const box=demo.querySelector('.carousel-ref'),buttons=[...box.querySelectorAll(':scope>button')],dots=[...box.querySelectorAll('.carousel-dots i')];
-         const btn=t.closest('.carousel-ref > button');const dot=t.closest('.carousel-dots i');let i=Number(box.dataset.index||0);
-         if(btn)i+=btn===buttons[0]?-1:1;else if(dot)i=dots.indexOf(dot);else i+=1;setCarousel(box,i);action='carousel';break;
-       }
-       case 'site-header-nav':{
-         const nav=t.closest('.site-ref nav span');const btn=t.closest('.site-ref header button');if(nav){choose(nav.parentElement,'span',nav);action='site-nav'}else if(btn){btn.classList.toggle('v37-selected');btn.textContent=btn.classList.contains('v37-selected')?'Signed in':'Sign in';action='site-signin'}break;
-       }
-       case 'card':{const btn=t.closest('.visual-card button'),link=t.closest('.story-link');if(btn){btn.textContent=btn.textContent.includes('✓')?'مشاركة':'تمت المشاركة ✓';action='share'}else if(link){link.classList.toggle('v37-selected');action='open-story'}break}
-       case 'resize-handle':{const box=demo.querySelector('.resize-box');box?.classList.toggle('v37-wide');action='resize';break}
-       case 'hamburger-menu':{const x=t.closest('.hamb,.drawer-demo .shade');if(x){demo.querySelector('.drawer-demo')?.classList.toggle('open');action='drawer'}break}
-       case 'bento-grid':{const cell=t.closest('.bento>div');if(cell){choose(cell.parentElement,':scope>div',cell);action='bento-select'}break}
-       case 'masonry':{const cell=t.closest('.masonry i');if(cell){choose(cell.parentElement,'i',cell);action='masonry-select'}break}
-       case 'easing':{demo.querySelector('.curve')?.classList.toggle('v37-reverse');action='easing';break}
-       case 'spring-animation':{const box=demo.querySelector('.spring');box?.classList.remove('v37-replay');void box?.offsetWidth;box?.classList.add('v37-replay');action='spring';break}
-       case 'text-scramble':{scrambleNow(demo.querySelector('.scramble b'));action='scramble';break}
-       case 'lightbox':{demo.querySelector('.lightbox')?.classList.toggle('open');action='lightbox';break}
-       case 'marquee':{demo.querySelector('.marquee')?.classList.toggle('v37-paused');action='marquee';break}
-       case 'form-field':{const input=t.closest('.field-demo input');if(input){input.focus();input.closest('label')?.classList.toggle('v37-selected');action='field-focus'}break}
-       case 'truncation':{demo.querySelector('.truncate')?.classList.toggle('v37-expanded');action='expand-text';break}
-       case 'drag-drop':{
-         const card=t.closest('.kanban span');if(card){const board=card.closest('.kanban'),cols=[...board.querySelectorAll(':scope>div')];(card.closest('div')===cols[0]?cols[1]:cols[0]).appendChild(card);board.classList.toggle('v37-moved');action='move-card'}break;
-       }
-       case 'divider-separator-rule':{demo.querySelector('.rules')?.classList.toggle('v37-emphasis');action='divider';break}
-       case 'progress-indicators':{
-         const box=demo.querySelector('.progresses'),p=box.querySelector('progress'),ring=box.querySelector('.ring b');let v=(Number(p?.value||65)+15)%115;if(v<20)v=20;if(p)p.value=v;if(ring)ring.textContent=v+'%';box.classList.add('v37-progressed');action='progress';break;
-       }
-       case 'toast':{demo.querySelector('.workspace')?.classList.toggle('v37-show-toast');action='toast';break}
-       case 'modal-drawer-sheet':{const x=t.closest('.triple>div');if(x){choose(x.parentElement,':scope>div',x);action='overlay-kind'}break}
-       case 'popover-dropdown-tooltip':{
-         const box=demo.querySelector('.overlay-kinds'),btn=t.closest('button');
-         if(btn){const buttons=[...box.querySelectorAll(':scope>button')],i=buttons.indexOf(btn);box.dataset.open=i===0?'popover':i===1?'dropdown':'tooltip';action=box.dataset.open}else{box.removeAttribute('data-open');action='overlay-close'}break;
-       }
-       case 'scrim':{demo.querySelector('.scrim-scene')?.classList.toggle('v37-open');action='scrim';break}
-       case 'skeleton-spinner':{demo.querySelector('.loading-pair')?.classList.toggle('v37-loaded');action='loading';break}
-       case 'combobox':{
-         const option=t.closest('.suggest>*');const input=demo.querySelector('.combo input');if(option&&input){input.value=option.textContent.trim();demo.querySelector('.combo')?.classList.add('v37-picked');action='combobox-pick'}else if(input){input.focus();demo.querySelector('.combo')?.classList.toggle('v37-open');action='combobox-open'}break;
-       }
-       case 'command-palette':{const cmd=t.closest('.cmd>div:last-child>span');if(cmd){choose(cmd.parentElement,'span',cmd);action='command'}else{demo.querySelector('.cmd')?.classList.toggle('v37-open');action='command-open'}break}
-       case 'accordion':{const summary=t.closest('.accordion summary');if(summary){ev.preventDefault();const d=summary.parentElement;d.open=!d.open;action='accordion'}break}
-       case 'tabs':{const btn=t.closest('.tabs-demo button');if(btn){const box=btn.closest('.tabs-demo');box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');const active=btn.textContent.trim()==='التحليلات';box.querySelector('section b').textContent=active?'مؤشرات التحليلات':'النشاط الأسبوعي';box.querySelector('section strong').textContent=active?'86%':'1,248';action='tab'}break}
-       case 'badge-chip-pill-tag':{const chip=t.closest('.chip-demo'),badge=t.closest('.badge-demo');if(chip){chip.classList.toggle('v37-muted');action='chip'}else if(badge){badge.textContent=String((Number(badge.textContent)||0)+1);action='badge'}break}
-       case 'breadcrumbs':{const x=t.closest('.crumb-demo span,.crumb-demo b');if(x){choose(x.parentElement,'span,b',x);action='breadcrumb'}break}
-       case 'sticky-fixed':{demo.querySelector('.scroll-box')?.classList.toggle('v37-shifted');action='sticky';break}
-       case 'focus-ring-web':{const btn=t.closest('.focusset button');if(btn){btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('focused'));btn.classList.add('focused');action='focus-ring'}break}
-       case 'empty-state':{const btn=t.closest('.empty button');if(btn){const box=btn.closest('.empty');box.classList.toggle('v37-created');box.querySelector('b').textContent=box.classList.contains('v37-created')?'تم إنشاء مشروع':'لا توجد مشاريع بعد';btn.textContent=box.classList.contains('v37-created')?'تراجع':'مشروع جديد';action='empty-state'}break}
-       case 'hover-card':{demo.querySelector('.hovercard')?.classList.toggle('v37-open');action='hover-card';break}
-       case 'switch-checkbox-radio':{
-         const sw=t.closest('.switch'),input=t.closest('input');if(sw){sw.classList.toggle('on');action='switch'}else if(input){if(input.type==='checkbox')input.checked=!input.checked;else input.checked=true;action=input.type}break;
-       }
-       case 'toggle-group':{const btn=t.closest('.toggle-group button');if(btn){choose(btn.parentElement,'button',btn);btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');action='toggle'}break}
-       case 'three-dots':{const btn=t.closest('.overflow-demo button');if(btn){const group=btn.closest('.overflow-demo'),slot=btn.parentElement;group.querySelectorAll(':scope>div').forEach(x=>x.classList.remove('v37-menuopen'));slot.classList.toggle('v37-menuopen');action='overflow-menu'}break}
-       case 'insertion-caret':{demo.querySelector('.mac-text')?.classList.toggle('v37-caret-moved');action='caret';break}
-       case 'pointer':{const box=demo.querySelector('.cursors'),icons=[...box.querySelectorAll(':scope>span')];let i=icons.findIndex(x=>x.classList.contains('cursor-live'));i=(i+1)%icons.length;icons.forEach((x,n)=>x.classList.toggle('cursor-live',n===i));action='pointer';break}
-       case 'alert-macos':{const btn=t.closest('.mac-alert button');if(btn){const box=btn.closest('.mac-alert');box.dataset.choice=btn.classList.contains('primary')?'confirm':'cancel';box.classList.toggle('v37-resolved');action='alert-choice'}break}
-       case 'slider-macos':{
-         const slider=t.closest('.slider')||demo.querySelector('.slider');if(slider){const r=slider.getBoundingClientRect(),pct=Math.max(0,Math.min(100,((ev.clientX-r.left)/Math.max(1,r.width))*100));slider.querySelector('span').style.width=pct+'%';slider.querySelector('i').style.left=pct+'%';action='slider'}break;
-       }
-       case 'color-well':{const b=t.closest('.colorwell');if(b){const colors=['#ff5f57','#6699cc','#5ccf7a','#f2c94c','#b76cff'];let i=Number(b.dataset.color||0)+1;b.dataset.color=String(i%colors.length);b.querySelector('i').style.background=colors[i%colors.length];action='color'}break}
-       case 'mac-window':{
-         const dot=t.closest('.traffic i');if(dot){const win=dot.closest('.mac-window'),i=[...dot.parentElement.children].indexOf(dot);win.classList.remove('v37-closed','v37-minimized','v37-zoomed');win.classList.add(i===0?'v37-closed':i===1?'v37-minimized':'v37-zoomed');action='window-control'}break;
-       }
-       case 'split-view':{demo.querySelector('.split')?.classList.toggle('v37-collapsed');action='split-view';break}
-       case 'scroll-view':{const sc=demo.querySelector('.scroller i');if(sc){sc.classList.toggle('v37-bottom');action='scroll'}break}
-       case 'search-field-macos':{
-         const input=demo.querySelector('.mac-search input'),clear=t.closest('.mac-search button'),recent=t.closest('.recent span');if(clear&&input){input.value='';input.focus();action='clear-search'}else if(recent&&input){input.value=recent.textContent.trim();action='recent-search'}else if(input){input.focus();demo.querySelector('.mac-search').classList.toggle('v37-open');action='search'}break;
-       }
-       case 'save-panel':{
-         const file=t.closest('.files span'),btn=t.closest('.savepanel footer button'),place=t.closest('.savepanel label button');if(file){choose(file.parentElement,'span',file);action='folder'}else if(place){place.classList.toggle('v37-selected');action='location'}else if(btn){const box=btn.closest('.savepanel');box.dataset.result=btn.classList.contains('primary')?'saved':'cancelled';btn.textContent=btn.classList.contains('primary')?'تم الحفظ ✓':'تم الإلغاء';action='save-panel'}break;
-       }
-       case 'token-field':{const tok=t.closest('.tokenfield>span');if(tok){tok.classList.toggle('v37-muted');action='token'}else{demo.querySelector('.tokenfield input')?.focus();action='token-input'}break}
-       case 'combo-button':{
-         const box=demo.querySelector('.combo-button'),btn=t.closest('.combo-button button'),item=t.closest('.combo-button menu span');if(item){box.querySelector('button').textContent=item.textContent.replace('…','');box.classList.remove('v37-open');action='combo-action'}else if(btn){if(btn===box.querySelectorAll('button')[1])box.classList.toggle('v37-open');else btn.textContent=btn.textContent.includes('✓')?'حفظ':'تم الحفظ ✓';action='combo-button'}break;
-       }
-       case 'level-indicator':{
-         const stars=t.closest('.stars'),cap=t.closest('.capacity'),dots=t.closest('.dotslevel');if(stars){stars.textContent=stars.textContent==='★★★★★'?'★★★☆☆':'★★★★★';action='rating'}else if(cap){const i=cap.querySelector('i');i.style.width=i.style.width==='90%'?'42%':'90%';action='capacity'}else if(dots){dots.textContent=dots.textContent==='●●●●●'?'●●○○○':'●●●●●';action='level'}break;
-       }
-       case 'column-view':{const box=demo.querySelector('.columns');box.dataset.column=String((Number(box.dataset.column||0)+1)%3);action='column-view';break}
-       case 'outline-view':{const row=t.closest('.outline span');if(row){row.classList.toggle('v37-selected');if(row.textContent.includes('▾'))row.textContent=row.textContent.replace('▾','▸');else if(row.textContent.includes('▸'))row.textContent=row.textContent.replace('▸','▾');action='outline'}break}
-       case 'menu-bar':{const box=demo.querySelector('.menubar'),item=t.closest('.menubar>span');if(item){box.classList.toggle('v37-open');choose(box,':scope>span',item);action='menu-bar'}break}
-       case 'context-menu':{const box=demo.querySelector('.fileitem'),item=t.closest('.context span');box.classList.add('v37-open');if(item){choose(item.parentElement,'span',item);action='context-action'}else action='context-menu';break}
-       case 'disclosure-triangle':{
-         const row=t.closest('.finder-list>span:not(.indent)');if(row){const open=row.textContent.includes('▾');row.textContent=row.textContent.replace(open?'▾':'▸',open?'▸':'▾');demo.querySelector('.finder-list')?.classList.toggle('v37-collapsed',open);action='disclosure'}break;
-       }
-       case 'dock-badge':{
-         const icon=t.closest('.dockicon');if(icon){choose(icon.parentElement,'.dockicon',icon);const badge=icon.querySelector('span');if(badge){let n=Number(badge.textContent)||0;n=(n+1)%6;badge.textContent=n||'1'}action='dock'}break;
-       }
-       case 'focus-ring-macos':{const btn=t.closest('.mac-focus button');if(btn){btn.classList.toggle('macfocused');action='mac-focus'}else{demo.querySelector('.mac-focus input')?.focus();action='mac-input'}break}
-       case 'inspector':{const box=demo.querySelector('.inspector-scene');box?.classList.toggle('v37-inspecting');action='inspector';break}
-       case 'panel':{demo.querySelector('.floating-panel')?.classList.toggle('v37-focused');action='panel';break}
-       case 'popover-macos':{const x=t.closest('.mac-popover > button,.mac-popover .bubble button');if(x){demo.querySelector('.mac-popover')?.classList.toggle('v37-open');action='popover'}break}
-       case 'popup-pulldown-combobox':{const x=t.closest('.mac-pickers label');if(x){choose(x.parentElement,'label',x);x.classList.toggle('v37-open');action='picker'}break}
-       case 'segmented-control':{const btn=t.closest('.segmented button');if(btn){btn.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');action='segment'}break}
-       case 'sheet-macos':{const btn=t.closest('.attached-sheet button');if(btn){const sheet=btn.closest('.attached-sheet');sheet.classList.toggle('v37-resolved');btn.textContent=btn.textContent.includes('✓')?btn.textContent.replace(' ✓',''):btn.textContent+' ✓';action='sheet'}break}
-       case 'sidebar-macos':{const row=t.closest('.source-list aside span');if(row){row.parentElement.querySelectorAll('span').forEach(x=>x.classList.remove('on'));row.classList.add('on');const main=row.closest('.source-list').querySelector('main');if(main)main.textContent=row.textContent.trim();action='sidebar'}break}
-       case 'stepper-macos':{
-         const btn=t.closest('.stepper button'),input=demo.querySelector('.stepper input');if(btn&&input){let n=Number(input.value)||0;n+=btn===btn.parentElement.querySelector('button')?1:-1;input.value=String(Math.max(0,n));action='stepper'}break;
-       }
-       case 'toolbar-macos':{const btn=t.closest('.unified nav button');if(btn){choose(btn.parentElement,'button',btn);action='toolbar'}break}
-       case 'traffic-lights':{
-         const dot=t.closest('.traffic-large i');if(dot){const box=dot.closest('.traffic-large'),i=[...dot.parentElement.children].indexOf(dot);box.dataset.windowAction=['close','minimize','zoom'][i]||'zoom';action='traffic-light'}break;
-       }
-       case 'vibrancy':{demo.querySelector('.vibrant')?.classList.toggle('v37-strong');action='vibrancy';break}
-       case 'menu-bar-extra':{const box=demo.querySelector('.menubar'),item=t.closest('.menubar>span');if(item){box.classList.toggle('v37-status-open');choose(box,':scope>span',item);action='menu-bar-extra'}break}
-       default: action='press';
-     }
+  root.addEventListener('wheel',ev=>{const par=ev.target.closest?.('.demo-parallax-scrolling .parallax-ref');if(par){ev.preventDefault();const v=Math.max(-35,Math.min(35,Number(par.dataset.offset||0)+Math.sign(ev.deltaY)*5));par.dataset.offset=String(v);par.style.setProperty('--parallax',v);record(par.closest('.ui-demo'),'parallax-scroll')}},{capture:true,passive:false});
 
-     // Every demo gets tactile motion in addition to its real UI state change.
-     mark(demo,action);
-   },true);
+  let drag=null;
+  root.addEventListener('pointerdown',ev=>{
+   const grip=ev.target.closest?.('.demo-resize-handle .resize-grip'),slider=ev.target.closest?.('.demo-slider-macos .slider'),splitter=ev.target.closest?.('.demo-split-view .splitter'),title=ev.target.closest?.('.demo-panel .floating-panel .titlebar'),caret=ev.target.closest?.('.demo-insertion-caret .mac-text');
+   if(grip){ev.preventDefault();const box=grip.closest('.resize-box'),r=box.getBoundingClientRect();drag={type:'resize',demo:grip.closest('.ui-demo'),box,startX:ev.clientX,startY:ev.clientY,w:r.width,h:r.height};grip.setPointerCapture?.(ev.pointerId)}
+   else if(slider){ev.preventDefault();drag={type:'slider',demo:slider.closest('.ui-demo'),box:slider};slider.setPointerCapture?.(ev.pointerId);setSlider(slider,ev.clientX)}
+   else if(splitter){ev.preventDefault();const split=splitter.closest('.split'),r=split.getBoundingClientRect();drag={type:'split',demo:splitter.closest('.ui-demo'),box:split,left:r.left,width:r.width};splitter.setPointerCapture?.(ev.pointerId)}
+   else if(title){ev.preventDefault();const panel=title.closest('.floating-panel');drag={type:'panel',demo:title.closest('.ui-demo'),box:panel,startX:ev.clientX,startY:ev.clientY,x:Number(panel.dataset.x||0),y:Number(panel.dataset.y||0)};title.setPointerCapture?.(ev.pointerId)}
+   else if(caret){const r=caret.getBoundingClientRect(),x=Math.max(0,Math.min(r.width,ev.clientX-r.left)),c=caret.querySelector('.caret');if(c){c.style.left=x+'px';c.style.right='auto'}record(caret.closest('.ui-demo'),'caret-place')}
+  },true);
+  root.addEventListener('pointermove',ev=>{if(!drag)return;if(drag.type==='resize'){drag.box.style.width=Math.max(120,drag.w+ev.clientX-drag.startX)+'px';drag.box.style.minHeight=Math.max(54,drag.h+ev.clientY-drag.startY)+'px'}else if(drag.type==='slider')setSlider(drag.box,ev.clientX);else if(drag.type==='split'){const pct=Math.max(22,Math.min(70,(ev.clientX-drag.left)/drag.width*100)),aside=drag.box.querySelector('aside'),main=drag.box.querySelector('main');aside.style.width=pct+'%';main.style.width=(100-pct)+'%'}else if(drag.type==='panel'){const x=drag.x+ev.clientX-drag.startX,y=drag.y+ev.clientY-drag.startY;drag.box.dataset.x=String(x);drag.box.dataset.y=String(y);drag.box.style.transform='translate('+x+'px,'+y+'px)'}},true);
+  const finishDrag=()=>{if(drag){record(drag.demo,drag.type+'-drag');drag=null}};
+  root.addEventListener('pointerup',finishDrag,true);root.addEventListener('pointercancel',finishDrag,true);
 
-   root.addEventListener('keydown',ev=>{
-     const demo=ev.target.closest('.ui-demo');if(!demo||!root.contains(demo))return;
-     if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();demo.click()}
-   });
+  root.addEventListener('dragstart',ev=>{const card=ev.target.closest?.('.demo-drag-drop [draggable="true"]');if(card){card.classList.add('v39-dragging');ev.dataTransfer?.setData('text/plain',card.textContent);window.__demoDragCard=card}},true);
+  root.addEventListener('dragover',ev=>{const zone=ev.target.closest?.('.demo-drag-drop [data-dropzone]');if(zone){ev.preventDefault();zone.classList.add('v39-dragover')}},true);
+  root.addEventListener('dragleave',ev=>{ev.target.closest?.('[data-dropzone]')?.classList.remove('v39-dragover')},true);
+  root.addEventListener('drop',ev=>{const zone=ev.target.closest?.('.demo-drag-drop [data-dropzone]'),card=window.__demoDragCard;if(zone&&card){ev.preventDefault();zone.appendChild(card);zone.classList.remove('v39-dragover');card.classList.remove('v39-dragging');record(zone.closest('.ui-demo'),'drop');window.__demoDragCard=null}},true);
+  root.addEventListener('dragend',()=>{window.__demoDragCard?.classList.remove('v39-dragging');window.__demoDragCard=null},true);
+
+  root.addEventListener('input',ev=>{const demo=ev.target.closest?.('.demo-inspector');if(!demo)return;const canvas=demo.querySelector('.canvas');if(ev.target.type==='color')canvas.style.background=ev.target.value;else if(ev.target.type==='checkbox')canvas.style.boxShadow=ev.target.checked?'0 8px 18px rgba(0,0,0,.22)':'none';else canvas.style.borderWidth=Math.max(0,parseFloat(ev.target.value)||0)+'px';record(demo,'inspector-change')},true);
+
+  root.addEventListener('keydown',ev=>{
+   const slider=ev.target.closest?.('.demo-slider-macos .slider');
+   if(slider&&(ev.key==='ArrowLeft'||ev.key==='ArrowRight')){ev.preventDefault();let v=Number(slider.getAttribute('aria-valuenow')||0)+(ev.key==='ArrowRight'?2:-2);v=Math.max(0,Math.min(100,v));const r=slider.getBoundingClientRect();setSlider(slider,r.left+r.width*v/100);record(slider.closest('.ui-demo'),'slider-key')}
+   if(ev.key==='Escape'){root.querySelectorAll('.v39-open').forEach(x=>x.classList.remove('v39-open'));root.querySelectorAll('.overlay-kinds[data-open]').forEach(x=>x.removeAttribute('data-open'))}
+  },true);
  }
 
  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-
- demos.forEach(demo=>{
-   const slug=demo.dataset.demoSlug;
-   if(demo.dataset.v37MotionBound)return;
-   demo.dataset.v37MotionBound='1';
-   if(slug==='text-scramble'){
-     const el=demo.querySelector('.scramble b');
-     if(el)setInterval(()=>scrambleNow(el),3600);
-   }
-   if(slug==='carousel'){
-     const box=demo.querySelector('.carousel-ref');
-     if(box)setInterval(()=>setCarousel(box,Number(box.dataset.index||0)+1),4200);
-   }
-   if(slug==='pointer'){
-     const box=demo.querySelector('.cursors'),icons=[...box.querySelectorAll(':scope>span')];
-     let i=0;if(icons.length)setInterval(()=>{icons.forEach(x=>x.classList.remove('cursor-live'));icons[i=(i+1)%icons.length].classList.add('cursor-live')},1700);
-   }
- });
+ demos.forEach(demo=>{const slug=demo.dataset.demoSlug;if(demo.dataset.autoBound)return;demo.dataset.autoBound='1';if(slug==='text-scramble'){const el=demo.querySelector('.scramble b');if(el)setInterval(()=>scrambleNow(el),3600)}if(slug==='carousel'){const box=demo.querySelector('.carousel-ref');if(box)setInterval(()=>setCarousel(box,Number(box.dataset.index||0)+1),4200)}});
 }
 
 function bindHeroMotion(){
