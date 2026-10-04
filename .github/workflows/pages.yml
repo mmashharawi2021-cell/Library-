@@ -1,4 +1,4 @@
-name: Deploy V36 to GitHub Pages
+name: Deploy V37 Interactive Library
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Build static surface
         run: node scripts/build-static.mjs
 
-      - name: Validate V36 reference model
+      - name: Validate V37 reference + interaction model
         run: |
           node - <<'NODE'
           const fs=require('fs');
@@ -51,6 +51,10 @@ jobs:
           assert(d.comparisons.length===baseline.counts.comparisons,'Expected 18 comparisons');
           assert(d.translations.length===baseline.counts.translations,'Expected 63 translations');
           assert((demoBlock.match(/case '/g)||[]).length===81,'Expected 81 explicit demo cases');
+          assert(app.includes('data-demo-slug'),'V37 demos must expose data-demo-slug');
+          assert(app.includes('function bindDemos('),'V37 interaction engine missing');
+          assert(app.includes('v37Interactions'),'V37 interaction state counter missing');
+          assert(app.includes("case 'data-table'")&&app.includes("case 'slider-macos'")&&app.includes("case 'menu-bar-extra'"),'V37 functional handlers missing');
 
           const slugs=new Set(d.entries.map(e=>e.slug));
           for(const e of d.entries){
@@ -83,7 +87,7 @@ jobs:
             assert(fs.existsSync(`dist/element/${e.slug}/index.html`),'Missing legacy entry redirect: '+e.slug);
           }
 
-          console.log('V36 model validation passed', {
+          console.log('V37 model validation passed', {
             entries:d.entries.length,
             styles:d.styles.length,
             comparisons:d.comparisons.length,
@@ -105,7 +109,7 @@ jobs:
       - name: Install live QA browser
         run: npm install --no-save puppeteer-core@24
 
-      - name: V36 final live QA
+      - name: V36 visual/reference regression QA
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
@@ -259,11 +263,176 @@ jobs:
           JS
           node v36-qa.mjs
 
-      - name: Upload V36 delivery screenshots
+      - name: V37 interaction QA — 81 of 81
+        env:
+          SITE: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          cat > v37-interaction-qa.mjs <<'JS'
+          import puppeteer from 'puppeteer-core';
+
+          const browser=await puppeteer.launch({
+            headless:true,
+            executablePath:'/usr/bin/google-chrome',
+            args:['--no-sandbox']
+          });
+          const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
+          const site=process.env.SITE || 'https://mmashharawi2021-cell.github.io/Library-/';
+
+          const page=await browser.newPage();
+          await page.setViewport({width:1440,height:1200,deviceScaleFactor:1});
+          const errors=[];
+          page.on('pageerror',e=>errors.push(String(e)));
+          await page.goto(site,{waitUntil:'networkidle0',timeout:60000});
+          await page.waitForFunction(()=>document.querySelectorAll('#cards .ui-demo').length===81);
+
+          // Every one of the 81 demos must react to a press without following the card link.
+          const all=await page.evaluate(async()=>{
+            const before=location.href;
+            const demos=[...document.querySelectorAll('#cards .ui-demo')];
+            const slugs=demos.map(x=>x.dataset.demoSlug);
+            for(const demo of demos){
+              demo.click();
+              await new Promise(r=>setTimeout(r,4));
+            }
+            return {
+              count:demos.length,
+              unique:new Set(slugs).size,
+              interacted:demos.filter(x=>Number(x.dataset.v37Interactions||0)>=1).length,
+              states:demos.filter(x=>x.dataset.v37State&&x.dataset.v37State!=='idle').length,
+              modes:new Set(demos.map(x=>x.dataset.v37Mode)).size,
+              stayed:location.href===before
+            };
+          });
+          assert(all.count===81&&all.unique===81,'Expected 81 uniquely identified demos');
+          assert(all.interacted===81&&all.states===81,'Every demo must record an interaction');
+          assert(all.modes>=6,'Expected multiple distinct tactile motion modes');
+          assert(all.stayed,'Clicking a preview must not navigate away from the catalog');
+
+          // Functional behaviors — Web.
+          const web=await page.evaluate(()=>{
+            const out={};
+            const q=(slug,sel)=>document.querySelector('.demo-'+slug+' '+sel);
+            const click=el=>el?.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,clientX:50,clientY:20}));
+
+            const tableHead=q('data-table','.nt-table-head span:last-child');
+            click(tableHead);
+            out.table=tableHead?.closest('.nt-table')?.dataset.sortDir||'';
+
+            const p2=[...document.querySelectorAll('.demo-pagination .pagination button')].find(x=>x.textContent.trim()==='2');
+            click(p2); out.pagination=p2?.classList.contains('on');
+
+            const tab=[...document.querySelectorAll('.demo-tabs .tabs-demo button')][1];
+            click(tab);out.tab=tab?.classList.contains('on');
+
+            const hamburger=q('hamburger-menu','.hamb');
+            click(hamburger);out.drawer=q('hamburger-menu','.drawer-demo')?.classList.contains('open');
+
+            const carousel=q('carousel','.carousel-ref');
+            const next=[...carousel.querySelectorAll(':scope>button')][1];
+            const before=carousel.dataset.index||'0';click(next);
+            out.carousel=(carousel.dataset.index||'0')!==before;
+
+            const sw=q('switch-checkbox-radio','.switch');
+            const swBefore=sw?.classList.contains('on');click(sw);
+            out.switch=sw?.classList.contains('on')!==swBefore;
+
+            click(document.querySelector('.demo-toast'));
+            out.toast=q('toast','.workspace')?.classList.contains('v37-show-toast');
+
+            const acc=[...document.querySelectorAll('.demo-accordion details')][1];
+            click(acc.querySelector('summary'));out.accordion=acc.open;
+
+            return out;
+          });
+          for(const [k,v] of Object.entries(web))assert(v,'Web interaction failed: '+k);
+
+          // Functional behaviors — macOS.
+          const mac=await page.evaluate(()=>{
+            const out={};
+            const q=(slug,sel)=>document.querySelector('.demo-'+slug+' '+sel);
+            const click=(el,x=40)=>el?.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,clientX:x,clientY:20}));
+
+            const slider=q('slider-macos','.slider');
+            const fill=slider?.querySelector('span');
+            const beforeFill=fill?.style.width||'';
+            const r=slider?.getBoundingClientRect();
+            click(slider,(r?.left||0)+(r?.width||100)*.22);
+            out.slider=(fill?.style.width||'')!==beforeFill;
+
+            const traffic=q('mac-window','.traffic i:first-child');
+            click(traffic);out.window=q('mac-window','.mac-window')?.classList.contains('v37-closed');
+
+            const save=q('save-panel','.savepanel footer .primary');
+            click(save);out.save=save?.closest('.savepanel')?.dataset.result==='saved';
+
+            const pop=q('popover-macos','.mac-popover > button');
+            click(pop);out.popover=q('popover-macos','.mac-popover')?.classList.contains('v37-open');
+
+            const seg=[...document.querySelectorAll('.demo-segmented-control .segmented button')][0];
+            click(seg);out.segment=seg?.classList.contains('on');
+
+            const stepper=[...document.querySelectorAll('.demo-stepper-macos .stepper button')][0];
+            const input=q('stepper-macos','.stepper input'),n=Number(input?.value||0);
+            click(stepper);out.stepper=Number(input?.value||0)===n+1;
+
+            return out;
+          });
+          for(const [k,v] of Object.entries(mac))assert(v,'macOS interaction failed: '+k);
+
+          // Keyboard: focused preview reacts to Enter.
+          await page.focus('.demo-data-table');
+          const keyboardBefore=await page.$eval('.demo-data-table',x=>Number(x.dataset.v37Interactions||0));
+          await page.keyboard.press('Enter');
+          const keyboardAfter=await page.$eval('.demo-data-table',x=>Number(x.dataset.v37Interactions||0));
+          assert(keyboardAfter>keyboardBefore,'Keyboard interaction failed');
+
+          assert(errors.length===0,'V37 desktop page errors: '+errors.join(' | '));
+          await page.screenshot({path:'qa-screenshots/v37-interactive-catalog-1440.png',fullPage:true});
+          await page.close();
+
+          // Touch: previews remain interactive and do not navigate on a phone viewport.
+          const touch=await browser.newPage();
+          await touch.setViewport({width:393,height:900,deviceScaleFactor:1,isMobile:true,hasTouch:true});
+          await touch.goto(site,{waitUntil:'networkidle0',timeout:60000});
+          await touch.waitForSelector('.demo-hamburger-menu .hamb');
+          const urlBefore=touch.url();
+          const box=await touch.$('.demo-hamburger-menu .hamb');
+          const rect=await box.boundingBox();
+          await touch.touchscreen.tap(rect.x+rect.width/2,rect.y+rect.height/2);
+          const touchResult=await touch.evaluate(()=>({
+            open:document.querySelector('.demo-hamburger-menu .drawer-demo')?.classList.contains('open'),
+            count:Number(document.querySelector('.demo-hamburger-menu')?.dataset.v37Interactions||0),
+            href:location.href
+          }));
+          assert(touchResult.open&&touchResult.count>=1,'Touch interaction failed');
+          assert(touchResult.href===urlBefore,'Touching a preview navigated away');
+          await touch.screenshot({path:'qa-screenshots/v37-touch-393.png',fullPage:true});
+          await touch.close();
+
+          // Detail-page specimen uses the same engine.
+          const detail=await browser.newPage();
+          await detail.setViewport({width:1024,height:900,deviceScaleFactor:1});
+          await detail.goto(site+'web/tabs/',{waitUntil:'networkidle0',timeout:60000});
+          await detail.waitForSelector('.specimen .demo-tabs');
+          const detailBefore=await detail.$eval('.specimen .demo-tabs',x=>Number(x.dataset.v37Interactions||0));
+          await detail.click('.specimen .tabs-demo button:nth-child(2)');
+          const detailState=await detail.evaluate(()=>({
+            count:Number(document.querySelector('.specimen .demo-tabs')?.dataset.v37Interactions||0),
+            active:document.querySelector('.specimen .tabs-demo button:nth-child(2)')?.classList.contains('on')
+          }));
+          assert(detailState.count>detailBefore&&detailState.active,'Detail specimen interaction failed');
+          await detail.close();
+
+          console.log('LIVE V37 INTERACTION QA PASSED — 81/81 demos react; Web, macOS, keyboard, touch and detail interactions validated.');
+          await browser.close();
+          JS
+          node v37-interaction-qa.mjs
+
+      - name: Upload V37 delivery screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v36-final-delivery
+          name: v37-final-delivery
           path: qa-screenshots
           if-no-files-found: warn
           retention-days: 30
