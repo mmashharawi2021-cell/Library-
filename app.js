@@ -463,17 +463,14 @@ function styleDetail(slug){
  if(!s)return notFound();
  setMeta(`${s.ar} — ${s.en}`,s.desc,`styles/${s.slug}/`);
  const confused=D.styles.find(x=>x.en===s.confused);
- const idx=D.styles.indexOf(s);
- const related=[confused,...Array.from({length:5},(_,i)=>D.styles[(idx+i+1)%D.styles.length])]
-   .filter((x,i,a)=>x&&x!==s&&a.indexOf(x)===i).slice(0,4);
+ const related=(s.relatedStyles||[]).map(sl=>D.styles.find(x=>x.slug===sl)).filter(Boolean).slice(0,5);
+ const secondary=related.filter(x=>!confused||x.slug!==confused.slug).slice(0,2);
 
  app.innerHTML=nav('styles')+`<main id="main" class="shell style-detail-shell">
    <article class="style-detail">
      <nav class="style-crumbs"><a href="${BASE}styles/">الأنماط</a><span>/</span><span dir="ltr">${esc(s.en)}</span></nav>
 
-     <section class="style-detail-visual">
-       ${styleSpecimen(s,true)}
-     </section>
+     <section class="style-detail-visual">${styleSpecimen(s,true)}</section>
 
      <header class="style-detail-head">
        <h1>${esc(s.ar)}</h1>
@@ -485,84 +482,29 @@ function styleDetail(slug){
        <p class="style-scope"><b>النطاق:</b> ${esc(s.scope)}</p>
      </header>
 
-     <section class="style-section style-called">
-       <h2>إذا كنت تسميه…</h2>
-       <div class="style-called-list">${(s.called||[]).map(x=>`<span>“${esc(x)}”</span>`).join('')}</div>
-       <p>…فأنت تقصد <b>${esc(s.ar)}</b> <span dir="ltr">(${esc(s.en)})</span>.</p>
-     </section>
+     <section class="style-section style-called"><h2>إذا كنت تسميه…</h2><div class="style-called-list">${(s.called||[]).map(x=>`<span>“${esc(x)}”</span>`).join('')}</div><p>…فأنت تقصد <b>${esc(s.ar)}</b> <span dir="ltr">(${esc(s.en)})</span>.</p></section>
 
-     <section class="style-section">
-       <h2>ما الذي يجعله هذا الأسلوب؟ — الإشارات المحدِّدة</h2>
-       <div class="style-signal-list">
-         ${(s.signalDetails||[]).map((x,i)=>`<div class="style-signal">
-           <i>${i+1}</i>
-           <div><small>${esc(x.group)}</small><b>${esc(x.title)}</b><p>${esc(x.desc)}</p></div>
-         </div>`).join('')}
-       </div>
-     </section>
+     <section class="style-section"><h2>ما الذي يجعله هذا الأسلوب؟ — الإشارات المحدِّدة</h2><div class="style-signal-list">${(s.signalDetails||[]).map((x,i)=>`<div class="style-signal"><i>${i+1}</i><div><small>${esc(x.group)}</small><b>${esc(x.title)}</b><p>${esc(x.desc)}</p></div></div>`).join('')}</div></section>
 
-     <section class="style-section">
-       <h2>Style Brief — جاهز لوكيل البرمجة</h2>
-       <div class="style-brief prompt">
-         <button class="copybtn" type="button" data-copy="${encodeURIComponent(s.brief)}">نسخ</button>
-         <p>${esc(s.brief)}</p>
-       </div>
-     </section>
+     <section class="style-section"><h2>Style Brief — جاهز لوكيل البرمجة</h2><div class="style-brief prompt"><button class="copybtn" type="button" data-copy="${encodeURIComponent(s.brief)}">نسخ</button><p>${esc(s.brief)}</p></div></section>
 
      ${confused?`<section class="style-section">
        <h2>غالبًا يختلط مع <a href="${BASE}styles/${confused.slug}/">${esc(confused.ar)}</a></h2>
-       <p class="style-section-intro">نفس نوع الواجهة، لكن بأسلوبين مختلفين. الفرق في المادة والضوء والهندسة، لا في اللون وحده.</p>
-       <div class="style-versus">
-         <a class="style-vs-card" href="${BASE}styles/${s.slug}/">
-           <div>${styleSpecimen(s)}</div><b>${esc(s.ar)}</b><span dir="ltr">${esc(s.en)}</span>
-         </a>
-         <a class="style-vs-card" href="${BASE}styles/${confused.slug}/">
-           <div>${styleSpecimen(confused)}</div><b>${esc(confused.ar)}</b><span dir="ltr">${esc(confused.en)}</span>
-         </a>
-       </div>
-       <div class="style-vs-copy">
-         <p><b>${esc(s.ar)}:</b> ${esc(s.signals.slice(0,2).join('، '))}.</p>
-         <p><b>${esc(confused.ar)}:</b> ${esc(confused.signals.slice(0,2).join('، '))}.</p>
-       </div>
+       <p class="style-section-intro">نفس الواجهة تقريبًا، لكن المادة والضوء والهندسة تكشف الأسلوب الحقيقي.</p>
+       <div class="style-versus"><a class="style-vs-card" href="${BASE}styles/${s.slug}/"><div>${styleSpecimen(s)}</div><b>${esc(s.ar)}</b><span dir="ltr">${esc(s.en)}</span></a><a class="style-vs-card" href="${BASE}styles/${confused.slug}/"><div>${styleSpecimen(confused)}</div><b>${esc(confused.ar)}</b><span dir="ltr">${esc(confused.en)}</span></a></div>
+       <div class="style-vs-copy"><p><b>${esc(s.ar)}:</b> ${esc(s.signals.slice(0,2).join('، '))}.</p><p><b>${esc(confused.ar)}:</b> ${esc(confused.signals.slice(0,2).join('، '))}.</p></div>
+       ${secondary.length?`<div class="style-secondary-confusions">${secondary.map(x=>`<a href="${BASE}styles/${x.slug}/">مقارنة أيضًا مع ${esc(x.ar)} →</a>`).join('')}</div>`:''}
      </section>`:''}
 
-     <section class="style-section">
-       <h2>Full Style DNA</h2>
-       <div class="style-dna">
-         ${(s.signalDetails||[]).map(x=>`<div class="dna-row"><span>${esc(x.group)}</span><em>محدِّد</em><b>${esc(x.title)}</b><p>${esc(x.desc)}</p></div>`).join('')}
-         <div class="dna-row"><span>إشارة داعمة</span><em>داعم</em><b>ما الذي يعزز الأسلوب؟</b><p>${esc(s.supporting)}</p></div>
-         <div class="dna-row avoid"><span>تجنّب</span><em>تجنّب</em><b>ما الذي يخرجه من هويته؟</b><p>${esc(s.avoid)}</p></div>
-       </div>
-     </section>
+     <section class="style-section"><h2>Full Style DNA</h2><div class="style-dna">${(s.dna||[]).map(x=>`<div class="dna-row"><span>${esc(x.axis)}</span><em>${esc(x.state)}</em><b>${esc(x.title)}</b><p>${esc(x.desc)}</p></div>`).join('')}</div></section>
 
-     <section class="style-section">
-       <h2>في الكود — نقاط بداية اختيارية</h2>
-       <p class="style-section-intro">الـBrief أعلاه محايد للأطر؛ هذه مقابض عملية عندما تناسب التقنية المستخدمة.</p>
-       <div class="tablewrap">
-         <table class="style-code-table">
-           <tbody>${(s.codeRows||[]).map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody>
-         </table>
-       </div>
-     </section>
+     <section class="style-section"><h2>في الكود — نقاط بداية اختيارية</h2><p class="style-section-intro">الـBrief محايد للأطر؛ هذه مقابض عملية عندما تناسب التقنية المستخدمة.</p><div class="tablewrap"><table class="style-code-table"><tbody>${(s.codeRows||[]).map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody></table></div></section>
 
-     <section class="style-section">
-       <h2>الإتاحة وسوء الاستخدام</h2>
-       <ul class="style-access">${(s.accessibility||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
-     </section>
+     <section class="style-section"><h2>الإتاحة وسوء الاستخدام</h2><ul class="style-access">${(s.accessibility||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
 
-     <section class="style-section">
-       <h2>الأصل والسياق</h2>
-       <p class="style-origin-long">${esc(s.origin)}</p>
-       <div class="style-source-links"><a href="https://www.nngroup.com/articles/" target="_blank" rel="noopener">Nielsen Norman Group ↗</a><a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="noopener">Apple HIG ↗</a></div>
-     </section>
+     <section class="style-section"><h2>الأصل والسياق</h2><p class="style-origin-long">${esc(s.origin)}</p><div class="style-source-links">${(s.sources||[]).map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(n)} ↗</a>`).join('')}</div></section>
 
-     <section class="style-section">
-       <h2>راجع أيضًا</h2>
-       <div class="style-related">${related.map(r=>`<a href="${BASE}styles/${r.slug}/">
-         <div>${styleSpecimen(r)}</div><b>${esc(r.ar)}</b><span dir="ltr">${esc(r.en)}</span>
-       </a>`).join('')}</div>
-     </section>
-
+     <section class="style-section"><h2>راجع أيضًا</h2><div class="style-related">${related.map(r=>`<a href="${BASE}styles/${r.slug}/"><div>${styleSpecimen(r)}</div><b>${esc(r.ar)}</b><span dir="ltr">${esc(r.en)}</span></a>`).join('')}</div></section>
    </article>
  </main>`+footer();
  bindCopy();bindChrome();bindGlossary();
@@ -647,6 +589,7 @@ const comparisonRules={
  "popover-vs-tooltip": [
   "وجود أزرار أو حقول داخل الطبقة يرجّح Popover.",
   "Tooltip شرح قصير غير تفاعلي.",
+  "Tooltip يرتبط عادةً بـ hover أو focus، بينما Popover قد يفتح بالنقر ويبقى حتى الإغلاق.",
   "إذا احتاج المستخدم لاتخاذ إجراء داخل الطبقة، لا تسمّها Tooltip."
  ],
  "modal-vs-popover": [
