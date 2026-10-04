@@ -5,6 +5,7 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
+const RELEASE='V38'; document.documentElement.dataset.release=RELEASE;
 const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
 const state={q:initialQuery,cat:'all',sort:'newest'};
 const norm=s=>(s||'').toLowerCase().normalize('NFD')
@@ -523,7 +524,7 @@ function home(platformOverride){
  <div class="search-examples" aria-label="أمثلة لوصف العناصر">${examples.map(x=>`<span>“${esc(x)}”</span>`).join('')}</div>
  <label class="hero-search"><input id="search" autocomplete="off" inputmode="search" aria-label="صف عنصر الواجهة" placeholder="صف عنصر الواجهة الذي تفكر فيه" value="${esc(state.q)}"></label>
  <div id="searchEmpty" class="search-empty" hidden><b>لا شيء يطابق هذا الوصف</b><p>جرّب وصف شكله أو مكانه — مثل «النقاط أسفل عرض الشرائح» أو «الشريط الذي يبقى ظاهرًا أثناء التمرير».</p></div>
- <div class="hero-help"><span>لا تعرف اسم المظهر أيضًا؟ <a href="${BASE}styles/">جرّب أطلس الأنماط</a></span><span>اضغط مرتين على أي كلمة لعرض تعريف عربي سريع.</span></div>
+ <div class="hero-help"><span>لا تعرف اسم المظهر أيضًا؟ <a href="${BASE}styles/">جرّب Name That Vibe</a></span><span>اضغط مرتين على أي كلمة لعرض تعريف عربي سريع.</span></div>
  </section>
  <section class="catalog shell"><div class="catalog-toolbar"><div class="filter-tabs"><button class="${state.cat==='all'?'active':''}" data-cat="all">الكل <span>${D.entries.length}</span></button><button class="${state.cat==='macos'?'active':''}" data-cat="macos">macOS <span>${D.entries.filter(x=>x.category==='macos').length}</span></button><button class="${state.cat==='web'?'active':''}" data-cat="web">Web <span>${D.entries.filter(x=>x.category==='web').length}</span></button></div><div class="sort-tabs"><button class="${state.sort==='newest'?'active':''}" data-sort="newest">الأحدث</button><button class="${state.sort==='popular'?'active':''}" data-sort="popular">الأكثر شيوعًا</button></div></div><div id="cards" class="entries-grid"></div></section>
  <section class="guides shell"><div class="sectionlabel">الأدلة — القرارات التي تسبق الأسماء</div><div class="guidecards"><a href="${BASE}appkit-vs-swiftui/"><b>AppKit أم SwiftUI؟</b><span>العنصر نفسه في Mac قد يملك اسمين حقيقيين — أيهما تستخدم في الـPrompt؟</span></a><a href="${BASE}swift-vs-electron/"><b>Swift أم Electron؟</b><span>تطبيق أصلي أم واجهة ويب داخل غلاف — القرار الأول الذي يحدد المفردات.</span></a><a href="${BASE}translate/"><b>جدول الترجمة</b><span>60+ عنصرًا: الاسم البسيط ← AppKit ← SwiftUI، مع بحث مباشر.</span></a></div></section></main>`+footer();

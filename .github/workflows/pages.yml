@@ -1,4 +1,4 @@
-name: Deploy V37 Interactive Library
+name: Deploy V38 Final Parity
 
 on:
   push:
@@ -30,20 +30,28 @@ jobs:
       - name: Build static surface
         run: node scripts/build-static.mjs
 
-      - name: Validate V37 reference + interaction model
+      - name: Validate V38 reference + interaction model
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const src=fs.readFileSync('data.js','utf8');
           const first=src.indexOf('{'), last=src.lastIndexOf('}');
           const d=JSON.parse(src.slice(first,last+1));
-          const baseline=JSON.parse(fs.readFileSync('qa/reference/name-that-ui-2026-10-04.json','utf8'));
+          const baseline=JSON.parse(fs.readFileSync('qa/reference/name-that-ui-2026-10-05.json','utf8'));
           const app=fs.readFileSync('app.js','utf8');
+          const index=fs.readFileSync('index.html','utf8');
+          const fallback=fs.readFileSync('404.html','utf8');
+          const manifest=fs.readFileSync('manifest.webmanifest','utf8');
           const demoStart=app.indexOf('function demo(');
           const demoEnd=app.indexOf('const entryPath=',demoStart);
           const demoBlock=app.slice(demoStart,demoEnd);
           const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
 
+          assert(index.includes('ui-ar-release\" content=\"V38')&&fallback.includes('ui-ar-release\" content=\"V38'),'V38 release marker missing');
+          assert(index.includes('styles.css?v=38')&&index.includes('data.js?v=38')&&index.includes('app.js?v=38'),'V38 cache bust missing');
+          assert(!index.includes('\\\\n<script')&&!fallback.includes('\\\\n<script'),'Literal backslash-n leaked into HTML head');
+          assert(manifest.includes('/Library-/?v=38'),'Manifest start_url is not V38');
+          assert(app.includes("const RELEASE='V38'"),'V38 runtime release marker missing');
           assert(d.entries.length===baseline.counts.elements,'Expected 81 elements');
           assert(d.entries.filter(e=>e.category==='web').length===baseline.counts.web,'Expected 49 web elements');
           assert(d.entries.filter(e=>e.category==='macos').length===baseline.counts.macos,'Expected 32 macOS elements');
@@ -51,10 +59,10 @@ jobs:
           assert(d.comparisons.length===baseline.counts.comparisons,'Expected 18 comparisons');
           assert(d.translations.length===baseline.counts.translations,'Expected 63 translations');
           assert((demoBlock.match(/case '/g)||[]).length===81,'Expected 81 explicit demo cases');
-          assert(app.includes('data-demo-slug'),'V37 demos must expose data-demo-slug');
-          assert(app.includes('function bindDemos('),'V37 interaction engine missing');
-          assert(app.includes('v37Interactions'),'V37 interaction state counter missing');
-          assert(app.includes("case 'data-table'")&&app.includes("case 'slider-macos'")&&app.includes("case 'menu-bar-extra'"),'V37 functional handlers missing');
+          assert(app.includes('data-demo-slug'),'V38 demos must expose data-demo-slug');
+          assert(app.includes('function bindDemos('),'V38 interaction engine missing');
+          assert(app.includes('v37Interactions'),'V38 interaction state counter missing');
+          assert(app.includes("case 'data-table'")&&app.includes("case 'slider-macos'")&&app.includes("case 'menu-bar-extra'"),'V38 functional handlers missing');
 
           const slugs=new Set(d.entries.map(e=>e.slug));
           for(const e of d.entries){
@@ -87,7 +95,7 @@ jobs:
             assert(fs.existsSync(`dist/element/${e.slug}/index.html`),'Missing legacy entry redirect: '+e.slug);
           }
 
-          console.log('V37 model validation passed', {
+          console.log('V38 model validation passed', {
             entries:d.entries.length,
             styles:d.styles.length,
             comparisons:d.comparisons.length,
@@ -109,11 +117,11 @@ jobs:
       - name: Install live QA browser
         run: npm install --no-save puppeteer-core@24
 
-      - name: V36 visual/reference regression QA
+      - name: V38 visual/reference parity QA
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v36-qa.mjs <<'JS'
+          cat > v38-parity-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           import fs from 'node:fs';
 
@@ -156,10 +164,12 @@ jobs:
               footerLinks:document.querySelectorAll('.footer .footlinks a').length,
               footerSearch:document.querySelectorAll('#footerSearch').length,
               columns:getComputedStyle(document.querySelector('.entries-grid')).gridTemplateColumns.split(' ').length,
+              release:document.documentElement.dataset.release||'',
               overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
             }));
 
-            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V36 reference');
+            assert(home.release==='V38','Live release marker is not V38');
+            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V38 reference');
             assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
             assert(home.fresh===3&&home.examples===5&&home.search===1&&home.surprise===0,'Hero/search controls mismatch');
             assert(home.filters===3&&home.sorts===2&&home.cards===81&&home.demos===81,'Catalog mismatch');
@@ -169,7 +179,7 @@ jobs:
             assert(home.overflow<=2,'Horizontal overflow at '+width+'px: '+home.overflow);
             assert(errors.length===0,'Homepage JS errors at '+width+'px: '+errors.join(' | '));
 
-            await p.screenshot({path:`qa-screenshots/v36-home-${width}.png`,fullPage:true});
+            await p.screenshot({path:`qa-screenshots/v38-home-${width}.png`,fullPage:true});
             await p.close();
           }
 
@@ -195,7 +205,7 @@ jobs:
             assert(dataTable.related.some(h=>h.includes('/'+slug+'/')),'Data Table missing related '+slug);
           }
           assert(dataTable.overflow<=2,'Data Table overflow');
-          await detail.screenshot({path:'qa-screenshots/v36-detail-data-table-1440.png',fullPage:true});
+          await detail.screenshot({path:'qa-screenshots/v38-detail-data-table-1440.png',fullPage:true});
           await detail.close();
 
           const style=await browser.newPage();
@@ -214,7 +224,7 @@ jobs:
           assert(skeu.sources>=2&&skeu.related===5,'Skeuomorphism sources/related mismatch');
           assert(!!skeu.confused,'Skeuomorphism must compare with Neumorphism');
           assert(skeu.overflow<=2,'Style overflow');
-          await style.screenshot({path:'qa-screenshots/v36-style-skeuomorphism-1440.png',fullPage:true});
+          await style.screenshot({path:'qa-screenshots/v38-style-skeuomorphism-1440.png',fullPage:true});
           await style.close();
 
           const cmp=await browser.newPage();
@@ -222,7 +232,7 @@ jobs:
           await cmp.goto(site+'vs/popover-vs-tooltip/',{waitUntil:'networkidle0',timeout:60000});
           await cmp.waitForSelector('.vs-detail');
           assert((await cmp.$$('.vs-rules li')).length>=4,'Popover vs Tooltip must expose >=4 checks');
-          await cmp.screenshot({path:'qa-screenshots/v36-compare-popover-tooltip-1440.png',fullPage:true});
+          await cmp.screenshot({path:'qa-screenshots/v38-compare-popover-tooltip-1440.png',fullPage:true});
           await cmp.close();
 
           const content=await browser.newPage();
@@ -258,16 +268,16 @@ jobs:
           }
           await ref.close();
 
-          console.log('LIVE V36 FINAL DELIVERY QA PASSED — live-reference chrome, 81 element metadata, styles, comparisons, translation, methodology and guides validated.');
+          console.log('LIVE V38 FINAL PARITY QA PASSED — live-reference chrome, 81 element metadata, styles, comparisons, translation, methodology and guides validated.');
           await browser.close();
           JS
-          node v36-qa.mjs
+          node v38-parity-qa.mjs
 
-      - name: V37 interaction QA — 81 of 81
+      - name: V38 interaction QA — 81 of 81
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v37-interaction-qa.mjs <<'JS'
+          cat > v38-interaction-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
 
           const browser=await puppeteer.launch({
@@ -389,7 +399,7 @@ jobs:
           assert(keyboardAfter>keyboardBefore,'Keyboard interaction failed');
 
           assert(errors.length===0,'V37 desktop page errors: '+errors.join(' | '));
-          await page.screenshot({path:'qa-screenshots/v37-interactive-catalog-1440.png',fullPage:true});
+          await page.screenshot({path:'qa-screenshots/v38-interactive-catalog-1440.png',fullPage:true});
           await page.close();
 
           // Touch: previews remain interactive and do not navigate on a phone viewport.
@@ -407,7 +417,7 @@ jobs:
           }));
           assert(touchResult.open&&touchResult.count>=1,'Touch interaction failed');
           assert(touchResult.href===urlBefore,'Touching a preview navigated away');
-          await touch.screenshot({path:'qa-screenshots/v37-touch-393.png',fullPage:true});
+          await touch.screenshot({path:'qa-screenshots/v38-touch-393.png',fullPage:true});
           await touch.close();
 
           // Detail-page specimen uses the same engine.
@@ -424,16 +434,16 @@ jobs:
           assert(detailState.count>detailBefore&&detailState.active,'Detail specimen interaction failed');
           await detail.close();
 
-          console.log('LIVE V37 INTERACTION QA PASSED — 81/81 demos react; Web, macOS, keyboard, touch and detail interactions validated.');
+          console.log('LIVE V38 INTERACTION QA PASSED — 81/81 demos react; Web, macOS, keyboard, touch and detail interactions validated.');
           await browser.close();
           JS
-          node v37-interaction-qa.mjs
+          node v38-interaction-qa.mjs
 
-      - name: Upload V37 delivery screenshots
+      - name: Upload V38 delivery screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v37-final-delivery
+          name: v38-final-parity
           path: qa-screenshots
           if-no-files-found: warn
           retention-days: 30
