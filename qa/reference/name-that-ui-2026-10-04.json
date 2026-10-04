@@ -1,0 +1,98 @@
+{
+  "name": "Name That UI live reference baseline",
+  "captured_at": "2026-10-04",
+  "source_urls": [
+    "https://namethatui.com/",
+    "https://namethatui.com/styles/skeuomorphism",
+    "https://namethatui.com/translate",
+    "https://namethatui.com/methodology",
+    "https://namethatui.com/appkit-vs-swiftui",
+    "https://namethatui.com/swift-vs-electron"
+  ],
+  "counts": {
+    "elements": 81,
+    "web": 49,
+    "macos": 32,
+    "styles": 14,
+    "comparisons": 18,
+    "translations": 63
+  },
+  "homepage": {
+    "sponsor": true,
+    "primary_nav": [
+      "elements",
+      "styles"
+    ],
+    "new_this_week": [
+      "data-table",
+      "bottom-navigation",
+      "timeline"
+    ],
+    "descriptive_examples": 5,
+    "header_search": false,
+    "theme_toggle": false,
+    "surprise_control": false,
+    "filters": [
+      "all",
+      "macos",
+      "web"
+    ],
+    "sort": [
+      "newest",
+      "popular"
+    ],
+    "guides": 3,
+    "footer": {
+      "rss": true,
+      "links": [
+        "commonly-confused",
+        "methodology",
+        "sponsorship"
+      ],
+      "search": true
+    }
+  },
+  "detail": {
+    "required_sections": [
+      "specimen",
+      "title-and-symbols",
+      "aliases",
+      "plain-description",
+      "called-phrases",
+      "anatomy",
+      "prompt",
+      "debug-prompt",
+      "in-code",
+      "see-also"
+    ],
+    "explicit_related": true,
+    "anatomy_has_symbols": true,
+    "debug_has_symptom": true
+  },
+  "style_detail": {
+    "defining_signals_min": 4,
+    "dna_axes": 5,
+    "sources_min": 2,
+    "see_also_target": 5
+  },
+  "methodology": {
+    "steps": 3,
+    "source_groups": 3
+  },
+  "appkit_vs_swiftui": {
+    "rules": 3,
+    "worked_prompts": 3,
+    "confusions": 3,
+    "faq": 4
+  },
+  "swift_vs_electron": {
+    "trade_rows": 6,
+    "worked_prompts": 2,
+    "confusions": 3
+  },
+  "notes": [
+    "This is a structural/data baseline for regression QA.",
+    "Long source text is not copied; Arabic content remains original.",
+    "External pixel capture is best-effort because the reference site may block CI runners."
+  ]
+}
