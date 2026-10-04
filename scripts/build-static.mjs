@@ -1,7 +1,7 @@
 import fs from 'node:fs';import path from 'node:path';
 const root=process.cwd(),dist=path.join(root,'dist'),BASE='https://mmashharawi2021-cell.github.io/Library-/';
 fs.rmSync(dist,{recursive:true,force:true});fs.mkdirSync(dist,{recursive:true});
-for(const f of ['index.html','404.html','styles.css','app.js','data.js','feed.xml','manifest.webmanifest','icon.svg','robots.txt'])fs.copyFileSync(path.join(root,f),path.join(dist,f));
+for(const f of ['index.html','404.html','styles.css','app.js','data.js','feed.xml','manifest.webmanifest','icon.svg','robots.txt','sw.js','service-worker.js','serviceWorker.js'])fs.copyFileSync(path.join(root,f),path.join(dist,f));
 const raw=fs.readFileSync('data.js','utf8').replace(/^window\.UI_AR_DATA\s*=\s*/,'').replace(/;\s*$/,'');const d=JSON.parse(raw);const shell=fs.readFileSync('index.html','utf8');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const compareRouteSlugs={'dropdown-select-combobox':'dropdown-vs-select-vs-combobox','tabs-vs-segmented':'tabs-vs-segmented-control','context-vs-dropdown':'context-menu-vs-dropdown','masonry-vs-bento':'masonry-vs-bento-grid','sheet-vs-alert-mac':'sheet-vs-alert','empty-vs-skeleton':'empty-state-vs-skeleton'};
