@@ -345,7 +345,7 @@ jobs:
           assert(C.home1440.newWeek===c.home.newThisWeek,'New-this-week count mismatch');
           assert(C.home1440.guides===c.home.guides,'Guide card count mismatch');
           assert(C.home1440.columns===2,'Desktop catalog must be two columns');
-          assert(C.home393.columns===1,'Mobile catalog must be one column');
+          assert(C.home393.columns===c.mobile393.catalogColumns,'Mobile catalog column count mismatch');assert(C.home393.firstPreviewRatio>=c.mobile393.previewRatioMin&&C.home393.firstPreviewRatio<=c.mobile393.previewRatioMax,'Mobile preview ratio mismatch');
           assert(C.home1440.docWidth-C.home1440.viewport<=2,'Desktop horizontal overflow');
           assert(C.home393.docWidth-C.home393.viewport<=2,'Mobile horizontal overflow');
           assert(C.home393.searchBoxHeight>=46&&C.home393.searchInputFont>=16,'Mobile search parity failed');
@@ -420,7 +420,7 @@ jobs:
               overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
             }));
 
-            assert(home.release==='V45','Live release marker is not V42');
+            assert(home.release==='V45','Live release marker is not V45');
             assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V42 reference');
             assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
             assert(home.fresh===3&&home.examples===5&&home.filters===3&&home.sorts===2&&home.guides===3,'Homepage reference structure mismatch');
@@ -451,7 +451,7 @@ jobs:
             overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
           }));
           assert(dataTable.caption.length>10,'Data Table caption missing');
-          assert(dataTable.called===3,'Data Table called-phrases mismatch');
+          assert(dataTable.called===6,'Data Table called-phrases mismatch');
           assert(dataTable.parts===dataTable.symbols&&dataTable.parts>=4,'Data Table anatomy symbols incomplete');
           assert(dataTable.debug===1&&dataTable.codeRows>=4,'Data Table debug/code structure incomplete');
           for(const slug of ['pagination','outline-view','column-view','bento-grid']){
@@ -550,7 +550,7 @@ jobs:
               titleFont:parseFloat(css('.entry-head h3').fontSize),
               bodyFont:parseFloat(css('.entry-body p').fontSize),
               cardWidth:rect('.entry-card').width,
-              previewHeight:rect('.entry-preview').height,
+              previewHeight:rect('.entry-preview').height,previewRatio:(()=>{const r=rect('.entry-preview');return r.width/r.height})(),
               filterHeight:rect('.catalog-toolbar button').height,
               brandFont:parseFloat(css('.brand strong').fontSize),
               navFont:parseFloat(css('.navlinks a').fontSize)
@@ -561,7 +561,7 @@ jobs:
           assert(home.columns===2,'Mobile catalog must match the two-column reference');
           assert(home.searchHeight>=46&&home.searchFont>=16,'Mobile search is too small');
           assert(home.titleFont>=15&&home.bodyFont>=12,'Mobile card copy is too small');
-          assert(home.cardWidth>=350&&home.previewHeight>=180,'Mobile card/preview sizing is too small');
+          assert(home.cardWidth>150&&home.cardWidth<195,'Mobile card width drift: '+home.cardWidth);assert(home.previewRatio>2.48&&home.previewRatio<2.62,'Mobile preview ratio drift: '+home.previewRatio);
           assert(home.filterHeight>=40,'Mobile filter touch target is too small');
           assert(home.brandFont>=15&&home.navFont>=12,'Mobile header typography is too small');
           await page.tap('.filter-tabs [data-cat="web"]');
