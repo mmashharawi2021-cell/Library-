@@ -1,4 +1,4 @@
-name: Deploy V44 Production Release
+name: Deploy V43 Production Release
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Build static surface
         run: node scripts/build-static.mjs
 
-      - name: Validate V44 expansion + production model
+      - name: Validate V43 production model
         run: |
           node - <<'NODE'
           const fs=require('fs');
@@ -47,45 +47,39 @@ jobs:
           const demoBlock=app.slice(demoStart,demoEnd);
           const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
 
-          assert(index.includes('ui-ar-release\" content=\"V44')&&fallback.includes('ui-ar-release\" content=\"V44'),'V44 release marker missing');
-          assert(index.includes('styles.css?v=44')&&index.includes('data.js?v=44')&&index.includes('app.js?v=44'),'V44 cache bust missing');
+          assert(index.includes('ui-ar-release\" content=\"V43')&&fallback.includes('ui-ar-release\" content=\"V43'),'V43 release marker missing');
+          assert(index.includes('styles.css?v=43')&&index.includes('data.js?v=43')&&index.includes('app.js?v=43'),'V43 cache bust missing');
           assert(!index.includes('\\\\n<script')&&!fallback.includes('\\\\n<script'),'Literal backslash-n leaked into HTML head');
           {const m=JSON.parse(manifest);assert(m.id==='/Library-/'&&m.start_url==='/Library-/'&&m.scope==='/Library-/','Manifest production identity/start_url/scope invalid')}
-          assert(app.includes("const RELEASE='V44'"),'V44 runtime release marker missing');
-          const core=d.entries.slice(0,baseline.counts.elements);
-          const ext=d.entries.filter(e=>e.release==='V44');
-          assert(core.length===81,'Core reference must remain 81 elements');
-          assert(core.filter(e=>e.category==='web').length===baseline.counts.web,'Core Web reference must remain 49');
-          assert(core.filter(e=>e.category==='macos').length===baseline.counts.macos,'Core macOS reference must remain 32');
-          assert(ext.length===20&&ext.every(e=>e.category==='web'),'V44 extension must contain exactly 20 Web elements');
-          assert(d.entries.length===101,'Expected 101 total elements');
-          assert(d.entries.filter(e=>e.category==='web').length===69,'Expected 69 Web elements');
-          assert(d.entries.filter(e=>e.category==='macos').length===32,'Expected 32 macOS elements');
+          assert(app.includes("const RELEASE='V43'"),'V43 runtime release marker missing');
+          assert(d.entries.length===baseline.counts.elements,'Expected 81 elements');
+          assert(d.entries.filter(e=>e.category==='web').length===baseline.counts.web,'Expected 49 web elements');
+          assert(d.entries.filter(e=>e.category==='macos').length===baseline.counts.macos,'Expected 32 macOS elements');
           assert(d.styles.length===baseline.counts.styles,'Expected 14 styles');
           assert(d.comparisons.length===baseline.counts.comparisons,'Expected 18 comparisons');
           assert(d.translations.length===baseline.counts.translations,'Expected 63 translations');
-          assert((demoBlock.match(/case '/g)||[]).length===101,'Expected 101 explicit demo cases');
-          assert(app.includes('data-demo-slug'),'V44 demos must expose data-demo-slug');
-          assert(app.includes('data-demo-contract'),'V44 semantic contracts missing');
-          assert(app.includes('const DEMO_CONTRACTS='),'V44 contract registry missing');
-          assert(app.includes('function bindDemos('),'V44 semantic engine missing');
+          assert((demoBlock.match(/case '/g)||[]).length===81,'Expected 81 explicit demo cases');
+          assert(app.includes('data-demo-slug'),'V43 demos must expose data-demo-slug');
+          assert(app.includes('data-demo-contract'),'V43 semantic contracts missing');
+          assert(app.includes('const DEMO_CONTRACTS='),'V43 contract registry missing');
+          assert(app.includes('function bindDemos('),'V43 semantic engine missing');
           assert(!app.includes('slugHash'),'Random hash animation assignment must be removed');
           assert(!app.includes('data-is-mode'),'Random animation mode must be removed');
           assert(!app.includes("const modes=['lift','shift','tilt','pulse','spring','glow']"),'Generic animation modes must be removed');
           assert(!/\b(?:v37|v39|v41)-/.test(app),'Versioned interaction state leaked into app.js');
           const css=fs.readFileSync('styles.css','utf8');
           assert(!/\b(?:v37|v39|v41)-/.test(css),'Versioned interaction state leaked into styles.css');
-          assert(app.length<190000,'app.js production size budget exceeded');
-          assert(css.length<270000,'styles.css production size budget exceeded');
-          assert(src.length<460000,'data.js production size budget exceeded');
+          assert(app.length<150000,'app.js production size budget exceeded');
+          assert(css.length<240000,'styles.css production size budget exceeded');
+          assert(src.length<380000,'data.js production size budget exceeded');
           for(const swName of ['sw.js','service-worker.js','serviceWorker.js']){
             const sw=fs.readFileSync(swName,'utf8');
-            assert(sw.includes('registration.unregister()')&&sw.includes("release:'V44'"),swName+': legacy worker cleanup invalid');
+            assert(sw.includes('registration.unregister()')&&sw.includes("release:'V43'"),swName+': legacy worker cleanup invalid');
             assert(!sw.includes("v','37"),swName+': stale V37 navigation remains');
           }
-          assert(app.includes("case 'data-table'")&&app.includes('slider-native')&&app.includes("contextmenu")&&app.includes("dragstart"),'V44 semantic handlers missing');
-          assert(app.includes('context-longpress')&&app.includes('touch-drop')&&app.includes('parallax-swipe'),'V44 touch handlers missing');
-          assert(app.includes('is-touch-open')&&app.includes('is-paused'),'V44 tap fallback states missing');
+          assert(app.includes("case 'data-table'")&&app.includes('slider-native')&&app.includes("contextmenu")&&app.includes("dragstart"),'V43 semantic handlers missing');
+          assert(app.includes('context-longpress')&&app.includes('touch-drop')&&app.includes('parallax-swipe'),'V43 touch handlers missing');
+          assert(app.includes('is-touch-open')&&app.includes('is-paused'),'V43 tap fallback states missing');
 
           const slugs=new Set(d.entries.map(e=>e.slug));
           for(const e of d.entries){
@@ -109,11 +103,11 @@ jobs:
           }
 
           const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
-          assert((sitemap.match(/<loc>/g)||[]).length===143,'Expected 143 sitemap URLs');
-          assert((sitemap.match(/<lastmod>2026-10-05<\/lastmod>/g)||[]).length===143,'Expected lastmod on all sitemap URLs');
+          assert((sitemap.match(/<loc>/g)||[]).length===122,'Expected 122 sitemap URLs');
+          assert((sitemap.match(/<lastmod>2026-10-05<\/lastmod>/g)||[]).length===122,'Expected lastmod on all sitemap URLs');
           const sourceSitemap=fs.readFileSync('sitemap.xml','utf8');
-          assert((sourceSitemap.match(/<loc>/g)||[]).length===143,'Committed sitemap must contain 143 URLs');
-          assert((sourceSitemap.match(/<lastmod>2026-10-05<\/lastmod>/g)||[]).length===143,'Committed sitemap lastmod mismatch');
+          assert((sourceSitemap.match(/<loc>/g)||[]).length===122,'Committed sitemap must contain 122 URLs');
+          assert((sourceSitemap.match(/<lastmod>2026-10-05<\/lastmod>/g)||[]).length===122,'Committed sitemap lastmod mismatch');
           assert(!sitemap.includes('/element/'),'Legacy element URLs leaked into sitemap');
           assert(!sitemap.includes('/saved/'),'Saved route leaked into sitemap');
 
@@ -121,11 +115,11 @@ jobs:
             assert(fs.existsSync(`dist/${e.category}/${e.slug}/index.html`),'Missing direct entry page: '+e.slug);
             assert(fs.existsSync(`dist/element/${e.slug}/index.html`),'Missing legacy entry redirect: '+e.slug);
             const committed=fs.readFileSync(`${e.category}/${e.slug}/index.html`,'utf8');
-            assert(committed.includes('ui-ar-release" content="V44"')&&committed.includes('app.js?v=44'),'Committed direct page is stale: '+e.slug);
+            assert(committed.includes('ui-ar-release" content="V43"')&&committed.includes('app.js?v=43'),'Committed direct page is stale: '+e.slug);
             assert(committed.includes(`rel="canonical" href="https://mmashharawi2021-cell.github.io/Library-/${e.category}/${e.slug}/"`),'Committed canonical mismatch: '+e.slug);
           }
 
-          console.log('V44 production model validation passed', {
+          console.log('V43 production model validation passed', {
             entries:d.entries.length,
             styles:d.styles.length,
             comparisons:d.comparisons.length,
@@ -147,32 +141,24 @@ jobs:
       - name: Install live QA browser
         run: npm install --no-save puppeteer-core@24
 
-      - name: V44 production routes + SEO QA
+      - name: V43 production routes + SEO QA
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
           mkdir -p qa-reports
-          cat > v44-production-qa.mjs <<'JS'
+          cat > v43-production-qa.mjs <<'JS'
           import fs from 'node:fs';
           const site=(process.env.SITE||'https://mmashharawi2021-cell.github.io/Library-/').replace(/\/?$/,'/');
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
-          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
           const get=async url=>{
-            let last;
-            for(let attempt=1;attempt<=4;attempt++){
-              const r=await fetch(url,{redirect:'follow',headers:{'user-agent':'UI-Arabic-V44-QA'}});
-              const text=await r.text();
-              last={r,text};
-              if(r.status<500)return last;
-              await sleep(350*attempt);
-            }
-            return last;
+            const r=await fetch(url,{redirect:'follow',headers:{'user-agent':'UI-Arabic-V43-QA'}});
+            return {r,text:await r.text()};
           };
           const sm=await get(site+'sitemap.xml');
           assert(sm.r.ok,'sitemap.xml unavailable');
           const urls=[...sm.text.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
-          assert(urls.length===143,'Expected 143 production sitemap URLs, got '+urls.length);
-          assert((sm.text.match(/<lastmod>2026-10-05<\/lastmod>/g)||[]).length===143,'Sitemap lastmod coverage failed');
+          assert(urls.length===122,'Expected 122 production sitemap URLs, got '+urls.length);
+          assert((sm.text.match(/<lastmod>2026-10-05<\/lastmod>/g)||[]).length===122,'Sitemap lastmod coverage failed');
 
           const failures=[],results=[];
           let cursor=0;
@@ -186,7 +172,7 @@ jobs:
                 const desc=(text.match(/<meta name="description" content="([^"]*)">/)||[])[1]||'';
                 const release=(text.match(/ui-ar-release" content="([^"]+)"/)||[])[1];
                 const robots=(text.match(/<meta name="robots" content="([^"]+)">/)||[])[1]||'';
-                const ok=r.status===200&&canonical===url&&release==='V44'&&title.length>=8&&desc.length>=20&&robots.startsWith('index,follow')&&text.includes('id="site-jsonld"')&&text.includes('id="page-jsonld"')&&text.includes('styles.css?v=44')&&text.includes('app.js?v=44');
+                const ok=r.status===200&&canonical===url&&release==='V43'&&title.length>=8&&desc.length>=20&&robots.startsWith('index,follow')&&text.includes('id="site-jsonld"')&&text.includes('id="page-jsonld"')&&text.includes('styles.css?v=43')&&text.includes('app.js?v=43');
                 results.push({url,status:r.status,canonical,title:title.slice(0,100),descLength:desc.length,release,ok});
                 if(!ok)failures.push({url,status:r.status,canonical,release,title,descLength:desc.length,robots});
               }catch(e){failures.push({url,error:String(e)})}
@@ -201,16 +187,16 @@ jobs:
           const manifest=JSON.parse(manifestRes.text);
           assert(manifest.id==='/Library-/'&&manifest.start_url==='/Library-/'&&manifest.scope==='/Library-/','Manifest stable identity invalid');
 
-          for(const asset of ['styles.css?v=44','app.js?v=44','data.js?v=44','icon.svg','feed.xml']){
+          for(const asset of ['styles.css?v=43','app.js?v=43','data.js?v=43','icon.svg','feed.xml']){
             const a=await fetch(site+asset,{redirect:'follow'});
             assert(a.ok,'Production asset unavailable: '+asset);
           }
           for(const sw of ['sw.js','service-worker.js','serviceWorker.js']){
             const x=await get(site+sw);
-            assert(x.r.ok&&x.text.includes('registration.unregister()')&&x.text.includes("release:'V44'"),'Compatibility worker invalid: '+sw);
+            assert(x.r.ok&&x.text.includes('registration.unregister()')&&x.text.includes("release:'V43'"),'Compatibility worker invalid: '+sw);
           }
 
-          const missing=await get(site+'__v44_missing_route__/');
+          const missing=await get(site+'__v43_missing_route__/');
           assert(missing.r.status===404,'Custom 404 must return HTTP 404');
           assert(/noindex,follow/.test(missing.text),'Custom 404 must be noindex');
 
@@ -229,24 +215,24 @@ jobs:
             'Legacy element compatibility redirect failed'
           );
 
-          const report={release:'V44',checkedAt:new Date().toISOString(),sitemapUrls:urls.length,failures,results};
-          fs.writeFileSync('qa-reports/v44-production.json',JSON.stringify(report,null,2));
-          console.log('V44 PRODUCTION ROUTE + SEO QA PASSED — '+urls.length+' indexable URLs verified.');
+          const report={release:'V43',checkedAt:new Date().toISOString(),sitemapUrls:urls.length,failures,results};
+          fs.writeFileSync('qa-reports/v43-production.json',JSON.stringify(report,null,2));
+          console.log('V43 PRODUCTION ROUTE + SEO QA PASSED — '+urls.length+' indexable URLs verified.');
           JS
-          node v44-production-qa.mjs
+          node v43-production-qa.mjs
 
-      - name: V44 reference contract parity audit
+      - name: V43 reference contract parity audit
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
           mkdir -p qa-screenshots qa-reports
-          cat > v44-reference-contract.mjs <<'JS'
+          cat > v43-reference-contract.mjs <<'JS'
           import fs from 'node:fs';
           import puppeteer from 'puppeteer-core';
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
           const clone=(process.env.SITE||'https://mmashharawi2021-cell.github.io/Library-/').replace(/\/?$/,'/');
           const reference='https://namethatui.com/';
-          const contract=JSON.parse(fs.readFileSync('reference-v44.json','utf8'));
+          const contract=JSON.parse(fs.readFileSync('reference-v42.json','utf8'));
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
 
           async function open(url,width=1440,height=1100){
@@ -264,14 +250,14 @@ jobs:
               text:document.body.innerText.slice(0,600)
             }));
             const blocked=/security verification|verification successful|waiting for namethatui\.com/i.test(result.text)||result.h1==='namethatui.com';
-            await p.screenshot({path:'qa-screenshots/v44-reference-access.png',fullPage:true});
+            await p.screenshot({path:'qa-screenshots/v43-reference-access.png',fullPage:true});
             await p.close();
             return {blocked,...result};
           }
 
           async function homeMetrics(width){
             const p=await open(clone,width,width<=700?900:1100);
-            await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===101);
+            await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
             const m=await p.evaluate(()=>{
               const css=x=>getComputedStyle(document.querySelector(x));
               const rect=x=>document.querySelector(x).getBoundingClientRect();
@@ -279,7 +265,6 @@ jobs:
               return {
                 release:document.documentElement.dataset.release,
                 elementCount:document.querySelectorAll('#cards>.entry-card').length,
-                slugs:[...document.querySelectorAll('#cards>.entry-card')].map(x=>x.dataset.slug),
                 filters,
                 newWeek:document.querySelectorAll('.newweek a').length,
                 guides:document.querySelectorAll('.guidecards>a').length,
@@ -292,7 +277,7 @@ jobs:
                 viewport:innerWidth
               };
             });
-            await p.screenshot({path:'qa-screenshots/v44-clone-home-'+width+'.png',fullPage:true});
+            await p.screenshot({path:'qa-screenshots/v43-clone-home-'+width+'.png',fullPage:true});
             await p.close();return m;
           }
 
@@ -318,13 +303,6 @@ jobs:
                 sourceGroups:document.querySelectorAll('.source-card').length,
                 sections:document.querySelectorAll('.method-section').length
               };
-              if(kind==='explore')return {
-                cards:document.querySelectorAll('.explore-card').length,
-                platformButtons:document.querySelectorAll('[data-explore-platform] button').length,
-                groupButtons:document.querySelectorAll('[data-explore-group] button').length,
-                contractButtons:document.querySelectorAll('[data-explore-contract] button').length,
-                search:!!document.querySelector('#exploreSearch')
-              };
               if(kind==='detail')return {
                 actions:document.querySelectorAll('.detail-actions button').length,
                 anatomy:document.querySelectorAll('.anatomy .part').length,
@@ -334,7 +312,7 @@ jobs:
               };
               return {};
             },kind);
-            await p.screenshot({path:'qa-screenshots/v44-clone-'+kind+'.png',fullPage:true});
+            await p.screenshot({path:'qa-screenshots/v43-clone-'+kind+'.png',fullPage:true});
             await p.close();return m;
           }
 
@@ -349,17 +327,14 @@ jobs:
               vs:await route('vs/','vs'),
               translate:await route('translate/','translate'),
               methodology:await route('methodology/','methodology'),
-              explore:await route('explore/','explore'),
               detail:await route('web/data-table/','detail')
             }
           };
 
           const C=report.clone,c=contract;
           const filterMap=Object.fromEntries(C.home1440.filters.map(x=>[x.label,x.count]));
-          assert(C.home1440.release==='V44','Clone is not V44');
+          assert(C.home1440.release==='V43','Clone is not V43');
           assert(C.home1440.elementCount===c.home.total,'Element count mismatch');
-          assert(c.core.total===81&&c.extension.count===20,'V44 core/extension contract invalid');
-          assert(c.extension.slugs.every(s=>C.home1440.slugs.includes(s)),'One or more V44 extension elements are missing');
           assert(filterMap['الكل']===c.home.total,'All filter count mismatch');
           assert(filterMap['macOS']===c.home.macos,'macOS filter count mismatch');
           assert(filterMap['Web']===c.home.web,'Web filter count mismatch');
@@ -375,25 +350,24 @@ jobs:
           assert(C.translate.count>=c.translation.minimum&&C.translate.columns===3,'Translation table parity failed');
           assert(C.methodology.steps===c.methodology.steps,'Methodology steps mismatch');
           assert(C.methodology.sourceGroups===c.methodology.sourceGroups,'Methodology source groups mismatch');
-          assert(C.explore.cards===101&&C.explore.platformButtons===3&&C.explore.groupButtons>=8&&C.explore.contractButtons>=8&&C.explore.search,'Explore discovery surface mismatch');
           assert(C.detail.actions===c.detailDataTable.actions,'Data-table action count mismatch');
           assert(C.detail.anatomy===c.detailDataTable.anatomyParts,'Data-table anatomy mismatch');
           assert(C.detail.sections>=c.detailDataTable.minimumSections,'Data-table section coverage mismatch');
           assert(C.detail.symbols.includes('<table>')&&C.detail.symbols.includes('NSTableView'),'Data-table top API symbols mismatch');
 
-          fs.writeFileSync('qa-reports/v44-parity.json',JSON.stringify(report,null,2));
-          console.log('V44_REFERENCE_ACCESS '+JSON.stringify(report.referenceAccess));
-          console.log('V44_PARITY_REPORT '+JSON.stringify(report.clone));
-          console.log('V44 REFERENCE CONTRACT PARITY AUDIT PASSED');
+          fs.writeFileSync('qa-reports/v43-parity.json',JSON.stringify(report,null,2));
+          console.log('V43_REFERENCE_ACCESS '+JSON.stringify(report.referenceAccess));
+          console.log('V43_PARITY_REPORT '+JSON.stringify(report.clone));
+          console.log('V43 REFERENCE CONTRACT PARITY AUDIT PASSED');
           await browser.close();
           JS
-          node v44-reference-contract.mjs
+          node v43-reference-contract.mjs
 
-      - name: V44 visual/reference parity QA
+      - name: V43 visual/reference parity QA
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v44-parity-qa.mjs <<'JS'
+          cat > v43-parity-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           import fs from 'node:fs';
 
@@ -414,7 +388,7 @@ jobs:
             const errors=[];
             p.on('pageerror',e=>errors.push(String(e)));
             await p.goto(site,{waitUntil:'networkidle0',timeout:60000});
-            await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===101);
+            await p.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
 
             const home=await p.evaluate(()=>({
               sponsor:document.querySelectorAll('.sponsor-strip').length,
@@ -440,18 +414,18 @@ jobs:
               overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
             }));
 
-            assert(home.release==='V44','Live release marker is not V44');
-            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V44 reference');
-            assert(home.nav===3&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'V44 header chrome mismatch');
+            assert(home.release==='V43','Live release marker is not V42');
+            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V42 reference');
+            assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
             assert(home.fresh===3&&home.examples===5&&home.search===1&&home.surprise===0,'Hero/search controls mismatch');
-            assert(home.filters===3&&home.sorts===2&&home.cards===101&&home.demos===101,'Catalog mismatch');
+            assert(home.filters===3&&home.sorts===2&&home.cards===81&&home.demos===81,'Catalog mismatch');
             assert(home.guides===3,'Guide cards mismatch');
-            assert(home.rss===1&&home.footerLinks===4&&home.footerSearch===1,'V44 footer mismatch');
+            assert(home.rss===1&&home.footerLinks===3&&home.footerSearch===1,'Footer mismatch');
             assert(home.columns===(width<=700?1:2),'Catalog column count mismatch at '+width+'px');
             assert(home.overflow<=2,'Horizontal overflow at '+width+'px: '+home.overflow);
             assert(errors.length===0,'Homepage JS errors at '+width+'px: '+errors.join(' | '));
 
-            await p.screenshot({path:`qa-screenshots/v44-home-${width}.png`,fullPage:true});
+            await p.screenshot({path:`qa-screenshots/v43-home-${width}.png`,fullPage:true});
             await p.close();
           }
 
@@ -477,7 +451,7 @@ jobs:
             assert(dataTable.related.some(h=>h.includes('/'+slug+'/')),'Data Table missing related '+slug);
           }
           assert(dataTable.overflow<=2,'Data Table overflow');
-          await detail.screenshot({path:'qa-screenshots/v44-detail-data-table-1440.png',fullPage:true});
+          await detail.screenshot({path:'qa-screenshots/v43-detail-data-table-1440.png',fullPage:true});
           await detail.close();
 
           const style=await browser.newPage();
@@ -496,7 +470,7 @@ jobs:
           assert(skeu.sources>=2&&skeu.related===5,'Skeuomorphism sources/related mismatch');
           assert(!!skeu.confused,'Skeuomorphism must compare with Neumorphism');
           assert(skeu.overflow<=2,'Style overflow');
-          await style.screenshot({path:'qa-screenshots/v44-style-skeuomorphism-1440.png',fullPage:true});
+          await style.screenshot({path:'qa-screenshots/v43-style-skeuomorphism-1440.png',fullPage:true});
           await style.close();
 
           const cmp=await browser.newPage();
@@ -504,7 +478,7 @@ jobs:
           await cmp.goto(site+'vs/popover-vs-tooltip/',{waitUntil:'networkidle0',timeout:60000});
           await cmp.waitForSelector('.vs-detail');
           assert((await cmp.$$('.vs-rules li')).length>=4,'Popover vs Tooltip must expose >=4 checks');
-          await cmp.screenshot({path:'qa-screenshots/v44-compare-popover-tooltip-1440.png',fullPage:true});
+          await cmp.screenshot({path:'qa-screenshots/v43-compare-popover-tooltip-1440.png',fullPage:true});
           await cmp.close();
 
           const content=await browser.newPage();
@@ -540,16 +514,16 @@ jobs:
           }
           await ref.close();
 
-          console.log('LIVE V44 VISUAL QA PASSED — live-reference chrome, 101-element catalog + Core 81 metadata, styles, comparisons, translation, methodology and guides validated.');
+          console.log('LIVE V43 VISUAL QA PASSED — live-reference chrome, 81 element metadata, styles, comparisons, translation, methodology and guides validated.');
           await browser.close();
           JS
-          node v44-parity-qa.mjs
+          node v43-parity-qa.mjs
 
-      - name: V44 mobile UX QA — 393px
+      - name: V43 mobile UX QA — 393px
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v44-mobile-qa.mjs <<'JS'
+          cat > v43-mobile-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
@@ -557,7 +531,7 @@ jobs:
           const page=await browser.newPage();
           await page.setViewport({width:393,height:852,deviceScaleFactor:1,isMobile:true,hasTouch:true});
           await page.goto(site,{waitUntil:'networkidle0',timeout:60000});
-          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===101);
+          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
           const home=await page.evaluate(()=>{
             const css=x=>getComputedStyle(document.querySelector(x)),rect=x=>document.querySelector(x).getBoundingClientRect();
             return {
@@ -575,7 +549,7 @@ jobs:
               navFont:parseFloat(css('.navlinks a').fontSize)
             };
           });
-          assert(home.release==='V44','Mobile page is not V44');
+          assert(home.release==='V43','Mobile page is not V43');
           assert(home.overflow<=2,'Mobile page has horizontal overflow: '+home.overflow);
           assert(home.columns===1,'Mobile catalog must be one column');
           assert(home.searchHeight>=46&&home.searchFont>=16,'Mobile search is too small');
@@ -584,10 +558,10 @@ jobs:
           assert(home.filterHeight>=40,'Mobile filter touch target is too small');
           assert(home.brandFont>=15&&home.navFont>=12,'Mobile header typography is too small');
           await page.tap('.filter-tabs [data-cat="web"]');
-          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===69);
+          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===49);
           await page.tap('.filter-tabs [data-cat="all"]');
-          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===101);
-          await page.screenshot({path:'qa-screenshots/v44-mobile-home-393.png',fullPage:true});
+          await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===81);
+          await page.screenshot({path:'qa-screenshots/v43-mobile-home-393.png',fullPage:true});
 
           await page.goto(site+'web/data-table/',{waitUntil:'networkidle0',timeout:60000});
           await page.waitForSelector('.detail');
@@ -607,7 +581,7 @@ jobs:
           assert(detail.actionHeight>=40,'Mobile detail actions are too small');
           assert(detail.specimenHeight>=220,'Mobile detail specimen is too small');
           assert(detail.relatedCols===1,'Mobile related cards should be one column');
-          await page.screenshot({path:'qa-screenshots/v44-mobile-detail-393.png',fullPage:true});
+          await page.screenshot({path:'qa-screenshots/v43-mobile-detail-393.png',fullPage:true});
 
           await page.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
           await page.waitForSelector('.atlas-grid');
@@ -619,17 +593,17 @@ jobs:
           assert(styles.overflow<=2,'Mobile styles page has horizontal overflow');
           assert(styles.columns===1,'Mobile styles atlas must be one column');
           assert(styles.searchFont>=16,'Mobile styles search is too small');
-          await page.screenshot({path:'qa-screenshots/v44-mobile-styles-393.png',fullPage:true});
-          console.log('LIVE V44 MOBILE QA PASSED — readable typography, one-column cards, touch targets and no page overflow at 393px.');
+          await page.screenshot({path:'qa-screenshots/v43-mobile-styles-393.png',fullPage:true});
+          console.log('LIVE V43 MOBILE QA PASSED — readable typography, one-column cards, touch targets and no page overflow at 393px.');
           await browser.close();
           JS
-          node v44-mobile-qa.mjs
+          node v43-mobile-qa.mjs
 
-      - name: V44 touch interaction QA — 393px
+      - name: V43 touch interaction QA — 393px
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v44-touch-qa.mjs <<'JS'
+          cat > v43-touch-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
@@ -638,7 +612,7 @@ jobs:
           await page.setViewport({width:393,height:852,deviceScaleFactor:1,isMobile:true,hasTouch:true});
           const errors=[];page.on('pageerror',e=>errors.push(String(e)));
           await page.goto(site,{waitUntil:'networkidle0',timeout:60000});
-          await page.waitForFunction(()=>document.querySelectorAll('#cards .ui-demo').length===101);
+          await page.waitForFunction(()=>document.querySelectorAll('#cards .ui-demo').length===81);
 
           const bring=sel=>page.$eval(sel,x=>x.scrollIntoView({block:'center',inline:'center'}));
 
@@ -711,18 +685,18 @@ jobs:
           });
           assert(par.after!==par.before,'Parallax did not react to vertical swipe');
 
-          assert(errors.length===0,'V44 touch page errors: '+errors.join(' | '));
-          await page.screenshot({path:'qa-screenshots/v44-touch-interactions-393.png',fullPage:true});
-          console.log('LIVE V44 TOUCH QA PASSED — tap, long-press, native touch slider, finger drag/drop and parallax swipe validated.');
+          assert(errors.length===0,'V43 touch page errors: '+errors.join(' | '));
+          await page.screenshot({path:'qa-screenshots/v43-touch-interactions-393.png',fullPage:true});
+          console.log('LIVE V43 TOUCH QA PASSED — tap, long-press, native touch slider, finger drag/drop and parallax swipe validated.');
           await browser.close();
           JS
-          node v44-touch-qa.mjs
+          node v43-touch-qa.mjs
 
-      - name: V44 semantic interaction QA — 101 contracts
+      - name: V43 semantic interaction QA — 81 contracts
         env:
           SITE: ${{ steps.deployment.outputs.page_url }}
         run: |
-          cat > v44-semantic-qa.mjs <<'JS'
+          cat > v43-semantic-qa.mjs <<'JS'
           import puppeteer from 'puppeteer-core';
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
@@ -731,7 +705,7 @@ jobs:
           await page.setViewport({width:1440,height:1200,deviceScaleFactor:1});
           const errors=[];page.on('pageerror',e=>errors.push(String(e)));
           await page.goto(site,{waitUntil:'networkidle0',timeout:60000});
-          await page.waitForFunction(()=>document.querySelectorAll('#cards .ui-demo').length===101);
+          await page.waitForFunction(()=>document.querySelectorAll('#cards .ui-demo').length===81);
 
           const structure=await page.evaluate(()=>({
             count:document.querySelectorAll('#cards .ui-demo').length,
@@ -741,7 +715,7 @@ jobs:
             randomModes:document.querySelectorAll('[data-is-mode]').length,
             genericAnim:document.querySelectorAll('.is-animate').length
           }));
-          assert(structure.count===101&&structure.unclassified===0,'All 101 demos need semantic contracts');
+          assert(structure.count===81&&structure.unclassified===0,'All 81 demos need semantic contracts');
           assert(structure.contracts>=7,'Expected diverse interaction contracts');
           assert(structure.nestedInteractiveLinks===0,'Interactive previews must not be nested in a giant anchor');
           assert(structure.randomModes===0&&structure.genericAnim===0,'Random generic animation system still present');
@@ -781,21 +755,21 @@ jobs:
           });
           assert(drop,'Drag & drop did not move card');
           assert(errors.length===0,'V39 page errors: '+errors.join(' | '));
-          await page.screenshot({path:'qa-screenshots/v44-semantic-1440.png',fullPage:true});
+          await page.screenshot({path:'qa-screenshots/v43-semantic-1440.png',fullPage:true});
           await page.close();
 
-          const touch=await browser.newPage();await touch.setViewport({width:393,height:900,deviceScaleFactor:1,isMobile:true,hasTouch:true});await touch.goto(site,{waitUntil:'networkidle0',timeout:60000});await touch.waitForSelector('.demo-bottom-navigation .nt-tabs');await touch.tap('.demo-bottom-navigation .nt-tabs>*:nth-child(2)');assert(await touch.$eval('.demo-bottom-navigation .nt-tabs>*:nth-child(2)',x=>x.classList.contains('on')),'Touch navigation failed');await touch.screenshot({path:'qa-screenshots/v44-semantic-touch-393.png',fullPage:true});await touch.close();
+          const touch=await browser.newPage();await touch.setViewport({width:393,height:900,deviceScaleFactor:1,isMobile:true,hasTouch:true});await touch.goto(site,{waitUntil:'networkidle0',timeout:60000});await touch.waitForSelector('.demo-bottom-navigation .nt-tabs');await touch.tap('.demo-bottom-navigation .nt-tabs>*:nth-child(2)');assert(await touch.$eval('.demo-bottom-navigation .nt-tabs>*:nth-child(2)',x=>x.classList.contains('on')),'Touch navigation failed');await touch.screenshot({path:'qa-screenshots/v43-semantic-touch-393.png',fullPage:true});await touch.close();
 
-          console.log('LIVE V44 SEMANTIC QA PASSED — 101 contracts; Core 81 + Extension 20 validated.');
+          console.log('LIVE V43 SEMANTIC QA PASSED — 81 contracts; static, click, hover, context, scroll, drag and form behavior validated.');
           await browser.close();
           JS
-          node v44-semantic-qa.mjs
+          node v43-semantic-qa.mjs
 
-      - name: Upload V44 production report and screenshots
+      - name: Upload V43 production report and screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v44-production-release
+          name: v43-production-release
           path: |
             qa-screenshots
             qa-reports

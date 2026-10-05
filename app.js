@@ -5,8 +5,8 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
-const RELEASE='V44'; document.documentElement.dataset.release=RELEASE;
-const DEMO_CONTRACTS=Object.freeze({"data-table":"click","bottom-navigation":"click","timeline":"static","presence-indicator":"static","message-bubble":"static","steps":"click","avatar-group":"hover","multi-select":"form","scrollspy":"scroll","alert-callout-banner":"static","sign-in-form":"form","pagination":"click","date-picker":"click","parallax-scrolling":"scroll","carousel":"click","site-header-nav":"click","card":"click","resize-handle":"drag","hamburger-menu":"click","bento-grid":"static","masonry":"static","easing":"static","spring-animation":"click","text-scramble":"auto","lightbox":"click","marquee":"hover","form-field":"form","truncation":"static","drag-drop":"drag","divider-separator-rule":"static","progress-indicators":"click","toast":"click","modal-drawer-sheet":"static","popover-dropdown-tooltip":"mixed","scrim":"click","skeleton-spinner":"click","combobox":"form","command-palette":"form","accordion":"click","tabs":"click","badge-chip-pill-tag":"click","breadcrumbs":"click","sticky-fixed":"scroll","focus-ring-web":"form","empty-state":"click","hover-card":"hover","switch-checkbox-radio":"form","toggle-group":"click","three-dots":"click","insertion-caret":"pointer","pointer":"hover","alert-macos":"click","slider-macos":"drag","color-well":"click","mac-window":"click","split-view":"drag","scroll-view":"scroll","search-field-macos":"form","save-panel":"form","token-field":"form","combo-button":"click","level-indicator":"click","column-view":"click","outline-view":"click","menu-bar":"click","context-menu":"context","disclosure-triangle":"click","dock-badge":"click","focus-ring-macos":"form","inspector":"form","panel":"drag","popover-macos":"click","popup-pulldown-combobox":"form","segmented-control":"click","sheet-macos":"click","sidebar-macos":"click","stepper-macos":"click","toolbar-macos":"click","traffic-lights":"click","vibrancy":"static","menu-bar-extra":"click","app-sidebar":"click","navigation-rail":"click","top-app-bar":"click","floating-action-button":"click","split-button":"click","select-menu":"form","number-input":"form","password-field":"form","file-upload":"form","rating-control":"click","time-picker":"form","color-picker-web":"form","inline-validation":"form","filter-bar":"click","sort-control":"form","tree-view-web":"click","rich-text-toolbar":"click","chat-composer":"form","mention-input":"form","notification-center":"click"});
+const RELEASE='V43'; document.documentElement.dataset.release=RELEASE;
+const DEMO_CONTRACTS=Object.freeze({"data-table":"click","bottom-navigation":"click","timeline":"static","presence-indicator":"static","message-bubble":"static","steps":"click","avatar-group":"hover","multi-select":"form","scrollspy":"scroll","alert-callout-banner":"static","sign-in-form":"form","pagination":"click","date-picker":"click","parallax-scrolling":"scroll","carousel":"click","site-header-nav":"click","card":"click","resize-handle":"drag","hamburger-menu":"click","bento-grid":"static","masonry":"static","easing":"static","spring-animation":"click","text-scramble":"auto","lightbox":"click","marquee":"hover","form-field":"form","truncation":"static","drag-drop":"drag","divider-separator-rule":"static","progress-indicators":"click","toast":"click","modal-drawer-sheet":"static","popover-dropdown-tooltip":"mixed","scrim":"click","skeleton-spinner":"click","combobox":"form","command-palette":"form","accordion":"click","tabs":"click","badge-chip-pill-tag":"click","breadcrumbs":"click","sticky-fixed":"scroll","focus-ring-web":"form","empty-state":"click","hover-card":"hover","switch-checkbox-radio":"form","toggle-group":"click","three-dots":"click","insertion-caret":"pointer","pointer":"hover","alert-macos":"click","slider-macos":"drag","color-well":"click","mac-window":"click","split-view":"drag","scroll-view":"scroll","search-field-macos":"form","save-panel":"form","token-field":"form","combo-button":"click","level-indicator":"click","column-view":"click","outline-view":"click","menu-bar":"click","context-menu":"context","disclosure-triangle":"click","dock-badge":"click","focus-ring-macos":"form","inspector":"form","panel":"drag","popover-macos":"click","popup-pulldown-combobox":"form","segmented-control":"click","sheet-macos":"click","sidebar-macos":"click","stepper-macos":"click","toolbar-macos":"click","traffic-lights":"click","vibrancy":"static","menu-bar-extra":"click"});
 
 const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
 const state={q:initialQuery,cat:'all',sort:'newest'};
@@ -60,11 +60,11 @@ function setMeta(title,desc,urlPath='',indexable=true){
 const nav=(active='elements')=>`<div class="sponsor-strip"><div class="shell sponsor-inner"><span>الراعي</span><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">اسمك هنا · $500/شهر</a></div></div>
 <header class="sitehead"><div class="shell headrow">
 <a class="brand" href="${BASE}"><strong>ui بالعربي</strong></a>
-<nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="${BASE}">العناصر</a><a class="${active==='explore'?'active':''}" href="${BASE}explore/">استكشف</a><a class="${active==='styles'?'active':''}" href="${BASE}styles/">الأنماط</a></nav>
+<nav class="navlinks" aria-label="التنقل الرئيسي"><a class="${active==='elements'?'active':''}" href="${BASE}">العناصر</a><a class="${active==='styles'?'active':''}" href="${BASE}styles/">الأنماط</a></nav>
 </div></header>`;
 const footer=()=>`<footer class="footer"><div class="shell footgrid">
 <div class="footer-brandblock"><a class="footbrand" href="${BASE}">ui بالعربي</a><p>القاموس البصري لعناصر واجهة المستخدم</p></div>
-<div class="footer-shipping"><small>مصطلحات جديدة تُضاف باستمرار</small><a class="rss-button" href="${BASE}feed.xml">تابع عبر RSS</a><nav class="footlinks"><a href="${BASE}explore/">استكشف</a><a href="${BASE}vs/">العناصر المتشابهة</a><a href="${BASE}methodology/">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية</a></nav></div>
+<div class="footer-shipping"><small>مصطلحات جديدة تُضاف باستمرار</small><a class="rss-button" href="${BASE}feed.xml">تابع عبر RSS</a><nav class="footlinks"><a href="${BASE}vs/">العناصر المتشابهة</a><a href="${BASE}methodology/">المنهجية</a><a href="https://namethatui.com/sponsorship" target="_blank" rel="noopener">الرعاية</a></nav></div>
 <div class="footer-search"><b>بحث</b><label><input id="footerSearch" inputmode="search" autocomplete="off" placeholder="صف عنصر الواجهة الذي تفكر فيه"></label></div>
 </div></footer><div id="glossary" class="glossary" role="status"></div>`;
 
@@ -172,27 +172,6 @@ function demo(e,large=false){
     case 'traffic-lights': return wrap(`<div class="traffic-large"><i></i><i></i><i></i><span>إغلاق　تصغير　تكبير/ملء الشاشة</span></div>`);
     case 'vibrancy': return wrap(`<div class="wallpaper"><div class="vibrant"><b>Vibrancy مفعّل</b><p>الخلفية تتسرب عبر المادة الضبابية بتكيف مع اللون.</p></div></div>`);
     case 'menu-bar-extra': return wrap(`<div class="menubar"><b>Finder</b><i></i><span>◉</span><span>⌁</span><span>☁</span><small>9:41</small><div class="statusmenu"><b>NameThat</b><span>فتح التطبيق</span><span>التحقق من التحديثات…</span><span>الإعدادات…</span><hr><span>إنهاء</span></div></div>`);
-
-    case 'app-sidebar': return wrap(`<div class="x-sidebar"><aside><b>Atlas</b><button class="on">⌂ الرئيسية</button><button>▦ المشاريع</button><button>◎ التقارير</button><button>⚙ الإعدادات</button></aside><main><small>لوحة التحكم</small><strong>24 مشروعًا</strong><i></i><i></i></main></div>`);
-    case 'navigation-rail': return wrap(`<div class="x-rail"><nav><button class="on">⌂<small>Home</small></button><button>⌕<small>Search</small></button><button>▣<small>Inbox</small></button><button>○<small>Profile</small></button></nav><main><b>المحتوى</b><i></i><i></i></main></div>`);
-    case 'top-app-bar': return wrap(`<div class="x-topbar"><header><button>←</button><b>المشروع</b><span></span><button>⌕</button><button>⋮</button></header><main><strong>نظرة عامة</strong><i></i><i></i></main></div>`);
-    case 'floating-action-button': return wrap(`<div class="x-fab"><div class="x-fab-content"><i></i><i></i><i></i></div><div class="x-fab-sheet"><b>عنصر جديد</b><span>ملاحظة</span><span>مهمة</span></div><button aria-label="إضافة">＋</button></div>`);
-    case 'split-button': return wrap(`<div class="x-split"><button class="main">تصدير</button><button data-split-menu aria-label="خيارات التصدير">⌄</button><menu><span>PDF</span><span>Excel</span><span>CSV</span></menu><small>الإجراء الافتراضي: PDF</small></div>`);
-    case 'select-menu': return wrap(`<label class="x-field"><span>الدولة</span><select><option>فلسطين</option><option>الأردن</option><option>مصر</option></select><small>اختر قيمة واحدة</small></label>`);
-    case 'number-input': return wrap(`<div class="x-number"><label>الكمية</label><div><button data-num="-1">−</button><input type="number" min="0" max="20" value="3"><button data-num="1">＋</button></div><small>0 — 20</small></div>`);
-    case 'password-field': return wrap(`<label class="x-password"><span>كلمة المرور</span><div><input type="password" value="S3curePass!"><button type="button" aria-label="إظهار كلمة المرور">◉</button></div><small>12 حرفًا على الأقل</small></label>`);
-    case 'file-upload': return wrap(`<label class="x-upload"><input type="file"><b>⇧</b><strong>اسحب الملف هنا</strong><span>أو اختر من الجهاز</span><small class="file-name">PDF, PNG, JPG · حتى 10MB</small></label>`);
-    case 'rating-control': return wrap(`<div class="x-rating" role="radiogroup" aria-label="التقييم"><b>قيّم التجربة</b><div><button aria-label="1">★</button><button aria-label="2">★</button><button aria-label="3">★</button><button aria-label="4">★</button><button aria-label="5">★</button></div><output>لم يتم التقييم</output></div>`);
-    case 'time-picker': return wrap(`<label class="x-field"><span>وقت الموعد</span><input type="time" value="14:30"><small>بتوقيتك المحلي</small></label>`);
-    case 'color-picker-web': return wrap(`<label class="x-color"><span>لون العلامة</span><div><input type="color" value="#6b8cff"><code>#6B8CFF</code></div><small>اختر لونًا أو عدّل القيمة</small></label>`);
-    case 'inline-validation': return wrap(`<label class="x-validation"><span>البريد الإلكتروني</span><input type="email" value="user@" aria-describedby="inline-msg"><small id="inline-msg">أكمل نطاق البريد مثل example.com</small></label>`);
-    case 'filter-bar': return wrap(`<div class="x-filter"><div><button class="on">الكل <i>24</i></button><button>نشط <i>12</i></button><button>معلّق <i>7</i></button><button>مغلق <i>5</i></button></div><small>24 نتيجة</small></div>`);
-    case 'sort-control': return wrap(`<label class="x-sort"><span>فرز حسب</span><select><option>الأحدث أولًا</option><option>الأقدم أولًا</option><option>الاسم A–Z</option><option>الأعلى تقييمًا</option></select><small>يغيّر ترتيب النتائج فقط</small></label>`);
-    case 'tree-view-web': return wrap(`<div class="x-tree" role="tree"><button class="open">▾ 📁 src</button><div><button class="open">▾ 📁 components</button><div><button>📄 Button.tsx</button><button>📄 Card.tsx</button></div><button>📄 app.ts</button></div><button>▸ 📁 public</button></div>`);
-    case 'rich-text-toolbar': return wrap(`<div class="x-editor"><div role="toolbar"><button><b>B</b></button><button><i>I</i></button><button>U̲</button><button>≡</button><button>🔗</button><button>•••</button></div><p contenteditable="true">اكتب نصًا منسقًا هنا…</p></div>`);
-    case 'chat-composer': return wrap(`<div class="x-composer"><div class="sent-list"><span>مرحبًا، هل وصلت النسخة؟</span></div><div><button>＋</button><textarea rows="1" placeholder="اكتب رسالة…"></textarea><button class="send">➤</button></div><small>Enter للإرسال · Shift+Enter لسطر جديد</small></div>`);
-    case 'mention-input': return wrap(`<div class="x-mention"><label>تعليق<input value="شكرًا @" aria-autocomplete="list"></label><div class="suggestions"><button><b>MK</b> مهند</button><button><b>SA</b> سارة</button><button><b>AK</b> أحمد</button></div><small>اكتب @ لإظهار الأشخاص</small></div>`);
-    case 'notification-center': return wrap(`<div class="x-notify"><button class="bell">🔔<i>3</i></button><section><header><b>الإشعارات</b><button class="read-all">تعليم الكل كمقروء</button></header><article><i></i><p><b>تمت الموافقة على الطلب</b><small>منذ 3 دقائق</small></p></article><article><i></i><p><b>تعليق جديد</b><small>منذ ساعة</small></p></article><article><p><b>النسخ الاحتياطي اكتمل</b><small>أمس</small></p></article></section></div>`);
     default: return wrap(`<div class="fallback-demo"><b>${esc(e.ar)}</b><span>${esc(e.en)}</span><code>${esc(e.code)}</code></div>`);
   }
 }
@@ -200,45 +179,7 @@ function demo(e,large=false){
 const entryPath=e=>`${e.category}/${e.slug}/`;
 const entryHref=e=>`${BASE}${entryPath(e)}`;
 function card(e){return `<article class="entry-card" data-slug="${esc(e.slug)}"><div class="entry-preview">${demo(e)}</div><div class="entry-body"><div class="entry-head"><h3><a class="entry-link" href="${entryHref(e)}">${esc(e.ar)} <span dir="ltr">(${esc(e.en)})</span>${e.new?'<em>NEW</em>':''}</a></h3><small>${e.category==='web'?'WEB':'MACOS'}</small></div><code class="entry-code">${esc(e.code)}</code><p>${esc(e.description)}</p></div></article>`}
-const SEARCH_SYNONYMS=[
- ['sidebar','side navigation','شريط جانبي','قائمة جانبية'],
- ['upload','file upload','رفع','ارفاق','ملف'],
- ['rating','stars','تقييم','نجوم'],
- ['notification','bell','اشعار','تنبيه','جرس'],
- ['password','secret','كلمة مرور','باسورد'],
- ['filter','filtering','تصفية','فلتر'],
- ['sort','sorting','ترتيب','فرز'],
- ['fab','floating action','زر عائم'],
- ['tree','tree view','شجره','هرمي'],
- ['toolbar','formatting','شريط ادوات','تنسيق'],
- ['time','time picker','وقت','ساعه'],
- ['color','colour','لون','منتقي'],
- ['mention','@','منشن','اشاره'],
- ['chat','message composer','محادثه','رساله'],
- ['select','dropdown select','اختيار','قائمه منسدله']
-].map(g=>g.map(norm));
-function searchScore(e,q){
- if(!q)return 1;
- const nq=norm(q),tokens=nq.split(' ').filter(Boolean);
- const fields=[
-  [norm(e.ar),10],[norm(e.en),9],[norm((e.aliases||[]).join(' ')),8],
-  [norm((e.calledPhrases||[]).join(' ')),7],[norm(e.code),6],
-  [norm(e.description),5],[norm((e.anatomy||[]).map(x=>x.name+' '+x.symbol).join(' ')),4],
-  [norm((e.inCode||[]).map(x=>x.symbol).join(' ')),3]
- ];
- const expanded=new Set([nq,...tokens]);
- for(const group of SEARCH_SYNONYMS)if(group.some(x=>nq.includes(x)||tokens.includes(x)))group.forEach(x=>expanded.add(x));
- let score=0,matchedTokens=0;
- for(const token of tokens){
-   const synonyms=[...expanded].filter(x=>x===token||SEARCH_SYNONYMS.some(g=>g.includes(token)&&g.includes(x)));
-   const hit=fields.some(([f])=>synonyms.some(x=>x&&f.includes(x)));
-   if(hit)matchedTokens++;
- }
- if(tokens.length&&matchedTokens<tokens.length)return 0;
- for(const term of expanded)for(const [field,w] of fields)if(term&&field.includes(term))score+=w+(field===term?4:0);
- return score;
-}
-function searchMatches(e,q){return searchScore(e,q)>0}
+function searchMatches(e,q){if(!q)return true;const hay=norm([e.ar,e.en,e.code,e.description,...(e.aliases||[])].join(' '));return norm(q).split(' ').filter(Boolean).every(x=>hay.includes(x))}
 function bindGlossary(){
   const box=document.querySelector('#glossary');if(!box)return;
   document.ondblclick=ev=>{
@@ -369,21 +310,6 @@ function bindDemos(root=document){
     case 'stepper-macos':{const btn=t.closest('.stepper button'),input=demo.querySelector('.stepper input');if(btn&&input){let n=Number(input.value)||0;n+=btn===btn.parentElement.querySelector('button')?1:-1;input.value=String(Math.max(0,n));action='stepper'}break}
     case 'toolbar-macos':{const btn=t.closest('.unified nav button');if(btn){choose(btn.parentElement,'button',btn);action='toolbar'}break}
     case 'traffic-lights':{const dot=t.closest('.traffic-large i');if(dot){const box=dot.closest('.traffic-large'),i=[...dot.parentElement.children].indexOf(dot);box.dataset.windowAction=['close','minimize','zoom'][i]||'zoom';action='traffic-light'}break}
-
-    case 'app-sidebar':{const b=t.closest('.x-sidebar aside button');if(b){choose(b.parentElement,'button',b);demo.querySelector('.x-sidebar main strong').textContent=b.textContent.trim();action='sidebar-nav'}break}
-    case 'navigation-rail':{const b=t.closest('.x-rail nav button');if(b){b.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');action='rail-nav'}break}
-    case 'top-app-bar':{const b=t.closest('.x-topbar header button');if(b){b.classList.toggle('on');action='app-bar-action'}break}
-    case 'floating-action-button':{const b=t.closest('.x-fab>button');if(b){b.closest('.x-fab').classList.toggle('is-open');b.textContent=b.closest('.x-fab').classList.contains('is-open')?'×':'＋';action='fab'}break}
-    case 'split-button':{const b=t.closest('.x-split>button');if(b){const box=b.closest('.x-split');if(b.hasAttribute('data-split-menu')){box.classList.toggle('is-open');action='split-menu'}else{box.querySelector('small').textContent='تم تنفيذ التصدير ✓';action='split-primary'}}break}
-    case 'number-input':{const b=t.closest('.x-number button'),input=demo.querySelector('.x-number input');if(b&&input){input.value=String(Math.max(Number(input.min||0),Math.min(Number(input.max||999),Number(input.value||0)+Number(b.dataset.num||0))));input.dispatchEvent(new Event('input',{bubbles:true}));action='number-step'}break}
-    case 'password-field':{const b=t.closest('.x-password button'),input=demo.querySelector('.x-password input');if(b&&input){input.type=input.type==='password'?'text':'password';b.textContent=input.type==='password'?'◉':'◌';action='password-visibility'}break}
-    case 'rating-control':{const b=t.closest('.x-rating button');if(b){const all=[...b.parentElement.querySelectorAll('button')],n=all.indexOf(b)+1;all.forEach((x,i)=>x.classList.toggle('on',i<n));demo.querySelector('output').textContent=n+' / 5';action='rating'}break}
-    case 'filter-bar':{const b=t.closest('.x-filter button');if(b){b.classList.toggle('on');const n=demo.querySelectorAll('.x-filter button.on').length;demo.querySelector('.x-filter>small').textContent=(n?12+n*3:24)+' نتيجة';action='filter'}break}
-    case 'tree-view-web':{const b=t.closest('.x-tree button');if(b&&/[▾▸]/.test(b.textContent)){b.classList.toggle('open');b.textContent=b.textContent.replace(b.classList.contains('open')?'▸':'▾',b.classList.contains('open')?'▾':'▸');action='tree-toggle'}break}
-    case 'rich-text-toolbar':{const b=t.closest('.x-editor [role="toolbar"] button');if(b){b.classList.toggle('on');action='format'}break}
-    case 'chat-composer':{const b=t.closest('.x-composer .send'),ta=demo.querySelector('.x-composer textarea');if(b&&ta&&ta.value.trim()){const span=document.createElement('span');span.textContent=ta.value.trim();demo.querySelector('.sent-list').appendChild(span);ta.value='';ta.dispatchEvent(new Event('input',{bubbles:true}));action='send-message'}break}
-    case 'notification-center':{const bell=t.closest('.x-notify .bell'),all=t.closest('.x-notify .read-all');if(bell){bell.closest('.x-notify').classList.toggle('is-open');action='notifications'}else if(all){demo.querySelectorAll('.x-notify article i').forEach(x=>x.remove());const badge=demo.querySelector('.x-notify .bell i');if(badge)badge.remove();action='mark-read'}break}
-
     case 'menu-bar-extra':{const box=demo.querySelector('.menubar'),item=t.closest('.menubar>span');if(item){box.classList.toggle('is-status-open');choose(box,':scope>span',item);action='menu-bar-extra'}break}
    }
    if(action)record(demo,action);
@@ -488,17 +414,7 @@ function bindDemos(root=document){
   root.addEventListener('pointerup',ev=>{if(touchCard&&ev.pointerId===touchCard.pid){const moved=Math.hypot(ev.clientX-touchCard.startX,ev.clientY-touchCard.startY);let zone=findTouchZone(touchCard.demo,ev.clientX,ev.clientY,touchCard.originZone)||touchCard.zone;if(moved>32&&zone===touchCard.originZone)zone=findTouchZone(touchCard.demo,ev.clientX,ev.clientY,touchCard.originZone);touchCard.zone=zone;finishTouchCard(true)}},true);
   root.addEventListener('pointercancel',ev=>{if(touchCard&&ev.pointerId===touchCard.pid)finishTouchCard(false)},true);
 
-  root.addEventListener('input',ev=>{
-   const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(range){const demo=range.closest('.ui-demo'),out=range.closest('.mac-control')?.querySelector('output');if(out)out.textContent=range.value+'%';record(demo,'slider-change');return}
-   const demo=ev.target.closest?.('.ui-demo');if(!demo)return;const slug=demo.dataset.demoSlug||'';
-   if(slug==='inspector'){const canvas=demo.querySelector('.canvas');if(ev.target.type==='color')canvas.style.background=ev.target.value;else if(ev.target.type==='checkbox')canvas.style.boxShadow=ev.target.checked?'0 8px 18px rgba(0,0,0,.22)':'none';else canvas.style.borderWidth=Math.max(0,parseFloat(ev.target.value)||0)+'px';record(demo,'inspector-change');return}
-   if(slug==='inline-validation'){const input=demo.querySelector('input'),msg=demo.querySelector('small'),ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value);input.setAttribute('aria-invalid',ok?'false':'true');demo.classList.toggle('is-valid',ok);msg.textContent=ok?'البريد صالح ✓':'أكمل نطاق البريد مثل example.com';record(demo,'validate');return}
-   if(slug==='mention-input'){demo.classList.toggle('is-suggesting',/@[^\s]*$/.test(ev.target.value||''));record(demo,'mention-query');return}
-   if(slug==='color-picker-web'){const code=demo.querySelector('code');if(code)code.textContent=String(ev.target.value||'').toUpperCase();record(demo,'color-change');return}
-   if(slug==='chat-composer'){const s=demo.querySelector('small');if(s)s.textContent=(ev.target.value||'').length+' حرف · Enter للإرسال';record(demo,'compose');return}
-   if(['select-menu','number-input','password-field','time-picker','sort-control'].includes(slug)){record(demo,'form-change')}
-  },true);
-  root.addEventListener('change',ev=>{const demo=ev.target.closest?.('.ui-demo');if(!demo)return;if(demo.dataset.demoSlug==='file-upload'){const name=demo.querySelector('.file-name');if(name)name.textContent=ev.target.files?.[0]?.name||'لم يتم اختيار ملف';record(demo,'file-select')}},true);
+  root.addEventListener('input',ev=>{const range=ev.target.closest?.('.demo-slider-macos .slider-native');if(range){const demo=range.closest('.ui-demo'),out=range.closest('.mac-control')?.querySelector('output');if(out)out.textContent=range.value+'%';record(demo,'slider-change');return}const demo=ev.target.closest?.('.demo-inspector');if(!demo)return;const canvas=demo.querySelector('.canvas');if(ev.target.type==='color')canvas.style.background=ev.target.value;else if(ev.target.type==='checkbox')canvas.style.boxShadow=ev.target.checked?'0 8px 18px rgba(0,0,0,.22)':'none';else canvas.style.borderWidth=Math.max(0,parseFloat(ev.target.value)||0)+'px';record(demo,'inspector-change')},true);
 
   let touchSlider=null;
   const updateTouchSlider=(range,clientX)=>{
@@ -545,8 +461,8 @@ function home(platformOverride){
  if(platformOverride==='all')state.cat='all';
  const platformPath=platformOverride==='web'||platformOverride==='macos'?platformOverride+'/':'';
  setMeta('ما اسم عنصر الواجهة هذا؟ — UI بالعربي','القاموس البصري العربي لعناصر واجهة المستخدم. صف العنصر بطريقتك للوصول إلى اسمه الحقيقي ورمز التنفيذ.',platformPath);
- const fresh=D.entries.filter(e=>e.release==='V44').slice(0,3);
- const newest=[...D.entries.filter(e=>e.release==='V44').map(e=>e.slug),'data-table','bottom-navigation','timeline','presence-indicator','message-bubble'];
+ const fresh=['data-table','bottom-navigation','timeline'].map(bySlug).filter(Boolean);
+ const newest=['data-table','bottom-navigation','timeline','presence-indicator','message-bubble'];
  const rank=new Map(newest.map((s,i)=>[s,i]));
  const examples=[
    'الخلفية الشاحبة خلف أيقونة في شريط القوائم',
@@ -569,7 +485,7 @@ function home(platformOverride){
 
  const render=()=>{
    let list=D.entries.filter(e=>(state.cat==='all'||e.category===state.cat)&&searchMatches(e,state.q));
-   list=[...list].sort((a,b)=>{if(state.q){const d=searchScore(b,state.q)-searchScore(a,state.q);if(d)return d}if(state.sort==='popular')return b.popularity-a.popularity;const ar=rank.has(a.slug)?rank.get(a.slug):999,br=rank.has(b.slug)?rank.get(b.slug):999;return ar!==br?ar-br:Number(b.new)-Number(a.new)||D.entries.indexOf(a)-D.entries.indexOf(b)});
+   list=[...list].sort((a,b)=>{if(state.sort==='popular')return b.popularity-a.popularity;const ar=rank.has(a.slug)?rank.get(a.slug):999,br=rank.has(b.slug)?rank.get(b.slug):999;return ar!==br?ar-br:Number(b.new)-Number(a.new)||D.entries.indexOf(a)-D.entries.indexOf(b)});
    const cards=document.querySelector('#cards');cards.innerHTML=list.map(card).join('');
    const empty=document.querySelector('#searchEmpty');if(empty)empty.hidden=!state.q||!!list.length;
    bindDemos(cards);
@@ -581,43 +497,6 @@ function home(platformOverride){
  document.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{state.sort=b.dataset.sort;home()});
  bindChrome();bindGlossary();bindHeroMotion();
 }
-
-const DISCOVERY_GROUP_LABELS={navigation:'التنقل',input:'الإدخال والتحكم',feedback:'التغذية الراجعة',data:'البيانات والتنظيم',overlay:'الطبقات والنوافذ',motion:'الحركة',content:'المحتوى والتحرير'};
-const DISCOVERY_RULES={
- navigation:['bottom-navigation','steps','scrollspy','pagination','site-header-nav','hamburger-menu','tabs','breadcrumbs','sticky-fixed','three-dots','sidebar-macos','menu-bar','menu-bar-extra','toolbar-macos','app-sidebar','navigation-rail','top-app-bar','floating-action-button'],
- input:['multi-select','sign-in-form','date-picker','form-field','combobox','command-palette','switch-checkbox-radio','toggle-group','slider-macos','color-well','search-field-macos','save-panel','token-field','combo-button','level-indicator','popup-pulldown-combobox','segmented-control','stepper-macos','split-button','select-menu','number-input','password-field','file-upload','rating-control','time-picker','color-picker-web'],
- feedback:['alert-callout-banner','progress-indicators','toast','skeleton-spinner','empty-state','presence-indicator','alert-macos','focus-ring-web','focus-ring-macos','dock-badge','traffic-lights','inline-validation','notification-center'],
- data:['data-table','timeline','card','bento-grid','masonry','truncation','column-view','outline-view','inspector','filter-bar','sort-control','tree-view-web'],
- overlay:['lightbox','modal-drawer-sheet','popover-dropdown-tooltip','scrim','hover-card','context-menu','panel','popover-macos','sheet-macos'],
- motion:['parallax-scrolling','carousel','easing','spring-animation','text-scramble','marquee'],
- content:['message-bubble','avatar-group','divider-separator-rule','resize-handle','insertion-caret','pointer','mac-window','split-view','scroll-view','disclosure-triangle','vibrancy','rich-text-toolbar','chat-composer','mention-input']
-};
-const DISCOVERY_LOOKUP=(()=>{const m={};for(const [g,slugs] of Object.entries(DISCOVERY_RULES))for(const s of slugs)m[s]=g;return m})();
-const discoveryGroup=e=>e.discovery?.group||DISCOVERY_LOOKUP[e.slug]||'content';
-const contractLabel=c=>({click:'نقر',form:'نموذج',drag:'سحب',scroll:'تمرير',hover:'Hover/Focus',context:'قائمة سياقية',pointer:'مؤشر',mixed:'مختلط',auto:'تلقائي',static:'عرض ثابت'}[c]||c);
-function explore(){
- setMeta('استكشف عناصر الواجهة — UI بالعربي','استكشف 101 عنصر UI حسب المنصة والوظيفة ونوع التفاعل.','explore/');
- app.innerHTML=nav('explore')+`<main id="main" class="shell explore-page">
-  <header class="explore-hero"><small>V44 · 101 عنصرًا</small><h1>استكشف القاموس بطريقة أذكى.</h1><p>بدل معرفة الاسم مسبقًا، ابدأ من وظيفة العنصر أو طريقة التفاعل أو المنصة.</p><label class="explore-search"><input id="exploreSearch" inputmode="search" autocomplete="off" placeholder="ابحث بالاسم أو الوصف أو ما يفعله العنصر"></label></header>
-  <section class="explore-controls">
-   <div><b>المنصة</b><nav data-explore-platform><button class="active" data-v="all">الكل</button><button data-v="web">Web</button><button data-v="macos">macOS</button></nav></div>
-   <div><b>الوظيفة</b><nav data-explore-group><button class="active" data-v="all">الكل</button>${Object.entries(DISCOVERY_GROUP_LABELS).map(([k,v])=>`<button data-v="${k}">${v}</button>`).join('')}</nav></div>
-   <div><b>التفاعل</b><nav data-explore-contract><button class="active" data-v="all">الكل</button>${[...new Set(Object.values(DEMO_CONTRACTS))].map(x=>`<button data-v="${x}">${contractLabel(x)}</button>`).join('')}</nav></div>
-  </section>
-  <div class="explore-summary"><b id="exploreCount"></b><span>Core 81 + توسعة V44 (20)</span></div>
-  <section id="exploreGrid" class="explore-grid"></section>
- </main>`+footer();
- const st={platform:'all',group:'all',contract:'all',q:''};
- const draw=()=>{
-  const list=D.entries.filter(e=>(st.platform==='all'||e.category===st.platform)&&(st.group==='all'||discoveryGroup(e)===st.group)&&(st.contract==='all'||DEMO_CONTRACTS[e.slug]===st.contract)&&searchMatches(e,st.q)).sort((a,b)=>st.q?searchScore(b,st.q)-searchScore(a,st.q):b.popularity-a.popularity);
-  document.querySelector('#exploreCount').textContent=list.length+' عنصر';
-  document.querySelector('#exploreGrid').innerHTML=list.map(e=>`<a class="explore-card" href="${entryHref(e)}"><div class="explore-card-top"><span>${DISCOVERY_GROUP_LABELS[discoveryGroup(e)]}</span><small>${e.category==='web'?'Web':'macOS'}</small></div><h2>${esc(e.ar)}</h2><div class="explore-en" dir="ltr">${esc(e.en)}</div><p>${esc(e.description)}</p><footer><code dir="ltr">${esc(e.code)}</code><em>${contractLabel(DEMO_CONTRACTS[e.slug])}</em></footer></a>`).join('');
- };
- const input=document.querySelector('#exploreSearch');input.oninput=e=>{st.q=e.target.value;draw()};
- for(const [sel,key] of [['[data-explore-platform]','platform'],['[data-explore-group]','group'],['[data-explore-contract]','contract']])document.querySelectorAll(sel+' button').forEach(b=>b.onclick=()=>{document.querySelectorAll(sel+' button').forEach(x=>x.classList.toggle('active',x===b));st[key]=b.dataset.v;draw()});
- draw();bindChrome();bindGlossary();
-}
-
 function detailSymbols(e){
  const exactSecondary={ 'data-table':'NSTableView' };
  const skip=/^(المرجع|إتاحة|CSS|Accessibility|macOS behavior)$/i;
@@ -1175,11 +1054,11 @@ function routeFromLocation(){
   if((seg[0]==='web'||seg[0]==='macos')&&seg.length===1) return `/platform/${seg[0]}`;
   if(seg[0]==='styles'&&seg[1]) return `/style/${seg[1]}`;
   if(seg[0]==='styles') return '/styles';
-  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(seg[0]==='vs') return '/compare';if(['compare','translate','methodology','guides','glossary','saved','submit','explore'].includes(seg[0])) return `/${seg[0]}`;
+  if(seg[0]==='vs'&&seg[1]) return `/vs/${seg[1]}`;if(seg[0]==='vs') return '/compare';if(['compare','translate','methodology','guides','glossary','saved','submit'].includes(seg[0])) return `/${seg[0]}`;
   if(seg[0]==='appkit-vs-swiftui') return '/guide/appkit-swiftui';
   if(seg[0]==='swift-vs-electron') return '/guide/swift-electron';
   return '/404';
 }
-function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home('all');if(seg[0]==='platform')return home(seg[1]);if(seg[0]==='entry'){const e=bySlug(seg[2]);if(!e||e.category!==seg[1])return notFound();return detail(seg[2])}if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='explore')return explore();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='glossary')return glossaryPage();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
+function router(){scrollTo(0,0);const p=routeFromLocation();const seg=p.split('/').filter(Boolean);if(!seg.length)return home('all');if(seg[0]==='platform')return home(seg[1]);if(seg[0]==='entry'){const e=bySlug(seg[2]);if(!e||e.category!==seg[1])return notFound();return detail(seg[2])}if(seg[0]==='element')return detail(seg[1]);if(seg[0]==='styles'&&seg.length===1)return styles();if(seg[0]==='style')return styleDetail(seg[1]);if(seg[0]==='compare')return compare();if(seg[0]==='vs')return compareDetail(seg[1]);if(seg[0]==='translate')return translate();if(seg[0]==='methodology')return methodology();if(seg[0]==='guides')return guideHub();if(seg[0]==='glossary')return glossaryPage();if(seg[0]==='saved')return saved();if(seg[0]==='submit')return submitTerm();if(seg[0]==='guide')return guide(seg[1]);return notFound()}
 addEventListener('hashchange',router);router();
 })();
