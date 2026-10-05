@@ -349,6 +349,7 @@ jobs:
               vs:await route('vs/','vs'),
               translate:await route('translate/','translate'),
               methodology:await route('methodology/','methodology'),
+              explore:await route('explore/','explore'),
               detail:await route('web/data-table/','detail')
             }
           };
