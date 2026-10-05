@@ -1,5 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';
-const root=process.cwd(),dist=path.join(root,'dist'),BASE='https://mmashharawi2021-cell.github.io/Library-/',RELEASE='V43',RELEASE_DATE='2026-10-05';
+const root=process.cwd(),dist=path.join(root,'dist'),BASE='https://mmashharawi2021-cell.github.io/Library-/',RELEASE='V45',RELEASE_DATE='2026-10-05';
 fs.rmSync(dist,{recursive:true,force:true});fs.mkdirSync(dist,{recursive:true});
 for(const f of ['index.html','404.html','styles.css','app.js','data.js','feed.xml','manifest.webmanifest','icon.svg','robots.txt','sw.js','service-worker.js','serviceWorker.js'])fs.copyFileSync(path.join(root,f),path.join(dist,f));
 const raw=fs.readFileSync('data.js','utf8').replace(/^window\.UI_AR_DATA\s*=\s*/,'').replace(/;\s*$/,'');const d=JSON.parse(raw);const shell=fs.readFileSync('index.html','utf8');

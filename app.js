@@ -5,7 +5,7 @@ const app=document.querySelector('#app');
 if(!D||!app){return;}
 
 const BASE='/Library-/';
-const RELEASE='V43'; document.documentElement.dataset.release=RELEASE;
+const RELEASE='V45'; document.documentElement.dataset.release=RELEASE;
 const DEMO_CONTRACTS=Object.freeze({"data-table":"click","bottom-navigation":"click","timeline":"static","presence-indicator":"static","message-bubble":"static","steps":"click","avatar-group":"hover","multi-select":"form","scrollspy":"scroll","alert-callout-banner":"static","sign-in-form":"form","pagination":"click","date-picker":"click","parallax-scrolling":"scroll","carousel":"click","site-header-nav":"click","card":"click","resize-handle":"drag","hamburger-menu":"click","bento-grid":"static","masonry":"static","easing":"static","spring-animation":"click","text-scramble":"auto","lightbox":"click","marquee":"hover","form-field":"form","truncation":"static","drag-drop":"drag","divider-separator-rule":"static","progress-indicators":"click","toast":"click","modal-drawer-sheet":"static","popover-dropdown-tooltip":"mixed","scrim":"click","skeleton-spinner":"click","combobox":"form","command-palette":"form","accordion":"click","tabs":"click","badge-chip-pill-tag":"click","breadcrumbs":"click","sticky-fixed":"scroll","focus-ring-web":"form","empty-state":"click","hover-card":"hover","switch-checkbox-radio":"form","toggle-group":"click","three-dots":"click","insertion-caret":"pointer","pointer":"hover","alert-macos":"click","slider-macos":"drag","color-well":"click","mac-window":"click","split-view":"drag","scroll-view":"scroll","search-field-macos":"form","save-panel":"form","token-field":"form","combo-button":"click","level-indicator":"click","column-view":"click","outline-view":"click","menu-bar":"click","context-menu":"context","disclosure-triangle":"click","dock-badge":"click","focus-ring-macos":"form","inspector":"form","panel":"drag","popover-macos":"click","popup-pulldown-combobox":"form","segmented-control":"click","sheet-macos":"click","sidebar-macos":"click","stepper-macos":"click","toolbar-macos":"click","traffic-lights":"click","vibrancy":"static","menu-bar-extra":"click"});
 
 const initialQuery=(()=>{try{return new URLSearchParams(location.search).get('q')||''}catch{return''}})();
@@ -526,7 +526,7 @@ function detail(slug){
      <header class="detail-heading">
        <h1>${esc(e.ar)}</h1><div class="detail-en" dir="ltr">${esc(e.en)}</div><div class="detail-symbols" dir="ltr">/ ${detailSymbols(e).map(x=>`<code>${esc(x)}</code>`).join(' · ')} /</div>
        ${aliases.length?`<p class="aka"><b>يُسمى أيضًا</b> ${aliases.map(esc).join('، ')}</p>`:''}
-       <p class="lead">${esc(e.description)}</p>
+       <p class="lead">${esc(e.description)}</p>${e.distinction?`<p class="detail-distinction">${esc(e.distinction)}</p>`:''}
      </header>
 
      <section class="section called-section"><h2>إذا كنت تسميه…</h2><div class="called">${called.map(x=>`<span>“${esc(x)}”</span>`).join('')}</div><p class="answerline">…فالمصطلح الأدق هو <b>${esc(e.ar)}</b> <span dir="ltr">(${esc(e.en)})</span>.</p></section>
@@ -537,7 +537,7 @@ function detail(slug){
 
      <section class="section prompt-section"><h2>Debug Prompt — عندما لا يعمل كما ينبغي</h2><p class="debug-symptom"><b>العَرَض:</b> ${esc(e.debugSymptom||'العنصر ظاهر لكن سلوكه لا يطابق المتوقع.')}</p><div class="prompt prompt-debug"><button class="copybtn" type="button" data-copy="${encodeURIComponent(e.debug)}">نسخ</button><p>${esc(e.debug)}</p></div></section>
 
-     <section class="section code-section"><h2>في الكود</h2><div class="tablewrap"><table class="code-table"><tbody>${codeRows.map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody></table></div></section>
+     <section class="section code-section"><h2>في الكود</h2><p class="code-intro">هذه هي الأسماء البرمجية الأقرب للعنصر عبر الأطر المختلفة؛ استخدم الصف الذي يطابق التقنية الفعلية في مشروعك.</p><div class="tablewrap"><table class="code-table"><tbody>${codeRows.map(r=>`<tr><td>${esc(r.stack)}</td><td><code dir="ltr">${esc(r.symbol)}</code></td><td>${esc(r.note)}</td></tr>`).join('')}</tbody></table></div></section>
 
      <section class="section related-section"><h2>راجع أيضًا</h2><div class="related">${rel.map(r=>`<a href="${entryHref(r)}"><b>${esc(r.ar)}</b><span>${esc(r.en)}</span><small>${r.category==='web'?'Web':'macOS'}</small></a>`).join('')}</div></section>
    </article>
@@ -615,6 +615,7 @@ function styles(){
        <h3>${esc(s.ar)}</h3>
        <div class="atlas-en" dir="ltr">${esc(s.en)}</div>
        <p>${esc(s.desc)}</p>
+       ${s.called?.length?`<blockquote class="atlas-called">“${esc(s.called[0])}”</blockquote>`:''}
        <div class="atlas-signals">${s.signals.slice(0,3).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
      </div>
    </a>`).join('');
@@ -956,7 +957,7 @@ function translationEntry(r){
 }
 function translate(){
   setMeta('جدول الترجمة — UI بالعربي','الاسم المرئي نفسه في AppKit وSwiftUI، في جدول واحد قابل للبحث.','translate/');
-  app.innerHTML=nav('')+`<main id="main" class="shell translate-page"><section class="translate-hero"><h1>جدول الترجمة</h1><div class="translate-kicker">/ الاسم البسيط · AppKit · SwiftUI /</div><p>العنصر نفسه على Mac قد يملك اسمين حقيقيين، واحدًا في كل إطار. ابحث عن الشيء ثم خذ العمود الذي يتحدث به مشروعك — <a href="${BASE}appkit-vs-swiftui/">غير متأكد؟ اقرأ هذا أولًا</a>.</p><label class="translate-search"><input id="tsearch" inputmode="search" autocomplete="off" placeholder="فلتر — جرّب segmented أو NSPopUpButton"><kbd>⌘K</kbd></label></section><section id="ttable"></section></main>`+footer();
+  app.innerHTML=nav('')+`<main id="main" class="shell translate-page"><nav class="translate-crumbs"><a href="${BASE}">الفهرس</a><span>/</span><span>دليل</span></nav><section class="translate-hero"><h1>جدول الترجمة</h1><div class="translate-kicker">/ الاسم البسيط · AppKit · SwiftUI /</div><p>العنصر نفسه على Mac قد يملك اسمين حقيقيين، واحدًا في كل إطار. ابحث عن الشيء ثم خذ العمود الذي يتحدث به مشروعك — <a href="${BASE}appkit-vs-swiftui/">غير متأكد؟ اقرأ هذا أولًا</a>.</p><label class="translate-search"><input id="tsearch" inputmode="search" autocomplete="off" placeholder="فلتر — جرّب segmented أو NSPopUpButton"><kbd>⌘K</kbd></label></section><section id="ttable"></section></main>`+footer();
   const input=document.querySelector('#tsearch');
   const draw=()=>{
     const q=norm(input.value);

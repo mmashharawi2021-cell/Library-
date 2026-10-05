@@ -1,0 +1,56 @@
+{
+  "verifiedAt": "2026-10-05",
+  "source": "Current NameThatUI public pages + supplied pixel reference captures",
+  "home": {
+    "elements": 81,
+    "web": 49,
+    "macos": 32,
+    "navLinks": 2,
+    "newThisWeek": 3,
+    "searchExamples": 5,
+    "filters": 3,
+    "sorts": 2,
+    "guides": 3,
+    "footerLinks": 3
+  },
+  "mobile393": {
+    "catalogColumns": 2,
+    "previewRatioMin": 2.48,
+    "previewRatioMax": 2.62,
+    "sponsorHeight": [
+      16,
+      22
+    ],
+    "headerHeight": [
+      27,
+      35
+    ]
+  },
+  "dataTable": {
+    "actions": 3,
+    "calledPhrases": 6,
+    "anatomyParts": 5,
+    "codeRows": 6,
+    "related": 4,
+    "topSymbols": [
+      "<table>",
+      "NSTableView"
+    ]
+  },
+  "styles": {
+    "count": 14,
+    "cardNeedsCalledPhrase": true
+  },
+  "comparisons": {
+    "count": 18
+  },
+  "translate": {
+    "rows": 63,
+    "columns": 3,
+    "crumbs": true
+  },
+  "methodology": {
+    "steps": 3,
+    "sourceGroups": 3
+  }
+}

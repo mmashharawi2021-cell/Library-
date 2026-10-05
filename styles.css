@@ -4685,3 +4685,115 @@ body{font-size:14px;line-height:1.45}
   .detail-symbols code{white-space:nowrap}
   .styles-hero{max-width:860px}
 }
+
+
+/* =========================================================
+   V45 — TRUE PARITY RESET
+   Core reference surface: 81 elements / 32 macOS / 49 Web
+   ========================================================= */
+.atlas-called{
+  margin:8px 0 10px;
+  padding:0;
+  border:0;
+  color:var(--muted2);
+  font-size:8px;
+  line-height:1.55;
+  font-style:normal
+}
+.detail-distinction,.code-intro{
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.75
+}
+.detail-distinction{margin:10px 0 0}
+.code-intro{max-width:720px;margin:-4px 0 14px}
+.translate-crumbs{
+  display:flex;align-items:center;gap:7px;
+  padding-top:30px;
+  color:var(--muted);
+  font-size:9px
+}
+.translate-crumbs a{text-decoration:underline;text-underline-offset:3px}
+
+/* Supplied-reference mobile geometry takes precedence over V40 readability changes. */
+@media(max-width:700px){
+  .shell{width:calc(100% - 18px)}
+  .sponsor-strip{height:19px}
+  .sponsor-inner{gap:3px;font-size:3.7px}
+  .sitehead{height:31px;position:sticky;top:0}
+  .headrow{height:31px;min-height:31px;gap:8px}
+  .brand strong{font-size:5.5px}
+  .navlinks{gap:7px}
+  .navlinks a{font-size:4.8px;min-height:31px}
+
+  .hero{padding:47px 0 43px}
+  .newweek{margin-bottom:17px;gap:4px}
+  .newweek>b{font-size:3.7px}
+  .newweek>div{gap:3px}
+  .newweek a{font-size:3.9px;padding:3px 5px;border-radius:4px}
+  .hero h1{font-size:20px;max-width:310px;margin-bottom:9px}
+  .hero-copy{width:61%;font-size:5.2px;line-height:1.65}
+  .search-examples{
+    width:61%;margin:10px auto 0;
+    display:flex;flex-wrap:wrap;justify-content:center;
+    gap:2px 5px;overflow:visible
+  }
+  .search-examples span{font-size:3.8px;line-height:1.55;white-space:normal}
+  .hero-search{
+    width:61%;height:23px;min-height:23px;
+    margin-top:10px;padding:0 7px;border-radius:5px
+  }
+  .hero-search input{font-size:4.7px;text-align:right}
+  .hero-help{margin-top:11px;gap:4px;font-size:4px}
+
+  .catalog{padding-bottom:38px}
+  .catalog-toolbar{margin-bottom:10px;gap:8px;overflow-x:auto}
+  .catalog-toolbar button{min-height:0;font-size:4.5px;padding:5px}
+  .catalog-toolbar button span{font-size:3.5px}
+  .sort-tabs button{min-height:0;font-size:4.5px;padding:3px 5px;border-radius:4px}
+
+  .entries-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:8px;row-gap:12px
+  }
+  .entry-card{min-width:0;width:auto}
+  .entry-preview{
+    width:100%;aspect-ratio:2.55/1;min-height:0!important;
+    border-radius:6px;background-size:8px 8px
+  }
+  .entry-preview .ui-demo{transform:scale(.9)!important;transform-origin:center!important}
+  .entry-body{padding:5px 2px 0;min-height:0}
+  .entry-head{gap:3px}
+  .entry-head h3{
+    font-size:5.6px;line-height:1.3;
+    white-space:normal;overflow:visible
+  }
+  .entry-head h3 span{font-size:4.7px}
+  .entry-head h3 em{font-size:3px;margin-inline-start:2px}
+  .entry-head>small{font-size:3px;padding-top:1px}
+  .entry-code{font-size:4.1px;margin-top:2px;line-height:1.35}
+  .entry-body p{
+    font-size:4.7px;line-height:1.42;margin-top:3px;
+    -webkit-line-clamp:3
+  }
+
+  .guides{padding:33px 0 40px}
+  .guides .sectionlabel{font-size:3.8px;margin-bottom:8px}
+  .guidecards{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .guidecards a{min-height:52px;padding:7px;border-radius:5px}
+  .guidecards b{font-size:5px}
+  .guidecards span{font-size:4px;line-height:1.45}
+
+  .footer{padding:18px 0 22px}
+  .footer-brandblock .footbrand{font-size:5px}
+  .footer-brandblock>p{font-size:3.7px;margin-top:3px}
+  .footer-shipping>small{font-size:3px}
+  .rss-button,.footlinks a{font-size:3.5px}
+  .footer-search>b{font-size:4px}
+  .footer-search label{min-height:20px;padding:0 5px;border-radius:4px}
+  .footer-search input{font-size:3.8px}
+
+  .translate-crumbs{padding-top:16px;font-size:4px}
+  .detail-distinction,.code-intro{font-size:4.6px;line-height:1.65}
+  .atlas-called{font-size:4px;margin:4px 0 5px}
+}
