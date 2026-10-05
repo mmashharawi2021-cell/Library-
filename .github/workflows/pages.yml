@@ -156,9 +156,17 @@ jobs:
           import fs from 'node:fs';
           const site=(process.env.SITE||'https://mmashharawi2021-cell.github.io/Library-/').replace(/\/?$/,'/');
           const assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
           const get=async url=>{
-            const r=await fetch(url,{redirect:'follow',headers:{'user-agent':'UI-Arabic-V44-QA'}});
-            return {r,text:await r.text()};
+            let last;
+            for(let attempt=1;attempt<=4;attempt++){
+              const r=await fetch(url,{redirect:'follow',headers:{'user-agent':'UI-Arabic-V44-QA'}});
+              const text=await r.text();
+              last={r,text};
+              if(r.status<500)return last;
+              await sleep(350*attempt);
+            }
+            return last;
           };
           const sm=await get(site+'sitemap.xml');
           assert(sm.r.ok,'sitemap.xml unavailable');
