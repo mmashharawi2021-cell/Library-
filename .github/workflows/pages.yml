@@ -422,14 +422,14 @@ jobs:
             }));
 
             assert(home.release==='V45','Live release marker is not V45');
-            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V42 reference');
+            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V45 reference');
             assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
             assert(home.fresh===3&&home.examples===5&&home.filters===3&&home.sorts===2&&home.guides===3,'Homepage reference structure mismatch');
             assert(home.fresh===3&&home.examples===5&&home.search===1&&home.surprise===0,'Hero/search controls mismatch');
             assert(home.filters===3&&home.sorts===2&&home.cards===81&&home.demos===81,'Catalog mismatch');
             assert(home.guides===3,'Guide cards mismatch');
             assert(home.rss===1&&home.footerLinks===3&&home.footerSearch===1,'Footer mismatch');
-            assert(home.columns===(width<=700?1:2),'Catalog column count mismatch at '+width+'px');
+            assert(home.columns===2,'Catalog column count mismatch at '+width+'px');
             assert(home.overflow<=2,'Horizontal overflow at '+width+'px: '+home.overflow);
             assert(errors.length===0,'Homepage JS errors at '+width+'px: '+errors.join(' | '));
 
