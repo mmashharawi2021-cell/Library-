@@ -48,7 +48,7 @@ jobs:
           const assert=(ok,msg)=>{if(!ok) throw new Error(msg)};
 
           assert(index.includes('ui-ar-release\" content=\"V44')&&fallback.includes('ui-ar-release\" content=\"V44'),'V44 release marker missing');
-          assert(index.includes('styles.css?v=43')&&index.includes('data.js?v=43')&&index.includes('app.js?v=43'),'V44 cache bust missing');
+          assert(index.includes('styles.css?v=44')&&index.includes('data.js?v=44')&&index.includes('app.js?v=44'),'V44 cache bust missing');
           assert(!index.includes('\\\\n<script')&&!fallback.includes('\\\\n<script'),'Literal backslash-n leaked into HTML head');
           {const m=JSON.parse(manifest);assert(m.id==='/Library-/'&&m.start_url==='/Library-/'&&m.scope==='/Library-/','Manifest production identity/start_url/scope invalid')}
           assert(app.includes("const RELEASE='V44'"),'V44 runtime release marker missing');
@@ -121,7 +121,7 @@ jobs:
             assert(fs.existsSync(`dist/${e.category}/${e.slug}/index.html`),'Missing direct entry page: '+e.slug);
             assert(fs.existsSync(`dist/element/${e.slug}/index.html`),'Missing legacy entry redirect: '+e.slug);
             const committed=fs.readFileSync(`${e.category}/${e.slug}/index.html`,'utf8');
-            assert(committed.includes('ui-ar-release" content="V44"')&&committed.includes('app.js?v=43'),'Committed direct page is stale: '+e.slug);
+            assert(committed.includes('ui-ar-release" content="V44"')&&committed.includes('app.js?v=44'),'Committed direct page is stale: '+e.slug);
             assert(committed.includes(`rel="canonical" href="https://mmashharawi2021-cell.github.io/Library-/${e.category}/${e.slug}/"`),'Committed canonical mismatch: '+e.slug);
           }
 
@@ -178,7 +178,7 @@ jobs:
                 const desc=(text.match(/<meta name="description" content="([^"]*)">/)||[])[1]||'';
                 const release=(text.match(/ui-ar-release" content="([^"]+)"/)||[])[1];
                 const robots=(text.match(/<meta name="robots" content="([^"]+)">/)||[])[1]||'';
-                const ok=r.status===200&&canonical===url&&release==='V44'&&title.length>=8&&desc.length>=20&&robots.startsWith('index,follow')&&text.includes('id="site-jsonld"')&&text.includes('id="page-jsonld"')&&text.includes('styles.css?v=43')&&text.includes('app.js?v=43');
+                const ok=r.status===200&&canonical===url&&release==='V44'&&title.length>=8&&desc.length>=20&&robots.startsWith('index,follow')&&text.includes('id="site-jsonld"')&&text.includes('id="page-jsonld"')&&text.includes('styles.css?v=44')&&text.includes('app.js?v=44');
                 results.push({url,status:r.status,canonical,title:title.slice(0,100),descLength:desc.length,release,ok});
                 if(!ok)failures.push({url,status:r.status,canonical,release,title,descLength:desc.length,robots});
               }catch(e){failures.push({url,error:String(e)})}
@@ -193,7 +193,7 @@ jobs:
           const manifest=JSON.parse(manifestRes.text);
           assert(manifest.id==='/Library-/'&&manifest.start_url==='/Library-/'&&manifest.scope==='/Library-/','Manifest stable identity invalid');
 
-          for(const asset of ['styles.css?v=43','app.js?v=43','data.js?v=43','icon.svg','feed.xml']){
+          for(const asset of ['styles.css?v=44','app.js?v=44','data.js?v=44','icon.svg','feed.xml']){
             const a=await fetch(site+asset,{redirect:'follow'});
             assert(a.ok,'Production asset unavailable: '+asset);
           }
