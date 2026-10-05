@@ -4797,3 +4797,60 @@ body{font-size:14px;line-height:1.45}
   .detail-distinction,.code-intro{font-size:4.6px;line-height:1.65}
   .atlas-called{font-size:4px;margin:4px 0 5px}
 }
+
+
+/* V45 supplied-reference detail + styles mobile geometry */
+@media(max-width:700px){
+  .detail{padding:14px 0 58px}
+  .detail-topbar{align-items:flex-start;gap:8px;margin-bottom:10px}
+  .detail .crumbs{font-size:5.4px;gap:4px}
+  .detail-actions{display:flex;grid-template-columns:none;gap:3px}
+  .detail-actions button{min-height:0;font-size:4.8px;padding:3px 5px;border-radius:4px}
+  .detail-visual{margin-bottom:18px}
+  .detail .specimen{min-height:188px;border-radius:7px;padding:12px;background-size:9px 9px}
+  .detail .ui-demo.large{min-height:164px}
+  .detail .ui-demo.large>*{transform:scale(.9)}
+  .specimen-caption{font-size:4.8px;margin-top:4px}
+  .detail h1{font-size:27px}
+  .detail-en{font-size:8px;margin-top:5px}
+  .detail-symbols{font-size:5px;margin-top:6px}
+  .detail .aka{font-size:5px;line-height:1.55;margin-top:6px}
+  .detail .lead,.detail-distinction{font-size:7px;line-height:1.75;margin-top:8px}
+  .detail .section{padding-top:14px;margin-top:18px}
+  .detail .section h2{font-size:11px;margin-bottom:8px}
+  .section-intro,.code-intro{font-size:5px;line-height:1.6;margin:-3px 0 7px}
+  .called{gap:4px 8px}.called span{font-size:5.4px;text-underline-offset:2px}
+  .answerline{font-size:6px;margin-top:9px}
+  .anatomy{border-radius:6px}
+  .part{grid-template-columns:19px 1fr;gap:7px;padding:8px 9px}
+  .part>i{width:15px;height:15px;font-size:5px}
+  .part b{font-size:6px}.part p{font-size:5px;line-height:1.55;margin-top:3px}
+  .prompt{min-height:56px;border-radius:6px;padding:9px 9px 9px 42px}
+  .prompt p{font-size:5px;line-height:1.65}
+  .copybtn{left:5px;top:5px;font-size:4.4px;padding:3px 4px}
+  .code-table{min-width:360px}.code-table td{font-size:4.7px;padding:6px}
+  .code-table td:first-child{width:58px}.code-table td:nth-child(2){width:125px}.code-table code{font-size:4.7px}
+  .related{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  .related a{min-height:48px;padding:6px;border-radius:5px}
+  .related b{font-size:5.5px}.related span{font-size:4.2px}.related small{font-size:3.8px;padding-top:4px}
+
+  .styles-hero{padding:38px 0 31px;max-width:100%}
+  .styles-kicker{font-size:3.6px;margin-bottom:10px}
+  .styles-hero h1{font-size:20px;margin-bottom:8px;white-space:nowrap}
+  .styles-hero>p{font-size:6.3px;line-height:1.55;max-width:245px}
+  .styles-describe{font-size:4.5px;margin:13px 0 5px}
+  .styles-examples{gap:4px 7px;margin-bottom:10px}
+  .styles-examples button{font-size:4.4px;text-underline-offset:2px;padding:1px}
+  .styles-searchbox{width:240px;height:24px;border-radius:5px;padding:0 7px;gap:5px}
+  .styles-searchbox>span{font-size:8px}.styles-searchbox input{font-size:5.2px}.styles-searchbox kbd{font-size:4px;padding:1px 3px}
+  .styles-catalog{padding-bottom:38px}
+  .atlas-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:17px 8px}
+  .atlas-preview{min-height:0!important;aspect-ratio:2.55/1;border-radius:7px}
+  .atlas-copy{padding:5px 2px 0}
+  .atlas-status{font-size:3.4px;margin-bottom:2px}
+  .atlas-copy h3{font-size:6px}.atlas-en{font-size:4.5px;margin-top:1px}
+  .atlas-copy p{font-size:4.7px;line-height:1.42;margin-top:3px}
+  .atlas-called{font-size:3.8px;line-height:1.45;margin:3px 0 4px}
+  .atlas-signals{gap:3px;margin-top:4px}.atlas-signals span{font-size:3.3px;padding:2px 3px;border-radius:3px}
+  .atlasnote{margin-top:30px;padding-top:14px}.atlasnote h2{font-size:10px;margin-bottom:5px}.atlasnote p,.atlasnote a{font-size:4.8px}
+}

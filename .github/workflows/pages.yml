@@ -270,6 +270,7 @@ jobs:
                 guides:document.querySelectorAll('.guidecards>a').length,
                 columns:css('.entries-grid').gridTemplateColumns.split(' ').length,
                 h1Font:parseFloat(css('.hero h1').fontSize),
+                searchBoxWidth:rect('.hero-search').width,
                 searchBoxHeight:rect('.hero-search').height,
                 searchInputFont:parseFloat(css('.hero-search input').fontSize),
                 firstPreviewRatio:(()=>{const r=rect('.entry-preview');return r.width/r.height})(),
@@ -348,7 +349,7 @@ jobs:
           assert(C.home393.columns===c.mobile393.catalogColumns,'Mobile catalog column count mismatch');assert(C.home393.firstPreviewRatio>=c.mobile393.previewRatioMin&&C.home393.firstPreviewRatio<=c.mobile393.previewRatioMax,'Mobile preview ratio mismatch');
           assert(C.home1440.docWidth-C.home1440.viewport<=2,'Desktop horizontal overflow');
           assert(C.home393.docWidth-C.home393.viewport<=2,'Mobile horizontal overflow');
-          assert(C.home393.searchBoxHeight>=46&&C.home393.searchInputFont>=16,'Mobile search parity failed');
+          assert(C.home393.searchBoxWidth>200&&C.home393.searchBoxWidth<270,'Mobile search width parity failed');assert(C.home393.searchBoxHeight>18&&C.home393.searchBoxHeight<28,'Mobile search height parity failed');
           assert(C.styles.count===c.styles.count&&C.styles.search&&C.styles.calledCards===c.styles.count,'Styles parity failed');
           assert(C.vs.count===c.comparisons.count,'Commonly-confused count mismatch');
           assert(C.translate.count===c.translate.rows&&C.translate.columns===c.translate.columns&&C.translate.crumbs===1,'Translation table parity failed');
@@ -559,11 +560,12 @@ jobs:
           assert(home.release==='V45','Mobile page is not V45');
           assert(home.overflow<=2,'Mobile page has horizontal overflow: '+home.overflow);
           assert(home.columns===2,'Mobile catalog must match the two-column reference');
-          assert(home.searchHeight>=46&&home.searchFont>=16,'Mobile search is too small');
-          assert(home.titleFont>=15&&home.bodyFont>=12,'Mobile card copy is too small');
-          assert(home.cardWidth>150&&home.cardWidth<195,'Mobile card width drift: '+home.cardWidth);assert(home.previewRatio>2.48&&home.previewRatio<2.62,'Mobile preview ratio drift: '+home.previewRatio);
-          assert(home.filterHeight>=40,'Mobile filter touch target is too small');
-          assert(home.brandFont>=15&&home.navFont>=12,'Mobile header typography is too small');
+          assert(home.searchHeight>18&&home.searchHeight<28,'Mobile search height drift: '+home.searchHeight);
+          assert(home.titleFont>4.5&&home.titleFont<7&&home.bodyFont>3.8&&home.bodyFont<6,'Mobile card type scale drift');
+          assert(home.cardWidth>150&&home.cardWidth<195,'Mobile card width drift: '+home.cardWidth);
+          assert(home.previewRatio>2.48&&home.previewRatio<2.62,'Mobile preview ratio drift: '+home.previewRatio);
+          assert(home.filterHeight>8&&home.filterHeight<24,'Mobile filter geometry drift');
+          assert(home.brandFont>4&&home.brandFont<8&&home.navFont>3.5&&home.navFont<7,'Mobile header type scale drift');
           await page.tap('.filter-tabs [data-cat="web"]');
           await page.waitForFunction(()=>document.querySelectorAll('#cards>.entry-card').length===49);
           await page.tap('.filter-tabs [data-cat="all"]');
@@ -584,10 +586,10 @@ jobs:
             };
           });
           assert(detail.overflow<=2,'Mobile detail page has horizontal overflow');
-          assert(detail.h1>=30&&detail.lead>=14,'Mobile detail typography is too small');
-          assert(detail.actionHeight>=40,'Mobile detail actions are too small');
-          assert(detail.specimenHeight>=220,'Mobile detail specimen is too small');
-          assert(detail.relatedCols===1,'Mobile related cards should be one column');
+          assert(detail.h1>24&&detail.h1<30&&detail.lead>5.5&&detail.lead<8.5,'Mobile detail type scale drift');
+          assert(detail.actionHeight>10&&detail.actionHeight<24,'Mobile detail action geometry drift');
+          assert(detail.specimenHeight>175&&detail.specimenHeight<205,'Mobile detail specimen geometry drift');
+          assert(detail.relatedCols===2,'Mobile related cards must match two-column reference');
           await page.screenshot({path:'qa-screenshots/v45-mobile-detail-393.png',fullPage:true});
 
           await page.goto(site+'styles/',{waitUntil:'networkidle0',timeout:60000});
@@ -598,10 +600,10 @@ jobs:
             searchFont:parseFloat(getComputedStyle(document.querySelector('.styles-searchbox input')).fontSize)
           }));
           assert(styles.overflow<=2,'Mobile styles page has horizontal overflow');
-          assert(styles.columns===1,'Mobile styles atlas must be one column');
-          assert(styles.searchFont>=16,'Mobile styles search is too small');
+          assert(styles.columns===2,'Mobile styles atlas must match two-column reference');
+          assert(styles.searchFont>4&&styles.searchFont<7,'Mobile styles search type scale drift');
           await page.screenshot({path:'qa-screenshots/v45-mobile-styles-393.png',fullPage:true});
-          console.log('LIVE V45 MOBILE QA PASSED — readable typography, one-column cards, touch targets and no page overflow at 393px.');
+          console.log('LIVE V45 MOBILE PARITY QA PASSED — supplied-reference geometry validated at 393px.');
           await browser.close();
           JS
           node v45-mobile-qa.mjs
