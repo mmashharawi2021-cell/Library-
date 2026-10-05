@@ -440,13 +440,13 @@ jobs:
               overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth
             }));
 
-            assert(home.release==='V44','Live release marker is not V42');
-            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V42 reference');
-            assert(home.nav===2&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'Header chrome mismatch');
+            assert(home.release==='V44','Live release marker is not V44');
+            assert(home.sponsor===1&&home.sponsorDots===0,'Sponsor strip does not match V44 reference');
+            assert(home.nav===3&&home.headSearch===0&&home.theme===0&&home.brandBadge===0,'V44 header chrome mismatch');
             assert(home.fresh===3&&home.examples===5&&home.search===1&&home.surprise===0,'Hero/search controls mismatch');
             assert(home.filters===3&&home.sorts===2&&home.cards===101&&home.demos===101,'Catalog mismatch');
             assert(home.guides===3,'Guide cards mismatch');
-            assert(home.rss===1&&home.footerLinks===3&&home.footerSearch===1,'Footer mismatch');
+            assert(home.rss===1&&home.footerLinks===4&&home.footerSearch===1,'V44 footer mismatch');
             assert(home.columns===(width<=700?1:2),'Catalog column count mismatch at '+width+'px');
             assert(home.overflow<=2,'Horizontal overflow at '+width+'px: '+home.overflow);
             assert(errors.length===0,'Homepage JS errors at '+width+'px: '+errors.join(' | '));
