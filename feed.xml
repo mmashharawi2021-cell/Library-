@@ -3,7 +3,10 @@
 <title>UI بالعربي</title>
 <link>https://mmashharawi2021-cell.github.io/Library-/</link>
 <description>مصطلحات وعناصر واجهة المستخدم بالعربية</description>
-<item><title>Data Table — جدول البيانات</title><link>https://mmashharawi2021-cell.github.io/Library-/web/data-table/</link></item>
-<item><title>Bottom Navigation — التنقل السفلي</title><link>https://mmashharawi2021-cell.github.io/Library-/web/bottom-navigation/</link></item>
-<item><title>Timeline — الخط الزمني</title><link>https://mmashharawi2021-cell.github.io/Library-/web/timeline/</link></item>
+<item><title>App Sidebar Navigation — الشريط الجانبي للتطبيق</title><link>https://mmashharawi2021-cell.github.io/Library-/web/app-sidebar/</link><guid>https://mmashharawi2021-cell.github.io/Library-/web/app-sidebar/</guid><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
+<item><title>Navigation Rail — سكة التنقل</title><link>https://mmashharawi2021-cell.github.io/Library-/web/navigation-rail/</link><guid>https://mmashharawi2021-cell.github.io/Library-/web/navigation-rail/</guid><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
+<item><title>Top App Bar — شريط التطبيق العلوي</title><link>https://mmashharawi2021-cell.github.io/Library-/web/top-app-bar/</link><guid>https://mmashharawi2021-cell.github.io/Library-/web/top-app-bar/</guid><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
+<item><title>Floating Action Button (FAB) — زر الإجراء العائم</title><link>https://mmashharawi2021-cell.github.io/Library-/web/floating-action-button/</link><guid>https://mmashharawi2021-cell.github.io/Library-/web/floating-action-button/</guid><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
+<item><title>Split Button — الزر المنقسم</title><link>https://mmashharawi2021-cell.github.io/Library-/web/split-button/</link><guid>https://mmashharawi2021-cell.github.io/Library-/web/split-button/</guid><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
+<item><title>Select Menu — قائمة الاختيار</title><link>https://mmashharawi2021-cell.github.io/Library-/web/select-menu/</link><guid>https://mmashharawi2021-cell.github.io/Library-/web/select-menu/</guid><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
 </channel></rss>
