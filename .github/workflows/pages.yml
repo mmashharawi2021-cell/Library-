@@ -289,8 +289,7 @@ jobs:
                 count:document.querySelectorAll('.atlas-card').length,
                 search:!!document.querySelector('.styles-searchbox input'),
                 calledCards:document.querySelectorAll('.atlas-called').length,
-                h1:document.querySelector('h1')?.textContent.trim()||'',
-                crumbs:document.querySelectorAll('.translate-crumbs').length
+                h1:document.querySelector('h1')?.textContent.trim()||''
               };
               if(kind==='vs')return {
                 count:document.querySelectorAll('.confused-row').length,
@@ -299,7 +298,8 @@ jobs:
               if(kind==='translate')return {
                 count:document.querySelectorAll('.translation-v2 tbody tr').length,
                 columns:document.querySelectorAll('.translation-v2 thead th').length,
-                h1:document.querySelector('h1')?.textContent.trim()||''
+                h1:document.querySelector('h1')?.textContent.trim()||'',
+                crumbs:document.querySelectorAll('.translate-crumbs').length
               };
               if(kind==='methodology')return {
                 steps:document.querySelectorAll('.method-steps>div').length,
